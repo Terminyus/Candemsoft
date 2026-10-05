@@ -18,12 +18,24 @@
   --color-cobalt: #6b9bff;
   --color-mint: #4ade80;
   --color-white: #ffffff;
+  --color-black: #000000;
   --color-transparent: transparent;
   --color-current: currentColor;
+
+  /* Vitrin (v2) product rooms: each app's own colours, measured from its logo. */
+  --color-seyyah: #0068c8;
+  --color-seyyah-paper: #f6f3ea;
+  --color-orpigo-navy: #101838;
+  --color-orpigo-red: #e80820;
+  --color-qr-yellow: #f8d008;
+  --color-fit-night: #000810;
+  --color-fit-teal: #00d8d8;
 
   --font-display: "Bricolage Display", "Bricolage Display Fallback", "Arial Narrow", sans-serif;
   --font-body: var(--ff-body), system-ui, sans-serif;
   --font-mono: var(--ff-mono), ui-monospace, monospace;
+  --font-archivo: "Archivo V2 Heading", "Archivo V2 Heading Fallback", system-ui, sans-serif;
+  --font-hand: "Caveat V2", "Comic Sans MS", cursive;
 
   /* Fluid type: 360px → 1440px */
   --text-display: clamp(3.5rem, 1.67rem + 8.15vw, 10.5rem);
@@ -310,4 +322,46 @@
   to {
     opacity: 0;
   }
+}
+
+/* ---- Vitrin (v2) ---- */
+@utility v2-display {
+  font-family: "Archivo V2 Display", "Archivo V2 Display Fallback", system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 0.9;
+}
+@utility v2-heading {
+  font-family: var(--font-archivo);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+/* CandemFit room: the route draws itself as the room scrolls into view. Without support
+   (or with reduced motion) it simply shows the finished route. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .fit-route {
+      stroke-dasharray: 1;
+      animation: fit-draw linear both;
+      animation-timeline: view();
+      animation-range: entry 10% cover 55%;
+    }
+  }
+}
+@keyframes fit-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Vitrin: below-the-fold rooms and sections skip rendering until they come near the
+   viewport, so their images and the Seyyah handwriting font load late. */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 1000px;
 }
