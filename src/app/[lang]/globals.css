@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+/* Design tokens are introduced in stage 2 (see DESIGN.md). */
+body {
+  font-family: var(--font-body), system-ui, sans-serif;
+}
