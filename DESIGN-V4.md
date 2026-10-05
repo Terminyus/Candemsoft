@@ -13,9 +13,8 @@ Her animasyon yazılım dünyasından bir metafor; hepsi gerçek veriyle çalı�
 | Ürünler | Fareyle 3B eğilen kartlar, her ürünün kendi renginde parlama | Ürün içerikleri, ekran görüntüleri |
 | Dağıtımlar | Vercel tarzı deployment listesi | Projelerin **gerçek** durumu: kapalı siteler "Offline", alan adı üstü çizili |
 | Hizmetler | `services/web.ts` modülleri | Hizmetler ve kapsamları |
-| Git geçmişi | `git log --graph` | **Bu reponun gerçek commit'leri**, derleme anında okunur (`src/lib/build-info.ts`) |
 | CTA | Terminalde komut yazılır, çıktı olarak iletişim kanalları gelir | Gerçek e-posta, telefon, WhatsApp |
-| Footer | Son derleme tarihi ve commit hash'i | `git log -1` |
+| Footer | Son derleme tarihi ve commit hash'i | `git log -1` (`src/lib/build-info.ts`) |
 
 Uydurma veri yok: hero'daki derleme bir gösteri, "süre" gibi sahte metrikler kullanılmadı.
 
@@ -44,3 +43,5 @@ Kurallar:
 - Yalnızca `transform`, `opacity` ve `visibility`. Kaydırmayla gelen öğeler **solmaz**, sadece kayar: metin hiçbir an düşük kontrastta gösterilmez.
 - `prefers-reduced-motion`: editör derlenmiş açılır, canvas statik çizilir, şerit/imleç/yükselme/sayaç kapalı.
 - Ölçüm (mobil Lighthouse): 94–97, TBT 0–10 ms, CLS ~0.
+
+> **Değişiklik:** İlk sürümdeki "bu sitenin git geçmişi" bölümü geri bildirimle kaldırıldı.

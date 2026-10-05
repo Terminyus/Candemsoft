@@ -389,12 +389,9 @@
     "productsTitle": "Nuestros productos.",
     "productsLead": "Cuatro apps en las tiendas, una en camino. Inclina las tarjetas con el ratón.",
     "modulesTitle": "Servicios, módulo a módulo.",
-    "gitTitle": "El historial git de este sitio.",
-    "gitLead": "Estos commits son reales: así construimos este sitio.",
     "ctaPrompt": "iniciar nuevo-proyecto",
     "ctaTitle": "Que tu proyecto sea nuestro próximo commit.",
     "ctaButton": "Escríbenos",
-    "builtAt": "Última compilación",
-    "recentCommits": "commits recientes"
+    "builtAt": "Última compilación"
   }
 }

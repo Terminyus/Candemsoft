@@ -9,7 +9,7 @@ Tasarım kararları ve gerekçeleri için: [DESIGN.md](DESIGN.md) (klasik), [DES
 - **Klasik:** `/` — koyu konsol, `candem.sh` terminali.
 - **Vitrin:** `/v2` — beyaz/siyah/turuncu, her ürünün kendi renkleriyle bir odası.
 - **Gazete:** `/v3` — gazete ön sayfası: manşet, ürünler eki, arşiv, ilanlar, künye; yazdırılabilir.
-- **Derleme:** `/v4` — bol animasyonlu, yazılım şirketi havası: kendini yazan kod editörü, deployment listesi, bu reponun gerçek git geçmişi.
+- **Derleme:** `/v4` — bol animasyonlu, yazılım şirketi havası: kendini yazan kod editörü, deployment listesi, kod modülü gibi hizmetler.
 
 Hepsi aynı `content/` dosyalarını okur; içerik bir kez güncellenir. Alternatif tasarımlar (v2–v4) arama motorlarına kapalıdır.
 

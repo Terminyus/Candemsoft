@@ -389,12 +389,9 @@
     "productsTitle": "Kendi ürünlerimiz.",
     "productsLead": "Dört uygulama mağazalarda, biri yolda. Kartları fareyle çevirin.",
     "modulesTitle": "Hizmetler, modül modül.",
-    "gitTitle": "Bu sitenin git geçmişi.",
-    "gitLead": "Aşağıdaki commit'ler gerçek: bu siteyi böyle inşa ettik.",
     "ctaPrompt": "yeni-proje başlat",
     "ctaTitle": "Sıradaki commit sizin projeniz olsun.",
     "ctaButton": "Bize yazın",
-    "builtAt": "Son derleme",
-    "recentCommits": "son commit"
+    "builtAt": "Son derleme"
   }
 }
