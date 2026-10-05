@@ -81,7 +81,7 @@ export function Header({ lang, home, items, labels, extra }: Props) {
       )}
     >
       <div className="container-site flex h-(--header-h) items-center justify-between gap-6">
-        <Link href={home} className="shrink-0" aria-label="Candemsoft">
+        <Link href={home} onClick={() => setOpen(false)} className="shrink-0" aria-label="Candemsoft">
           <Logo priority />
         </Link>
 
@@ -152,6 +152,9 @@ export function Header({ lang, home, items, labels, extra }: Props) {
               <li key={item.key} style={{ "--i": i } as React.CSSProperties} className="border-b border-ink-800">
                 <Link
                   href={item.href}
+                  // Close on every tap: a link to the current page doesn't change the path,
+                  // which used to leave the menu open and the page scroll-locked.
+                  onClick={() => setOpen(false)}
                   aria-current={isActive(pathname, item.href, home) ? "page" : undefined}
                   className="flex items-baseline gap-4 py-3 font-display text-[2.25rem] font-semibold leading-tight tracking-tight aria-[current=page]:text-signal"
                 >

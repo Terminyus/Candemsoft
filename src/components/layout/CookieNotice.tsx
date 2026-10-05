@@ -39,7 +39,7 @@ export function CookieNotice({ text, ok, more, moreHref }: { text: string; ok: s
       role="region"
       aria-label={more}
       data-surface="ink"
-      className="fixed inset-x-4 bottom-4 z-50 max-w-md border border-ink-800 p-4 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.6)] sm:left-4 sm:right-auto"
+      className="fixed inset-x-4 bottom-4 z-40 max-w-md border border-ink-800 p-4 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.6)] sm:left-4 sm:right-auto"
     >
       <p className="text-sm text-stone-400">{text}</p>
       <div className="mt-3 flex items-center gap-4">
