@@ -1,0 +1,22 @@
+1:"$Sreact.fragment"
+2:I[63577,["/Candemsoft/_next/static/chunks/0xfjgy3-fwx1s.js","/Candemsoft/_next/static/chunks/0jvggxmcymz1r.js"],"Scramble"]
+3:I[22016,["/Candemsoft/_next/static/chunks/0xfjgy3-fwx1s.js","/Candemsoft/_next/static/chunks/0jvggxmcymz1r.js"],""]
+4:I[97367,["/Candemsoft/_next/static/chunks/3fntmmi971322.js"],"OutletBoundary"]
+5:"$Sreact.suspense"
+9:I[97367,["/Candemsoft/_next/static/chunks/3fntmmi971322.js"],"ViewportBoundary"]
+a:I[97367,["/Candemsoft/_next/static/chunks/3fntmmi971322.js"],"MetadataBoundary"]
+b:I[27201,["/Candemsoft/_next/static/chunks/3fntmmi971322.js"],"IconMark"]
+d:I[39756,["/Candemsoft/_next/static/chunks/3fntmmi971322.js"],"default"]
+e:I[37457,["/Candemsoft/_next/static/chunks/3fntmmi971322.js"],"default"]
+8:X
+10:X
+10:C
+0:{"buildId":"Bm34Hg46_W5IYVXrTURTN","data":[{"rsc":["$","$1","c",{"children":[[["$","header",null,{"className":"border-b border-dev-line","children":["$","div",null,{"className":"container-site grid gap-6 pb-12 pt-[clamp(2.5rem,6vw,5rem)] lg:grid-cols-[1fr_minmax(0,26rem)] lg:items-end","children":[["$","div",null,{"children":[["$","p",null,{"className":"v4-mono text-sm text-dev-comment","children":"~/candemsoft/blog/*.mdx"}],["$","$L2",null,{"as":"h1","text":"Writing.","className":"v4-title mt-4 text-[clamp(2.4rem,1.3rem+4.6vw,5.5rem)]"}]]}],["$","p",null,{"className":"text-lg text-dev-muted","children":"Things we learn while working. Short, technical, useful."}]]}]}],["$","ol",null,{"className":"container-site space-y-4 pt-12","children":[["$","li","turkce-buyuk-harf",{"children":["$","$L3",null,{"href":"/v4/en/blog/turkce-buyuk-harf","className":"v4-rise group block rounded-xl border border-dev-line bg-dev-surface p-6 transition-[border-color,transform] duration-300 hover:-translate-y-1 hover:border-signal/60","children":[["$","p",null,{"className":"v4-mono text-xs text-dev-comment","children":["turkce-buyuk-harf",".mdx · ",["$","time",null,{"dateTime":"2026-10-05","children":"2026-10-05"}]," · ","2 min read"]}],["$","h2",null,{"className":"v4-title mt-2 text-3xl group-hover:text-signal","children":"İ and ı: why uppercase breaks on a Turkish website"}],["$","p",null,{"className":"mt-2 text-dev-muted","children":"text-transform: uppercase, toUpperCase() and search boxes. The bug that bites us most often when working with Turkish characters, and how to fix it."}]]}]}]]}]],[["$","script","script-0",{"src":"/Candemsoft/_next/static/chunks/0jvggxmcymz1r.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":"$@7","staleTime":"$8","varyParams":null},{"rsc":["$","$1","h",{"children":[null,["$","$L9",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#07080a"}]]}],["$","div",null,{"hidden":true,"children":["$","$La",null,{"children":["$","$5",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Blog — Candemsoft — Build"}],["$","meta","1",{"name":"description","content":"Candemsoft is a software team in Istanbul building websites, mobile apps, AI features, UI/UX and offering consulting."}],["$","link","2",{"rel":"manifest","href":"/Candemsoft/manifest.webmanifest"}],["$","meta","3",{"name":"robots","content":"noindex, nofollow"}],["$","link","4",{"rel":"icon","href":"/Candemsoft/icon.png?icon.3b7l1d3lkkv7x.png","sizes":"512x512","type":"image/png"}],["$","link","5",{"rel":"apple-touch-icon","href":"/Candemsoft/apple-icon.png?apple-icon.1bie9t4cxby4a.png","sizes":"180x180","type":"image/png"}],["$","$Lb","6",{}]]}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"isPartial":"$@c","staleTime":"$8","varyParams":null},{"rsc":["$","$1","c",{"children":[null,["$","$Ld",null,{"parallelRouterKey":"children","template":["$","$Le",null,{}]}]]}],"isPartial":"$@f","staleTime":"$8","varyParams":"$10"}],"isUpgradeableISRFallback":false,"a":"$@11","rootVaryParams":null,"needsRuntimeRequest":"$@12"}
+6:null
+12:true
+8:300
+8:C
+11:0
+c:"$undefined"
+f:"$undefined"
+7:"$undefined"

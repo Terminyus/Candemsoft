@@ -1,0 +1,7 @@
+User-Agent: *
+Allow: /
+Disallow: /styleguide
+Disallow: /en/styleguide
+
+Host: https://candemsoft.com
+Sitemap: https://candemsoft.com/sitemap.xml

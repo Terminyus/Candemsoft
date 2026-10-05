@@ -1,0 +1,7 @@
+:HL["/Candemsoft/_next/static/chunks/2vdxag5af6ezu.css","style"]
+:HC["/",""]
+:HL["/Candemsoft/fonts/v4-geist-latin.v1.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/Candemsoft/fonts/v4-geist-latin-ext.v1.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/Candemsoft/fonts/v4-geist-mono-latin.v1.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/Candemsoft/fonts/v4-geist-mono-latin-ext.v1.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"v4","param":null,"prefetchHints":4208,"slots":{"children":{"name":"lang","param":{"type":"d","key":"en","siblings":[]},"prefetchHints":4144,"slots":{"children":{"name":"projeler","param":null,"prefetchHints":4160,"slots":{"children":{"name":"slug","param":{"type":"d","key":"kisisel-qr","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}}}}}},"staleTime":300,"buildId":"Bm34Hg46_W5IYVXrTURTN"}

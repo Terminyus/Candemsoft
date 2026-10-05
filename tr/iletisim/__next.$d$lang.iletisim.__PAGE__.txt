@@ -1,0 +1,56 @@
+1:"$Sreact.fragment"
+2:I[14219,["/Candemsoft/_next/static/chunks/0abwpg99qiznx.js","/Candemsoft/_next/static/chunks/2y8bag9fsel_c.js","/Candemsoft/_next/static/chunks/2m3_ytk114gdd.js"],"ContactForm"]
+3:I[97367,["/Candemsoft/_next/static/chunks/3fntmmi971322.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+8:I[97367,["/Candemsoft/_next/static/chunks/3fntmmi971322.js"],"ViewportBoundary"]
+9:I[97367,["/Candemsoft/_next/static/chunks/3fntmmi971322.js"],"MetadataBoundary"]
+7:X
+2f:X
+2f:C
+0:{"buildId":"Bm34Hg46_W5IYVXrTURTN","data":[{"rsc":["$","$1","c",{"children":[[["$","section",null,{"data-surface":"ink","aria-labelledby":"page-title","children":["$","div",null,{"className":"container-site grid-site gap-y-8 pb-(--section-sm) pt-[clamp(3rem,6vw,6rem)]","children":[["$","p",null,{"className":"font-mono text-mono-sm muted col-span-full","children":"İletişim"}],["$","h1",null,{"id":"page-title","className":"col-span-full font-display-tight text-h1 font-extrabold lg:col-span-9","children":"Ne yapmak istediğinizi anlatın."}],["$","p",null,{"className":"col-span-full text-lead text-stone-400 md:col-span-5 lg:col-span-5 lg:col-start-7","children":"Formu doldurun ya da doğrudan yazın. Bir fikir, bir teklif isteği ya da mevcut bir sistemle ilgili bir soru olabilir."}],"$undefined"]}]}],["$","section",null,{"data-surface":"paper","aria-label":"İletişim","className":"py-(--section-sm)","children":["$","div",null,{"className":"container-site grid-site gap-y-14","children":[["$","aside",null,{"className":"col-span-full lg:col-span-4","children":[["$","h2",null,{"className":"font-mono text-mono-sm muted","children":"Doğrudan"}],["$","dl",null,{"className":"mt-4 border-t border-ink-950","children":[["$","div","E-posta",{"className":"border-b border-paper-200 py-4","children":[["$","dt",null,{"className":"font-mono text-mono-sm muted","children":"E-posta"}],["$","dd",null,{"className":"mt-1 font-display text-xl font-extrabold","children":["$","a",null,{"href":"mailto:info@candemsoft.com","className":"break-all transition-colors hover:text-ember","children":"info@candemsoft.com"}]}]]}],["$","div","Telefon",{"className":"border-b border-paper-200 py-4","children":[["$","dt",null,{"className":"font-mono text-mono-sm muted","children":"Telefon"}],["$","dd",null,{"className":"mt-1 font-display text-xl font-extrabold","children":["$","a",null,{"href":"tel:+905349334631","className":"break-all transition-colors hover:text-ember","children":"+90 534 933 46 31"}]}]]}],["$","div","WhatsApp",{"className":"border-b border-paper-200 py-4","children":[["$","dt",null,{"className":"font-mono text-mono-sm muted","children":"WhatsApp"}],["$","dd",null,{"className":"mt-1 font-display text-xl font-extrabold","children":["$","a",null,{"href":"https://wa.me/905349334631","className":"break-all transition-colors hover:text-ember","target":"_blank","rel":"noopener noreferrer","children":"wa.me/905349334631 ↗"}]}]]}],["$","div","Konum",{"className":"border-b border-paper-200 py-4","children":[["$","dt",null,{"className":"font-mono text-mono-sm muted","children":"Konum"}],["$","dd",null,{"className":"mt-1 font-display text-xl font-extrabold","children":"İstanbul, Türkiye"}]]}]]}]]}],["$","div",null,{"className":"col-span-full lg:col-span-7 lg:col-start-6","children":["$","$L2",null,{"labels":{"name":"Adınız","email":"E-posta","phone":"Telefon","optional":"isteğe bağlı","topic":"Konu","topics":["Teklif talebi","Genel bilgi","Teknik destek","İş birliği","Diğer"],"message":"Mesajınız","messageHint":"{n}/1000","consent":"Mesajımı yanıtlamak için bilgilerimin işlenmesini kabul ediyorum.","consentLink":"Aydınlatma metni","submit":"Gönder","sending":"Gönderiliyor…","success":"Mesajınız alındı. Teşekkürler.","mailtoFallback":"E-posta uygulamanız açıldı. Mesajı oradan gönderebilirsiniz.","error":"Gönderilemedi. Lütfen info@candemsoft.com adresine doğrudan yazın.","errors":{"name":"Adınızı yazın.","email":"Geçerli bir e-posta adresi yazın.","message":"Mesaj en az 10 karakter olmalı.","consent":"Devam etmek için onay gerekiyor."}},"locale":"tr","email":"info@candemsoft.com","privacyHref":"/tr/gizlilik"}]}]]}]}]],[["$","script","script-0",{"src":"/Candemsoft/_next/static/chunks/2m3_ytk114gdd.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":"$@6","staleTime":"$7","varyParams":null},{"rsc":["$","$1","h",{"children":[null,["$","$L8",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#0e0d0b"}]]}],["$","div",null,{"hidden":true,"children":["$","$L9",null,{"children":["$","$4",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"İletişim — Candemsoft"}],"$La","$Lb","$Lc","$Ld","$Le","$Lf","$L10","$L11","$L12","$L13","$L14","$L15","$L16","$L17","$L18","$L19","$L1a","$L1b","$L1c","$L1d","$L1e","$L1f","$L20","$L21","$L22","$L23","$L24","$L25","$L26","$L27","$L28","$L29","$L2a"]}]}]}],"$L2b"]}],"isPartial":"$@2c","staleTime":"$7","varyParams":null},{"rsc":"$L2d","isPartial":"$@2e","staleTime":"$7","varyParams":"$2f"}],"isUpgradeableISRFallback":false,"a":"$@30","rootVaryParams":null,"needsRuntimeRequest":"$@31"}
+32:I[27201,["/Candemsoft/_next/static/chunks/3fntmmi971322.js"],"IconMark"]
+33:I[39756,["/Candemsoft/_next/static/chunks/3fntmmi971322.js"],"default"]
+34:I[37457,["/Candemsoft/_next/static/chunks/3fntmmi971322.js"],"default"]
+5:null
+a:["$","meta","1",{"name":"description","content":"Formu doldurun ya da doğrudan yazın. Bir fikir, bir teklif isteği ya da mevcut bir sistemle ilgili bir soru olabilir."}]
+b:["$","meta","2",{"name":"application-name","content":"Candemsoft"}]
+c:["$","link","3",{"rel":"manifest","href":"/Candemsoft/manifest.webmanifest"}]
+d:["$","link","4",{"rel":"canonical","href":"https://candemsoft.com/tr/iletisim/"}]
+e:["$","link","5",{"rel":"alternate","hrefLang":"tr","href":"https://candemsoft.com/tr/iletisim/"}]
+f:["$","link","6",{"rel":"alternate","hrefLang":"en","href":"https://candemsoft.com/en/iletisim/"}]
+10:["$","link","7",{"rel":"alternate","hrefLang":"es","href":"https://candemsoft.com/es/iletisim/"}]
+11:["$","link","8",{"rel":"alternate","hrefLang":"x-default","href":"https://candemsoft.com/tr/iletisim/"}]
+12:["$","meta","9",{"name":"format-detection","content":"telephone=no, address=no, email=no"}]
+13:["$","meta","10",{"property":"og:title","content":"İletişim"}]
+14:["$","meta","11",{"property":"og:description","content":"Formu doldurun ya da doğrudan yazın. Bir fikir, bir teklif isteği ya da mevcut bir sistemle ilgili bir soru olabilir."}]
+15:["$","meta","12",{"property":"og:url","content":"https://candemsoft.com/tr/iletisim/"}]
+16:["$","meta","13",{"property":"og:site_name","content":"Candemsoft"}]
+17:["$","meta","14",{"property":"og:locale","content":"tr_TR"}]
+18:["$","meta","15",{"property":"og:image","content":"https://candemsoft.com/tr/iletisim/opengraph-image?bc8a6eb48a8f7522"}]
+19:["$","meta","16",{"property":"og:image:type","content":"image/png"}]
+1a:["$","meta","17",{"property":"og:image:width","content":"1200"}]
+1b:["$","meta","18",{"property":"og:image:height","content":"630"}]
+1c:["$","meta","19",{"property":"og:image:alt","content":"Candemsoft"}]
+1d:["$","meta","20",{"property":"og:locale:alternate","content":"en_US"}]
+1e:["$","meta","21",{"property":"og:locale:alternate","content":"es_ES"}]
+1f:["$","meta","22",{"property":"og:type","content":"website"}]
+20:["$","meta","23",{"name":"twitter:card","content":"summary_large_image"}]
+21:["$","meta","24",{"name":"twitter:title","content":"İletişim"}]
+22:["$","meta","25",{"name":"twitter:description","content":"Formu doldurun ya da doğrudan yazın. Bir fikir, bir teklif isteği ya da mevcut bir sistemle ilgili bir soru olabilir."}]
+23:["$","meta","26",{"name":"twitter:image","content":"https://candemsoft.com/tr/iletisim/opengraph-image?bc8a6eb48a8f7522"}]
+24:["$","meta","27",{"name":"twitter:image:alt","content":"Candemsoft"}]
+25:["$","meta","28",{"name":"twitter:image:type","content":"image/png"}]
+26:["$","meta","29",{"name":"twitter:image:width","content":"1200"}]
+27:["$","meta","30",{"name":"twitter:image:height","content":"630"}]
+28:["$","link","31",{"rel":"icon","href":"/Candemsoft/icon.png?icon.3b7l1d3lkkv7x.png","sizes":"512x512","type":"image/png"}]
+29:["$","link","32",{"rel":"apple-touch-icon","href":"/Candemsoft/apple-icon.png?apple-icon.1bie9t4cxby4a.png","sizes":"180x180","type":"image/png"}]
+2a:["$","$L32","33",{}]
+2b:["$","meta",null,{"name":"next-size-adjust","content":""}]
+2d:["$","$1","c",{"children":[null,["$","$L33",null,{"parallelRouterKey":"children","template":["$","$L34",null,{}]}]]}]
+31:true
+7:300
+7:C
+30:0
+2c:"$undefined"
+2e:"$undefined"
+6:"$undefined"
