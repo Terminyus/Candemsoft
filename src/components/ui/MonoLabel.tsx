@@ -17,7 +17,7 @@ export function MonoLabel({
 export function Index({ n, label, className }: { n: number; label?: string; className?: string }) {
   return (
     <MonoLabel className={className}>
-      <span className="text-signal">{String(n).padStart(2, "0")}</span>
+      <span className="text-ember in-data-[surface=ink]:text-signal">{String(n).padStart(2, "0")}</span>
       {label ? <> / {label}</> : null}
     </MonoLabel>
   );
