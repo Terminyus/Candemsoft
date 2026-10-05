@@ -118,3 +118,9 @@ export async function getPosts(lang: Locale): Promise<PostMeta[]> {
 export function publicFileExists(publicPath: string): boolean {
   return fs.existsSync(path.join(process.cwd(), "public", publicPath));
 }
+
+export function readingMinutes(lang: Locale, slug: string): number {
+  const src = fs.readFileSync(path.join(root, "blog", `${slug}.${lang}.mdx`), "utf8");
+  const words = src.replace(/export const meta[\s\S]*?\};/, "").split(/\s+/).filter(Boolean).length;
+  return Math.max(1, Math.round(words / 200));
+}
