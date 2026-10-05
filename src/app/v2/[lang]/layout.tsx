@@ -8,7 +8,7 @@ import { CookieNotice } from "@/components/layout/CookieNotice";
 import { V2Header } from "@/components/v2/V2Header";
 import { V2Footer } from "@/components/v2/V2Footer";
 import { v2Href, v2Nav } from "@/components/v2/nav";
-import { instrument, mono } from "../../fonts";
+import { mono } from "../../fonts-lib/mono";
 import { V2Fonts } from "../fonts";
 import "../../globals.css";
 
@@ -36,7 +36,7 @@ export default async function V2Layout({ children, params }: LayoutProps<"/v2/[l
   const lang = await resolveLang(params);
   const dict = await getDictionary(lang);
   return (
-    <html lang={lang} className={`${instrument.variable} ${mono.variable}`}>
+    <html lang={lang} className={mono.variable}>
       <head>
         <V2Fonts />
       </head>
