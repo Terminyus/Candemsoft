@@ -1,13 +1,7 @@
-import { Bricolage_Grotesque, Instrument_Sans, JetBrains_Mono } from "next/font/google";
+import { Instrument_Sans, JetBrains_Mono } from "next/font/google";
 
-// latin-ext carries ğ ü ş ı İ ö ç.
-export const display = Bricolage_Grotesque({
-  subsets: ["latin", "latin-ext"],
-  // wdth drives the condensed display cut (font-display-tight); opsz was dropped to keep the file small.
-  axes: ["wdth"],
-  variable: "--ff-display",
-  display: "swap",
-});
+// latin-ext carries ğ ş ı İ. The display face (Bricolage Grotesque) is self-hosted in
+// globals.css instead: it needs opsz pinned at 96, which next/font can't request.
 
 export const body = Instrument_Sans({
   subsets: ["latin", "latin-ext"],

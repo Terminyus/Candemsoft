@@ -3,8 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { useRef, useState, ViewTransition, type PointerEvent } from "react";
-import { AnimatePresence, motion, useMotionValue, useReducedMotion, useSpring } from "motion/react";
+import { startTransition, useEffect, useRef, useState, ViewTransition, type PointerEvent } from "react";
+import { useReducedMotion } from "@/lib/useReducedMotion";
 import { cn } from "@/components/ui/cn";
 
 export type IndexItem = {
@@ -37,50 +37,58 @@ type Labels = {
 
 type ViewProps = { items: IndexItem[]; labels: Labels; filter: string; onFilter: (f: string) => void };
 
-const ease = [0.2, 0.8, 0.2, 1] as const;
+/**
+ * Pointer-following preview. Eased with requestAnimationFrame and written straight to
+ * `transform`, so it costs no React renders and no animation library.
+ */
+function Preview({ item, target }: { item: IndexItem | null; target: React.RefObject<{ x: number; y: number }> }) {
+  const el = useRef<HTMLDivElement>(null);
+  const reduce = useReducedMotion();
+  const [shown, setShown] = useState<IndexItem | null>(item);
+  if (item && item !== shown) setShown(item);
 
-function Preview({ item, x, y }: { item: IndexItem | null; x: ReturnType<typeof useSpring>; y: ReturnType<typeof useSpring> }) {
+  useEffect(() => {
+    let frame = 0;
+    const pos = { ...target.current };
+    const tick = () => {
+      const k = reduce ? 1 : 0.18;
+      pos.x += (target.current.x - pos.x) * k;
+      pos.y += (target.current.y - pos.y) * k;
+      if (el.current) el.current.style.transform = `translate3d(${pos.x}px, ${pos.y}px, 0)`;
+      frame = requestAnimationFrame(tick);
+    };
+    frame = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frame);
+  }, [target, reduce]);
+
   return (
-    <motion.div
+    <div
+      ref={el}
       aria-hidden
-      style={{ x, y }}
       className="pointer-events-none fixed left-0 top-0 z-40 hidden w-[min(28vw,420px)] [@media(hover:hover)]:block"
     >
-      <AnimatePresence mode="popLayout">
-        {item && (
-          <motion.div
-            key={item.slug}
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.98 }}
-            transition={{ duration: 0.24, ease }}
-            className="relative aspect-[16/10] -translate-x-1/2 -translate-y-1/2 overflow-hidden bg-ink-900 shadow-[0_24px_60px_-20px_rgba(14,13,11,0.5)] ring-1 ring-ink-800"
-          >
-            {item.desktop ? (
-              <ViewTransition name={`shot-${item.slug}-desktop`} share="morph" default="none">
-                <Image src={item.desktop} alt="" fill sizes="420px" className="object-cover object-top" />
-              </ViewTransition>
-            ) : (
-              <span className="absolute left-3 top-3 font-mono text-mono-sm text-stone-400">{item.host}</span>
-            )}
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.div>
+      <div
+        data-visible={item ? "" : undefined}
+        className="relative aspect-[16/10] -translate-x-1/2 -translate-y-1/2 scale-[0.96] overflow-hidden bg-ink-900 opacity-0 shadow-[0_24px_60px_-20px_rgba(14,13,11,0.5)] ring-1 ring-ink-800 transition-[opacity,scale] duration-(--duration-2) ease-(--ease-out) data-visible:scale-100 data-visible:opacity-100"
+      >
+        {shown?.desktop ? (
+          <ViewTransition name={item ? `shot-${shown.slug}-desktop` : undefined} share="morph" default="none">
+            <Image key={shown.slug} src={shown.desktop} alt="" fill sizes="420px" className="object-cover object-top" />
+          </ViewTransition>
+        ) : null}
+      </div>
+    </div>
   );
 }
 
 export function ProjectIndexView({ items, labels, filter, onFilter }: ViewProps) {
-  const reduce = useReducedMotion();
   const [hovered, setHovered] = useState<IndexItem | null>(null);
-  const mx = useMotionValue(0);
-  const my = useMotionValue(0);
-  const x = useSpring(mx, { stiffness: 400, damping: 40, mass: 0.6 });
-  const y = useSpring(my, { stiffness: 400, damping: 40, mass: 0.6 });
+  const pointer = useRef({ x: 0, y: 0 });
   const listRef = useRef<HTMLUListElement>(null);
 
   const cats = Object.keys(labels.categories);
-  const count = (c: string) => (c === "all" ? items.filter((i) => !i.own).length : items.filter((i) => i.categories.includes(c)).length);
+  const count = (c: string) =>
+    c === "all" ? items.filter((i) => !i.own).length : items.filter((i) => i.categories.includes(c)).length;
   const visible = items.filter((i) => (filter === "all" ? !i.own : i.categories.includes(filter)));
   const clientCount = visible.filter((i) => !i.own).length;
 
@@ -89,13 +97,18 @@ export function ProjectIndexView({ items, labels, filter, onFilter }: ViewProps)
   const onMove = (e: PointerEvent) => {
     if (e.pointerType !== "mouse" || !listRef.current) return;
     const rect = listRef.current.getBoundingClientRect();
-    mx.set(rect.left + rect.width * 0.74);
-    my.set(e.clientY);
+    pointer.current.x = rect.left + rect.width * 0.74;
+    pointer.current.y = e.clientY;
   };
 
   return (
     <div>
-      <div role="group" aria-label={labels.filterLabel} className="flex flex-wrap gap-2">
+      <div
+        role="group"
+        aria-label={labels.filterLabel}
+        // Single scrollable row: height stays fixed while the mono font swaps in (CLS).
+        className="-mx-(--gutter) flex gap-2 overflow-x-auto whitespace-nowrap px-(--gutter) [scrollbar-width:none] lg:mx-0 lg:px-0"
+      >
         {["all", ...cats].map((c) => (
           <button
             key={c}
@@ -103,7 +116,7 @@ export function ProjectIndexView({ items, labels, filter, onFilter }: ViewProps)
             aria-pressed={filter === c}
             onClick={() => onFilter(c)}
             className={cn(
-              "min-h-11 rounded-full border px-4 font-mono text-mono-sm transition-colors duration-(--duration-1)",
+              "min-h-11 shrink-0 rounded-full border px-4 font-mono text-mono-sm transition-colors duration-(--duration-1)",
               filter === c
                 ? "border-ink-950 bg-ink-950 text-paper-100"
                 : "border-paper-200 text-stone-600 hover:border-ink-950 hover:text-ink-950",
@@ -128,15 +141,19 @@ export function ProjectIndexView({ items, labels, filter, onFilter }: ViewProps)
         className="mt-6 lg:mt-0"
         aria-live="polite"
       >
-        <AnimatePresence initial={false} mode="popLayout">
-          {visible.map((item, i) => (
-            <motion.li
-              key={item.slug}
-              layout={!reduce}
-              initial={reduce ? false : { opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3, ease }}
+        {/* Filter changes run in a transition; each row is its own view-transition group, so rows
+            that stay slide to their new place and the rest fade (see globals.css "filter-row"). */}
+        {visible.map((item, i) => (
+          <ViewTransition
+            key={item.slug}
+            name={`row-${item.slug}`}
+            share="filter-row"
+            enter="filter-row"
+            exit="filter-row"
+            update="filter-row"
+            default="none"
+          >
+            <li
               onPointerEnter={(e) => e.pointerType === "mouse" && setHovered(item.desktop ? item : null)}
               className="group relative border-b border-paper-200"
             >
@@ -144,7 +161,16 @@ export function ProjectIndexView({ items, labels, filter, onFilter }: ViewProps)
                 {item.desktop && (
                   <ViewTransition name={`shot-${item.slug}-desktop`} share="morph" default="none">
                     <div className="relative col-span-full aspect-[16/10] overflow-hidden bg-ink-900 lg:hidden">
-                      <Image src={item.desktop} alt="" fill sizes="100vw" {...(i === 0 ? { loading: "eager" as const, fetchPriority: "high" as const } : {})} className="object-cover object-top" />
+                      <Image
+                        src={item.desktop}
+                        alt=""
+                        fill
+                        sizes="(min-width: 1024px) 1px, calc(100vw - 32px)"
+                        {...(i === 0
+                          ? { loading: "eager" as const, fetchPriority: "high" as const }
+                          : { fetchPriority: "low" as const })}
+                        className="object-cover object-top"
+                      />
                     </div>
                   </ViewTransition>
                 )}
@@ -161,12 +187,12 @@ export function ProjectIndexView({ items, labels, filter, onFilter }: ViewProps)
                 </span>
                 <span className="col-span-2 font-mono text-mono-sm text-stone-600 lg:col-span-3">
                   {item.sector}
-                  {item.offline && <span className="block text-stone-600/80">{labels.offline}</span>}
+                  {item.offline && <span className="block">{labels.offline}</span>}
                 </span>
               </div>
-            </motion.li>
-          ))}
-        </AnimatePresence>
+            </li>
+          </ViewTransition>
+        ))}
       </ul>
 
       {clientCount === 0 && (
@@ -180,17 +206,19 @@ export function ProjectIndexView({ items, labels, filter, onFilter }: ViewProps)
         </p>
       )}
 
-      <Preview item={hovered} x={x} y={y} />
+      <Preview item={hovered} target={pointer} />
     </div>
   );
 }
 
-/** Reads/writes ?kategori= so a filtered list can be shared. */
+/** Reads ?kategori= on load and writes it back, so a filtered list can be shared. */
 export function ProjectIndex(props: Omit<ViewProps, "filter" | "onFilter">) {
   const params = useSearchParams();
   const fromUrl = params.get("kategori");
-  const filter = fromUrl && fromUrl in props.labels.categories ? fromUrl : "all";
+  const [filter, setFilter] = useState(fromUrl && fromUrl in props.labels.categories ? fromUrl : "all");
   const onFilter = (f: string) => {
+    // A React transition, so <ViewTransition> animates the rows.
+    startTransition(() => setFilter(f));
     const url = new URL(window.location.href);
     if (f === "all") url.searchParams.delete("kategori");
     else url.searchParams.set("kategori", f);

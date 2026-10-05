@@ -3,7 +3,11 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import type { TermData, TermLine } from "@/lib/terminal/types";
-import { Terminal, type TerminalLabels } from "./Terminal";
+import dynamic from "next/dynamic";
+import type { TerminalLabels } from "./Terminal";
+
+// The palette's terminal is fetched on first open, keeping it out of every page's initial JS.
+const Terminal = dynamic(() => import("./Terminal").then((m) => m.Terminal), { ssr: false });
 
 export const OPEN_EVENT = "candem:terminal";
 
@@ -47,7 +51,13 @@ export function CommandPalette({ data, labels, initial }: { data: TermData; labe
     if (open && !d.open) {
       d.showModal();
       // showModal() focuses the first focusable element (a help link); the prompt is what we want.
-      d.querySelector<HTMLInputElement>("input")?.focus();
+      // The terminal may still be loading, so wait for its input to appear.
+      const focusInput = () => {
+        const input = d.querySelector<HTMLInputElement>("input");
+        if (input) input.focus();
+        else if (d.open) requestAnimationFrame(focusInput);
+      };
+      focusInput();
     }
     if (!open && d.open) d.close();
   }, [open]);
