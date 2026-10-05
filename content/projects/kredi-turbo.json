@@ -3,22 +3,25 @@
   "name": "Kredi Turbo",
   "url": "https://krediturbo.com/",
   "status": "live",
-  "order": 2,
+  "order": 5,
   "featured": true,
   "categories": [
     "web"
   ],
   "type": {
     "tr": "Finans platformu",
-    "en": "Finance platform"
+    "en": "Finance platform",
+    "es": "Plataforma financiera"
   },
   "sector": {
     "tr": "Finans",
-    "en": "Finance"
+    "en": "Finance",
+    "es": "Finanzas"
   },
   "summary": {
     "tr": "Kredi Turbo finans platformu.",
-    "en": "The Kredi Turbo finance platform."
+    "en": "The Kredi Turbo finance platform.",
+    "es": "La plataforma financiera Kredi Turbo."
   },
   "year": null,
   "services": [
@@ -28,15 +31,18 @@
   "caseStudy": {
     "challenge": {
       "tr": "",
-      "en": ""
+      "en": "",
+      "es": ""
     },
     "approach": {
       "tr": "",
-      "en": ""
+      "en": "",
+      "es": ""
     },
     "outcome": {
       "tr": "",
-      "en": ""
+      "en": "",
+      "es": ""
     }
   },
   "images": {

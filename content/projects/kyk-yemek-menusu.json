@@ -10,15 +10,18 @@
   ],
   "type": {
     "tr": "Menü sistemi",
-    "en": "Menu system"
+    "en": "Menu system",
+    "es": "Sistema de menús"
   },
   "sector": {
     "tr": "Kamu · yurt",
-    "en": "Public · dormitories"
+    "en": "Public · dormitories",
+    "es": "Público · residencias"
   },
   "summary": {
     "tr": "KYK yurtlarının yemek menüsünü gösteren sistem.",
-    "en": "A system that shows meal menus for KYK dormitories."
+    "en": "A system that shows meal menus for KYK dormitories.",
+    "es": "Un sistema que muestra los menús de las residencias KYK."
   },
   "year": null,
   "services": [
@@ -28,15 +31,18 @@
   "caseStudy": {
     "challenge": {
       "tr": "",
-      "en": ""
+      "en": "",
+      "es": ""
     },
     "approach": {
       "tr": "",
-      "en": ""
+      "en": "",
+      "es": ""
     },
     "outcome": {
       "tr": "",
-      "en": ""
+      "en": "",
+      "es": ""
     }
   },
   "images": {

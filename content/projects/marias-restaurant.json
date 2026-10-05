@@ -11,15 +11,18 @@
   ],
   "type": {
     "tr": "Restoran web sitesi",
-    "en": "Restaurant website"
+    "en": "Restaurant website",
+    "es": "Sitio web de restaurante"
   },
   "sector": {
     "tr": "Yeme-içme · Almanya",
-    "en": "Food & beverage · Germany"
+    "en": "Food & beverage · Germany",
+    "es": "Restauración · Alemania"
   },
   "summary": {
     "tr": "Almanya'daki Maria's Restaurant için restoran sitesi.",
-    "en": "Restaurant website for Maria's Restaurant in Germany."
+    "en": "Restaurant website for Maria's Restaurant in Germany.",
+    "es": "Sitio web del restaurante Maria's Restaurant en Alemania."
   },
   "year": null,
   "services": [
@@ -29,15 +32,18 @@
   "caseStudy": {
     "challenge": {
       "tr": "",
-      "en": ""
+      "en": "",
+      "es": ""
     },
     "approach": {
       "tr": "",
-      "en": ""
+      "en": "",
+      "es": ""
     },
     "outcome": {
       "tr": "",
-      "en": ""
+      "en": "",
+      "es": ""
     }
   },
   "images": {
