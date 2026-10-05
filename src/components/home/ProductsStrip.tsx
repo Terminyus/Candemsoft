@@ -30,7 +30,7 @@ export function ProductsStrip({ lang, dict }: { lang: Locale; dict: Dictionary }
           {products.map((p) => (
             <li key={p.slug} className="group relative border-b border-paper-200">
               <div className="grid grid-cols-4 items-baseline gap-x-6 gap-y-2 py-5 md:grid-cols-12">
-                <h3 className="col-span-4 flex items-center gap-4 font-display-tight text-[clamp(2rem,1.2rem+3.5vw,4.5rem)] font-semibold leading-none tracking-[-0.03em] transition-transform duration-(--duration-2) ease-(--ease-out) group-hover:translate-x-2 md:col-span-5">
+                <h3 className="col-span-4 flex items-center gap-4 font-display-tight text-[clamp(2rem,1.2rem+3.5vw,4.5rem)] font-extrabold leading-none tracking-[-0.03em] transition-transform duration-(--duration-2) ease-(--ease-out) group-hover:translate-x-2 md:col-span-5">
                   <span className="relative size-[0.8em] shrink-0 overflow-hidden rounded-[22%] bg-paper-50 ring-1 ring-paper-200">
                     {p.icon && publicFileExists(p.icon) ? (
                       <Image src={asset(p.icon)} alt="" fill sizes="64px" className="object-contain" />

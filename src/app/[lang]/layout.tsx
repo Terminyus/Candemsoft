@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import { DisplayFont } from "../display-font";
 import { locales } from "@/i18n/config";
 import { href, type RouteKey } from "@/i18n/routes";
 import { getDictionary } from "@/lib/dictionary";
@@ -56,9 +55,6 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
   };
   return (
     <html lang={lang} className={`${body.variable} ${mono.variable}`}>
-      <head>
-        <DisplayFont />
-      </head>
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(organizationJsonLd(lang, dict.meta.siteDescription))} />
         <SkipLink label={dict.nav.skip} />

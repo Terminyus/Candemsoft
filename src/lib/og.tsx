@@ -10,7 +10,7 @@ const fontDir = path.join(process.cwd(), "src/assets/fonts");
 /** Shared Open Graph card: ink surface, mono label, condensed display title, orange full stop. */
 export async function renderOg({ label, title, footer }: { label: string; title: string; footer?: string }) {
   const [display, mono, mark] = await Promise.all([
-    fs.readFile(path.join(fontDir, "BricolageGrotesque-Condensed-SemiBold.ttf")),
+    fs.readFile(path.join(fontDir, "SchibstedGrotesk-ExtraBold.ttf")),
     fs.readFile(path.join(fontDir, "JetBrainsMono-Regular.ttf")),
     fs.readFile(path.join(process.cwd(), "public/brand/logo-on-dark.png")),
   ]);
@@ -51,7 +51,7 @@ export async function renderOg({ label, title, footer }: { label: string; title:
     {
       ...ogSize,
       fonts: [
-        { name: "Display", data: display, weight: 600, style: "normal" },
+        { name: "Display", data: display, weight: 800, style: "normal" },
         { name: "Mono", data: mono, weight: 400, style: "normal" },
       ],
     },

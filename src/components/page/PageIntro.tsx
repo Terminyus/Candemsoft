@@ -11,7 +11,7 @@ export function PageIntro({ label, title, lead, aside, id = "page-title" }: Prop
         <MonoLabel as="p" className="col-span-full">
           {label}
         </MonoLabel>
-        <h1 id={id} className="col-span-full font-display-tight text-h1 font-semibold lg:col-span-9">
+        <h1 id={id} className="col-span-full font-display-tight text-h1 font-extrabold lg:col-span-9">
           {title}
         </h1>
         {lead && <p className="col-span-full text-lead text-stone-400 md:col-span-5 lg:col-span-5 lg:col-start-7">{lead}</p>}

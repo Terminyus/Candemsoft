@@ -29,7 +29,7 @@ export default function Styleguide() {
       <Section surface="ink" space="lg">
         <div className="grid-site gap-y-8">
           <Index n={0} label="styleguide" className="col-span-full" />
-          <h1 className="col-span-full font-display-tight text-display font-semibold lg:col-span-10">
+          <h1 className="col-span-full font-display-tight text-display font-extrabold lg:col-span-10">
             Şimdi ğüşıöç, İstanbul.
           </h1>
           <p className="col-span-full text-lead text-stone-400 lg:col-span-6 lg:col-start-3">
@@ -71,7 +71,7 @@ export default function Styleguide() {
             Lead: Altem için ürün, stok ve sipariş akışını tek panelde topladık.
           </p>
           <p className="col-span-full lg:col-span-6">
-            Gövde metni: Instrument Sans, okunaklı ve sakin. Uzun paragraflarda satır uzunluğu 60–75 karakter
+            Gövde metni: Schibsted Grotesk, okunaklı ve sakin. Uzun paragraflarda satır uzunluğu 60–75 karakter
             civarında tutulur. ğ ü ş ı İ ö ç Ğ Ü Ş I Ö Ç.
           </p>
           <MonoLabel className="col-span-full">mono-sm · 2026-10-05 · e-ticaret</MonoLabel>

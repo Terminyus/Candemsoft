@@ -40,7 +40,7 @@ function WorkCard({ project, n, lang, dict }: { project: Project; n: number; lan
       <div className="mt-5 grid grid-cols-[auto_1fr_auto] items-baseline gap-x-4 border-t border-paper-200 pt-4">
         <Index n={n} />
         <div>
-          <h3 className="font-display text-h3 font-semibold">
+          <h3 className="font-display text-h3 font-extrabold">
             <Link href={href(lang, "projects", project.slug)} className="after:absolute after:inset-0">
               {project.name}
             </Link>

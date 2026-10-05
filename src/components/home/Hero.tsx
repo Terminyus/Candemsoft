@@ -20,7 +20,7 @@ export function Hero({ lang, dict }: { lang: Locale; dict: Dictionary }) {
           {dict.home.heroTag}
         </MonoLabel>
 
-        <h1 id="hero-title" className="col-span-full font-display-tight text-display font-semibold">
+        <h1 id="hero-title" className="col-span-full font-display-tight text-display font-extrabold">
           <span className="settle block">{dict.home.heroLine1}</span>
           <span className="settle settle-2 block lg:pl-[16.66%]">
             {dict.home.heroLine2.replace(/\.$/, "")}
@@ -46,7 +46,7 @@ export function Hero({ lang, dict }: { lang: Locale; dict: Dictionary }) {
           {stats.map((s) => (
             <div key={s.label} className="flex flex-col-reverse justify-end gap-1">
               <dt className="font-mono text-mono-sm text-stone-400">{s.label}</dt>
-              <dd className="font-display text-h3 font-semibold">{s.value}</dd>
+              <dd className="font-display text-h3 font-extrabold">{s.value}</dd>
             </div>
           ))}
         </dl>

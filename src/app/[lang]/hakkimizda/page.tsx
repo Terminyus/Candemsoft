@@ -71,7 +71,7 @@ export default async function AboutPage({ params }: PageProps<"/[lang]/hakkimizd
             {a.principles.map((p, i) => (
               <li key={p.title} className="grid-site gap-y-3 border-t border-ink-800 py-10">
                 <span className="col-span-1 font-mono text-mono-sm text-signal">{String(i + 1).padStart(2, "0")}</span>
-                <h3 className="col-span-3 font-display-tight text-h2 font-semibold md:col-span-5 lg:col-span-6">{p.title}</h3>
+                <h3 className="col-span-3 font-display-tight text-h2 font-extrabold md:col-span-5 lg:col-span-6">{p.title}</h3>
                 <p className="col-span-3 col-start-2 text-stone-400 md:col-span-4 md:col-start-2 lg:col-span-4 lg:col-start-9">
                   {p.body}
                 </p>
@@ -90,7 +90,7 @@ export default async function AboutPage({ params }: PageProps<"/[lang]/hakkimizd
             {numbers.map((n) => (
               <div key={n.label} className="flex flex-col-reverse justify-end gap-2 border-l border-paper-200 pl-4">
                 <dt className="font-mono text-mono-sm text-stone-600">{n.label}</dt>
-                <dd className="font-display-tight text-h1 font-semibold">{n.value}</dd>
+                <dd className="font-display-tight text-h1 font-extrabold">{n.value}</dd>
               </div>
             ))}
           </dl>

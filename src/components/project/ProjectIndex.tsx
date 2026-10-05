@@ -177,7 +177,7 @@ export function ProjectIndexView({ items, labels, filter, onFilter }: ViewProps)
                 <span className="col-span-1 hidden font-mono text-mono-sm text-stone-600 transition-colors group-hover:text-ember lg:block">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <h2 className="col-span-4 font-display-tight text-[clamp(1.75rem,1.2rem+2.4vw,3.5rem)] font-semibold leading-none tracking-[-0.03em] transition-transform duration-(--duration-2) ease-(--ease-out) lg:col-span-5 lg:group-hover:translate-x-2">
+                <h2 className="col-span-4 font-display-tight text-[clamp(1.75rem,1.2rem+2.4vw,3.5rem)] font-extrabold leading-none tracking-[-0.03em] transition-transform duration-(--duration-2) ease-(--ease-out) lg:col-span-5 lg:group-hover:translate-x-2">
                   <Link href={item.href} className="after:absolute after:inset-0">
                     {item.name}
                   </Link>

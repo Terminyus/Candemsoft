@@ -37,7 +37,7 @@ export function Monogram({ name, index, className }: { name: string; index: numb
       <span aria-hidden className="absolute inset-x-4 top-1/2 h-px bg-current opacity-10" />
       <span
         aria-hidden
-        className="font-display-tight text-[clamp(4rem,10vw,7.5rem)] font-semibold leading-[0.9] tracking-[-0.05em]"
+        className="font-display-tight text-[clamp(4rem,10vw,7.5rem)] font-extrabold leading-[0.9] tracking-[-0.05em]"
       >
         {initials(name)}
         <span className="text-signal">.</span>

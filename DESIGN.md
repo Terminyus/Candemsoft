@@ -44,15 +44,12 @@ Kurallar:
 
 | Rol | Font | Neden |
 |---|---|---|
-| Başlık | **Bricolage Grotesque** (variable: `wght`, `wdth`, `opsz`) | Grotesk ama karakterli: büyük boyutta hafif tuhaf, el yapımı kıvrımları var. `opsz` ekseni sayesinde dev başlıklarda sıkı, küçük başlıklarda okunaklı. Inter/Poppins kalabalığından ayrışır. |
-| Metin | **Instrument Sans** (variable: `wght`, `wdth`) | Sakin, açık, uzun metinde yorulmayan bir grotesk. Başlık fontuyla aynı ailede değil ama aynı "çağdaş grotesk" dünyasında; çatışmaz. |
+| Başlık ve metin | **Schibsted Grotesk** (variable `wght`): başlıklarda 800, metinde 400 | Haber grotesk'i: kalın kesimi karakterli ve kararlı, metin boyutunda sakin. Türkçe aksanlar (İ, Ğ, Ş) geniş ve temiz. Tek aile iki rolü taşıyor; başlıkla metin arasındaki kontrast ağırlıktan ve boyuttan geliyor. |
 | Kod / etiket | **JetBrains Mono** | Terminal, komut, meta bilgi (tarih, kategori, numaralandırma). Mono font sitede "makine sesi" rolündedir; insan sesi ise metin fontudur. |
 
-Üç font da Google Fonts'ta `latin-ext` alt kümesine sahip: **ğ, ü, ş, ı, İ, ö, ç** eksiksiz.
+> **Değişiklik (2026-10-05):** İlk sürümde başlıklar Bricolage Grotesque'in dar (wdth 88) kesimiydi, metin Instrument Sans'tı. Dar kesim Türkçede harfleri sıkışık gösterdiği için geri bildirimle Schibsted Grotesk'e geçildi. Font `next/font` ile yüklenir; yedek font metrikleri otomatik ayarlanır.
 
-- Instrument Sans ve JetBrains Mono `next/font` ile self-host edilir. Mono font preload edilmez (LCP ile yarışmasın).
-- **Bricolage Grotesque `public/fonts` altında elle self-host edilir**: `opsz` ekseni 96'da (display kesimi), ağırlık 600'de sabit, yalnızca `wdth` değişken. `next/font` bir ekseni sabitleyemiyor; `opsz`'yi tamamen kaldırmak ise başlıkları küçük punto optik tasarımına (opsz 14) düşürüp karakteri siliyordu. Sabitlenmiş dosya hem karakterli hem daha küçük (60 KB, iki alt küme).
-- Yedek font (`Bricolage Display Fallback`, Arial) `size-adjust: 81.3%` ile hero başlığında gerçek fontla birebir aynı genişliğe ayarlandı; font yüklenirken satır kırılmaları değişmez (CLS).
+Fontların hepsi Google Fonts'ta `latin-ext` alt kümesine sahip: **ğ, ü, ş, ı, İ, ö, ç** ve İspanyolca karakterler eksiksiz.
 
 ### Ölçek
 
@@ -60,7 +57,7 @@ Akışkan ölçek (`clamp`), 360px → 1440px arası:
 
 | Token | Mobil → Masaüstü | Kullanım |
 |---|---|---|
-| `display` | 56 → 168px, `line-height: .92` (Türkçe büyük harf aksanları — Ş, İ, Ö — satırlar arasında çakışmasın diye .88'den yükseltildi), `tracking: -0.04em` | Yalnızca hero ve bölüm açılışlarında, sayfa başına bir kez. |
+| `display` | 56 → 168px, `line-height: .92` (Türkçe büyük harf aksanları satırlar arasında çakışmasın diye), `tracking: -0.04em` | Yalnızca hero ve bölüm açılışlarında, sayfa başına bir kez. |
 | `h1` | 40 → 96px, `lh .98` | Sayfa başlığı. |
 | `h2` | 32 → 64px, `lh 1` | Bölüm başlığı. |
 | `h3` | 22 → 32px, `lh 1.1` | Kart/alt başlık. |

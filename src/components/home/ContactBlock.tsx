@@ -11,7 +11,7 @@ export function ContactBlock({ lang, dict }: { lang: Locale; dict: Dictionary })
     <section aria-labelledby="contact-title" className="bg-signal text-ink-950">
       <div className="container-site grid-site gap-y-8 py-(--section)">
         <p className="col-span-full font-mono text-mono-sm">{dict.home.contactLabel}</p>
-        <h2 id="contact-title" className="col-span-full font-display-tight text-h1 font-semibold lg:col-span-9">
+        <h2 id="contact-title" className="col-span-full font-display-tight text-h1 font-extrabold lg:col-span-9">
           {dict.home.contactTitle}
         </h2>
         <p className="col-span-full text-lead lg:col-span-5 lg:col-start-1">{dict.home.contactBody}</p>
