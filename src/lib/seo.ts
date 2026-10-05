@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { defaultLocale, locales, type Locale } from "@/i18n/config";
+import { defaultLocale, localeTags, locales, type Locale } from "@/i18n/config";
 import { href, type RouteKey } from "@/i18n/routes";
 import site from "@content/site.json";
 
 export const siteUrl = site.url;
 
-const ogLocale: Record<Locale, string> = { tr: "tr_TR", en: "en_US" };
+const ogLocale: Record<Locale, string> = { tr: "tr_TR", en: "en_US", es: "es_ES" };
 
 /**
  * Canonical URL, hreflang alternates and Open Graph basics for a page.
@@ -78,7 +78,7 @@ export function organizationJsonLd(lang: Locale, description: string) {
         "@id": `${siteUrl}/#website`,
         url: siteUrl,
         name: "Candemsoft",
-        inLanguage: lang === "tr" ? "tr-TR" : "en",
+        inLanguage: localeTags[lang],
         publisher: { "@id": `${siteUrl}/#organization` },
       },
     ],

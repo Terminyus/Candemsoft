@@ -48,7 +48,7 @@
   "home": {
     "heroLine1": "We ship it",
     "heroLine2": "working.",
-    "heroLead": "Candemsoft is a software team in Istanbul building websites, mobile apps and AI features. We build for clients, and we ship our own products to the App Store.",
+    "heroLead": "Candemsoft is a software team in Istanbul building websites, mobile apps and AI features. We build for clients, and we ship our own products to the App Store and Google Play.",
     "heroCta": "Tell us about your project",
     "heroSecondary": "See our work",
     "workLabel": "Selected work",
@@ -109,8 +109,8 @@
         "desc": "reach us"
       },
       {
-        "cmd": "lang tr",
-        "desc": "switch to Turkish"
+        "cmd": "lang tr · lang es",
+        "desc": "switch language"
       },
       {
         "cmd": "clear",
@@ -173,7 +173,7 @@
   "projectsPage": {
     "label": "Projects",
     "title": "Work we've done.",
-    "lead": "Our client projects. Screenshots of live sites are taken straight from the live sites; click a name for details or go to the site.",
+    "lead": "Client projects and our own products. Screenshots of live sites are taken straight from the live sites; click a name for details or go to the site.",
     "filterLabel": "Filter by category",
     "all": "All",
     "categories": {
@@ -208,12 +208,15 @@
   "productsPage": {
     "label": "Products",
     "title": "Our own products.",
-    "lead": "Alongside client work, we build our own apps. Some are live, one is on the way.",
+    "lead": "Alongside client work, we build our own apps. Four are live, one is on the way.",
     "appStore": "Download on the App Store",
     "googlePlay": "Get it on Google Play",
     "web": "Visit site",
     "androidSoon": "Android version on the way",
-    "platforms": "Platform"
+    "platforms": "Platform",
+    "features": "Highlights",
+    "screens": "Screenshots",
+    "caseLink": "Project page"
   },
   "teamPage": {
     "label": "Team",
@@ -261,7 +264,9 @@
         "message": "The message should be at least 10 characters.",
         "consent": "Consent is required to continue."
       }
-    }
+    },
+    "phoneLabel": "Phone",
+    "locationLabel": "Location"
   },
   "cookies": {
     "text": "This site uses no analytics or advertising cookies. It only stores a small note in your browser to remember that you closed this message.",

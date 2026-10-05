@@ -4,18 +4,18 @@ import { isStaticExport } from "@/lib/static";
 /**
  * Route keys map to a URL segment per locale. The filesystem uses the
  * Turkish segment (src/app/[lang]/<tr-segment>); proxy.ts rewrites the
- * English segment to it. Turkish URLs carry no locale prefix.
+ * English/Spanish segment to it. Turkish URLs carry no locale prefix.
  */
 export const routes = {
-  home: { tr: "", en: "" },
-  about: { tr: "hakkimizda", en: "about" },
-  services: { tr: "hizmetler", en: "services" },
-  projects: { tr: "projeler", en: "projects" },
-  products: { tr: "urunler", en: "products" },
-  team: { tr: "ekip", en: "team" },
-  blog: { tr: "blog", en: "blog" },
-  contact: { tr: "iletisim", en: "contact" },
-  privacy: { tr: "gizlilik", en: "privacy" },
+  home: { tr: "", en: "", es: "" },
+  about: { tr: "hakkimizda", en: "about", es: "sobre-nosotros" },
+  services: { tr: "hizmetler", en: "services", es: "servicios" },
+  projects: { tr: "projeler", en: "projects", es: "proyectos" },
+  products: { tr: "urunler", en: "products", es: "productos" },
+  team: { tr: "ekip", en: "team", es: "equipo" },
+  blog: { tr: "blog", en: "blog", es: "blog" },
+  contact: { tr: "iletisim", en: "contact", es: "contacto" },
+  privacy: { tr: "gizlilik", en: "privacy", es: "privacidad" },
 } as const satisfies Record<string, Record<Locale, string>>;
 
 export type RouteKey = keyof typeof routes;

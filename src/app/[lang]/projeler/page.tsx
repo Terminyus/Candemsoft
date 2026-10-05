@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { href } from "@/i18n/routes";
-import { getProducts, getProjects, publicFileExists } from "@/lib/content";
+import { getProjects, publicFileExists } from "@/lib/content";
 import { getDictionary } from "@/lib/dictionary";
 import { resolveLang } from "@/lib/params";
 import { pageMetadata } from "@/lib/seo";
@@ -29,26 +29,10 @@ export default async function ProjectsPage({ params }: PageProps<"/[lang]/projel
     categories: p.categories,
     host: new URL(p.url).host.replace(/^www\./, ""),
     desktop: p.status === "live" && publicFileExists(p.images.desktop) ? asset(p.images.desktop) : null,
-    own: false,
+    own: Boolean(p.ownProduct),
     offline: p.status === "offline",
   }));
-  // Own mobile apps appear only under the "mobil" filter, clearly marked.
-  const ownMobile: IndexItem[] = getProducts()
-    .filter((p) => p.platforms.some((pl) => pl === "ios" || pl === "android"))
-    .map((p) => ({
-      slug: `urun-${p.slug}`,
-      name: p.name,
-      href: `${href(lang, "products")}#${p.slug}`,
-      type: "",
-      sector: p.platforms.map((pl) => (pl === "ios" ? "iOS" : pl === "android" ? "Android" : "Web")).join(" · "),
-      categories: ["mobil"],
-      host: "",
-      desktop: null,
-      own: true,
-      offline: false,
-    }));
-
-  const items = [...projects, ...ownMobile];
+  const items = projects;
   const labels = {
     filterLabel: t.filterLabel,
     all: t.all,

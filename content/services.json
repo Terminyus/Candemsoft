@@ -3,11 +3,13 @@
     "slug": "web",
     "title": {
       "tr": "Web yazılım",
-      "en": "Web development"
+      "en": "Web development",
+      "es": "Desarrollo web"
     },
     "summary": {
       "tr": "Kurumsal siteler, e-ticaret ve işinize özel web uygulamaları. Hızlı açılan, arama motorunda bulunan, yönetimi kolay.",
-      "en": "Company websites, e-commerce and custom web apps. Fast to load, easy to find on search engines, easy to manage."
+      "en": "Company websites, e-commerce and custom web apps. Fast to load, easy to find on search engines, easy to manage.",
+      "es": "Sitios corporativos, comercio electrónico y aplicaciones web a medida. Rápidos, fáciles de encontrar en buscadores y fáciles de gestionar."
     },
     "items": {
       "tr": [
@@ -21,6 +23,12 @@
         "E-commerce systems",
         "Custom web applications",
         "Admin dashboards"
+      ],
+      "es": [
+        "Sitios web corporativos",
+        "Tiendas online",
+        "Aplicaciones web a medida",
+        "Paneles de administración"
       ]
     }
   },
@@ -28,11 +36,13 @@
     "slug": "mobil",
     "title": {
       "tr": "Mobil uygulama",
-      "en": "Mobile apps"
+      "en": "Mobile apps",
+      "es": "Apps móviles"
     },
     "summary": {
       "tr": "iOS ve Android için uygulamalar. Kendi ürünlerimizi App Store'a çıkardığımız süreçle müşteri uygulamalarını da yayına alıyoruz.",
-      "en": "Apps for iOS and Android. We ship client apps with the same process we use to put our own products on the App Store."
+      "en": "Apps for iOS and Android. We ship client apps with the same process we use to put our own products on the App Store.",
+      "es": "Apps para iOS y Android. Publicamos las apps de nuestros clientes con el mismo proceso que usamos para llevar nuestros propios productos a las tiendas."
     },
     "items": {
       "tr": [
@@ -46,6 +56,12 @@
         "Android apps",
         "Cross-platform (Flutter)",
         "Store release process"
+      ],
+      "es": [
+        "Apps para iOS",
+        "Apps para Android",
+        "Multiplataforma (Flutter)",
+        "Publicación en tiendas"
       ]
     }
   },
@@ -53,11 +69,13 @@
     "slug": "yapay-zeka",
     "title": {
       "tr": "Yapay zekâ",
-      "en": "AI"
+      "en": "AI",
+      "es": "Inteligencia artificial"
     },
     "summary": {
       "tr": "Ürünlere yapay zekâ özellikleri eklemek: metin üretimi, sınıflandırma, asistanlar. Gösteriş için değil, bir işi kısalttığı yerde.",
-      "en": "Adding AI features to products: text generation, classification, assistants. Where it actually saves time, not for show."
+      "en": "Adding AI features to products: text generation, classification, assistants. Where it actually saves time, not for show.",
+      "es": "Añadir funciones de IA a productos: generación de texto, clasificación, asistentes. Donde de verdad ahorra tiempo, no para lucirse."
     },
     "items": {
       "tr": [
@@ -71,6 +89,12 @@
         "Smart assistants",
         "Text and image analysis",
         "Adding AI to existing systems"
+      ],
+      "es": [
+        "Integración de LLM",
+        "Asistentes inteligentes",
+        "Análisis de texto e imagen",
+        "IA en sistemas existentes"
       ]
     }
   },
@@ -78,11 +102,13 @@
     "slug": "ui-ux",
     "title": {
       "tr": "UI/UX tasarım",
-      "en": "UI/UX design"
+      "en": "UI/UX design",
+      "es": "Diseño UI/UX"
     },
     "summary": {
       "tr": "Akışı ve ekranları kod yazmadan önce netleştiriyoruz. Geliştirme sırasında sürpriz azalıyor, değişiklik ucuz kalıyor.",
-      "en": "We settle flows and screens before writing code. Fewer surprises during development, cheaper changes."
+      "en": "We settle flows and screens before writing code. Fewer surprises during development, cheaper changes.",
+      "es": "Definimos flujos y pantallas antes de escribir código. Menos sorpresas durante el desarrollo y cambios más baratos."
     },
     "items": {
       "tr": [
@@ -96,6 +122,12 @@
         "Interface design",
         "Prototyping",
         "Design systems"
+      ],
+      "es": [
+        "Flujos de usuario",
+        "Diseño de interfaz",
+        "Prototipos",
+        "Sistemas de diseño"
       ]
     }
   },
@@ -103,11 +135,13 @@
     "slug": "danismanlik",
     "title": {
       "tr": "Danışmanlık",
-      "en": "Consulting"
+      "en": "Consulting",
+      "es": "Consultoría"
     },
     "summary": {
       "tr": "Ne yaptıracağınızdan emin değilseniz buradan başlayın. Teknoloji seçimi, proje planı, mevcut sistemin gözden geçirilmesi.",
-      "en": "Start here if you're not sure what to build. Technology choices, project planning, reviewing an existing system."
+      "en": "Start here if you're not sure what to build. Technology choices, project planning, reviewing an existing system.",
+      "es": "Si no tienes claro qué construir, empieza aquí. Elección de tecnología, plan de proyecto, revisión de un sistema existente."
     },
     "items": {
       "tr": [
@@ -121,6 +155,12 @@
         "Technology consulting",
         "Process improvement",
         "Code and infrastructure review"
+      ],
+      "es": [
+        "Gestión de proyectos",
+        "Consultoría tecnológica",
+        "Mejora de procesos",
+        "Revisión de código e infraestructura"
       ]
     }
   }

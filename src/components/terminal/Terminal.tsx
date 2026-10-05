@@ -5,6 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useId, useRef, useState, type KeyboardEvent } from "react";
 import { useReducedMotion } from "@/lib/useReducedMotion";
 import { switchLocalePath } from "@/i18n/routes";
+import type { Locale } from "@/i18n/config";
 import { complete, run } from "@/lib/terminal/engine";
 import type { TermData, TermLine, TermLink } from "@/lib/terminal/types";
 import { cn } from "@/components/ui/cn";
@@ -46,7 +47,10 @@ export function Terminal({ data, labels, initial, mode, onDone, className }: Pro
   const inputRef = useRef<HTMLInputElement>(null);
   const logRef = useRef<HTMLDivElement>(null);
   const suggestions = typing ? [] : complete(data, value);
-  const termData: TermData = { ...data, otherLangHref: switchLocalePath(pathname, data.lang, data.lang === "tr" ? "en" : "tr") };
+  const langHrefs = Object.fromEntries(
+    (Object.keys(data.langHrefs) as Locale[]).map((l) => [l, switchLocalePath(pathname, data.lang, l)]),
+  ) as TermData["langHrefs"];
+  const termData: TermData = { ...data, langHrefs };
 
   // Keep the newest output in view inside the terminal only; never scroll the page.
   useEffect(() => {

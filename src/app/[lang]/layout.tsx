@@ -66,7 +66,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
           lang={lang}
           home={href(lang, "home")}
           items={items}
-          labels={{ menu: dict.nav.menu, close: dict.nav.close, switchTo: dict.nav.switchTo, primary: dict.nav.primary }}
+          labels={{ menu: dict.nav.menu, close: dict.nav.close, switchTo: dict.nav.language, primary: dict.nav.primary }}
           extra={<TerminalTrigger label={dict.terminal.openPalette} />}
         />
         <main id="main" tabIndex={-1} className="outline-none">

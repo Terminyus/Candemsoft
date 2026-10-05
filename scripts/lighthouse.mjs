@@ -8,7 +8,7 @@ import path from "node:path";
 import { chromium } from "@playwright/test";
 
 const base = process.argv[2] ?? "http://localhost:3000";
-const paths = ["/", "/hakkimizda", "/hizmetler", "/projeler", "/projeler/kredi-turbo", "/urunler", "/ekip", "/blog", "/blog/turkce-buyuk-harf", "/iletisim", "/en"];
+const paths = ["/", "/hakkimizda", "/hizmetler", "/projeler", "/projeler/kredi-turbo", "/urunler", "/ekip", "/blog", "/blog/turkce-buyuk-harf", "/iletisim", "/en", "/es", "/es/productos"];
 const chrome = process.env.CHROME_PATH ?? chromium.executablePath();
 const out = fs.mkdtempSync(path.join(os.tmpdir(), "lh-"));
 let failed = false;
