@@ -47,6 +47,12 @@
   --color-dev-attr: #e3b341;
   --color-dev-fn: #ff7ab6;
 
+  /* Kurumsal (v5): a calm corporate frame; orange stays the brand accent. */
+  --color-corp-ink: #101828;
+  --color-corp-muted: #475467;
+  --color-corp-line: #e4e7ec;
+  --color-corp-soft: #f6f7f9;
+
   --font-display: var(--ff-body), system-ui, sans-serif;
   --font-body: var(--ff-body), system-ui, sans-serif;
   --font-mono: var(--ff-mono), ui-monospace, monospace;
@@ -565,4 +571,30 @@
   text-align: right;
   color: var(--color-dev-line);
   user-select: none;
+}
+
+/* ---- Kurumsal (v5) ---- */
+.v5 {
+  font-family: "Schibsted Grotesk", "Schibsted Fallback", system-ui, sans-serif;
+  --font-display: "Schibsted Grotesk", system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+}
+@utility v5-title {
+  font-family: "Schibsted Grotesk", system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.04;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .v5-float {
+    animation: v5-float 7s ease-in-out infinite;
+  }
+  .v5-float-slow {
+    animation: v5-float 9s ease-in-out -3s infinite;
+  }
+}
+@keyframes v5-float {
+  50% {
+    transform: translateY(-10px);
+  }
 }
