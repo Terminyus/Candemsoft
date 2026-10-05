@@ -76,3 +76,8 @@ export function v3(path: string): string {
 export function v4(path: string): string {
   return path === "/" ? "/v4" : `/v4${path}`;
 }
+
+/** URL inside the alternative "Kurumsal" design (/v5). */
+export function v5(path: string): string {
+  return path === "/" ? "/v5" : `/v5${path}`;
+}
