@@ -26,7 +26,7 @@ export function ServicesIndex({ lang, dict }: { lang: Locale; dict: Dictionary }
                 {dict.home.servicesAll}
               </ButtonLink>
               <div aria-hidden className="mt-8 hidden lg:block">
-                <span data-service-counter className="font-display text-h3 font-semibold tabular-nums" />
+                <span data-service-counter className="font-display text-h3 font-extrabold tabular-nums" />
                 <span className="mt-3 block h-px w-full bg-ink-800">
                   <span data-service-bar className="block h-px w-full origin-left scale-x-0 bg-signal" />
                 </span>
@@ -41,7 +41,7 @@ export function ServicesIndex({ lang, dict }: { lang: Locale; dict: Dictionary }
                   <span className="font-mono text-mono-sm text-stone-400 transition-colors group-hover:text-signal">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="font-display text-h3 font-semibold">
+                  <h3 className="font-display text-h3 font-extrabold">
                     <Link href={`${href(lang, "services")}#${s.slug}`} className="after:absolute after:inset-0">
                       {s.title[lang]}
                     </Link>

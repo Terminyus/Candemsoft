@@ -37,7 +37,7 @@ export default async function ContactPage({ params }: PageProps<"/[lang]/iletisi
               {direct.map((d) => (
                 <div key={d.label} className="border-b border-paper-200 py-4">
                   <MonoLabel as="dt">{d.label}</MonoLabel>
-                  <dd className="mt-1 font-display text-xl font-semibold">
+                  <dd className="mt-1 font-display text-xl font-extrabold">
                     {d.href ? (
                       <a
                         href={d.href}

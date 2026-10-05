@@ -64,7 +64,7 @@ export default async function ServicesPage({ params }: PageProps<"/[lang]/hizmet
                 <span
                   aria-hidden
                   data-numeral={String(i + 1).padStart(2, "0")}
-                  className="numeral block font-display-tight text-[clamp(5rem,3rem+10vw,12rem)] font-semibold leading-[0.8] text-paper-200"
+                  className="numeral block font-display-tight text-[clamp(5rem,3rem+10vw,12rem)] font-extrabold leading-[0.8] text-paper-200"
                 />
                 <h2 id={`${s.slug}-title`} className="-mt-[0.4em] text-h2">
                   {s.title[lang]}
@@ -119,7 +119,7 @@ export default async function ServicesPage({ params }: PageProps<"/[lang]/hizmet
           <MonoLabel as="h2" className="col-span-full">
             <span id="stack-title">{t.stackLabel}</span>
           </MonoLabel>
-          <ul className="col-span-full flex flex-wrap gap-x-[0.4em] font-display-tight text-h2 font-semibold">
+          <ul className="col-span-full flex flex-wrap gap-x-[0.4em] font-display-tight text-h2 font-extrabold">
             {getStack().map((tech, i, all) => (
               <li key={tech}>
                 {tech}

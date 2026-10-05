@@ -156,7 +156,7 @@ export function Header({ lang, home, items, labels, extra }: Props) {
                   // which used to leave the menu open and the page scroll-locked.
                   onClick={() => setOpen(false)}
                   aria-current={isActive(pathname, item.href, home) ? "page" : undefined}
-                  className="flex items-baseline gap-4 py-3 font-display text-[2.25rem] font-semibold leading-tight tracking-tight aria-[current=page]:text-signal"
+                  className="flex items-baseline gap-4 py-3 font-display text-[2.25rem] font-extrabold leading-tight tracking-tight aria-[current=page]:text-signal"
                 >
                   <span className="font-mono text-mono-sm font-normal text-stone-400">{String(i + 1).padStart(2, "0")}</span>
                   {item.label}

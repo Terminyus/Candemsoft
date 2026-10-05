@@ -14,7 +14,7 @@ export function NotFoundView({ lang, dict }: { lang: Locale; dict: Dictionary })
         <span
           aria-hidden
           data-numeral="404"
-          className="numeral block font-display-tight text-[clamp(7rem,4rem+18vw,20rem)] font-semibold leading-[0.8] text-ink-800"
+          className="numeral block font-display-tight text-[clamp(7rem,4rem+18vw,20rem)] font-extrabold leading-[0.8] text-ink-800"
         />
         <h1 id="nf-title" className="-mt-[0.3em] text-h2">
           {t.title}

@@ -32,7 +32,7 @@ function ProductIcon({ product, size = "lg" }: { product: Product; size?: "sm" |
       {product.icon && publicFileExists(product.icon) ? (
         <Image src={asset(product.icon)} alt={`${product.name} logo`} fill sizes="96px" className="object-contain" />
       ) : (
-        <span aria-hidden className="absolute inset-0 grid place-items-center font-display text-h3 font-semibold">
+        <span aria-hidden className="absolute inset-0 grid place-items-center font-display text-h3 font-extrabold">
           {product.name[0]}
           <span className="text-signal">.</span>
         </span>
@@ -74,7 +74,7 @@ function LiveProduct({ product, index, lang, dict }: { product: Product; index: 
               <MonoLabel as="p">
                 <span className="text-ember">{String(index + 1).padStart(2, "0")}</span> / {product.platforms.map((p) => platformName[p]).join(" · ")}
               </MonoLabel>
-              <h2 id={`${product.slug}-title`} className="mt-1 font-display-tight text-h1 font-semibold">
+              <h2 id={`${product.slug}-title`} className="mt-1 font-display-tight text-h1 font-extrabold">
                 {product.name}
               </h2>
             </div>
@@ -86,7 +86,7 @@ function LiveProduct({ product, index, lang, dict }: { product: Product; index: 
           {isTodo(product.tagline[lang]) ? (
             <Todo label={dict.common.todo} text={product.tagline[lang]} />
           ) : (
-            <p className="font-display text-h3 font-semibold">{product.tagline[lang]}</p>
+            <p className="font-display text-h3 font-extrabold">{product.tagline[lang]}</p>
           )}
           <p className="text-lead text-stone-600">{product.description[lang]}</p>
           {product.features[lang].length > 0 && (
@@ -149,13 +149,13 @@ function SoonProduct({ product, lang, dict }: { product: Product; lang: Locale; 
           <ProductIcon product={product} />
           <div>
             <Tag>{dict.common.comingSoon}</Tag>
-            <h2 id={`${product.slug}-title`} className="mt-3 font-display-tight text-h1 font-semibold">
+            <h2 id={`${product.slug}-title`} className="mt-3 font-display-tight text-h1 font-extrabold">
               {product.name}
             </h2>
           </div>
         </div>
         <div className="col-span-full lg:col-span-5 lg:col-start-8">
-          <p className="font-display text-h3 font-semibold">{product.tagline[lang]}</p>
+          <p className="font-display text-h3 font-extrabold">{product.tagline[lang]}</p>
           <p className="mt-3 text-stone-400">{product.description[lang]}</p>
         </div>
       </div>
@@ -183,7 +183,7 @@ export default async function ProductsPage({ params }: PageProps<"/[lang]/urunle
               <li key={p.slug}>
                 <a href={`#${p.slug}`} className="group flex items-center gap-3 text-stone-400 transition-colors hover:text-paper-100">
                   <ProductIcon product={p} size="sm" />
-                  <span className="font-display text-xl font-semibold">{p.name}</span>
+                  <span className="font-display text-xl font-extrabold">{p.name}</span>
                 </a>
               </li>
             ))}

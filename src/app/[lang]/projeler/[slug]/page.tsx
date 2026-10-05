@@ -66,7 +66,7 @@ export default async function ProjectPage({ params }: PageProps<"/[lang]/projele
               ← {dict.common.backToProjects}
             </Link>
           </nav>
-          <h1 className="col-span-full font-display-tight text-display font-semibold">{project.name}</h1>
+          <h1 className="col-span-full font-display-tight text-display font-extrabold">{project.name}</h1>
           <p className="col-span-full text-lead text-stone-400 md:col-span-4 lg:col-span-5">{project.summary[lang]}</p>
           <div className="col-span-full flex flex-wrap items-start gap-2 md:col-span-2 md:justify-end lg:col-span-4 lg:col-start-9">
             {project.ownProduct && <Tag tone="signal">{dict.projectsPage.ownProduct}</Tag>}
@@ -158,7 +158,7 @@ export default async function ProjectPage({ params }: PageProps<"/[lang]/projele
             <MonoLabel as="p">{t.next}</MonoLabel>
             <Link
               href={href(lang, "projects", next.slug)}
-              className="mt-3 block font-display-tight text-h1 font-semibold transition-colors after:absolute after:inset-0 group-hover:text-signal"
+              className="mt-3 block font-display-tight text-h1 font-extrabold transition-colors after:absolute after:inset-0 group-hover:text-signal"
             >
               {next.name}
             </Link>

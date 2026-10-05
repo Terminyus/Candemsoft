@@ -19,7 +19,7 @@ export function Footer({ lang, dict, items }: { lang: Locale; dict: Dictionary; 
             <MonoLabel as="p">{dict.footer.lead}</MonoLabel>
             <a
               href={`mailto:${contact.email}`}
-              className="mt-4 inline-block break-all font-display text-h2 font-semibold transition-colors duration-(--duration-1) hover:text-signal"
+              className="mt-4 inline-block break-all font-display text-h2 font-extrabold transition-colors duration-(--duration-1) hover:text-signal"
             >
               {contact.email}
             </a>

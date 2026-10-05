@@ -42,7 +42,7 @@ export default async function TeamPage({ params }: PageProps<"/[lang]/ekip">) {
                 ) : (
                   <Monogram name={m.name} index={i} />
                 )}
-                <h2 className="mt-4 font-display text-h3 font-semibold">{m.name}</h2>
+                <h2 className="mt-4 font-display text-h3 font-extrabold">{m.name}</h2>
                 <MonoLabel as="p" className="mt-1">
                   {m.role[lang]}
                 </MonoLabel>

@@ -52,7 +52,7 @@ export default async function PostPage({ params }: PageProps<"/[lang]/blog/[slug
               ← {dict.common.backToBlog}
             </Link>
           </nav>
-          <h1 className="col-span-full font-display-tight text-h1 font-semibold lg:col-span-10">{meta.title}</h1>
+          <h1 className="col-span-full font-display-tight text-h1 font-extrabold lg:col-span-10">{meta.title}</h1>
           <MonoLabel as="p" className="col-span-full">
             <time dateTime={meta.date}>{formatDate(meta.date, lang)}</time> · {meta.author} ·{" "}
             {dict.blogPage.readingTime.replace("{n}", String(readingMinutes(lang, slug)))}
