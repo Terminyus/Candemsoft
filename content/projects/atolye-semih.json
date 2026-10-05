@@ -1,0 +1,47 @@
+{
+  "slug": "atolye-semih",
+  "name": "Atölye Semih",
+  "url": "https://atolyesemih.com/",
+  "order": 9,
+  "featured": false,
+  "categories": [
+    "kurumsal",
+    "web"
+  ],
+  "type": {
+    "tr": "Atölye & üretim sitesi",
+    "en": "Workshop & production site"
+  },
+  "sector": {
+    "tr": "Üretim",
+    "en": "Manufacturing"
+  },
+  "summary": {
+    "tr": "Atölye Semih'in atölye ve üretim sitesi.",
+    "en": "Workshop and production site for Atölye Semih."
+  },
+  "year": null,
+  "services": [
+    "web"
+  ],
+  "stack": [],
+  "caseStudy": {
+    "challenge": {
+      "tr": "",
+      "en": ""
+    },
+    "approach": {
+      "tr": "",
+      "en": ""
+    },
+    "outcome": {
+      "tr": "",
+      "en": ""
+    }
+  },
+  "images": {
+    "desktop": "/projects/atolye-semih/desktop.webp",
+    "mobile": "/projects/atolye-semih/mobile.webp"
+  },
+  "_todo": "year, stack ve caseStudy alanlarını doldurun. Boş alanlar sitede gösterilmez. categories: web | mobil | kurumsal | e-ticaret"
+}

@@ -1,0 +1,124 @@
+{
+  "_todo": "Her kişi için name, role, photo (public/team/ altına dosya, örn. /team/ad-soyad.jpg), bio ve links alanlarını doldurun; 'placeholder' satırını silin. photo boşsa baş harflerden monogram gösterilir. Sıra, sitedeki gösterim sırasıdır.",
+  "members": [
+    {
+      "name": "Ad Soyad",
+      "role": {
+        "tr": "Unvan",
+        "en": "Title"
+      },
+      "photo": "",
+      "bio": {
+        "tr": "",
+        "en": ""
+      },
+      "links": {
+        "linkedin": "",
+        "github": ""
+      },
+      "placeholder": true
+    },
+    {
+      "name": "Ad Soyad",
+      "role": {
+        "tr": "Unvan",
+        "en": "Title"
+      },
+      "photo": "",
+      "bio": {
+        "tr": "",
+        "en": ""
+      },
+      "links": {
+        "linkedin": "",
+        "github": ""
+      },
+      "placeholder": true
+    },
+    {
+      "name": "Ad Soyad",
+      "role": {
+        "tr": "Unvan",
+        "en": "Title"
+      },
+      "photo": "",
+      "bio": {
+        "tr": "",
+        "en": ""
+      },
+      "links": {
+        "linkedin": "",
+        "github": ""
+      },
+      "placeholder": true
+    },
+    {
+      "name": "Ad Soyad",
+      "role": {
+        "tr": "Unvan",
+        "en": "Title"
+      },
+      "photo": "",
+      "bio": {
+        "tr": "",
+        "en": ""
+      },
+      "links": {
+        "linkedin": "",
+        "github": ""
+      },
+      "placeholder": true
+    },
+    {
+      "name": "Ad Soyad",
+      "role": {
+        "tr": "Unvan",
+        "en": "Title"
+      },
+      "photo": "",
+      "bio": {
+        "tr": "",
+        "en": ""
+      },
+      "links": {
+        "linkedin": "",
+        "github": ""
+      },
+      "placeholder": true
+    },
+    {
+      "name": "Ad Soyad",
+      "role": {
+        "tr": "Unvan",
+        "en": "Title"
+      },
+      "photo": "",
+      "bio": {
+        "tr": "",
+        "en": ""
+      },
+      "links": {
+        "linkedin": "",
+        "github": ""
+      },
+      "placeholder": true
+    },
+    {
+      "name": "Ad Soyad",
+      "role": {
+        "tr": "Unvan",
+        "en": "Title"
+      },
+      "photo": "",
+      "bio": {
+        "tr": "",
+        "en": ""
+      },
+      "links": {
+        "linkedin": "",
+        "github": ""
+      },
+      "placeholder": true
+    }
+  ]
+}

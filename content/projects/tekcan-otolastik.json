@@ -1,0 +1,47 @@
+{
+  "slug": "tekcan-otolastik",
+  "name": "Tekcan Otolastik",
+  "url": "https://www.tekcanotolastik.com/",
+  "order": 5,
+  "featured": false,
+  "categories": [
+    "kurumsal",
+    "web"
+  ],
+  "type": {
+    "tr": "Kurumsal web sitesi",
+    "en": "Company website"
+  },
+  "sector": {
+    "tr": "Otomotiv",
+    "en": "Automotive"
+  },
+  "summary": {
+    "tr": "Tekcan Otolastik'in kurumsal web sitesi.",
+    "en": "Tekcan Otolastik's company website."
+  },
+  "year": null,
+  "services": [
+    "web"
+  ],
+  "stack": [],
+  "caseStudy": {
+    "challenge": {
+      "tr": "",
+      "en": ""
+    },
+    "approach": {
+      "tr": "",
+      "en": ""
+    },
+    "outcome": {
+      "tr": "",
+      "en": ""
+    }
+  },
+  "images": {
+    "desktop": "/projects/tekcan-otolastik/desktop.webp",
+    "mobile": "/projects/tekcan-otolastik/mobile.webp"
+  },
+  "_todo": "year, stack ve caseStudy alanlarını doldurun. Boş alanlar sitede gösterilmez. categories: web | mobil | kurumsal | e-ticaret"
+}

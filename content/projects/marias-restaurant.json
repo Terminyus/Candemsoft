@@ -1,0 +1,47 @@
+{
+  "slug": "marias-restaurant",
+  "name": "Maria's Restaurant",
+  "url": "https://mariasrestaurant.de/",
+  "order": 2,
+  "featured": true,
+  "categories": [
+    "kurumsal",
+    "web"
+  ],
+  "type": {
+    "tr": "Restoran web sitesi",
+    "en": "Restaurant website"
+  },
+  "sector": {
+    "tr": "Yeme-içme · Almanya",
+    "en": "Food & beverage · Germany"
+  },
+  "summary": {
+    "tr": "Almanya'daki Maria's Restaurant için restoran sitesi.",
+    "en": "Restaurant website for Maria's Restaurant in Germany."
+  },
+  "year": null,
+  "services": [
+    "web"
+  ],
+  "stack": [],
+  "caseStudy": {
+    "challenge": {
+      "tr": "",
+      "en": ""
+    },
+    "approach": {
+      "tr": "",
+      "en": ""
+    },
+    "outcome": {
+      "tr": "",
+      "en": ""
+    }
+  },
+  "images": {
+    "desktop": "/projects/marias-restaurant/desktop.webp",
+    "mobile": "/projects/marias-restaurant/mobile.webp"
+  },
+  "_todo": "year, stack ve caseStudy alanlarını doldurun. Boş alanlar sitede gösterilmez. categories: web | mobil | kurumsal | e-ticaret"
+}

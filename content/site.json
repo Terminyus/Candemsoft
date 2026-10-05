@@ -1,0 +1,22 @@
+{
+  "name": "Candemsoft",
+  "url": "https://candemsoft.com",
+  "foundedYear": 2025,
+  "contact": {
+    "email": "info@candemsoft.com",
+    "phone": "+90 534 933 46 31",
+    "phoneHref": "+905349334631",
+    "whatsapp": "https://wa.me/905349334631",
+    "city": { "tr": "İstanbul, Türkiye", "en": "Istanbul, Türkiye" }
+  },
+  "stats": [
+    { "value": "50+", "label": { "tr": "tamamlanan proje", "en": "projects shipped" } },
+    { "value": "3+", "label": { "tr": "yıllık tecrübe", "en": "years of experience" } }
+  ],
+  "social": {
+    "linkedin": "",
+    "github": "",
+    "instagram": ""
+  },
+  "_todo": "social: Boş bırakılan sosyal medya hesapları sitede gösterilmez. Linkleri buraya ekleyin."
+}

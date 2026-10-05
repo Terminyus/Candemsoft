@@ -1,0 +1,62 @@
+export const meta = {
+  title: "İ ile ı: Türkçe bir sitede büyük harf neden bozulur?",
+  description: "text-transform: uppercase, toUpperCase() ve arama kutuları. Türkçe karakterlerle çalışırken bizi en sık uğraştıran hata ve çözümü.",
+  date: "2026-10-05",
+  author: "Candemsoft",
+  tags: ["frontend", "i18n"]
+};
+
+Türkçe'de dört tane "i" var: **i, İ, ı, I**. İngilizce'de iki. Yazılımların çoğu İngilizce varsayımıyla yazıldığı için bu fark, en beklemediğiniz yerde ortaya çıkıyor.
+
+## Sorun nerede başlıyor?
+
+JavaScript'te `"istanbul".toUpperCase()` size **ISTANBUL** döndürür. Noktasız I ile. Türkçe okuyan biri bunu "Istanbul" diye, yani yanlış okur. Doğrusu **İSTANBUL**.
+
+Aynı şey ters yönde de geçerli: `"İLETİŞİM".toLowerCase()` size `i̇leti̇şi̇m` döndürür. Gözle zor görünür ama her "i"nin üstünde fazladan bir birleştirici nokta (U+0307) vardır. Bu metni bir arama kutusunda `iletisim` ile karşılaştırırsanız eşleşmez.
+
+## CSS de kurtarmıyor
+
+`text-transform: uppercase` tarayıcıya dönüşümü bırakır ve tarayıcı sayfanın `lang` özniteliğine bakar. `<html lang="tr">` doğruysa sonuç doğrudur. Ama:
+
+- Bileşeniniz İngilizce sayfada render edilirse aynı Türkçe metin yanlış büyür,
+- `lang` özniteliğini unutursanız tüm site yanlış büyür,
+- Ekran okuyucular büyük harfli metni bazen harf harf okur.
+
+Bu yüzden bu sitede `text-transform: uppercase` hiç kullanmıyoruz. Büyük harf gerekiyorsa metni kaynağında büyük yazıyoruz.
+
+## Doğru dönüşüm
+
+Dili açıkça verin:
+
+```js
+"istanbul".toLocaleUpperCase("tr"); // "İSTANBUL"
+"İLETİŞİM".toLocaleLowerCase("tr"); // "iletişim"
+```
+
+Arama ya da komut eşleştirme yapıyorsanız bir adım daha ileri gidin ve karşılaştırmadan önce iki tarafı da aynı biçime indirin:
+
+```js
+function normalize(text) {
+  return text
+    .toLocaleLowerCase("tr")
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .replace(/ı/g, "i");
+}
+
+normalize("İletişim") === normalize("iletisim"); // true
+```
+
+Bu sitenin terminalinde `iletişim`, `iletisim` ya da `ILETISIM` yazmanız fark etmiyor; hepsi aynı yere gidiyor. Arkasında bu fonksiyon var.
+
+## Font da işin içinde
+
+Bir font Türkçe karakterleri içermiyorsa tarayıcı eksik harfleri başka bir fonttan alır. Sonuç: "Ş" bir fontta, kelimenin geri kalanı başka bir fontta. Font seçerken `latin-ext` alt kümesinin olduğundan emin olun ve **ğ, ü, ş, ı, İ, ö, ç** harflerini büyük boyutta bir kez gözle kontrol edin.
+
+## Kısa kontrol listesi
+
+1. `<html lang>` her sayfada doğru mu?
+2. `toUpperCase()` / `toLowerCase()` yerine dil parametreli sürümler mi kullanılıyor?
+3. Arama ve filtrelemede normalizasyon var mı?
+4. Fontlar `latin-ext` içeriyor mu?
+5. `text-transform: uppercase` gerçekten gerekli mi?

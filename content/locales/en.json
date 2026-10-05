@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "siteTitle": "Candemsoft — Web, mobile and AI software from Istanbul",
+    "siteDescription": "Candemsoft is a software team in Istanbul building websites, mobile apps, AI features, UI/UX and offering consulting."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "projects": "Projects",
+    "products": "Products",
+    "team": "Team",
+    "blog": "Blog",
+    "contact": "Contact",
+    "menu": "Menu",
+    "close": "Close",
+    "skip": "Skip to content",
+    "language": "Language",
+    "switchTo": "Türkçe"
+  },
+  "common": {
+    "visitSite": "Visit site",
+    "readMore": "Read more",
+    "allProjects": "All projects",
+    "backToProjects": "Back to projects",
+    "backToBlog": "Back to blog",
+    "comingSoon": "Coming soon",
+    "live": "Live",
+    "todo": "Content pending"
+  },
+  "notFound": {
+    "title": "This page doesn't exist.",
+    "body": "The address may have changed, or it never existed.",
+    "home": "Back to home"
+  }
+}
