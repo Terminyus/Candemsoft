@@ -8,6 +8,7 @@ const paths = [
   "/", "/hakkimizda", "/hizmetler", "/projeler", "/projeler/kredi-turbo", "/projeler/proox", "/urunler",
   "/ekip", "/blog", "/blog/turkce-buyuk-harf", "/iletisim", "/gizlilik", "/yok-boyle-bir-sayfa",
   "/en", "/en/projects", "/en/contact", "/es", "/es/productos", "/es/proyectos/seyyah",
+  "/v2", "/v2/urunler", "/v2/projeler", "/v2/projeler/seyyah", "/v2/hizmetler", "/v2/hakkimizda", "/v2/blog", "/v2/iletisim", "/v2/en", "/v2/es/productos",
 ];
 const browser = await chromium.launch();
 let failures = 0;
