@@ -1,6 +1,178 @@
 @import "tailwindcss";
 
-/* Design tokens are introduced in stage 2 (see DESIGN.md). */
-body {
-  font-family: var(--font-body), system-ui, sans-serif;
+/* Tokens mirror DESIGN.md. Change them there first. */
+@theme {
+  --color-*: initial;
+  --color-ink-950: #0e0d0b;
+  --color-ink-900: #161512;
+  --color-ink-800: #24221e;
+  --color-ink-600: #4a463f;
+  --color-stone-400: #a39d91;
+  --color-stone-600: #5f5a50;
+  --color-paper-50: #fbfaf7;
+  --color-paper-100: #f3f0ea;
+  --color-paper-200: #e6e1d7;
+  --color-signal: #f85404;
+  --color-ember: #b93f05;
+  --color-cobalt: #6b9bff;
+  --color-mint: #4ade80;
+  --color-white: #ffffff;
+  --color-transparent: transparent;
+  --color-current: currentColor;
+
+  --font-display: var(--ff-display), "Arial Narrow", sans-serif;
+  --font-body: var(--ff-body), system-ui, sans-serif;
+  --font-mono: var(--ff-mono), ui-monospace, monospace;
+
+  /* Fluid type: 360px → 1440px */
+  --text-display: clamp(3.5rem, 1.67rem + 8.15vw, 10.5rem);
+  --text-display--line-height: 0.88;
+  --text-display--letter-spacing: -0.04em;
+  --text-h1: clamp(2.5rem, 1.42rem + 4.81vw, 6rem);
+  --text-h1--line-height: 0.95;
+  --text-h1--letter-spacing: -0.035em;
+  --text-h2: clamp(2rem, 1.33rem + 2.96vw, 4rem);
+  --text-h2--line-height: 1;
+  --text-h2--letter-spacing: -0.03em;
+  --text-h3: clamp(1.375rem, 1.17rem + 0.93vw, 2rem);
+  --text-h3--line-height: 1.1;
+  --text-h3--letter-spacing: -0.015em;
+  --text-lead: clamp(1.125rem, 0.98rem + 0.56vw, 1.5rem);
+  --text-lead--line-height: 1.4;
+  --text-body: clamp(1rem, 0.96rem + 0.19vw, 1.125rem);
+  --text-body--line-height: 1.6;
+  --text-mono-sm: clamp(0.75rem, 0.73rem + 0.09vw, 0.8125rem);
+  --text-mono-sm--line-height: 1.4;
+  --text-mono-sm--letter-spacing: 0.02em;
+
+  --radius-sm: 2px;
+  --radius-md: 4px;
+
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-1: 120ms;
+  --duration-2: 240ms;
+  --duration-3: 600ms;
+
+  --breakpoint-xs: 30rem;
+}
+
+:root {
+  --gutter: clamp(16px, 4vw, 64px);
+  --gap: 16px;
+  --section-sm: clamp(3rem, 2rem + 4vw, 5rem);
+  --section: clamp(5rem, 3rem + 8vw, 8rem);
+  --section-lg: clamp(7rem, 4rem + 12vw, 12rem);
+  --header-h: 64px;
+  color-scheme: light;
+}
+
+@media (min-width: 48rem) {
+  :root {
+    --gap: 24px;
+    --header-h: 72px;
+  }
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    scroll-padding-top: calc(var(--header-h) + 16px);
+  }
+
+  body {
+    background: var(--color-paper-100);
+    color: var(--color-ink-950);
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+    font-optical-sizing: auto;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: var(--color-signal);
+    color: var(--color-ink-950);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-signal);
+    outline-offset: 3px;
+    border-radius: var(--radius-sm);
+  }
+
+  [data-surface="ink"] {
+    background: var(--color-ink-950);
+    color: var(--color-paper-100);
+    color-scheme: dark;
+  }
+
+  [data-surface="paper"] {
+    background: var(--color-paper-100);
+    color: var(--color-ink-950);
+  }
+}
+
+@utility container-site {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* 4 → 6 → 12 column grid, see DESIGN.md "Grid ve boşluk" */
+@utility grid-site {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: var(--gap);
+  @media (min-width: 40rem) {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+  @media (min-width: 64rem) {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+}
+
+@utility font-display-tight {
+  font-family: var(--font-display);
+  font-variation-settings: "wdth" 88;
+}
+
+@utility muted {
+  color: var(--color-stone-600);
+  [data-surface="ink"] & {
+    color: var(--color-stone-400);
+  }
+}
+
+@utility hairline {
+  border-color: var(--color-paper-200);
+  [data-surface="ink"] & {
+    border-color: var(--color-ink-800);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
