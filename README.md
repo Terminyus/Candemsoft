@@ -56,8 +56,16 @@ Dosyalardaki `_todo` ve `_draft` alanları yalnızca not içindir; sitede göste
 2. `slug` alanı dosya adıyla aynı olmalı; adres `/projeler/<slug>` olur.
 3. `categories`: `web`, `mobil`, `kurumsal`, `e-ticaret` değerlerinden bir veya birkaçı. Projeler sayfasındaki filtreler bunu kullanır.
 4. `order`: listede kaçıncı sırada görüneceği. `featured: true` olanlar ana sayfada görünür.
-5. Görseller `public/projects/<slug>/desktop.webp` ve `mobile.webp`. Canlı sitelerden otomatik almak için: `npm run capture:projects` (5. aşamada eklenecek).
-6. `caseStudy` altındaki `challenge`, `approach`, `outcome` alanları doluysa detay sayfasında ilgili bölüm görünür; boşsa hiç gösterilmez.
+5. `status`: `live` (yayında) veya `offline`. Yayında olmayan projeler listede kalır ama "siteye git" butonu ve ekran görüntüsü gösterilmez.
+6. Görseller `public/projects/<slug>/desktop.webp` ve `mobile.webp`. Canlı sitelerden otomatik almak için:
+
+   ```bash
+   npm run capture:projects              # tüm yayındaki projeler
+   npm run capture:projects -- proox     # yalnızca biri
+   ```
+
+   Betik çerez banner'larını gizler (kabul etmez). **Çıktıya mutlaka bakın:** bir site 200 dönüp park sayfası, hosting hatası ya da bot doğrulaması gösterebilir. Öyleyse o projenin `status` alanını `offline` yapın ve görselleri silin.
+7. `caseStudy` altındaki `challenge`, `approach`, `outcome` alanları doluysa detay sayfasında ilgili bölüm görünür; boşsa hiç gösterilmez.
 
 ### Ürün bilgisi eklemek
 
