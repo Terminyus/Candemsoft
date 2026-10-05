@@ -4,14 +4,16 @@ import { href } from "@/i18n/routes";
 import { getProjects, getServices, getStack } from "@/lib/content";
 import { getDictionary } from "@/lib/dictionary";
 import { resolveLang } from "@/lib/params";
+import { pageMetadata } from "@/lib/seo";
 import { PageIntro } from "@/components/page/PageIntro";
 import { ButtonLink } from "@/components/ui/Button";
 import { MonoLabel } from "@/components/ui/MonoLabel";
 import { cn } from "@/components/ui/cn";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/hizmetler">): Promise<Metadata> {
-  const dict = await getDictionary(await resolveLang(params));
-  return { title: dict.nav.services, description: dict.servicesPage.lead };
+  const lang = await resolveLang(params);
+  const dict = await getDictionary(lang);
+  return pageMetadata({ lang, route: "services", title: dict.nav.services, description: dict.servicesPage.lead });
 }
 
 export default async function ServicesPage({ params }: PageProps<"/[lang]/hizmetler">) {
@@ -28,9 +30,17 @@ export default async function ServicesPage({ params }: PageProps<"/[lang]/hizmet
         title={t.title}
         lead={t.lead}
         aside={
-          <nav aria-label={t.label} className="flex flex-wrap gap-x-6 gap-y-2 border-t border-ink-800 pt-6">
+          <nav
+            aria-label={t.label}
+            // One scrollable line: its height must not depend on which mono font has loaded (CLS).
+            className="-mx-(--gutter) flex gap-x-6 overflow-x-auto whitespace-nowrap border-t border-ink-800 px-(--gutter) pt-6 [scrollbar-width:none] lg:mx-0 lg:px-0"
+          >
             {services.map((s, i) => (
-              <a key={s.slug} href={`#${s.slug}`} className="font-mono text-mono-sm text-stone-400 hover:text-paper-100">
+              <a
+                key={s.slug}
+                href={`#${s.slug}`}
+                className="font-mono text-mono-sm text-stone-400 hover:text-paper-100"
+              >
                 <span className="text-signal">{String(i + 1).padStart(2, "0")}</span> {s.title[lang]}
               </a>
             ))}
@@ -51,15 +61,22 @@ export default async function ServicesPage({ params }: PageProps<"/[lang]/hizmet
           >
             <div className="container-site grid-site gap-y-8">
               <div className={cn("col-span-full lg:col-span-6", flip && "lg:col-start-7")}>
-                <span aria-hidden className="block font-display-tight text-[clamp(5rem,3rem+10vw,12rem)] font-semibold leading-[0.8] text-paper-200">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
+                <span
+                  aria-hidden
+                  data-numeral={String(i + 1).padStart(2, "0")}
+                  className="numeral block font-display-tight text-[clamp(5rem,3rem+10vw,12rem)] font-semibold leading-[0.8] text-paper-200"
+                />
                 <h2 id={`${s.slug}-title`} className="-mt-[0.4em] text-h2">
                   {s.title[lang]}
                 </h2>
                 <p className="mt-6 max-w-xl text-lead">{s.summary[lang]}</p>
               </div>
-              <div className={cn("col-span-full lg:col-span-4 lg:self-end", flip ? "lg:col-start-1 lg:row-start-1" : "lg:col-start-9")}>
+              <div
+                className={cn(
+                  "col-span-full lg:col-span-4 lg:self-end",
+                  flip ? "lg:col-start-1 lg:row-start-1" : "lg:col-start-9",
+                )}
+              >
                 <MonoLabel as="p">{t.includes}</MonoLabel>
                 <ul className="mt-3 border-t border-ink-950">
                   {s.items[lang].map((item) => (
@@ -76,7 +93,10 @@ export default async function ServicesPage({ params }: PageProps<"/[lang]/hizmet
                     <p className="mt-2">
                       {related.map((p, j) => (
                         <span key={p.slug}>
-                          <Link href={href(lang, "projects", p.slug)} className="underline decoration-paper-200 underline-offset-4 hover:decoration-ink-950">
+                          <Link
+                            href={href(lang, "projects", p.slug)}
+                            className="underline decoration-paper-200 underline-offset-4 hover:decoration-ink-950"
+                          >
                             {p.name}
                           </Link>
                           {j < related.length - 1 && ", "}

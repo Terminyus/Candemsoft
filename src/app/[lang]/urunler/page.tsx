@@ -3,6 +3,7 @@ import Image from "next/image";
 import { getProducts, publicFileExists } from "@/lib/content";
 import { getDictionary } from "@/lib/dictionary";
 import { resolveLang } from "@/lib/params";
+import { pageMetadata } from "@/lib/seo";
 import { isTodo } from "@/lib/text";
 import { PageIntro } from "@/components/page/PageIntro";
 import { ButtonLink } from "@/components/ui/Button";
@@ -12,8 +13,9 @@ import { Todo } from "@/components/ui/Todo";
 import { cn } from "@/components/ui/cn";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/urunler">): Promise<Metadata> {
-  const dict = await getDictionary(await resolveLang(params));
-  return { title: dict.nav.products, description: dict.productsPage.lead };
+  const lang = await resolveLang(params);
+  const dict = await getDictionary(lang);
+  return pageMetadata({ lang, route: "products", title: dict.nav.products, description: dict.productsPage.lead });
 }
 
 const platformName = { ios: "iOS", android: "Android", web: "Web" } as const;

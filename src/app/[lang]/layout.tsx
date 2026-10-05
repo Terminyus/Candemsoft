@@ -1,7 +1,9 @@
 import type { Metadata, Viewport } from "next";
+import { preloadDisplayFont } from "../display-font";
 import { locales } from "@/i18n/config";
 import { href, type RouteKey } from "@/i18n/routes";
 import { getDictionary } from "@/lib/dictionary";
+import { jsonLd, organizationJsonLd, siteUrl } from "@/lib/seo";
 import { resolveLang } from "@/lib/params";
 import { Header, type NavItem } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -11,8 +13,11 @@ import { CommandPalette } from "@/components/terminal/CommandPalette";
 import { TerminalTrigger } from "@/components/terminal/TerminalTrigger";
 import { getTerminalData } from "@/lib/terminal/data";
 import { run } from "@/lib/terminal/engine";
-import { body, display, mono } from "./fonts";
-import "./globals.css";
+import { body, mono } from "../fonts";
+import "../globals.css";
+
+// Unknown values are unmatched routes → app/global-not-found.tsx (server-rendered 404).
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
@@ -26,8 +31,11 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
   const lang = await resolveLang(params);
   const dict = await getDictionary(lang);
   return {
+    metadataBase: new URL(siteUrl),
     title: { default: dict.meta.siteTitle, template: "%s — Candemsoft" },
     description: dict.meta.siteDescription,
+    applicationName: "Candemsoft",
+    formatDetection: { telephone: false, email: false, address: false },
   };
 }
 
@@ -36,6 +44,7 @@ const navKeys: RouteKey[] = ["about", "services", "projects", "products", "team"
 export default async function RootLayout({ children, params }: LayoutProps<"/[lang]">) {
   const lang = await resolveLang(params);
   const dict = await getDictionary(lang);
+  preloadDisplayFont();
   const items: NavItem[] = navKeys.map((key) => ({ key, label: dict.nav[key], href: href(lang, key) }));
   const terminal = getTerminalData(lang, dict);
   const terminalLabels = {
@@ -47,8 +56,9 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
     close: dict.terminal.close,
   };
   return (
-    <html lang={lang} className={`${display.variable} ${body.variable} ${mono.variable}`}>
+    <html lang={lang} className={`${body.variable} ${mono.variable}`}>
       <body>
+        <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(organizationJsonLd(lang, dict.meta.siteDescription))} />
         <SkipLink label={dict.nav.skip} />
         <Header
           lang={lang}

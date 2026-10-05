@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { getDictionary } from "@/lib/dictionary";
 import { resolveLang } from "@/lib/params";
+import { pageMetadata } from "@/lib/seo";
 import { PageIntro } from "@/components/page/PageIntro";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/gizlilik">): Promise<Metadata> {
-  const dict = await getDictionary(await resolveLang(params));
-  return { title: dict.nav.privacy };
+  const lang = await resolveLang(params);
+  const dict = await getDictionary(lang);
+  return pageMetadata({ lang, route: "privacy", title: dict.nav.privacy, description: undefined });
 }
 
 export default async function PrivacyPage({ params }: PageProps<"/[lang]/gizlilik">) {

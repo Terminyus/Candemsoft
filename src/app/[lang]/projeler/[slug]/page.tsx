@@ -6,10 +6,14 @@ import { href } from "@/i18n/routes";
 import { getProject, getProjects, getServices } from "@/lib/content";
 import { getDictionary } from "@/lib/dictionary";
 import { resolveLang } from "@/lib/params";
+import { pageMetadata } from "@/lib/seo";
 import { ButtonLink } from "@/components/ui/Button";
 import { MonoLabel } from "@/components/ui/MonoLabel";
 import { Tag } from "@/components/ui/Tag";
 import { ProjectVisual } from "@/components/project/ProjectVisual";
+
+// Unknown values are unmatched routes → app/global-not-found.tsx (server-rendered 404).
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return locales.flatMap((lang) => getProjects().map((p) => ({ lang, slug: p.slug })));
@@ -17,8 +21,16 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/projeler/[slug]">): Promise<Metadata> {
   const lang = await resolveLang(params);
-  const project = getProject((await params).slug);
-  return project ? { title: project.name, description: project.summary[lang] } : {};
+  const { slug } = await params;
+  const project = getProject(slug);
+  if (!project) return {};
+  return pageMetadata({
+    lang,
+    route: "projects",
+    rest: [slug],
+    title: project.name,
+    description: project.summary[lang],
+  });
 }
 
 export default async function ProjectPage({ params }: PageProps<"/[lang]/projeler/[slug]">) {
@@ -97,14 +109,16 @@ export default async function ProjectPage({ params }: PageProps<"/[lang]/projele
 
       <section data-surface="paper" className="py-(--section-sm)">
         <div className="container-site grid-site gap-y-10">
-          <dl className="col-span-full grid grid-cols-2 gap-x-6 gap-y-6 lg:col-span-4">
-            {meta.map((m) => (
-              <div key={m.k} className="border-t border-paper-200 pt-3">
-                <MonoLabel as="dt">{m.k}</MonoLabel>
-                <dd className="mt-1">{m.v}</dd>
-              </div>
-            ))}
-            <div className="col-span-2 pt-2">
+          <div className="col-span-full lg:col-span-4">
+            <dl className="grid grid-cols-2 gap-x-6 gap-y-6">
+              {meta.map((m) => (
+                <div key={m.k} className="border-t border-paper-200 pt-3">
+                  <MonoLabel as="dt">{m.k}</MonoLabel>
+                  <dd className="mt-1">{m.v}</dd>
+                </div>
+              ))}
+            </dl>
+            <div className="pt-8">
               {project.status === "live" ? (
                 <>
                   <ButtonLink href={project.url} arrow="↗">
@@ -118,7 +132,7 @@ export default async function ProjectPage({ params }: PageProps<"/[lang]/projele
                 </p>
               )}
             </div>
-          </dl>
+          </div>
 
           {story.length > 0 && (
             <div className="col-span-full space-y-12 lg:col-span-7 lg:col-start-6">

@@ -3,14 +3,16 @@ import Image from "next/image";
 import { getTeam, publicFileExists } from "@/lib/content";
 import { getDictionary } from "@/lib/dictionary";
 import { resolveLang } from "@/lib/params";
+import { pageMetadata } from "@/lib/seo";
 import { PageIntro } from "@/components/page/PageIntro";
 import { Monogram } from "@/components/ui/Monogram";
 import { MonoLabel } from "@/components/ui/MonoLabel";
 import { cn } from "@/components/ui/cn";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/ekip">): Promise<Metadata> {
-  const dict = await getDictionary(await resolveLang(params));
-  return { title: dict.nav.team, description: dict.teamPage.lead };
+  const lang = await resolveLang(params);
+  const dict = await getDictionary(lang);
+  return pageMetadata({ lang, route: "team", title: dict.nav.team, description: dict.teamPage.lead });
 }
 
 export default async function TeamPage({ params }: PageProps<"/[lang]/ekip">) {
