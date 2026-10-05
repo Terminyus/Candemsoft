@@ -2,7 +2,8 @@
   "slug": "kisisel-qr",
   "name": "Kişisel QR",
   "url": "https://kisiselqr.com/",
-  "order": 4,
+  "status": "live",
+  "order": 3,
   "featured": true,
   "categories": [
     "web"

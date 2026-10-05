@@ -25,8 +25,9 @@ export default async function ProjectsPage({ params }: PageProps<"/[lang]/projel
     sector: p.sector[lang],
     categories: p.categories,
     host: new URL(p.url).host.replace(/^www\./, ""),
-    desktop: publicFileExists(p.images.desktop) ? p.images.desktop : null,
+    desktop: p.status === "live" && publicFileExists(p.images.desktop) ? p.images.desktop : null,
     own: false,
+    offline: p.status === "offline",
   }));
   // Own mobile apps appear only under the "mobil" filter, clearly marked.
   const ownMobile: IndexItem[] = getProducts()
@@ -41,6 +42,7 @@ export default async function ProjectsPage({ params }: PageProps<"/[lang]/projel
       host: "",
       desktop: null,
       own: true,
+      offline: false,
     }));
 
   const items = [...projects, ...ownMobile];
@@ -52,6 +54,7 @@ export default async function ProjectsPage({ params }: PageProps<"/[lang]/projel
     emptyMobile: t.emptyMobile,
     emptyMobileHref: href(lang, "products"),
     ownProduct: t.ownProduct,
+    offline: t.offline,
     pending: dict.home.visualPending,
     colName: t.colName,
     colType: t.colType,

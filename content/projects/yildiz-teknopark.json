@@ -2,7 +2,8 @@
   "slug": "yildiz-teknopark",
   "name": "Yıldız Teknopark",
   "url": "https://www.destek.yildizteknopark.com.tr/",
-  "order": 6,
+  "status": "offline",
+  "order": 16,
   "featured": false,
   "categories": [
     "web"
@@ -42,5 +43,6 @@
     "desktop": "/projects/yildiz-teknopark/desktop.webp",
     "mobile": "/projects/yildiz-teknopark/mobile.webp"
   },
-  "_todo": "year, stack ve caseStudy alanlarını doldurun. Boş alanlar sitede gösterilmez. categories: web | mobil | kurumsal | e-ticaret"
+  "_todo": "year, stack ve caseStudy alanlarını doldurun. Boş alanlar sitede gösterilmez. categories: web | mobil | kurumsal | e-ticaret",
+  "_offline": "destek.yildizteknopark.com.tr DNS'te çözülmüyor (2026-10-05 kontrolü). Site tekrar yayına girerse status'u 'live' yapıp npm run capture:projects çalıştırın."
 }

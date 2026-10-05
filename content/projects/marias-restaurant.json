@@ -2,8 +2,9 @@
   "slug": "marias-restaurant",
   "name": "Maria's Restaurant",
   "url": "https://mariasrestaurant.de/",
-  "order": 2,
-  "featured": true,
+  "status": "offline",
+  "order": 12,
+  "featured": false,
   "categories": [
     "kurumsal",
     "web"
@@ -43,5 +44,6 @@
     "desktop": "/projects/marias-restaurant/desktop.webp",
     "mobile": "/projects/marias-restaurant/mobile.webp"
   },
-  "_todo": "year, stack ve caseStudy alanlarını doldurun. Boş alanlar sitede gösterilmez. categories: web | mobil | kurumsal | e-ticaret"
+  "_todo": "year, stack ve caseStudy alanlarını doldurun. Boş alanlar sitede gösterilmez. categories: web | mobil | kurumsal | e-ticaret",
+  "_offline": "Alan adı şu an bir park sayfasına (sedo.com) yönleniyor (2026-10-05 kontrolü). Site tekrar yayına girerse status'u 'live' yapıp npm run capture:projects çalıştırın."
 }

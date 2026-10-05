@@ -2,7 +2,8 @@
   "slug": "tekcan-otolastik",
   "name": "Tekcan Otolastik",
   "url": "https://www.tekcanotolastik.com/",
-  "order": 5,
+  "status": "offline",
+  "order": 15,
   "featured": false,
   "categories": [
     "kurumsal",
@@ -43,5 +44,6 @@
     "desktop": "/projects/tekcan-otolastik/desktop.webp",
     "mobile": "/projects/tekcan-otolastik/mobile.webp"
   },
-  "_todo": "year, stack ve caseStudy alanlarını doldurun. Boş alanlar sitede gösterilmez. categories: web | mobil | kurumsal | e-ticaret"
+  "_todo": "year, stack ve caseStudy alanlarını doldurun. Boş alanlar sitede gösterilmez. categories: web | mobil | kurumsal | e-ticaret",
+  "_offline": "tekcanotolastik.com alan adı DNS'te çözülmüyor (2026-10-05 kontrolü). Site tekrar yayına girerse status'u 'live' yapıp npm run capture:projects çalıştırın."
 }

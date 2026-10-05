@@ -2,8 +2,9 @@
   "slug": "kredi-turbo",
   "name": "Kredi Turbo",
   "url": "https://krediturbo.com/",
-  "order": 7,
-  "featured": false,
+  "status": "live",
+  "order": 2,
+  "featured": true,
   "categories": [
     "web"
   ],

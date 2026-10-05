@@ -2,8 +2,9 @@
   "slug": "proox",
   "name": "Proox",
   "url": "http://proox.com.tr/",
-  "order": 3,
-  "featured": true,
+  "status": "offline",
+  "order": 13,
+  "featured": false,
   "categories": [
     "kurumsal",
     "web"
@@ -43,5 +44,6 @@
     "desktop": "/projects/proox/desktop.webp",
     "mobile": "/projects/proox/mobile.webp"
   },
-  "_todo": "year, stack ve caseStudy alanlarını doldurun. Boş alanlar sitede gösterilmez. categories: web | mobil | kurumsal | e-ticaret"
+  "_todo": "year, stack ve caseStudy alanlarını doldurun. Boş alanlar sitede gösterilmez. categories: web | mobil | kurumsal | e-ticaret",
+  "_offline": "Site şu an hosting hata sayfası gösteriyor (2026-10-05 kontrolü). Site tekrar yayına girerse status'u 'live' yapıp npm run capture:projects çalıştırın."
 }

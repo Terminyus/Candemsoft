@@ -17,6 +17,7 @@ export type IndexItem = {
   host: string;
   desktop: string | null;
   own: boolean;
+  offline: boolean;
 };
 
 type Labels = {
@@ -27,6 +28,7 @@ type Labels = {
   emptyMobile: string;
   emptyMobileHref: string;
   ownProduct: string;
+  offline: string;
   pending: string;
   colName: string;
   colType: string;
@@ -80,9 +82,12 @@ export function ProjectIndexView({ items, labels, filter, onFilter }: ViewProps)
   const visible = items.filter((i) => (filter === "all" ? !i.own : i.categories.includes(filter)));
   const clientCount = visible.filter((i) => !i.own).length;
 
+  // The preview rides the right half of the list (over the secondary columns) and only
+  // follows the pointer vertically, so it never covers the project names being read.
   const onMove = (e: PointerEvent) => {
-    if (e.pointerType !== "mouse") return;
-    mx.set(e.clientX + 24);
+    if (e.pointerType !== "mouse" || !listRef.current) return;
+    const rect = listRef.current.getBoundingClientRect();
+    mx.set(rect.left + rect.width * 0.74);
     my.set(e.clientY);
   };
 
@@ -130,7 +135,7 @@ export function ProjectIndexView({ items, labels, filter, onFilter }: ViewProps)
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3, ease }}
-              onPointerEnter={(e) => e.pointerType === "mouse" && setHovered(item)}
+              onPointerEnter={(e) => e.pointerType === "mouse" && setHovered(item.desktop ? item : null)}
               className="group relative border-b border-paper-200"
             >
               <div className="grid grid-cols-4 items-baseline gap-x-6 gap-y-3 py-6 lg:grid-cols-12 lg:py-7">
@@ -150,7 +155,10 @@ export function ProjectIndexView({ items, labels, filter, onFilter }: ViewProps)
                 <span className="col-span-2 text-stone-600 lg:col-span-3">
                   {item.own ? <span className="text-ember">{labels.ownProduct}</span> : item.type}
                 </span>
-                <span className="col-span-2 font-mono text-mono-sm text-stone-600 lg:col-span-3">{item.sector}</span>
+                <span className="col-span-2 font-mono text-mono-sm text-stone-600 lg:col-span-3">
+                  {item.sector}
+                  {item.offline && <span className="block text-stone-600/80">{labels.offline}</span>}
+                </span>
               </div>
             </motion.li>
           ))}
