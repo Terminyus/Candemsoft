@@ -1,0 +1,62 @@
+export const meta = {
+  title: "İ and ı: why uppercase breaks on a Turkish website",
+  description: "text-transform: uppercase, toUpperCase() and search boxes. The bug that bites us most often when working with Turkish characters, and how to fix it.",
+  date: "2026-10-05",
+  author: "Candemsoft",
+  tags: ["frontend", "i18n"]
+};
+
+Turkish has four i's: **i, İ, ı, I**. English has two. Most software is written with English assumptions, so the difference shows up where you least expect it.
+
+## Where it starts
+
+In JavaScript, `"istanbul".toUpperCase()` returns **ISTANBUL**, with a dotless I. A Turkish reader reads that as a different letter. The correct form is **İSTANBUL**.
+
+The reverse is just as tricky: `"İLETİŞİM".toLowerCase()` returns `i̇leti̇şi̇m`. Hard to see, but every "i" carries an extra combining dot (U+0307). Compare that to `iletisim` in a search box and it won't match.
+
+## CSS won't save you either
+
+`text-transform: uppercase` leaves the conversion to the browser, which looks at the page's `lang` attribute. If `<html lang="tr">` is set, the result is correct. But:
+
+- render the same component on an English page and the Turkish text uppercases wrong,
+- forget the `lang` attribute and the whole site uppercases wrong,
+- screen readers sometimes spell out uppercase text letter by letter.
+
+That's why this site doesn't use `text-transform: uppercase` at all. When we need capitals, we write them in the source.
+
+## The correct conversion
+
+Pass the locale explicitly:
+
+```js
+"istanbul".toLocaleUpperCase("tr"); // "İSTANBUL"
+"İLETİŞİM".toLocaleLowerCase("tr"); // "iletişim"
+```
+
+If you're matching search terms or commands, go one step further and normalize both sides before comparing:
+
+```js
+function normalize(text) {
+  return text
+    .toLocaleLowerCase("tr")
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .replace(/ı/g, "i");
+}
+
+normalize("İletişim") === normalize("iletisim"); // true
+```
+
+In this site's terminal, typing `iletişim`, `iletisim` or `ILETISIM` all take you to the same place. This function is why.
+
+## Fonts matter too
+
+If a font doesn't include Turkish glyphs, the browser borrows the missing letters from another font. The result: "Ş" in one typeface, the rest of the word in another. When choosing fonts, make sure the `latin-ext` subset exists, and check **ğ, ü, ş, ı, İ, ö, ç** once by eye at a large size.
+
+## Quick checklist
+
+1. Is `<html lang>` correct on every page?
+2. Are you using the locale-aware versions instead of `toUpperCase()` / `toLowerCase()`?
+3. Do search and filtering normalize text?
+4. Do your fonts include `latin-ext`?
+5. Do you really need `text-transform: uppercase`?

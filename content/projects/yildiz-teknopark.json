@@ -1,0 +1,46 @@
+{
+  "slug": "yildiz-teknopark",
+  "name": "Yıldız Teknopark",
+  "url": "https://www.destek.yildizteknopark.com.tr/",
+  "order": 6,
+  "featured": false,
+  "categories": [
+    "web"
+  ],
+  "type": {
+    "tr": "Ticket / destek sistemi",
+    "en": "Ticket / support system"
+  },
+  "sector": {
+    "tr": "Teknopark",
+    "en": "Technology park"
+  },
+  "summary": {
+    "tr": "Yıldız Teknopark için ticket ve destek sistemi.",
+    "en": "Ticket and support system for Yıldız Teknopark."
+  },
+  "year": null,
+  "services": [
+    "web"
+  ],
+  "stack": [],
+  "caseStudy": {
+    "challenge": {
+      "tr": "",
+      "en": ""
+    },
+    "approach": {
+      "tr": "",
+      "en": ""
+    },
+    "outcome": {
+      "tr": "",
+      "en": ""
+    }
+  },
+  "images": {
+    "desktop": "/projects/yildiz-teknopark/desktop.webp",
+    "mobile": "/projects/yildiz-teknopark/mobile.webp"
+  },
+  "_todo": "year, stack ve caseStudy alanlarını doldurun. Boş alanlar sitede gösterilmez. categories: web | mobil | kurumsal | e-ticaret"
+}

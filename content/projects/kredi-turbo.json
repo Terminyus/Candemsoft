@@ -1,0 +1,46 @@
+{
+  "slug": "kredi-turbo",
+  "name": "Kredi Turbo",
+  "url": "https://krediturbo.com/",
+  "order": 7,
+  "featured": false,
+  "categories": [
+    "web"
+  ],
+  "type": {
+    "tr": "Finans platformu",
+    "en": "Finance platform"
+  },
+  "sector": {
+    "tr": "Finans",
+    "en": "Finance"
+  },
+  "summary": {
+    "tr": "Kredi Turbo finans platformu.",
+    "en": "The Kredi Turbo finance platform."
+  },
+  "year": null,
+  "services": [
+    "web"
+  ],
+  "stack": [],
+  "caseStudy": {
+    "challenge": {
+      "tr": "",
+      "en": ""
+    },
+    "approach": {
+      "tr": "",
+      "en": ""
+    },
+    "outcome": {
+      "tr": "",
+      "en": ""
+    }
+  },
+  "images": {
+    "desktop": "/projects/kredi-turbo/desktop.webp",
+    "mobile": "/projects/kredi-turbo/mobile.webp"
+  },
+  "_todo": "year, stack ve caseStudy alanlarını doldurun. Boş alanlar sitede gösterilmez. categories: web | mobil | kurumsal | e-ticaret"
+}

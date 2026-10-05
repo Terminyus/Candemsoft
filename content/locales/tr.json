@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "siteTitle": "Candemsoft — İstanbul'dan web, mobil ve yapay zekâ yazılımı",
+    "siteDescription": "Candemsoft, İstanbul'da web yazılım, mobil uygulama, yapay zekâ, UI/UX ve danışmanlık işleri yapan bir yazılım ekibi."
+  },
+  "nav": {
+    "home": "Ana sayfa",
+    "about": "Hakkımızda",
+    "services": "Hizmetler",
+    "projects": "Projeler",
+    "products": "Ürünler",
+    "team": "Ekip",
+    "blog": "Blog",
+    "contact": "İletişim",
+    "menu": "Menü",
+    "close": "Kapat",
+    "skip": "İçeriğe geç",
+    "language": "Dil",
+    "switchTo": "English"
+  },
+  "common": {
+    "visitSite": "Siteyi ziyaret et",
+    "readMore": "Devamını oku",
+    "allProjects": "Tüm projeler",
+    "backToProjects": "Projelere dön",
+    "backToBlog": "Bloga dön",
+    "comingSoon": "Yakında",
+    "live": "Yayında",
+    "todo": "İçerik bekleniyor"
+  },
+  "notFound": {
+    "title": "Bu sayfa yok.",
+    "body": "Adres değişmiş ya da hiç var olmamış olabilir.",
+    "home": "Ana sayfaya dön"
+  }
+}

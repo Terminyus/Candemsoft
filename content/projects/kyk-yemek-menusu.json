@@ -1,0 +1,46 @@
+{
+  "slug": "kyk-yemek-menusu",
+  "name": "KYK Yemek Menüsü",
+  "url": "https://acdisoftware.com.tr/kyk_menu",
+  "order": 8,
+  "featured": false,
+  "categories": [
+    "web"
+  ],
+  "type": {
+    "tr": "Menü sistemi",
+    "en": "Menu system"
+  },
+  "sector": {
+    "tr": "Kamu · yurt",
+    "en": "Public · dormitories"
+  },
+  "summary": {
+    "tr": "KYK yurtlarının yemek menüsünü gösteren sistem.",
+    "en": "A system that shows meal menus for KYK dormitories."
+  },
+  "year": null,
+  "services": [
+    "web"
+  ],
+  "stack": [],
+  "caseStudy": {
+    "challenge": {
+      "tr": "",
+      "en": ""
+    },
+    "approach": {
+      "tr": "",
+      "en": ""
+    },
+    "outcome": {
+      "tr": "",
+      "en": ""
+    }
+  },
+  "images": {
+    "desktop": "/projects/kyk-yemek-menusu/desktop.webp",
+    "mobile": "/projects/kyk-yemek-menusu/mobile.webp"
+  },
+  "_todo": "year, stack ve caseStudy alanlarını doldurun. Boş alanlar sitede gösterilmez. categories: web | mobil | kurumsal | e-ticaret"
+}

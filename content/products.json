@@ -1,0 +1,110 @@
+[
+  {
+    "slug": "orpigo",
+    "name": "Orpigo",
+    "status": "live",
+    "platforms": [],
+    "tagline": {
+      "tr": "TODO: Orpigo için tek cümlelik tanım",
+      "en": "TODO: one-line description of Orpigo"
+    },
+    "description": {
+      "tr": "TODO: Orpigo açıklaması (2–3 cümle)",
+      "en": "TODO: Orpigo description (2–3 sentences)"
+    },
+    "links": {
+      "appStore": "",
+      "googlePlay": "",
+      "web": ""
+    },
+    "icon": "",
+    "_todo": "status: live | soon · platforms: ios | android | web · Mağaza linklerini ve ikon yolunu (public/ altında) ekleyin. 'TODO' ile başlayan metinler sitede yer tutucu olarak işaretlenir."
+  },
+  {
+    "slug": "kisisel-qr",
+    "name": "Kişisel QR",
+    "status": "live",
+    "platforms": [
+      "web"
+    ],
+    "tagline": {
+      "tr": "TODO: Kişisel QR için tek cümlelik tanım",
+      "en": "TODO: one-line description of Kişisel QR"
+    },
+    "description": {
+      "tr": "TODO: Kişisel QR açıklaması (2–3 cümle)",
+      "en": "TODO: Kişisel QR description (2–3 sentences)"
+    },
+    "links": {
+      "appStore": "",
+      "googlePlay": "",
+      "web": "https://kisiselqr.com/"
+    },
+    "icon": "",
+    "_draft": "Eski sitede: 'Araç sahipleri için özel QR kod çözümleri' — onaylarsanız tagline olarak kullanılabilir."
+  },
+  {
+    "slug": "seyyah",
+    "name": "Seyyah",
+    "status": "live",
+    "platforms": [],
+    "tagline": {
+      "tr": "TODO: Seyyah için tek cümlelik tanım",
+      "en": "TODO: one-line description of Seyyah"
+    },
+    "description": {
+      "tr": "TODO: Seyyah açıklaması (2–3 cümle)",
+      "en": "TODO: Seyyah description (2–3 sentences)"
+    },
+    "links": {
+      "appStore": "",
+      "googlePlay": "",
+      "web": ""
+    },
+    "icon": "",
+    "_draft": "Eski sitede: 'Sosyal rota paylaşımı ve gezi rehberi platformu' — onaylarsanız tagline olarak kullanılabilir."
+  },
+  {
+    "slug": "candemfit",
+    "name": "CandemFit",
+    "status": "live",
+    "platforms": [
+      "ios"
+    ],
+    "androidSoon": true,
+    "tagline": {
+      "tr": "TODO: CandemFit için tek cümlelik tanım",
+      "en": "TODO: one-line description of CandemFit"
+    },
+    "description": {
+      "tr": "TODO: CandemFit açıklaması (2–3 cümle)",
+      "en": "TODO: CandemFit description (2–3 sentences)"
+    },
+    "links": {
+      "appStore": "",
+      "googlePlay": "",
+      "web": ""
+    },
+    "icon": ""
+  },
+  {
+    "slug": "candemkey",
+    "name": "Candemkey",
+    "status": "soon",
+    "platforms": [],
+    "tagline": {
+      "tr": "Yapay zekâ klavyesi.",
+      "en": "An AI keyboard."
+    },
+    "description": {
+      "tr": "TODO: Candemkey açıklaması (2–3 cümle)",
+      "en": "TODO: Candemkey description (2–3 sentences)"
+    },
+    "links": {
+      "appStore": "",
+      "googlePlay": "",
+      "web": ""
+    },
+    "icon": ""
+  }
+]

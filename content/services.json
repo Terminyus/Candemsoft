@@ -1,0 +1,127 @@
+[
+  {
+    "slug": "web",
+    "title": {
+      "tr": "Web yazılım",
+      "en": "Web development"
+    },
+    "summary": {
+      "tr": "Kurumsal siteler, e-ticaret ve işinize özel web uygulamaları. Hızlı açılan, arama motorunda bulunan, yönetimi kolay.",
+      "en": "Company websites, e-commerce and custom web apps. Fast to load, easy to find on search engines, easy to manage."
+    },
+    "items": {
+      "tr": [
+        "Kurumsal web siteleri",
+        "E-ticaret sistemleri",
+        "Özel web uygulamaları",
+        "Yönetim panelleri"
+      ],
+      "en": [
+        "Company websites",
+        "E-commerce systems",
+        "Custom web applications",
+        "Admin dashboards"
+      ]
+    }
+  },
+  {
+    "slug": "mobil",
+    "title": {
+      "tr": "Mobil uygulama",
+      "en": "Mobile apps"
+    },
+    "summary": {
+      "tr": "iOS ve Android için uygulamalar. Kendi ürünlerimizi App Store'a çıkardığımız süreçle müşteri uygulamalarını da yayına alıyoruz.",
+      "en": "Apps for iOS and Android. We ship client apps with the same process we use to put our own products on the App Store."
+    },
+    "items": {
+      "tr": [
+        "iOS uygulamaları",
+        "Android uygulamaları",
+        "Cross-platform (Flutter)",
+        "Mağaza yayın süreci"
+      ],
+      "en": [
+        "iOS apps",
+        "Android apps",
+        "Cross-platform (Flutter)",
+        "Store release process"
+      ]
+    }
+  },
+  {
+    "slug": "yapay-zeka",
+    "title": {
+      "tr": "Yapay zekâ",
+      "en": "AI"
+    },
+    "summary": {
+      "tr": "Ürünlere yapay zekâ özellikleri eklemek: metin üretimi, sınıflandırma, asistanlar. Gösteriş için değil, bir işi kısalttığı yerde.",
+      "en": "Adding AI features to products: text generation, classification, assistants. Where it actually saves time, not for show."
+    },
+    "items": {
+      "tr": [
+        "LLM entegrasyonu",
+        "Akıllı asistanlar",
+        "Metin ve görsel analizi",
+        "Mevcut sistemlere AI eklemek"
+      ],
+      "en": [
+        "LLM integration",
+        "Smart assistants",
+        "Text and image analysis",
+        "Adding AI to existing systems"
+      ]
+    }
+  },
+  {
+    "slug": "ui-ux",
+    "title": {
+      "tr": "UI/UX tasarım",
+      "en": "UI/UX design"
+    },
+    "summary": {
+      "tr": "Akışı ve ekranları kod yazmadan önce netleştiriyoruz. Geliştirme sırasında sürpriz azalıyor, değişiklik ucuz kalıyor.",
+      "en": "We settle flows and screens before writing code. Fewer surprises during development, cheaper changes."
+    },
+    "items": {
+      "tr": [
+        "Kullanıcı akışları",
+        "Arayüz tasarımı",
+        "Prototip",
+        "Tasarım sistemi"
+      ],
+      "en": [
+        "User flows",
+        "Interface design",
+        "Prototyping",
+        "Design systems"
+      ]
+    }
+  },
+  {
+    "slug": "danismanlik",
+    "title": {
+      "tr": "Danışmanlık",
+      "en": "Consulting"
+    },
+    "summary": {
+      "tr": "Ne yaptıracağınızdan emin değilseniz buradan başlayın. Teknoloji seçimi, proje planı, mevcut sistemin gözden geçirilmesi.",
+      "en": "Start here if you're not sure what to build. Technology choices, project planning, reviewing an existing system."
+    },
+    "items": {
+      "tr": [
+        "Proje yönetimi",
+        "Teknoloji danışmanlığı",
+        "Süreç iyileştirme",
+        "Kod ve altyapı incelemesi"
+      ],
+      "en": [
+        "Project management",
+        "Technology consulting",
+        "Process improvement",
+        "Code and infrastructure review"
+      ]
+    }
+  }
+]

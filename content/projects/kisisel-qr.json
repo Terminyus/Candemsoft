@@ -1,0 +1,47 @@
+{
+  "slug": "kisisel-qr",
+  "name": "Kişisel QR",
+  "url": "https://kisiselqr.com/",
+  "order": 4,
+  "featured": true,
+  "categories": [
+    "web"
+  ],
+  "type": {
+    "tr": "QR çözümleri",
+    "en": "QR solutions"
+  },
+  "sector": {
+    "tr": "Dijital hizmet",
+    "en": "Digital service"
+  },
+  "summary": {
+    "tr": "Kendi ürünümüz olan QR kod platformu.",
+    "en": "Our own QR code platform."
+  },
+  "year": null,
+  "services": [
+    "web"
+  ],
+  "stack": [],
+  "caseStudy": {
+    "challenge": {
+      "tr": "",
+      "en": ""
+    },
+    "approach": {
+      "tr": "",
+      "en": ""
+    },
+    "outcome": {
+      "tr": "",
+      "en": ""
+    }
+  },
+  "images": {
+    "desktop": "/projects/kisisel-qr/desktop.webp",
+    "mobile": "/projects/kisisel-qr/mobile.webp"
+  },
+  "_todo": "year, stack ve caseStudy alanlarını doldurun. Boş alanlar sitede gösterilmez. categories: web | mobil | kurumsal | e-ticaret",
+  "ownProduct": true
+}

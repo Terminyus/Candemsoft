@@ -1,0 +1,47 @@
+{
+  "slug": "proox",
+  "name": "Proox",
+  "url": "http://proox.com.tr/",
+  "order": 3,
+  "featured": true,
+  "categories": [
+    "kurumsal",
+    "web"
+  ],
+  "type": {
+    "tr": "Kurumsal web sitesi",
+    "en": "Company website"
+  },
+  "sector": {
+    "tr": "Kurumsal",
+    "en": "Corporate"
+  },
+  "summary": {
+    "tr": "Proox'un kurumsal web sitesi.",
+    "en": "Proox's company website."
+  },
+  "year": null,
+  "services": [
+    "web"
+  ],
+  "stack": [],
+  "caseStudy": {
+    "challenge": {
+      "tr": "",
+      "en": ""
+    },
+    "approach": {
+      "tr": "",
+      "en": ""
+    },
+    "outcome": {
+      "tr": "",
+      "en": ""
+    }
+  },
+  "images": {
+    "desktop": "/projects/proox/desktop.webp",
+    "mobile": "/projects/proox/mobile.webp"
+  },
+  "_todo": "year, stack ve caseStudy alanlarını doldurun. Boş alanlar sitede gösterilmez. categories: web | mobil | kurumsal | e-ticaret"
+}
