@@ -10,6 +10,9 @@ const toInternal = Object.fromEntries(
 ) as Record<Prefixed, Record<string, string>>;
 const trSegments = new Set<string>(all.map((r) => r.tr).filter(Boolean));
 
+/** Alternative designs live under their own top-level folder and share the URL scheme. */
+const sites = ["v2"] as const;
+
 // Rewrites carry the locale as a header so the global 404 (outside [lang]) can localize itself.
 function rewrite(request: NextRequest, url: URL, locale: string) {
   const headers = new Headers(request.headers);
@@ -19,14 +22,19 @@ function rewrite(request: NextRequest, url: URL, locale: string) {
 
 export function proxy(request: NextRequest) {
   const url = request.nextUrl.clone();
-  const parts = url.pathname.split("/").filter(Boolean);
+  let parts = url.pathname.split("/").filter(Boolean);
 
   // Metadata images live under the internal /tr|/en|/es tree and are referenced by that path.
   if (/\/(opengraph|twitter)-image/.test(url.pathname)) return NextResponse.next();
 
+  const site = sites.find((s) => s === parts[0]);
+  const base = site ? `/${site}` : "";
+  if (site) parts = parts.slice(1);
+  const join = (...p: string[]) => [base, ...p].join("/").replace(/\/+/g, "/").replace(/(.)\/$/, "$1") || "/";
+
   // /tr/... → /... (Turkish is the unprefixed default)
   if (parts[0] === "tr") {
-    url.pathname = "/" + parts.slice(1).join("/");
+    url.pathname = join("", ...parts.slice(1));
     return NextResponse.redirect(url, 308);
   }
 
@@ -34,21 +42,21 @@ export function proxy(request: NextRequest) {
   if (locale) {
     const [, segment, ...rest] = parts;
     if (!segment) {
-      url.pathname = `/${locale}`;
+      url.pathname = join("", locale);
       return rewrite(request, url, locale);
     }
     const map = toInternal[locale];
     // /en/hakkimizda → /en/about (canonical localized URL)
     if (!(segment in map) && trSegments.has(segment)) {
       const localized = all.find((r) => r.tr === segment)![locale];
-      url.pathname = ["", locale, localized, ...rest].join("/");
+      url.pathname = join("", locale, localized, ...rest);
       return NextResponse.redirect(url, 308);
     }
-    url.pathname = ["", locale, map[segment] ?? segment, ...rest].join("/");
+    url.pathname = join("", locale, map[segment] ?? segment, ...rest);
     return rewrite(request, url, locale);
   }
 
-  url.pathname = "/tr" + (url.pathname === "/" ? "" : url.pathname);
+  url.pathname = join("", "tr", ...parts);
   return rewrite(request, url, "tr");
 }
 
