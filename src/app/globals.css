@@ -34,6 +34,19 @@
   --color-news-ink: #141210;
   --color-news-gray: #57524a;
 
+  /* Derleme (v4): an editor at night. Syntax colours double as accents (all ≥ 5.6:1). */
+  --color-dev-bg: #07080a;
+  --color-dev-surface: #0f1115;
+  --color-dev-line: #1d2027;
+  --color-dev-text: #e8eaed;
+  --color-dev-muted: #9aa0a6;
+  --color-dev-comment: #8b949e;
+  --color-dev-key: #6b9bff;
+  --color-dev-str: #4ade80;
+  --color-dev-tag: #ff8a4c;
+  --color-dev-attr: #e3b341;
+  --color-dev-fn: #ff7ab6;
+
   --font-display: var(--ff-body), system-ui, sans-serif;
   --font-body: var(--ff-body), system-ui, sans-serif;
   --font-mono: var(--ff-mono), ui-monospace, monospace;
@@ -461,4 +474,95 @@
   to {
     opacity: 0;
   }
+}
+
+/* ---- Derleme (v4) ---- */
+.v4 {
+  font-family: "Geist", "Geist Fallback", system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+  --font-display: "Geist", system-ui, sans-serif;
+}
+@utility v4-mono {
+  font-family: "Geist Mono", ui-monospace, monospace;
+}
+@utility v4-title {
+  font-family: "Geist", system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+}
+/* Reading progress, drawn by the scroll position itself (no JS). */
+.v4-progress {
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+}
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .v4-progress {
+      animation: v4-grow linear both;
+      animation-timeline: scroll(root);
+    }
+  }
+}
+@keyframes v4-grow {
+  to {
+    transform: scaleX(1);
+  }
+}
+/* Rows and blocks that rise into place as they scroll into view (CSS only). */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .v4-rise {
+      animation: v4-rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 70%;
+    }
+  }
+}
+/* Motion only, no fade: text is never shown at reduced contrast, even mid-animation. */
+@keyframes v4-rise {
+  from {
+    transform: translateY(32px) scale(0.985);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .v4-pulse {
+    animation: v4-pulse 1.8s ease-out infinite;
+  }
+  .v4-marquee {
+    animation: v4-marquee 32s linear infinite;
+  }
+  .v4-marquee:hover {
+    animation-play-state: paused;
+  }
+  .v4-caret {
+    animation: blink 1.05s steps(1) infinite;
+  }
+}
+@keyframes v4-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.55);
+  }
+  100% {
+    box-shadow: 0 0 0 10px rgba(74, 222, 128, 0);
+  }
+}
+@keyframes v4-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Editor line numbers are drawn by CSS: decorative, deliberately faint, not text. */
+.v4-ln {
+  counter-increment: ln;
+}
+.v4-ln::before {
+  content: counter(ln);
+  width: 1.25rem;
+  margin-right: 1rem;
+  flex-shrink: 0;
+  text-align: right;
+  color: var(--color-dev-line);
+  user-select: none;
 }
