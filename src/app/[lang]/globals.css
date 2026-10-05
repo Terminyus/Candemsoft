@@ -26,10 +26,10 @@
 
   /* Fluid type: 360px → 1440px */
   --text-display: clamp(3.5rem, 1.67rem + 8.15vw, 10.5rem);
-  --text-display--line-height: 0.88;
+  --text-display--line-height: 0.92;
   --text-display--letter-spacing: -0.04em;
   --text-h1: clamp(2.5rem, 1.42rem + 4.81vw, 6rem);
-  --text-h1--line-height: 0.95;
+  --text-h1--line-height: 0.98;
   --text-h1--letter-spacing: -0.035em;
   --text-h2: clamp(2rem, 1.33rem + 2.96vw, 4rem);
   --text-h2--line-height: 1;

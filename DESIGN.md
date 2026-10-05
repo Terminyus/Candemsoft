@@ -56,8 +56,8 @@ Akışkan ölçek (`clamp`), 360px → 1440px arası:
 
 | Token | Mobil → Masaüstü | Kullanım |
 |---|---|---|
-| `display` | 56 → 168px, `line-height: .88`, `tracking: -0.04em` | Yalnızca hero ve bölüm açılışlarında, sayfa başına bir kez. |
-| `h1` | 40 → 96px, `lh .95` | Sayfa başlığı. |
+| `display` | 56 → 168px, `line-height: .92` (Türkçe büyük harf aksanları — Ş, İ, Ö — satırlar arasında çakışmasın diye .88'den yükseltildi), `tracking: -0.04em` | Yalnızca hero ve bölüm açılışlarında, sayfa başına bir kez. |
+| `h1` | 40 → 96px, `lh .98` | Sayfa başlığı. |
 | `h2` | 32 → 64px, `lh 1` | Bölüm başlığı. |
 | `h3` | 22 → 32px, `lh 1.1` | Kart/alt başlık. |
 | `lead` | 18 → 24px, `lh 1.4` | Giriş paragrafı. |
