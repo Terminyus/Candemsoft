@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { useRef, useState, type PointerEvent } from "react";
+import { useRef, useState, ViewTransition, type PointerEvent } from "react";
 import { AnimatePresence, motion, useMotionValue, useReducedMotion, useSpring } from "motion/react";
 import { cn } from "@/components/ui/cn";
 
@@ -57,7 +57,9 @@ function Preview({ item, x, y }: { item: IndexItem | null; x: ReturnType<typeof 
             className="relative aspect-[16/10] -translate-x-1/2 -translate-y-1/2 overflow-hidden bg-ink-900 shadow-[0_24px_60px_-20px_rgba(14,13,11,0.5)] ring-1 ring-ink-800"
           >
             {item.desktop ? (
-              <Image src={item.desktop} alt="" fill sizes="420px" className="object-cover object-top" />
+              <ViewTransition name={`shot-${item.slug}-desktop`} share="morph" default="none">
+                <Image src={item.desktop} alt="" fill sizes="420px" className="object-cover object-top" />
+              </ViewTransition>
             ) : (
               <span className="absolute left-3 top-3 font-mono text-mono-sm text-stone-400">{item.host}</span>
             )}
@@ -140,9 +142,11 @@ export function ProjectIndexView({ items, labels, filter, onFilter }: ViewProps)
             >
               <div className="grid grid-cols-4 items-baseline gap-x-6 gap-y-3 py-6 lg:grid-cols-12 lg:py-7">
                 {item.desktop && (
-                  <div className="relative col-span-full aspect-[16/10] overflow-hidden bg-ink-900 lg:hidden">
-                    <Image src={item.desktop} alt="" fill sizes="100vw" className="object-cover object-top" />
-                  </div>
+                  <ViewTransition name={`shot-${item.slug}-desktop`} share="morph" default="none">
+                    <div className="relative col-span-full aspect-[16/10] overflow-hidden bg-ink-900 lg:hidden">
+                      <Image src={item.desktop} alt="" fill sizes="100vw" className="object-cover object-top" />
+                    </div>
+                  </ViewTransition>
                 )}
                 <span className="col-span-1 hidden font-mono text-mono-sm text-stone-600 transition-colors group-hover:text-ember lg:block">
                   {String(i + 1).padStart(2, "0")}
