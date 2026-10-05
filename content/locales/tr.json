@@ -17,7 +17,8 @@
     "skip": "İçeriğe geç",
     "language": "Dil",
     "switchTo": "English",
-    "primary": "Ana menü"
+    "primary": "Ana menü",
+    "privacy": "Gizlilik"
   },
   "common": {
     "visitSite": "Siteyi ziyaret et",
@@ -34,7 +35,9 @@
   "notFound": {
     "title": "Bu sayfa yok.",
     "body": "Adres değişmiş ya da hiç var olmamış olabilir.",
-    "home": "Ana sayfaya dön"
+    "home": "Ana sayfaya dön",
+    "error": "böyle bir dosya ya da dizin yok",
+    "try": "Şunlardan birini deneyin:"
   },
   "footer": {
     "lead": "Bir proje, bir soru ya da sadece merhaba:",
@@ -82,5 +85,143 @@
   },
   "stats": {
     "products": "yayında kendi ürünümüz"
+  },
+  "about": {
+    "label": "Hakkımızda",
+    "title": "İstanbul'da bir yazılım ekibi.",
+    "lead": "2025'ten beri Candemsoft adıyla çalışıyoruz. İki işimiz var: müşterilerimiz için yazılım yapmak ve kendi ürünlerimizi geliştirmek.",
+    "twoLabel": "İki taraf",
+    "clientTitle": "Müşteri işleri",
+    "clientBody": "Kurumsal siteler, e-ticaret, destek sistemleri, finans platformları. Konuşarak başlıyoruz, yayına alıp devrediyoruz.",
+    "ownTitle": "Kendi ürünlerimiz",
+    "ownBody": "Mobil uygulamalarımızı kendimiz tasarlıyor, geliştiriyor ve mağazaya çıkarıyoruz. Mağaza süreçlerini, kullanıcı geri bildirimini ve güncelleme döngüsünü kendi ürünlerimizde de yaşıyoruz.",
+    "principlesLabel": "Nasıl çalışıyoruz",
+    "principles": [
+      {
+        "title": "Önce doğru, sonra hızlı.",
+        "body": "Her projede aynı kalite çıtası. Acele, sonradan pahalıya çıkan kısayollar demek."
+      },
+      {
+        "title": "Açık konuşuruz.",
+        "body": "Kapsam, takvim ve maliyet en baştan yazılı. Değişirse önce siz duyarsınız."
+      },
+      {
+        "title": "Yeniyi deneriz, işe yarayanı kullanırız.",
+        "body": "Teknoloji seçimini moda değil, projenin ihtiyacı belirler."
+      }
+    ],
+    "numbersLabel": "Rakamlarla",
+    "founded": "kuruluş yılı",
+    "teamCta": "Ekibi tanıyın"
+  },
+  "servicesPage": {
+    "label": "Hizmetler",
+    "title": "Ne yapıyoruz, nasıl yapıyoruz.",
+    "lead": "Beş alanda çalışıyoruz. Çoğu proje birden fazlasına dokunur: bir e-ticaret sitesi aynı zamanda bir tasarım ve çoğu zaman bir mobil uygulama işidir.",
+    "includes": "Kapsam",
+    "related": "Bu alandaki işler",
+    "stackLabel": "Kullandığımız teknolojiler",
+    "cta": "Bu konuda konuşalım"
+  },
+  "projectsPage": {
+    "label": "Projeler",
+    "title": "Yaptığımız işler.",
+    "lead": "Müşteri projelerimiz. Hepsi canlı; isme tıklayın, detayına bakın ya da doğrudan siteye gidin.",
+    "filterLabel": "Kategoriye göre filtrele",
+    "all": "Tümü",
+    "categories": {
+      "web": "Web",
+      "mobil": "Mobil",
+      "kurumsal": "Kurumsal",
+      "e-ticaret": "E-ticaret"
+    },
+    "count": "{n} proje",
+    "empty": "Bu kategoride henüz yayınlanmış bir müşteri projesi yok.",
+    "emptyMobile": "Kendi mobil uygulamalarımız için Ürünler sayfasına bakın.",
+    "ownProduct": "Kendi ürünümüz",
+    "colName": "Proje",
+    "colType": "Tür",
+    "colSector": "Sektör"
+  },
+  "projectPage": {
+    "type": "Tür",
+    "sector": "Sektör",
+    "year": "Yıl",
+    "services": "Hizmet",
+    "stack": "Teknoloji",
+    "challenge": "Problem",
+    "approach": "Yaklaşım",
+    "outcome": "Sonuç",
+    "visit": "Canlı siteye git",
+    "next": "Sonraki proje",
+    "desktop": "Masaüstü",
+    "mobile": "Mobil"
+  },
+  "productsPage": {
+    "label": "Ürünler",
+    "title": "Kendi ürünlerimiz.",
+    "lead": "Müşteri işlerinin yanında kendi uygulamalarımızı da geliştiriyoruz. Bazıları yayında, biri yolda.",
+    "appStore": "App Store'da indir",
+    "googlePlay": "Google Play'de indir",
+    "web": "Siteye git",
+    "androidSoon": "Android sürümü yolda",
+    "platforms": "Platform"
+  },
+  "teamPage": {
+    "label": "Ekip",
+    "title": "Kimler var.",
+    "lead": "Candemsoft'u yapan insanlar. Yazılım, mobil, test ve proje yönetimi aynı masada.",
+    "placeholderNote": "Ekip bilgileri hazırlanıyor."
+  },
+  "blogPage": {
+    "label": "Blog",
+    "title": "Yazılar.",
+    "lead": "Çalışırken öğrendiklerimiz. Kısa, teknik, işe yarar.",
+    "readingTime": "{n} dk okuma",
+    "empty": "Henüz yazı yok."
+  },
+  "contactPage": {
+    "label": "İletişim",
+    "title": "Ne yapmak istediğinizi anlatın.",
+    "lead": "Formu doldurun ya da doğrudan yazın. Bir fikir, bir teklif isteği ya da mevcut bir sistemle ilgili bir soru olabilir.",
+    "direct": "Doğrudan",
+    "form": {
+      "name": "Adınız",
+      "email": "E-posta",
+      "phone": "Telefon",
+      "optional": "isteğe bağlı",
+      "topic": "Konu",
+      "topics": [
+        "Teklif talebi",
+        "Genel bilgi",
+        "Teknik destek",
+        "İş birliği",
+        "Diğer"
+      ],
+      "message": "Mesajınız",
+      "messageHint": "{n}/1000",
+      "consent": "Mesajımı yanıtlamak için bilgilerimin işlenmesini kabul ediyorum.",
+      "consentLink": "Aydınlatma metni",
+      "submit": "Gönder",
+      "sending": "Gönderiliyor…",
+      "success": "Mesajınız alındı. Teşekkürler.",
+      "mailtoFallback": "E-posta uygulamanız açıldı. Mesajı oradan gönderebilirsiniz.",
+      "error": "Gönderilemedi. Lütfen info@candemsoft.com adresine doğrudan yazın.",
+      "errors": {
+        "name": "Adınızı yazın.",
+        "email": "Geçerli bir e-posta adresi yazın.",
+        "message": "Mesaj en az 10 karakter olmalı.",
+        "consent": "Devam etmek için onay gerekiyor."
+      }
+    }
+  },
+  "cookies": {
+    "text": "Bu site analiz ya da reklam çerezi kullanmaz. Yalnızca bu bildirimi kapattığınızı hatırlamak için tarayıcınıza küçük bir kayıt bırakır.",
+    "ok": "Anladım",
+    "more": "Gizlilik"
+  },
+  "privacyPage": {
+    "label": "Gizlilik",
+    "title": "Gizlilik ve KVKK aydınlatma metni."
   }
 }

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Locale } from "@/i18n/config";
+import { href } from "@/i18n/routes";
 import type { Dictionary } from "@/lib/dictionary";
 import { getSite } from "@/lib/content";
 import { Logo } from "@/components/ui/Logo";
@@ -63,7 +64,10 @@ export function Footer({ lang, dict, items }: { lang: Locale; dict: Dictionary; 
         <div className="mt-(--section-sm) flex flex-wrap items-end justify-between gap-6 border-t border-ink-800 pt-6">
           <Logo className="h-6 md:h-6" />
           <p className="font-mono text-mono-sm text-stone-400">
-            © {year} Candemsoft · {dict.footer.rights}
+            © {year} Candemsoft · {dict.footer.rights} ·{" "}
+            <Link href={href(lang, "privacy")} className="underline underline-offset-4 hover:text-paper-100">
+              {dict.nav.privacy}
+            </Link>
           </p>
         </div>
       </div>

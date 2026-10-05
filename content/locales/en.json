@@ -17,7 +17,8 @@
     "skip": "Skip to content",
     "language": "Language",
     "switchTo": "Türkçe",
-    "primary": "Main menu"
+    "primary": "Main menu",
+    "privacy": "Privacy"
   },
   "common": {
     "visitSite": "Visit site",
@@ -34,7 +35,9 @@
   "notFound": {
     "title": "This page doesn't exist.",
     "body": "The address may have changed, or it never existed.",
-    "home": "Back to home"
+    "home": "Back to home",
+    "error": "no such file or directory",
+    "try": "Try one of these:"
   },
   "footer": {
     "lead": "A project, a question, or just hello:",
@@ -82,5 +85,143 @@
   },
   "stats": {
     "products": "of our own products live"
+  },
+  "about": {
+    "label": "About",
+    "title": "A software team in Istanbul.",
+    "lead": "We've worked as Candemsoft since 2025. We do two things: build software for clients, and build our own products.",
+    "twoLabel": "Two sides",
+    "clientTitle": "Client work",
+    "clientBody": "Company sites, e-commerce, support systems, finance platforms. We start by talking, and we finish by shipping and handing over.",
+    "ownTitle": "Our own products",
+    "ownBody": "We design, build and publish our own mobile apps. Store reviews, user feedback and update cycles: we live with them on our own products too.",
+    "principlesLabel": "How we work",
+    "principles": [
+      {
+        "title": "Right first, then fast.",
+        "body": "The same quality bar on every project. Rushing means shortcuts that cost more later."
+      },
+      {
+        "title": "We talk plainly.",
+        "body": "Scope, timeline and cost are written down from the start. If they change, you hear it first."
+      },
+      {
+        "title": "We try new things and keep what works.",
+        "body": "The project's needs choose the technology, not trends."
+      }
+    ],
+    "numbersLabel": "In numbers",
+    "founded": "founded",
+    "teamCta": "Meet the team"
+  },
+  "servicesPage": {
+    "label": "Services",
+    "title": "What we do, and how.",
+    "lead": "We work in five areas. Most projects touch several: an e-commerce site is also a design job, and often a mobile app.",
+    "includes": "Scope",
+    "related": "Work in this area",
+    "stackLabel": "Technologies we use",
+    "cta": "Let's talk about this"
+  },
+  "projectsPage": {
+    "label": "Projects",
+    "title": "Work we've done.",
+    "lead": "Our client projects. All of them are live: click a name for details, or go straight to the site.",
+    "filterLabel": "Filter by category",
+    "all": "All",
+    "categories": {
+      "web": "Web",
+      "mobil": "Mobile",
+      "kurumsal": "Corporate",
+      "e-ticaret": "E-commerce"
+    },
+    "count": "{n} projects",
+    "empty": "No published client projects in this category yet.",
+    "emptyMobile": "See the Products page for our own mobile apps.",
+    "ownProduct": "Our product",
+    "colName": "Project",
+    "colType": "Type",
+    "colSector": "Sector"
+  },
+  "projectPage": {
+    "type": "Type",
+    "sector": "Sector",
+    "year": "Year",
+    "services": "Service",
+    "stack": "Stack",
+    "challenge": "Problem",
+    "approach": "Approach",
+    "outcome": "Outcome",
+    "visit": "Visit the live site",
+    "next": "Next project",
+    "desktop": "Desktop",
+    "mobile": "Mobile"
+  },
+  "productsPage": {
+    "label": "Products",
+    "title": "Our own products.",
+    "lead": "Alongside client work, we build our own apps. Some are live, one is on the way.",
+    "appStore": "Download on the App Store",
+    "googlePlay": "Get it on Google Play",
+    "web": "Visit site",
+    "androidSoon": "Android version on the way",
+    "platforms": "Platform"
+  },
+  "teamPage": {
+    "label": "Team",
+    "title": "Who's here.",
+    "lead": "The people who make Candemsoft. Engineering, mobile, testing and project management at the same table.",
+    "placeholderNote": "Team details are being prepared."
+  },
+  "blogPage": {
+    "label": "Blog",
+    "title": "Writing.",
+    "lead": "Things we learn while working. Short, technical, useful.",
+    "readingTime": "{n} min read",
+    "empty": "No posts yet."
+  },
+  "contactPage": {
+    "label": "Contact",
+    "title": "Tell us what you want to build.",
+    "lead": "Fill in the form or write to us directly. An idea, a request for a quote, or a question about an existing system.",
+    "direct": "Directly",
+    "form": {
+      "name": "Your name",
+      "email": "Email",
+      "phone": "Phone",
+      "optional": "optional",
+      "topic": "Topic",
+      "topics": [
+        "Request a quote",
+        "General information",
+        "Technical support",
+        "Partnership",
+        "Other"
+      ],
+      "message": "Your message",
+      "messageHint": "{n}/1000",
+      "consent": "I agree to my details being processed to reply to my message.",
+      "consentLink": "Privacy notice",
+      "submit": "Send",
+      "sending": "Sending…",
+      "success": "Message received. Thank you.",
+      "mailtoFallback": "Your email app has opened. You can send the message from there.",
+      "error": "Couldn't send. Please write to info@candemsoft.com directly.",
+      "errors": {
+        "name": "Please enter your name.",
+        "email": "Please enter a valid email address.",
+        "message": "The message should be at least 10 characters.",
+        "consent": "Consent is required to continue."
+      }
+    }
+  },
+  "cookies": {
+    "text": "This site uses no analytics or advertising cookies. It only stores a small note in your browser to remember that you closed this message.",
+    "ok": "Got it",
+    "more": "Privacy"
+  },
+  "privacyPage": {
+    "label": "Privacy",
+    "title": "Privacy notice."
   }
 }

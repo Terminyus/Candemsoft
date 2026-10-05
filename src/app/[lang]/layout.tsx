@@ -6,6 +6,7 @@ import { resolveLang } from "@/lib/params";
 import { Header, type NavItem } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SkipLink } from "@/components/layout/SkipLink";
+import { CookieNotice } from "@/components/layout/CookieNotice";
 import { body, display, mono } from "./fonts";
 import "./globals.css";
 
@@ -46,6 +47,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
           {children}
         </main>
         <Footer lang={lang} dict={dict} items={items} />
+        <CookieNotice text={dict.cookies.text} ok={dict.cookies.ok} more={dict.cookies.more} moreHref={href(lang, "privacy")} />
       </body>
     </html>
   );

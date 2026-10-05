@@ -16,6 +16,8 @@ const browser = await chromium.launch();
 for (const [name, vp] of Object.entries(viewports)) {
   const { isMobile, deviceScaleFactor, ...viewport } = vp;
   const context = await browser.newContext({ viewport, isMobile, deviceScaleFactor, reducedMotion: "reduce" });
+  // Dismiss the cookie notice: a fixed element would float mid-page in full-page captures.
+  await context.addInitScript(() => window.localStorage.setItem("cs-notice-v1", "1"));
   const page = await context.newPage();
   for (const p of paths) {
     await page.goto(base + p, { waitUntil: "networkidle" });

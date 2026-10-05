@@ -6,6 +6,7 @@ import type { Locale } from "@/i18n/config";
 import { switchLocalePath } from "@/i18n/routes";
 import { cn } from "@/components/ui/cn";
 
+// Switching locale swaps the root layout (full load), so prefetching the other tree only produces failed segment requests.
 export function LanguageSwitch({ lang, label, className }: { lang: Locale; label: string; className?: string }) {
   const pathname = usePathname();
   const target: Locale = lang === "tr" ? "en" : "tr";
@@ -13,6 +14,7 @@ export function LanguageSwitch({ lang, label, className }: { lang: Locale; label
     <Link
       href={switchLocalePath(pathname, lang, target)}
       hrefLang={target}
+      prefetch={false}
       lang={target}
       aria-label={label}
       className={cn("font-mono text-mono-sm transition-colors hover:text-signal", className)}
