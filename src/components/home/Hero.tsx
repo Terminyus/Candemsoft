@@ -21,10 +21,10 @@ export function Hero({ lang, dict }: { lang: Locale; dict: Dictionary }) {
         </MonoLabel>
 
         <h1 id="hero-title" className="col-span-full font-display-tight text-display font-semibold">
-          <span className="block">{dict.home.heroLine1}</span>
-          <span className="block lg:pl-[16.66%]">
+          <span className="settle block">{dict.home.heroLine1}</span>
+          <span className="settle settle-2 block lg:pl-[16.66%]">
             {dict.home.heroLine2.replace(/\.$/, "")}
-            <span className="text-signal">.</span>
+            <span className="settle-dot text-signal">.</span>
           </span>
         </h1>
 

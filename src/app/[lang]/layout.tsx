@@ -7,6 +7,10 @@ import { Header, type NavItem } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SkipLink } from "@/components/layout/SkipLink";
 import { CookieNotice } from "@/components/layout/CookieNotice";
+import { CommandPalette } from "@/components/terminal/CommandPalette";
+import { TerminalTrigger } from "@/components/terminal/TerminalTrigger";
+import { getTerminalData } from "@/lib/terminal/data";
+import { run } from "@/lib/terminal/engine";
 import { body, display, mono } from "./fonts";
 import "./globals.css";
 
@@ -33,6 +37,15 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
   const lang = await resolveLang(params);
   const dict = await getDictionary(lang);
   const items: NavItem[] = navKeys.map((key) => ({ key, label: dict.nav[key], href: href(lang, key) }));
+  const terminal = getTerminalData(lang, dict);
+  const terminalLabels = {
+    title: dict.terminal.title,
+    hint: dict.terminal.hint,
+    prompt: dict.terminal.prompt,
+    inputLabel: dict.terminal.inputLabel,
+    hintKeys: dict.terminal.hintKeys,
+    close: dict.terminal.close,
+  };
   return (
     <html lang={lang} className={`${display.variable} ${body.variable} ${mono.variable}`}>
       <body>
@@ -42,11 +55,13 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
           home={href(lang, "home")}
           items={items}
           labels={{ menu: dict.nav.menu, close: dict.nav.close, switchTo: dict.nav.switchTo, primary: dict.nav.primary }}
+          extra={<TerminalTrigger label={dict.terminal.openPalette} />}
         />
         <main id="main" tabIndex={-1} className="outline-none">
           {children}
         </main>
         <Footer lang={lang} dict={dict} items={items} />
+        <CommandPalette data={terminal} labels={terminalLabels} initial={run(terminal, "help").lines} />
         <CookieNotice text={dict.cookies.text} ok={dict.cookies.ok} more={dict.cookies.more} moreHref={href(lang, "privacy")} />
       </body>
     </html>

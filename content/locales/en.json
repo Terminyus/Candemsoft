@@ -78,10 +78,57 @@
       "projects": "client work",
       "services": "what we do",
       "products": "our own apps",
-      "team": "the team",
+      "team": "who is here",
       "blog": "writing",
-      "contact": "write to us"
-    }
+      "contact": "write to us",
+      "about": "who we are"
+    },
+    "prompt": "type a command…",
+    "inputLabel": "Terminal command",
+    "openPalette": "Open command palette",
+    "close": "Close",
+    "notFound": "command not found: {cmd}",
+    "didYouMean": "Did you mean?",
+    "helpIntro": "Pages (type or click):",
+    "helpMore": "Other commands:",
+    "more": [
+      {
+        "cmd": "ls projects",
+        "desc": "list projects"
+      },
+      {
+        "cmd": "open <project>",
+        "desc": "open a project"
+      },
+      {
+        "cmd": "cat <service>",
+        "desc": "service summary"
+      },
+      {
+        "cmd": "mail · whatsapp · tel",
+        "desc": "reach us"
+      },
+      {
+        "cmd": "lang tr",
+        "desc": "switch to Turkish"
+      },
+      {
+        "cmd": "clear",
+        "desc": "clear the screen"
+      }
+    ],
+    "going": "→ {target}",
+    "opening": "↗ opening {target} in a new tab",
+    "noMatch": "no match: {arg}",
+    "needArg": "usage: {usage}",
+    "whoami": "visitor. Welcome.",
+    "sudo": "This visitor has no permissions. But you can get in touch:",
+    "projectsHeading": "Projects:",
+    "productsHeading": "Products:",
+    "servicesHeading": "Services:",
+    "offline": "offline",
+    "hintKeys": "Tab completes · ↑↓ history · Esc closes",
+    "shortcut": "⌘K"
   },
   "stats": {
     "products": "of our own products live"

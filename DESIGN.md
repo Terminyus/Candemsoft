@@ -133,3 +133,26 @@ Terminal sitenin "nasıl çalıştığımızı" anlatan tek yerdir: lafla değil
 - Kısa, somut, birinci çoğul şahıs. "Yenilikçi çözümler" değil, "Altem için ürün, stok ve sipariş akışını tek panelde topladık."
 - Boş sıfat yasak listesi: *yenilikçi, öncü, lider, geleceği inşa, bir üst seviye, dijital dönüşüm yolculuğu, uçtan uca mükemmellik*.
 - Kanıtlanabilir rakamlar: yalnızca **50+ proje** ve **3+ yıl**. Diğer her şey için onay gerekir.
+
+## Hareket envanteri
+
+Sitedeki her animasyon ve neden var olduğu. Buraya yazılmayan animasyon eklenmez.
+
+| Nerede | Ne | Amaç | Teknik |
+|---|---|---|---|
+| Hero başlığı | Satırlar 0.14em aşağıdan yerine oturur, turuncu nokta düşer | Anlatım: "komut verilir, sistem yerine oturur" | Yalnızca CSS `transform`; metin ilk karede görünür, LCP gecikmez |
+| `candem.sh` | Tıklanan komut input'a yazılır, sonra çalışır | Geri bildirim: tıklamak ile yazmanın aynı şey olduğunu öğretir | `setInterval`, en fazla ~300ms; reduced-motion'da anında |
+| `candem.sh` | Çalışan komut "→ hedef" yazar, 280ms sonra gider | Yönlendirme: nereye gidildiği görülür | reduced-motion'da 0ms |
+| Komut paleti | Hafif aşağı kayarak ve belirerek açılır | Yönlendirme: katmanın üstte olduğu anlaşılır | CSS `@keyframes` (opacity + transform) |
+| Ana sayfa, Hizmetler | Ekranın ortasından geçen hizmet "aktif" olur, diğer başlıklar geri çekilir; sayaç ve ilerleme çizgisi | Anlatım: uzun listede nerede olunduğu | GSAP ScrollTrigger (hydration sonrası dinamik import), `opacity` + `scaleX` |
+| Proje kartı / liste → detay | Ekran görüntüsü yeni sayfadaki yerine morph olur | Yönlendirme: aynı işe bakıldığı kopmadan anlaşılır | React `<ViewTransition>` + View Transitions API; desteklemeyen tarayıcıda normal geçiş |
+| Projeler listesi | İmleçle dikeyde ilerleyen ekran görüntüsü önizlemesi | Geri bildirim: tıklamadan önce işi görmek | Motion `useSpring`, yalnızca `transform`; dokunmatik cihazda yok |
+| Projeler filtresi | Satırlar yeni düzene kayar | Geri bildirim: filtrenin neyi değiştirdiği | Motion `layout` |
+| Header | Aşağı okurken gizlenir, yukarı kaydırınca döner | Yönlendirme: okuma alanı + her an erişilebilir menü | CSS `transform` |
+| Mobil menü | Linkler sırayla belirir | Yönlendirme | Motion, 30ms aralık |
+| Butonlar, listeler | Ok 4px kayar, satır başlığı 8px kayar | Geri bildirim (hover) | CSS `transform`, 120–240ms |
+| Terminal imleci | Yanıp söner | Geri bildirim: burası yazılabilir | CSS; reduced-motion'da sabit |
+
+**Lenis kullanılmadı.** Scroll anlatımı tek bir bölümde ve native scroll ile sorunsuz çalışıyor. Yumuşak kaydırma kütüphanesi kullanıcının kaydırma hızını ve işletim sistemi ayarlarını ezer, ekstra JS yükler; burada karşılığında bir şey kazandırmıyor.
+
+`prefers-reduced-motion: reduce` açıkken: başlık, palet ve terminal yazma efekti yok; View Transitions animasyonu yok; geçiş süreleri ~0. Hizmetler bölümündeki aktif satır vurgusu kalır (hareket değil, durum).

@@ -10,7 +10,8 @@
     "typecheck": "tsc --noEmit",
     "format": "prettier --write .",
     "screenshots": "node scripts/screenshots.mjs",
-    "capture:projects": "node scripts/capture-projects.mjs"
+    "capture:projects": "node scripts/capture-projects.mjs",
+    "test": "tsx --test src/**/*.test.ts"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",
@@ -36,6 +37,7 @@
     "prettier": "^3.9.9",
     "sharp": "^0.35.5",
     "tailwindcss": "^4",
+    "tsx": "^4.23.15",
     "typescript": "^5"
   }
 }

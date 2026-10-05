@@ -182,3 +182,80 @@
     opacity: 0;
   }
 }
+
+/* Command palette: dialog fades and settles in; instant when reduced motion is on. */
+.palette[open] {
+  animation: palette-in var(--duration-2) var(--ease-out);
+}
+.palette[open]::backdrop {
+  animation: fade-in var(--duration-2) var(--ease-out);
+}
+@keyframes palette-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.99);
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+/* Services narration (ServicesScroll). Only applies once JS has taken over. */
+.service-row h3 {
+  transition: opacity var(--duration-3) var(--ease-out);
+}
+/* Only the large titles step back (opacity .5 keeps them above 3:1); body text stays fully readable. */
+[data-narrated] .service-row:not([data-active]) h3 {
+  opacity: 0.5;
+}
+[data-narrated] .service-row[data-active] span:first-child {
+  color: var(--color-signal);
+}
+
+/* Hero headline settles into place on first paint. Transform only: the text is
+   visible from the first frame, so LCP is not delayed. */
+@media (prefers-reduced-motion: no-preference) {
+  .settle {
+    animation: settle 900ms var(--ease-out) both;
+  }
+  .settle-2 {
+    animation-delay: 70ms;
+  }
+  .settle-dot {
+    display: inline-block;
+    animation: settle-dot 700ms 420ms var(--ease-out) both;
+  }
+}
+@keyframes settle {
+  from {
+    transform: translateY(0.14em);
+  }
+}
+@keyframes settle-dot {
+  from {
+    transform: translateY(-0.5em) scale(0.6);
+  }
+}
+
+/* Project screenshot morph between list/home and the case study (React <ViewTransition>). */
+::view-transition-group(.morph) {
+  animation-duration: 520ms;
+  animation-timing-function: var(--ease-in-out);
+}
+::view-transition-image-pair(.morph) {
+  animation-name: via-blur;
+}
+@keyframes via-blur {
+  30% {
+    filter: blur(2px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}

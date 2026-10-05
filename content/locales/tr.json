@@ -78,10 +78,57 @@
       "projects": "müşteri işleri",
       "services": "ne yapıyoruz",
       "products": "kendi uygulamalarımız",
-      "team": "ekip",
+      "team": "kimler var",
       "blog": "yazılar",
-      "contact": "bize yazın"
-    }
+      "contact": "bize yazın",
+      "about": "biz kimiz"
+    },
+    "prompt": "komut yazın…",
+    "inputLabel": "Terminal komutu",
+    "openPalette": "Komut paletini aç",
+    "close": "Kapat",
+    "notFound": "komut bulunamadı: {cmd}",
+    "didYouMean": "Bunu mu demek istediniz?",
+    "helpIntro": "Sayfalar (yazın ya da tıklayın):",
+    "helpMore": "Diğer komutlar:",
+    "more": [
+      {
+        "cmd": "ls projeler",
+        "desc": "proje listesi"
+      },
+      {
+        "cmd": "open <proje>",
+        "desc": "projeyi aç"
+      },
+      {
+        "cmd": "cat <hizmet>",
+        "desc": "hizmet özeti"
+      },
+      {
+        "cmd": "mail · whatsapp · tel",
+        "desc": "bize ulaşın"
+      },
+      {
+        "cmd": "lang en",
+        "desc": "İngilizceye geç"
+      },
+      {
+        "cmd": "clear",
+        "desc": "ekranı temizle"
+      }
+    ],
+    "going": "→ {target}",
+    "opening": "↗ {target} yeni sekmede açılıyor",
+    "noMatch": "eşleşme yok: {arg}",
+    "needArg": "kullanım: {usage}",
+    "whoami": "ziyaretçi. Hoş geldiniz.",
+    "sudo": "Bu ziyaretçinin yetkisi yok. Ama iletişime geçebilirsiniz:",
+    "projectsHeading": "Projeler:",
+    "productsHeading": "Ürünler:",
+    "servicesHeading": "Hizmetler:",
+    "offline": "yayında değil",
+    "hintKeys": "Tab tamamlar · ↑↓ geçmiş · Esc kapatır",
+    "shortcut": "⌘K"
   },
   "stats": {
     "products": "yayında kendi ürünümüz"
