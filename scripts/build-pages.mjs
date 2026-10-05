@@ -39,7 +39,7 @@ function redirect(file, target) {
   );
 }
 redirect("out/index.html", `${basePath}/tr/`);
-for (const site of ["v2", "v3"])
+for (const site of ["v2", "v3", "v4"])
   if (fs.existsSync(`out/${site}`)) redirect(`out/${site}/index.html`, `${basePath}/${site}/tr/`);
 // Pages serves 404.html for unknown paths; use the localized not-found page.
 const notFound = ["out/404.html", "out/tr/404.html", "out/_not-found.html", "out/_not-found/index.html"].find((f) => fs.existsSync(f));

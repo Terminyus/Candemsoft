@@ -71,3 +71,8 @@ export function v2(path: string): string {
 export function v3(path: string): string {
   return path === "/" ? "/v3" : `/v3${path}`;
 }
+
+/** URL inside the alternative "Derleme" design (/v4). */
+export function v4(path: string): string {
+  return path === "/" ? "/v4" : `/v4${path}`;
+}
