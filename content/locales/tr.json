@@ -27,7 +27,9 @@
     "backToBlog": "Bloga dön",
     "comingSoon": "Yakında",
     "live": "Yayında",
-    "todo": "İçerik bekleniyor"
+    "todo": "İçerik bekleniyor",
+    "shotDesktop": "{name} sitesinin masaüstü görünümü",
+    "shotMobile": "{name} sitesinin mobil görünümü"
   },
   "notFound": {
     "title": "Bu sayfa yok.",
@@ -39,5 +41,46 @@
     "sitemap": "Sayfalar",
     "reach": "Ulaşın",
     "rights": "Tüm hakları saklıdır."
+  },
+  "home": {
+    "heroLine1": "Çalışır halde",
+    "heroLine2": "teslim ederiz.",
+    "heroLead": "Candemsoft, İstanbul'da web siteleri, mobil uygulamalar ve yapay zekâ özellikleri geliştiren bir yazılım ekibi. Müşterilerimiz için yazıyoruz, kendi ürünlerimizi de App Store'a çıkarıyoruz.",
+    "heroCta": "Projenizi anlatın",
+    "heroSecondary": "İşlerimize bakın",
+    "workLabel": "Seçili işler",
+    "workTitle": "Canlıda, kullanılıyor.",
+    "workBody": "Her biri bugün açık ve çalışıyor. Linke tıklayıp kendiniz bakabilirsiniz.",
+    "servicesLabel": "Hizmetler",
+    "servicesTitle": "Ne yapıyoruz",
+    "servicesAll": "Hizmet detayları",
+    "productsLabel": "Kendi ürünlerimiz",
+    "productsTitle": "Kendi ürünlerimizi de yapıyoruz.",
+    "productsBody": "Müşteri işlerinde kullandığımız süreç, kendi uygulamalarımızda da aynı.",
+    "productsAll": "Tüm ürünler",
+    "contactLabel": "Sıradaki proje",
+    "contactTitle": "Ne yapmak istediğinizi anlatın.",
+    "contactBody": "Kısa bir mesaj yeter; gerisini birlikte netleştiririz.",
+    "contactForm": "İletişim formu",
+    "contactWhatsapp": "WhatsApp'tan yazın",
+    "contactCall": "Arayın",
+    "visualPending": "Ekran görüntüsü bekleniyor",
+    "heroTag": "İstanbul — web · mobil · yapay zekâ · ui/ux · danışmanlık"
+  },
+  "terminal": {
+    "title": "candem.sh",
+    "user": "ziyaretci@candemsoft",
+    "hint": "Komut yazın ya da tıklayın",
+    "cmd": {
+      "projects": "müşteri işleri",
+      "services": "ne yapıyoruz",
+      "products": "kendi uygulamalarımız",
+      "team": "ekip",
+      "blog": "yazılar",
+      "contact": "bize yazın"
+    }
+  },
+  "stats": {
+    "products": "yayında kendi ürünümüz"
   }
 }

@@ -113,3 +113,8 @@ export async function getPosts(lang: Locale): Promise<PostMeta[]> {
   const posts = await Promise.all(getPostSlugs(lang).map(async (slug) => (await getPost(lang, slug)).meta));
   return posts.sort((a, b) => b.date.localeCompare(a.date));
 }
+
+/** True when a file exists under /public (used to fall back gracefully before screenshots exist). */
+export function publicFileExists(publicPath: string): boolean {
+  return fs.existsSync(path.join(process.cwd(), "public", publicPath));
+}

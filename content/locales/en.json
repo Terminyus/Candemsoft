@@ -27,7 +27,9 @@
     "backToBlog": "Back to blog",
     "comingSoon": "Coming soon",
     "live": "Live",
-    "todo": "Content pending"
+    "todo": "Content pending",
+    "shotDesktop": "{name} website on desktop",
+    "shotMobile": "{name} website on mobile"
   },
   "notFound": {
     "title": "This page doesn't exist.",
@@ -39,5 +41,46 @@
     "sitemap": "Pages",
     "reach": "Reach us",
     "rights": "All rights reserved."
+  },
+  "home": {
+    "heroLine1": "We ship it",
+    "heroLine2": "working.",
+    "heroLead": "Candemsoft is a software team in Istanbul building websites, mobile apps and AI features. We build for clients, and we ship our own products to the App Store.",
+    "heroCta": "Tell us about your project",
+    "heroSecondary": "See our work",
+    "workLabel": "Selected work",
+    "workTitle": "Live, and in use.",
+    "workBody": "Every one of these is online and working today. Click through and look for yourself.",
+    "servicesLabel": "Services",
+    "servicesTitle": "What we do",
+    "servicesAll": "Service details",
+    "productsLabel": "Our products",
+    "productsTitle": "We build our own products, too.",
+    "productsBody": "The process we use for client work is the same one we use for our own apps.",
+    "productsAll": "All products",
+    "contactLabel": "Next project",
+    "contactTitle": "Tell us what you want to build.",
+    "contactBody": "A short message is enough; we'll work out the rest together.",
+    "contactForm": "Contact form",
+    "contactWhatsapp": "Message on WhatsApp",
+    "contactCall": "Call us",
+    "visualPending": "Screenshot pending",
+    "heroTag": "Istanbul — web · mobile · AI · UI/UX · consulting"
+  },
+  "terminal": {
+    "title": "candem.sh",
+    "user": "visitor@candemsoft",
+    "hint": "Type a command or click one",
+    "cmd": {
+      "projects": "client work",
+      "services": "what we do",
+      "products": "our own apps",
+      "team": "the team",
+      "blog": "writing",
+      "contact": "write to us"
+    }
+  },
+  "stats": {
+    "products": "of our own products live"
   }
 }
