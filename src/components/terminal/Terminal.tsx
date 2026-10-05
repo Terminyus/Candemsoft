@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useId, useRef, useState, type KeyboardEvent } from "react";
-import { useReducedMotion } from "motion/react";
+import { useReducedMotion } from "@/lib/useReducedMotion";
 import { switchLocalePath } from "@/i18n/routes";
 import { complete, run } from "@/lib/terminal/engine";
 import type { TermData, TermLine, TermLink } from "@/lib/terminal/types";
@@ -139,7 +139,7 @@ export function Terminal({ data, labels, initial, mode, onDone, className }: Pro
             e.preventDefault();
             typeAndRun(item.command!);
           }}
-          className="group/l w-fit"
+          className="group/l inline-flex min-h-6 w-fit items-center"
         >
           {label}
         </a>
@@ -154,7 +154,7 @@ export function Terminal({ data, labels, initial, mode, onDone, className }: Pro
             setValue(item.label.replace(/<.*>/, "").split("·")[0]!.trim() + " ");
             inputRef.current?.focus();
           }}
-          className="group/l w-fit text-left"
+          className="group/l inline-flex min-h-6 w-fit items-center text-left"
         >
           {label}
         </button>
@@ -162,13 +162,13 @@ export function Terminal({ data, labels, initial, mode, onDone, className }: Pro
     }
     if (item.external) {
       return (
-        <a href={item.href} className="group/l w-fit">
+        <a href={item.href} className="group/l inline-flex min-h-6 w-fit items-center">
           {label}
         </a>
       );
     }
     return (
-      <Link href={item.href} onClick={onDone} className="group/l w-fit">
+      <Link href={item.href} onClick={onDone} className="group/l inline-flex min-h-6 w-fit items-center">
         {label}
       </Link>
     );
@@ -202,7 +202,7 @@ export function Terminal({ data, labels, initial, mode, onDone, className }: Pro
           {line.items.map((item) => (
             <li key={item.label} className="contents">
               {renderLink(item)}
-              <span className="text-stone-400">{item.desc}</span>
+              <span className="flex min-h-6 items-center text-stone-400">{item.desc}</span>
             </li>
           ))}
         </ul>

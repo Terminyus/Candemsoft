@@ -3,13 +3,15 @@ import { href } from "@/i18n/routes";
 import { getSite } from "@/lib/content";
 import { getDictionary } from "@/lib/dictionary";
 import { resolveLang } from "@/lib/params";
+import { pageMetadata } from "@/lib/seo";
 import { PageIntro } from "@/components/page/PageIntro";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { MonoLabel } from "@/components/ui/MonoLabel";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/iletisim">): Promise<Metadata> {
-  const dict = await getDictionary(await resolveLang(params));
-  return { title: dict.nav.contact, description: dict.contactPage.lead };
+  const lang = await resolveLang(params);
+  const dict = await getDictionary(lang);
+  return pageMetadata({ lang, route: "contact", title: dict.nav.contact, description: dict.contactPage.lead });
 }
 
 export default async function ContactPage({ params }: PageProps<"/[lang]/iletisim">) {

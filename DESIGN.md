@@ -48,7 +48,11 @@ Kurallar:
 | Metin | **Instrument Sans** (variable: `wght`, `wdth`) | Sakin, açık, uzun metinde yorulmayan bir grotesk. Başlık fontuyla aynı ailede değil ama aynı "çağdaş grotesk" dünyasında; çatışmaz. |
 | Kod / etiket | **JetBrains Mono** | Terminal, komut, meta bilgi (tarih, kategori, numaralandırma). Mono font sitede "makine sesi" rolündedir; insan sesi ise metin fontudur. |
 
-Üç font da Google Fonts'ta `latin-ext` alt kümesine sahip: **ğ, ü, ş, ı, İ, ö, ç** eksiksiz. Fontlar `next/font` ile self-host edilir.
+Üç font da Google Fonts'ta `latin-ext` alt kümesine sahip: **ğ, ü, ş, ı, İ, ö, ç** eksiksiz.
+
+- Instrument Sans ve JetBrains Mono `next/font` ile self-host edilir. Mono font preload edilmez (LCP ile yarışmasın).
+- **Bricolage Grotesque `public/fonts` altında elle self-host edilir**: `opsz` ekseni 96'da (display kesimi), ağırlık 600'de sabit, yalnızca `wdth` değişken. `next/font` bir ekseni sabitleyemiyor; `opsz`'yi tamamen kaldırmak ise başlıkları küçük punto optik tasarımına (opsz 14) düşürüp karakteri siliyordu. Sabitlenmiş dosya hem karakterli hem daha küçük (60 KB, iki alt küme).
+- Yedek font (`Bricolage Display Fallback`, Arial) `size-adjust: 81.3%` ile hero başlığında gerçek fontla birebir aynı genişliğe ayarlandı; font yüklenirken satır kırılmaları değişmez (CLS).
 
 ### Ölçek
 

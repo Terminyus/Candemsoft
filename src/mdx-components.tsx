@@ -14,6 +14,7 @@ export function useMDXComponents(components: MDXComponents = {}): MDXComponents 
     code: (props) => <code className="rounded-sm bg-paper-200 px-1.5 py-0.5 font-mono text-[0.88em]" {...props} />,
     pre: (props) => (
       <pre
+        tabIndex={0}
         data-surface="ink"
         className="my-8 overflow-x-auto rounded-md border border-ink-800 p-5 font-mono text-sm leading-relaxed [&>code]:bg-transparent [&>code]:p-0"
         {...props}

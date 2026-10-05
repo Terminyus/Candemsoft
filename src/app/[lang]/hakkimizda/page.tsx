@@ -3,14 +3,16 @@ import { href } from "@/i18n/routes";
 import { getProducts, getProjects, getSite } from "@/lib/content";
 import { getDictionary } from "@/lib/dictionary";
 import { resolveLang } from "@/lib/params";
+import { pageMetadata } from "@/lib/seo";
 import { PageIntro } from "@/components/page/PageIntro";
 import { ButtonLink } from "@/components/ui/Button";
 import { MonoLabel } from "@/components/ui/MonoLabel";
 import { ContactBlock } from "@/components/home/ContactBlock";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/hakkimizda">): Promise<Metadata> {
-  const dict = await getDictionary(await resolveLang(params));
-  return { title: dict.nav.about, description: dict.about.lead };
+  const lang = await resolveLang(params);
+  const dict = await getDictionary(lang);
+  return pageMetadata({ lang, route: "about", title: dict.nav.about, description: dict.about.lead });
 }
 
 export default async function AboutPage({ params }: PageProps<"/[lang]/hakkimizda">) {

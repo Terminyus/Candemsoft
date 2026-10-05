@@ -1,0 +1,8 @@
+BricolageGrotesque-Condensed-SemiBold.ttf — Bricolage Grotesque, Copyright 2022 The Bricolage Grotesque Project Authors.
+JetBrainsMono-Regular.ttf — JetBrains Mono, Copyright 2020 The JetBrains Mono Project Authors.
+
+Both fonts are licensed under the SIL Open Font License, Version 1.1:
+https://openfontlicense.org
+
+Used only to render Open Graph images (src/lib/og.tsx). The site itself loads
+the same families through next/font.

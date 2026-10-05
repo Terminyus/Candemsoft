@@ -4,12 +4,14 @@ import { href } from "@/i18n/routes";
 import { getProducts, getProjects, publicFileExists } from "@/lib/content";
 import { getDictionary } from "@/lib/dictionary";
 import { resolveLang } from "@/lib/params";
+import { pageMetadata } from "@/lib/seo";
 import { PageIntro } from "@/components/page/PageIntro";
 import { ProjectIndex, ProjectIndexStatic, type IndexItem } from "@/components/project/ProjectIndex";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/projeler">): Promise<Metadata> {
-  const dict = await getDictionary(await resolveLang(params));
-  return { title: dict.nav.projects, description: dict.projectsPage.lead };
+  const lang = await resolveLang(params);
+  const dict = await getDictionary(lang);
+  return pageMetadata({ lang, route: "projects", title: dict.nav.projects, description: dict.projectsPage.lead });
 }
 
 export default async function ProjectsPage({ params }: PageProps<"/[lang]/projeler">) {

@@ -9,7 +9,7 @@ export function Todo({ text, label, className }: { text: string; label: string; 
         className,
       )}
     >
-      <span className="text-signal">{label}</span>
+      <span className="text-ember in-data-[surface=ink]:text-signal">{label}</span>
       <span>{text.replace(/^TODO:?\s*/, "")}</span>
     </span>
   );

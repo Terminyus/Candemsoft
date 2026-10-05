@@ -4,13 +4,15 @@ import { href } from "@/i18n/routes";
 import { getPosts, readingMinutes } from "@/lib/content";
 import { getDictionary } from "@/lib/dictionary";
 import { resolveLang } from "@/lib/params";
+import { pageMetadata } from "@/lib/seo";
 import { PageIntro } from "@/components/page/PageIntro";
 import { MonoLabel } from "@/components/ui/MonoLabel";
 import { formatDate } from "@/lib/format";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/blog">): Promise<Metadata> {
-  const dict = await getDictionary(await resolveLang(params));
-  return { title: dict.nav.blog, description: dict.blogPage.lead };
+  const lang = await resolveLang(params);
+  const dict = await getDictionary(lang);
+  return pageMetadata({ lang, route: "blog", title: dict.nav.blog, description: dict.blogPage.lead });
 }
 
 export default async function BlogPage({ params }: PageProps<"/[lang]/blog">) {

@@ -46,3 +46,15 @@ export function switchLocalePath(pathname: string, from: Locale, to: Locale): st
   const key = findKeyBySegment(first, from);
   return key ? href(to, key, ...rest) : href(to, "home");
 }
+
+/**
+ * Public URL from the internal segments below [lang] (what useSelectedLayoutSegments returns).
+ * Unlike usePathname, these are identical during static prerender and in the browser, because
+ * proxy.ts rewrites public URLs to internal ones.
+ */
+export function pathFromSegments(lang: Locale, segments: string[]): string {
+  const [first, ...rest] = segments.filter((s) => !s.startsWith("("));
+  if (!first) return href(lang, "home");
+  const key = (Object.keys(routes) as RouteKey[]).find((k) => routes[k].tr === first);
+  return key ? href(lang, key, ...rest) : href(lang, "home");
+}

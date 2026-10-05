@@ -1,5 +1,36 @@
 @import "tailwindcss";
 
+/*
+ * Display face: Bricolage Grotesque, opsz pinned at 96 (its display cut), wght 600,
+ * wdth variable 75–100. Self-hosted because next/font can't pin an axis.
+ * Files: public/fonts (OFL, see src/assets/fonts/OFL.txt). Preloaded in src/app/display-font.ts.
+ */
+@font-face {
+  font-family: "Bricolage Display";
+  src: url("/fonts/bricolage-display-latin-ext.v1.woff2") format("woff2");
+  font-weight: 600;
+  font-stretch: 75% 100%;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Bricolage Display";
+  src: url("/fonts/bricolage-display-latin.v1.woff2") format("woff2");
+  font-weight: 600;
+  font-stretch: 75% 100%;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* Metric-matched fallback so the swap doesn't move the layout (tuned against the hero headline). */
+@font-face {
+  font-family: "Bricolage Display Fallback";
+  src: local("Arial");
+  ascent-override: 88.21%;
+  descent-override: 25.61%;
+  line-gap-override: 0%;
+  size-adjust: 81.3%;
+}
+
 /* Tokens mirror DESIGN.md. Change them there first. */
 @theme {
   --color-*: initial;
@@ -20,7 +51,7 @@
   --color-transparent: transparent;
   --color-current: currentColor;
 
-  --font-display: var(--ff-display), "Arial Narrow", sans-serif;
+  --font-display: "Bricolage Display", "Bricolage Display Fallback", "Arial Narrow", sans-serif;
   --font-body: var(--ff-body), system-ui, sans-serif;
   --font-mono: var(--ff-mono), ui-monospace, monospace;
 
@@ -257,5 +288,56 @@
   ::view-transition-old(*),
   ::view-transition-new(*) {
     animation: none !important;
+  }
+}
+
+/* Mobile menu (Header). Hidden state uses visibility so it leaves the tab order; `inert` covers AT. */
+.mobile-menu {
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    opacity var(--duration-2) var(--ease-out),
+    visibility 0s linear var(--duration-2);
+}
+.mobile-menu[data-open] {
+  visibility: visible;
+  opacity: 1;
+  transition:
+    opacity var(--duration-2) var(--ease-out),
+    visibility 0s;
+}
+.mobile-menu li {
+  transform: translateX(-12px);
+  opacity: 0;
+  transition:
+    transform 300ms var(--ease-out),
+    opacity 300ms var(--ease-out);
+}
+.mobile-menu[data-open] li {
+  transform: none;
+  opacity: 1;
+  transition-delay: calc(var(--i) * 30ms);
+}
+
+/* Decorative numerals (service index, 404) are drawn from an attribute so they are
+   not text content: they carry no meaning and are intentionally low-contrast. */
+.numeral::before {
+  content: attr(data-numeral);
+}
+
+/* Projects filter: rows that stay slide into place, rows that leave or arrive fade. */
+::view-transition-group(.filter-row) {
+  animation-duration: 320ms;
+  animation-timing-function: var(--ease-out);
+}
+::view-transition-old(.filter-row):only-child {
+  animation: 160ms var(--ease-out) both fade-out;
+}
+::view-transition-new(.filter-row):only-child {
+  animation: 240ms 80ms var(--ease-out) both fade-in;
+}
+@keyframes fade-out {
+  to {
+    opacity: 0;
   }
 }
