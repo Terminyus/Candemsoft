@@ -124,6 +124,19 @@ Form; zorunlu alan doğrulaması, hata durumunda ilk hatalı alana odak, bot tuz
 - Erişilebilirlik: `npm run test:a11y` sıfır ihlal vermeli.
 - `prefers-reduced-motion` açıkken animasyonlar kapanır; JS kapalıyken tüm içerik ve gezinme çalışır.
 
+## GitHub Pages (paylaşım kopyası)
+
+Yayında: **https://terminyus.github.io/Candemsoft/**
+
+Sitenin statik bir kopyası `gh-pages` dalından yayınlanır. Güncellemek için:
+
+```bash
+npm run build:pages
+cd out && git init -q -b gh-pages && git add -A && git commit -qm "deploy" && git push -f https://github.com/Terminyus/Candemsoft.git gh-pages && rm -rf .git && cd ..
+```
+
+Pages sunucu çalıştırmadığı için bu kopyada adresler dil önekini ve Türkçe segmenti taşır (`/tr/projeler`, `/en/projeler`). Güvenlik başlıkları ve görsel optimizasyonu yoktur. Asıl yayın hedefi Vercel'dir (aşağıda).
+
 ## Deploy (Vercel)
 
 Yapılandırma hazır, **henüz deploy edilmedi.**
