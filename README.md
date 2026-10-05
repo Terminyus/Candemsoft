@@ -23,6 +23,10 @@ npx playwright install chromium   # yalnızca ekran görüntüsü almak için
 | `npm run lint` | ESLint |
 | `npm run typecheck` | TypeScript kontrolü |
 | `npm run format` | Prettier ile biçimlendirme |
+| `npm test` | Birim testleri (terminal komut motoru) |
+| `npm run test:a11y -- <url>` | axe-core ile WCAG 2.1 AA taraması, tüm sayfalar, masaüstü + mobil |
+| `npm run test:lighthouse -- <url>` | Mobil Lighthouse; herhangi bir kategori 90'ın altına düşerse başarısız olur (önce `npm run build && npm start`) |
+| `npm run capture:projects` | Canlı projelerin ekran görüntülerini alır (aşağıya bakın) |
 | `npm run screenshots -- <url> <klasör> <yollar...>` | Masaüstü + mobil ekran görüntüsü alır. Örn: `npm run screenshots -- http://localhost:3000 screenshots / /projeler` |
 
 ## Diller ve adresler
@@ -107,7 +111,18 @@ Menü, buton, form ve hata metinleri `content/locales/tr.json` ve `en.json` dosy
 
 ## İletişim formu
 
-Form şimdilik bir sunucuya gönderim yapmaz. Entegrasyon noktası ve nasıl bağlanacağı form aşamasında burada belgelenecek.
+Entegrasyon noktası: `src/lib/contact.ts`.
+
+- `NEXT_PUBLIC_CONTACT_ENDPOINT` ortam değişkeni **tanımlı değilse** (şu anki durum): form doğrulanır, sonra ziyaretçinin e-posta uygulaması mesaj önceden doldurulmuş olarak açılır. Sunucu gerekmez.
+- **Tanımlıysa**: form verisi o adrese JSON olarak `POST` edilir (`name`, `email`, `phone`, `topic`, `message`, `locale`). Formspree, bir Vercel Function, CRM webhook'u vb. kullanılabilir. 2xx dışı yanıtta kullanıcıya hata mesajı ve doğrudan e-posta adresi gösterilir.
+
+Form; zorunlu alan doğrulaması, hata durumunda ilk hatalı alana odak, bot tuzağı (honeypot) ve KVKK onay kutusu içerir.
+
+## Kalite
+
+- Lighthouse (mobil) hedefi: dört kategori de ≥ 90. Son ölçümler PR açıklamalarında.
+- Erişilebilirlik: `npm run test:a11y` sıfır ihlal vermeli.
+- `prefers-reduced-motion` açıkken animasyonlar kapanır; JS kapalıyken tüm içerik ve gezinme çalışır.
 
 ## Deploy
 
