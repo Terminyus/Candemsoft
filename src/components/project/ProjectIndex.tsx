@@ -144,7 +144,7 @@ export function ProjectIndexView({ items, labels, filter, onFilter }: ViewProps)
                 {item.desktop && (
                   <ViewTransition name={`shot-${item.slug}-desktop`} share="morph" default="none">
                     <div className="relative col-span-full aspect-[16/10] overflow-hidden bg-ink-900 lg:hidden">
-                      <Image src={item.desktop} alt="" fill sizes="100vw" className="object-cover object-top" />
+                      <Image src={item.desktop} alt="" fill sizes="100vw" {...(i === 0 ? { loading: "eager" as const, fetchPriority: "high" as const } : {})} className="object-cover object-top" />
                     </div>
                   </ViewTransition>
                 )}

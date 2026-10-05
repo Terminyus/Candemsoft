@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useSelectedLayoutSegments } from "next/navigation";
+import { pathFromSegments } from "@/i18n/routes";
 import { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import type { Locale } from "@/i18n/config";
 import { Logo } from "@/components/ui/Logo";
 import { cn } from "@/components/ui/cn";
@@ -25,10 +25,11 @@ function isActive(pathname: string, href: string, home: string) {
 }
 
 export function Header({ lang, home, items, labels, extra }: Props) {
-  const pathname = usePathname();
+  // Not usePathname: during prerender it returns the rewritten internal path (/tr/...), which would
+  // make the active state differ between server HTML and the browser.
+  const pathname = pathFromSegments(lang, useSelectedLayoutSegments());
   const [open, setOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
-  const reduce = useReducedMotion();
   const last = useRef(0);
   const menuButton = useRef<HTMLButtonElement>(null);
 
@@ -137,45 +138,32 @@ export function Header({ lang, home, items, labels, extra }: Props) {
         </div>
       </div>
 
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            id="mobile-menu"
-            data-surface="ink"
-            initial={reduce ? false : { opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.24, ease: [0.2, 0.8, 0.2, 1] }}
-            className="fixed inset-x-0 bottom-0 top-(--header-h) overflow-y-auto lg:hidden"
-          >
-            <nav aria-label={labels.primary} className="container-site flex min-h-full flex-col justify-between py-8">
-              <ul>
-                {items.map((item, i) => (
-                  <motion.li
-                    key={item.key}
-                    initial={reduce ? false : { opacity: 0, x: -12 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.03 * i, duration: 0.3, ease: [0.2, 0.8, 0.2, 1] }}
-                    className="border-b border-ink-800"
-                  >
-                    <Link
-                      href={item.href}
-                      aria-current={isActive(pathname, item.href, home) ? "page" : undefined}
-                      className="flex items-baseline gap-4 py-3 font-display text-[2.25rem] font-semibold leading-tight tracking-tight aria-[current=page]:text-signal"
-                    >
-                      <span className="font-mono text-mono-sm font-normal text-stone-400">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                      {item.label}
-                    </Link>
-                  </motion.li>
-                ))}
-              </ul>
-              <LanguageSwitch lang={lang} label={labels.switchTo} className="mt-8 self-start py-2 text-base" />
-            </nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* CSS-only menu animation keeps Motion out of the bundle every page loads. */}
+      <div
+        id="mobile-menu"
+        data-surface="ink"
+        data-open={open || undefined}
+        inert={!open}
+        className="mobile-menu fixed inset-x-0 bottom-0 top-(--header-h) overflow-y-auto lg:hidden"
+      >
+        <nav aria-label={labels.primary} className="container-site flex min-h-full flex-col justify-between py-8">
+          <ul>
+            {items.map((item, i) => (
+              <li key={item.key} style={{ "--i": i } as React.CSSProperties} className="border-b border-ink-800">
+                <Link
+                  href={item.href}
+                  aria-current={isActive(pathname, item.href, home) ? "page" : undefined}
+                  className="flex items-baseline gap-4 py-3 font-display text-[2.25rem] font-semibold leading-tight tracking-tight aria-[current=page]:text-signal"
+                >
+                  <span className="font-mono text-mono-sm font-normal text-stone-400">{String(i + 1).padStart(2, "0")}</span>
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <LanguageSwitch lang={lang} label={labels.switchTo} className="mt-8 self-start py-2 text-base" />
+        </nav>
+      </div>
     </header>
   );
 }

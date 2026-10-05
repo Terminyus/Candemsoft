@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useId, useRef, useState, type KeyboardEvent } from "react";
-import { useReducedMotion } from "motion/react";
+import { useReducedMotion } from "@/lib/useReducedMotion";
 import { switchLocalePath } from "@/i18n/routes";
 import { complete, run } from "@/lib/terminal/engine";
 import type { TermData, TermLine, TermLink } from "@/lib/terminal/types";

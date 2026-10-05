@@ -259,3 +259,31 @@
     animation: none !important;
   }
 }
+
+/* Mobile menu (Header). Hidden state uses visibility so it leaves the tab order; `inert` covers AT. */
+.mobile-menu {
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    opacity var(--duration-2) var(--ease-out),
+    visibility 0s linear var(--duration-2);
+}
+.mobile-menu[data-open] {
+  visibility: visible;
+  opacity: 1;
+  transition:
+    opacity var(--duration-2) var(--ease-out),
+    visibility 0s;
+}
+.mobile-menu li {
+  transform: translateX(-12px);
+  opacity: 0;
+  transition:
+    transform 300ms var(--ease-out),
+    opacity 300ms var(--ease-out);
+}
+.mobile-menu[data-open] li {
+  transform: none;
+  opacity: 1;
+  transition-delay: calc(var(--i) * 30ms);
+}

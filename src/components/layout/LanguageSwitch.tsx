@@ -1,18 +1,18 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useSelectedLayoutSegments } from "next/navigation";
 import type { Locale } from "@/i18n/config";
-import { switchLocalePath } from "@/i18n/routes";
+import { pathFromSegments } from "@/i18n/routes";
 import { cn } from "@/components/ui/cn";
 
 // Switching locale swaps the root layout (full load), so prefetching the other tree only produces failed segment requests.
 export function LanguageSwitch({ lang, label, className }: { lang: Locale; label: string; className?: string }) {
-  const pathname = usePathname();
+  const segments = useSelectedLayoutSegments();
   const target: Locale = lang === "tr" ? "en" : "tr";
   return (
     <Link
-      href={switchLocalePath(pathname, lang, target)}
+      href={pathFromSegments(target, segments)}
       hrefLang={target}
       prefetch={false}
       lang={target}
