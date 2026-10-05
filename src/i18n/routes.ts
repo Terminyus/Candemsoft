@@ -14,6 +14,7 @@ export const routes = {
   team: { tr: "ekip", en: "team" },
   blog: { tr: "blog", en: "blog" },
   contact: { tr: "iletisim", en: "contact" },
+  privacy: { tr: "gizlilik", en: "privacy" },
 } as const satisfies Record<string, Record<Locale, string>>;
 
 export type RouteKey = keyof typeof routes;
