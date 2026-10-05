@@ -29,6 +29,11 @@
   --color-fit-night: #000810;
   --color-fit-teal: #00d8d8;
 
+  /* Gazete (v3): newsprint, ink and the brand orange as the one spot colour. */
+  --color-news-paper: #f2eee3;
+  --color-news-ink: #141210;
+  --color-news-gray: #57524a;
+
   --font-display: var(--ff-body), system-ui, sans-serif;
   --font-body: var(--ff-body), system-ui, sans-serif;
   --font-mono: var(--ff-mono), ui-monospace, monospace;
@@ -362,4 +367,98 @@
 .cv-auto {
   content-visibility: auto;
   contain-intrinsic-size: auto 1000px;
+}
+
+/* ---- Gazete (v3) ---- */
+.v3 {
+  --font-display: "V3 Text", Georgia, serif;
+  font-family: "V3 Text", Georgia, "Times New Roman", serif;
+}
+@utility v3-headline {
+  font-family: "V3 Headline", Georgia, serif;
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+@utility v3-sub {
+  /* Subheads in the text serif's bold, as newspapers set them. */
+  font-family: "V3 Text", Georgia, serif;
+  font-weight: 650;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+@utility v3-kicker {
+  font-family: var(--ff-franklin), system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+}
+@utility v3-columns {
+  column-gap: 2rem;
+  column-rule: 1px solid color-mix(in srgb, var(--color-news-ink) 25%, transparent);
+  @media (min-width: 48rem) {
+    column-count: 2;
+  }
+}
+/* Drop cap on the first paragraph of a story. */
+.v3-dropcap > p:first-of-type::first-letter {
+  float: left;
+  font-family: "V3 Headline", Georgia, serif;
+  font-weight: 800;
+  font-size: 4.1em;
+  line-height: 0.78;
+  padding: 0.06em 0.08em 0 0;
+}
+/* Halftone: a grey, dotted copy sits over the colour image and fades out on hover/focus,
+   like a printed photo coming to life. Opacity only. */
+.halftone {
+  position: relative;
+  overflow: hidden;
+}
+.halftone > .halftone-print {
+  position: absolute;
+  inset: 0;
+  filter: grayscale(1) contrast(1.25) brightness(1.05);
+  transition: opacity var(--duration-3) var(--ease-out);
+}
+.halftone > .halftone-print::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(20, 18, 16, 0.55) 0.9px, transparent 1.3px);
+  background-size: 4px 4px;
+  mix-blend-mode: multiply;
+}
+:where(a, article, figure):hover .halftone > .halftone-print,
+:where(a, article, figure):focus-within .halftone > .halftone-print {
+  opacity: 0;
+}
+@media print {
+  .v3 {
+    background: #fff !important;
+  }
+  .v3-noprint {
+    display: none !important;
+  }
+  .v3 a {
+    text-decoration: none;
+  }
+}
+/* Phones have no hover: the printed photo "develops" into colour as it reaches the
+   middle of the screen. Without scroll-driven animations, or with reduced motion,
+   it simply stays printed. */
+@media (hover: none) and (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .halftone > .halftone-print {
+      animation: develop linear both;
+      animation-timeline: view();
+      animation-range: entry 60% cover 45%;
+    }
+  }
+}
+@keyframes develop {
+  to {
+    opacity: 0;
+  }
 }
