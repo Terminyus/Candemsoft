@@ -182,3 +182,22 @@
     opacity: 0;
   }
 }
+
+/* Command palette: dialog fades and settles in; instant when reduced motion is on. */
+.palette[open] {
+  animation: palette-in var(--duration-2) var(--ease-out);
+}
+.palette[open]::backdrop {
+  animation: fade-in var(--duration-2) var(--ease-out);
+}
+@keyframes palette-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.99);
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
