@@ -1,5 +1,5 @@
 // Mobile Lighthouse run over the main pages; fails if any category drops below 90.
-// Usage: npm run test:lighthouse [-- baseUrl]   (needs a production build: npm run build && npm start)
+// Usage: npm run test:lighthouse [-- baseUrl [paths...]]   (needs a production build: npm run build && npm start)
 // Uses Playwright's Chromium unless CHROME_PATH is set.
 import { execFileSync } from "node:child_process";
 import fs from "node:fs";
@@ -8,7 +8,7 @@ import path from "node:path";
 import { chromium } from "@playwright/test";
 
 const base = process.argv[2] ?? "http://localhost:3000";
-const paths = ["/", "/hakkimizda", "/hizmetler", "/projeler", "/projeler/kredi-turbo", "/urunler", "/ekip", "/blog", "/blog/turkce-buyuk-harf", "/iletisim", "/en", "/es", "/es/productos"];
+const paths = process.argv.length > 3 ? process.argv.slice(3) : ["/", "/hakkimizda", "/hizmetler", "/projeler", "/projeler/kredi-turbo", "/urunler", "/ekip", "/blog", "/blog/turkce-buyuk-harf", "/iletisim", "/en", "/es", "/es/productos"];
 const chrome = process.env.CHROME_PATH ?? chromium.executablePath();
 const out = fs.mkdtempSync(path.join(os.tmpdir(), "lh-"));
 let failed = false;
