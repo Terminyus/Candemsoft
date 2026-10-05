@@ -15,8 +15,9 @@ const LATIN_EXT =
   "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF";
 
 const faces = [
+  { family: "Instrument Sans", file: "instrument", weight: "400 700", preload: true },
   { family: "Archivo V2 Display", file: "archivo-v2-display", weight: 800, preload: true },
-  { family: "Archivo V2 Heading", file: "archivo-v2-heading", weight: 700, preload: true },
+  { family: "Archivo V2 Heading", file: "archivo-v2-heading", weight: 700, preload: false }, // nav/subheads: fine to swap in
   { family: "Caveat V2", file: "caveat-v2", weight: 700, preload: false },
 ];
 
@@ -35,8 +36,10 @@ const fallbacks = `
 @font-face{font-family:"Archivo V2 Heading Fallback";src:local("Arial");font-weight:700;size-adjust:110.7%}`;
 
 export function V2Fonts() {
+  // Text face for Vitrin, exposed as --ff-body.
+  const vars = `:root{--ff-body:"Instrument Sans","Instrument Fallback",system-ui,sans-serif}@font-face{font-family:"Instrument Fallback";src:local("Arial");size-adjust:101.8%}`;
   for (const f of faces.filter((x) => x.preload))
     for (const sub of ["latin", "latin-ext"])
       preload(asset(`/fonts/${f.file}-${sub}.v1.woff2`), { as: "font", type: "font/woff2", crossOrigin: "anonymous" });
-  return <style dangerouslySetInnerHTML={{ __html: css + fallbacks }} />;
+  return <style dangerouslySetInnerHTML={{ __html: css + fallbacks + vars }} />;
 }

@@ -2,14 +2,17 @@
 
 Candemsoft kurumsal web sitesi. Next.js 16 (App Router), TypeScript, Tailwind CSS v4, Motion, GSAP.
 
-Tasarım kararları ve gerekçeleri için: [DESIGN.md](DESIGN.md) (klasik) ve [DESIGN-V2.md](DESIGN-V2.md) (Vitrin, alternatif tasarım).
+Tasarım kararları ve gerekçeleri için: [DESIGN.md](DESIGN.md) (klasik), [DESIGN-V2.md](DESIGN-V2.md) (Vitrin) ve [DESIGN-V3.md](DESIGN-V3.md) (Gazete).
 
-## İki tasarım
+## Üç tasarım
 
 - **Klasik:** `/` — koyu konsol, `candem.sh` terminali.
-- **Vitrin:** `/v2` — beyaz/siyah/turuncu, her ürünün kendi renkleriyle bir odası. Arama motorlarına kapalı.
+- **Vitrin:** `/v2` — beyaz/siyah/turuncu, her ürünün kendi renkleriyle bir odası.
+- **Gazete:** `/v3` — gazete ön sayfası: manşet, ürünler eki, arşiv, ilanlar, künye; yazdırılabilir.
 
-İkisi de aynı `content/` dosyalarını okur; içerik bir kez güncellenir.
+Üçü de aynı `content/` dosyalarını okur; içerik bir kez güncellenir. Vitrin ve Gazete arama motorlarına kapalıdır.
+
+**Fontlar** `public/fonts` altında kendi barındırılır ve her tasarımın layout'u yalnızca kendi fontlarını preload eder (`src/lib/fonts.tsx`). `next/font` yalnızca JetBrains Mono için kullanılır: üç kök layout tek stil dosyasını paylaştığı için, `next/font` ile tanımlanan her aile her sayfada preload ediliyordu.
 
 ## Kurulum
 
@@ -34,6 +37,7 @@ npx playwright install chromium   # yalnızca ekran görüntüsü almak için
 | `npm run test:a11y -- <url>` | axe-core ile WCAG 2.1 AA taraması, tüm sayfalar, masaüstü + mobil |
 | `npm run test:lighthouse -- <url>` | Mobil Lighthouse; herhangi bir kategori 90'ın altına düşerse başarısız olur (önce `npm run build && npm start`) |
 | `npm run capture:projects` | Canlı projelerin ekran görüntülerini alır (aşağıya bakın) |
+| `node scripts/overflow.mjs <url> <yollar...>` | Kutularından taşan içerik ve metni 360–1920 px arasında 7 genişlikte tarar |
 | `npm run screenshots -- <url> <klasör> <yollar...>` | Masaüstü + mobil ekran görüntüsü alır. Örn: `npm run screenshots -- http://localhost:3000 screenshots / /projeler` |
 
 ## Diller ve adresler

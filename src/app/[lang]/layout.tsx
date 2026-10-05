@@ -12,7 +12,8 @@ import { CommandPalette } from "@/components/terminal/CommandPalette";
 import { TerminalTrigger } from "@/components/terminal/TerminalTrigger";
 import { getTerminalData } from "@/lib/terminal/data";
 import { run } from "@/lib/terminal/engine";
-import { body, mono } from "../fonts";
+import { ClassicFonts } from "../classic-fonts";
+import { mono } from "../fonts-lib/mono";
 import "../globals.css";
 
 // Unknown values are unmatched routes → app/global-not-found.tsx (server-rendered 404).
@@ -54,7 +55,10 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
     close: dict.terminal.close,
   };
   return (
-    <html lang={lang} className={`${body.variable} ${mono.variable}`}>
+    <html lang={lang} className={mono.variable}>
+      <head>
+        <ClassicFonts />
+      </head>
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(organizationJsonLd(lang, dict.meta.siteDescription))} />
         <SkipLink label={dict.nav.skip} />
