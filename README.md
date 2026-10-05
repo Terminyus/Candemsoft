@@ -124,6 +124,31 @@ Form; zorunlu alan doğrulaması, hata durumunda ilk hatalı alana odak, bot tuz
 - Erişilebilirlik: `npm run test:a11y` sıfır ihlal vermeli.
 - `prefers-reduced-motion` açıkken animasyonlar kapanır; JS kapalıyken tüm içerik ve gezinme çalışır.
 
-## Deploy
+## Deploy (Vercel)
 
-Hedef platform Vercel. Deploy, onay alınmadan yapılmaz (bkz. 8. aşama).
+Yapılandırma hazır, **henüz deploy edilmedi.**
+
+1. Vercel'de *Add New → Project* ile bu GitHub reposunu içe aktarın. Framework otomatik olarak Next.js algılanır; ek ayar gerekmez (`vercel.json`: bölge `fra1` / Frankfurt).
+2. *Environment Variables*: form için bir uç nokta kullanılacaksa `NEXT_PUBLIC_CONTACT_ENDPOINT` (bkz. `.env.example`). Boş bırakılırsa form e-posta uygulamasını açar.
+3. İlk deploy bir önizleme adresinde (`*.vercel.app`) açılır; orada kontrol edin.
+4. *Settings → Domains*: `candemsoft.com` ve `www.candemsoft.com` ekleyin, Vercel'in verdiği DNS kayıtlarını alan adı sağlayıcınızda girin. `www` → kök alan adına yönlendirme önerilir.
+5. Yayından sonra: Google Search Console'a `https://candemsoft.com/sitemap.xml` gönderin; `npm run test:lighthouse -- https://candemsoft.com` ile tekrar ölçün.
+
+CI iş akışı hazır ama henüz etkin değil: `docs/ci/ci.yml`. Her PR'da lint, tip kontrolü, birim testleri, üretim derlemesi ve axe erişilebilirlik taramasını çalıştırır. Etkinleştirmek için (GitHub CLI token'ına `workflow` izni gerekir):
+
+```bash
+gh auth refresh -s workflow
+git mv docs/ci/ci.yml .github/workflows/ci.yml && git commit -m "ci: enable GitHub Actions" && git push
+```
+
+Güvenlik başlıkları `next.config.ts` içinde: HSTS, `nosniff`, `Referrer-Policy`, `Permissions-Policy`, `frame-ancestors 'none'`. Tam script CSP'si nonce ve dinamik render gerektirdiği için eklenmedi (tüm sayfalar statik).
+
+## Yayın öncesi kontrol listesi
+
+- [ ] Ürün metinleri ve mağaza linkleri (`content/products.json`, şu an `TODO`)
+- [ ] Ekip bilgileri ve fotoğraflar (`content/team.json`, şu an yer tutucu)
+- [ ] Yayında olmayan 5 proje için karar: listede kalsın mı? (`status: "offline"`)
+- [ ] Proje case study metinleri (isteğe bağlı, `caseStudy`)
+- [ ] Gizlilik / KVKK metninin hukuki incelemesi (`content/legal/`)
+- [ ] Sosyal medya linkleri (`content/site.json`)
+- [ ] Form uç noktası (isteğe bağlı)
