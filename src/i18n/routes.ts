@@ -66,3 +66,8 @@ export function pathFromSegments(lang: Locale, segments: string[]): string {
 export function v2(path: string): string {
   return path === "/" ? "/v2" : `/v2${path}`;
 }
+
+/** URL inside the alternative "Gazete" design (/v3). */
+export function v3(path: string): string {
+  return path === "/" ? "/v3" : `/v3${path}`;
+}
