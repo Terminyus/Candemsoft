@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { locales } from "@/i18n/config";
+import { localeTags, locales } from "@/i18n/config";
 import { href } from "@/i18n/routes";
 import { getPost, getPostSlugs, readingMinutes } from "@/lib/content";
 import { getDictionary } from "@/lib/dictionary";
@@ -37,7 +37,7 @@ export default async function PostPage({ params }: PageProps<"/[lang]/blog/[slug
     headline: meta.title,
     description: meta.description,
     datePublished: meta.date,
-    inLanguage: lang === "tr" ? "tr-TR" : "en",
+    inLanguage: localeTags[lang],
     author: { "@type": "Organization", name: meta.author, url: siteUrl },
     publisher: { "@id": `${siteUrl}/#organization` },
     mainEntityOfPage: `${siteUrl}${href(lang, "blog", slug)}`,

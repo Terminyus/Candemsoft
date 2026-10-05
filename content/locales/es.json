@@ -1,0 +1,280 @@
+{
+  "meta": {
+    "siteTitle": "Candemsoft — Software web, móvil e IA desde Estambul",
+    "siteDescription": "Candemsoft es un equipo de software en Estambul que crea sitios web, apps móviles, funciones de IA, diseño UI/UX y ofrece consultoría."
+  },
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre nosotros",
+    "services": "Servicios",
+    "projects": "Proyectos",
+    "products": "Productos",
+    "team": "Equipo",
+    "blog": "Blog",
+    "contact": "Contacto",
+    "menu": "Menú",
+    "close": "Cerrar",
+    "skip": "Saltar al contenido",
+    "language": "Idioma",
+    "switchTo": "Türkçe",
+    "primary": "Menú principal",
+    "privacy": "Privacidad"
+  },
+  "common": {
+    "visitSite": "Visitar el sitio",
+    "readMore": "Leer más",
+    "allProjects": "Todos los proyectos",
+    "backToProjects": "Volver a proyectos",
+    "backToBlog": "Volver al blog",
+    "comingSoon": "Próximamente",
+    "live": "Disponible",
+    "todo": "Contenido pendiente",
+    "shotDesktop": "Sitio web de {name} en escritorio",
+    "shotMobile": "Sitio web de {name} en móvil"
+  },
+  "notFound": {
+    "title": "Esta página no existe.",
+    "body": "Puede que la dirección haya cambiado o que nunca haya existido.",
+    "home": "Volver al inicio",
+    "error": "no existe el archivo o directorio",
+    "try": "Prueba con uno de estos:"
+  },
+  "footer": {
+    "lead": "Un proyecto, una pregunta o simplemente un hola:",
+    "sitemap": "Páginas",
+    "reach": "Contacto",
+    "rights": "Todos los derechos reservados."
+  },
+  "home": {
+    "heroLine1": "Lo entregamos",
+    "heroLine2": "funcionando.",
+    "heroLead": "Candemsoft es un equipo de software en Estambul que crea sitios web, apps móviles y funciones de IA. Trabajamos para clientes y también publicamos nuestros propios productos en App Store y Google Play.",
+    "heroCta": "Cuéntanos tu proyecto",
+    "heroSecondary": "Ver nuestro trabajo",
+    "workLabel": "Trabajo seleccionado",
+    "workTitle": "En línea y en uso.",
+    "workBody": "Todos están en línea y funcionando hoy. Haz clic y compruébalo tú mismo.",
+    "servicesLabel": "Servicios",
+    "servicesTitle": "Qué hacemos",
+    "servicesAll": "Detalles de servicios",
+    "productsLabel": "Nuestros productos",
+    "productsTitle": "También creamos productos propios.",
+    "productsBody": "El proceso que usamos con los clientes es el mismo que usamos en nuestras propias apps.",
+    "productsAll": "Todos los productos",
+    "contactLabel": "Próximo proyecto",
+    "contactTitle": "Cuéntanos qué quieres construir.",
+    "contactBody": "Basta con un mensaje corto; el resto lo definimos juntos.",
+    "contactForm": "Formulario de contacto",
+    "contactWhatsapp": "Escríbenos por WhatsApp",
+    "contactCall": "Llámanos",
+    "visualPending": "Captura pendiente",
+    "heroTag": "Estambul — web · móvil · IA · UI/UX · consultoría"
+  },
+  "terminal": {
+    "title": "candem.sh",
+    "user": "visitante@candemsoft",
+    "hint": "Escribe un comando o haz clic en uno",
+    "cmd": {
+      "projects": "trabajo para clientes",
+      "services": "qué hacemos",
+      "products": "nuestras apps",
+      "team": "quién está aquí",
+      "blog": "artículos",
+      "contact": "escríbenos",
+      "about": "quiénes somos"
+    },
+    "prompt": "escribe un comando…",
+    "inputLabel": "Comando de terminal",
+    "openPalette": "Abrir la paleta de comandos",
+    "close": "Cerrar",
+    "notFound": "comando no encontrado: {cmd}",
+    "didYouMean": "¿Quisiste decir?",
+    "helpIntro": "Páginas (escribe o haz clic):",
+    "helpMore": "Otros comandos:",
+    "more": [
+      {
+        "cmd": "ls proyectos",
+        "desc": "lista de proyectos"
+      },
+      {
+        "cmd": "open <proyecto>",
+        "desc": "abrir un proyecto"
+      },
+      {
+        "cmd": "cat <servicio>",
+        "desc": "resumen del servicio"
+      },
+      {
+        "cmd": "mail · whatsapp · tel",
+        "desc": "contáctanos"
+      },
+      {
+        "cmd": "lang tr · lang en",
+        "desc": "cambiar de idioma"
+      },
+      {
+        "cmd": "clear",
+        "desc": "limpiar la pantalla"
+      }
+    ],
+    "going": "→ {target}",
+    "opening": "↗ abriendo {target} en una pestaña nueva",
+    "noMatch": "sin coincidencias: {arg}",
+    "needArg": "uso: {usage}",
+    "whoami": "visitante. Bienvenido.",
+    "sudo": "Este visitante no tiene permisos. Pero puedes escribirnos:",
+    "projectsHeading": "Proyectos:",
+    "productsHeading": "Productos:",
+    "servicesHeading": "Servicios:",
+    "offline": "fuera de línea",
+    "hintKeys": "Tab completa · ↑↓ historial · Esc cierra",
+    "shortcut": "⌘K"
+  },
+  "stats": {
+    "products": "productos propios disponibles"
+  },
+  "about": {
+    "label": "Sobre nosotros",
+    "title": "Un equipo de software en Estambul.",
+    "lead": "Trabajamos como Candemsoft desde 2025. Hacemos dos cosas: software para clientes y nuestros propios productos.",
+    "twoLabel": "Dos caras",
+    "clientTitle": "Trabajo para clientes",
+    "clientBody": "Sitios corporativos, comercio electrónico, sistemas de soporte, plataformas financieras. Empezamos hablando y terminamos publicando y entregando.",
+    "ownTitle": "Nuestros productos",
+    "ownBody": "Diseñamos, desarrollamos y publicamos nuestras propias apps móviles. Revisiones de las tiendas, comentarios de usuarios y ciclos de actualización: también los vivimos en nuestros productos.",
+    "principlesLabel": "Cómo trabajamos",
+    "principles": [
+      {
+        "title": "Primero bien, luego rápido.",
+        "body": "El mismo nivel de calidad en cada proyecto. Ir con prisas significa atajos que luego cuestan más."
+      },
+      {
+        "title": "Hablamos claro.",
+        "body": "Alcance, plazos y coste quedan por escrito desde el principio. Si cambian, eres el primero en saberlo."
+      },
+      {
+        "title": "Probamos lo nuevo y nos quedamos con lo que funciona.",
+        "body": "La tecnología la eligen las necesidades del proyecto, no las modas."
+      }
+    ],
+    "numbersLabel": "En cifras",
+    "founded": "año de fundación",
+    "teamCta": "Conoce al equipo"
+  },
+  "servicesPage": {
+    "label": "Servicios",
+    "title": "Qué hacemos y cómo.",
+    "lead": "Trabajamos en cinco áreas. La mayoría de los proyectos tocan varias: una tienda online también es un trabajo de diseño y, a menudo, una app móvil.",
+    "includes": "Alcance",
+    "related": "Trabajos en esta área",
+    "stackLabel": "Tecnologías que usamos",
+    "cta": "Hablemos de esto"
+  },
+  "projectsPage": {
+    "label": "Proyectos",
+    "title": "Lo que hemos hecho.",
+    "lead": "Proyectos para clientes y productos propios. Las capturas de los sitios en línea se toman directamente de ellos; haz clic en un nombre para ver los detalles o ir al sitio.",
+    "filterLabel": "Filtrar por categoría",
+    "all": "Todos",
+    "categories": {
+      "web": "Web",
+      "mobil": "Móvil",
+      "kurumsal": "Corporativo",
+      "e-ticaret": "Comercio electrónico"
+    },
+    "count": "{n} proyectos",
+    "empty": "Todavía no hay proyectos publicados en esta categoría.",
+    "emptyMobile": "Consulta la página de Productos para ver nuestras apps.",
+    "ownProduct": "Producto propio",
+    "colName": "Proyecto",
+    "colType": "Tipo",
+    "colSector": "Sector",
+    "offline": "Fuera de línea por ahora"
+  },
+  "projectPage": {
+    "type": "Tipo",
+    "sector": "Sector",
+    "year": "Año",
+    "services": "Servicio",
+    "stack": "Tecnología",
+    "challenge": "Problema",
+    "approach": "Enfoque",
+    "outcome": "Resultado",
+    "visit": "Ir al sitio en vivo",
+    "next": "Siguiente proyecto",
+    "desktop": "Escritorio",
+    "mobile": "Móvil"
+  },
+  "productsPage": {
+    "label": "Productos",
+    "title": "Nuestros productos.",
+    "lead": "Además del trabajo para clientes, creamos nuestras propias apps. Cuatro están disponibles y una está en camino.",
+    "appStore": "Descargar en App Store",
+    "googlePlay": "Disponible en Google Play",
+    "web": "Visitar el sitio",
+    "androidSoon": "Versión para Android en camino",
+    "platforms": "Plataforma",
+    "features": "Lo más destacado",
+    "screens": "Capturas",
+    "caseLink": "Página del proyecto"
+  },
+  "teamPage": {
+    "label": "Equipo",
+    "title": "Quién está aquí.",
+    "lead": "Las personas que hacen Candemsoft. Desarrollo, móvil, pruebas y gestión de proyectos en la misma mesa.",
+    "placeholderNote": "Estamos preparando los datos del equipo."
+  },
+  "blogPage": {
+    "label": "Blog",
+    "title": "Artículos.",
+    "lead": "Lo que aprendemos trabajando. Breve, técnico y útil.",
+    "readingTime": "{n} min de lectura",
+    "empty": "Todavía no hay artículos."
+  },
+  "contactPage": {
+    "label": "Contacto",
+    "title": "Cuéntanos qué quieres construir.",
+    "lead": "Rellena el formulario o escríbenos directamente. Una idea, una solicitud de presupuesto o una pregunta sobre un sistema existente.",
+    "direct": "Directamente",
+    "phoneLabel": "Teléfono",
+    "locationLabel": "Ubicación",
+    "form": {
+      "name": "Tu nombre",
+      "email": "Correo electrónico",
+      "phone": "Teléfono",
+      "optional": "opcional",
+      "topic": "Asunto",
+      "topics": [
+        "Solicitar presupuesto",
+        "Información general",
+        "Soporte técnico",
+        "Colaboración",
+        "Otro"
+      ],
+      "message": "Tu mensaje",
+      "messageHint": "{n}/1000",
+      "consent": "Acepto que se traten mis datos para responder a mi mensaje.",
+      "consentLink": "Aviso de privacidad",
+      "submit": "Enviar",
+      "sending": "Enviando…",
+      "success": "Mensaje recibido. Gracias.",
+      "mailtoFallback": "Se ha abierto tu aplicación de correo. Puedes enviar el mensaje desde allí.",
+      "error": "No se pudo enviar. Escríbenos directamente a info@candemsoft.com.",
+      "errors": {
+        "name": "Escribe tu nombre.",
+        "email": "Escribe un correo electrónico válido.",
+        "message": "El mensaje debe tener al menos 10 caracteres.",
+        "consent": "Se necesita tu consentimiento para continuar."
+      }
+    }
+  },
+  "cookies": {
+    "text": "Este sitio no usa cookies de análisis ni de publicidad. Solo guarda una pequeña nota en tu navegador para recordar que cerraste este mensaje.",
+    "ok": "Entendido",
+    "more": "Privacidad"
+  },
+  "privacyPage": {
+    "label": "Privacidad",
+    "title": "Aviso de privacidad."
+  }
+}

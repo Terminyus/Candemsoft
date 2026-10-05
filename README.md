@@ -33,12 +33,13 @@ npx playwright install chromium   # yalnızca ekran görüntüsü almak için
 
 - Türkçe varsayılan dildir ve önek almaz: `/projeler`, `/iletisim`
 - İngilizce `/en` altındadır ve İngilizce adres kullanır: `/en/projects`, `/en/contact`
+- İspanyolca `/es` altındadır ve İspanyolca adres kullanır: `/es/proyectos`, `/es/contacto`
 - `/tr/...` adresleri öneksiz Türkçe adrese yönlendirilir.
 - Adres eşlemesi tek bir dosyada: `src/i18n/routes.ts`
 
 ## İçeriği güncelleme (koda dokunmadan)
 
-Sitedeki tüm metin ve veriler `content/` klasöründedir. Bir dosyayı düzenleyip kaydetmeniz yeterli; yeniden derlemede site güncellenir. Her metin alanında `tr` ve `en` karşılığı vardır.
+Sitedeki tüm metin ve veriler `content/` klasöründedir. Bir dosyayı düzenleyip kaydetmeniz yeterli; yeniden derlemede site güncellenir. Her metin alanında `tr`, `en` ve `es` karşılığı vardır.
 
 ```
 content/
@@ -75,11 +76,13 @@ Dosyalardaki `_todo` ve `_draft` alanları yalnızca not içindir; sitede göste
 
 `content/products.json` içinde ilgili ürünü bulun:
 
-- `tagline` ve `description`: `TODO` metnini gerçek metinle değiştirin.
+- `tagline`, `description`: kısa tanım ve açıklama (`tr` / `en` / `es`).
+- `features`: "Öne çıkanlar" listesi, her dil için bir dizi.
+- `project`: `content/projects` içindeki eşleşen projenin `slug`'ı; ürün sayfasında o projenin ekran görüntüleri ve "Proje sayfası" linki gösterilir.
 - `links.appStore`, `links.googlePlay`, `links.web`: dolu olan linkler buton olarak görünür.
 - `status`: `live` (yayında) veya `soon` (yakında).
 - `platforms`: `ios`, `android`, `web`.
-- `icon`: `public/products/` altına koyduğunuz ikonun yolu, örn. `/products/orpigo.png`.
+- `icon`: `public/products/` altına koyduğunuz ikonun yolu, örn. `/products/orpigo.png` (kare, en az 256×256).
 
 ### Ekip
 
@@ -103,11 +106,11 @@ export const meta = {
 };
 ```
 
-Altına normal Markdown yazın. Yalnızca bir dilde yazı varsa, o yazı yalnızca o dilin blog listesinde görünür.
+Altına normal Markdown yazın. İspanyolca için `<slug>.es.mdx`. Yalnızca bir dilde yazı varsa, o yazı yalnızca o dilin blog listesinde görünür.
 
 ### Arayüz metinleri
 
-Menü, buton, form ve hata metinleri `content/locales/tr.json` ve `en.json` dosyalarındadır. İki dosyadaki anahtarlar aynı olmalıdır.
+Menü, buton, form ve hata metinleri `content/locales/tr.json`, `en.json` ve `es.json` dosyalarındadır. Üç dosyadaki anahtarlar aynı olmalıdır.
 
 ## İletişim formu
 
@@ -135,7 +138,7 @@ npm run build:pages
 cd out && git init -q -b gh-pages && git add -A && git commit -qm "deploy" && git push -f https://github.com/Terminyus/Candemsoft.git gh-pages && rm -rf .git && cd ..
 ```
 
-Pages sunucu çalıştırmadığı için bu kopyada adresler dil önekini ve Türkçe segmenti taşır (`/tr/projeler`, `/en/projeler`). Güvenlik başlıkları ve görsel optimizasyonu yoktur. Asıl yayın hedefi Vercel'dir (aşağıda).
+Pages sunucu çalıştırmadığı için bu kopyada adresler dil önekini ve Türkçe segmenti taşır (`/tr/projeler`, `/en/projeler`, `/es/projeler`). Güvenlik başlıkları ve görsel optimizasyonu yoktur. Asıl yayın hedefi Vercel'dir (aşağıda).
 
 ## Deploy (Vercel)
 

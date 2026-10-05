@@ -1,0 +1,57 @@
+{
+  "slug": "orpigo",
+  "name": "Orpigo",
+  "url": "https://orpigo.com/",
+  "status": "live",
+  "order": 2,
+  "featured": true,
+  "ownProduct": true,
+  "categories": [
+    "mobil",
+    "web"
+  ],
+  "type": {
+    "tr": "Mobil uygulama ve web sitesi",
+    "en": "Mobile app and website",
+    "es": "App móvil y sitio web"
+  },
+  "sector": {
+    "tr": "Okuma ve öğrenme",
+    "en": "Reading and learning",
+    "es": "Lectura y aprendizaje"
+  },
+  "summary": {
+    "tr": "Kendi ürünümüz: ORP tekniğiyle çalışan hız okuma uygulaması. PDF'ini yükle, kelime kelime odak noktanda oku.",
+    "en": "Our own product: a speed-reading app built on the ORP technique. Upload a PDF and read it word by word at your focal point.",
+    "es": "Producto propio: una app de lectura rápida basada en la técnica ORP. Sube un PDF y léelo palabra a palabra en tu punto de enfoque."
+  },
+  "year": null,
+  "services": [
+    "mobil",
+    "web",
+    "ui-ux"
+  ],
+  "stack": [],
+  "caseStudy": {
+    "challenge": {
+      "tr": "",
+      "en": "",
+      "es": ""
+    },
+    "approach": {
+      "tr": "",
+      "en": "",
+      "es": ""
+    },
+    "outcome": {
+      "tr": "",
+      "en": "",
+      "es": ""
+    }
+  },
+  "images": {
+    "desktop": "/projects/orpigo/desktop.webp",
+    "mobile": "/projects/orpigo/mobile.webp"
+  },
+  "_todo": "year, stack ve caseStudy alanlarını doldurun. Boş alanlar sitede gösterilmez."
+}

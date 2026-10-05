@@ -1,0 +1,57 @@
+{
+  "slug": "seyyah",
+  "name": "Seyyah",
+  "url": "https://seyyah.info/",
+  "status": "live",
+  "order": 1,
+  "featured": true,
+  "ownProduct": true,
+  "categories": [
+    "mobil",
+    "web"
+  ],
+  "type": {
+    "tr": "Mobil uygulama ve web sitesi",
+    "en": "Mobile app and website",
+    "es": "App móvil y sitio web"
+  },
+  "sector": {
+    "tr": "Seyahat ve keşif",
+    "en": "Travel and discovery",
+    "es": "Viajes y descubrimiento"
+  },
+  "summary": {
+    "tr": "Kendi ürünümüz: GPS doğrulamalı check-in'lerle Türkiye'yi keşfetmeyi bir koleksiyona dönüştüren sosyal keşif uygulaması.",
+    "en": "Our own product: a social discovery app that turns exploring Türkiye into a collection, with GPS-verified check-ins.",
+    "es": "Producto propio: una app social de descubrimiento que convierte recorrer Turquía en una colección, con check-ins verificados por GPS."
+  },
+  "year": null,
+  "services": [
+    "mobil",
+    "web",
+    "ui-ux"
+  ],
+  "stack": [],
+  "caseStudy": {
+    "challenge": {
+      "tr": "",
+      "en": "",
+      "es": ""
+    },
+    "approach": {
+      "tr": "",
+      "en": "",
+      "es": ""
+    },
+    "outcome": {
+      "tr": "",
+      "en": "",
+      "es": ""
+    }
+  },
+  "images": {
+    "desktop": "/projects/seyyah/desktop.webp",
+    "mobile": "/projects/seyyah/mobile.webp"
+  },
+  "_todo": "year, stack ve caseStudy alanlarını doldurun. Boş alanlar sitede gösterilmez."
+}

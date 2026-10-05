@@ -36,7 +36,8 @@ export type TermStrings = {
 
 export type TermData = {
   lang: Locale;
-  otherLangHref: string;
+  /** Current page in every locale (filled in on the client from the current path). */
+  langHrefs: Record<Locale, string>;
   routes: { key: string; aliases: string[]; label: string; desc: string; href: string; command: string }[];
   projects: { slug: string; name: string; href: string; live: boolean }[];
   products: { slug: string; name: string; href: string }[];

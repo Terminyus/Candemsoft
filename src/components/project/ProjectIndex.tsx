@@ -86,11 +86,11 @@ export function ProjectIndexView({ items, labels, filter, onFilter }: ViewProps)
   const pointer = useRef({ x: 0, y: 0 });
   const listRef = useRef<HTMLUListElement>(null);
 
-  const cats = Object.keys(labels.categories);
-  const count = (c: string) =>
-    c === "all" ? items.filter((i) => !i.own).length : items.filter((i) => i.categories.includes(c)).length;
-  const visible = items.filter((i) => (filter === "all" ? !i.own : i.categories.includes(filter)));
-  const clientCount = visible.filter((i) => !i.own).length;
+  const count = (c: string) => (c === "all" ? items.length : items.filter((i) => i.categories.includes(c)).length);
+  // Categories with no projects are hidden rather than offered as empty filters.
+  const cats = Object.keys(labels.categories).filter((c) => count(c) > 0);
+  const visible = items.filter((i) => filter === "all" || i.categories.includes(filter));
+  const clientCount = visible.length;
 
   // The preview rides the right half of the list (over the secondary columns) and only
   // follows the pointer vertically, so it never covers the project names being read.
@@ -122,7 +122,7 @@ export function ProjectIndexView({ items, labels, filter, onFilter }: ViewProps)
                 : "border-paper-200 text-stone-600 hover:border-ink-950 hover:text-ink-950",
             )}
           >
-            {c === "all" ? labels.all : labels.categories[c]} <span className="opacity-60">{count(c)}</span>
+            {c === "all" ? labels.all : labels.categories[c]} <span className="tabular-nums">· {count(c)}</span>
           </button>
         ))}
       </div>
@@ -183,7 +183,8 @@ export function ProjectIndexView({ items, labels, filter, onFilter }: ViewProps)
                   </Link>
                 </h2>
                 <span className="col-span-2 text-stone-600 lg:col-span-3">
-                  {item.own ? <span className="text-ember">{labels.ownProduct}</span> : item.type}
+                  {item.type}
+                  {item.own && <span className="block font-mono text-mono-sm text-ember">{labels.ownProduct}</span>}
                 </span>
                 <span className="col-span-2 font-mono text-mono-sm text-stone-600 lg:col-span-3">
                   {item.sector}

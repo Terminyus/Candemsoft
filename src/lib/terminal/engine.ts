@@ -13,17 +13,17 @@ function distance(a: string, b: string): number {
 }
 
 const verbs = {
-  help: ["help", "yardim", "?", "komutlar", "commands", "man"],
-  clear: ["clear", "temizle", "cls"],
-  ls: ["ls", "dir", "liste", "list"],
-  cd: ["cd", "git", "go"],
-  open: ["open", "ac", "goster", "show"],
-  cat: ["cat", "oku", "read"],
-  mail: ["mail", "email", "eposta", "e-posta"],
+  help: ["help", "yardim", "?", "komutlar", "commands", "man", "ayuda", "comandos"],
+  clear: ["clear", "temizle", "cls", "limpiar"],
+  ls: ["ls", "dir", "liste", "list", "listar"],
+  cd: ["cd", "git", "go", "ir"],
+  open: ["open", "ac", "goster", "show", "abrir"],
+  cat: ["cat", "oku", "read", "leer"],
+  mail: ["mail", "email", "eposta", "e-posta", "correo"],
   whatsapp: ["whatsapp", "wa"],
-  tel: ["tel", "ara", "call", "phone", "telefon"],
-  lang: ["lang", "dil", "language"],
-  whoami: ["whoami", "kimim"],
+  tel: ["tel", "ara", "call", "phone", "telefon", "telefono", "llamar"],
+  lang: ["lang", "dil", "language", "idioma"],
+  whoami: ["whoami", "kimim", "quiensoy"],
   pwd: ["pwd"],
   sudo: ["sudo"],
 };
@@ -50,7 +50,8 @@ export function vocabulary(data: TermData): string[] {
   const words = new Set<string>();
   data.routes.forEach((r) => words.add(r.command));
   ["help", "ls", "open", "cat", "clear", "mail", "whatsapp", "tel", "lang", "whoami"].forEach((w) => words.add(w));
-  if (data.lang === "tr") ["yardim", "ac", "temizle"].forEach((w) => words.add(w));
+  const local: Partial<Record<TermData["lang"], string[]>> = { tr: ["yardim", "ac", "temizle"], es: ["ayuda", "abrir", "limpiar"] };
+  local[data.lang]?.forEach((w) => words.add(w));
   return [...words];
 }
 
@@ -68,7 +69,7 @@ export function complete(data: TermData, input: string): string[] {
   if (verb === "open") pool = [...data.projects.map((p) => p.slug), ...data.products.map((p) => p.slug)];
   else if (verb === "cat") pool = data.services.map((s) => s.slug);
   else if (verb === "cd" || verb === "ls") pool = data.routes.map((r) => r.command).filter(Boolean);
-  else if (verb === "lang") pool = ["tr", "en"];
+  else if (verb === "lang") pool = Object.keys(data.langHrefs);
   return pool
     .filter((w) => normalize(w).startsWith(q) && normalize(w) !== q)
     .slice(0, 6)
@@ -140,10 +141,11 @@ export function run(data: TermData, input: string, pathname = "/"): TermResult {
     return { lines: [{ kind: "links", items: [{ label: data.contact.phone, href: `tel:${data.contact.phoneHref}`, external: true }] }] };
 
   if (verb === "lang") {
-    const target = normalize(arg) || (data.lang === "tr" ? "en" : "tr");
+    const codes = Object.keys(data.langHrefs) as TermData["lang"][];
+    const target = normalize(arg) as TermData["lang"];
+    if (!codes.includes(target)) return { lines: [{ kind: "text", text: fill(s.needArg, { usage: `lang ${codes.join("|")}` }), tone: "error" }] };
     if (target === data.lang) return { lines: [{ kind: "text", text: `lang: ${target}`, tone: "muted" }] };
-    if (target !== "tr" && target !== "en") return { lines: [{ kind: "text", text: fill(s.needArg, { usage: "lang tr|en" }), tone: "error" }] };
-    return { lines: [{ kind: "text", text: fill(s.going, { target }), tone: "ok" }], action: { type: "location", href: data.otherLangHref } };
+    return { lines: [{ kind: "text", text: fill(s.going, { target }), tone: "ok" }], action: { type: "location", href: data.langHrefs[target] } };
   }
 
   if (verb === "ls") {

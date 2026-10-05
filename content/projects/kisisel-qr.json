@@ -5,44 +5,53 @@
   "status": "live",
   "order": 3,
   "featured": true,
+  "ownProduct": true,
   "categories": [
+    "mobil",
     "web"
   ],
   "type": {
-    "tr": "QR çözümleri",
-    "en": "QR solutions"
+    "tr": "Mobil uygulama ve web sitesi",
+    "en": "Mobile app and website",
+    "es": "App móvil y sitio web"
   },
   "sector": {
-    "tr": "Dijital hizmet",
-    "en": "Digital service"
+    "tr": "Dijital kartvizit",
+    "en": "Digital business card",
+    "es": "Tarjeta de visita digital"
   },
   "summary": {
-    "tr": "Kendi ürünümüz olan QR kod platformu.",
-    "en": "Our own QR code platform."
+    "tr": "Kendi ürünümüz: QR kodlu dijital kartvizit. Tüm bilgilerini tek bir profilde paylaş, anında güncelle.",
+    "en": "Our own product: a QR-code digital business card. Share everything in one profile and update it instantly.",
+    "es": "Producto propio: una tarjeta de visita digital con código QR. Comparte todo en un solo perfil y actualízalo al instante."
   },
   "year": null,
   "services": [
-    "web"
+    "mobil",
+    "web",
+    "ui-ux"
   ],
   "stack": [],
   "caseStudy": {
     "challenge": {
       "tr": "",
-      "en": ""
+      "en": "",
+      "es": ""
     },
     "approach": {
       "tr": "",
-      "en": ""
+      "en": "",
+      "es": ""
     },
     "outcome": {
       "tr": "",
-      "en": ""
+      "en": "",
+      "es": ""
     }
   },
   "images": {
     "desktop": "/projects/kisisel-qr/desktop.webp",
     "mobile": "/projects/kisisel-qr/mobile.webp"
   },
-  "_todo": "year, stack ve caseStudy alanlarını doldurun. Boş alanlar sitede gösterilmez. categories: web | mobil | kurumsal | e-ticaret",
-  "ownProduct": true
+  "_todo": "year, stack ve caseStudy alanlarını doldurun. Boş alanlar sitede gösterilmez."
 }

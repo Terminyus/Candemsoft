@@ -48,7 +48,7 @@
   "home": {
     "heroLine1": "Çalışır halde",
     "heroLine2": "teslim ederiz.",
-    "heroLead": "Candemsoft, İstanbul'da web siteleri, mobil uygulamalar ve yapay zekâ özellikleri geliştiren bir yazılım ekibi. Müşterilerimiz için yazıyoruz, kendi ürünlerimizi de App Store'a çıkarıyoruz.",
+    "heroLead": "Candemsoft, İstanbul'da web siteleri, mobil uygulamalar ve yapay zekâ özellikleri geliştiren bir yazılım ekibi. Müşterilerimiz için yazıyoruz, kendi ürünlerimizi de App Store ve Google Play'e çıkarıyoruz.",
     "heroCta": "Projenizi anlatın",
     "heroSecondary": "İşlerimize bakın",
     "workLabel": "Seçili işler",
@@ -109,8 +109,8 @@
         "desc": "bize ulaşın"
       },
       {
-        "cmd": "lang en",
-        "desc": "İngilizceye geç"
+        "cmd": "lang en · lang es",
+        "desc": "dil değiştir"
       },
       {
         "cmd": "clear",
@@ -173,7 +173,7 @@
   "projectsPage": {
     "label": "Projeler",
     "title": "Yaptığımız işler.",
-    "lead": "Müşteri projelerimiz. Yayındaki sitelerin görüntüleri doğrudan canlı sitelerden alındı; isme tıklayıp detaya bakabilir ya da siteye gidebilirsiniz.",
+    "lead": "Müşteri projelerimiz ve kendi ürünlerimiz. Yayındaki sitelerin görüntüleri doğrudan canlı sitelerden alındı; isme tıklayıp detaya bakabilir ya da siteye gidebilirsiniz.",
     "filterLabel": "Kategoriye göre filtrele",
     "all": "Tümü",
     "categories": {
@@ -208,12 +208,15 @@
   "productsPage": {
     "label": "Ürünler",
     "title": "Kendi ürünlerimiz.",
-    "lead": "Müşteri işlerinin yanında kendi uygulamalarımızı da geliştiriyoruz. Bazıları yayında, biri yolda.",
+    "lead": "Müşteri işlerinin yanında kendi uygulamalarımızı da geliştiriyoruz. Dördü yayında, biri yolda.",
     "appStore": "App Store'da indir",
     "googlePlay": "Google Play'de indir",
     "web": "Siteye git",
     "androidSoon": "Android sürümü yolda",
-    "platforms": "Platform"
+    "platforms": "Platform",
+    "features": "Öne çıkanlar",
+    "screens": "Ekran görüntüleri",
+    "caseLink": "Proje sayfası"
   },
   "teamPage": {
     "label": "Ekip",
@@ -261,7 +264,9 @@
         "message": "Mesaj en az 10 karakter olmalı.",
         "consent": "Devam etmek için onay gerekiyor."
       }
-    }
+    },
+    "phoneLabel": "Telefon",
+    "locationLabel": "Konum"
   },
   "cookies": {
     "text": "Bu site analiz ya da reklam çerezi kullanmaz. Yalnızca bu bildirimi kapattığınızı hatırlamak için tarayıcınıza küçük bir kayıt bırakır.",

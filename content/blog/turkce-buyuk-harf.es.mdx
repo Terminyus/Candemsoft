@@ -1,0 +1,62 @@
+export const meta = {
+  title: "İ e ı: por qué las mayúsculas fallan en un sitio en turco",
+  description: "text-transform: uppercase, toUpperCase() y los buscadores. El error con caracteres turcos que más nos da guerra, y cómo resolverlo.",
+  date: "2026-10-05",
+  author: "Candemsoft",
+  tags: ["frontend", "i18n"]
+};
+
+El turco tiene cuatro íes: **i, İ, ı, I**. El inglés tiene dos. Casi todo el software se escribe con supuestos del inglés, así que la diferencia aparece donde menos lo esperas.
+
+## Dónde empieza
+
+En JavaScript, `"istanbul".toUpperCase()` devuelve **ISTANBUL**, con una I sin punto. Un lector turco lo lee como otra letra. La forma correcta es **İSTANBUL**.
+
+Al revés es igual de delicado: `"İLETİŞİM".toLowerCase()` devuelve `i̇leti̇şi̇m`. Cuesta verlo, pero cada «i» lleva un punto combinante extra (U+0307). Compáralo con `iletisim` en un buscador y no coincidirá.
+
+## CSS tampoco te salva
+
+`text-transform: uppercase` deja la conversión al navegador, que mira el atributo `lang` de la página. Si `<html lang="tr">` está bien puesto, el resultado es correcto. Pero:
+
+- si el mismo componente se muestra en una página en inglés, el texto turco se convierte mal,
+- si olvidas el atributo `lang`, todo el sitio se convierte mal,
+- los lectores de pantalla a veces deletrean el texto en mayúsculas letra por letra.
+
+Por eso este sitio no usa `text-transform: uppercase` en absoluto. Cuando necesitamos mayúsculas, las escribimos en el texto original.
+
+## La conversión correcta
+
+Indica el idioma de forma explícita:
+
+```js
+"istanbul".toLocaleUpperCase("tr"); // "İSTANBUL"
+"İLETİŞİM".toLocaleLowerCase("tr"); // "iletişim"
+```
+
+Si comparas términos de búsqueda o comandos, ve un paso más allá y normaliza ambos lados antes de compararlos:
+
+```js
+function normalize(text) {
+  return text
+    .toLocaleLowerCase("tr")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/ı/g, "i");
+}
+
+normalize("İletişim") === normalize("iletisim"); // true
+```
+
+En la terminal de este sitio da igual escribir `iletişim`, `iletisim` o `ILETISIM`: todos llevan al mismo sitio. Esta función es la razón.
+
+## Las fuentes también cuentan
+
+Si una fuente no incluye los glifos turcos, el navegador toma las letras que faltan de otra fuente. Resultado: la «Ş» en una tipografía y el resto de la palabra en otra. Al elegir fuentes, comprueba que exista el subconjunto `latin-ext` y revisa a ojo **ğ, ü, ş, ı, İ, ö, ç** en tamaño grande.
+
+## Lista rápida
+
+1. ¿Es correcto `<html lang>` en todas las páginas?
+2. ¿Usas las versiones con idioma en lugar de `toUpperCase()` / `toLowerCase()`?
+3. ¿Normalizas el texto en búsquedas y filtros?
+4. ¿Tus fuentes incluyen `latin-ext`?
+5. ¿De verdad necesitas `text-transform: uppercase`?

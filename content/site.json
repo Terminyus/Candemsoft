@@ -7,11 +7,29 @@
     "phone": "+90 534 933 46 31",
     "phoneHref": "+905349334631",
     "whatsapp": "https://wa.me/905349334631",
-    "city": { "tr": "İstanbul, Türkiye", "en": "Istanbul, Türkiye" }
+    "city": {
+      "tr": "İstanbul, Türkiye",
+      "en": "Istanbul, Türkiye",
+      "es": "Estambul, Turquía"
+    }
   },
   "stats": [
-    { "value": "50+", "label": { "tr": "tamamlanan proje", "en": "projects shipped" } },
-    { "value": "3+", "label": { "tr": "yıllık tecrübe", "en": "years of experience" } }
+    {
+      "value": "50+",
+      "label": {
+        "tr": "tamamlanan proje",
+        "en": "projects shipped",
+        "es": "proyectos entregados"
+      }
+    },
+    {
+      "value": "3+",
+      "label": {
+        "tr": "yıllık tecrübe",
+        "en": "years of experience",
+        "es": "años de experiencia"
+      }
+    }
   ],
   "social": {
     "linkedin": "",

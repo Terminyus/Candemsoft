@@ -5,7 +5,7 @@ import type { TermData } from "./types";
 
 const data: TermData = {
   lang: "tr",
-  otherLangHref: "/en",
+  langHrefs: { tr: "/", en: "/en", es: "/es" },
   routes: [
     { key: "home", command: "~", aliases: ["Ana sayfa"], label: "Ana sayfa", desc: "", href: "/" },
     { key: "projects", command: "projeler", aliases: ["projeler", "projects", "Projeler"], label: "Projeler", desc: "", href: "/projeler" },
@@ -38,6 +38,12 @@ test("English aliases work on the Turkish site", () => {
   assert.equal(nav("cd ~"), "/");
 });
 
+test("Spanish verbs work", () => {
+  assert.equal(nav("abrir kredi"), "/projeler/kredi-turbo");
+  assert.equal(run(data, "ayuda").lines.length, 2);
+  assert.equal(run(data, "limpiar").action?.type, "clear");
+});
+
 test("open matches projects and products by slug, name or prefix", () => {
   assert.equal(nav("open kredi-turbo"), "/projeler/kredi-turbo");
   assert.equal(nav("aç Kredi Turbo"), "/projeler/kredi-turbo");
@@ -60,7 +66,7 @@ test("typos get a suggestion, gibberish does not", () => {
 test("completion suggests commands and arguments", () => {
   assert.ok(complete(data, "pro").includes("projeler"));
   assert.deepEqual(complete(data, "open kre"), ["open kredi-turbo"]);
-  assert.deepEqual(complete(data, "lang e"), ["lang en"]);
+  assert.deepEqual(complete(data, "lang e"), ["lang en", "lang es"]);
 });
 
 test("utility commands", () => {
@@ -68,4 +74,5 @@ test("utility commands", () => {
   assert.equal(run(data, "mail").action?.type, "location");
   assert.equal(run(data, "whatsapp").action?.type, "external");
   assert.deepEqual(run(data, "lang en").action, { type: "location", href: "/en" });
+  assert.deepEqual(run(data, "idioma es").action, { type: "location", href: "/es" });
 });

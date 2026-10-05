@@ -7,7 +7,7 @@ const base = process.argv[2] ?? "http://localhost:3000";
 const paths = [
   "/", "/hakkimizda", "/hizmetler", "/projeler", "/projeler/kredi-turbo", "/projeler/proox", "/urunler",
   "/ekip", "/blog", "/blog/turkce-buyuk-harf", "/iletisim", "/gizlilik", "/yok-boyle-bir-sayfa",
-  "/en", "/en/projects", "/en/contact",
+  "/en", "/en/projects", "/en/contact", "/es", "/es/productos", "/es/proyectos/seyyah",
 ];
 const browser = await chromium.launch();
 let failures = 0;

@@ -1,33 +1,43 @@
 "use client";
 
 import Link from "next/link";
+import { Fragment } from "react";
 import { useSelectedLayoutSegments } from "next/navigation";
-import type { Locale } from "@/i18n/config";
+import { localeNames, locales, type Locale } from "@/i18n/config";
 import { pathFromSegments } from "@/i18n/routes";
 import { cn } from "@/components/ui/cn";
 
 // Switching locale swaps the root layout (full load), so prefetching the other tree only produces failed segment requests.
 export function LanguageSwitch({ lang, label, className }: { lang: Locale; label: string; className?: string }) {
   const segments = useSelectedLayoutSegments();
-  const target: Locale = lang === "tr" ? "en" : "tr";
   return (
-    <Link
-      href={pathFromSegments(target, segments)}
-      hrefLang={target}
-      prefetch={false}
-      lang={target}
-      aria-label={label}
-      className={cn("font-mono text-mono-sm transition-colors hover:text-signal", className)}
-    >
-      <span aria-hidden className={lang === "tr" ? "text-paper-100" : "text-stone-400"}>
-        TR
-      </span>
-      <span aria-hidden className="px-1 text-ink-600">
-        /
-      </span>
-      <span aria-hidden className={lang === "en" ? "text-paper-100" : "text-stone-400"}>
-        EN
-      </span>
-    </Link>
+    <nav aria-label={label} className={cn("flex items-center font-mono text-mono-sm", className)}>
+      {locales.map((l, i) => (
+        <Fragment key={l}>
+          {i > 0 && (
+            <span aria-hidden className="px-1 text-ink-600">
+              /
+            </span>
+          )}
+          {l === lang ? (
+            <span aria-current="true" title={localeNames[l]} className="text-paper-100">
+              {l.toLocaleUpperCase("en")}
+            </span>
+          ) : (
+            <Link
+              href={pathFromSegments(l, segments)}
+              hrefLang={l}
+              lang={l}
+              prefetch={false}
+              title={localeNames[l]}
+              aria-label={localeNames[l]}
+              className="text-stone-400 transition-colors hover:text-signal"
+            >
+              {l.toLocaleUpperCase("en")}
+            </Link>
+          )}
+        </Fragment>
+      ))}
+    </nav>
   );
 }

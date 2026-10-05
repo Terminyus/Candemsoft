@@ -21,9 +21,9 @@ export default async function ContactPage({ params }: PageProps<"/[lang]/iletisi
   const { contact } = getSite();
   const direct = [
     { label: "E-posta", value: contact.email, href: `mailto:${contact.email}` },
-    { label: lang === "tr" ? "Telefon" : "Phone", value: contact.phone, href: `tel:${contact.phoneHref}` },
+    { label: t.phoneLabel, value: contact.phone, href: `tel:${contact.phoneHref}` },
     { label: "WhatsApp", value: "wa.me/905349334631 ↗", href: contact.whatsapp, external: true },
-    { label: lang === "tr" ? "Konum" : "Location", value: contact.city[lang] },
+    { label: t.locationLabel, value: contact.city[lang] },
   ];
 
   return (

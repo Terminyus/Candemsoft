@@ -1,0 +1,57 @@
+{
+  "slug": "candemfit",
+  "name": "CandemFit",
+  "url": "https://candemfit.com/",
+  "status": "live",
+  "order": 4,
+  "featured": false,
+  "ownProduct": true,
+  "categories": [
+    "mobil",
+    "web"
+  ],
+  "type": {
+    "tr": "Mobil uygulama ve web sitesi",
+    "en": "Mobile app and website",
+    "es": "App móvil y sitio web"
+  },
+  "sector": {
+    "tr": "Fitness ve wellness",
+    "en": "Fitness and wellness",
+    "es": "Fitness y bienestar"
+  },
+  "summary": {
+    "tr": "Kendi ürünümüz: GPS antrenman takibi, rozetler, haftalık lig ve wellness takibini tek uygulamada birleştiren sosyal fitness uygulaması.",
+    "en": "Our own product: a social fitness app that brings GPS workout tracking, badges, a weekly league and wellness tracking into one place.",
+    "es": "Producto propio: una app social de fitness que reúne seguimiento de entrenamientos por GPS, insignias, liga semanal y bienestar en un solo lugar."
+  },
+  "year": null,
+  "services": [
+    "mobil",
+    "web",
+    "ui-ux"
+  ],
+  "stack": [],
+  "caseStudy": {
+    "challenge": {
+      "tr": "",
+      "en": "",
+      "es": ""
+    },
+    "approach": {
+      "tr": "",
+      "en": "",
+      "es": ""
+    },
+    "outcome": {
+      "tr": "",
+      "en": "",
+      "es": ""
+    }
+  },
+  "images": {
+    "desktop": "/projects/candemfit/desktop.webp",
+    "mobile": "/projects/candemfit/mobile.webp"
+  },
+  "_todo": "year, stack ve caseStudy alanlarını doldurun. Boş alanlar sitede gösterilmez."
+}

@@ -10,15 +10,18 @@
   ],
   "type": {
     "tr": "Ticket / destek sistemi",
-    "en": "Ticket / support system"
+    "en": "Ticket / support system",
+    "es": "Sistema de tickets y soporte"
   },
   "sector": {
     "tr": "Teknopark",
-    "en": "Technology park"
+    "en": "Technology park",
+    "es": "Parque tecnológico"
   },
   "summary": {
     "tr": "Yıldız Teknopark için ticket ve destek sistemi.",
-    "en": "Ticket and support system for Yıldız Teknopark."
+    "en": "Ticket and support system for Yıldız Teknopark.",
+    "es": "Sistema de tickets y soporte para Yıldız Teknopark."
   },
   "year": null,
   "services": [
@@ -28,15 +31,18 @@
   "caseStudy": {
     "challenge": {
       "tr": "",
-      "en": ""
+      "en": "",
+      "es": ""
     },
     "approach": {
       "tr": "",
-      "en": ""
+      "en": "",
+      "es": ""
     },
     "outcome": {
       "tr": "",
-      "en": ""
+      "en": "",
+      "es": ""
     }
   },
   "images": {

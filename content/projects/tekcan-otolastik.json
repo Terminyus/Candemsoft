@@ -11,15 +11,18 @@
   ],
   "type": {
     "tr": "Kurumsal web sitesi",
-    "en": "Company website"
+    "en": "Company website",
+    "es": "Sitio web corporativo"
   },
   "sector": {
     "tr": "Otomotiv",
-    "en": "Automotive"
+    "en": "Automotive",
+    "es": "Automoción"
   },
   "summary": {
     "tr": "Tekcan Otolastik'in kurumsal web sitesi.",
-    "en": "Tekcan Otolastik's company website."
+    "en": "Tekcan Otolastik's company website.",
+    "es": "Sitio web corporativo de Tekcan Otolastik."
   },
   "year": null,
   "services": [
@@ -29,15 +32,18 @@
   "caseStudy": {
     "challenge": {
       "tr": "",
-      "en": ""
+      "en": "",
+      "es": ""
     },
     "approach": {
       "tr": "",
-      "en": ""
+      "en": "",
+      "es": ""
     },
     "outcome": {
       "tr": "",
-      "en": ""
+      "en": "",
+      "es": ""
     }
   },
   "images": {
