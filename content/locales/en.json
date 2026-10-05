@@ -126,7 +126,7 @@
   "projectsPage": {
     "label": "Projects",
     "title": "Work we've done.",
-    "lead": "Our client projects. All of them are live: click a name for details, or go straight to the site.",
+    "lead": "Our client projects. Screenshots of live sites are taken straight from the live sites; click a name for details or go to the site.",
     "filterLabel": "Filter by category",
     "all": "All",
     "categories": {
@@ -141,7 +141,8 @@
     "ownProduct": "Our product",
     "colName": "Project",
     "colType": "Type",
-    "colSector": "Sector"
+    "colSector": "Sector",
+    "offline": "Currently offline"
   },
   "projectPage": {
     "type": "Type",

@@ -2,23 +2,24 @@
   "slug": "atolye-semih",
   "name": "Atölye Semih",
   "url": "https://atolyesemih.com/",
-  "order": 9,
-  "featured": false,
+  "status": "live",
+  "order": 4,
+  "featured": true,
   "categories": [
-    "kurumsal",
+    "e-ticaret",
     "web"
   ],
   "type": {
-    "tr": "Atölye & üretim sitesi",
-    "en": "Workshop & production site"
+    "tr": "E-ticaret sitesi",
+    "en": "E-commerce site"
   },
   "sector": {
-    "tr": "Üretim",
-    "en": "Manufacturing"
+    "tr": "Otomotiv aydınlatma",
+    "en": "Automotive lighting"
   },
   "summary": {
-    "tr": "Atölye Semih'in atölye ve üretim sitesi.",
-    "en": "Workshop and production site for Atölye Semih."
+    "tr": "Atölye Semih'in araç aydınlatma ürünleri satan e-ticaret sitesi.",
+    "en": "Atölye Semih's e-commerce site for vehicle lighting products."
   },
   "year": null,
   "services": [

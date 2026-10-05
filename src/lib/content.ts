@@ -17,6 +17,7 @@ export type Project = {
   slug: string;
   name: string;
   url: string;
+  status: "live" | "offline";
   order: number;
   featured: boolean;
   ownProduct?: boolean;

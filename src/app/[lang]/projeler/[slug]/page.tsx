@@ -65,31 +65,35 @@ export default async function ProjectPage({ params }: PageProps<"/[lang]/projele
         </div>
       </header>
 
-      <section data-surface="ink" aria-label={t.desktop} className="pb-(--section-sm)">
-        <div className="container-site grid-site gap-y-6">
-          <figure className="col-span-full lg:col-span-9">
-            <ProjectVisual
-              project={project}
-              variant="desktop"
-              priority
-              pendingLabel={dict.home.visualPending}
-              alt={dict.common.shotDesktop.replace("{name}", project.name)}
-              sizes="(min-width: 1024px) 70vw, 100vw"
-            />
-            <figcaption className="mt-3 font-mono text-mono-sm text-stone-400">{t.desktop} · 1440px</figcaption>
-          </figure>
-          <figure className="col-span-2 md:col-span-2 lg:col-span-3 lg:self-end">
-            <ProjectVisual
-              project={project}
-              variant="mobile"
-              pendingLabel={dict.home.visualPending}
-              alt={dict.common.shotMobile.replace("{name}", project.name)}
-              sizes="(min-width: 1024px) 22vw, 50vw"
-            />
-            <figcaption className="mt-3 font-mono text-mono-sm text-stone-400">{t.mobile} · 390px</figcaption>
-          </figure>
-        </div>
-      </section>
+      {project.status === "live" && (
+        <section data-surface="ink" aria-label={t.desktop} className="pb-(--section-sm)">
+          <div className="container-site grid-site gap-y-6">
+            <figure className="col-span-full lg:col-span-9">
+              <ProjectVisual
+                project={project}
+                variant="desktop"
+                priority
+                pendingLabel={dict.home.visualPending}
+                offlineLabel={dict.projectsPage.offline}
+                alt={dict.common.shotDesktop.replace("{name}", project.name)}
+                sizes="(min-width: 1024px) 70vw, 100vw"
+              />
+              <figcaption className="mt-3 font-mono text-mono-sm text-stone-400">{t.desktop} · 1440px</figcaption>
+            </figure>
+            <figure className="col-span-2 md:col-span-2 lg:col-span-3 lg:self-end">
+              <ProjectVisual
+                project={project}
+                variant="mobile"
+                pendingLabel={dict.home.visualPending}
+                offlineLabel={dict.projectsPage.offline}
+                alt={dict.common.shotMobile.replace("{name}", project.name)}
+                sizes="(min-width: 1024px) 22vw, 50vw"
+              />
+              <figcaption className="mt-3 font-mono text-mono-sm text-stone-400">{t.mobile} · 390px</figcaption>
+            </figure>
+          </div>
+        </section>
+      )}
 
       <section data-surface="paper" className="py-(--section-sm)">
         <div className="container-site grid-site gap-y-10">
@@ -101,10 +105,18 @@ export default async function ProjectPage({ params }: PageProps<"/[lang]/projele
               </div>
             ))}
             <div className="col-span-2 pt-2">
-              <ButtonLink href={project.url} arrow="↗">
-                {t.visit}
-              </ButtonLink>
-              <p className="mt-2 font-mono text-mono-sm text-stone-600">{host}</p>
+              {project.status === "live" ? (
+                <>
+                  <ButtonLink href={project.url} arrow="↗">
+                    {t.visit}
+                  </ButtonLink>
+                  <p className="mt-2 font-mono text-mono-sm text-stone-600">{host}</p>
+                </>
+              ) : (
+                <p className="font-mono text-mono-sm text-stone-600">
+                  <span className="line-through">{host}</span> · {dict.projectsPage.offline}
+                </p>
+              )}
             </div>
           </dl>
 
@@ -137,7 +149,10 @@ export default async function ProjectPage({ params }: PageProps<"/[lang]/projele
               {next.name}
             </Link>
           </div>
-          <span aria-hidden className="font-display text-h1 transition-transform duration-(--duration-2) ease-(--ease-out) group-hover:translate-x-2">
+          <span
+            aria-hidden
+            className="font-display text-h1 transition-transform duration-(--duration-2) ease-(--ease-out) group-hover:translate-x-2"
+          >
             →
           </span>
         </div>

@@ -126,7 +126,7 @@
   "projectsPage": {
     "label": "Projeler",
     "title": "Yaptığımız işler.",
-    "lead": "Müşteri projelerimiz. Hepsi canlı; isme tıklayın, detayına bakın ya da doğrudan siteye gidin.",
+    "lead": "Müşteri projelerimiz. Yayındaki sitelerin görüntüleri doğrudan canlı sitelerden alındı; isme tıklayıp detaya bakabilir ya da siteye gidebilirsiniz.",
     "filterLabel": "Kategoriye göre filtrele",
     "all": "Tümü",
     "categories": {
@@ -141,7 +141,8 @@
     "ownProduct": "Kendi ürünümüz",
     "colName": "Proje",
     "colType": "Tür",
-    "colSector": "Sektör"
+    "colSector": "Sektör",
+    "offline": "Şu an yayında değil"
   },
   "projectPage": {
     "type": "Tür",

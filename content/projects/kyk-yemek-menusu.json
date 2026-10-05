@@ -2,7 +2,8 @@
   "slug": "kyk-yemek-menusu",
   "name": "KYK Yemek Menüsü",
   "url": "https://acdisoftware.com.tr/kyk_menu",
-  "order": 8,
+  "status": "offline",
+  "order": 18,
   "featured": false,
   "categories": [
     "web"
@@ -42,5 +43,6 @@
     "desktop": "/projects/kyk-yemek-menusu/desktop.webp",
     "mobile": "/projects/kyk-yemek-menusu/mobile.webp"
   },
-  "_todo": "year, stack ve caseStudy alanlarını doldurun. Boş alanlar sitede gösterilmez. categories: web | mobil | kurumsal | e-ticaret"
+  "_todo": "year, stack ve caseStudy alanlarını doldurun. Boş alanlar sitede gösterilmez. categories: web | mobil | kurumsal | e-ticaret",
+  "_offline": "acdisoftware.com.tr alan adı DNS'te çözülmüyor (2026-10-05 kontrolü). Site tekrar yayına girerse status'u 'live' yapıp npm run capture:projects çalıştırın."
 }
