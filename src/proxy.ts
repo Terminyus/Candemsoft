@@ -11,7 +11,7 @@ const toInternal = Object.fromEntries(
 const trSegments = new Set<string>(all.map((r) => r.tr).filter(Boolean));
 
 /** Alternative designs live under their own top-level folder and share the URL scheme. */
-const sites = ["v2", "v3"] as const;
+const sites = ["v2", "v3", "v4"] as const;
 
 // Rewrites carry the locale as a header so the global 404 (outside [lang]) can localize itself.
 function rewrite(request: NextRequest, url: URL, locale: string) {

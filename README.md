@@ -2,15 +2,16 @@
 
 Candemsoft kurumsal web sitesi. Next.js 16 (App Router), TypeScript, Tailwind CSS v4, Motion, GSAP.
 
-Tasarım kararları ve gerekçeleri için: [DESIGN.md](DESIGN.md) (klasik), [DESIGN-V2.md](DESIGN-V2.md) (Vitrin) ve [DESIGN-V3.md](DESIGN-V3.md) (Gazete).
+Tasarım kararları ve gerekçeleri için: [DESIGN.md](DESIGN.md) (klasik), [DESIGN-V2.md](DESIGN-V2.md) (Vitrin) ve [DESIGN-V3.md](DESIGN-V3.md) (Gazete) ve [DESIGN-V4.md](DESIGN-V4.md) (Derleme).
 
-## Üç tasarım
+## Dört tasarım
 
 - **Klasik:** `/` — koyu konsol, `candem.sh` terminali.
 - **Vitrin:** `/v2` — beyaz/siyah/turuncu, her ürünün kendi renkleriyle bir odası.
 - **Gazete:** `/v3` — gazete ön sayfası: manşet, ürünler eki, arşiv, ilanlar, künye; yazdırılabilir.
+- **Derleme:** `/v4` — bol animasyonlu, yazılım şirketi havası: kendini yazan kod editörü, deployment listesi, bu reponun gerçek git geçmişi.
 
-Üçü de aynı `content/` dosyalarını okur; içerik bir kez güncellenir. Vitrin ve Gazete arama motorlarına kapalıdır.
+Hepsi aynı `content/` dosyalarını okur; içerik bir kez güncellenir. Alternatif tasarımlar (v2–v4) arama motorlarına kapalıdır.
 
 **Fontlar** `public/fonts` altında kendi barındırılır ve her tasarımın layout'u yalnızca kendi fontlarını preload eder (`src/lib/fonts.tsx`). `next/font` yalnızca JetBrains Mono için kullanılır: üç kök layout tek stil dosyasını paylaştığı için, `next/font` ile tanımlanan her aile her sayfada preload ediliyordu.
 

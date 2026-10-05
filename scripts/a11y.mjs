@@ -10,6 +10,7 @@ const paths = [
   "/en", "/en/projects", "/en/contact", "/es", "/es/productos", "/es/proyectos/seyyah",
   "/v2", "/v2/urunler", "/v2/projeler", "/v2/projeler/seyyah", "/v2/hizmetler", "/v2/hakkimizda", "/v2/blog", "/v2/iletisim", "/v2/en", "/v2/es/productos",
   "/v3", "/v3/urunler", "/v3/projeler", "/v3/projeler/seyyah", "/v3/projeler/proox", "/v3/hizmetler", "/v3/hakkimizda", "/v3/blog/turkce-buyuk-harf", "/v3/iletisim", "/v3/en", "/v3/es/productos",
+  "/v4", "/v4/urunler", "/v4/projeler", "/v4/projeler/seyyah", "/v4/projeler/proox", "/v4/hizmetler", "/v4/hakkimizda", "/v4/blog/turkce-buyuk-harf", "/v4/iletisim", "/v4/en", "/v4/es/productos",
 ];
 const browser = await chromium.launch();
 let failures = 0;
