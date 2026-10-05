@@ -16,7 +16,8 @@
     "close": "Close",
     "skip": "Skip to content",
     "language": "Language",
-    "switchTo": "Türkçe"
+    "switchTo": "Türkçe",
+    "primary": "Main menu"
   },
   "common": {
     "visitSite": "Visit site",
@@ -32,5 +33,11 @@
     "title": "This page doesn't exist.",
     "body": "The address may have changed, or it never existed.",
     "home": "Back to home"
+  },
+  "footer": {
+    "lead": "A project, a question, or just hello:",
+    "sitemap": "Pages",
+    "reach": "Reach us",
+    "rights": "All rights reserved."
   }
 }

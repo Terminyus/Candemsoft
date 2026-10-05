@@ -4,19 +4,19 @@ import { Bricolage_Grotesque, Instrument_Sans, JetBrains_Mono } from "next/font/
 export const display = Bricolage_Grotesque({
   subsets: ["latin", "latin-ext"],
   axes: ["opsz", "wdth"],
-  variable: "--font-display",
+  variable: "--ff-display",
   display: "swap",
 });
 
 export const body = Instrument_Sans({
   subsets: ["latin", "latin-ext"],
   axes: ["wdth"],
-  variable: "--font-body",
+  variable: "--ff-body",
   display: "swap",
 });
 
 export const mono = JetBrains_Mono({
   subsets: ["latin", "latin-ext"],
-  variable: "--font-mono",
+  variable: "--ff-mono",
   display: "swap",
 });

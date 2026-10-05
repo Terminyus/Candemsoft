@@ -16,7 +16,8 @@
     "close": "Kapat",
     "skip": "İçeriğe geç",
     "language": "Dil",
-    "switchTo": "English"
+    "switchTo": "English",
+    "primary": "Ana menü"
   },
   "common": {
     "visitSite": "Siteyi ziyaret et",
@@ -32,5 +33,11 @@
     "title": "Bu sayfa yok.",
     "body": "Adres değişmiş ya da hiç var olmamış olabilir.",
     "home": "Ana sayfaya dön"
+  },
+  "footer": {
+    "lead": "Bir proje, bir soru ya da sadece merhaba:",
+    "sitemap": "Sayfalar",
+    "reach": "Ulaşın",
+    "rights": "Tüm hakları saklıdır."
   }
 }
