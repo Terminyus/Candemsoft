@@ -1,110 +1,240 @@
 [
   {
+    "slug": "seyyah",
+    "name": "Seyyah",
+    "status": "live",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "icon": "/products/seyyah.png",
+    "project": "seyyah",
+    "tagline": {
+      "tr": "Türkiye'yi keşfet. Her check-in bir anı.",
+      "en": "Discover Türkiye. Every check-in is a memory.",
+      "es": "Descubre Turquía. Cada check-in es un recuerdo."
+    },
+    "description": {
+      "tr": "Gerçekten bir yere gidenler için tasarlanmış sosyal keşif uygulaması. Haritadan bir mekan seçersin, oraya fiziksel olarak gidersin, GPS seni doğrular ve check-in'in bir anıya dönüşür.",
+      "en": "A social discovery app for people who actually go places. Pick a spot on the map, go there in person, GPS verifies you, and your check-in becomes a memory.",
+      "es": "Una app social de descubrimiento para quienes de verdad van a los sitios. Eliges un lugar en el mapa, vas en persona, el GPS te verifica y tu check-in se convierte en un recuerdo."
+    },
+    "features": {
+      "tr": [
+        "GPS doğrulamalı check-in",
+        "Toplanabilir etiketler",
+        "Günlük seriler",
+        "Gizli kalmış yerleri keşif",
+        "Güvendiğin insanlar üzerinden sosyal keşif",
+        "Türkiye'nin 81 ili"
+      ],
+      "en": [
+        "GPS-verified check-ins",
+        "Collectible stickers",
+        "Daily streaks",
+        "Hidden-gem discovery",
+        "Social discovery through people you trust",
+        "All 81 provinces of Türkiye"
+      ],
+      "es": [
+        "Check-ins verificados por GPS",
+        "Pegatinas coleccionables",
+        "Rachas diarias",
+        "Descubrimiento de lugares ocultos",
+        "Descubrimiento social a través de gente de confianza",
+        "Las 81 provincias de Turquía"
+      ]
+    },
+    "links": {
+      "appStore": "https://apps.apple.com/tr/app/seyyah-ke%C5%9Ffet-karar-ver-git/id6761266829?l=tr",
+      "googlePlay": "https://play.google.com/store/apps/details?id=com.candemsoft.seyyah",
+      "web": "https://seyyah.info/"
+    }
+  },
+  {
     "slug": "orpigo",
     "name": "Orpigo",
     "status": "live",
-    "platforms": [],
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "icon": "/products/orpigo.png",
+    "project": "orpigo",
     "tagline": {
-      "tr": "TODO: Orpigo için tek cümlelik tanım",
-      "en": "TODO: one-line description of Orpigo"
+      "tr": "Daha hızlı oku. Daha çok hatırla.",
+      "en": "Read faster. Remember more.",
+      "es": "Lee más rápido. Recuerda más."
     },
     "description": {
-      "tr": "TODO: Orpigo açıklaması (2–3 cümle)",
-      "en": "TODO: Orpigo description (2–3 sentences)"
+      "tr": "ORP (Optimal Tanıma Noktası) tekniğiyle çalışan hız okuma uygulaması. PDF'ini yüklersin, hızını seçersin; metin kelime kelime gözünün odak noktasında akar. Okumak için tasarlandı, başka hiçbir şey için değil.",
+      "en": "A speed-reading app built on the ORP (Optimal Recognition Point) technique. Upload a PDF, pick your speed, and the text flows word by word at your focal point. Designed for reading, and nothing else.",
+      "es": "Una app de lectura rápida basada en la técnica ORP (Punto Óptimo de Reconocimiento). Subes un PDF, eliges la velocidad y el texto fluye palabra a palabra en tu punto de enfoque. Diseñada para leer, y nada más."
+    },
+    "features": {
+      "tr": [
+        "PDF yükle, otomatik işlensin",
+        "Ayarlanabilir okuma hızı",
+        "Kaldığın yerden devam et",
+        "PDF'lerin tek bir yerde",
+        "Ücretsiz ve Premium seçenek"
+      ],
+      "en": [
+        "Upload a PDF, it's processed automatically",
+        "Adjustable reading speed",
+        "Pick up where you left off",
+        "All your PDFs in one place",
+        "Free and Premium plans"
+      ],
+      "es": [
+        "Sube un PDF y se procesa solo",
+        "Velocidad de lectura ajustable",
+        "Continúa donde lo dejaste",
+        "Todos tus PDF en un lugar",
+        "Plan gratuito y Premium"
+      ]
     },
     "links": {
-      "appStore": "",
-      "googlePlay": "",
-      "web": ""
-    },
-    "icon": "",
-    "_todo": "status: live | soon · platforms: ios | android | web · Mağaza linklerini ve ikon yolunu (public/ altında) ekleyin. 'TODO' ile başlayan metinler sitede yer tutucu olarak işaretlenir."
+      "appStore": "https://apps.apple.com/app/id6764333807",
+      "googlePlay": "https://play.google.com/store/apps/details?id=com.candemsoft.orpigo",
+      "web": "https://orpigo.com/"
+    }
   },
   {
     "slug": "kisisel-qr",
     "name": "Kişisel QR",
     "status": "live",
     "platforms": [
+      "ios",
+      "android",
       "web"
     ],
+    "icon": "/products/kisisel-qr.png",
+    "project": "kisisel-qr",
     "tagline": {
-      "tr": "TODO: Kişisel QR için tek cümlelik tanım",
-      "en": "TODO: one-line description of Kişisel QR"
+      "tr": "Dijital kimliğini geleceğe taşı.",
+      "en": "Take your digital identity forward.",
+      "es": "Lleva tu identidad digital al futuro."
     },
     "description": {
-      "tr": "TODO: Kişisel QR açıklaması (2–3 cümle)",
-      "en": "TODO: Kişisel QR description (2–3 sentences)"
+      "tr": "QR kodlu dijital kartvizit. İletişim bilgilerini, sosyal medya hesaplarını ve araç bilgilerini tek bir profilde toplarsın; değişiklikler anında yayına girer, kimin neyi göreceğini sen seçersin.",
+      "en": "A digital business card behind a QR code. Contact details, social accounts and vehicle info live in one profile; changes go live instantly and you choose who sees what.",
+      "es": "Una tarjeta de visita digital detrás de un código QR. Datos de contacto, redes sociales e información del vehículo en un solo perfil; los cambios se publican al instante y tú eliges quién ve qué."
+    },
+    "features": {
+      "tr": [
+        "Sınırsız paylaşım",
+        "Anlık güncelleme",
+        "Tema seçimi",
+        "Anlık bildirim",
+        "Görünürlük kontrolü",
+        "QR sticker ve kurumsal paket"
+      ],
+      "en": [
+        "Unlimited sharing",
+        "Instant updates",
+        "Choice of themes",
+        "Instant notifications",
+        "Visibility controls",
+        "QR stickers and team plans"
+      ],
+      "es": [
+        "Compartir sin límites",
+        "Actualización instantánea",
+        "Elección de temas",
+        "Notificaciones al instante",
+        "Control de visibilidad",
+        "Pegatinas QR y planes para empresas"
+      ]
     },
     "links": {
-      "appStore": "",
-      "googlePlay": "",
+      "appStore": "https://apps.apple.com/tr/app/kisisel-qr/id6759985998",
+      "googlePlay": "https://play.google.com/store/apps/details?id=com.candemsoft.kisiselqr",
       "web": "https://kisiselqr.com/"
-    },
-    "icon": "",
-    "_draft": "Eski sitede: 'Araç sahipleri için özel QR kod çözümleri' — onaylarsanız tagline olarak kullanılabilir."
-  },
-  {
-    "slug": "seyyah",
-    "name": "Seyyah",
-    "status": "live",
-    "platforms": [],
-    "tagline": {
-      "tr": "TODO: Seyyah için tek cümlelik tanım",
-      "en": "TODO: one-line description of Seyyah"
-    },
-    "description": {
-      "tr": "TODO: Seyyah açıklaması (2–3 cümle)",
-      "en": "TODO: Seyyah description (2–3 sentences)"
-    },
-    "links": {
-      "appStore": "",
-      "googlePlay": "",
-      "web": ""
-    },
-    "icon": "",
-    "_draft": "Eski sitede: 'Sosyal rota paylaşımı ve gezi rehberi platformu' — onaylarsanız tagline olarak kullanılabilir."
+    }
   },
   {
     "slug": "candemfit",
     "name": "CandemFit",
     "status": "live",
     "platforms": [
-      "ios"
+      "ios",
+      "web"
     ],
     "androidSoon": true,
+    "icon": "/products/candemfit.png",
+    "project": "candemfit",
     "tagline": {
-      "tr": "TODO: CandemFit için tek cümlelik tanım",
-      "en": "TODO: one-line description of CandemFit"
+      "tr": "Hareket et. Paylaş. Birlikte güçlen.",
+      "en": "Move. Share. Get stronger together.",
+      "es": "Muévete. Comparte. Crece en equipo."
     },
     "description": {
-      "tr": "TODO: CandemFit açıklaması (2–3 cümle)",
-      "en": "TODO: CandemFit description (2–3 sentences)"
+      "tr": "GPS antrenman takibi, animasyonlu rota haritaları, story paylaşımı, rozetler, haftalık lig ve ruh hali, adım ve uyku takibini yargılamayan, sıcak bir deneyimde birleştiren sosyal fitness uygulaması.",
+      "en": "A social fitness app that brings GPS workout tracking, animated route maps, story sharing, badges, a weekly league and mood, step and sleep tracking together in a warm, non-judgmental experience.",
+      "es": "Una app social de fitness que reúne seguimiento de entrenamientos por GPS, mapas de ruta animados, historias para compartir, insignias, una liga semanal y seguimiento de ánimo, pasos y sueño en una experiencia cálida y sin juicios."
+    },
+    "features": {
+      "tr": [
+        "GPS antrenman takibi",
+        "Animasyonlu rota haritaları",
+        "Story paylaşımı",
+        "Rozetler ve meydan okumalar",
+        "Haftalık lig",
+        "Ruh hali, adım ve uyku takibi"
+      ],
+      "en": [
+        "GPS workout tracking",
+        "Animated route maps",
+        "Story sharing",
+        "Badges and challenges",
+        "Weekly league",
+        "Mood, step and sleep tracking"
+      ],
+      "es": [
+        "Seguimiento de entrenamientos por GPS",
+        "Mapas de ruta animados",
+        "Historias para compartir",
+        "Insignias y retos",
+        "Liga semanal",
+        "Seguimiento de ánimo, pasos y sueño"
+      ]
     },
     "links": {
       "appStore": "",
       "googlePlay": "",
-      "web": ""
+      "web": "https://candemfit.com/"
     },
-    "icon": ""
+    "_todo": "App Store linkini links.appStore alanına ekleyin. candemfit.com şu an 'yakında App Store & Google Play'de' diyor."
   },
   {
     "slug": "candemkey",
     "name": "Candemkey",
     "status": "soon",
     "platforms": [],
+    "icon": "",
     "tagline": {
       "tr": "Yapay zekâ klavyesi.",
-      "en": "An AI keyboard."
+      "en": "An AI keyboard.",
+      "es": "Un teclado con IA."
     },
     "description": {
-      "tr": "TODO: Candemkey açıklaması (2–3 cümle)",
-      "en": "TODO: Candemkey description (2–3 sentences)"
+      "tr": "Yapay zekâ destekli bir klavye üzerinde çalışıyoruz. Yayınlandığında burada olacak.",
+      "en": "We're building an AI-powered keyboard. It will be here when it launches.",
+      "es": "Estamos creando un teclado con inteligencia artificial. Estará aquí cuando se lance."
+    },
+    "features": {
+      "tr": [],
+      "en": [],
+      "es": []
     },
     "links": {
       "appStore": "",
       "googlePlay": "",
       "web": ""
     },
-    "icon": ""
+    "_todo": "Açıklama, ikon (public/products/candemkey.png) ve yayın tarihi geldiğinde ekleyin."
   }
 ]

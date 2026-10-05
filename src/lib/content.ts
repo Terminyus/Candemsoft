@@ -41,8 +41,11 @@ export type Product = {
   androidSoon?: boolean;
   tagline: Localized;
   description: Localized;
+  features: Localized<string[]>;
   links: { appStore: string; googlePlay: string; web: string };
   icon: string;
+  /** Slug of the matching entry in content/projects (screenshots, case study). */
+  project?: string;
 };
 export type TeamMember = {
   name: string;
