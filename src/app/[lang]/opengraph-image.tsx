@@ -1,0 +1,15 @@
+import { getDictionary } from "@/lib/dictionary";
+import { renderOg, ogContentType, ogSize } from "@/lib/og";
+import { resolveLang } from "@/lib/params";
+import { getSite } from "@/lib/content";
+
+export const alt = "Candemsoft";
+export const size = ogSize;
+export const contentType = ogContentType;
+export const dynamic = "force-static";
+
+export default async function Image({ params }: { params: Promise<{ lang: string }> }) {
+  const lang = await resolveLang(params);
+  const dict = await getDictionary(lang);
+  return renderOg({ label: getSite().contact.city[lang], title: `${dict.home.heroLine1} ${dict.home.heroLine2}` });
+}
