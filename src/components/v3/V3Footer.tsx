@@ -37,7 +37,7 @@ export function V3Footer({ lang, dict }: { lang: Locale; dict: Dictionary }) {
               {dict.nav.privacy}
             </Link>
           </p>
-          <OtherDesigns lang={lang} label={t.otherDesigns} classic={t.classic} vitrin={t.vitrin} />
+          <OtherDesigns lang={lang} current="v3" t={t} />
         </div>
       </div>
     </footer>

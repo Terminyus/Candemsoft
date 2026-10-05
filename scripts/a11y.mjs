@@ -11,6 +11,7 @@ const paths = [
   "/v2", "/v2/urunler", "/v2/projeler", "/v2/projeler/seyyah", "/v2/hizmetler", "/v2/hakkimizda", "/v2/blog", "/v2/iletisim", "/v2/en", "/v2/es/productos",
   "/v3", "/v3/urunler", "/v3/projeler", "/v3/projeler/seyyah", "/v3/projeler/proox", "/v3/hizmetler", "/v3/hakkimizda", "/v3/blog/turkce-buyuk-harf", "/v3/iletisim", "/v3/en", "/v3/es/productos",
   "/v4", "/v4/urunler", "/v4/projeler", "/v4/projeler/seyyah", "/v4/projeler/proox", "/v4/hizmetler", "/v4/hakkimizda", "/v4/blog/turkce-buyuk-harf", "/v4/iletisim", "/v4/en", "/v4/es/productos",
+  "/v5", "/v5/urunler", "/v5/projeler", "/v5/projeler/seyyah", "/v5/projeler/proox", "/v5/hizmetler", "/v5/hakkimizda", "/v5/ekip", "/v5/blog", "/v5/blog/turkce-buyuk-harf", "/v5/iletisim", "/v5/gizlilik", "/v5/en", "/v5/es/productos", "/v5/yok-boyle-sayfa",
 ];
 const browser = await chromium.launch();
 let failures = 0;

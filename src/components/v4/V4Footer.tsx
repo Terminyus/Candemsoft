@@ -57,7 +57,7 @@ export function V4Footer({ lang, dict }: { lang: Locale; dict: Dictionary }) {
           </Link>
         </span>
         <span className="[&_a]:text-dev-text [&_p]:font-[inherit] [&_p]:text-xs [&_p]:tracking-normal">
-          <OtherDesigns lang={lang} label={dict.v3.otherDesigns} classic={dict.v3.classic} vitrin={dict.v3.vitrin} />
+          <OtherDesigns lang={lang} current="v4" t={dict.v3} />
         </span>
       </div>
     </footer>
