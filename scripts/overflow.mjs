@@ -27,7 +27,7 @@ for (const w of widths) {
         if (!r.width) continue;
         for (const child of box.querySelectorAll("*")) {
           const c = child.getBoundingClientRect();
-          if (!c.width || getComputedStyle(child).position === "absolute") continue;
+          if (!c.width || getComputedStyle(child).position === "absolute" || child.closest("[aria-hidden=true]")) continue;
           if (c.right > r.right + 1.5 || c.left < r.left - 1.5) {
             out.push(`${(child.textContent || child.tagName).trim().slice(0, 30)} ⟶ spills ${Math.round(Math.max(c.right - r.right, r.left - c.left))}px out of <${box.tagName.toLowerCase()} class="${String(box.className).slice(0, 50)}">`);
             break;
