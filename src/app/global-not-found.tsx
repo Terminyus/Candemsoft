@@ -8,7 +8,7 @@ import { Logo } from "@/components/ui/Logo";
 import { NotFoundView } from "@/components/page/NotFoundView";
 import { body, mono } from "./fonts";
 import "./globals.css";
-import { preloadDisplayFont } from "./display-font";
+import { DisplayFont } from "./display-font";
 
 /*
  * The root layout lives under the dynamic [lang] segment, so Next can't server-render
@@ -21,9 +21,11 @@ export default async function GlobalNotFound() {
   const raw = (await headers()).get("x-cs-locale") ?? "";
   const lang = isLocale(raw) ? raw : defaultLocale;
   const dict = await getDictionary(lang);
-  preloadDisplayFont();
   return (
     <html lang={lang} className={`${body.variable} ${mono.variable}`}>
+      <head>
+        <DisplayFont />
+      </head>
       <body>
         <header data-surface="ink" className="border-b border-ink-800">
           <div className="container-site flex h-(--header-h) items-center">

@@ -30,6 +30,18 @@ const nextConfig: NextConfig = {
   },
 };
 
+// GitHub Pages build (scripts/build-pages.mjs): static files under the repository path.
+// Headers, the proxy, image optimisation and the global 404 need a server, so they're off.
+const staticExport = process.env.NEXT_PUBLIC_STATIC_EXPORT === "1";
+const staticConfig: NextConfig = {
+  pageExtensions: nextConfig.pageExtensions,
+  poweredByHeader: false,
+  output: "export",
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH,
+  trailingSlash: true,
+  images: { unoptimized: true },
+};
+
 const withMDX = createMDX({});
 
-export default withMDX(nextConfig);
+export default withMDX(staticExport ? staticConfig : nextConfig);

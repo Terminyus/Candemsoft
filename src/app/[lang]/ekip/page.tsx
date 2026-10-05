@@ -7,6 +7,7 @@ import { pageMetadata } from "@/lib/seo";
 import { PageIntro } from "@/components/page/PageIntro";
 import { Monogram } from "@/components/ui/Monogram";
 import { MonoLabel } from "@/components/ui/MonoLabel";
+import { asset } from "@/lib/static";
 import { cn } from "@/components/ui/cn";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/ekip">): Promise<Metadata> {
@@ -36,7 +37,7 @@ export default async function TeamPage({ params }: PageProps<"/[lang]/ekip">) {
               <li key={`${m.name}-${i}`} className={cn("col-span-2 lg:col-span-3", i % 4 === 1 && "lg:mt-16", i % 4 === 3 && "lg:mt-8")}>
                 {m.photo && publicFileExists(m.photo) ? (
                   <div className="relative aspect-[4/5] overflow-hidden bg-paper-200">
-                    <Image src={m.photo} alt={m.name} fill sizes="(min-width: 1024px) 22vw, 45vw" className="object-cover grayscale" />
+                    <Image src={asset(m.photo)} alt={m.name} fill sizes="(min-width: 1024px) 22vw, 45vw" className="object-cover grayscale" />
                   </div>
                 ) : (
                   <Monogram name={m.name} index={i} />

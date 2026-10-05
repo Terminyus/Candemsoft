@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ViewTransition } from "react";
 import { publicFileExists } from "@/lib/content";
 import type { Project } from "@/lib/content";
+import { asset } from "@/lib/static";
 import { cn } from "@/components/ui/cn";
 
 type Props = {
@@ -37,7 +38,7 @@ export function ProjectVisual({
         className={cn("relative overflow-hidden bg-ink-900 ring-1 ring-ink-800 ring-inset", ratio[variant], className)}
       >
         {project.status === "live" && publicFileExists(src) ? (
-          <Image src={src} alt={alt} fill sizes={sizes} preload={priority} fetchPriority={priority ? "high" : undefined} className="object-cover object-top" />
+          <Image src={asset(src)} alt={alt} fill sizes={sizes} preload={priority} fetchPriority={priority ? "high" : undefined} className="object-cover object-top" />
         ) : (
           <div className="absolute inset-0 flex flex-col justify-between p-4 text-stone-400">
             <span className="font-mono text-mono-sm">{host}</span>

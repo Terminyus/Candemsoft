@@ -8,6 +8,7 @@ import { switchLocalePath } from "@/i18n/routes";
 import { complete, run } from "@/lib/terminal/engine";
 import type { TermData, TermLine, TermLink } from "@/lib/terminal/types";
 import { cn } from "@/components/ui/cn";
+import { basePath } from "@/lib/static";
 
 export type TerminalLabels = { title: string; hint: string; prompt: string; inputLabel: string; hintKeys: string };
 
@@ -78,7 +79,7 @@ export function Terminal({ data, labels, initial, mode, onDone, className }: Pro
       } else if (action.type === "external") {
         window.open(action.href, "_blank", "noopener,noreferrer");
       } else if (action.type === "location") {
-        window.location.href = action.href;
+        window.location.href = action.href.startsWith("/") ? basePath + action.href : action.href;
       }
     }, delay);
   }
