@@ -61,3 +61,8 @@ export function pathFromSegments(lang: Locale, segments: string[]): string {
   const key = (Object.keys(routes) as RouteKey[]).find((k) => routes[k].tr === first);
   return key ? href(lang, key, ...rest) : href(lang, "home");
 }
+
+/** URL inside the alternative "Vitrin" design (/v2). */
+export function v2(path: string): string {
+  return path === "/" ? "/v2" : `/v2${path}`;
+}

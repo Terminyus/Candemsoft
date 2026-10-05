@@ -2,7 +2,14 @@
 
 Candemsoft kurumsal web sitesi. Next.js 16 (App Router), TypeScript, Tailwind CSS v4, Motion, GSAP.
 
-Tasarım kararları ve gerekçeleri için: [DESIGN.md](DESIGN.md)
+Tasarım kararları ve gerekçeleri için: [DESIGN.md](DESIGN.md) (klasik) ve [DESIGN-V2.md](DESIGN-V2.md) (Vitrin, alternatif tasarım).
+
+## İki tasarım
+
+- **Klasik:** `/` — koyu konsol, `candem.sh` terminali.
+- **Vitrin:** `/v2` — beyaz/siyah/turuncu, her ürünün kendi renkleriyle bir odası. Arama motorlarına kapalı.
+
+İkisi de aynı `content/` dosyalarını okur; içerik bir kez güncellenir.
 
 ## Kurulum
 
