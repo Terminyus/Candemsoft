@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Locale } from "@/i18n/config";
 import { getProducts, getProjects, getServices, getSite, getStack, publicFileExists } from "@/lib/content";
-import { getCommits } from "@/lib/build-info";
 import type { Dictionary } from "@/lib/dictionary";
 import { asset } from "@/lib/static";
 import { cn } from "@/components/ui/cn";
@@ -254,44 +253,6 @@ export function Modules({ lang, dict }: { lang: Locale; dict: Dictionary }) {
           );
         })}
       </div>
-    </section>
-  );
-}
-
-const typeColor: Record<string, string> = {
-  feat: "text-dev-str border-dev-str/40",
-  fix: "text-[#f87171] border-[#f87171]/40",
-  perf: "text-dev-attr border-dev-attr/40",
-  style: "text-dev-fn border-dev-fn/40",
-  docs: "text-dev-key border-dev-key/40",
-  refactor: "text-dev-key border-dev-key/40",
-  chore: "text-dev-comment border-dev-line",
-};
-
-export function GitLog({ dict }: { dict: Dictionary }) {
-  const commits = getCommits(28);
-  if (!commits.length) return null;
-  return (
-    <section aria-labelledby="gitlog" className="container-site pt-(--section)">
-      <SectionHead id="gitlog" path="$ git log --oneline --graph" title={dict.v4.gitTitle} lead={dict.v4.gitLead} />
-      <ol className="relative mt-10 border-l-2 border-dev-line pl-6 sm:ml-4">
-        {commits.map((c, i) => (
-          <li key={c.hash} className="v4-rise relative py-2.5">
-            <span aria-hidden className={cn("absolute -left-[1.95rem] top-4 size-3 rounded-full border-2 border-dev-bg", i === 0 ? "v4-pulse bg-dev-str" : "bg-signal")} />
-            <p className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-              <span className="v4-mono text-sm text-dev-tag">{c.hash}</span>
-              <span className={cn("rounded border px-1.5 v4-mono text-[0.7rem]", typeColor[c.type] ?? typeColor.chore)}>{c.type}</span>
-              <span className="text-dev-text">{c.subject.replace(/^\w+(\(.+?\))?!?:\s*/, "")}</span>
-              <time dateTime={c.date} className="v4-mono text-xs text-dev-comment">
-                {c.date}
-              </time>
-            </p>
-          </li>
-        ))}
-      </ol>
-      <p className="mt-4 v4-mono text-xs text-dev-comment">
-        github.com/Terminyus/Candemsoft · {commits.length} {dict.v4.recentCommits}
-      </p>
     </section>
   );
 }

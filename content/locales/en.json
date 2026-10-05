@@ -389,12 +389,9 @@
     "productsTitle": "Our own products.",
     "productsLead": "Four apps in the stores, one on the way. Tilt the cards with your mouse.",
     "modulesTitle": "Services, module by module.",
-    "gitTitle": "This site's git history.",
-    "gitLead": "These commits are real: this is how we built this site.",
     "ctaPrompt": "start new-project",
     "ctaTitle": "Make your project our next commit.",
     "ctaButton": "Write to us",
-    "builtAt": "Last build",
-    "recentCommits": "recent commits"
+    "builtAt": "Last build"
   }
 }
