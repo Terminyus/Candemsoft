@@ -16,6 +16,8 @@ function entry(route: RouteKey, rest: string[] = [], availableIn: readonly Local
   }));
 }
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const posts = [...new Set(locales.flatMap((l) => getPostSlugs(l)))];
   return [

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { preloadDisplayFont } from "../display-font";
+import { DisplayFont } from "../display-font";
 import { locales } from "@/i18n/config";
 import { href, type RouteKey } from "@/i18n/routes";
 import { getDictionary } from "@/lib/dictionary";
@@ -44,7 +44,6 @@ const navKeys: RouteKey[] = ["about", "services", "projects", "products", "team"
 export default async function RootLayout({ children, params }: LayoutProps<"/[lang]">) {
   const lang = await resolveLang(params);
   const dict = await getDictionary(lang);
-  preloadDisplayFont();
   const items: NavItem[] = navKeys.map((key) => ({ key, label: dict.nav[key], href: href(lang, key) }));
   const terminal = getTerminalData(lang, dict);
   const terminalLabels = {
@@ -57,6 +56,9 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
   };
   return (
     <html lang={lang} className={`${body.variable} ${mono.variable}`}>
+      <head>
+        <DisplayFont />
+      </head>
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(organizationJsonLd(lang, dict.meta.siteDescription))} />
         <SkipLink label={dict.nav.skip} />

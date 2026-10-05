@@ -10,6 +10,7 @@ import { ButtonLink } from "@/components/ui/Button";
 import { MonoLabel } from "@/components/ui/MonoLabel";
 import { Tag } from "@/components/ui/Tag";
 import { Todo } from "@/components/ui/Todo";
+import { asset } from "@/lib/static";
 import { cn } from "@/components/ui/cn";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/urunler">): Promise<Metadata> {
@@ -62,7 +63,7 @@ export default async function ProductsPage({ params }: PageProps<"/[lang]/urunle
                     )}
                   >
                     {p.icon && publicFileExists(p.icon) ? (
-                      <Image src={p.icon} alt="" fill sizes="80px" className="object-cover" />
+                      <Image src={asset(p.icon)} alt="" fill sizes="80px" className="object-cover" />
                     ) : (
                       <span aria-hidden className="font-display text-h3 font-semibold">
                         {p.name[0]}

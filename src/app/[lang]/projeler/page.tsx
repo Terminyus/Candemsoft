@@ -6,6 +6,7 @@ import { getDictionary } from "@/lib/dictionary";
 import { resolveLang } from "@/lib/params";
 import { pageMetadata } from "@/lib/seo";
 import { PageIntro } from "@/components/page/PageIntro";
+import { asset } from "@/lib/static";
 import { ProjectIndex, ProjectIndexStatic, type IndexItem } from "@/components/project/ProjectIndex";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/projeler">): Promise<Metadata> {
@@ -27,7 +28,7 @@ export default async function ProjectsPage({ params }: PageProps<"/[lang]/projel
     sector: p.sector[lang],
     categories: p.categories,
     host: new URL(p.url).host.replace(/^www\./, ""),
-    desktop: p.status === "live" && publicFileExists(p.images.desktop) ? p.images.desktop : null,
+    desktop: p.status === "live" && publicFileExists(p.images.desktop) ? asset(p.images.desktop) : null,
     own: false,
     offline: p.status === "offline",
   }));
