@@ -3,9 +3,12 @@ import { getServices, getStack } from "@/lib/content";
 import { getDictionary } from "@/lib/dictionary";
 import { resolveLang } from "@/lib/params";
 import { V2PageHead } from "@/components/v2/V2PageHead";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({ params }: PageProps<"/v2/[lang]/hizmetler">): Promise<Metadata> {
-  return { title: (await getDictionary(await resolveLang(params))).nav.services };
+  const lang = await resolveLang(params);
+  const dict = await getDictionary(lang);
+  return pageMetadata({ lang, route: "services", title: dict.nav.services, description: dict.meta.siteDescription });
 }
 
 export default async function Page({ params }: PageProps<"/v2/[lang]/hizmetler">) {

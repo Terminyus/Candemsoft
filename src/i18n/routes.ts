@@ -1,5 +1,5 @@
 import { defaultLocale, type Locale } from "./config";
-import { isStaticExport } from "@/lib/static";
+import { isStaticExport, v2Root } from "@/lib/static";
 
 /**
  * Route keys map to a URL segment per locale. The filesystem uses the
@@ -23,7 +23,7 @@ export type RouteKey = keyof typeof routes;
 /** Public URL for a route, e.g. href("en", "projects", "proox") → "/en/projects/proox". */
 export function href(lang: Locale, key: RouteKey, ...rest: string[]): string {
   // Static export: no proxy to rewrite, so link straight to the internal path (/tr/projeler).
-  if (isStaticExport) return "/" + [lang, routes[key].tr, ...rest].filter(Boolean).join("/");
+  if (isStaticExport && !v2Root) return "/" + [lang, routes[key].tr, ...rest].filter(Boolean).join("/");
   const parts = [routes[key][lang], ...rest].filter(Boolean);
   const prefix = lang === defaultLocale ? "" : `/${lang}`;
   const path = `${prefix}/${parts.join("/")}`;
@@ -64,6 +64,7 @@ export function pathFromSegments(lang: Locale, segments: string[]): string {
 
 /** URL inside the alternative "Vitrin" design (/v2). */
 export function v2(path: string): string {
+  if (v2Root) return path;
   return path === "/" ? "/v2" : `/v2${path}`;
 }
 

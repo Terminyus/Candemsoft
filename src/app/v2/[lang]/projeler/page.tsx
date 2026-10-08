@@ -6,9 +6,12 @@ import { resolveLang } from "@/lib/params";
 import { ProjectVisual } from "@/components/project/ProjectVisual";
 import { V2PageHead } from "@/components/v2/V2PageHead";
 import { v2Href } from "@/components/v2/nav";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({ params }: PageProps<"/v2/[lang]/projeler">): Promise<Metadata> {
-  return { title: (await getDictionary(await resolveLang(params))).nav.projects };
+  const lang = await resolveLang(params);
+  const dict = await getDictionary(lang);
+  return pageMetadata({ lang, route: "projects", title: dict.nav.projects, description: dict.meta.siteDescription });
 }
 
 export default async function Page({ params }: PageProps<"/v2/[lang]/projeler">) {

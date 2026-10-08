@@ -5,6 +5,7 @@ import { Fragment, useEffect, useState } from "react";
 import { useSelectedLayoutSegments } from "next/navigation";
 import { localeNames, locales, type Locale } from "@/i18n/config";
 import { pathFromSegments, v2 } from "@/i18n/routes";
+import { v2Root } from "@/lib/static";
 import { Logo } from "@/components/ui/Logo";
 import { cn } from "@/components/ui/cn";
 
@@ -125,9 +126,11 @@ export function V2Header({ lang, home, items, labels }: Props) {
           </ul>
           <div className="mt-8 flex items-center justify-between gap-4">
             <Languages lang={lang} label={labels.language} className="text-base" />
-            <Link href={classicHref} prefetch={false} className="font-mono text-mono-sm text-stone-600 underline underline-offset-4">
-              {labels.classic}
-            </Link>
+            {!v2Root && (
+              <Link href={classicHref} prefetch={false} className="font-mono text-mono-sm text-stone-600 underline underline-offset-4">
+                {labels.classic}
+              </Link>
+            )}
           </div>
         </nav>
       </div>

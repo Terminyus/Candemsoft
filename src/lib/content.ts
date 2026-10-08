@@ -74,6 +74,10 @@ export function getProducts(): Product[] {
   return products as Product[];
 }
 
+export function getProductByProject(slug: string): Product | undefined {
+  return getProducts().find((p) => (p.project ?? p.slug) === slug && p.status === "live");
+}
+
 export function getTeam(): TeamMember[] {
   return team.members as TeamMember[];
 }

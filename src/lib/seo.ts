@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { defaultLocale, localeTags, locales, type Locale } from "@/i18n/config";
 import { href, type RouteKey } from "@/i18n/routes";
+import type { PostMeta, Product } from "@/lib/content";
 import site from "@content/site.json";
 
 export const siteUrl = site.url;
@@ -88,4 +89,39 @@ export function organizationJsonLd(lang: Locale, description: string) {
 /** Serialises JSON-LD safely for a <script> tag. */
 export function jsonLd(data: unknown) {
   return { __html: JSON.stringify(data).replace(/</g, "\\u003c") };
+}
+
+/** BlogPosting structured data (same shape for every design). */
+export function articleJsonLd(lang: Locale, meta: PostMeta) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: meta.title,
+    description: meta.description,
+    datePublished: meta.date,
+    dateModified: meta.date,
+    inLanguage: localeTags[lang],
+    keywords: meta.tags.join(", "),
+    author: { "@type": "Organization", name: meta.author, url: siteUrl },
+    publisher: { "@id": `${siteUrl}/#organization` },
+    mainEntityOfPage: `${siteUrl}${href(lang, "blog", meta.slug)}`,
+  };
+}
+
+/** SoftwareApplication structured data for a product with store links. */
+export function softwareJsonLd(lang: Locale, product: Product, name: string) {
+  const os = [product.platforms.includes("ios") && "iOS", product.platforms.includes("android") && "Android", product.platforms.includes("web") && "Web"].filter(Boolean).join(", ");
+  const sameAs = [product.links.web, product.links.appStore, product.links.googlePlay].filter(Boolean);
+  return {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name,
+    description: product.description[lang],
+    applicationCategory: product.platforms.includes("ios") || product.platforms.includes("android") ? "MobileApplication" : "WebApplication",
+    operatingSystem: os,
+    inLanguage: localeTags[lang],
+    publisher: { "@id": `${siteUrl}/#organization` },
+    ...(product.links.web ? { url: product.links.web } : {}),
+    ...(sameAs.length ? { sameAs } : {}),
+  };
 }

@@ -7,6 +7,8 @@ import { SkipLink } from "@/components/layout/SkipLink";
 import { CookieNotice } from "@/components/layout/CookieNotice";
 import { V2Header } from "@/components/v2/V2Header";
 import { V2Footer } from "@/components/v2/V2Footer";
+import { v2Root } from "@/lib/static";
+import { jsonLd, organizationJsonLd } from "@/lib/seo";
 import { v2Href, v2Nav } from "@/components/v2/nav";
 import { mono } from "../../fonts-lib/mono";
 import { V2Fonts } from "../fonts";
@@ -25,10 +27,10 @@ export async function generateMetadata({ params }: LayoutProps<"/v2/[lang]">): P
   const dict = await getDictionary(await resolveLang(params));
   return {
     metadataBase: new URL(siteUrl),
-    title: { default: dict.v2.metaTitle, template: `%s — ${dict.v2.metaTitle}` },
+    title: { default: v2Root ? "Candemsoft — Yazılım, mobil uygulama ve yapay zekâ" : dict.v2.metaTitle, template: `%s — ${v2Root ? "Candemsoft" : dict.v2.metaTitle}` },
     description: dict.meta.siteDescription,
     // An alternative design of the same content: keep it out of search results.
-    robots: { index: false, follow: false },
+    robots: v2Root ? { index: true, follow: true } : { index: false, follow: false },
   };
 }
 
@@ -39,6 +41,7 @@ export default async function V2Layout({ children, params }: LayoutProps<"/v2/[l
     <html lang={lang} className={mono.variable}>
       <head>
         <V2Fonts />
+        <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(organizationJsonLd(lang, dict.meta.siteDescription))} />
       </head>
       <body className="bg-white text-ink-950">
         <SkipLink label={dict.nav.skip} />

@@ -5,6 +5,7 @@ import { getDictionary } from "@/lib/dictionary";
 import { formatDate } from "@/lib/format";
 import { resolveLang } from "@/lib/params";
 import { V2PageHead } from "@/components/v2/V2PageHead";
+import { articleJsonLd, jsonLd, pageMetadata } from "@/lib/seo";
 
 export const dynamicParams = false;
 
@@ -14,7 +15,18 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps<"/v2/[lang]/blog/[slug]">): Promise<Metadata> {
   const lang = await resolveLang(params);
-  return { title: (await getPost(lang, (await params).slug)).meta.title };
+  const { slug } = await params;
+  const { meta } = await getPost(lang, slug);
+  const base = pageMetadata({
+    lang,
+    route: "blog",
+    rest: [slug],
+    title: meta.title,
+    description: meta.description,
+    availableIn: locales.filter((l) => getPostSlugs(l).includes(slug)),
+    type: "article",
+  });
+  return { ...base, openGraph: { ...base.openGraph, type: "article", publishedTime: meta.date, authors: [meta.author] } };
 }
 
 export default async function Page({ params }: PageProps<"/v2/[lang]/blog/[slug]">) {
@@ -22,8 +34,10 @@ export default async function Page({ params }: PageProps<"/v2/[lang]/blog/[slug]
   const dict = await getDictionary(lang);
   const { slug } = await params;
   const { Post, meta } = await getPost(lang, slug);
+  const posting = articleJsonLd(lang, meta);
   return (
     <article>
+      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(posting)} />
       <V2PageHead
         kicker={`${formatDate(meta.date, lang)} · ${dict.blogPage.readingTime.replace("{n}", String(readingMinutes(lang, slug)))}`}
         title={meta.title}

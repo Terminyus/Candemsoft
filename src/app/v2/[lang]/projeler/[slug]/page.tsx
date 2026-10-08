@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { locales } from "@/i18n/config";
-import { getProject, getProjects, getServices } from "@/lib/content";
+import { getProductByProject, getProject, getProjects, getServices } from "@/lib/content";
 import { getDictionary } from "@/lib/dictionary";
 import { resolveLang } from "@/lib/params";
 import { ProjectVisual } from "@/components/project/ProjectVisual";
 import { V2PageHead } from "@/components/v2/V2PageHead";
 import { v2Href } from "@/components/v2/nav";
+import { pageMetadata, jsonLd, softwareJsonLd } from "@/lib/seo";
 
 export const dynamicParams = false;
 
@@ -16,8 +17,9 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps<"/v2/[lang]/projeler/[slug]">): Promise<Metadata> {
+  const lang = await resolveLang(params);
   const p = getProject((await params).slug);
-  return p ? { title: p.name } : {};
+  return p ? pageMetadata({ lang, route: "projects", rest: [p.slug], title: p.name, description: p.summary[lang] }) : {};
 }
 
 export default async function Page({ params }: PageProps<"/v2/[lang]/projeler/[slug]">) {
@@ -30,8 +32,10 @@ export default async function Page({ params }: PageProps<"/v2/[lang]/projeler/[s
   const next = all[(all.findIndex((p) => p.slug === project.slug) + 1) % all.length]!;
   const services = getServices().filter((s) => project.services.includes(s.slug)).map((s) => s.title[lang]);
   const story = (["challenge", "approach", "outcome"] as const).filter((k) => project.caseStudy[k][lang]?.trim());
+  const product = getProductByProject(project.slug);
   return (
     <>
+      {product && <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(softwareJsonLd(lang, product, project.name))} />}
       <V2PageHead kicker={`${dict.projectsPage.label} / ${project.type[lang]}`} title={project.name} lead={project.summary[lang]}>
         <div className="container-site flex flex-wrap items-center gap-x-10 gap-y-3 pb-8 font-mono text-mono-sm">
           <span>
