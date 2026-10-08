@@ -50,7 +50,10 @@
       "appStore": "https://apps.apple.com/tr/app/seyyah-ke%C5%9Ffet-karar-ver-git/id6761266829?l=tr",
       "googlePlay": "https://play.google.com/store/apps/details?id=com.candemsoft.seyyah",
       "web": "https://seyyah.info/"
-    }
+    },
+    "social": [
+      "https://www.instagram.com/seyyah.info/"
+    ]
   },
   {
     "slug": "orpigo",
@@ -103,7 +106,8 @@
     },
     "social": [
       "https://www.instagram.com/orpigoapp/",
-      "https://www.youtube.com/@Orpigo"
+      "https://www.youtube.com/@Orpigo",
+      "https://www.tiktok.com/@orpigo"
     ]
   },
   {
@@ -159,7 +163,8 @@
       "web": "https://kisiselqr.com/"
     },
     "social": [
-      "https://www.instagram.com/kisiselqr"
+      "https://www.instagram.com/kisiselqr",
+      "https://www.linkedin.com/company/kisisel-qr/"
     ]
   },
   {
