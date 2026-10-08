@@ -100,7 +100,11 @@
       "appStore": "https://apps.apple.com/app/id6764333807",
       "googlePlay": "https://play.google.com/store/apps/details?id=com.candemsoft.orpigo",
       "web": "https://orpigo.com/"
-    }
+    },
+    "social": [
+      "https://www.instagram.com/orpigoapp/",
+      "https://www.youtube.com/@Orpigo"
+    ]
   },
   {
     "slug": "kisisel-qr",
@@ -153,7 +157,10 @@
       "appStore": "https://apps.apple.com/tr/app/kisisel-qr/id6759985998",
       "googlePlay": "https://play.google.com/store/apps/details?id=com.candemsoft.kisiselqr",
       "web": "https://kisiselqr.com/"
-    }
+    },
+    "social": [
+      "https://www.instagram.com/kisiselqr"
+    ]
   },
   {
     "slug": "candemfit",

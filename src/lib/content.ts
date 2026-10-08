@@ -43,6 +43,8 @@ export type Product = {
   description: Localized;
   features: Localized<string[]>;
   links: { appStore: string; googlePlay: string; web: string };
+  /** Official social profiles of the product (used as schema.org sameAs). */
+  social?: string[];
   icon: string;
   /** Slug of the matching entry in content/projects (screenshots, case study). */
   project?: string;

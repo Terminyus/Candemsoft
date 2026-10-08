@@ -111,7 +111,7 @@ export function articleJsonLd(lang: Locale, meta: PostMeta) {
 /** SoftwareApplication structured data for a product with store links. */
 export function softwareJsonLd(lang: Locale, product: Product, name: string) {
   const os = [product.platforms.includes("ios") && "iOS", product.platforms.includes("android") && "Android", product.platforms.includes("web") && "Web"].filter(Boolean).join(", ");
-  const sameAs = [product.links.web, product.links.appStore, product.links.googlePlay].filter(Boolean);
+  const sameAs = [product.links.web, product.links.appStore, product.links.googlePlay, ...(product.social ?? [])].filter(Boolean);
   return {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
