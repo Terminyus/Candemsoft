@@ -667,14 +667,6 @@
       animation-timeline: --sy-draw;
       animation-range: entry 0% cover 25%;
     }
-    .sy-trail {
-      view-timeline-name: --sy-trail;
-    }
-    .sy-trail .sy-step {
-      animation: sy-step linear both;
-      animation-timeline: --sy-trail;
-      animation-range: entry calc(var(--i) * 9%) entry calc(var(--i) * 9% + 25%);
-    }
   }
 }
 @keyframes sy-draw {
@@ -693,12 +685,92 @@
     clip-path: inset(0 0 0 0);
   }
 }
-@keyframes sy-step {
-  from {
+/* Footprints walk: each print lands in turn, lingers, fades; then the walk starts again. */
+@media (prefers-reduced-motion: no-preference) {
+  .sy-trail .sy-step {
+    animation: sy-walk 5.2s calc(var(--i) * 0.42s) ease-out infinite both;
+  }
+  .sy-ping {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: sy-ping 1.6s ease-out infinite;
+  }
+  .sy-ping-fast {
+    animation-duration: 0.6s;
+  }
+  .sy-pop {
+    animation: sy-pop 0.4s ease-out both;
+  }
+}
+@keyframes sy-walk {
+  0% {
     opacity: 0;
   }
-  to {
+  6%,
+  55% {
     opacity: 1;
+  }
+  80%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes sy-ping {
+  from {
+    transform: scale(0.4);
+    opacity: 0.9;
+  }
+  to {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+@keyframes sy-pop {
+  from {
+    stroke-dashoffset: 40;
+    stroke-dasharray: 40;
+  }
+  to {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 40;
+  }
+}
+/* Route legs ink themselves in when walked; stamp and stickers appear as they're earned. */
+.sy-leg {
+  stroke-dasharray: 1 1.1;
+  stroke-dashoffset: 1.05;
+}
+.sy-leg-on {
+  stroke-dashoffset: 0;
+}
+.sy-stamp {
+  opacity: 0;
+  transform: scale(0.6);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+/* not yet earned: a grey outline of what's to come */
+.sy-sticker {
+  opacity: 0.3;
+  transform: scale(0.85);
+  filter: grayscale(1);
+}
+.sy-stamp-on,
+.sy-sticker-on {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .sy-leg {
+    transition: stroke-dashoffset 0.9s ease-in-out;
+  }
+  .sy-stamp,
+  .sy-sticker {
+    transition:
+      opacity 0.35s ease-out,
+      transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1),
+      filter 0.35s;
   }
 }
 

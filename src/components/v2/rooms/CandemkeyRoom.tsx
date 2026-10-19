@@ -104,6 +104,8 @@ export function CandemkeyRoom({
               actions: t.keyActions,
               sample: t.sample,
               note: t.keyDemoNote,
+              pause: t.keyPause,
+              play: t.keyPlay,
             }}
           />
         </div>

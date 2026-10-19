@@ -4,6 +4,7 @@ import type { Product } from "@/lib/content";
 import type { Dictionary } from "@/lib/dictionary";
 import { asset } from "@/lib/static";
 import { RoomInfo, type RoomTheme } from "./RoomInfo";
+import { SeyyahNotebook } from "./SeyyahNotebook";
 
 // Palette and drawing language follow the revised seyyah.info: blue ink on warm paper.
 const theme: RoomTheme = {
@@ -58,67 +59,6 @@ function Trail() {
   );
 }
 
-const pin = "M18 40s14-13 14-24a14 14 0 0 0-28 0c0 11 14 24 14 24Z";
-const route = "M58 300C120 296 140 250 190 236S262 236 300 210 360 168 412 160";
-
-function Notebook({ t }: { t: Dictionary["v2"] }) {
-  const [p1, p2, p3] = t.seyyahPins;
-  return (
-    <svg viewBox="0 0 480 360" aria-hidden className="block h-auto w-full overflow-visible">
-      <defs>
-        <filter id="sy-wobble" x="-5%" y="-5%" width="110%" height="110%">
-          <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7" result="n" />
-          <feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G" />
-        </filter>
-        <pattern id="sy-hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
-          <line x1="0" y1="0" x2="0" y2="6" stroke="#1f4fbf" strokeWidth="1.3" strokeOpacity=".55" />
-        </pattern>
-        {/* the dashed route is revealed by a solid stroke drawing underneath it */}
-        <mask id="sy-route" maskUnits="userSpaceOnUse" x="0" y="0" width="480" height="360">
-          <path data-draw pathLength={1} d={route} fill="none" stroke="#fff" strokeWidth="12" strokeLinecap="round" />
-        </mask>
-      </defs>
-      <text x="18" y="62" fontSize="46" className="sy-write fill-seyyah-ink font-hand font-bold">
-        {t.seyyahNotebook}
-      </text>
-      <g filter="url(#sy-wobble)">
-        <path data-draw pathLength={1} className="sy-ink" strokeWidth="2.6" d="M20 80c70-6 160-9 250-4s130 2 190-3" />
-        <path mask="url(#sy-route)" className="sy-ink" strokeWidth="3.4" strokeDasharray="2 9" d={route} />
-        {[
-          [40, 262, "#fff"],
-          [172, 196, "#fff"],
-          [394, 120, "url(#sy-hatch)"],
-        ].map(([x, y, fill]) => (
-          <g key={`${x}`} transform={`translate(${x} ${y})`}>
-            <path className="sy-ink" fill={fill as string} d={pin} />
-            <circle cx="18" cy="16" r="5" className="fill-seyyah-ink" />
-          </g>
-        ))}
-        {/* GPS stamp */}
-        <g transform="translate(62 112) rotate(-10)">
-          <circle data-draw pathLength={1} className="sy-ink" strokeWidth="2.4" cx="44" cy="44" r="40" />
-          <circle data-draw pathLength={1} className="sy-ink" strokeWidth="1.4" cx="44" cy="44" r="33" />
-          <path data-draw pathLength={1} className="sy-ink" strokeWidth="4" d="M27 45l11 11 23-25" />
-          <text x="44" y="78" textAnchor="middle" fontSize="9" letterSpacing="2" className="fill-seyyah-ink font-mono">
-            GPS ✓
-          </text>
-        </g>
-      </g>
-      <g className="fill-seyyah-ink font-hand font-bold" fontSize="24">
-        <text x="22" y="340">
-          {p1}
-        </text>
-        <text x="150" y="282">
-          {p2}
-        </text>
-        <text x="300" y="132">
-          {p3}
-        </text>
-      </g>
-    </svg>
-  );
-}
-
 export function SeyyahRoom({
   product,
   lang,
@@ -139,7 +79,7 @@ export function SeyyahRoom({
     <section
       id={product.slug}
       aria-labelledby={`room-${product.slug}`}
-      className="cv-auto relative overflow-hidden bg-seyyah-paper pb-(--section) pt-8 text-seyyah-title"
+      className={`${index > 1 ? "cv-auto " : ""}relative overflow-hidden bg-seyyah-paper pb-(--section) pt-8 text-seyyah-title`}
     >
       {/* faint pencil landscape from the app, fading in and out at the edges */}
       <Image
@@ -172,38 +112,27 @@ export function SeyyahRoom({
             </>
           }
         />
-        <figure role="img" aria-label={t.seyyahArt} className="relative mx-auto w-full max-w-[560px] pb-16 pr-2">
+        <figure className="relative mx-auto w-full max-w-[560px] pr-2">
+          <figcaption className="sr-only">{t.seyyahArt}</figcaption>
           <div className="sy-paper sy-notebook sy-draw relative -rotate-[1.5deg] py-6 pl-9 pr-5">
-            <Notebook t={t} />
+            <SeyyahNotebook
+              stickers={["first_checkin", "early_bird", "sunset_chaser"].map((s) => asset(`/rooms/seyyah/${s}.webp`))}
+              labels={{
+                title: t.seyyahNotebook,
+                pins: t.seyyahPins,
+                checkin: t.seyyahCheckin,
+                locating: t.seyyahLocating,
+                done: t.seyyahDone,
+                reset: t.seyyahReset,
+                progress: t.seyyahProgress,
+                tryIt: t.seyyahTry,
+              }}
+            />
           </div>
           {/* polaroid: the app's pencil drawing of Galata */}
-          <div className="sy-paper absolute -bottom-2 right-0 w-[40%] rotate-[5deg] rounded-[2px] bg-white p-2 pb-8">
-            <Image
-              src={asset("/rooms/seyyah/galata.webp")}
-              alt=""
-              width={370}
-              height={370}
-              sizes="(min-width: 1024px) 220px, 40vw"
-              className="aspect-square w-full object-cover"
-            />
-            <span className="absolute inset-x-0 bottom-1 text-center font-hand text-lg font-bold text-seyyah-ink">
-              Galata, 09:12
-            </span>
-          </div>
-          {/* collected stickers, taped to the page */}
-          <div className="absolute -bottom-6 left-2 flex items-end gap-1">
-            {["first_checkin", "early_bird", "sunset_chaser"].map((s, i) => (
-              <Image
-                key={s}
-                src={asset(`/rooms/seyyah/${s}.webp`)}
-                alt=""
-                width={240}
-                height={240}
-                sizes="72px"
-                className={i === 1 ? "size-16 -rotate-6 sm:size-[4.5rem]" : "size-12 rotate-6 sm:size-14"}
-              />
-            ))}
-            <span className="mb-1 ml-1 font-hand text-xl font-bold text-seyyah-ink">← {t.seyyahStickers}</span>
+          <div className="sy-paper absolute -bottom-4 right-0 w-[40%] rotate-[5deg] rounded-[2px] bg-white p-2 pb-8">
+            <Image src={asset("/rooms/seyyah/galata.webp")} alt="" width={370} height={370} sizes="(min-width: 1024px) 220px, 40vw" className="aspect-square w-full object-cover" />
+            <span className="absolute inset-x-0 bottom-1 text-center font-hand text-lg font-bold text-seyyah-ink">Galata, 09:12</span>
           </div>
         </figure>
       </div>

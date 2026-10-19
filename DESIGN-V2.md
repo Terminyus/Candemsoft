@@ -32,7 +32,7 @@ Odalarda o ürünün kendi renkleri geçerlidir (logolardan ölçüldü):
 
 - **Archivo**, genişlik ekseni sayesinde tek aile iki ses: başlıklarda geniş (wdth 125) ve kalın (800), ara başlık ve arayüzde 112/700. Değişken font yerine bu iki kesim `fontTools` ile **sabit dosyalara indirildi** (176 KB → 52 KB).
 - Gövde metni Instrument Sans, etiketler JetBrains Mono (klasik tasarımla ortak).
-- Caveat yalnızca Seyyah odasında; odalar `content-visibility: auto` olduğu için oda yaklaşmadan indirilmez.
+- Caveat yalnızca Seyyah odasında (ağırlığı düşürmek için bağlamsal alternatifleri çıkarılmış alt küme, 71 KB → 44 KB); odalar `content-visibility: auto` olduğu için oda yaklaşmadan indirilmez.
 - Yedek fontlar `size-adjust` ile gerçek fontların genişliğine ayarlı (CLS 0).
 
 ## Düzen
@@ -49,7 +49,8 @@ Odalarda o ürünün kendi renkleri geçerlidir (logolardan ölçüldü):
 | CandemFit | Rota scroll'la çizilir | Ürünün "animasyonlu rota" özelliğini anlatmak |
 | Kartlar, butonlar | Hover'da 4–8px kayma, renk değişimi | Geri bildirim |
 
-| Seyyah | Rota, damga ve el yazısı scroll'la çizilir; ayak izleri sırayla belirir (CSS scroll-driven animation) | seyyah.info'daki çizim hissi |
+| Seyyah | Ayak izleri döngüyle "yürür"; **Buradayım** ile durak durak check-in: GPS doğrulama beklemesi, rotanın bir sonraki ayağı mürekkeplenir, etiket kazanılır, üç durakta "Rota tamam" damgası | Uygulamanın check-in akışını denetmek |
+| Candemkey | Klavye taslağı tuş tuş yazar (basılan tuş parlar), AI tuşuna basılır, aksiyon sonucu gelir; sırayla beş aksiyon. Durdur/oynat düğmesi; bir aksiyon seçilince döngü durur; ekran dışında çalışmaz | Klavyenin nasıl kullanıldığını göstermek |
 
 `prefers-reduced-motion` ya da scroll animasyonu desteklemeyen tarayıcı: rotalar ve çizimler hazır çizili gelir, demolar yalnızca ziyaretçi başlatınca oynar.
 

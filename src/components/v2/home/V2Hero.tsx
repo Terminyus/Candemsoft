@@ -8,10 +8,11 @@ import { v2Href } from "@/components/v2/nav";
 export function V2Hero({ lang, dict }: { lang: Locale; dict: Dictionary }) {
   const t = dict.v2;
   const site = getSite();
-  const shelf = getProducts().filter((p) => p.status === "live");
+  // Every product has a room, so every product is on the shelf; unreleased ones say so.
+  const shelf = getProducts();
   const stats = [
     ...site.stats.map((s) => ({ v: s.value, k: s.label[lang] })),
-    { v: String(shelf.length), k: dict.stats.products },
+    { v: String(shelf.filter((p) => p.status === "live").length), k: dict.stats.products },
   ];
   return (
     <section aria-labelledby="v2-hero" className="border-b border-ink-950">
@@ -40,15 +41,20 @@ export function V2Hero({ lang, dict }: { lang: Locale; dict: Dictionary }) {
 
         {/* The shelf: our apps, each one a doorway into its room below. */}
         <nav aria-label={t.shelf}>
-          <ul className="grid grid-cols-2 gap-3 md:grid-cols-4 xl:grid-cols-2">
+          <ul className="grid grid-cols-2 gap-3 md:grid-cols-5 xl:grid-cols-2">
             {shelf.map((p) => (
-              <li key={p.slug}>
+              <li key={p.slug} className={p.status === "soon" ? "col-span-2 md:col-span-1 xl:col-span-2" : undefined}>
                 {/* Icon above the name: the name gets the card's full width, so it never spills out. */}
                 <a
                   href={`#${p.slug}`}
                   className="group flex h-full flex-col items-start gap-3 rounded-2xl border border-ink-950 p-3 transition-colors hover:bg-ink-950 hover:text-white"
                 >
-                  <RoomIcon product={p} className="size-12 ring-1 ring-ink-950/10" />
+                  <span className="flex w-full flex-wrap items-start justify-between gap-2">
+                    <RoomIcon product={p} className="size-12 ring-1 ring-ink-950/10" />
+                    {p.status === "soon" && (
+                      <span className="rounded-full bg-signal px-2 py-0.5 font-mono text-[0.65rem] uppercase text-ink-950">{dict.common.comingSoon}</span>
+                    )}
+                  </span>
                   <span className="w-full font-archivo text-[0.95rem] font-semibold leading-tight [overflow-wrap:anywhere]">{p.name}</span>
                 </a>
               </li>
