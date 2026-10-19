@@ -293,10 +293,6 @@
     "roomEnter": "Enter the room",
     "sample": "sample",
     "sampleNote": "The data in this area is a sample.",
-    "seyyahNote1": "go there first",
-    "seyyahNote2": "GPS verifies",
-    "seyyahNote3": "the sticker is yours",
-    "seyyahRoute": "a weekend route",
     "orpigoDemo": "Try it: this is how Orpigo reads",
     "orpigoPlay": "Play",
     "orpigoPause": "Pause",
@@ -313,7 +309,6 @@
     "fitTime": "time",
     "fitWeekly": "Weekly league",
     "keyTitle": "AI in everything you type.",
-    "keyNote": "The keyboard is in design.",
     "clientsKicker": "Client work",
     "clientsTitle": "What we've built for others.",
     "clientsOffline": "currently offline",
@@ -323,7 +318,48 @@
     "ctaTitle": "The next room could be your project.",
     "ctaButton": "Write to us",
     "switchDesign": "Classic design",
-    "switchDesignHint": "This is an alternative design of the site."
+    "switchDesignHint": "This is an alternative design of the site.",
+    "seyyahNotebook": "Explore · Save · Remember",
+    "seyyahPins": [
+      "morning coffee",
+      "old bazaar",
+      "sunset ★"
+    ],
+    "seyyahVerified": "GPS verified",
+    "seyyahStickers": "the sticker's yours",
+    "seyyahArt": "A Seyyah notebook: a day's route, a GPS check stamp, a pencil drawing of Galata Tower and collected stickers",
+    "keyKicker": "Turkish AI keyboard",
+    "keyStores": "Coming soon to the stores",
+    "keyBefore": "Before",
+    "keyAfter": "After",
+    "keyActions": "Pick an AI action",
+    "keyDemoNote": "Examples from candemkey.com; real results may vary.",
+    "keyDemo": {
+      "before": "gonna be late to the meeting tmrw start without me",
+      "actions": [
+        [
+          "Fix",
+          "I'm going to be late to the meeting tomorrow. Start without me."
+        ],
+        [
+          "Formal",
+          "I'll be slightly late to tomorrow's meeting; please start without me."
+        ],
+        [
+          "Casual",
+          "Running a bit late tomorrow, go ahead and start without me!"
+        ],
+        [
+          "Shorten",
+          "Late tomorrow, start without me."
+        ],
+        [
+          "Expand",
+          "I'll be a few minutes late to tomorrow's meeting. Please go ahead and start; I'll catch up when I get there."
+        ]
+      ]
+    },
+    "keyHighlight": "one key"
   },
   "v3": {
     "metaTitle": "The Candemsoft Gazette",

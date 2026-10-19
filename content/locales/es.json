@@ -293,10 +293,6 @@
     "roomEnter": "Entrar en la sala",
     "sample": "ejemplo",
     "sampleNote": "Los datos de esta zona son de ejemplo.",
-    "seyyahNote1": "primero ve",
-    "seyyahNote2": "el GPS lo verifica",
-    "seyyahNote3": "la pegatina es tuya",
-    "seyyahRoute": "una ruta de fin de semana",
     "orpigoDemo": "Pruébalo: así lee Orpigo",
     "orpigoPlay": "Reproducir",
     "orpigoPause": "Pausa",
@@ -313,7 +309,6 @@
     "fitTime": "tiempo",
     "fitWeekly": "Liga semanal",
     "keyTitle": "IA en todo lo que escribes.",
-    "keyNote": "El teclado está en diseño.",
     "clientsKicker": "Trabajo para clientes",
     "clientsTitle": "Lo que hemos hecho para otros.",
     "clientsOffline": "fuera de línea por ahora",
@@ -323,7 +318,48 @@
     "ctaTitle": "La próxima sala puede ser tu proyecto.",
     "ctaButton": "Escríbenos",
     "switchDesign": "Diseño clásico",
-    "switchDesignHint": "Este es un diseño alternativo del sitio."
+    "switchDesignHint": "Este es un diseño alternativo del sitio.",
+    "seyyahNotebook": "Explora · Guarda · Recuerda",
+    "seyyahPins": [
+      "café de la mañana",
+      "bazar antiguo",
+      "atardecer ★"
+    ],
+    "seyyahVerified": "GPS verificado",
+    "seyyahStickers": "la pegatina es tuya",
+    "seyyahArt": "Un cuaderno de Seyyah: la ruta de un día, un sello de verificación GPS, un dibujo a lápiz de la Torre de Gálata y pegatinas coleccionadas",
+    "keyKicker": "Teclado turco con IA",
+    "keyStores": "Próximamente en las tiendas",
+    "keyBefore": "Antes",
+    "keyAfter": "Después",
+    "keyActions": "Elige una acción de IA",
+    "keyDemoNote": "Ejemplos de candemkey.com; el resultado real puede variar.",
+    "keyDemo": {
+      "before": "mañana llego tarde a la reunion empiecen sin mi",
+      "actions": [
+        [
+          "Corregir",
+          "Mañana llego tarde a la reunión, empiecen sin mí."
+        ],
+        [
+          "Formal",
+          "Mañana llegaré con algo de retraso a la reunión; por favor, comiencen sin mí."
+        ],
+        [
+          "Informal",
+          "Mañana llego un poco tarde, ¡empiecen sin mí!"
+        ],
+        [
+          "Acortar",
+          "Llego tarde mañana; empiecen sin mí."
+        ],
+        [
+          "Ampliar",
+          "Mañana llegaré unos minutos tarde a la reunión. Pueden empezar sin mí; me pongo al día en cuanto llegue."
+        ]
+      ]
+    },
+    "keyHighlight": "una tecla"
   },
   "v3": {
     "metaTitle": "La Gaceta de Candemsoft",
