@@ -214,27 +214,44 @@
     "name": "Candemkey",
     "status": "soon",
     "platforms": [],
-    "icon": "",
+    "icon": "/products/candemkey.png",
     "tagline": {
-      "tr": "Yapay zekâ klavyesi.",
-      "en": "An AI keyboard.",
-      "es": "Un teclado con IA."
+      "tr": "Yazdığın her yerde, yapay zekâ bir tuş uzakta.",
+      "en": "Wherever you type, AI is one key away.",
+      "es": "Escribas donde escribas, la IA está a una tecla."
     },
     "description": {
-      "tr": "Yapay zekâ destekli bir klavye üzerinde çalışıyoruz. Yayınlandığında burada olacak.",
-      "en": "We're building an AI-powered keyboard. It will be here when it launches.",
-      "es": "Estamos creando un teclado con inteligencia artificial. Estará aquí cuando se lance."
+      "tr": "Yazdığın her yerde çalışan Türkçe yapay zekâ klavyesi. Yazım düzeltme, resmî mesaj, ton değiştirme ve çeviri doğrudan klavyede. iOS ve Android için yakında.",
+      "en": "A Turkish-first AI keyboard that works wherever you type. Fix grammar, write formal messages, change the tone and translate, right from the keyboard. Coming soon to iOS and Android.",
+      "es": "Un teclado con IA que funciona dondequiera que escribas. Corrección de texto, mensajes formales, cambio de tono y traducción desde el teclado. Próximamente en iOS y Android."
     },
     "features": {
-      "tr": [],
-      "en": [],
-      "es": []
+      "tr": [
+        "Beş AI düğmesi: Düzelt, Resmî, Samimi, Kısalt, Uzat",
+        "Komut satırı: çeviri ya da kendi isteğin",
+        "Alana göre değişen tuşlar (mesaj, e-posta, adres çubuğu)",
+        "Türkçe Q, İngilizce ve İspanyolca QWERTY",
+        "Şifre alanlarında AI kapalı, hiçbir şey kaydedilmez"
+      ],
+      "en": [
+        "Five AI buttons: Fix, Formal, Casual, Shorten, Expand",
+        "Command line: translate or ask in your own words",
+        "Keys that adapt to the field (message, email, address bar)",
+        "Turkish Q, English and Spanish QWERTY",
+        "AI off in password fields, nothing is recorded"
+      ],
+      "es": [
+        "Cinco botones de IA: Corregir, Formal, Informal, Acortar, Ampliar",
+        "Línea de comandos: traduce o pide con tus palabras",
+        "Teclas que se adaptan al campo (mensaje, correo, barra de direcciones)",
+        "Q turco, QWERTY inglés y español",
+        "IA desactivada en campos de contraseña, no se registra nada"
+      ]
     },
     "links": {
       "appStore": "",
       "googlePlay": "",
-      "web": ""
-    },
-    "_todo": "Açıklama, ikon (public/products/candemkey.png) ve yayın tarihi geldiğinde ekleyin."
+      "web": "https://candemkey.com"
+    }
   }
 ]
