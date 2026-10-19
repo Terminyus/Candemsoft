@@ -16,17 +16,17 @@ Site çerçevesi yalnızca üç renk kullanır:
 |---|---|---|
 | Beyaz | `#FFFFFF` | Zemin |
 | Siyah | `#0E0D0B` | Tipografi, çizgiler, birincil buton |
-| Turuncu | `#F85404` | Logodan. Yapısal bloklar (CTA, Candemkey odası), vurgu |
+| Turuncu | `#F85404` | Logodan. Yapısal bloklar (CTA, "yakında" odası), vurgu |
 
 Odalarda o ürünün kendi renkleri geçerlidir (logolardan ölçüldü):
 
 | Oda | Renkler | Karakter |
 |---|---|---|
-| Seyyah | Mavi `#0068C8`, kâğıt `#F6F3EA` | Kareli defter, mavi mürekkep. SVG türbülans filtresiyle titrek kara kalem çizgileri, tarama desenli pinler, el yazısı notlar (Caveat). |
+| Seyyah | Mürekkep `#1F4FBF`, kâğıt `#FAF8F3` | Yenilenen seyyah.info'ya göre: spiralli defter sayfası, kendini çizen rota ve GPS damgası, uygulamanın karakalem Galata çizimi (polaroid), soluk Türkiye karakalem manzarası, toplanan etiketler ve odaya yürüyen ayak izleri. El yazısı satırın altında mürekkep çizgisi (Caveat). |
 | Orpigo | Lacivert `#101838`, kırmızı `#E80820` | Uygulamanın hız çizgileri. **Çalışan bir hız okuma demosu**: kelimeler tek tek akar, ORP harfi kırmızı ve sabit bir kılavuzun altında durur. Ziyaretçi başlatmadan oynamaz. |
 | Kişisel QR | Siyah, sarı `#F8D008` | Noktalı ızgara. **Taranabilir gerçek bir QR** (derleme sırasında üretilir, kisiselqr.com'u açar) ve "örnek profil" kartı. |
 | CandemFit | Gece `#000810`, turkuaz `#00D8D8` | Sokak ızgarası üzerinde scroll'la çizilen GPS rotası (CSS scroll-driven animation), "örnek" etiketli antrenman verisi. |
-| Candemkey | Turuncu, siyah | "Yakında": Türkçe Q klavyesi tuşları. |
+| Candemkey | Gece `#070B1A`, mor → mavi → camgöbeği | candemkey.com'daki gibi parlayan yay. **Çalışan AI paneli**: beş düğmeden biri seçilince taslak cümle yeniden yazılır (örnekler candemkey.com'un kendi örnekleri). Türkçe Q klavye ve AI tuşu. Uygulama mağazalarda "yakında", site canlı. |
 
 ## Tipografi
 
@@ -49,9 +49,12 @@ Odalarda o ürünün kendi renkleri geçerlidir (logolardan ölçüldü):
 | CandemFit | Rota scroll'la çizilir | Ürünün "animasyonlu rota" özelliğini anlatmak |
 | Kartlar, butonlar | Hover'da 4–8px kayma, renk değişimi | Geri bildirim |
 
-`prefers-reduced-motion`: rota hazır çizili gelir, demo yalnızca ziyaretçi başlatınca oynar.
+| Seyyah | Rota, damga ve el yazısı scroll'la çizilir; ayak izleri sırayla belirir (CSS scroll-driven animation) | seyyah.info'daki çizim hissi |
+
+`prefers-reduced-motion` ya da scroll animasyonu desteklemeyen tarayıcı: rotalar ve çizimler hazır çizili gelir, demolar yalnızca ziyaretçi başlatınca oynar.
 
 ## Kurallar
 
 - Odalardaki örnek veriler her zaman "örnek" diye etiketlenir.
-- Yeni bir ürün eklendiğinde odası yoksa otomatik olarak "yakında" odasıyla gösterilir; kendi odası `src/components/v2/rooms/` altında yazılıp `ProductRooms.tsx`'e eklenir.
+- Yeni bir ürün eklendiğinde odası yoksa otomatik olarak "yakında" odasıyla gösterilir; kendi odası `src/components/v2/rooms/` altında yazılıp `ProductRooms.tsx`'e eklenir. Uygulaması henüz mağazada olmayan ama sitesi canlı bir ürünün odası `preLaunch` listesine eklenir (Candemkey).
+- Odalardaki çizimler ve etiketler ürünlerin kendi sitelerinden alınır (`public/rooms/<ürün>/`).

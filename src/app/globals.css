@@ -22,7 +22,22 @@
 
   /* Vitrin (v2) product rooms: each app's own colours, measured from its logo. */
   --color-seyyah: #0068c8;
-  --color-seyyah-paper: #f6f3ea;
+  --color-seyyah-paper: #faf8f3;
+  /* Seyyah's revised site (seyyah.info): blue ink on paper */
+  --color-seyyah-ink: #1f4fbf;
+  --color-seyyah-deep: #0e2a6b;
+  --color-seyyah-title: #0e1b3d;
+  --color-seyyah-soft: #dce6fa;
+  /* Candemkey (candemkey.com) */
+  --color-ck-bg: #070b1a;
+  --color-ck-surface: #0f1629;
+  --color-ck-line: #26304d;
+  --color-ck-text: #f5f7ff;
+  --color-ck-muted: #a3acc7;
+  --color-ck-purple: #8b5cf6;
+  --color-ck-violet: #7c3aed;
+  --color-ck-blue: #3b82f6;
+  --color-ck-cyan: #22d3ee;
   --color-orpigo-navy: #101838;
   --color-orpigo-red: #e80820;
   --color-qr-yellow: #f8d008;
@@ -597,4 +612,100 @@
   50% {
     transform: translateY(-10px);
   }
+}
+
+/* ---------- Vitrin · Seyyah room: pencil on paper (from seyyah.info) ---------- */
+.sy-paper {
+  background-color: var(--color-white);
+  border: 1.5px solid rgb(31 79 191 / 0.32);
+  border-radius: 10px 14px 12px 16px;
+  box-shadow: 0 1px 0 rgb(14 42 107 / 0.05), 5px 6px 0 -1px var(--color-seyyah-soft);
+}
+.sy-notebook {
+  background-image: linear-gradient(to bottom, transparent 27px, rgb(31 79 191 / 0.1) 27px, rgb(31 79 191 / 0.1) 28px);
+  background-size: 100% 28px;
+}
+/* spiral holes down the left edge */
+.sy-notebook::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 18px;
+  bottom: 18px;
+  width: 10px;
+  background: radial-gradient(circle at 5px 5px, var(--color-seyyah-paper) 3.2px, rgb(31 79 191 / 0.32) 3.6px, transparent 4.2px) 0 0 / 10px 26px repeat-y;
+}
+.sy-scribble {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 10' preserveAspectRatio='none'%3E%3Cpath d='M1 6.5C18 3 30 8.5 46 5.2S78 2.8 94 5.6 112 6.6 119 3.6' fill='none' stroke='%231f4fbf' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E")
+    no-repeat 0 100% / 100% 0.3em;
+  padding-bottom: 0.08em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.sy-ink {
+  fill: none;
+  stroke: var(--color-seyyah-ink);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+/* Strokes draw themselves and the footprints appear as the room scrolls in.
+   Without scroll timelines (or with reduced motion) everything is simply drawn. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .sy-draw {
+      view-timeline-name: --sy-draw;
+    }
+    .sy-draw [data-draw] {
+      stroke-dasharray: 1 1.1;
+      animation: sy-draw linear both;
+      animation-timeline: --sy-draw;
+      animation-range: entry 10% cover 35%;
+    }
+    .sy-draw .sy-write {
+      animation: sy-write linear both;
+      animation-timeline: --sy-draw;
+      animation-range: entry 0% cover 25%;
+    }
+    .sy-trail {
+      view-timeline-name: --sy-trail;
+    }
+    .sy-trail .sy-step {
+      animation: sy-step linear both;
+      animation-timeline: --sy-trail;
+      animation-range: entry calc(var(--i) * 9%) entry calc(var(--i) * 9% + 25%);
+    }
+  }
+}
+@keyframes sy-draw {
+  from {
+    stroke-dashoffset: 1.05;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes sy-write {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+@keyframes sy-step {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ---------- Vitrin · Candemkey room ---------- */
+.ck-grad {
+  background: linear-gradient(90deg, var(--color-ck-purple), var(--color-ck-blue) 55%, var(--color-ck-cyan));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }

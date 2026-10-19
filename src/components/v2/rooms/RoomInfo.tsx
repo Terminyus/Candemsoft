@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { ReactNode } from "react";
 import type { Locale } from "@/i18n/config";
 import type { Product } from "@/lib/content";
 import { publicFileExists } from "@/lib/content";
@@ -20,7 +21,9 @@ const platformName = { ios: "iOS", android: "Android", web: "Web" } as const;
 
 export function RoomIcon({ product, className }: { product: Product; className?: string }) {
   return (
-    <span className={cn("relative block size-16 shrink-0 overflow-hidden rounded-[22%] bg-white md:size-20", className)}>
+    <span
+      className={cn("relative block size-16 shrink-0 overflow-hidden rounded-[22%] bg-white md:size-20", className)}
+    >
       {product.icon && publicFileExists(product.icon) ? (
         <Image src={asset(product.icon)} alt={`${product.name} logo`} fill sizes="80px" className="object-contain" />
       ) : (
@@ -68,6 +71,8 @@ export function RoomInfo({
   index,
   titleClass,
   taglineClass,
+  tagline,
+  extra,
   level = 3,
 }: {
   product: Product;
@@ -77,25 +82,35 @@ export function RoomInfo({
   index: number;
   titleClass?: string;
   taglineClass?: string;
+  /** Replaces the plain tagline (e.g. to set part of it in a different hand). */
+  tagline?: ReactNode;
+  /** Rendered after the store buttons (e.g. "coming soon" store badges). */
+  extra?: ReactNode;
   /** h3 under a section heading (home), h2 directly under the page h1 (products page). */
   level?: 2 | 3;
 }) {
   const Title = level === 2 ? "h2" : "h3";
   const features = product.features[lang];
   return (
-    <div className="flex flex-col gap-6">
+    <div className="@container flex min-w-0 flex-col gap-6">
       <div className="flex items-center gap-5">
         <RoomIcon product={product} />
         <div>
           <p className={cn("font-mono text-mono-sm", theme.kicker)}>
-            {String(index).padStart(2, "0")} / {product.platforms.map((p) => platformName[p]).join(" · ") || dict.common.comingSoon}
+            {String(index).padStart(2, "0")} /{" "}
+            {product.platforms.map((p) => platformName[p]).join(" · ") || dict.common.comingSoon}
           </p>
-          <Title id={`room-${product.slug}`} className={cn("v2-display mt-1 text-[clamp(2.5rem,1.6rem+3.5vw,4.75rem)]", titleClass)}>
+          <Title
+            id={`room-${product.slug}`}
+            className={cn("v2-display mt-1 text-[clamp(2rem,11cqi,4.75rem)]", titleClass)}
+          >
             {product.name}
           </Title>
         </div>
       </div>
-      <p className={taglineClass ?? "v2-heading text-[clamp(1.5rem,1.2rem+1.2vw,2.25rem)]"}>{product.tagline[lang]}</p>
+      <p className={taglineClass ?? "v2-heading text-[clamp(1.5rem,1.2rem+1.2vw,2.25rem)]"}>
+        {tagline ?? product.tagline[lang]}
+      </p>
       <p className={cn("max-w-xl text-lead", theme.muted)}>{product.description[lang]}</p>
       {features.length > 0 && (
         <ul className={cn("grid max-w-xl gap-x-6 border-t sm:grid-cols-2", theme.rule)}>
@@ -109,8 +124,11 @@ export function RoomInfo({
           ))}
         </ul>
       )}
-      {product.androidSoon && <p className={cn("font-mono text-mono-sm", theme.kicker)}>{dict.productsPage.androidSoon}</p>}
+      {product.androidSoon && (
+        <p className={cn("font-mono text-mono-sm", theme.kicker)}>{dict.productsPage.androidSoon}</p>
+      )}
       <StoreButtons product={product} dict={dict} theme={theme} />
+      {extra}
     </div>
   );
 }

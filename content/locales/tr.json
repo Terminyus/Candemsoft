@@ -293,10 +293,6 @@
     "roomEnter": "Odaya gir",
     "sample": "örnek",
     "sampleNote": "Bu alandaki veriler örnektir.",
-    "seyyahNote1": "önce git",
-    "seyyahNote2": "GPS doğrular",
-    "seyyahNote3": "etiket senin",
-    "seyyahRoute": "bir haftasonu rotası",
     "orpigoDemo": "Deneyin: Orpigo böyle okutur",
     "orpigoPlay": "Oynat",
     "orpigoPause": "Duraklat",
@@ -313,7 +309,6 @@
     "fitTime": "süre",
     "fitWeekly": "Haftalık lig",
     "keyTitle": "Yazdığın her şeye yapay zekâ.",
-    "keyNote": "Klavye tasarımı sürüyor.",
     "clientsKicker": "Müşteri işleri",
     "clientsTitle": "Başkaları için yaptıklarımız.",
     "clientsOffline": "şu an yayında değil",
@@ -323,7 +318,48 @@
     "ctaTitle": "Sıradaki oda sizin projeniz olabilir.",
     "ctaButton": "Bize yazın",
     "switchDesign": "Klasik tasarım",
-    "switchDesignHint": "Bu, sitenin alternatif tasarımı."
+    "switchDesignHint": "Bu, sitenin alternatif tasarımı.",
+    "seyyahNotebook": "Keşfet · Kaydet · Hatırla",
+    "seyyahPins": [
+      "sabah kahvesi",
+      "eski çarşı",
+      "gün batımı ★"
+    ],
+    "seyyahVerified": "GPS doğrulandı",
+    "seyyahStickers": "etiket senin",
+    "seyyahArt": "Seyyah defteri: bir günlük rota, GPS onay damgası, Galata Kulesi'nin karakalem çizimi ve toplanan etiketler",
+    "keyKicker": "Türkçe yapay zekâ klavyesi",
+    "keyStores": "Mağazalarda yakında",
+    "keyBefore": "Önce",
+    "keyAfter": "Sonra",
+    "keyActions": "AI aksiyonu seçin",
+    "keyDemoNote": "Örnekler candemkey.com'dan; gerçek sonuç değişebilir.",
+    "keyDemo": {
+      "before": "yarın toplantıya gecikcem başlayın siz",
+      "actions": [
+        [
+          "Düzelt",
+          "Yarın toplantıya gecikeceğim, siz başlayın."
+        ],
+        [
+          "Resmî",
+          "Yarın toplantıya biraz geç katılacağım; lütfen beklemeden başlayın."
+        ],
+        [
+          "Samimi",
+          "Yarın toplantıya biraz geç kalacağım, siz başlayın, ben yetişirim."
+        ],
+        [
+          "Kısalt",
+          "Yarın gecikeceğim, başlayın."
+        ],
+        [
+          "Uzat",
+          "Yarın toplantıya birkaç dakika geç katılacağım. Beklemeden başlayabilirsiniz; geldiğimde kaldığınız yerden devam ederim."
+        ]
+      ]
+    },
+    "keyHighlight": "bir tuş"
   },
   "v3": {
     "metaTitle": "Candemsoft Gazetesi",
