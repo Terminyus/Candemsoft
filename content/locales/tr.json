@@ -283,7 +283,7 @@
     "heroLine1": "Müşterilerimiz",
     "heroLine2": "için yazıyoruz.",
     "heroLine3": "Kendimiz için de.",
-    "heroLead": "Web siteleri, mobil uygulamalar ve yapay zekâ özellikleri geliştiriyoruz. Dört uygulamamız App Store ve Google Play'de; aşağıda her biri kendi odasında.",
+    "heroLead": "Web siteleri, mobil uygulamalar ve yapay zekâ özellikleri geliştiriyoruz. Dört uygulamamız App Store ve Google Play'de, beşincisi yolda; aşağıda her biri kendi odasında.",
     "heroCta": "Projenizi anlatın",
     "heroSecondary": "Ürünlere in",
     "shelf": "Raf",
@@ -359,7 +359,15 @@
         ]
       ]
     },
-    "keyHighlight": "bir tuş"
+    "keyHighlight": "bir tuş",
+    "seyyahCheckin": "Buradayım",
+    "seyyahLocating": "GPS doğrulanıyor…",
+    "seyyahDone": "Rota tamam",
+    "seyyahReset": "Yeniden yürü",
+    "seyyahProgress": "{n}/3 durak",
+    "seyyahTry": "Dene: durakları sırayla check-in yap",
+    "keyPause": "Animasyonu durdur",
+    "keyPlay": "Animasyonu oynat"
   },
   "v3": {
     "metaTitle": "Candemsoft Gazetesi",

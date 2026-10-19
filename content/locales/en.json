@@ -283,7 +283,7 @@
     "heroLine1": "We build",
     "heroLine2": "for clients.",
     "heroLine3": "And for ourselves.",
-    "heroLead": "Websites, mobile apps and AI features. Four of our own apps are on the App Store and Google Play; below, each one has a room of its own.",
+    "heroLead": "Websites, mobile apps and AI features. Four of our own apps are on the App Store and Google Play and a fifth is on its way; below, each one has a room of its own.",
     "heroCta": "Tell us about your project",
     "heroSecondary": "Go to the products",
     "shelf": "Shelf",
@@ -359,7 +359,15 @@
         ]
       ]
     },
-    "keyHighlight": "one key"
+    "keyHighlight": "one key",
+    "seyyahCheckin": "I'm here",
+    "seyyahLocating": "Checking GPS…",
+    "seyyahDone": "Route complete",
+    "seyyahReset": "Walk it again",
+    "seyyahProgress": "{n}/3 stops",
+    "seyyahTry": "Try it: check in at each stop",
+    "keyPause": "Pause animation",
+    "keyPlay": "Play animation"
   },
   "v3": {
     "metaTitle": "The Candemsoft Gazette",

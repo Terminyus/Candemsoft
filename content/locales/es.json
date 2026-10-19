@@ -283,7 +283,7 @@
     "heroLine1": "Creamos",
     "heroLine2": "para clientes.",
     "heroLine3": "Y para nosotros.",
-    "heroLead": "Sitios web, apps móviles y funciones de IA. Cuatro de nuestras apps están en App Store y Google Play; abajo, cada una tiene su propia sala.",
+    "heroLead": "Sitios web, apps móviles y funciones de IA. Cuatro de nuestras apps están en App Store y Google Play y la quinta está en camino; abajo, cada una tiene su propia sala.",
     "heroCta": "Cuéntanos tu proyecto",
     "heroSecondary": "Ir a los productos",
     "shelf": "Estante",
@@ -359,7 +359,15 @@
         ]
       ]
     },
-    "keyHighlight": "una tecla"
+    "keyHighlight": "una tecla",
+    "seyyahCheckin": "Estoy aquí",
+    "seyyahLocating": "Verificando GPS…",
+    "seyyahDone": "Ruta completa",
+    "seyyahReset": "Recorrer de nuevo",
+    "seyyahProgress": "{n}/3 paradas",
+    "seyyahTry": "Pruébalo: haz check-in en cada parada",
+    "keyPause": "Pausar animación",
+    "keyPlay": "Reproducir animación"
   },
   "v3": {
     "metaTitle": "La Gaceta de Candemsoft",
