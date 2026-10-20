@@ -1,0 +1,58 @@
+{
+  "slug": "candemkey",
+  "name": "Candemkey",
+  "url": "https://candemkey.com/",
+  "status": "live",
+  "order": 5,
+  "featured": true,
+  "ownProduct": true,
+  "categories": [
+    "mobil",
+    "web"
+  ],
+  "type": {
+    "tr": "Mobil uygulama ve web sitesi",
+    "en": "Mobile app and website",
+    "es": "App móvil y sitio web"
+  },
+  "sector": {
+    "tr": "Yapay zekâ ve verimlilik",
+    "en": "AI and productivity",
+    "es": "IA y productividad"
+  },
+  "summary": {
+    "tr": "Kendi ürünümüz: yazdığın her yerde çalışan Türkçe yapay zekâ klavyesi. Sitesi yayında, iOS ve Android uygulaması yakında.",
+    "en": "Our own product: a Turkish AI keyboard that works wherever you type. The site is live; the iOS and Android app is coming soon.",
+    "es": "Producto propio: un teclado con IA que funciona dondequiera que escribas. El sitio está publicado; la app para iOS y Android llega pronto."
+  },
+  "year": null,
+  "services": [
+    "mobil",
+    "yapay-zeka",
+    "web",
+    "ui-ux"
+  ],
+  "stack": [],
+  "caseStudy": {
+    "challenge": {
+      "tr": "",
+      "en": "",
+      "es": ""
+    },
+    "approach": {
+      "tr": "",
+      "en": "",
+      "es": ""
+    },
+    "outcome": {
+      "tr": "",
+      "en": "",
+      "es": ""
+    }
+  },
+  "images": {
+    "desktop": "/projects/candemkey/desktop.webp",
+    "mobile": "/projects/candemkey/mobile.webp"
+  },
+  "_todo": "year, stack ve caseStudy alanlarını doldurun. Boş alanlar sitede gösterilmez."
+}
