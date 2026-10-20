@@ -400,7 +400,15 @@
         "handover",
         "We hand over the code and the access."
       ]
-    ]
+    ],
+    "blogLatest": "Latest",
+    "blogMore": "More posts",
+    "blogRead": "Read the post",
+    "blogToc": "Contents",
+    "blogBy": "By",
+    "blogCopy": "Copy link",
+    "blogCopied": "Copied",
+    "blogNext": "Next post"
   },
   "v3": {
     "metaTitle": "The Candemsoft Gazette",

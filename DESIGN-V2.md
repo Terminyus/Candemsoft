@@ -65,3 +65,12 @@ Odalarda o ürünün kendi renkleri geçerlidir (logolardan ölçüldü):
 Tema aynı (beyaz/siyah/turuncu, Archivo). Yazılım ekibi tonu **Süreç** bölümünden geliyor: "Konuşarak başlıyoruz, yayına alıp devrediyoruz" cümlesinden çıkan beş adım (konuşma → tasarım → geliştirme → yayın → devir). Adımlar bir CI hattı gibi scroll'la sırayla ✓ alıyor.
 
 Harita verisi © OpenStreetMap katkıcıları (ODbL); atıf CandemFit odasında görünür.
+
+## Blog
+
+- **Liste:** en yeni yazı bir afiş gibi; turuncu kapakta büyük harflerle yazının özü (`meta.cover`, yoksa başlığın ilk kelimesi) ve etiketler, yanda başlık, özet, yazar ve "Yazıyı oku". Diğer yazılar altta kartlar hâlinde.
+- **Yazı:** üstte okuma ilerleme çubuğu; büyük başlık, yazar, tarih, okuma süresi ve kapak.
+  - Masaüstünde yapışkan **İçindekiler**: `##` başlıklarından üretilir, numaraları yazıdaki turuncu numaralarla aynı.
+  - Kod blokları siyah zeminde turuncu gölgeli.
+  - Sonda etiketler, bağlantıyı kopyala (telefonda paylaş menüsü) ve sıradaki yazı.
+- Yeni bir yazıda kapak metni için `meta`'ya `cover: "..."` eklenir; birkaç büyük karakter en iyi sonucu verir.

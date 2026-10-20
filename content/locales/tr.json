@@ -400,7 +400,15 @@
         "devir",
         "Kodu ve erişimleri size teslim ederiz."
       ]
-    ]
+    ],
+    "blogLatest": "Son yazı",
+    "blogMore": "Diğer yazılar",
+    "blogRead": "Yazıyı oku",
+    "blogToc": "İçindekiler",
+    "blogBy": "Yazan",
+    "blogCopy": "Bağlantıyı kopyala",
+    "blogCopied": "Kopyalandı",
+    "blogNext": "Sıradaki yazı"
   },
   "v3": {
     "metaTitle": "Candemsoft Gazetesi",

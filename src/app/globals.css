@@ -995,3 +995,39 @@
     opacity: 0;
   }
 }
+
+/* ---------- Vitrin · blog post body ---------- */
+.v2-prose {
+  counter-reset: h2;
+}
+/* section headings carry an orange number, matching the table of contents */
+.v2-prose h2 {
+  counter-increment: h2;
+  font-family: var(--font-archivo);
+  font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.25rem);
+  line-height: 1.1;
+}
+.v2-prose h2::before {
+  content: counter(h2, decimal-leading-zero);
+  display: block;
+  margin-bottom: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-ember);
+}
+.v2-prose > p:first-child {
+  font-size: 1.3rem;
+  line-height: 1.55;
+}
+.v2-prose pre {
+  border-radius: 1.25rem;
+  border: 0;
+  background: var(--color-ink-950);
+  box-shadow: 8px 8px 0 0 var(--color-signal);
+}
+.v2-prose blockquote {
+  border-left-width: 6px;
+  border-radius: 0 1rem 1rem 0;
+  background: var(--color-paper-100);
+  padding-block: 1rem;
+}

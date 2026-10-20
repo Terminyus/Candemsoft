@@ -400,7 +400,15 @@
         "entrega",
         "Te entregamos el código y los accesos."
       ]
-    ]
+    ],
+    "blogLatest": "Lo último",
+    "blogMore": "Más artículos",
+    "blogRead": "Leer el artículo",
+    "blogToc": "Contenido",
+    "blogBy": "Por",
+    "blogCopy": "Copiar enlace",
+    "blogCopied": "Copiado",
+    "blogNext": "Siguiente artículo"
   },
   "v3": {
     "metaTitle": "La Gaceta de Candemsoft",
