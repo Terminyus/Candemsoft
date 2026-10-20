@@ -1,5 +1,6 @@
 "use client";
 
+import { useInView } from "@/components/fx/useInView";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useMotionOK } from "@/components/v4/fx/useMotionOK";
 
@@ -26,18 +27,11 @@ export function OrpigoReader({ text, labels }: { text: string; labels: Labels })
   const motionOK = useMotionOK();
   const [choice, setChoice] = useState<boolean | null>(null); // the visitor's play/pause, once made
   const playing = choice ?? motionOK;
-  const [inView, setInView] = useState(false);
   const box = useRef<HTMLDivElement>(null);
+  const inView = useInView(box, 0.3);
   const [wpm, setWpm] = useState(300);
   const timer = useRef<number | undefined>(undefined);
 
-  useEffect(() => {
-    const el = box.current;
-    if (!el) return;
-    const io = new IntersectionObserver(([e]) => setInView(e!.isIntersecting), { threshold: 0.3 });
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
 
   useEffect(() => {
     if (!playing || !inView) return;

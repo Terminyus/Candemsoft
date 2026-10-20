@@ -1,5 +1,6 @@
 "use client";
 
+import { useInView } from "@/components/fx/useInView";
 import { useEffect, useRef, useState } from "react";
 import { useMotionOK } from "@/components/v4/fx/useMotionOK";
 
@@ -23,11 +24,11 @@ const fmtPace = (s: number) => `${Math.floor(s / 60)}'${String(Math.round(s % 60
 export function FitMap({ lang, labels, route, children }: { lang: string; labels: Labels; route: Route; children: React.ReactNode }) {
   const motionOK = useMotionOK();
   const [paused, setPaused] = useState(false);
-  const [inView, setInView] = useState(false);
   const [p, setP] = useState(1); // lap progress 0..1
   const [steps, setSteps] = useState<{ x: number; y: number; a: number; t: number }[]>([]);
   const [runner, setRunner] = useState<{ x: number; y: number } | null>(null);
   const root = useRef<HTMLDivElement>(null);
+  const inView = useInView(root, 0.3);
   const line = useRef<SVGPathElement>(null);
   const len = useRef(1);
   const clock = useRef(0); // ms into the current cycle
@@ -51,13 +52,6 @@ export function FitMap({ lang, labels, route, children }: { lang: string; labels
     return () => cancelAnimationFrame(raf);
   }, []);
 
-  useEffect(() => {
-    const el = root.current;
-    if (!el) return;
-    const io = new IntersectionObserver(([e]) => setInView(e!.isIntersecting), { threshold: 0.3 });
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
 
   const running = motionOK && !paused && inView;
   useEffect(() => {

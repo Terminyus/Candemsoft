@@ -11,6 +11,7 @@ import { v2Href, v2Nav } from "@/components/v2/nav";
 import { mono } from "../../fonts-lib/mono";
 import { V2Fonts } from "../fonts";
 import "../../globals.css";
+import { ScrollFallback } from "@/components/fx/ScrollFallback";
 
 // Unknown values are unmatched routes → app/global-not-found.tsx (server-rendered 404).
 export const dynamicParams = false;
@@ -41,6 +42,7 @@ export default async function V2Layout({ children, params }: LayoutProps<"/v2/[l
         <V2Fonts />
       </head>
       <body className="bg-white text-ink-950">
+        <ScrollFallback />
         <SkipLink label={dict.nav.skip} />
         <V2Header
           lang={lang}
