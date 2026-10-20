@@ -62,9 +62,6 @@ Odalarda o ürünün kendi renkleri geçerlidir (logolardan ölçüldü):
 
 ## Hakkımızda
 
-Tema aynı (beyaz/siyah/turuncu, Archivo); yazılım ekibi tonu iki bölümle geliyor:
-
-- **`candemsoft.ts`**: şirket künyesi TypeScript dosyası olarak. Değerler `content/` dosyalarından derlenir (kuruluş, şehir, hizmetler, araçlar, yayındaki ve yoldaki ürünler, istatistikler); elle yazılmış bir değer yok. Satırlar scroll'la yazılır.
-- **Süreç**: "Konuşarak başlıyoruz, yayına alıp devrediyoruz" cümlesinden çıkan beş adım (konuşma → tasarım → geliştirme → yayın → devir), bir CI hattı gibi scroll'la sırayla ✓ alır.
+Tema aynı (beyaz/siyah/turuncu, Archivo). Yazılım ekibi tonu **Süreç** bölümünden geliyor: "Konuşarak başlıyoruz, yayına alıp devrediyoruz" cümlesinden çıkan beş adım (konuşma → tasarım → geliştirme → yayın → devir). Adımlar bir CI hattı gibi scroll'la sırayla ✓ alıyor.
 
 Harita verisi © OpenStreetMap katkıcıları (ODbL); atıf CandemFit odasında görünür.

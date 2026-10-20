@@ -4,7 +4,6 @@ import { getDictionary } from "@/lib/dictionary";
 import { resolveLang } from "@/lib/params";
 import { V2PageHead } from "@/components/v2/V2PageHead";
 import { V2TeamGrid } from "@/components/v2/V2TeamGrid";
-import { AboutCode } from "@/components/v2/AboutCode";
 import { AboutFlow } from "@/components/v2/AboutFlow";
 
 export async function generateMetadata({ params }: PageProps<"/v2/[lang]/hakkimizda">): Promise<Metadata> {
@@ -34,16 +33,6 @@ export default async function Page({ params }: PageProps<"/v2/[lang]/hakkimizda"
             <p className="mt-4 text-lead">{x.b}</p>
           </div>
         ))}
-      </section>
-      <section aria-labelledby="about-code" className="container-site grid items-center gap-12 py-(--section-sm) lg:grid-cols-[5fr_7fr]">
-        <div>
-          <p className="font-mono text-mono-sm text-stone-600">{dict.v2.aboutCodeKicker}</p>
-          <h2 id="about-code" className="v2-display mt-3 text-[clamp(2rem,1.4rem+2.6vw,3.5rem)]">
-            {dict.v2.aboutCodeTitle}
-          </h2>
-          <p className="mt-4 max-w-md text-lead text-stone-600">{dict.v2.aboutCodeLead}</p>
-        </div>
-        <AboutCode lang={lang} />
       </section>
       <section aria-labelledby="about-flow" className="border-y border-ink-950 bg-paper-50 py-(--section-sm)">
         <div className="container-site">

@@ -911,24 +911,13 @@
   }
 }
 
-/* ---------- Vitrin · about page: code card lines and the pipeline, driven by scroll ---------- */
-.about-code pre {
-  counter-reset: line;
-}
+/* ---------- Vitrin · about page: the project pipeline, driven by scroll ---------- */
 .about-flow-ok {
   /* finished state by default (no scroll timelines / reduced motion) */
   clip-path: circle(50%);
 }
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
-    .about-code {
-      view-timeline-name: --about-code;
-    }
-    .about-line {
-      animation: about-type linear both;
-      animation-timeline: --about-code;
-      animation-range: entry calc(10% + var(--i) * 5%) entry calc(22% + var(--i) * 5%);
-    }
     .about-flow {
       view-timeline-name: --about-flow;
     }
@@ -942,14 +931,6 @@
       animation-timeline: --about-flow;
       animation-range: cover calc(15% + var(--i) * 8%) cover calc(20% + var(--i) * 8%);
     }
-  }
-}
-@keyframes about-type {
-  from {
-    clip-path: inset(0 100% 0 0);
-  }
-  to {
-    clip-path: inset(0 0 0 0);
   }
 }
 @keyframes about-fill {
@@ -992,13 +973,7 @@
 .sda-fallback .sy-draw:not(.sda-in) .sy-write {
   clip-path: inset(0 100% 0 0);
 }
-/* About: code lines type in one after another; the pipeline fills and checks off */
-.sda-fallback .about-line {
-  transition: clip-path 0.35s ease-out calc(var(--i) * 0.12s);
-}
-.sda-fallback .about-code:not(.sda-in) .about-line {
-  clip-path: inset(0 100% 0 0);
-}
+/* About: the pipeline fills and checks off */
 .sda-fallback .about-flow-fill {
   transition: transform 2.6s linear 0.2s;
 }
