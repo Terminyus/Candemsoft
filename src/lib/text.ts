@@ -12,7 +12,7 @@ export function initials(name: string): string {
   return name
     .split(/\s+/)
     .filter(Boolean)
-    .slice(0, 2)
+    .filter((w, i, all) => i === 0 || i === all.length - 1) // first name + surname: "Ahmet Can Yüksel" → "AY"
     .map((w) => w[0]!.toLocaleUpperCase("tr"))
     .join("");
 }

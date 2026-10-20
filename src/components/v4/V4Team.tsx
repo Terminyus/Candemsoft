@@ -19,7 +19,7 @@ export function V4Team({ lang }: { lang: Locale }) {
             )}
           </div>
           <p className="mt-3 font-semibold">{m.name}</p>
-          <p className="v4-mono text-xs text-dev-comment">{m.role[lang]}</p>
+          {m.role[lang] && <p className="v4-mono text-xs text-dev-comment">{m.role[lang]}</p>}
         </li>
       ))}
     </ul>
