@@ -375,24 +375,22 @@
   line-height: 1;
 }
 
-/* CandemFit room: the route draws itself as the room scrolls into view. Without support
-   (or with reduced motion) it simply shows the finished route. */
-@supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .fit-route {
-      stroke-dasharray: 1;
-      animation: fit-draw linear both;
-      animation-timeline: view();
-      animation-range: entry 10% cover 55%;
-    }
+/* CandemFit room: the runner's halo breathes during the replay (FitMap.tsx). */
+@media (prefers-reduced-motion: no-preference) {
+  .fit-pulse {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: fit-pulse 1.2s ease-out infinite;
   }
 }
-@keyframes fit-draw {
+@keyframes fit-pulse {
   from {
-    stroke-dashoffset: 1;
+    transform: scale(0.6);
+    opacity: 1;
   }
   to {
-    stroke-dashoffset: 0;
+    transform: scale(1.6);
+    opacity: 0;
   }
 }
 
@@ -780,4 +778,193 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+/* ---------- Vitrin · Kişisel QR room: scan → profile opens, on a loop ---------- */
+.qr-laser,
+.qr-ok,
+.qr-viewfinder {
+  opacity: 0;
+}
+.qr-viewfinder {
+  /* four yellow corner brackets, like a camera's scan frame */
+  background:
+    linear-gradient(#f8d008 0 0) top left / 28px 4px,
+    linear-gradient(#f8d008 0 0) top left / 4px 28px,
+    linear-gradient(#f8d008 0 0) top right / 28px 4px,
+    linear-gradient(#f8d008 0 0) top right / 4px 28px,
+    linear-gradient(#f8d008 0 0) bottom left / 28px 4px,
+    linear-gradient(#f8d008 0 0) bottom left / 4px 28px,
+    linear-gradient(#f8d008 0 0) bottom right / 28px 4px,
+    linear-gradient(#f8d008 0 0) bottom right / 4px 28px;
+  background-repeat: no-repeat;
+  border-radius: 1.75rem;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .qr-laser {
+    box-shadow: 0 0 18px 4px rgb(248 208 8 / 0.7);
+    animation: qr-laser 6.5s ease-in-out infinite;
+  }
+  .qr-viewfinder {
+    animation: qr-frame 6.5s ease-out infinite;
+  }
+  .qr-ok {
+    animation: qr-ok 6.5s ease-out infinite;
+  }
+  .qr-card {
+    animation: qr-card 6.5s ease-out infinite;
+  }
+  .qr-row {
+    animation: qr-row 6.5s ease-out calc(var(--i) * 0.14s) infinite both;
+  }
+  .qr-stage:has(.qr-pause input:checked) :is(.qr-laser, .qr-viewfinder, .qr-ok, .qr-card, .qr-row) {
+    animation-play-state: paused;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .qr-pause {
+    display: none;
+  }
+}
+@keyframes qr-laser {
+  0% {
+    top: 8%;
+    opacity: 0;
+  }
+  4% {
+    opacity: 1;
+  }
+  30% {
+    top: 90%;
+    opacity: 1;
+  }
+  34%,
+  100% {
+    top: 90%;
+    opacity: 0;
+  }
+}
+@keyframes qr-frame {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(1.06);
+  }
+  6%,
+  30% {
+    opacity: 1;
+    transform: none;
+  }
+  36% {
+    opacity: 1;
+    transform: scale(0.97);
+  }
+  44% {
+    opacity: 0;
+  }
+}
+@keyframes qr-ok {
+  0%,
+  32% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  38% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+  42%,
+  90% {
+    opacity: 1;
+    transform: none;
+  }
+  96%,
+  100% {
+    opacity: 0;
+  }
+}
+/* text never fades (contrast stays AA mid-animation): the card moves, rows wipe in */
+@keyframes qr-card {
+  0%,
+  32% {
+    transform: translateY(14px) scale(0.96);
+  }
+  40%,
+  92% {
+    transform: none;
+  }
+  100% {
+    transform: translateY(14px) scale(0.96);
+  }
+}
+@keyframes qr-row {
+  0%,
+  38% {
+    clip-path: inset(0 100% 0 0 round 0.75rem);
+  }
+  46%,
+  92% {
+    clip-path: inset(0 0 0 0 round 0.75rem);
+  }
+  100% {
+    clip-path: inset(0 100% 0 0 round 0.75rem);
+  }
+}
+
+/* ---------- Vitrin · about page: code card lines and the pipeline, driven by scroll ---------- */
+.about-code pre {
+  counter-reset: line;
+}
+.about-flow-ok {
+  /* finished state by default (no scroll timelines / reduced motion) */
+  clip-path: circle(50%);
+}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .about-code {
+      view-timeline-name: --about-code;
+    }
+    .about-line {
+      animation: about-type linear both;
+      animation-timeline: --about-code;
+      animation-range: entry calc(10% + var(--i) * 5%) entry calc(22% + var(--i) * 5%);
+    }
+    .about-flow {
+      view-timeline-name: --about-flow;
+    }
+    .about-flow-fill {
+      animation: about-fill linear both;
+      animation-timeline: --about-flow;
+      animation-range: cover 15% cover 50%;
+    }
+    .about-flow-ok {
+      animation: about-ok linear both;
+      animation-timeline: --about-flow;
+      animation-range: cover calc(15% + var(--i) * 8%) cover calc(20% + var(--i) * 8%);
+    }
+  }
+}
+@keyframes about-type {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+@keyframes about-fill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes about-ok {
+  from {
+    clip-path: circle(0%);
+  }
+  to {
+    clip-path: circle(50%);
+  }
 }
