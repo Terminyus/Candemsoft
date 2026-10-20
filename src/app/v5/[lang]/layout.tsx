@@ -11,6 +11,7 @@ import { V5Footer } from "@/components/v5/V5Footer";
 import { v5Href, v5Nav } from "@/components/v5/nav";
 import { V5Fonts } from "../fonts";
 import "../../globals.css";
+import { ScrollFallback } from "@/components/fx/ScrollFallback";
 
 // Unknown values are unmatched routes → app/global-not-found.tsx (server-rendered 404).
 export const dynamicParams = false;
@@ -42,6 +43,7 @@ export default async function V5Layout({ children, params }: LayoutProps<"/v5/[l
         <V5Fonts />
       </head>
       <body className="v5 bg-white text-corp-ink">
+        <ScrollFallback />
         <SkipLink label={dict.nav.skip} />
         <V5Header
           lang={lang}

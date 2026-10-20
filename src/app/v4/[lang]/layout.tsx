@@ -11,6 +11,7 @@ import { V4Footer } from "@/components/v4/V4Footer";
 import { v4Href, v4Nav } from "@/components/v4/nav";
 import { V4Fonts } from "../fonts";
 import "../../globals.css";
+import { ScrollFallback } from "@/components/fx/ScrollFallback";
 
 // Unknown values are unmatched routes → app/global-not-found.tsx (server-rendered 404).
 export const dynamicParams = false;
@@ -41,6 +42,7 @@ export default async function V4Layout({ children, params }: LayoutProps<"/v4/[l
         <V4Fonts />
       </head>
       <body className="v4 bg-dev-bg text-dev-text">
+        <ScrollFallback />
         <SkipLink label={dict.nav.skip} />
         <V4Header
           lang={lang}

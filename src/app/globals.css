@@ -968,3 +968,55 @@
     clip-path: circle(50%);
   }
 }
+
+/* ---------- Fallback for browsers without scroll-driven animations (iOS < 26, Firefox) ----------
+   ScrollFallback.tsx adds .sda-fallback to <html> there and .sda-in to each element as it scrolls
+   into view; the same motion then plays as a time-based transition. */
+.sda-fallback .v4-rise {
+  transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.sda-fallback .v4-rise:not(.sda-in) {
+  transform: translateY(32px) scale(0.985);
+}
+/* Seyyah notebook: the title writes itself, the underline draws */
+.sda-fallback .sy-draw [data-draw] {
+  stroke-dasharray: 1 1.1;
+  transition: stroke-dashoffset 1.2s ease-in-out 0.5s;
+}
+.sda-fallback .sy-draw:not(.sda-in) [data-draw] {
+  stroke-dashoffset: 1.05;
+}
+.sda-fallback .sy-draw .sy-write {
+  transition: clip-path 1.1s ease-out;
+}
+.sda-fallback .sy-draw:not(.sda-in) .sy-write {
+  clip-path: inset(0 100% 0 0);
+}
+/* About: code lines type in one after another; the pipeline fills and checks off */
+.sda-fallback .about-line {
+  transition: clip-path 0.35s ease-out calc(var(--i) * 0.12s);
+}
+.sda-fallback .about-code:not(.sda-in) .about-line {
+  clip-path: inset(0 100% 0 0);
+}
+.sda-fallback .about-flow-fill {
+  transition: transform 2.6s linear 0.2s;
+}
+.sda-fallback .about-flow:not(.sda-in) .about-flow-fill {
+  transform: scaleX(0);
+}
+.sda-fallback .about-flow-ok {
+  transition: clip-path 0.35s ease-out calc(0.4s + var(--i) * 0.55s);
+}
+.sda-fallback .about-flow:not(.sda-in) .about-flow-ok {
+  clip-path: circle(0%);
+}
+/* Gazete on phones: the printed photo develops into colour */
+@media (hover: none) {
+  .sda-fallback .halftone > .halftone-print {
+    transition: opacity 1.4s ease-out 0.3s;
+  }
+  .sda-fallback .halftone.sda-in > .halftone-print {
+    opacity: 0;
+  }
+}
