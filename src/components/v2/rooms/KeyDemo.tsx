@@ -1,5 +1,6 @@
 "use client";
 
+import { useInView } from "@/components/fx/useInView";
 import { useEffect, useId, useRef, useState } from "react";
 import { cn } from "@/components/ui/cn";
 import { useMotionOK } from "@/components/v4/fx/useMotionOK";
@@ -42,21 +43,14 @@ type Phase = "typing" | "ai" | "result";
 export function KeyDemo({ before, actions, labels }: Props) {
   const motionOK = useMotionOK();
   const [playing, setPlaying] = useState(true);
-  const [inView, setInView] = useState(false);
   const [phase, setPhase] = useState<Phase>("result");
   const [typed, setTyped] = useState(before.length);
   const [active, setActive] = useState(1);
   const root = useRef<HTMLElement>(null);
+  const inView = useInView(root, 0.35);
   const id = useId();
   const auto = motionOK && playing;
 
-  useEffect(() => {
-    const el = root.current;
-    if (!el) return;
-    const io = new IntersectionObserver(([e]) => setInView(e!.isIntersecting), { threshold: 0.35 });
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
 
   useEffect(() => {
     if (!auto || !inView) return;
