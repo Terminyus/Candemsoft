@@ -367,7 +367,43 @@
     "seyyahProgress": "{n}/3 paradas",
     "seyyahTry": "Pruébalo: haz check-in en cada parada",
     "keyPause": "Pausar animación",
-    "keyPlay": "Reproducir animación"
+    "keyPlay": "Reproducir animación",
+    "fitPause": "Pausar la carrera",
+    "fitPlay": "Reproducir la carrera",
+    "fitNote": "Un mapa real y una ruta real de 4 km; el ritmo y el tiempo son de ejemplo. Datos del mapa",
+    "qrPause": "Pausar animación",
+    "keyChat": "Equipo",
+    "keyIncoming": "La reunión es mañana a las 10, ¿puedes venir?",
+    "keySpace": "espacio",
+    "keyReturn": "enviar",
+    "aboutCodeKicker": "candemsoft.ts",
+    "aboutCodeTitle": "Quiénes somos, en código.",
+    "aboutCodeLead": "Este archivo se compila a partir de los archivos de contenido del sitio: cuando se lanza un producto o se añade una herramienta, cambia aquí también.",
+    "aboutFlowKicker": "Proceso",
+    "aboutFlowTitle": "Cómo avanza un proyecto",
+    "aboutFlowLead": "Empezamos hablando y terminamos publicando y entregando. Cada paso intermedio ocurre en el mismo equipo.",
+    "aboutFlow": [
+      [
+        "conversación",
+        "Ponemos por escrito la necesidad, el alcance y el calendario."
+      ],
+      [
+        "diseño",
+        "Los flujos y las pantallas se definen antes de escribir código."
+      ],
+      [
+        "desarrollo",
+        "Web, móvil o IA: todo se escribe en el mismo equipo."
+      ],
+      [
+        "publicación",
+        "Publicamos el sitio y llevamos la app a las tiendas."
+      ],
+      [
+        "entrega",
+        "Te entregamos el código y los accesos."
+      ]
+    ]
   },
   "v3": {
     "metaTitle": "La Gaceta de Candemsoft",

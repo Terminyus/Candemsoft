@@ -106,6 +106,10 @@ export function CandemkeyRoom({
               note: t.keyDemoNote,
               pause: t.keyPause,
               play: t.keyPlay,
+              chat: t.keyChat,
+              incoming: t.keyIncoming,
+              space: t.keySpace,
+              send: t.keyReturn,
             }}
           />
         </div>

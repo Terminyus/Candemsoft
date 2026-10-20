@@ -36,7 +36,7 @@ function RealQr({ url, label }: { url: string; label: string }) {
 function ProfileCard({ t }: { t: Dictionary["v2"] }) {
   const rows = ["+90 5•• ••• •• ••", "ad@ornek.com", "@kullanici", "34 ABC 123"];
   return (
-    <div className="w-full max-w-64 rounded-[2rem] border-2 border-qr-yellow/70 bg-[#0d0d0d] p-5 shadow-[0_0_60px_-20px_rgba(248,208,8,0.55)]">
+    <div className="qr-card w-full max-w-64 rounded-[2rem] border-2 border-qr-yellow/70 bg-[#0d0d0d] p-5 shadow-[0_0_60px_-20px_rgba(248,208,8,0.55)]">
       <p className="font-mono text-[0.7rem] text-qr-yellow">{t.qrCard}</p>
       <div className="mt-4 flex items-center gap-3">
         <span aria-hidden className="grid size-12 place-items-center rounded-full bg-qr-yellow font-archivo text-lg font-bold text-black">
@@ -48,8 +48,8 @@ function ProfileCard({ t }: { t: Dictionary["v2"] }) {
         </div>
       </div>
       <ul className="mt-5 space-y-2">
-        {rows.map((r) => (
-          <li key={r} className="rounded-xl border border-white/15 px-3 py-2 font-mono text-xs text-white/85">
+        {rows.map((r, i) => (
+          <li key={r} className="qr-row rounded-xl border border-white/15 px-3 py-2 font-mono text-xs text-white/85" style={{ "--i": i } as React.CSSProperties}>
             {r}
           </li>
         ))}
@@ -78,14 +78,28 @@ export function QrRoom({ product, lang, dict, index, level = 3 }: { product: Pro
           titleClass="text-white"
           taglineClass="v2-display text-[clamp(2rem,1.4rem+2.6vw,3.5rem)] text-qr-yellow"
         />
-        <div className="grid items-end gap-6 sm:grid-cols-[1.1fr_1fr]">
+        {/* Scan → profile opens, on a loop (pure CSS; the checkbox pauses it). */}
+        <div className="qr-stage relative grid items-end gap-6 sm:grid-cols-[1.1fr_1fr]">
           <figure>
-            <a href={product.links.web || "#"} target="_blank" rel="noopener noreferrer" className="block rounded-3xl shadow-[0_0_60px_-20px_rgba(248,208,8,0.6)]">
-              <RealQr url={product.links.web || "https://kisiselqr.com/"} label={t.qrReal} />
-            </a>
+            <div className="relative">
+              <a href={product.links.web || "#"} target="_blank" rel="noopener noreferrer" className="block rounded-3xl shadow-[0_0_60px_-20px_rgba(248,208,8,0.6)]">
+                <RealQr url={product.links.web || "https://kisiselqr.com/"} label={t.qrReal} />
+              </a>
+              <span aria-hidden className="qr-viewfinder pointer-events-none absolute -inset-2" />
+              <span aria-hidden className="qr-laser pointer-events-none absolute inset-x-[6%] h-1 rounded-full bg-qr-yellow" />
+              <span aria-hidden className="qr-ok pointer-events-none absolute -right-3 -top-3 grid size-10 place-items-center rounded-full bg-qr-yellow text-lg font-bold text-black">
+                ✓
+              </span>
+            </div>
             <figcaption className="mt-3 font-mono text-mono-sm text-qr-yellow">{t.qrReal}</figcaption>
           </figure>
           <ProfileCard t={t} />
+          <label className="qr-pause absolute -top-12 right-0 inline-flex cursor-pointer items-center gap-2 rounded-full border border-qr-yellow/50 px-3 py-1.5 font-mono text-xs text-qr-yellow has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-qr-yellow">
+            <input type="checkbox" className="peer sr-only" />
+            <span aria-hidden className="peer-checked:hidden">❚❚</span>
+            <span aria-hidden className="hidden peer-checked:inline">▶</span>
+            {t.qrPause}
+          </label>
         </div>
       </div>
     </section>

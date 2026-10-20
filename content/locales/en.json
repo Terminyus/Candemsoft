@@ -367,7 +367,43 @@
     "seyyahProgress": "{n}/3 stops",
     "seyyahTry": "Try it: check in at each stop",
     "keyPause": "Pause animation",
-    "keyPlay": "Play animation"
+    "keyPlay": "Play animation",
+    "fitPause": "Pause the run",
+    "fitPlay": "Play the run",
+    "fitNote": "A real map and a real 4 km route; pace and time are sample values. Map data",
+    "qrPause": "Pause animation",
+    "keyChat": "Team",
+    "keyIncoming": "Meeting's tomorrow at 10, can you make it?",
+    "keySpace": "space",
+    "keyReturn": "send",
+    "aboutCodeKicker": "candemsoft.ts",
+    "aboutCodeTitle": "Who we are, as code.",
+    "aboutCodeLead": "This file is compiled from the site's content files: when a product launches or a tool is added, it changes here too.",
+    "aboutFlowKicker": "Process",
+    "aboutFlowTitle": "How a project runs",
+    "aboutFlowLead": "We start by talking, and we finish by shipping and handing over. Every step in between happens in the same team.",
+    "aboutFlow": [
+      [
+        "talk",
+        "We put the need, the scope and the timeline in writing together."
+      ],
+      [
+        "design",
+        "Flows and screens are settled before any code is written."
+      ],
+      [
+        "build",
+        "Web, mobile or AI: all written in the same team."
+      ],
+      [
+        "ship",
+        "We put the site live and the app in the stores."
+      ],
+      [
+        "handover",
+        "We hand over the code and the access."
+      ]
+    ]
   },
   "v3": {
     "metaTitle": "The Candemsoft Gazette",

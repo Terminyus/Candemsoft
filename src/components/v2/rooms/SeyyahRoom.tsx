@@ -79,7 +79,7 @@ export function SeyyahRoom({
     <section
       id={product.slug}
       aria-labelledby={`room-${product.slug}`}
-      className={`${index > 1 ? "cv-auto " : ""}relative overflow-hidden bg-seyyah-paper pb-(--section) pt-8 text-seyyah-title`}
+      className="cv-auto relative overflow-hidden bg-seyyah-paper pb-(--section) pt-8 text-seyyah-title"
     >
       {/* faint pencil landscape from the app, fading in and out at the edges */}
       <Image

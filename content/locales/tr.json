@@ -367,7 +367,43 @@
     "seyyahProgress": "{n}/3 durak",
     "seyyahTry": "Dene: durakları sırayla check-in yap",
     "keyPause": "Animasyonu durdur",
-    "keyPlay": "Animasyonu oynat"
+    "keyPlay": "Animasyonu oynat",
+    "fitPause": "Koşuyu durdur",
+    "fitPlay": "Koşuyu oynat",
+    "fitNote": "Gerçek harita ve gerçek bir 4 km'lik rota; tempo ve süre örnektir. Harita verisi",
+    "qrPause": "Animasyonu durdur",
+    "keyChat": "Ekip",
+    "keyIncoming": "Toplantı yarın 10'da, gelebiliyor musun?",
+    "keySpace": "boşluk",
+    "keyReturn": "gönder",
+    "aboutCodeKicker": "candemsoft.ts",
+    "aboutCodeTitle": "Künyemiz, kod olarak.",
+    "aboutCodeLead": "Bu dosya sitenin içerik dosyalarından derleniyor: bir ürün yayına girince ya da yeni bir araç eklenince burası da değişir.",
+    "aboutFlowKicker": "Süreç",
+    "aboutFlowTitle": "Bir proje nasıl yürür",
+    "aboutFlowLead": "Konuşarak başlıyoruz, yayına alıp devrediyoruz. Aradaki her adım aynı ekipte.",
+    "aboutFlow": [
+      [
+        "konuşma",
+        "İhtiyacı, kapsamı ve takvimi birlikte yazıya dökeriz."
+      ],
+      [
+        "tasarım",
+        "Akış ve ekranlar kod yazılmadan önce netleşir."
+      ],
+      [
+        "geliştirme",
+        "Web, mobil ya da yapay zekâ: hepsi aynı ekipte yazılır."
+      ],
+      [
+        "yayın",
+        "Siteyi yayına alır, uygulamayı mağazaya çıkarırız."
+      ],
+      [
+        "devir",
+        "Kodu ve erişimleri size teslim ederiz."
+      ]
+    ]
   },
   "v3": {
     "metaTitle": "Candemsoft Gazetesi",
