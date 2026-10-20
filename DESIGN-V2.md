@@ -23,9 +23,9 @@ Odalarda o ürünün kendi renkleri geçerlidir (logolardan ölçüldü):
 | Oda | Renkler | Karakter |
 |---|---|---|
 | Seyyah | Mürekkep `#1F4FBF`, kâğıt `#FAF8F3` | Yenilenen seyyah.info'ya göre: spiralli defter sayfası, kendini çizen rota ve GPS damgası, uygulamanın karakalem Galata çizimi (polaroid), soluk Türkiye karakalem manzarası, toplanan etiketler ve odaya yürüyen ayak izleri. El yazısı satırın altında mürekkep çizgisi (Caveat). |
-| Orpigo | Lacivert `#101838`, kırmızı `#E80820` | Uygulamanın hız çizgileri. **Çalışan bir hız okuma demosu**: kelimeler tek tek akar, ORP harfi kırmızı ve sabit bir kılavuzun altında durur. Ziyaretçi başlatmadan oynamaz. |
-| Kişisel QR | Siyah, sarı `#F8D008` | Noktalı ızgara. **Taranabilir gerçek bir QR** (derleme sırasında üretilir, kisiselqr.com'u açar) ve "örnek profil" kartı. |
-| CandemFit | Gece `#000810`, turkuaz `#00D8D8` | Sokak ızgarası üzerinde scroll'la çizilen GPS rotası (CSS scroll-driven animation), "örnek" etiketli antrenman verisi. |
+| Orpigo | Lacivert `#101838`, kırmızı `#E80820` | Uygulamanın hız çizgileri. **Çalışan bir hız okuma demosu**: kelimeler tek tek akar, ORP harfi kırmızı ve sabit bir kılavuzun altında durur. Ekrana gelince kendiliğinden başlar (oynat basılmış gibi), Duraklat ile durur. |
+| Kişisel QR | Siyah, sarı `#F8D008` | Noktalı ızgara. **Taranabilir gerçek bir QR** (derleme sırasında üretilir, kisiselqr.com'u açar). Döngü: tarama çizgisi QR'ı tarar, vizör kapanır, ✓ çıkar, örnek profil kartı açılır, satırlar sırayla gelir. Saf CSS; durdurma kutusu JS'siz çalışır. |
+| CandemFit | Gece `#000810`, turkuaz `#00D8D8` | **Gerçek harita**: Moda/Kadıköy sokakları, sahil ve parklar OpenStreetMap'ten (`scripts/build-fit-map.py`). Sokak ağı üzerinden hesaplanmış gerçek bir 4 km tur. Koşu tekrarı gibi oynar: koşucu ilerler, arkasında iz ve ayak izleri kalır, mesafe ve süre sayar. Mesafe rotanın kendi uzunluğu; tempo ve süre örnek. |
 | Candemkey | Gece `#070B1A`, mor → mavi → camgöbeği | candemkey.com'daki gibi parlayan yay. **Çalışan AI paneli**: beş düğmeden biri seçilince taslak cümle yeniden yazılır (örnekler candemkey.com'un kendi örnekleri). Türkçe Q klavye ve AI tuşu. Uygulama mağazalarda "yakında", site canlı. |
 
 ## Tipografi
@@ -45,8 +45,8 @@ Odalarda o ürünün kendi renkleri geçerlidir (logolardan ölçüldü):
 
 | Nerede | Ne | Amaç |
 |---|---|---|
-| Orpigo | Kelime kelime okuma | Ürünün kendisini deneyimletmek |
-| CandemFit | Rota scroll'la çizilir | Ürünün "animasyonlu rota" özelliğini anlatmak |
+| Orpigo | Kelime kelime okuma; ekrana gelince kendiliğinden başlar ve döner (Duraklat ile durur) | Ürünün kendisini deneyimletmek |
+| CandemFit | Gerçek harita üzerinde koşu tekrarı: iz, ayak izleri, sayan mesafe/süre; durdur/oynat | Ürünün "animasyonlu rota" özelliğini anlatmak |
 | Kartlar, butonlar | Hover'da 4–8px kayma, renk değişimi | Geri bildirim |
 
 | Seyyah | Ayak izleri döngüyle "yürür"; **Buradayım** ile durak durak check-in: GPS doğrulama beklemesi, rotanın bir sonraki ayağı mürekkeplenir, etiket kazanılır, üç durakta "Rota tamam" damgası | Uygulamanın check-in akışını denetmek |
@@ -59,3 +59,12 @@ Odalarda o ürünün kendi renkleri geçerlidir (logolardan ölçüldü):
 - Odalardaki örnek veriler her zaman "örnek" diye etiketlenir.
 - Yeni bir ürün eklendiğinde odası yoksa otomatik olarak "yakında" odasıyla gösterilir; kendi odası `src/components/v2/rooms/` altında yazılıp `ProductRooms.tsx`'e eklenir. Uygulaması henüz mağazada olmayan ama sitesi canlı bir ürünün odası `preLaunch` listesine eklenir (Candemkey).
 - Odalardaki çizimler ve etiketler ürünlerin kendi sitelerinden alınır (`public/rooms/<ürün>/`).
+
+## Hakkımızda
+
+Tema aynı (beyaz/siyah/turuncu, Archivo); yazılım ekibi tonu iki bölümle geliyor:
+
+- **`candemsoft.ts`**: şirket künyesi TypeScript dosyası olarak. Değerler `content/` dosyalarından derlenir (kuruluş, şehir, hizmetler, araçlar, yayındaki ve yoldaki ürünler, istatistikler); elle yazılmış bir değer yok. Satırlar scroll'la yazılır.
+- **Süreç**: "Konuşarak başlıyoruz, yayına alıp devrediyoruz" cümlesinden çıkan beş adım (konuşma → tasarım → geliştirme → yayın → devir), bir CI hattı gibi scroll'la sırayla ✓ alır.
+
+Harita verisi © OpenStreetMap katkıcıları (ODbL); atıf CandemFit odasında görünür.
