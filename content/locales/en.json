@@ -376,9 +376,6 @@
     "keyIncoming": "Meeting's tomorrow at 10, can you make it?",
     "keySpace": "space",
     "keyReturn": "send",
-    "aboutCodeKicker": "candemsoft.ts",
-    "aboutCodeTitle": "Who we are, as code.",
-    "aboutCodeLead": "This file is compiled from the site's content files: when a product launches or a tool is added, it changes here too.",
     "aboutFlowKicker": "Process",
     "aboutFlowTitle": "How a project runs",
     "aboutFlowLead": "We start by talking, and we finish by shipping and handing over. Every step in between happens in the same team.",
@@ -403,7 +400,15 @@
         "handover",
         "We hand over the code and the access."
       ]
-    ]
+    ],
+    "blogLatest": "Latest",
+    "blogMore": "More posts",
+    "blogRead": "Read the post",
+    "blogToc": "Contents",
+    "blogBy": "By",
+    "blogCopy": "Copy link",
+    "blogCopied": "Copied",
+    "blogNext": "Next post"
   },
   "v3": {
     "metaTitle": "The Candemsoft Gazette",

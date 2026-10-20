@@ -376,9 +376,6 @@
     "keyIncoming": "Toplantı yarın 10'da, gelebiliyor musun?",
     "keySpace": "boşluk",
     "keyReturn": "gönder",
-    "aboutCodeKicker": "candemsoft.ts",
-    "aboutCodeTitle": "Künyemiz, kod olarak.",
-    "aboutCodeLead": "Bu dosya sitenin içerik dosyalarından derleniyor: bir ürün yayına girince ya da yeni bir araç eklenince burası da değişir.",
     "aboutFlowKicker": "Süreç",
     "aboutFlowTitle": "Bir proje nasıl yürür",
     "aboutFlowLead": "Konuşarak başlıyoruz, yayına alıp devrediyoruz. Aradaki her adım aynı ekipte.",
@@ -403,7 +400,15 @@
         "devir",
         "Kodu ve erişimleri size teslim ederiz."
       ]
-    ]
+    ],
+    "blogLatest": "Son yazı",
+    "blogMore": "Diğer yazılar",
+    "blogRead": "Yazıyı oku",
+    "blogToc": "İçindekiler",
+    "blogBy": "Yazan",
+    "blogCopy": "Bağlantıyı kopyala",
+    "blogCopied": "Kopyalandı",
+    "blogNext": "Sıradaki yazı"
   },
   "v3": {
     "metaTitle": "Candemsoft Gazetesi",

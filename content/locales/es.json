@@ -376,9 +376,6 @@
     "keyIncoming": "La reunión es mañana a las 10, ¿puedes venir?",
     "keySpace": "espacio",
     "keyReturn": "enviar",
-    "aboutCodeKicker": "candemsoft.ts",
-    "aboutCodeTitle": "Quiénes somos, en código.",
-    "aboutCodeLead": "Este archivo se compila a partir de los archivos de contenido del sitio: cuando se lanza un producto o se añade una herramienta, cambia aquí también.",
     "aboutFlowKicker": "Proceso",
     "aboutFlowTitle": "Cómo avanza un proyecto",
     "aboutFlowLead": "Empezamos hablando y terminamos publicando y entregando. Cada paso intermedio ocurre en el mismo equipo.",
@@ -403,7 +400,15 @@
         "entrega",
         "Te entregamos el código y los accesos."
       ]
-    ]
+    ],
+    "blogLatest": "Lo último",
+    "blogMore": "Más artículos",
+    "blogRead": "Leer el artículo",
+    "blogToc": "Contenido",
+    "blogBy": "Por",
+    "blogCopy": "Copiar enlace",
+    "blogCopied": "Copiado",
+    "blogNext": "Siguiente artículo"
   },
   "v3": {
     "metaTitle": "La Gaceta de Candemsoft",

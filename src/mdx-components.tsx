@@ -1,9 +1,11 @@
 import type { MDXComponents } from "mdx/types";
+import { slugify, textOf } from "@/lib/text";
 
 // Typographic defaults for blog posts. Posts render on the paper surface.
 export function useMDXComponents(components: MDXComponents = {}): MDXComponents {
   return {
-    h2: (props) => <h2 className="mt-16 mb-4 text-h3 scroll-mt-24" {...props} />,
+    // ids match getPostHeadings(), so the table of contents can link to each section
+    h2: (props) => <h2 id={slugify(textOf(props.children))} className="mt-16 mb-4 text-h3 scroll-mt-24" {...props} />,
     h3: (props) => <h3 className="mt-10 mb-3 font-display text-xl font-extrabold" {...props} />,
     p: (props) => <p className="my-5" {...props} />,
     ul: (props) => <ul className="my-5 list-disc space-y-2 pl-6 marker:text-ember" {...props} />,

@@ -15,10 +15,7 @@ export function AboutFlow({ stages }: { stages: string[][] }) {
             <span className="about-flow-ok absolute inset-0 grid place-items-center rounded-full bg-signal text-ink-950">✓</span>
           </span>
           <div>
-            <p className="font-mono text-mono-sm text-ember">
-              {"$ "}
-              {name}
-            </p>
+            <p className="font-mono text-mono-sm text-ember">{name}</p>
             <p className="mt-1 text-stone-600">{body}</p>
           </div>
         </li>

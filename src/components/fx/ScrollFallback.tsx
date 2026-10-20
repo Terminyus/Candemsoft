@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 
 // Elements that animate with CSS scroll-driven animations (animation-timeline) in globals.css.
-const REVEAL = ".v4-rise, .sy-draw, .about-code, .about-flow, .halftone";
+const REVEAL = ".v4-rise, .sy-draw, .about-flow, .halftone";
 
 /**
  * Scroll-driven CSS animations don't exist in Safari before iOS 26 or in Firefox, so on many

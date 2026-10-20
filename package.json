@@ -11,7 +11,7 @@
     "format": "prettier --write .",
     "screenshots": "node scripts/screenshots.mjs",
     "capture:projects": "node scripts/capture-projects.mjs",
-    "test": "tsx --test src/**/*.test.ts",
+    "test": "tsx --test 'src/**/*.test.ts'",
     "test:a11y": "node scripts/a11y.mjs",
     "test:lighthouse": "node scripts/lighthouse.mjs",
     "build:pages": "node scripts/build-pages.mjs"
