@@ -1,12 +1,12 @@
 {
-  "_todo": "Her kişi için name, role, photo (public/team/ altına dosya, örn. /team/ad-soyad.jpg), bio ve links alanlarını doldurun; 'placeholder' satırını silin. photo boşsa baş harflerden monogram gösterilir. Sıra, sitedeki gösterim sırasıdır.",
+  "_todo": "Her kişi için role (unvan), photo (public/team/ altına dosya, örn. /team/ad-soyad.jpg), bio ve links alanlarını doldurun. role boşsa sitede unvan satırı gösterilmez; photo boşsa baş harflerden monogram gösterilir. Sıra, sitedeki gösterim sırasıdır.",
   "members": [
     {
-      "name": "Ad Soyad",
+      "name": "Ademcan İyik",
       "role": {
-        "tr": "Unvan",
-        "en": "Title",
-        "es": "Cargo"
+        "tr": "",
+        "en": "",
+        "es": ""
       },
       "photo": "",
       "bio": {
@@ -17,15 +17,14 @@
       "links": {
         "linkedin": "",
         "github": ""
-      },
-      "placeholder": true
+      }
     },
     {
-      "name": "Ad Soyad",
+      "name": "Ahmet Can Yüksel",
       "role": {
-        "tr": "Unvan",
-        "en": "Title",
-        "es": "Cargo"
+        "tr": "",
+        "en": "",
+        "es": ""
       },
       "photo": "",
       "bio": {
@@ -36,15 +35,14 @@
       "links": {
         "linkedin": "",
         "github": ""
-      },
-      "placeholder": true
+      }
     },
     {
-      "name": "Ad Soyad",
+      "name": "Yasin Işık",
       "role": {
-        "tr": "Unvan",
-        "en": "Title",
-        "es": "Cargo"
+        "tr": "",
+        "en": "",
+        "es": ""
       },
       "photo": "",
       "bio": {
@@ -55,15 +53,14 @@
       "links": {
         "linkedin": "",
         "github": ""
-      },
-      "placeholder": true
+      }
     },
     {
-      "name": "Ad Soyad",
+      "name": "Burak Kavak",
       "role": {
-        "tr": "Unvan",
-        "en": "Title",
-        "es": "Cargo"
+        "tr": "",
+        "en": "",
+        "es": ""
       },
       "photo": "",
       "bio": {
@@ -74,15 +71,14 @@
       "links": {
         "linkedin": "",
         "github": ""
-      },
-      "placeholder": true
+      }
     },
     {
-      "name": "Ad Soyad",
+      "name": "Abdüllatif Cengiz",
       "role": {
-        "tr": "Unvan",
-        "en": "Title",
-        "es": "Cargo"
+        "tr": "",
+        "en": "",
+        "es": ""
       },
       "photo": "",
       "bio": {
@@ -93,15 +89,14 @@
       "links": {
         "linkedin": "",
         "github": ""
-      },
-      "placeholder": true
+      }
     },
     {
-      "name": "Ad Soyad",
+      "name": "Ahmet Kurt",
       "role": {
-        "tr": "Unvan",
-        "en": "Title",
-        "es": "Cargo"
+        "tr": "",
+        "en": "",
+        "es": ""
       },
       "photo": "",
       "bio": {
@@ -112,15 +107,14 @@
       "links": {
         "linkedin": "",
         "github": ""
-      },
-      "placeholder": true
+      }
     },
     {
-      "name": "Ad Soyad",
+      "name": "İbrahim Çartı",
       "role": {
-        "tr": "Unvan",
-        "en": "Title",
-        "es": "Cargo"
+        "tr": "",
+        "en": "",
+        "es": ""
       },
       "photo": "",
       "bio": {
@@ -131,8 +125,43 @@
       "links": {
         "linkedin": "",
         "github": ""
+      }
+    },
+    {
+      "name": "Murat Çalış",
+      "role": {
+        "tr": "",
+        "en": "",
+        "es": ""
       },
-      "placeholder": true
+      "photo": "",
+      "bio": {
+        "tr": "",
+        "en": "",
+        "es": ""
+      },
+      "links": {
+        "linkedin": "",
+        "github": ""
+      }
+    },
+    {
+      "name": "Celalettin Kaplan",
+      "role": {
+        "tr": "",
+        "en": "",
+        "es": ""
+      },
+      "photo": "",
+      "bio": {
+        "tr": "",
+        "en": "",
+        "es": ""
+      },
+      "links": {
+        "linkedin": "",
+        "github": ""
+      }
     }
   ]
 }
