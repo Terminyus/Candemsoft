@@ -44,8 +44,9 @@ export function pageMetadata({
       url: href(lang, route, ...rest),
       title: title ?? undefined,
       description,
+      images: [{ url: "/og/default.png", width: 1200, height: 630, alt: "Candemsoft" }],
     },
-    twitter: { card: "summary_large_image", title: title ?? undefined, description },
+    twitter: { card: "summary_large_image", title: title ?? undefined, description, images: ["/og/default.png"] },
   };
 }
 

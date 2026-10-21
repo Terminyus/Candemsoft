@@ -27,6 +27,9 @@ export function href(lang: Locale, key: RouteKey, ...rest: string[]): string {
   const parts = [routes[key][lang], ...rest].filter(Boolean);
   const prefix = lang === defaultLocale ? "" : `/${lang}`;
   const path = `${prefix}/${parts.join("/")}`;
+  // v2 at the site root: URLs carry a trailing slash (matches the canonical/hreflang Next emits with trailingSlash: true,
+  // so internal links, sitemap and canonical all agree; nginx 301s the slash-less form).
+  if (v2Root) return path.length > 1 && !path.endsWith("/") ? `${path}/` : path || "/";
   return path.length > 1 && path.endsWith("/") ? path.slice(0, -1) : path || "/";
 }
 
