@@ -3,7 +3,8 @@
  *
  * Set NEXT_PUBLIC_CONTACT_ENDPOINT to any endpoint that accepts a JSON POST
  * (Formspree, a Vercel function, a CRM webhook…). Without it the form still
- * works: it opens the visitor's email app with the message pre-filled.
+ * works: it opens the visitor's email app with the message pre-filled (also used when the endpoint fails,
+ * so a message is never lost).
  */
 export type ContactPayload = {
   name: string;
@@ -25,9 +26,9 @@ export async function submitContact(payload: ContactPayload, fallbackEmail: stri
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify(payload),
       });
-      return res.ok ? { status: "sent" } : { status: "error" };
+      if (res.ok) return { status: "sent" };
     } catch {
-      return { status: "error" };
+      // fall through to the email app below
     }
   }
   const body = [payload.message, "", "—", payload.name, payload.email, payload.phone].filter((l) => l !== undefined).join("\n");
