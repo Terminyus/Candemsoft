@@ -1,14 +1,32 @@
 import Link from "next/link";
 import type { Locale } from "@/i18n/config";
-import { getSite } from "@/lib/content";
+import { getProducts, getSite } from "@/lib/content";
 import type { Dictionary } from "@/lib/dictionary";
 import { Logo } from "@/components/ui/Logo";
-import { ClassicLink } from "./ClassicLink";
 import { v2Href, v2Nav } from "./nav";
+
+const networks: [string, string][] = [
+  ["instagram.com", "Instagram"],
+  ["linkedin.com", "LinkedIn"],
+  ["tiktok.com", "TikTok"],
+  ["youtube.com", "YouTube"],
+  ["github.com", "GitHub"],
+];
+const networkName = (url: string) => networks.find(([host]) => url.includes(host))?.[1] ?? new URL(url).hostname;
+
+/** Company profiles first, then each product's own profiles. */
+function socialLinks() {
+  const links = Object.values(getSite().social)
+    .filter(Boolean)
+    .map((url) => ({ url, label: networkName(url) }));
+  for (const p of getProducts()) for (const url of p.social ?? []) links.push({ url, label: `${p.name} · ${networkName(url)}` });
+  return links;
+}
 
 export function V2Footer({ lang, dict }: { lang: Locale; dict: Dictionary }) {
   const { contact } = getSite();
   const t = dict.v2;
+  const social = socialLinks();
   return (
     <footer>
       <section aria-labelledby="v2-cta" className="bg-signal text-ink-950">
@@ -58,18 +76,21 @@ export function V2Footer({ lang, dict }: { lang: Locale; dict: Dictionary }) {
             <li>{contact.city[lang]}</li>
           </ul>
         </div>
+        <ul className="container-site flex flex-wrap gap-x-6 gap-y-2 border-t border-ink-800 py-6 font-archivo text-stone-400">
+          {social.map((l) => (
+            <li key={l.url}>
+              <a href={l.url} target="_blank" rel="noopener noreferrer me" className="hover:text-signal">
+                {l.label} ↗
+              </a>
+            </li>
+          ))}
+        </ul>
         <div className="container-site flex flex-wrap items-center justify-between gap-4 border-t border-ink-800 py-6 font-mono text-mono-sm text-stone-400">
           <span>
             © {new Date().getFullYear()} Candemsoft · {dict.footer.rights} ·{" "}
             <Link href={v2Href(lang, "privacy")} className="underline underline-offset-4 hover:text-paper-100">
               {dict.nav.privacy}
             </Link>
-          </span>
-          <span>
-            {t.switchDesignHint}{" "}
-            <ClassicLink lang={lang} className="text-paper-100 underline underline-offset-4 hover:text-signal">
-              {t.switchDesign} →
-            </ClassicLink>
           </span>
         </div>
       </div>
