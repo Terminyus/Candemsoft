@@ -1,7 +1,10 @@
+import Image from "next/image";
 import QRCode from "qrcode";
 import type { Locale } from "@/i18n/config";
 import type { Product } from "@/lib/content";
 import type { Dictionary } from "@/lib/dictionary";
+import { asset } from "@/lib/static";
+import { QrAlert } from "./QrAlert";
 import { RoomInfo, type RoomTheme } from "./RoomInfo";
 
 const theme: RoomTheme = {
@@ -78,16 +81,35 @@ export function QrRoom({ product, lang, dict, index, level = 3 }: { product: Pro
           titleClass="text-white"
           taglineClass="v2-display text-[clamp(2rem,1.4rem+2.6vw,3.5rem)] text-qr-yellow"
         />
-        <div className="grid items-end gap-6 sm:grid-cols-[1.1fr_1fr]">
-          <figure>
-            <a href={product.links.web || "#"} target="_blank" rel="noopener noreferrer" className="block rounded-3xl shadow-[0_0_60px_-20px_rgba(248,208,8,0.6)]">
-              <RealQr url={product.links.web || "https://kisiselqr.com/"} label={t.qrReal} />
-            </a>
-            <figcaption className="mt-3 font-mono text-mono-sm text-qr-yellow">{t.qrReal}</figcaption>
-          </figure>
-          <ProfileCard t={t} />
+        <div className="grid gap-6">
+          <QrAlert t={t} />
+          <div className="grid items-end gap-6 sm:grid-cols-[1fr_1fr]">
+            <figure className="mx-auto w-full max-w-60 sm:max-w-none">
+              <div className="relative aspect-[5/8] w-full -rotate-2 overflow-hidden rounded-[1.4rem] shadow-[0_0_60px_-15px_rgba(248,208,8,0.65)]">
+                <Image src={asset("/products/kisisel-qr-sticker.webp")} alt={t.qrStickerAlt} fill sizes="(min-width: 1024px) 18rem, 15rem" className="object-cover" />
+              </div>
+              <figcaption className="mt-4 font-mono text-mono-sm text-qr-yellow">{t.qrStickerCaption}</figcaption>
+            </figure>
+            <div className="flex flex-col items-center gap-5 sm:items-stretch">
+              <ProfileCard t={t} />
+              <a href={product.links.web || "#"} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4">
+                <span className="block w-24 shrink-0 rounded-2xl shadow-[0_0_40px_-15px_rgba(248,208,8,0.6)]">
+                  <RealQr url={product.links.web || "https://kisiselqr.com/"} label={t.qrReal} />
+                </span>
+                <span className="font-mono text-mono-sm text-qr-yellow">{t.qrReal}</span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
+      <dl className="container-site relative mt-12 grid grid-cols-2 gap-x-6 gap-y-6 border-t border-white/20 pt-8 lg:mt-16 lg:grid-cols-4">
+        {t.qrFacts.map(([k, v]) => (
+          <div key={k}>
+            <dt className="v2-heading text-[clamp(1.5rem,1.2rem+1.2vw,2.25rem)] text-qr-yellow">{k}</dt>
+            <dd className="mt-1 text-sm text-white/80">{v}</dd>
+          </div>
+        ))}
+      </dl>
     </section>
   );
 }

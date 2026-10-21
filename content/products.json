@@ -122,39 +122,39 @@
     "icon": "/products/kisisel-qr.png",
     "project": "kisisel-qr",
     "tagline": {
-      "tr": "Dijital kimliğini geleceğe taşı.",
-      "en": "Take your digital identity forward.",
-      "es": "Lleva tu identidad digital al futuro."
+      "tr": "Aracındaki QR, cebindeki kartvizit.",
+      "en": "The QR on your car, the card in your pocket.",
+      "es": "El QR de tu coche, la tarjeta en tu bolsillo."
     },
     "description": {
-      "tr": "QR kodlu dijital kartvizit. İletişim bilgilerini, sosyal medya hesaplarını ve araç bilgilerini tek bir profilde toplarsın; değişiklikler anında yayına girer, kimin neyi göreceğini sen seçersin.",
-      "en": "A digital business card behind a QR code. Contact details, social accounts and vehicle info live in one profile; changes go live instantly and you choose who sees what.",
-      "es": "Una tarjeta de visita digital detrás de un código QR. Datos de contacto, redes sociales e información del vehículo en un solo perfil; los cambios se publican al instante y tú eliges quién ve qué."
+      "tr": "Araç camındaki QR etiketini okutan kişi tek dokunuşla “camınız açık” ya da “farlarınız yanıyor” bildirimi gönderir; telefon numaranı paylaşman gerekmez. Aynı profil, ana ekran widget'ıyla dijital kartvizit olarak da çalışır. Bilgilerini istediğin an günceller, neyi göstereceğine sen karar verirsin.",
+      "en": "Whoever scans the QR sticker on your windscreen can send you a “your window is open” or “your lights are on” alert in one tap, and you never have to share your phone number. The same profile doubles as a digital business card with a home-screen widget. Update it any time and choose what people see.",
+      "es": "Quien escanea la pegatina QR de tu parabrisas puede avisarte con un toque de que “la ventanilla está abierta” o “las luces están encendidas”, sin que compartas tu número. El mismo perfil funciona como tarjeta de visita digital con widget en la pantalla de inicio. Lo actualizas cuando quieras y decides qué se muestra."
     },
     "features": {
       "tr": [
-        "Sınırsız paylaşım",
-        "Anlık güncelleme",
-        "Tema seçimi",
-        "Anlık bildirim",
-        "Görünürlük kontrolü",
-        "QR sticker ve kurumsal paket"
+        "Araç etiketi: sahibine anlık bildirim",
+        "Numaranı vermeden ulaşılabilir ol",
+        "Okutan kişi uygulama kurmaz",
+        "Dijital kartvizit ve ana ekran widget'ı",
+        "Neyi göstereceğini sen seçersin",
+        "Profil Türkçe, İngilizce ve Kırgızca"
       ],
       "en": [
-        "Unlimited sharing",
-        "Instant updates",
-        "Choice of themes",
-        "Instant notifications",
-        "Visibility controls",
-        "QR stickers and team plans"
+        "Car sticker: instant alert to the owner",
+        "Be reachable without sharing your number",
+        "Scanners don't need to install anything",
+        "Digital business card and home-screen widget",
+        "You choose what to show",
+        "Profile in Turkish, English and Kyrgyz"
       ],
       "es": [
-        "Compartir sin límites",
-        "Actualización instantánea",
-        "Elección de temas",
-        "Notificaciones al instante",
-        "Control de visibilidad",
-        "Pegatinas QR y planes para empresas"
+        "Pegatina para el coche: aviso al instante al dueño",
+        "Localizable sin dar tu número",
+        "Quien escanea no instala nada",
+        "Tarjeta de visita digital y widget de inicio",
+        "Tú eliges qué mostrar",
+        "Perfil en turco, inglés y kirguís"
       ]
     },
     "links": {
