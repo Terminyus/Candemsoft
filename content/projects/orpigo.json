@@ -20,10 +20,15 @@
     "en": "Reading and learning",
     "es": "Lectura y aprendizaje"
   },
+  "metaTitle": {
+    "tr": "Orpigo ORP Hız Okuma Uygulaması | Candemsoft",
+    "en": "Orpigo ORP Speed Reading App | Candemsoft",
+    "es": "Orpigo App de Lectura Rápida ORP | Candemsoft"
+  },
   "summary": {
-    "tr": "Kendi ürünümüz: ORP tekniğiyle çalışan hız okuma uygulaması. PDF'ini yükle, kelime kelime odak noktanda oku.",
-    "en": "Our own product: a speed-reading app built on the ORP technique. Upload a PDF and read it word by word at your focal point.",
-    "es": "Producto propio: una app de lectura rápida basada en la técnica ORP. Sube un PDF y léelo palabra a palabra en tu punto de enfoque."
+    "tr": "Orpigo, ORP tekniğiyle kelimeleri odak noktasında gösteren hız okuma uygulamasıdır. PDF yükleyip göz kaslarınızı yormadan okumak için hemen indirin.",
+    "en": "Orpigo is an ORP speed-reading app that keeps words at your focal point to cut eye movement. Upload PDFs and read faster today; download the app now.",
+    "es": "Orpigo es una app de lectura rápida basada en ORP que mantiene las palabras en su punto focal. Sube tus PDF y lee más rápido; descarga la app hoy."
   },
   "year": null,
   "services": [

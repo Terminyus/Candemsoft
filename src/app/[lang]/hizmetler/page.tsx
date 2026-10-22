@@ -4,7 +4,7 @@ import { href } from "@/i18n/routes";
 import { getProjects, getServices, getStack } from "@/lib/content";
 import { getDictionary } from "@/lib/dictionary";
 import { resolveLang } from "@/lib/params";
-import { pageMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, jsonLd, pageBreadcrumbs, pageMetadata } from "@/lib/seo";
 import { PageIntro } from "@/components/page/PageIntro";
 import { ButtonLink } from "@/components/ui/Button";
 import { MonoLabel } from "@/components/ui/MonoLabel";
@@ -13,7 +13,7 @@ import { cn } from "@/components/ui/cn";
 export async function generateMetadata({ params }: PageProps<"/[lang]/hizmetler">): Promise<Metadata> {
   const lang = await resolveLang(params);
   const dict = await getDictionary(lang);
-  return pageMetadata({ lang, route: "services", title: dict.nav.services, description: dict.servicesPage.lead });
+  return pageMetadata({ lang, route: "services", title: dict.meta.servicesTitle, description: dict.meta.servicesDescription });
 }
 
 export default async function ServicesPage({ params }: PageProps<"/[lang]/hizmetler">) {
@@ -25,6 +25,10 @@ export default async function ServicesPage({ params }: PageProps<"/[lang]/hizmet
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLd(breadcrumbJsonLd(pageBreadcrumbs(lang, "services")))}
+      />
       <PageIntro
         label={t.label}
         title={t.title}
@@ -67,9 +71,16 @@ export default async function ServicesPage({ params }: PageProps<"/[lang]/hizmet
                   className="numeral block font-display-tight text-[clamp(5rem,3rem+10vw,12rem)] font-extrabold leading-[0.8] text-paper-200"
                 />
                 <h2 id={`${s.slug}-title`} className="-mt-[0.4em] text-h2">
-                  {s.title[lang]}
+                  <Link href={href(lang, "services", s.slug)} className="hover:text-signal transition-colors">
+                    {s.title[lang]}
+                  </Link>
                 </h2>
                 <p className="mt-6 max-w-xl text-lead">{s.summary[lang]}</p>
+                <div className="mt-4">
+                  <Link href={href(lang, "services", s.slug)} className="font-mono text-mono-sm text-signal hover:underline">
+                    {lang === "tr" ? "Hizmet detayını incele →" : lang === "es" ? "Ver detalles del servicio →" : "View service details →"}
+                  </Link>
+                </div>
               </div>
               <div
                 className={cn(

@@ -1,0 +1,98 @@
+export const meta = {
+  title: "iOS App Store'a İlk Uygulamayı Yayınlama Kontrol Listesi",
+  metaTitle: "iOS App Store Yayınlama Rehberi | Candemsoft",
+  description: "Apple App Store'da ilk uygulamanızı sorunsuz yayınlamak için geliştirici hesabı, gizlilik beyanları ve inceleme yönergeleri kontrol listesini hemen okuyun.",
+  date: "2026-10-20",
+  author: "Candemsoft",
+  tags: ["ios", "app store", "mobil uygulama", "apple"]
+};
+
+**Kısa cevap:** Apple App Store'da ilk uygulamanızı yayınlamak; yalnızca bir ikili dosya (binary) yüklemekten ibaret değildir. Apple Developer hesabının ve kurumsal başvurularda D-U-N-S numarasının temininden sertifika ve provisioning yönetimine, TestFlight beta süreçlerinden App Privacy besin etiketlerine ve katı App Store Review Guidelines standartlarına kadar uzanan disiplinli bir yayınlama sürecini gerektirir.
+
+Apple ekosistemi, kullanıcılara sunduğu yüksek güvenlik ve kusursuz deneyim standartlarıyla bilinir. Ancak bu yüksek standart, geliştiriciler ve ürün sahipleri için detaylı bir onay mekanizmasını beraberinde getirir. İlk kez bir iOS uygulamasını App Store'a gönderecek ekipler genellikle teknik ve bürokratik engellerle karşılaşır. Bu kapsamlı kontrol listesi, uygulamanızın ilk incelemede onaylanmasını sağlamak için adım adım rehberlik eder.
+
+## 1. Apple Developer hesabı ve kurumsal D-U-N-S hazırlığı
+
+Yayın sürecinin ilk adımı Apple Developer Program üyeliğidir. Burada bireysel ve kurumsal olmak üzere iki hesap türü bulunur:
+
+- **Bireysel Hesap:** Geliştiricinin şahsi adı mağazada satıcı olarak görünür. Kimlik doğrulama süreci hızlıdır; ancak ekibe başka geliştiriciler veya yöneticiler ekleme yetkisi kısıtlıdır.
+- **Kurumsal (Organization) Hesap:** Şirket tüzel kişiliği adına açılır ve mağazada şirket unvanı yer alır. Ekip üyelerine rol bazlı erişim yetkisi verilebilir.
+
+Kurumsal hesap açabilmek için Dun & Bradstreet tarafından verilen uluslararası 9 haneli D-U-N-S (Data Universal Numbering System) numarası zorunludur. D-U-N-S başvurusu ücretsizdir; ancak numaranın tahsis edilmesi ve Apple sistemlerine yansıması 1 ila 3 hafta sürebilir. Bu nedenle şirket adına yayın planlanıyorsa D-U-N-S süreci kodlama bitmeden başlatılmalıdır. Apple Developer Program yıllık üyelik ücreti 99 USD'dir.
+
+## 2. Sertifikalar, Identifier'lar ve Provisioning Profilleri
+
+iOS uygulamalarının cihazlarda çalışması ve App Store'a yüklenebilmesi için Apple'ın kriptografik imzalama altyapısı kullanılır:
+
+- **Certificates (Sertifikalar):** Geliştirme (Development) ve dağıtım (Distribution) sertifikaları oluşturulur. App Store dağıtımı için "Apple Distribution" sertifikası şarttır.
+- **App ID ve Identifiers:** Uygulamanızın benzersiz kimliğidir (örneğin: `com.sirketiniz.uygulama`). Push bildirimleri, Sign in with Apple veya HealthKit gibi yetenekler burada aktifleştirilir.
+- **Provisioning Profiles:** Sertifikalar, App ID ve cihaz listesini birbirine bağlayan dijital profildir. Dağıtım için "App Store" profili üretilir.
+
+Modern Xcode sürümleri "Automatically manage signing" özelliğiyle bu süreci kolaylaştırsa da; Fastlane gibi CI/CD otomasyonu kullanan profesyonel ekiplerde "match" yaklaşımıyla git üzerinden sertifika yönetimi tercih edilir.
+
+## 3. TestFlight ile iç ve dış beta testleri
+
+Uygulamanızı doğrudan genel incelemeye göndermeden önce mutlaka TestFlight üzerinde test etmelisiniz:
+
+- **Dahili Test (Internal Testing):** Developer hesabınızdaki 100 kişiye kadar ekip üyesini kapsar. Yüklenen derlemeler herhangi bir Apple incelemesine tabi olmadan saniyeler içinde test kullanıcılarına ulaşır.
+- **Harici Test (External Testing):** 10.000 kişiye kadar harici kullanıcıya bağlantı linkiyle dağıtılır. Harici gruba açılan ilk derleme, Apple tarafından hafifletilmiş bir beta incelemesinden (Beta App Review) geçer.
+
+TestFlight, gerçek kullanıcı cihazlarında çökme raporlarını (crash logs) ve geri bildirim ekran görüntülerini toplamak için en güvenilir ortamdır.
+
+## 4. App Store Connect metadata ve görsel varlıkların hazırlanması
+
+Mağaza sayfanızın tasarımı ve metinleri teknik onay kadar önemlidir:
+
+- **Ekran Görüntüleri (Screenshots):** En yeni cihaz boyutları zorunludur. Özellikle 6.9 inç (iPhone 16 Pro Max) ve 6.5 inç (iPhone 11 Pro Max / XS Max) ekran formatlarında net, yüksek çözünürlüklü ve uygulama arayüzünü dürüst yansıtan görseller yüklenmelidir. iPad desteğiniz varsa 13 inç iPad Pro görselleri de eklenmelidir.
+- **Uygulama İkonu:** 1024x1024 piksel, şeffaflık (alpha kanalı) içermeyen RGB formatında olmalıdır.
+- **Metin Alanları:** Başlık (30 karakter), alt başlık (30 karakter), anahtar kelimeler (virgüllerle ayrılmış 100 karakter sınırı) ve detaylı açıklama.
+- **Zorunlu Bağlantılar:** Çalışan bir Destek URL'i (Support URL) ve yasal Gizlilik Politikası URL'i girilmesi zorunludur.
+
+## 5. Gizlilik gereksinimleri: App Privacy Nutrition Labels ve ATT
+
+Apple, gizlilik konusunda sektördeki en katı kurallara sahiptir:
+
+- **App Privacy Beyanı:** App Store Connect panelinde uygulamanızın ve kullandığınız üçüncü parti kütüphanelerin (Firebase, Sentry, Facebook SDK vb.) topladığı tüm verileri (konum, e-posta, cihaz kimliği) tek tek beyan etmelisiniz.
+- **App Tracking Transparency (ATT):** Eğer kullanıcıyı farklı uygulamalar arasında izleyerek reklam hedeflemesi yapıyorsanız, `NSUserTrackingUsageDescription` anahtarını ekleyip kullanıcıdan ATT izni istemelisiniz.
+- **İzin Açıklama Metinleri:** `Info.plist` dosyasına eklenen kamera, mikrofon veya konum izinleri (`NSLocationWhenInUseUsageDescription`) jenerik olmamalı; verinin tam olarak hangi amaçla kullanılacağını şeffaf biçimde açıklamalıdır.
+
+## 6. App Store Review Guidelines: Kritik ret sebepleri
+
+Apple inceleme ekibinin ret kararlarının arkasında genellikle belirli yönerge maddeleri yatar:
+
+- **Kural 4.2 (Minimum Functionality):** Yalnızca bir web sitesini mobil ekranda gösteren (webview wrappper) veya kullanıcıya anlamlı yerel etkileşim sunmayan uygulamalar doğrudan reddedilir. Uygulamanız yerel donanım yeteneklerinden faydalanmalı ve özgün bir değer üretmelidir.
+- **Kural 2.1 (App Completeness & Demo Hesabı):** Eğer uygulamanız giriş (login) gerektiriyorsa, Apple inceleme görevlisinin tüm özellikleri eksiksiz test edebileceği, SMS kodu engeline takılmayan ve içerikle doldurulmuş aktif bir demo hesabı inceleme notlarına eklenmelidir.
+- **Kural 3.1.1 (In-App Purchase):** Uygulama içinde sunulan dijital içerik, özellik ve abonelikler için Apple IAP kullanılmalıdır; harici ödeme sayfalarına yönlendirme yapmak kesinlikle yasaktır.
+
+## 7. Gerçek dünya tecrübesi: Seyyah ve Orpigo örnekleri
+
+[Candemsoft](https://candemsoft.com/) olarak geliştirdiğimiz canlı projelerde edindiğimiz saha tecrübeleri, onay süreçlerini hızlandırmaktadır:
+
+- **[Seyyah](/projeler/seyyah/):** Sosyal keşif ve GPS doğrulamalı check-in uygulamamız Seyyah için Apple inceleme görevlilerine konum verisinin neden gerekli olduğunu, sahte konum (mock location) koruma mantığını ve harita senkronizasyonunu ayrıntılı inceleme notlarıyla aktardık. [seyyah.info](https://seyyah.info/) üzerinden erişilebilen gizlilik ve destek sayfalarını eksiksiz kurguladık.
+- **[Orpigo](/projeler/orpigo/):** Hız okuma platformumuz Orpigo tarafında, cihaz içi EPUB/PDF dosyalarının işlenmesi ve yerel depolama erişim izinlerini şeffaf biçimde tanımladık. İnceleme görevlisinin denemesi için hazır içerikler sunarak [orpigo.com](https://orpigo.com/) standartlarında akıcı bir onay aldık.
+
+Bu deneyimler, Apple inceleme ekibine ne kadar net ve hazır bilgi verilirse onay sürecinin o kadar kısaldığını kanıtlar.
+
+## 8. İnceleme süreci ve Resolution Center iletişimi
+
+Derlemenizi incelemeye gönderdikten sonra süreç genellikle 24 ila 48 saat içinde sonuçlanır. Ret (rejection) aldığınızda paniğe kapılmayın:
+
+- İnceleme görevlisinin Resolution Center üzerinden ilettiği mesajı ve ekran görüntülerini dikkatle inceleyin.
+- Eğer bir yanlış anlama varsa, görevliye saygılı, teknik olarak net ve gerekirse Vimeo/YouTube bağlantılı bir kullanım ekran videosu ekleyerek yanıt verin.
+- Hata kod tabanındaysa, gerekli düzeltmeyi yapıp yeni bir derleme yükleyin.
+
+Doğru kurgulanmış bir [mobil uygulama geliştirme](/hizmetler/mobil-uygulama/) metodolojisi, yayın sürecini bir stres kaynağı olmaktan çıkarıp profesyonel bir ürün lansmanına dönüştürür.
+
+## Sık sorulan sorular
+
+### Apple Developer hesabı açarken bireysel mi kurumsal mı seçilmeli?
+Bir şirket veya ticari işletmeniz varsa kesinlikle kurumsal hesap seçilmelidir. Kurumsal hesap, mağazada şirket unvanınızı gösterir ve birden fazla yazılımcıya güvenli rol bazlı erişim vermenizi sağlar.
+
+### İnceleme ekibine sunulan demo hesabında nelere dikkat edilmelidir?
+Demo hesabı iki faktörlü kimlik doğrulama (SMS OTP) sormamalı, içi boş bir hesap olmamalı ve uygulamanın tüm fonksiyonlarını test etmeye elverişli örnek veriler barındırmalıdır.
+
+### Ret (rejection) aldığımda bütün süreç sıfırdan mı başlar?
+Hayır. Çoğu durumda yalnızca reddedilen yönerge maddesiyle ilgili düzeltme yapmanız veya Resolution Center üzerinden açıklama göndermeniz yeterlidir. Yeni derleme yüklendiğinde inceleme kaldığı bağlamdan devam eder.
+
+### TestFlight harici test incelemesi ile mağaza incelemesi aynı mıdır?
+TestFlight harici beta incelemesi daha hafifletilmiş bir kontroldür. Mağaza yayın incelemesi ise gizlilik etiketleri, metadata, telif hakları ve tüm App Store yönergelerine tam uyumu kapsayan çok daha sıkı bir süreçtir.

@@ -1,62 +1,181 @@
 export const meta = {
-  title: "İ ile ı: Türkçe bir sitede büyük harf neden bozulur?",
-  description: "text-transform: uppercase, toUpperCase() ve arama kutuları. Türkçe karakterlerle çalışırken bizi en sık uğraştıran hata ve çözümü.",
+  title: "Türkçe Büyük İ ve I Kuralları: Yazılımda Harf Dönüşümü Rehberi",
+  metaTitle: "Türkçe Büyük İ ve I Dönüşüm Rehberi | Candemsoft",
+  description: "Türkçe büyük İ ve I harf kuralları, toLocaleUpperCase kullanımı, Unicode kodları ve yazılımda harf dönüşümü hatalarının çözümlerini rehberimizde keşfedin.",
   date: "2026-10-05",
   author: "Candemsoft",
-  tags: ["frontend", "i18n"]
+  tags: ["türkçe karakter", "i18n", "frontend", "backend", "unicode"]
 };
 
-Türkçe'de dört tane "i" var: **i, İ, ı, I**. İngilizce'de iki. Yazılımların çoğu İngilizce varsayımıyla yazıldığı için bu fark, en beklemediğiniz yerde ortaya çıkıyor.
+**Kısa cevap:** Türkçede küçük **i**, büyük **İ**, küçük **ı** ve büyük **I** olmak üzere dört bağımsız karakter vardır. İngilizce odaklı geliştirilen yazılım kütüphaneleri küçük 'i' harfini noktasız 'I' ile eşleştirdiği için Türkçe metinlerde harf dönüşümleri bozulur. Doğru sonuç için JavaScript'te `toLocaleUpperCase('tr')`, Go'da `unicode.TurkishCase`, Java'da `Locale.forLanguageTag("tr-TR")` ve CSS yerine doğrudan uygulama katmanında dil duyarlı fonksiyonlar kullanılmalıdır.
 
-## Sorun nerede başlıyor?
+> 🛠️ **Ücretsiz Çevrim İçi Araç:** Türkçe büyük ve küçük harf karmaşasını tarayıcınızda tek tıkla çözmek için [Türkçe Büyük/Küçük Harf Dönüştürücü](/araclar/buyuk-kucuk-harf-donusturucu) aracımız ile metinlerinizi tarayıcınızda anında dönüştürebilirsiniz.
 
-JavaScript'te `"istanbul".toUpperCase()` size **ISTANBUL** döndürür. Noktasız I ile. Türkçe okuyan biri bunu "Istanbul" diye, yani yanlış okur. Doğrusu **İSTANBUL**.
+---
 
-Aynı şey ters yönde de geçerli: `"İLETİŞİM".toLowerCase()` size `i̇leti̇şi̇m` döndürür. Gözle zor görünür ama her "i"nin üstünde fazladan bir birleştirici nokta (U+0307) vardır. Bu metni bir arama kutusunda `iletisim` ile karşılaştırırsanız eşleşmez.
+## Türkçe Büyük Harf ve İ - I Harf Kuralları
 
-## CSS de kurtarmıyor
+Arama motorlarında sıkça sorgulanan "büyük ı", "büyük i" ve "Türkçe büyük küçük harf dönüşümü" konuları, dijital sistemlerdeki Latin alfabesi varsayımlarının çöküş noktasını temsil eder.
 
-`text-transform: uppercase` tarayıcıya dönüşümü bırakır ve tarayıcı sayfanın `lang` özniteliğine bakar. `<html lang="tr">` doğruysa sonuç doğrudur. Ama:
+İngilizcede tek bir 'i' çifti vardır:
+* Küçük `i` büyüdüğünde `I` olur.
 
-- Bileşeniniz İngilizce sayfada render edilirse aynı Türkçe metin yanlış büyür,
-- `lang` özniteliğini unutursanız tüm site yanlış büyür,
-- Ekran okuyucular büyük harfli metni bazen harf harf okur.
+Türkçede ise noktalı ve noktasız harfler bağımsız iki farklı fonemdir:
+* **Noktalı çift:** Küçük `i` harfinin büyüğü **noktalı İ** harfidir.
+* **Noktasız çift:** Küçük `ı` harfinin büyüğü **noktasız I** harfidir.
 
-Bu yüzden bu sitede `text-transform: uppercase` hiç kullanmıyoruz. Büyük harf gerekiyorsa metni kaynağında büyük yazıyoruz.
+Sistemler dile duyarlı (locale-aware) çalışmadığında şu somut hatalar üretilir:
+* `ilişki` kelimesi büyütüldüğünde `İLİŞKİ` yerine hatalı olarak `ILISKI` ya da `ILIŞKI` olur.
+* `IŞIK` kelimesi küçültüldüğünde `ışık` yerine yanlışlıkla `isik` ya da `işık` yapılır.
+* `istanbul` kelimesi `İSTANBUL` yerine `ISTANBUL` şeklinde yazılarak bozulur.
+* `DİYARBAKIR` kelimesi küçültülürken `diyarbakır` yerine ayrışık `di̇yarbakir` üretilir.
 
-## Doğru dönüşüm
+Bu durum arama dizinlerini bozar, giriş doğrulamalarını aksatır ve sistem genelinde veri tutarsızlığına yol açar.
 
-Dili açıkça verin:
+---
 
-```js
-"istanbul".toLocaleUpperCase("tr"); // "İSTANBUL"
-"İLETİŞİM".toLocaleLowerCase("tr"); // "iletişim"
+## Unicode Anatomisi ve Kod Noktaları
+
+Unicode standardında bu dört karakterin her biri bağımsız bir kod noktasına (code point) sahiptir:
+
+| Harf | Tanım | Unicode Kodu | UTF-8 Bayt |
+| :--- | :--- | :--- | :--- |
+| **İ** | Latin Capital Letter I with Dot Above | `U+0130` | `0xC4 0xB0` |
+| **i** | Latin Small Letter I | `U+0069` | `0x69` |
+| **I** | Latin Capital Letter I | `U+0049` | `0x49` |
+| **ı** | Latin Small Letter Dotless I | `U+0131` | `0xC4 0xB1` |
+
+### NFD ve Birleştirici Nokta (Combining Dot Above) Tuzağı
+
+Unicode metinleri iki farklı biçimde tutabilir:
+1. **NFC (Bileşik Form):** `İ` harfi tek kod noktası olan `U+0130` ile tutulur.
+2. **NFD (Ayrışık Form):** `İ` harfi, büyük `I` (`U+0049`) ve birleştirici nokta (`U+0307` - Combining Dot Above) olarak iki ayrı kodla saklanır.
+
+Ekranda tamamen aynı görünseler bile `metin1 === metin2` karşılaştırması `false` döner. Veritabanına kaydetmeden önce metinleri mutlaka `normalize('NFC')` ile normalize etmelisiniz.
+
+---
+
+## Frontend ve JavaScript Çözümleri
+
+### 1. `toUpperCase()` Neden Yetersizdir?
+
+Standart JavaScript fonksiyonları İngilizce ASCII kurallarını temel alır:
+
+```javascript
+// Hatalı Kullanım:
+"istanbul".toUpperCase(); // "ISTANBUL" -> Hatalı
+"İSTANBUL".toLowerCase(); // "i̇stanbul" -> U+0069 + U+0307 üretir
+
+// Doğru Kullanım:
+"istanbul".toLocaleUpperCase("tr-TR"); // "İSTANBUL"
+"İSTANBUL".toLocaleLowerCase("tr-TR"); // "istanbul"
+"IŞIK".toLocaleLowerCase("tr-TR");     // "ışık"
 ```
 
-Arama ya da komut eşleştirme yapıyorsanız bir adım daha ileri gidin ve karşılaştırmadan önce iki tarafı da aynı biçime indirin:
+### 2. CSS `text-transform: uppercase` Riski
 
-```js
-function normalize(text) {
-  return text
-    .toLocaleLowerCase("tr")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/ı/g, "i");
-}
+CSS'teki `text-transform: uppercase` kuralı dönüşümü tarayıcıya bırakır. Tarayıcı ise sayfanın `<html lang="...">` bilgisine bakar.
 
-normalize("İletişim") === normalize("iletisim"); // true
+* Sayfada `<html lang="tr">` eksikse metin İngilizce gibi büyütülür (`istanbul` -> `ISTANBUL`).
+* Çok dilli uygulamalarda bileşen farklı dildeki bir sayfada çağrılırsa karakterler anında bozulur.
+* Ekran okuyucular büyük harfli metinleri bazen kısaltma gibi harf harf seslendirebilir.
+
+Bu riskleri önlemek için büyük harf gerektiren kritik metinleri kaynağında dönüştürmek en güvenli yoldur.
+
+---
+
+## Regex ve Unicode Property Escapes
+
+Türkçe metin doğrulamalarında klasik `[a-zA-Z]` deseni kullanılmamalıdır; çünkü 'ç, ğ, ı, ö, ş, ü, İ, I' harflerini dışarıda bırakır.
+
+Modern JavaScript'te Unicode property escapes (`\p{L}`) ve `u` bayrağı kullanılmalıdır:
+
+```javascript
+// Türkçe harfleri destekleyen isim kontrolü:
+const isimRegex = /^[\p{L}\s]+$/u;
+isimRegex.test("İpek Işık"); // true
 ```
 
-Bu sitenin terminalinde `iletişim`, `iletisim` ya da `ILETISIM` yazmanız fark etmiyor; hepsi aynı yere gidiyor. Arkasında bu fonksiyon var.
+* `\p{L}`: Tüm dillerdeki harfleri kapsar.
+* `\p{Lu}`: Büyük harfleri kapsar (`İ` ve `I` dahil).
+* `\p{Ll}`: Küçük harfleri kapsar (`i` ve `ı` dahil).
 
-## Font da işin içinde
+---
 
-Bir font Türkçe karakterleri içermiyorsa tarayıcı eksik harfleri başka bir fonttan alır. Sonuç: "Ş" bir fontta, kelimenin geri kalanı başka bir fontta. Font seçerken `latin-ext` alt kümesinin olduğundan emin olun ve **ğ, ü, ş, ı, İ, ö, ç** harflerini büyük boyutta bir kez gözle kontrol edin.
+## Backend Dillerinde Türkçe İ ve I Yönetimi
 
-## Kısa kontrol listesi
+### Python
 
-1. `<html lang>` her sayfada doğru mu?
-2. `toUpperCase()` / `toLowerCase()` yerine dil parametreli sürümler mi kullanılıyor?
-3. Arama ve filtrelemede normalizasyon var mı?
-4. Fontlar `latin-ext` içeriyor mu?
-5. `text-transform: uppercase` gerçekten gerekli mi?
+Python'da `str.upper()` ve `str.lower()` metotları dile duyarlı değildir:
+
+```python
+"i".upper() # 'I' üretir (İ yerine)
+"ı".upper() # 'I' üretir
+# 'i'.upper() == 'ı'.upper() eşitliği oluşur ve bilgi kaybı yaşanır!
+```
+
+Python projelerinde doğru dönüşüm için harf haritalama fonksiyonları veya `PyICU` kütüphanesi kullanılmalıdır.
+
+### Go (Golang)
+
+Go dili standart kütüphanesinde dile özel harmanlama tabloları barındırır:
+
+```go
+import (
+    "strings"
+    "unicode"
+)
+
+trBuyuk := strings.ToUpperSpecial(unicode.TurkishCase, "ilişki") // "İLİŞKİ"
+trKucuk := strings.ToLowerSpecial(unicode.TurkishCase, "IŞIK")   // "ışık"
+```
+
+### Java
+
+Java'da parametresiz `.toUpperCase()` kullanmak "Turkish-I Problem" kaynaklı sunucu hatalarına yol açar:
+
+```java
+String buyuk = "istanbul".toUpperCase(Locale.forLanguageTag("tr-TR")); // "İSTANBUL"
+String kucuk = "IŞIK".toLowerCase(Locale.forLanguageTag("tr-TR"));     // "ışık"
+```
+
+### C# (.NET) ve Güvenlik Açığı Riski
+
+C#'ta Türkçe işletim sisteminde çalışan bir web sunucusunda `"file".ToUpper()` çağrısı `"FİLE"` üretir. Güvenlik filtreleri `"FILE"` ifadesini arıyorsa bu denetim atlanabilir. Bu nedenle protokol ve sistem karşılaştırmalarında `StringComparison.OrdinalIgnoreCase` veya `ToUpperInvariant()`, kullanıcı metinlerinde ise `CultureInfo("tr-TR")` seçilmelidir.
+
+---
+
+## Veritabanlarında Harf Harmanlama (Collation)
+
+Veritabanında doğru arama ve sıralama için Türkçe collation tanımlanmalıdır:
+
+1. **MySQL / MariaDB:** Tablo ve sütun düzeyinde `utf8mb4_turkish_ci` harmanlaması kullanılmalıdır.
+2. **PostgreSQL:** Veritabanı oluşturulurken `LC_COLLATE = 'tr_TR.utf8'` seçilmeli veya ICU tabanlı `COLLATE "tr-TR-x-icu"` tercih edilmelidir.
+3. **SQLite:** `COLLATE NOCASE` yalnızca ASCII 26 harfi kapsar; Türkçe harflerde arama bozulur. SQLite için normalizasyon uygulama katmanında yapılmalıdır.
+
+---
+
+## Candemsoft Deneyimi ve Candemkey
+
+Türkçe karakter ve dil yapısına duyarlı klavye çözümleri geliştirirken karşılaştığımız bu sorunları Candemkey'de çözüme kavuşturduk. Candemsoft'un akıllı klavyesi [Candemkey](https://candemkey.com/) ([Candemkey Proje Detayları](/projeler/candemkey)), Türkçe morfolojik analiz ve yapay zekâ algoritmalarıyla donatılmıştır.
+
+Ekibimiz, [özel yazılım geliştirme](/hizmetler/web), [mobil uygulama geliştirme](/hizmetler/mobil) ve [yapay zekâ çözümleri](/hizmetler/yapay-zeka) projelerinde i18n standartlarını titizlikle uygular. İlgili diğer incelememiz olan [Türkçe Karakter ve OCR Sorunları](/blog/turkce-karakter-klavye-ve-ocr-sorunlari) yazımızı da okuyabilirsiniz.
+
+---
+
+## Sıkça Sorulan Sorular
+
+### 1. Türkçe büyük İ ve küçük ı harflerinin Unicode kodları nelerdir?
+Noktalı büyük **İ** `U+0130`, noktasız küçük **ı** ise `U+0131` koduna sahiptir. İngilizce noktasız büyük **I** `U+0049`, noktalı küçük **i** ise `U+0069`'dur.
+
+### 2. JavaScript'te toUpperCase() yerine neden toLocaleUpperCase('tr') kullanılmalıdır?
+Çünkü standart `toUpperCase()` fonksiyonu dili dikkate almaz ve İngilizce kurallarla `"i"` harfini `"I"` yapar. `"istanbul"` ifadesini `"ISTANBUL"` haline getirir. Doğru dönüşüm için `toLocaleUpperCase('tr-TR')` şarttır.
+
+### 3. Yazılımda "Türkçe İ Sorunu" (Turkish I Problem) neden güvenlik açığı yaratır?
+Sistem komutları veya dosya izinleri büyük harfe çevrilip kontrol edilirken dil parametresi verilmezse, Türkçe sunucuda `"file"` kelimesi `"FİLE"` olur ve izin denetimi atlatılabilir.
+
+### 4. CSS text-transform: uppercase neden her zaman güvenli değildir?
+CSS dönüşümü tarayıcının dil ortamına ve HTML'in `lang` özniteliğine bağlıdır. Sayfa dili belirtilmezse harfler İngilizceye göre büyütülür ve ekran okuyucular kelimeyi kısaltma sanabilir.
+
+### 5. Veritabanında Türkçe büyük ve küçük harf araması nasıl doğru yapılandırılır?
+MySQL'de `utf8mb4_turkish_ci`, PostgreSQL'de ICU destekli Türkçe collation seçilmelidir. SQLite gibi ortamlarda ise veriler uygulama katmanında normalize edilerek saklanmalıdır.

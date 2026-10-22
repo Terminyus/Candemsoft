@@ -1,0 +1,181 @@
+{
+  "key": "metin-buyuk-kucuk-harf",
+  "slug": {
+    "tr": "buyuk-kucuk-harf-donusturucu",
+    "en": "case-converter",
+    "es": "convertidor-mayusculas-minusculas"
+  },
+  "title": {
+    "tr": "Büyük Küçük Harf Dönüştürücü",
+    "en": "Case Converter & Turkish Text Formatter",
+    "es": "Convertidor de Mayúsculas y Minúsculas"
+  },
+  "metaTitle": {
+    "tr": "Büyük Küçük Harf Dönüştürücü | Candemsoft",
+    "en": "Online Case Converter & Turkish I Fix | Candemsoft",
+    "es": "Convertidor Mayúsculas y Minúsculas | Candemsoft"
+  },
+  "metaDescription": {
+    "tr": "Metinlerinizi büyük, küçük, başlık veya cümle düzenine dönüştürün. Türkçe İ-ı ve I-i harf problemlerini bozulma olmadan çözen ücretsiz çevrim içi araç.",
+    "en": "Convert text between uppercase, lowercase, title case, and sentence case. Fix Turkish dotted and dotless I issues accurately with this free online tool.",
+    "es": "Convierte texto a mayúsculas, minúsculas y formato título. Corrige con precisión los caracteres especiales y la letra I turca sin perder el formato."
+  },
+  "kicker": {
+    "tr": "Tipografi ve Karakter Dönüşümü",
+    "en": "Typography & Character Transformation",
+    "es": "Tipografía y Transformación de Caracteres"
+  },
+  "lead": {
+    "tr": "Metinlerinizi büyük harf, küçük harf, baş harfleri büyüt veya cümle düzeni modlarına saniyeler içinde dönüştürün. Türkçe İ-ı ve I-i karmaşasını ortadan kaldıran akıllı dönüşüm motoru.",
+    "en": "Easily switch text between uppercase, lowercase, title case, and sentence case. Powered by an intelligent transformation engine that correctly handles Turkish dotted and dotless I.",
+    "es": "Transforma tus textos a mayúsculas, minúsculas o formato de título en segundos. Un motor inteligente que gestiona con precisión los caracteres especiales y la I turca."
+  },
+  "article": {
+    "title": {
+      "tr": "Metin Dönüşümünde Türkçe Karakterlerin Anatomisi ve Yaygın Hatalar",
+      "en": "The Mechanics of Text Case Conversion and the Turkish I Pitfall",
+      "es": "Mecánica de la Conversión de Mayúsculas y el Desafío de la I Turca"
+    },
+    "sections": [
+      {
+        "heading": {
+          "tr": "Unicode Standartlarında Dört Farklı 'I' ve 'İ' Karakteri",
+          "en": "Unicode Standards and the Four Distinct 'I' and 'İ' Glyphs",
+          "es": "Estándares Unicode y los Cuatro Glifos Distintos de 'I' e 'İ'"
+        },
+        "paragraphs": {
+          "tr": [
+            "Modern bilgisayar sistemlerinin büyük bölümü, Latin alfabesinin İngilizce varyantı referans alınarak tasarlanmıştır. Standart ASCII tablosunda büyük 'I' (Unicode U+0049) ile küçük 'i' (Unicode U+0069) birbirinin doğrudan büyük-küçük harf eşleniği olarak kabul edilir. Oysa Türk alfabesinde durum kökten farklıdır: Türkçede noktalı ve noktasız olmak üzere iki bağımsız sesli harf bulunur ve her ikisinin de hem büyük hem küçük biçimi mevcuttur. Noktalı küçük 'i' harfinin büyüğü noktalı 'İ' (U+0130), noktasız büyük 'I' harfinin küçüğü ise noktasız 'ı' (U+0131) karakteridir.",
+            "Bu ayrım gözetilmediğinde yazılım dünyasında meşhur 'Türkçe İ Sorunu' patlak verir. Örneğin 'ilişki' sözcüğünü İngilizce yerel ayarlarıyla çalışan bir büyük harf fonksiyonuna gönderdiğinizde, ilk harf noktasız 'I' harfine dönüşür ve ekranda 'ILISKI' ya da 'ILIŞKI' şeklinde hatalı bir yazım belirir. Benzer biçimde 'IŞIK' sözcüğü standart toLowerCase işleminden geçtiğinde 'iŞIK' gibi telafisi güç yazım faciaları meydana gelir. Üstelik naif kütüphaneler 'İ' harfini küçültürken bazen harfin üzerine fazladan bir birleştirici nokta (combining dot above U+0307) ekleyerek metin karşılaştırmalarını tamamen bozar."
+          ],
+          "en": [
+            "The foundation of modern computing was largely built around the English variant of the Latin alphabet. In standard ASCII, the uppercase letter 'I' (Unicode U+0049) corresponds symmetrically to the lowercase letter 'i' (Unicode U+0069). However, the Turkish alphabet introduces a distinct orthographic rule: it contains two entirely separate vowel pairs, one dotted and one dotless. The lowercase dotted 'i' capitalizes into the dotted capital 'İ' (U+0130), while the uppercase dotless 'I' lowercases into the dotless small 'ı' (U+0131).",
+            "When software ignores this linguistic reality, the notorious 'Turkish I Bug' occurs. For instance, passing the word 'ilişki' through an English-centric uppercase method yields 'ILISKI' or 'ILIŞKI', corrupting the initial vowel into a dotless letter. Conversely, transforming 'IŞIK' with a naive lowercase function often results in 'iŞIK'. In many broken implementations, lowercasing a capital 'İ' inadvertently appends a combining dot above (Unicode U+0307), silently mutating the underlying string into two codepoints (`i\\u0307`) that will fail basic equality checks against a standard lowercase 'i'."
+          ],
+          "es": [
+            "Los cimientos de la informática moderna se construyeron sobre la variante inglesa del alfabeto latino. En la tabla ASCII estándar, la letra mayúscula 'I' (Unicode U+0049) se empareja de forma directa con la 'i' minúscula (Unicode U+0069). Sin embargo, el alfabeto turco posee una regla ortográfica única: contiene dos pares vocálicos completamente independientes, uno con punto y otro sin punto. La 'i' minúscula con punto se convierte en 'İ' mayúscula con punto (U+0130), mientras que la 'I' mayúscula sin punto pasa a ser 'ı' minúscula sin punto (U+0131).",
+            "Cuando el software ignora esta estructura lingüística, surge el temido error de la 'I turca'. Por ejemplo, transformar la palabra 'ilişki' con una función en mayúsculas basada en el entorno inglés genera 'ILISKI' o 'ILIŞKI', alterando la vocal inicial. De igual forma, convertir 'IŞIK' a minúsculas produce aberraciones como 'iŞIK'. En implementaciones deficientes, convertir una 'İ' mayúscula a minúsculas agrega un punto combinatorio (Unicode U+0307), generando una secuencia de dos caracteres (`i\\u0307`) que rompe cualquier comparación de texto con una 'i' ordinaria."
+          ]
+        }
+      },
+      {
+        "heading": {
+          "tr": "toUpperCase('en') vs toLocaleUpperCase('tr'): JavaScript ve Python Tuzakları",
+          "en": "toUpperCase('en') vs toLocaleUpperCase('tr'): Common Pitfalls in JS and Python",
+          "es": "toUpperCase('en') frente a toLocaleUpperCase('tr'): Errores en JS y Python"
+        },
+        "paragraphs": {
+          "tr": [
+            "Programlama dillerinde varsayılan metin fonksiyonları ekseriyetle evrensel değil, Amerikan İngilizcesi merkezlidir. JavaScript ortamında doğrudan string.toUpperCase() çağırmak, tarayıcının veya Node.js çalışma ortamının varsayılan yerel ayarlarına güvenir ve çoğunlukla kök (root invariant) kurallarını işletir. Bu durumda 'istanbul' girdisi 'ISTANBUL' çıktısına dönüşerek anlam ve telaffuz kaybına yol açar. Geliştiricilerin bu hatadan kaçınmak için mutlaka string.toLocaleUpperCase('tr-TR') ve string.toLocaleLowerCase('tr-TR') fonksiyonlarını bilinçli bir biçimde kullanması şarttır.",
+            "Python dünyasında da durum benzer riskler barındırır. Python 3'te yerleşik str.upper() ve str.lower() metotları Unicode standardının 'Default Casing' kurallarını uygular ve yerel dil parametresi kabul etmez. Dolayısıyla Python'da 'istanbul'.upper() çalıştırıldığında sonuç yine 'ISTANBUL' olacaktır. Bu sorunun önüne geçebilmek adına Python projelerinde ya sistem locale ayarları dikkatle yapılandırılmalı ya PyICU kütüphanesi devreye alınmalı ya da özel bir çeviri haritası (str.maketrans üzerinden çalışan yerelleştirilmiş fonksiyonlar) tanımlanmalıdır."
+          ],
+          "en": [
+            "Default string manipulation methods across major programming languages are rarely language-agnostic; they generally assume US-ASCII conventions. In JavaScript, executing a bare string.toUpperCase() relies on the runtime's default environment and typically enforces invariant root rules. Consequently, 'istanbul' becomes 'ISTANBUL', introducing spelling errors right into user interfaces and document exports. To ensure typographic accuracy, developers must explicitly supply the locale argument by calling string.toLocaleUpperCase('tr-TR') and string.toLocaleLowerCase('tr-TR').",
+            "The Python ecosystem presents an identical vulnerability. The built-in str.upper() and str.lower() methods in Python 3 implement Unicode's Default Casing rules without taking runtime locale parameters. Running 'istanbul'.upper() in standard Python stubbornly returns 'ISTANBUL'. To resolve this, Python engineers must either configure the operating system locale cautiously, adopt external packages like PyICU, or implement custom translation tables via str.maketrans to map Turkish characters predictably without side effects."
+          ],
+          "es": [
+            "Los métodos de manipulación de cadenas en los principales lenguajes de programación rara vez son neutrales respecto al idioma; suelen asumir las reglas del inglés. En JavaScript, invocar string.toUpperCase() sin argumentos delega en el entorno de ejecución predeterminado y aplica reglas invariantes. De este modo, 'istanbul' se transforma en 'ISTANBUL', introduciendo faltas ortográficas visibles en la interfaz. Para garantizar la corrección, los desarrolladores deben especificar la configuración regional mediante string.toLocaleUpperCase('tr-TR') y string.toLocaleLowerCase('tr-TR').",
+            "En el ecosistema Python encontramos una situación similar. Los métodos nativos str.upper() y str.lower() de Python 3 aplican el casing estándar de Unicode sin aceptar parámetros de idioma. Ejecutar 'istanbul'.upper() devuelve inevitablemente 'ISTANBUL'. Para solventar este comportamiento, los ingenieros deben ajustar la configuración regional del sistema, utilizar librerías especializadas como PyICU o definir tablas de traducción explícitas mediante str.maketrans para procesar los caracteres turcos de manera confiable."
+          ]
+        }
+      },
+      {
+        "heading": {
+          "tr": "Veritabanı Karşılaştırma Kuralları (Collation) ve Arama Sorunları",
+          "en": "Database Collation Rules and Character Search Inconsistencies",
+          "es": "Reglas de Cotejamiento (Collation) y Búsqueda en Bases de Datos"
+        },
+        "paragraphs": {
+          "tr": [
+            "Büyük-küçük harf dönüşüm hataları yalnızca kullanıcı arayüzlerinde görsel bir kusur olarak kalmaz; arka planda çalışan veritabanı mimarilerinde ciddi sorgu tutarsızlıklarına yol açar. MySQL ve MariaDB sistemlerinde varsayılan olarak kullanılan utf8mb4_general_ci veya utf8mb4_unicode_ci harmanlamaları, İngilizce mantığıyla ASCII i ile I harflerini birbirine denk kabul eder. Ancak Türkçe ı ile İ karakterleri bu kümenin dışında kalarak eşleşmez; doğru eşleştirme için utf8mb4_turkish_ci harmanlaması gereklidir. PostgreSQL sistemlerinde ise harmanlama genellikle işletim sistemi yereli (LC_COLLATE = tr_TR.utf8) üzerinden yapılandırılırken, SQLite yerleşik NOCASE operatörü yalnızca temel ASCII harflerini tanır.",
+            "Bu durum, kullanıcının istanbul araması yaptığında veritabanında İSTANBUL şeklinde kayıtlı satırların bulunamamasına neden olur. Benzer şekilde kullanıcı adı ve e-posta doğrulama süreçlerinde ALİ ile ali kayıtları collation uyuşmazlığı sebebiyle iki farklı hesapmış gibi algılanabilir veya tam tersi benzersizlik kısıtlarını ihlal edebilir. Geliştiricilerin bu tip sorgu anomalilerini önlemek için hem veritabanı seviyesinde doğru harmanlama kurallarını seçmesi hem de kullanıcı girdilerini tutarlı bir normalizasyon süzgecinden geçirmesi gerekir."
+          ],
+          "en": [
+            "Case conversion anomalies are not merely aesthetic defects in the user interface; they trigger severe inconsistencies across database persistence layers. In MySQL and MariaDB, default collations like utf8mb4_general_ci or utf8mb4_unicode_ci treat ASCII i and I as case-insensitive twins, yet fail on Turkish dotless ı and dotted İ. For accurate Turkish matching in MySQL, the dedicated utf8mb4_turkish_ci collation is necessary. In PostgreSQL, collation is governed by OS locales such as LC_COLLATE = tr_TR.utf8, while SQLite built-in NOCASE comparator only handles ASCII letters from A to Z.",
+            "As a direct consequence, a user querying for istanbul fails to locate database records stored as İSTANBUL. In authentication workflows, case insensitivity mismatches can allow conflicting usernames or lead to unexpected duplicate record exceptions. To avoid these traps, software engineers must configure proper database collations and apply locale-aware text normalization before executing sensitive queries or indexing documents."
+          ],
+          "es": [
+            "Las anomalías en la conversión de mayúsculas no son solo un fallo visual en la interfaz; provocan graves inconsistencias en las bases de datos. En MySQL y MariaDB, las intercalaciones predeterminadas como utf8mb4_general_ci o utf8mb4_unicode_ci consideran equivalentes la i y la I de ASCII, pero tratan la ı y la İ turcas como caracteres distintos. Para el turco, se requiere utf8mb4_turkish_ci. En PostgreSQL, el cotejamiento depende de la configuración regional del sistema operativo (LC_COLLATE = tr_TR.utf8), mientras que el operador NOCASE de SQLite solo abarca el rango ASCII estándar.",
+            "Por consiguiente, cuando un usuario busca istanbul, la consulta puede no localizar los registros almacenados como İSTANBUL. En sistemas de autenticación, este problema puede ocasionar duplicación indebida de cuentas o fallos en las restricciones de unicidad. Los desarrolladores deben configurar las intercalaciones correctas en sus bases de datos y normalizar el texto de manera adecuada antes de indexar o comparar cadenas."
+          ]
+        }
+      },
+      {
+        "heading": {
+          "tr": "Baş Harfleri Büyüt (Title Case) Modu ve Türkçe Kurallar",
+          "en": "Title Case Mechanics and Turkish Letter Capitalization",
+          "es": "Mecánica de Mayúsculas Iniciales y Reglas Tipográficas"
+        },
+        "paragraphs": {
+          "tr": [
+            "Metinleri Baş Harfleri Büyüt (Title Case) biçimine dönüştürmek, dijital kartlarda, menü başlıklarında ve blog yazılarında görsel bir hiyerarşi oluşturmanın en pratik yoludur. Ancak standart JavaScript toUpperCase() veya İngilizce kütüphaneler kullanıldığında, istanbul sözcüğünün baş harfi hatalı olarak noktasız I harfine (Istanbul) dönüşür. Benzer şekilde ışık sözcüğü ise noktalı İ harfine (İşık) dönüşerek kural ihlali yaratır.",
+            "Aracımız, Baş Harfleri Büyüt modunda metindeki her sözcüğün ilk karakterini Türkçe yerel kurallarına (toLocaleUpperCase tr) uygun şekilde bağımsız olarak büyütür ve kalan harfleri küçük harfe indirir. Bu işlem sayesinde İstanbul Ve Işık gibi her kelimesi doğru Türkçe karakterle başlayan temiz başlıklar elde edilir. Yazılı metinlerinizde geleneksel TDK yayın kılavuzları doğrultusunda ve, ile, de gibi bağlaçları küçük bırakmak isterseniz, bu otomatik çıktıyı editoryal tercihinize göre zahmetsizce son hâline getirebilirsiniz."
+          ],
+          "en": [
+            "Transforming text into Title Case provides an immediate visual hierarchy across website headings, cards, and metadata. However, using naive English capitalization algorithms converts istanbul into Istanbul with a dotless I, and ışık into İşık with an erroneous dotted I. These mistakes corrupt proper nouns and common Turkish words alike.",
+            "Our case conversion tool capitalizes the opening character of each word strictly through Turkish locale conventions (toLocaleUpperCase tr) while lowercasing the subsequent letters. This approach produces clean, reliable output such as İstanbul Ve Işık where every word initial respects dotted and dotless rules. If your editorial style sheet prefers minor connectors like ve or and to remain lowercase, you can fine-tune the resulting text according to your publication guidelines."
+          ],
+          "es": [
+            "Convertir texto al formato de mayúsculas iniciales (Title Case) permite estructurar titulares y tarjetas visuales con claridad. Sin embargo, los algoritmos basados en inglés convierten erróneamente istanbul en Istanbul con una I sin punto, o ışık en İşık con un punto indebido. Estas fallas arruinan la lectura y la ortografía correcta en turco.",
+            "Nuestra herramienta aplica la conversión de mayúsculas a la letra inicial de cada palabra utilizando estrictamente las reglas locales (toLocaleUpperCase tr) y pasando las demás a minúsculas. Esto garantiza resultados como İstanbul Ve Işık, donde cada inicial respeta las normas de la lengua. Si las normas de estilo de su publicación requieren conectores en minúscula, puede ajustar manualmente el resultado final tras la transformación inicial."
+          ]
+        }
+      }
+    ]
+  },
+  "faq": [
+    {
+      "question": {
+        "tr": "Neden standart büyük harfe dönüştürücüler Türkçede 'İ' ve 'ı' harflerini bozar?",
+        "en": "Why do standard case converters corrupt Turkish dotted 'İ' and dotless 'ı'?",
+        "es": "¿Por qué los convertidores habituales alteran la 'İ' y la 'ı' del idioma turco?"
+      },
+      "answer": {
+        "tr": "Standart yazılımlar İngilizce ASCII kurallarına göre çalışır ve 'i' harfini noktasız 'I' olarak büyütür. Türkçede ise noktalı 'i'nin büyüğü 'İ', noktasız 'ı'nın büyüğü 'I' karakteridir. Yerelleştirilmemiş algoritmalar bu iki harf çiftini karıştırdığı için kelimeler hatalı yazılır.",
+        "en": "Most general converters rely on ASCII standards where lowercase 'i' maps to uppercase 'I'. In Turkish, dotted 'i' maps to dotted 'İ', and dotless 'ı' maps to uppercase 'I'. Non-localized functions miss this rule and misspell critical words.",
+        "es": "La mayoría de herramientas usan la tabla ASCII en la que la 'i' minúscula se asocia a la 'I' mayúscula. En turco, la 'i' con punto se convierte en 'İ', y la 'ı' sin punto en 'I'. Los algoritmos genéricos confunden estos pares vocálicos."
+      }
+    },
+    {
+      "question": {
+        "tr": "CSS 'text-transform: uppercase' kullanımı neden her zaman güvenli değildir?",
+        "en": "Why is CSS 'text-transform: uppercase' not always a reliable solution?",
+        "es": "¿Por qué 'text-transform: uppercase' en CSS no siempre resulta una opción segura?"
+      },
+      "answer": {
+        "tr": "CSS dönüşümü tarayıcının dil algısına ve HTML sayfasının 'lang' etiketine bağlıdır. Etiket eksikse veya bileşen çok dilli bir yapıda yanlış render edilirse Türkçe karakterler bozulur. Ayrıca ekran okuyucular büyük harfli kelimeleri bazen harf harf kodlayarak erişilebilirliği düşürür.",
+        "en": "CSS transformation depends entirely on the browser locale and the document 'lang' attribute. If 'lang' is missing or misconfigured, Turkish characters break visually. Furthermore, screen readers may spell out capitalized words letter by letter.",
+        "es": "La propiedad de CSS depende del idioma del navegador y del atributo 'lang' del HTML. Si falta dicho atributo, los caracteres turcos se muestran incorrectamente. Además, los lectores de pantalla pueden deletrear las palabras mayúsculas."
+      }
+    },
+    {
+      "question": {
+        "tr": "JavaScript'te Türkçe metinleri doğru büyütüp küçültmenin yöntemi nedir?",
+        "en": "What is the correct way to convert Turkish text casing in JavaScript?",
+        "es": "¿Cuál es el método adecuado para convertir mayúsculas y minúsculas en JavaScript para turco?"
+      },
+      "answer": {
+        "tr": "JavaScript'te doğrudan .toUpperCase() yerine .toLocaleUpperCase('tr-TR') ve .toLowerCase() yerine .toLocaleLowerCase('tr-TR') kullanılmalıdır. Böylece 'istanbul' doğru şekilde 'İSTANBUL', 'IŞIK' ise 'ışık' olarak dönüştürülür.",
+        "en": "In JavaScript, you should always use .toLocaleUpperCase('tr-TR') and .toLocaleLowerCase('tr-TR') instead of generic methods. This guarantees that 'istanbul' transforms cleanly into 'İSTANBUL' and 'IŞIK' into 'ışık'.",
+        "es": "En JavaScript se debe utilizar siempre .toLocaleUpperCase('tr-TR') y .toLocaleLowerCase('tr-TR'). Esto asegura que palabras como 'istanbul' se conviertan con exactitud en 'İSTANBUL' y que 'IŞIK' pase a ser 'ışık'."
+      }
+    },
+    {
+      "question": {
+        "tr": "Büyük-küçük harf dönüşümü veritabanı aramalarını nasıl etkiler?",
+        "en": "How does case conversion affect database search queries and uniqueness?",
+        "es": "¿Cómo afecta la conversión de texto a las búsquedas e índices de una base de datos?"
+      },
+      "answer": {
+        "tr": "Veritabanlarında utf8mb4_general_ci gibi genel collation kullanıldığında 'i' ile 'I' denk kabul edilirken 'İ' ile 'ı' eşleşmeyebilir. Bu durum aramalarda kayıtların bulunamamasına ve kullanıcı adı gibi benzersiz alanlarda hatalara yol açar.",
+        "en": "With standard collations like utf8mb4_general_ci, databases equate 'i' with 'I' but fail to associate 'İ' with 'ı'. This causes missing records in search results and unique constraint conflicts on user identifiers.",
+        "es": "Con intercalaciones generales como utf8mb4_general_ci, las bases de datos equiparan 'i' con 'I' pero no reconocen la relación entre 'İ' e 'ı'. Esto provoca que falten resultados en búsquedas y surjan errores de unicidad."
+      }
+    }
+  ],
+  "relatedProducts": [
+    "candemkey",
+    "orpigo"
+  ],
+  "relatedBlogSlug": "turkce-buyuk-harf"
+}

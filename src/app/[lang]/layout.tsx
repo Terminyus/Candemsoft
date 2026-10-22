@@ -32,8 +32,8 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
   const dict = await getDictionary(lang);
   return {
     metadataBase: new URL(siteUrl),
-    title: { default: dict.meta.siteTitle, template: "%s — Candemsoft" },
-    description: dict.meta.siteDescription,
+    title: { default: dict.meta.homeTitle, template: "%s — Candemsoft" },
+    description: dict.meta.homeDescription,
     applicationName: "Candemsoft",
     formatDetection: { telephone: false, email: false, address: false },
   };

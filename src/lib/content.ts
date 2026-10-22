@@ -1,4 +1,3 @@
-import "server-only";
 import fs from "node:fs";
 import path from "node:path";
 import type { Locale } from "@/i18n/config";
@@ -30,6 +29,7 @@ export type Project = {
   stack: string[];
   caseStudy: { challenge: Localized; approach: Localized; outcome: Localized };
   images: { desktop: string; mobile: string };
+  metaTitle?: Localized;
 };
 
 export type Service = (typeof services)[number];
@@ -77,7 +77,7 @@ export function getProducts(): Product[] {
 }
 
 export function getProductByProject(slug: string): Product | undefined {
-  return getProducts().find((p) => (p.project ?? p.slug) === slug && p.status === "live");
+  return getProducts().find((p) => (p.project ?? p.slug) === slug);
 }
 
 export function getTeam(): TeamMember[] {
@@ -100,10 +100,12 @@ export function getProject(slug: string): Project | undefined {
 export type PostMeta = {
   slug: string;
   title: string;
+  metaTitle?: string;
   description: string;
   date: string;
   author: string;
   tags: string[];
+  image?: string;
 };
 
 export function getPostSlugs(lang: Locale): string[] {
@@ -114,19 +116,90 @@ export function getPostSlugs(lang: Locale): string[] {
     .map((f) => f.slice(0, -suffix.length));
 }
 
+export function parsePostMetaString(src: string, filename = "mdx"): Omit<PostMeta, "slug"> {
+  const metaMatch = src.match(/export const meta\s*=\s*(\{[\s\S]*?\n?\s*\});/);
+  if (!metaMatch) {
+    throw new Error(`Missing meta export in ${filename}`);
+  }
+  let parsed: unknown;
+  try {
+    parsed = new Function(`return (${metaMatch[1]});`)();
+  } catch (err: unknown) {
+    const msg = err instanceof Error ? err.message : String(err);
+    throw new Error(`Failed to evaluate meta export in ${filename}: ${msg}`);
+  }
+  if (!parsed || typeof parsed !== "object") {
+    throw new Error(`Meta export in ${filename} must be an object`);
+  }
+  const meta = parsed as Record<string, unknown>;
+  if (typeof meta.title !== "string" || !meta.title.trim()) {
+    throw new Error(`Missing or invalid 'title' in meta of ${filename}`);
+  }
+  if (typeof meta.description !== "string" || !meta.description.trim()) {
+    throw new Error(`Missing or invalid 'description' in meta of ${filename}`);
+  }
+  if (typeof meta.date !== "string" || !meta.date.trim()) {
+    throw new Error(`Missing or invalid 'date' in meta of ${filename}`);
+  }
+  if (typeof meta.author !== "string" || !meta.author.trim()) {
+    throw new Error(`Missing or invalid 'author' in meta of ${filename}`);
+  }
+  if (!Array.isArray(meta.tags) || meta.tags.length === 0) {
+    throw new Error(`Missing or invalid 'tags' in meta of ${filename}`);
+  }
+  return meta as unknown as Omit<PostMeta, "slug">;
+}
+
+export function getPostMeta(lang: Locale, slug: string): PostMeta {
+  const filePath = path.join(root, "blog", `${slug}.${lang}.mdx`);
+  const src = fs.readFileSync(filePath, "utf8");
+  const meta = parsePostMetaString(src, `${slug}.${lang}.mdx`);
+  return { ...meta, slug };
+}
+
 export async function getPost(lang: Locale, slug: string) {
+  const meta = getPostMeta(lang, slug);
   const mod = await import(`@content/blog/${slug}.${lang}.mdx`);
-  return { Post: mod.default as React.ComponentType, meta: { ...(mod.meta as Omit<PostMeta, "slug">), slug } };
+  return { Post: mod.default as React.ComponentType, meta };
 }
 
 export async function getPosts(lang: Locale): Promise<PostMeta[]> {
-  const posts = await Promise.all(getPostSlugs(lang).map(async (slug) => (await getPost(lang, slug)).meta));
+  const posts = getPostSlugs(lang).map((slug) => getPostMeta(lang, slug));
   return posts.sort((a, b) => b.date.localeCompare(a.date));
+}
+
+export async function getRelatedPosts(lang: Locale, currentSlug: string, limit = 3): Promise<PostMeta[]> {
+  const posts = await getPosts(lang);
+  const current = posts.find((p) => p.slug === currentSlug);
+  if (!current) return posts.filter((p) => p.slug !== currentSlug).slice(0, limit);
+
+  const currentTags = new Set((current.tags ?? []).map((t) => t.toLowerCase()));
+  const scored = posts
+    .filter((p) => p.slug !== currentSlug)
+    .map((p) => {
+      let score = 0;
+      for (const t of p.tags ?? []) {
+        if (currentTags.has(t.toLowerCase())) score++;
+      }
+      return { post: p, score };
+    });
+
+  scored.sort((a, b) => {
+    if (b.score !== a.score) return b.score - a.score;
+    return b.post.date.localeCompare(a.post.date);
+  });
+
+  return scored.slice(0, limit).map((s) => s.post);
 }
 
 /** True when a file exists under /public (used to fall back gracefully before screenshots exist). */
 export function publicFileExists(publicPath: string): boolean {
-  return fs.existsSync(path.join(process.cwd(), "public", publicPath));
+  if (!publicPath || typeof publicPath !== "string") return false;
+  const publicDir = path.resolve(process.cwd(), "public");
+  const cleanPath = publicPath.replace(/^\/+/, "");
+  const target = path.resolve(publicDir, cleanPath);
+  if (!target.startsWith(publicDir + path.sep) && target !== publicDir) return false;
+  return fs.existsSync(target);
 }
 
 export function readingMinutes(lang: Locale, slug: string): number {
@@ -134,3 +207,50 @@ export function readingMinutes(lang: Locale, slug: string): number {
   const words = src.replace(/export const meta[\s\S]*?\};/, "").split(/\s+/).filter(Boolean).length;
   return Math.max(1, Math.round(words / 200));
 }
+
+/** Extracts FAQ question-answer pairs from the post's MDX content if present. */
+export function getPostFaqs(lang: Locale, slug: string): Array<{ question: string; answer: string }> {
+  const filePath = path.join(root, "blog", `${slug}.${lang}.mdx`);
+  if (!fs.existsSync(filePath)) return [];
+  const content = fs.readFileSync(filePath, "utf8");
+
+  const headingMatch = content.match(
+    /^##\s+(?:Sıkça\s+Sorulan\s+Sorular|Sık\s+Sorulan\s+Sorular|Frequently\s+Asked\s+Questions|Preguntas\s+Frecuentes|FAQ)\s*$/im,
+  );
+  if (!headingMatch || headingMatch.index === undefined) return [];
+
+  const afterHeading = content.slice(headingMatch.index + headingMatch[0].length);
+  const nextHeadingMatch = afterHeading.search(/\n##\s+/);
+  const section = nextHeadingMatch !== -1 ? afterHeading.slice(0, nextHeadingMatch) : afterHeading;
+
+  const items: Array<{ question: string; answer: string }> = [];
+
+  if (/^###\s+/m.test(section)) {
+    const parts = section.split(/\n(?=###\s+)/);
+    for (const part of parts) {
+      const match = part.match(/^###\s+([^\n]+)\n+([\s\S]*)$/);
+      if (match) {
+        const question = match[1].replace(/^\d+[\.\)]\s*/, "").trim();
+        const answer = match[2].trim();
+        if (question && answer) {
+          items.push({ question, answer });
+        }
+      }
+    }
+  } else {
+    const parts = section.split(/\n*(?=\*\*[^*]+\?\*\*)/);
+    for (const part of parts) {
+      const match = part.match(/^\*\*([^*]+\?)\*\*\s*([\s\S]*)$/);
+      if (match) {
+        const question = match[1].replace(/^\d+[\.\)]\s*/, "").trim();
+        const answer = match[2].trim();
+        if (question && answer) {
+          items.push({ question, answer });
+        }
+      }
+    }
+  }
+
+  return items;
+}
+

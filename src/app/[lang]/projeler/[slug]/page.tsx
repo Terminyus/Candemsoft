@@ -3,10 +3,18 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { locales } from "@/i18n/config";
 import { href } from "@/i18n/routes";
-import { getProject, getProjects, getServices } from "@/lib/content";
+import { getProductByProject, getProject, getProjects, getServices } from "@/lib/content";
 import { getDictionary } from "@/lib/dictionary";
 import { resolveLang } from "@/lib/params";
-import { pageMetadata } from "@/lib/seo";
+import {
+  breadcrumbJsonLd,
+  jsonLd,
+  mergeJsonLd,
+  pageBreadcrumbs,
+  pageMetadata,
+  siteUrl,
+  softwareJsonLd,
+} from "@/lib/seo";
 import { ButtonLink } from "@/components/ui/Button";
 import { MonoLabel } from "@/components/ui/MonoLabel";
 import { Tag } from "@/components/ui/Tag";
@@ -24,12 +32,14 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/projeler/[
   const { slug } = await params;
   const project = getProject(slug);
   if (!project) return {};
+  const title = project.metaTitle?.[lang] ?? `${project.name} | Candemsoft`;
   return pageMetadata({
     lang,
     route: "projects",
     rest: [slug],
-    title: project.name,
+    title,
     description: project.summary[lang],
+    image: project.images?.desktop,
   });
 }
 
@@ -57,8 +67,16 @@ export default async function ProjectPage({ params }: PageProps<"/[lang]/projele
     .map((key) => ({ key, title: t[key], body: project.caseStudy[key][lang] }))
     .filter((s) => s.body.trim());
 
+  const product = getProductByProject(project.slug);
+  const projectUrl = `${siteUrl}${href(lang, "projects", project.slug)}`;
+  const breadcrumbs = breadcrumbJsonLd(pageBreadcrumbs(lang, "projects", { name: project.name, url: projectUrl }));
+  const productSchema = product ? softwareJsonLd(lang, product, project.name, projectUrl) : null;
+  const merged = mergeJsonLd(productSchema, breadcrumbs);
+
   return (
-    <article>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(merged)} />
+      <article>
       <header data-surface="ink">
         <div className="container-site grid-site gap-y-8 pb-(--section-sm) pt-[clamp(3rem,6vw,6rem)]">
           <nav className="col-span-full" aria-label="breadcrumb">
@@ -172,5 +190,6 @@ export default async function ProjectPage({ params }: PageProps<"/[lang]/projele
         </div>
       </nav>
     </article>
-  );
+  </>
+);
 }

@@ -16,15 +16,64 @@ export const routes = {
   blog: { tr: "blog", en: "blog", es: "blog" },
   contact: { tr: "iletisim", en: "contact", es: "contacto" },
   privacy: { tr: "gizlilik", en: "privacy", es: "privacidad" },
+  tools: { tr: "araclar", en: "tools", es: "herramientas" },
 } as const satisfies Record<string, Record<Locale, string>>;
 
 export type RouteKey = keyof typeof routes;
 
+export const serviceRouteSlugs: Record<string, Record<Locale, string>> = {
+  web: { tr: "web-yazilim", en: "web-development", es: "desarrollo-web" },
+  mobil: { tr: "mobil-uygulama", en: "mobile-apps", es: "desarrollo-movil" },
+  "yapay-zeka": { tr: "yapay-zeka", en: "artificial-intelligence", es: "inteligencia-artificial" },
+  "ui-ux": { tr: "ui-ux-tasarim", en: "ui-ux-design", es: "diseno-ui-ux" },
+  danismanlik: { tr: "danismanlik", en: "consulting", es: "consultoria" },
+};
+
+export const toolRouteSlugs: Record<string, Record<Locale, string>> = {
+  "metin-buyuk-kucuk-harf": {
+    tr: "buyuk-kucuk-harf-donusturucu",
+    en: "case-converter",
+    es: "convertidor-mayusculas-minusculas",
+  },
+  "kelime-karakter-sayaci": {
+    tr: "kelime-karakter-sayaci",
+    en: "word-character-counter",
+    es: "contador-palabras-caracteres",
+  },
+  "slug-ascii-donusturucu": {
+    tr: "slug-ascii-donusturucu",
+    en: "slug-generator",
+    es: "generador-slug",
+  },
+};
+
+export function resolveServiceSlug(slug: string, targetLang: Locale): string {
+  if (slug in serviceRouteSlugs) return serviceRouteSlugs[slug][targetLang];
+  for (const map of Object.values(serviceRouteSlugs)) {
+    if (Object.values(map).includes(slug)) return map[targetLang];
+  }
+  return slug;
+}
+
+export function resolveToolSlug(slug: string, targetLang: Locale): string {
+  if (slug in toolRouteSlugs) return toolRouteSlugs[slug][targetLang];
+  for (const map of Object.values(toolRouteSlugs)) {
+    if (Object.values(map).includes(slug)) return map[targetLang];
+  }
+  return slug;
+}
+
 /** Public URL for a route, e.g. href("en", "projects", "proox") → "/en/projects/proox". */
 export function href(lang: Locale, key: RouteKey, ...rest: string[]): string {
+  const resolvedRest =
+    key === "services" && rest.length > 0
+      ? [resolveServiceSlug(rest[0], lang), ...rest.slice(1)]
+      : key === "tools" && rest.length > 0
+      ? [resolveToolSlug(rest[0], lang), ...rest.slice(1)]
+      : rest;
   // Static export: no proxy to rewrite, so link straight to the internal path (/tr/projeler).
-  if (isStaticExport && !v2Root) return "/" + [lang, routes[key].tr, ...rest].filter(Boolean).join("/");
-  const parts = [routes[key][lang], ...rest].filter(Boolean);
+  if (isStaticExport && !v2Root) return "/" + [lang, routes[key].tr, ...resolvedRest].filter(Boolean).join("/");
+  const parts = [routes[key][lang], ...resolvedRest].filter(Boolean);
   const prefix = lang === defaultLocale ? "" : `/${lang}`;
   const path = `${prefix}/${parts.join("/")}`;
   // v2 at the site root: URLs carry a trailing slash (matches the canonical/hreflang Next emits with trailingSlash: true,

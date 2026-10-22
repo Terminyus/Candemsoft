@@ -1,7 +1,27 @@
 {
   "meta": {
     "siteTitle": "Candemsoft — Web, mobile and AI software from Istanbul",
-    "siteDescription": "Candemsoft is a software team in Istanbul building websites, mobile apps, AI features, UI/UX and offering consulting."
+    "siteDescription": "Candemsoft is a software team in Istanbul building websites, mobile apps, AI features, UI/UX and offering consulting.",
+    "homeTitle": "Web & Mobile App Development Istanbul | Candemsoft",
+    "homeDescription": "Build modern web software, mobile apps and AI solutions with Candemsoft in Istanbul. Explore our products and contact us to start your project.",
+    "aboutTitle": "About Us: Software Development Studio | Candemsoft",
+    "aboutDescription": "Candemsoft is an Istanbul software studio building innovative apps and custom digital solutions for clients. Learn more about our story and team.",
+    "servicesTitle": "Software, Mobile & AI Services | Candemsoft",
+    "servicesDescription": "We provide full-stack web development, mobile apps, AI integrations and UI/UX design. Discover our services and request a free proposal today.",
+    "projectsTitle": "Our Web & Mobile Software Projects | Candemsoft",
+    "projectsDescription": "Explore our portfolio of finance platforms, enterprise software, support tools and mobile apps. Discover our work and collaborate with us now.",
+    "productsTitle": "Our Mobile & Web Software Products | Candemsoft",
+    "productsDescription": "Discover Orpigo, Kişisel QR, Seyyah, CandemFit and Candemkey: innovative digital products built by Candemsoft. Explore features and try them now.",
+    "teamTitle": "Our Software & Design Team | Candemsoft",
+    "teamDescription": "Meet the talented developers, mobile engineers and product designers behind Candemsoft. Partner with our engineering team on your next digital app.",
+    "blogTitle": "Software & Technology Blog | Candemsoft",
+    "blogDescription": "Read technical articles on mobile development, web frameworks, AI utilities and software engineering best practices. Explore our latest guides.",
+    "contactTitle": "Contact Us: Let's Build Your Project | Candemsoft",
+    "contactDescription": "Get in touch with our Istanbul software development team to discuss your web, mobile or AI project ideas. Contact us today for a free consultation.",
+    "privacyTitle": "Privacy Policy & Data Protection | Candemsoft",
+    "privacyDescription": "Read how Candemsoft protects personal data, ensures user privacy and handles cookies across our web platforms and apps. Review our privacy terms.",
+    "toolsTitle": "Free Online Text Tools & Converters | Candemsoft",
+    "toolsDescription": "Free online text tools including Turkish case converter, word and character counter, and clean slug generator. Fast, private and browser-based."
   },
   "nav": {
     "home": "Home",
@@ -18,7 +38,8 @@
     "language": "Language",
     "switchTo": "Türkçe",
     "primary": "Main menu",
-    "privacy": "Privacy"
+    "privacy": "Privacy",
+    "tools": "Tools"
   },
   "common": {
     "visitSite": "Visit site",
@@ -229,7 +250,9 @@
     "title": "Writing.",
     "lead": "Things we learn while working. Short, technical, useful.",
     "readingTime": "{n} min read",
-    "empty": "No posts yet."
+    "empty": "No posts yet.",
+    "relatedPosts": "Related Articles",
+    "tags": "Tags"
   },
   "contactPage": {
     "label": "Contact",
@@ -312,9 +335,43 @@
     "qrAlertHint": "Try it: pick a situation",
     "qrAlertApp": "Kişisel QR",
     "qrAlertNow": "now",
-    "qrAlertSituations": [["Window open", "Your car's window is open"], ["Wrong parking", "Your car is parked incorrectly"], ["Lights on", "Your car's lights are on"], ["Flat tyre", "Your car has a flat tyre"]],
+    "qrAlertSituations": [
+      [
+        "Window open",
+        "Your car's window is open"
+      ],
+      [
+        "Wrong parking",
+        "Your car is parked incorrectly"
+      ],
+      [
+        "Lights on",
+        "Your car's lights are on"
+      ],
+      [
+        "Flat tyre",
+        "Your car has a flat tyre"
+      ]
+    ],
     "qrAlertNote": "Whoever scans doesn't install anything and never needs your number. The alert lands straight on your phone.",
-    "qrFacts": [["5 × 8 cm", "sticker for the inside of the windscreen"], ["Waterproof", "UV-resistant, scratch-resistant"], ["350 ₺", "delivery included, no subscription"], ["3 languages", "profile opens in TR, EN or KG"]],
+    "qrFacts": [
+      [
+        "5 × 8 cm",
+        "sticker for the inside of the windscreen"
+      ],
+      [
+        "Waterproof",
+        "UV-resistant, scratch-resistant"
+      ],
+      [
+        "350 ₺",
+        "delivery included, no subscription"
+      ],
+      [
+        "3 languages",
+        "profile opens in TR, EN or KG"
+      ]
+    ],
     "qrRole": "Title · Company",
     "fitWorkout": "Sample workout",
     "fitDistance": "distance",
@@ -324,13 +381,47 @@
     "keyDemoLabel": "Example: the AI key",
     "keyChat": "Will the file arrive today?",
     "keyRaw": "hey i cant finish the file today can i send it tmrw morning",
-    "keyActions": [["Fix", "Hey, I can't finish the file today. Can I send it tomorrow morning?"], ["Formal", "I will not be able to finish the file today. Would it be acceptable if I sent it tomorrow morning?"], ["Casual", "Hey, couldn't finish the file today, tomorrow morning okay? 🙏"], ["Shorten", "File tomorrow morning okay?"], ["Expand", "Hey, it doesn't look like I can finish the file today. Would it be alright if I sent it first thing tomorrow morning?"]],
+    "keyActions": [
+      [
+        "Fix",
+        "Hey, I can't finish the file today. Can I send it tomorrow morning?"
+      ],
+      [
+        "Formal",
+        "I will not be able to finish the file today. Would it be acceptable if I sent it tomorrow morning?"
+      ],
+      [
+        "Casual",
+        "Hey, couldn't finish the file today, tomorrow morning okay? 🙏"
+      ],
+      [
+        "Shorten",
+        "File tomorrow morning okay?"
+      ],
+      [
+        "Expand",
+        "Hey, it doesn't look like I can finish the file today. Would it be alright if I sent it first thing tomorrow morning?"
+      ]
+    ],
     "keyResult": "Result",
     "keyApply": "Apply",
     "keyCopy": "Copy",
     "keyRetry": "Retry",
     "keySample": "The AI reply is an example; real results may vary.",
-    "keyFacts": [["In every app", "Message, email, note or address bar: the keyboard recognises the field and adapts its keys."], ["Command line", "When the buttons aren't enough, type your own request: “Translate this into Spanish”."], ["Privacy", "No AI in password fields. New request and reply texts are not written to logs."]],
+    "keyFacts": [
+      [
+        "In every app",
+        "Message, email, note or address bar: the keyboard recognises the field and adapts its keys."
+      ],
+      [
+        "Command line",
+        "When the buttons aren't enough, type your own request: “Translate this into Spanish”."
+      ],
+      [
+        "Privacy",
+        "No AI in password fields. New request and reply texts are not written to logs."
+      ]
+    ],
     "keyLayouts": "Turkish Q · English · Español",
     "keySoonStores": "App Store and Google Play: coming soon",
     "keyTitle": "AI in everything you type.",
@@ -459,5 +550,13 @@
     "home": "Home",
     "status": "Status",
     "location": "Location"
+  },
+  "toolsPage": {
+    "label": "Free Tools",
+    "title": "Text & SEO Online Utilities",
+    "lead": "Free text processing utilities running entirely in your browser without sending data to servers, fully compliant with Turkish language casing.",
+    "openTool": "Open Tool",
+    "privacyNotice": "All operations run client-side in your browser; no data is sent to our servers.",
+    "exploreTitle": "Other Free Tools"
   }
 }

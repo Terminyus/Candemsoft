@@ -5,7 +5,7 @@ import { href } from "@/i18n/routes";
 import { getProducts, getProject, publicFileExists, type Product } from "@/lib/content";
 import { getDictionary, type Dictionary } from "@/lib/dictionary";
 import { resolveLang } from "@/lib/params";
-import { pageMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, jsonLd, pageBreadcrumbs, pageMetadata } from "@/lib/seo";
 import { asset } from "@/lib/static";
 import { isTodo } from "@/lib/text";
 import type { Locale } from "@/i18n/config";
@@ -20,7 +20,7 @@ import { cn } from "@/components/ui/cn";
 export async function generateMetadata({ params }: PageProps<"/[lang]/urunler">): Promise<Metadata> {
   const lang = await resolveLang(params);
   const dict = await getDictionary(lang);
-  return pageMetadata({ lang, route: "products", title: dict.nav.products, description: dict.productsPage.lead });
+  return pageMetadata({ lang, route: "products", title: dict.meta.productsTitle, description: dict.meta.productsDescription });
 }
 
 const platformName = { ios: "iOS", android: "Android", web: "Web" } as const;
@@ -173,6 +173,10 @@ export default async function ProductsPage({ params }: PageProps<"/[lang]/urunle
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLd(breadcrumbJsonLd(pageBreadcrumbs(lang, "products")))}
+      />
       <PageIntro
         label={t.label}
         title={t.title}

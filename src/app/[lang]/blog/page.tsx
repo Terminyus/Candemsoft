@@ -4,7 +4,7 @@ import { href } from "@/i18n/routes";
 import { getPosts, readingMinutes } from "@/lib/content";
 import { getDictionary } from "@/lib/dictionary";
 import { resolveLang } from "@/lib/params";
-import { pageMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, jsonLd, pageBreadcrumbs, pageMetadata } from "@/lib/seo";
 import { PageIntro } from "@/components/page/PageIntro";
 import { MonoLabel } from "@/components/ui/MonoLabel";
 import { formatDate } from "@/lib/format";
@@ -12,7 +12,7 @@ import { formatDate } from "@/lib/format";
 export async function generateMetadata({ params }: PageProps<"/[lang]/blog">): Promise<Metadata> {
   const lang = await resolveLang(params);
   const dict = await getDictionary(lang);
-  return pageMetadata({ lang, route: "blog", title: dict.nav.blog, description: dict.blogPage.lead });
+  return pageMetadata({ lang, route: "blog", title: dict.meta.blogTitle, description: dict.meta.blogDescription });
 }
 
 export default async function BlogPage({ params }: PageProps<"/[lang]/blog">) {
@@ -23,6 +23,10 @@ export default async function BlogPage({ params }: PageProps<"/[lang]/blog">) {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLd(breadcrumbJsonLd(pageBreadcrumbs(lang, "blog")))}
+      />
       <PageIntro label={t.label} title={t.title} lead={t.lead} />
       <section data-surface="paper" aria-labelledby="page-title" className="py-(--section-sm)">
         <div className="container-site">
@@ -46,6 +50,18 @@ export default async function BlogPage({ params }: PageProps<"/[lang]/blog">) {
                         </Link>
                       </h2>
                       <p className="mt-4 max-w-2xl text-stone-600">{p.description}</p>
+                      {p.tags && p.tags.length > 0 && (
+                        <div className="mt-4 flex flex-wrap gap-2">
+                          {p.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className="inline-flex items-center rounded-full border border-ink-950/20 bg-paper-100 px-2.5 py-0.5 font-mono text-[0.6875rem] text-stone-600"
+                            >
+                              #{tag}
+                            </span>
+                          ))}
+                        </div>
+                      )}
                     </div>
                     <span aria-hidden className="col-span-full hidden self-start justify-self-end font-display text-h2 transition-transform duration-(--duration-2) group-hover:translate-x-2 lg:col-span-2 lg:block">
                       →

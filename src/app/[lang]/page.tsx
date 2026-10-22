@@ -11,10 +11,7 @@ import { ContactBlock } from "@/components/home/ContactBlock";
 export async function generateMetadata({ params }: PageProps<"/[lang]">): Promise<Metadata> {
   const lang = await resolveLang(params);
   const dict = await getDictionary(lang);
-  // Home keeps the full site title (no "— Candemsoft" template suffix).
-  const base = pageMetadata({ lang, route: "home", description: dict.meta.siteDescription });
-  const title = dict.meta.siteTitle;
-  return { ...base, title: { absolute: title }, openGraph: { ...base.openGraph, title }, twitter: { ...base.twitter, title } };
+  return pageMetadata({ lang, route: "home", title: dict.meta.homeTitle, description: dict.meta.homeDescription });
 }
 
 export default async function HomePage({ params }: PageProps<"/[lang]">) {

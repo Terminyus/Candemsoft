@@ -1,29 +1,48 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { getServices, getStack } from "@/lib/content";
 import { getDictionary } from "@/lib/dictionary";
 import { resolveLang } from "@/lib/params";
 import { V2PageHead } from "@/components/v2/V2PageHead";
-import { pageMetadata } from "@/lib/seo";
+import { v2Href } from "@/components/v2/nav";
+import { breadcrumbJsonLd, jsonLd, pageBreadcrumbs, pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({ params }: PageProps<"/v2/[lang]/hizmetler">): Promise<Metadata> {
   const lang = await resolveLang(params);
   const dict = await getDictionary(lang);
-  return pageMetadata({ lang, route: "services", title: dict.nav.services, description: dict.meta.siteDescription });
+  return pageMetadata({ lang, route: "services", title: dict.meta.servicesTitle, description: dict.meta.servicesDescription });
 }
 
 export default async function Page({ params }: PageProps<"/v2/[lang]/hizmetler">) {
   const lang = await resolveLang(params);
   const dict = await getDictionary(lang);
+  const detailLabel = lang === "tr" ? "Hizmet Detayı ve Süreç" : lang === "es" ? "Detalle del Servicio y Proceso" : "Service Details & Process";
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLd(breadcrumbJsonLd(pageBreadcrumbs(lang, "services")))}
+      />
       <V2PageHead kicker={dict.servicesPage.label} title={dict.servicesPage.title} lead={dict.servicesPage.lead} />
       <ol className="container-site">
         {getServices().map((s, i) => (
           <li key={s.slug} id={s.slug} className="grid scroll-mt-(--header-h) gap-6 border-b border-ink-950 py-12 md:grid-cols-[8rem_1fr_1fr]">
             <span className="v2-display text-6xl text-signal">{String(i + 1).padStart(2, "0")}</span>
             <div>
-              <h2 className="v2-display text-[clamp(2rem,1.4rem+2.6vw,3.5rem)]">{s.title[lang]}</h2>
+              <h2 className="v2-display text-[clamp(2rem,1.4rem+2.6vw,3.5rem)]">
+                <Link href={v2Href(lang, "services", s.slug)} className="hover:text-ember transition-colors">
+                  {s.title[lang]}
+                </Link>
+              </h2>
               <p className="mt-4 max-w-xl text-lead text-stone-600">{s.summary[lang]}</p>
+              <div className="mt-6">
+                <Link
+                  href={v2Href(lang, "services", s.slug)}
+                  className="inline-flex items-center gap-2 font-archivo text-sm font-semibold text-signal hover:text-ink-950 transition-colors"
+                >
+                  {detailLabel} <span aria-hidden="true">→</span>
+                </Link>
+              </div>
             </div>
             <ul className="self-end">
               {s.items[lang].map((item) => (

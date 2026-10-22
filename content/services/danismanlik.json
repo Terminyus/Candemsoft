@@ -1,0 +1,398 @@
+{
+  "key": "danismanlik",
+  "slug": {
+    "tr": "danismanlik",
+    "en": "consulting",
+    "es": "consultoria"
+  },
+  "title": {
+    "tr": "Yazılım ve Teknoloji Danışmanlığı",
+    "en": "Software & Technology Consulting",
+    "es": "Consultoría de Software y Tecnología"
+  },
+  "metaTitle": {
+    "tr": "Yazılım ve Teknoloji Danışmanlığı | Candemsoft",
+    "en": "Software & Technology Consulting | Candemsoft",
+    "es": "Consultoría de Software y Tecnología | Candemsoft"
+  },
+  "metaDescription": {
+    "tr": "Doğru teknoloji seçimi, mimari inceleme ve proje planıyla riskleri azaltın. İstanbul ekibimizden danışmanlık almak için hemen bizimle iletişime geçin.",
+    "en": "Mitigate software risks with architectural reviews, tech stack selection and project planning. Contact our Istanbul consulting team to plan your roadmap.",
+    "es": "Reduzca riesgos con auditorías de arquitectura, selección de stack y gestión de proyectos. Contacte con nuestro equipo en Estambul y trace su hoja de ruta."
+  },
+  "kicker": {
+    "tr": "Hizmetlerimiz",
+    "en": "Our Services",
+    "es": "Nuestros Servicios"
+  },
+  "lead": {
+    "tr": "Candemsoft olarak teknoloji danışmanlığını teorik slaytlar üretmek değil, sahada çalışan sistemlerin mimarisini sağlamlaştırmak olarak tanımlıyoruz. Ne yaptıracağınızdan veya hangi teknolojiyle yola çıkacağınızdan emin değilseniz buradan başlamak en rasyonel adımdır. İstanbul merkezli mühendislik ekibimizle teknoloji seçimi, proje planlama, kod denetimi ve altyapı modernizasyonu konularında tarafsız rehberlik sağlıyoruz. Yıldız Teknopark destek sistemi, Proox altyapısı ve Kredi Turbo platformunda edindiğimiz deneyimi sisteminize aktarıyoruz.",
+    "en": "At Candemsoft, we define software consulting not by theoretical presentations, but by strengthening production architectures. If you are uncertain about technical direction, framework choices or budget roadmaps, starting here is the most prudent step. Based in Istanbul, our engineering team provides objective guidance on tech stack selection, project scoping, code audits and cloud modernization, backed by field experience in Yıldız Teknopark, Proox and Kredi Turbo.",
+    "es": "En Candemsoft entendemos la consultoría tecnológica no como presentaciones teóricas, sino como la consolidación de arquitecturas reales en producción. Si su empresa duda sobre la dirección técnica, frameworks o presupuestos, comenzar aquí es la decisión más acertada. Desde Estambul, aportamos criterio independiente en selección de stack, auditoría de código y modernización cloud, respaldado por proyectos como Yıldız Teknopark, Proox y Kredi Turbo."
+  },
+  "targetAudience": {
+    "title": {
+      "tr": "Danışmanlık Hizmetimiz Kimler İçin Uygun?",
+      "en": "Who Can Benefit from Our Consulting Services?",
+      "es": "¿A Quién va Dirigida Nuestra Consultoría Tecnológica?"
+    },
+    "description": {
+      "tr": "Yazılım yatırımlarını güvenceye almak, mimari riskleri azaltmak ve hız kazanmak isteyen şirketlere yol gösteriyoruz.",
+      "en": "We advise leadership teams looking to de-risk software investments, eliminate bottlenecks and accelerate delivery.",
+      "es": "Asesoramos a directivos que buscan asegurar inversiones en software, eliminar cuellos de botella y ganar velocidad."
+    },
+    "items": [
+      {
+        "title": {
+          "tr": "Yazılım Projesine Başlayacak Olan Yöneticiler",
+          "en": "Executives Planning New Software Projects",
+          "es": "Directivos que Inician Proyectos de Software"
+        },
+        "description": {
+          "tr": "Teknoloji seçimi, bütçe dağılımı ve proje takvimi konusunda bağımsız teknik uzmanlık arayan karar vericiler.",
+          "en": "Decision-makers seeking independent technical validation on tech choices, budgets and milestones before investing.",
+          "es": "Responsables que precisan validación técnica independiente sobre tecnologías, presupuestos y plazos antes de invertir."
+        }
+      },
+      {
+        "title": {
+          "tr": "Performans ve Ölçeklenme Sorunu Yaşayan Şirketler",
+          "en": "Companies Facing Performance & Scale Issues",
+          "es": "Empresas con Problemas de Rendimiento y Escala"
+        },
+        "description": {
+          "tr": "Kullanıcı arttıkça veritabanı kilitlenen, sunucu faturaları kabaran ve sistem yavaşlığı yaşayan mevcut platform sahipleri.",
+          "en": "Platform owners experiencing database locks, spiking cloud bills and sluggish performance as user volume grows.",
+          "es": "Negocios cuyas bases de datos sufren bloqueos, facturas cloud desmedidas o caídas de velocidad al crecer usuarios."
+        }
+      },
+      {
+        "title": {
+          "tr": "Teknoloji Yığını (Stack) Seçiminde Kalan Ekipler",
+          "en": "Teams Evaluating Tech Stack Options",
+          "es": "Equipos que Evalúan Opciones de Stack"
+        },
+        "description": {
+          "tr": "Node.js, C#, PHP veya Flutter arasında şirketin uzun vadeli bakım hedeflerine en uygun mimariyi arayanlar.",
+          "en": "Teams deciding between Node.js, C#, PHP or Flutter to identify the architecture best aligned with long-term maintenance.",
+          "es": "Equipos que eligen entre Node.js, C#, PHP o Flutter para identificar la arquitectura más fácil de mantener."
+        }
+      },
+      {
+        "title": {
+          "tr": "Eski (Legacy) Sistemlerini Yenilemek İsteyenler",
+          "en": "Enterprises Modernizing Legacy Systems",
+          "es": "Empresas que Modernizan Sistemas Heredados"
+        },
+        "description": {
+          "tr": "Teknik borçları temizlemek, monolitik yapıları modern bulut ve mikroservis mimarilerine dönüştürmek isteyen kurumlar.",
+          "en": "Organizations retiring technical debt, modularizing legacy monoliths and moving into scalable cloud services.",
+          "es": "Organizaciones que amortizan deuda técnica, modularizan monolitos y migran a servicios en la nube escalables."
+        }
+      }
+    ]
+  },
+  "process": {
+    "title": {
+      "tr": "Danışmanlık Sürecimiz Nasıl İlerler?",
+      "en": "Our Consulting Process",
+      "es": "Nuestro Proceso de Consultoría"
+    },
+    "description": {
+      "tr": "Mevcut sisteminizi inceleyerek somut ve uygulanabilir bir teknik yol haritası sunuyoruz.",
+      "en": "We assess your codebase and infrastructure to deliver an actionable, prioritized roadmap.",
+      "es": "Evaluamos su código e infraestructura para entregar una hoja de ruta técnica viable."
+    },
+    "steps": [
+      {
+        "step": "01",
+        "title": {
+          "tr": "İlk Görüşme ve Hedef Tespiti",
+          "en": "Discovery & Objective Alignment",
+          "es": "Diagnóstico Inicial y Objetivos"
+        },
+        "description": {
+          "tr": "Şirketinizin hedeflerini, mevcut teknik darboğazlarını ve bütçe sınırlarını dinleyerek odak alanlarını belirliyoruz.",
+          "en": "We review business goals, identify current architectural bottlenecks and align scope with operational priorities.",
+          "es": "Analizamos objetivos de negocio, identificamos cuellos de botella técnicos y alineamos prioridades operativas."
+        }
+      },
+      {
+        "step": "02",
+        "title": {
+          "tr": "Kod, Mimari ve Altyapı İncelemesi",
+          "en": "Code, Architecture & Infrastructure Audit",
+          "es": "Auditoría de Código e Infraestructura"
+        },
+        "description": {
+          "tr": "Kaynak kod kalitesini, veritabanı sorgularını, bulut sunucu yapılandırmalarını ve güvenlik açıklarını denetliyoruz.",
+          "en": "We inspect source code quality, database query execution plans, cloud settings and security vulnerabilities.",
+          "es": "Examinamos calidad del código fuente, consultas de base de datos, configuración cloud y vulnerabilidades."
+        }
+      },
+      {
+        "step": "03",
+        "title": {
+          "tr": "Darboğaz ve Risk Raporu",
+          "en": "Bottleneck & Risk Assessment",
+          "es": "Evaluación de Riesgos y Cuellos de Botella"
+        },
+        "description": {
+          "tr": "Güvenlik açıklarını, performans kayıplarını ve sunucu maliyet israflarını önem derecesine göre puanlayıp raporluyoruz.",
+          "en": "We quantify technical risks, performance drains and cloud waste, ranking findings by severity to the business.",
+          "es": "Clasificamos riesgos técnicos, pérdidas de rendimiento y sobrecostes de servidor según su criticidad para el negocio."
+        }
+      },
+      {
+        "step": "04",
+        "title": {
+          "tr": "Teknoloji Seçimi ve Dönüşüm Planı",
+          "en": "Tech Stack Selection & Roadmap",
+          "es": "Selección de Stack y Hoja de Ruta"
+        },
+        "description": {
+          "tr": "Doğru dillerin, framework'lerin ve bulut servislerinin seçildiği adım adım uygulanabilir dönüşüm planını hazırlıyoruz.",
+          "en": "We recommend frameworks, cloud providers and database architectures with an actionable phased transition plan.",
+          "es": "Recomendamos frameworks, proveedores cloud y arquitecturas de datos con un plan de modernización por fases."
+        }
+      },
+      {
+        "step": "05",
+        "title": {
+          "tr": "Uygulama Rehberliği ve Süreç Takibi",
+          "en": "Implementation Oversight",
+          "es": "Acompañamiento en Implementación"
+        },
+        "description": {
+          "tr": "Yazılım ekibinizin veya yüklenicinizin yol haritasını doğru uyguladığından emin olmak için düzenli kontroller sağlıyoruz.",
+          "en": "We provide periodic engineering check-ins ensuring your developers or external vendors execute the plan accurately.",
+          "es": "Efectuamos revisiones técnicas periódicas para asegurar que sus desarrolladores o proveedores ejecuten el plan con rigor."
+        }
+      }
+    ]
+  },
+  "deliverables": {
+    "title": {
+      "tr": "Neler Teslim Ediyoruz?",
+      "en": "What Deliverables Do You Receive?",
+      "es": "¿Qué Entregables Recibirá su Empresa?"
+    },
+    "description": {
+      "tr": "Soyut tavsiyeler yerine ekibinizin derhal uygulayabileceği somut teknik dokümanlar teslim ediyoruz.",
+      "en": "Instead of abstract advice, you receive actionable technical documentation ready for execution.",
+      "es": "En lugar de consejos abstractos, entregamos documentación técnica directamente aplicable."
+    },
+    "items": [
+      {
+        "title": {
+          "tr": "Teknik Değerlendirme ve Denetim Raporu",
+          "en": "Technical & Code Audit Report",
+          "es": "Informe de Auditoría Técnica y Código"
+        },
+        "description": {
+          "tr": "Mevcut kod tabanının, mimarinin ve veritabanının güçlü ve zayıf yönlerini ortaya koyan ayrıntılı analiz raporu.",
+          "en": "In-depth audit report detailing strengths, architectural defects, database flaws and code smells across your stack.",
+          "es": "Informe exhaustivo que expone fortalezas, defectos de arquitectura, problemas de base de datos y malas prácticas."
+        }
+      },
+      {
+        "title": {
+          "tr": "Önceliklendirilmiş Modernizasyon Yol Haritası",
+          "en": "Prioritized Modernization Roadmap",
+          "es": "Hoja de Ruta Priorizada de Modernización"
+        },
+        "description": {
+          "tr": "Acil güvenlik ve performans adımlarından uzun vadeli refactoring işlerine kadar sıralanmış net aksiyon planı.",
+          "en": "Phased action plan sequencing urgent security fixes, quick performance wins and long-term refactoring.",
+          "es": "Plan ordenado que prioriza parches urgentes de seguridad, mejoras rápidas de rendimiento y refactorización."
+        }
+      },
+      {
+        "title": {
+          "tr": "Teknoloji Karar Matrisi ve Maliyet Analizi",
+          "en": "Technology Decision Matrix",
+          "es": "Matriz de Decisión Tecnológica"
+        },
+        "description": {
+          "tr": "Alternatif yazılım dilleri ve bulut sunucuları arasında maliyet, hız ve bakım kolaylığı karşılaştırma tablosu.",
+          "en": "Benchmarking matrix comparing programming frameworks and cloud services against cost, speed and maintainability.",
+          "es": "Matriz comparativa que evalúa opciones de lenguajes y servicios cloud según coste, velocidad y mantenimiento."
+        }
+      },
+      {
+        "title": {
+          "tr": "Yazılım Standartları ve Kodlama Kılavuzu",
+          "en": "Engineering Standards Guide",
+          "es": "Guía de Estándares de Ingeniería"
+        },
+        "description": {
+          "tr": "Geliştirici ekibinizin temiz kod, test otomasyonu ve dal (branch) yönetimi için referans alacağı kurumsal rehber.",
+          "en": "Team styleguide outlining clean code conventions, automated test requirements and branch management practices.",
+          "es": "Manual práctico para desarrolladores que define código limpio, criterios de pruebas automáticas y flujos Git."
+        }
+      }
+    ]
+  },
+  "technologies": {
+    "title": {
+      "tr": "Kullandığımız Teknolojiler",
+      "en": "Technologies We Use",
+      "es": "Tecnologías que Utilizamos"
+    },
+    "description": {
+      "tr": "Kurumsal mimarilerde kanıtlanmış, sürdürülebilir ve yüksek performanslı teknolojileri değerlendiriyoruz.",
+      "en": "We assess and recommend proven, sustainable and high-performance technologies for enterprise workloads.",
+      "es": "Evaluamos y recomendamos tecnologías probadas, sostenibles y de alto rendimiento para entornos corporativos."
+    },
+    "items": [
+      "C#",
+      "Node.js",
+      "Flutter",
+      "PHP",
+      "AWS",
+      "Docker",
+      "Python",
+      "TypeScript"
+    ]
+  },
+  "relatedProjects": [
+    "yildiz-teknopark",
+    "proox",
+    "kredi-turbo"
+  ],
+  "relatedProducts": [
+    "orpigo",
+    "candemkey",
+    "kisisel-qr",
+    "candemfit"
+  ],
+  "faq": [
+    {
+      "question": {
+        "tr": "Danışmanlık hizmeti sadece yeni projeler için mi geçerlidir?",
+        "en": "Is consulting only for new greenfield projects?",
+        "es": "¿La consultoría es solo para proyectos nuevos?"
+      },
+      "answer": {
+        "tr": "Hayır. Danışmanlık hem yeni başlayacak projeleri hem de yıllardır çalışan kurumsal sistemleri kapsar. Canlı sistemlerde özellikle yavaşlayan veritabanlarını hızlandırma, sunucu giderlerini düşürme ve altyapı modernizasyonu yapıyoruz.",
+        "en": "No. Consulting covers both brand new projects and long-running production systems. For live platforms, we specialize in accelerating slow database queries, slashing unnecessary cloud hosting bills and modernizing legacy stacks.",
+        "es": "No. Abarca tanto proyectos nuevos como sistemas consolidados en producción. En plataformas activas aceleramos bases de datos lentas, reducimos costes de infraestructura cloud y modernizamos tecnologías heredadas."
+      }
+    },
+    {
+      "question": {
+        "tr": "Kod tabanımızı incelerken şirket gizliliği nasıl korunur?",
+        "en": "How is confidentiality protected during a code audit?",
+        "es": "¿Cómo se protege la confidencialidad al auditar código?"
+      },
+      "answer": {
+        "tr": "Müşteri gizliliği temel kuralımızdır. İnceleme öncesinde Gizlilik Sözleşmesi (NDA) imzalarız. Kodlarınıza yalnızca belirlenen güvenli kanallar üzerinden erişilir ve kodlar kesinlikle şirket dışına çıkarılmaz.",
+        "en": "Confidentiality is our primary commitment. We sign mutual NDAs before reviewing any repository. Code is accessed strictly via secure channels and never leaves your authorized environment.",
+        "es": "La confidencialidad es estricta. Firmamos acuerdos NDA antes de acceder al código. El repositorio se revisa exclusivamente mediante accesos seguros y nunca sale de su entorno protegido."
+      }
+    },
+    {
+      "question": {
+        "tr": "Teknoloji seçimi yaparken hangi kriterleri baz alıyorsunuz?",
+        "en": "What criteria guide your technology stack choices?",
+        "es": "¿Qué criterios aplican para recomendar un stack?"
+      },
+      "answer": {
+        "tr": "Teknoloji seçiminde modaya değil, gerçek ihtiyaçlara bakarız. Yazılımcı bulma kolaylığı, topluluk desteği, bakım maliyeti, çalışma performansı ve mevcut sistemlerle uyum temel kriterlerimizdir; bağımlılık riskini en aza indiririz.",
+        "en": "We avoid fleeting trends and focus on pragmatic fit. Talent availability in the market, community longevity, maintenance overhead and runtime performance guide our stack recommendations to minimize vendor lock-in.",
+        "es": "Evitamos modas pasajeras y priorizamos la viabilidad práctica. Disponibilidad de talento, madurez comunitaria, coste de mantenimiento y rendimiento guían nuestras recomendaciones para minimizar dependencias."
+      }
+    },
+    {
+      "question": {
+        "tr": "Danışmanlık sonrasında geliştirme sürecini üstlenebiliyor musunuz?",
+        "en": "Can Candemsoft execute the development phase too?",
+        "es": "¿Puede Candemsoft asumir el desarrollo posterior?"
+      },
+      "answer": {
+        "tr": "Evet. Hem danışmanlık veren hem de uçtan uca yazılım geliştiren bir ekibiz. Çıkan yol haritasını kendi ekibiniz uygulayabilir veya kritik modülleri doğrudan Candemsoft'un deneyimli mühendislerine emanet edebilirsiniz.",
+        "en": "Yes. Candemsoft operates as both a strategic consultancy and an engineering firm. Your in-house developers can execute the roadmap, or you can entrust implementation to our seasoned developers.",
+        "es": "Sí. Candemsoft ofrece consultoría estratégica y desarrollo técnico integral. Su equipo interno puede ejecutar la hoja de ruta, o bien puede confiar la programación a nuestros ingenieros experimentados."
+      }
+    },
+    {
+      "question": {
+        "tr": "Sunucu ve bulut maliyetlerini düşürmeye yardımcı oluyor musunuz?",
+        "en": "Can you help optimize cloud infrastructure costs?",
+        "es": "¿Pueden ayudarnos a reducir costes de infraestructura cloud?"
+      },
+      "answer": {
+        "tr": "Kesinlikle. Bulutta en sık görülen sorun gereksiz büyük sunucular ve optimize edilmemiş SQL sorgularıdır. AWS ve Docker uzmanlığımızla kaynakları doğru ölçeklendirir, önbellek kurar ve bulut harcamalarınızı düşürürüz.",
+        "en": "Yes. The most common cloud waste stems from oversized virtual machines and unindexed queries. Leveraging AWS and Docker expertise, we rightsize resources, introduce caching and optimize your cloud invoices.",
+        "es": "Por supuesto. El gasto desmedido en la nube suele originarse en servidores sobredimensionados y consultas SQL sin indexar. Con experiencia en AWS y Docker, redimensionamos recursos y optimizamos costes."
+      }
+    }
+  ],
+  "deepDive": {
+    "sections": [
+      {
+        "heading": {
+          "tr": "Erken Aşama Mimari Kararlar: Yanlış Seçimlerin Maliyeti",
+          "en": "Early Architectural Decisions: The Cost of Premature Choices",
+          "es": "Decisiones Arquitectónicas: El Coste de Elecciones Prematuras"
+        },
+        "paragraphs": {
+          "tr": [
+            "Bir yazılım projesinin kaderi ilk haftalarda verilen mimari kararlarla belirlenir. Veritabanı seçimi, monolit veya mikroservis tercihi aceleye getirildiğinde ileride büyük teknik borçlara yol açar. Yanlış bir teknoloji tercihi, sistemi aylar sonra baştan yazmak zorunda kalmak demektir.",
+            "Candemsoft olarak kurumlara gerçekçi bir mühendislik vizyonu sunuyoruz. İlk günden pahalı ve karmaşık mikroservisler kurmak yerine, doğru modüler monolit yapılarla başlayıp sistem büyüdükçe aşamalı ölçeklenmeyi öneriyoruz. Böylece bütçenizi gereksiz sunucu masrafları yerine işinize harcarsınız."
+          ],
+          "en": [
+            "The fate of software products is shaped by architectural choices made in the first weeks. Rushing database selections or premature microservices creates technical debt that slows iteration. A wrong framework choice can force a costly rebuild months later.",
+            "We offer engineering pragmatism. Instead of burdening early-stage projects with complex distributed services, we advocate for clean modular monoliths that maintain agility and low cloud overhead until scaling genuinely demands distributed architectures."
+          ],
+          "es": [
+            "El éxito de un proyecto de software se define en las decisiones de arquitectura de las primeras semanas. Precipitar la elección de base de datos o microservicios genera deuda técnica que frena el crecimiento. Una mala decisión puede obligar a reescribir el sistema meses después.",
+            "Aportamos pragmatismo de ingeniería. En lugar de sobrecargar proyectos tempranos con microservicios complejos, recomendamos monolitos modulares limpios que conservan agilidad y costes reducidos hasta que la escala justifique la distribución."
+          ]
+        }
+      },
+      {
+        "heading": {
+          "tr": "Eski (Legacy) Sistemlerin Kesintisiz Kademeli Modernizasyonu",
+          "en": "Zero-Downtime Incremental Modernization of Legacy Systems",
+          "es": "Modernización Progresiva de Sistemas sin Interrupción"
+        },
+        "paragraphs": {
+          "tr": [
+            "Kurumsal şirketlerin en büyük çekincesi, eski sistemlerini yenilerken operasyonun durması veya müşteri kaybı yaşamaktır. Eski bir yazılımı bir gecede kapatıp yenisini açmak yüksek risk taşır. Candemsoft ekibi, Strangler Fig modelini uygulayarak sisteminizi kademe kademe modern servislere dönüştürür.",
+            "En çok darboğaz yaratan modülleri tespit edip bunları modern API servisleri haline getiriyoruz. Eski sistem çalışmaya devam ederken yeni modüller tek tek devreye alınır. Yıldız Teknopark destek sistemi ve Kredi Turbo gibi kritik projelerdeki tecrübemizle kesintisiz dönüşüm sağlıyoruz."
+          ],
+          "en": [
+            "The greatest fear for established companies is business interruption during legacy modernization. Replacing a core platform overnight carries unacceptable operational risks. We apply the Strangler Fig pattern to modernize legacy systems module by module without downtime.",
+            "We isolate bottlenecked routines and convert them into containerized microservices. The legacy system operates steadily while modern services take over responsibilities progressively, a battle-tested method proven in systems like Yıldız Teknopark and Kredi Turbo."
+          ],
+          "es": [
+            "El mayor temor de las empresas es la interrupción operativa al renovar software histórico. Sustituir un sistema central en un solo lanzamiento implica riesgos inasumibles. Aplicamos el patrón Strangler Fig para modernizar aplicaciones módulo a módulo sin caídas de servicio.",
+            "Aislamos los procesos más críticos y los transformamos en microservicios en contenedores. El sistema original continúa operando mientras los nuevos módulos asumen carga progresivamente, como demostramos en Yıldız Teknopark y Kredi Turbo."
+          ]
+        }
+      },
+      {
+        "heading": {
+          "tr": "Bulut Maliyetleri, Altyapı Güvenliği ve Kaynak Verimliliği",
+          "en": "Cloud Economics, Security and Resource Optimization",
+          "es": "Eficiencia Cloud, Seguridad y Optimización de Servidores"
+        },
+        "paragraphs": {
+          "tr": [
+            "Şirketlerin bulut faturası çoğu zaman gereksiz büyük sunucular ve optimize edilmemiş sorgular yüzünden katlanarak artar. İndekslenmemiş bir SQL sorgusu işlemciyi doldurabilir ve ekipler sorunu çözmek yerine sunucuyu büyütme hatasına düşer. Bu durum ciddi bütçe israfına neden olur.",
+            "Candemsoft olarak AWS ve Docker uzmanlığımızla altyapınızı inceliyoruz. Sorguları optimize ediyor, statik varlıkları CDN arkasına alıyor, önbellekleme kuruyor ve sunucu kapasitesini gerçek ihtiyaca göre ayarlıyoruz. Sonuçta hem sistem hızlanır hem de bulut maliyetleri kalıcı kontrol altına alınır."
+          ],
+          "en": [
+            "Cloud invoices frequently inflate due to oversized virtual instances and unindexed queries rather than genuine organic traffic. A poor SQL query can spike CPU load, tempting teams to vertically upgrade instances instead of fixing the underlying defect.",
+            "Drawing on deep AWS and Docker expertise, we diagnose your infrastructure. We index query execution paths, cache static assets via CDNs and rightsize container allocations, accelerating response times while structurally trimming cloud invoices."
+          ],
+          "es": [
+            "Las facturas en la nube suelen dispararse por servidores sobredimensionados y consultas sin optimizar más que por tráfico real. Una consulta SQL sin indexar satura la CPU, llevando a contratar servidores más caros en vez de corregir el error de raíz.",
+            "Con sólida experiencia en AWS y Docker, diagnosticamos su infraestructura. Optimizamos consultas, distribuimos contenido estático vía CDN y ajustamos contenedores, acelerando los tiempos de respuesta y reduciendo el gasto de forma permanente."
+          ]
+        }
+      }
+    ]
+  }
+}

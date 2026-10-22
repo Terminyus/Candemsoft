@@ -9,10 +9,7 @@ import type { Metadata } from "next";
 export async function generateMetadata({ params }: PageProps<"/v2/[lang]">): Promise<Metadata> {
   const lang = await resolveLang(params);
   const dict = await getDictionary(lang);
-  // No `title` here: the layout's default title applies (an explicit undefined would erase it).
-  const meta = pageMetadata({ lang, route: "home", description: dict.meta.siteDescription });
-  delete meta.title;
-  return meta;
+  return pageMetadata({ lang, route: "home", title: dict.meta.homeTitle, description: dict.meta.homeDescription });
 }
 
 export default async function V2Home({ params }: PageProps<"/v2/[lang]">) {

@@ -3,7 +3,7 @@ import { href } from "@/i18n/routes";
 import { getProducts, getProjects, getSite } from "@/lib/content";
 import { getDictionary } from "@/lib/dictionary";
 import { resolveLang } from "@/lib/params";
-import { pageMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, jsonLd, pageBreadcrumbs, pageMetadata } from "@/lib/seo";
 import { PageIntro } from "@/components/page/PageIntro";
 import { ButtonLink } from "@/components/ui/Button";
 import { MonoLabel } from "@/components/ui/MonoLabel";
@@ -12,7 +12,7 @@ import { ContactBlock } from "@/components/home/ContactBlock";
 export async function generateMetadata({ params }: PageProps<"/[lang]/hakkimizda">): Promise<Metadata> {
   const lang = await resolveLang(params);
   const dict = await getDictionary(lang);
-  return pageMetadata({ lang, route: "about", title: dict.nav.about, description: dict.about.lead });
+  return pageMetadata({ lang, route: "about", title: dict.meta.aboutTitle, description: dict.meta.aboutDescription });
 }
 
 export default async function AboutPage({ params }: PageProps<"/[lang]/hakkimizda">) {
@@ -31,6 +31,10 @@ export default async function AboutPage({ params }: PageProps<"/[lang]/hakkimizd
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLd(breadcrumbJsonLd(pageBreadcrumbs(lang, "about")))}
+      />
       <PageIntro label={a.label} title={a.title} lead={a.lead} />
 
       {/* Two sides of the company, set as a split spread rather than cards */}

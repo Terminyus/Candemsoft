@@ -42,7 +42,7 @@ export function ServicesIndex({ lang, dict }: { lang: Locale; dict: Dictionary }
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <h3 className="font-display text-h3 font-extrabold">
-                    <Link href={`${href(lang, "services")}#${s.slug}`} className="after:absolute after:inset-0">
+                    <Link href={href(lang, "services", s.slug)} className="after:absolute after:inset-0">
                       {s.title[lang]}
                     </Link>
                   </h3>

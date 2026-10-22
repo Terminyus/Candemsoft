@@ -1,62 +1,182 @@
 export const meta = {
-  title: "İ and ı: why uppercase breaks on a Turkish website",
-  description: "text-transform: uppercase, toUpperCase() and search boxes. The bug that bites us most often when working with Turkish characters, and how to fix it.",
+  title: "Turkish Uppercase İ and I Rules: Software Casing Guide",
+  metaTitle: "Turkish Uppercase İ and I Guide | Candemsoft",
+  description: "Master Turkish uppercase İ and I rules in software. Learn Unicode points, toLocaleUpperCase tricks, database collations, and avoid casing bugs with our guide.",
   date: "2026-10-05",
   author: "Candemsoft",
-  tags: ["frontend", "i18n"]
+  tags: ["turkish characters", "i18n", "frontend", "backend", "unicode"]
 };
 
-Turkish has four i's: **i, İ, ı, I**. English has two. Most software is written with English assumptions, so the difference shows up where you least expect it.
+**Short answer:** Turkish features four distinct characters: lowercase **i**, uppercase **İ**, lowercase **ı**, and uppercase **I**. English-centric software engines assume 'i' maps to 'I', which breaks Turkish string conversions across user interfaces, search indices, and validation logic. Resolving these issues requires locale-aware implementations such as `toLocaleUpperCase('tr')` in JavaScript, `unicode.TurkishCase` in Go, `Locale.forLanguageTag("tr-TR")` in Java, and proper database collations rather than generic CSS transformations.
 
-## Where it starts
+> 🛠️ **Free Online Tool:** Fix uppercase and lowercase Turkish character mismatches instantly in your browser with our [Turkish Case Converter Tool](/en/tools/case-converter).
 
-In JavaScript, `"istanbul".toUpperCase()` returns **ISTANBUL**, with a dotless I. A Turkish reader reads that as a different letter. The correct form is **İSTANBUL**.
+---
 
-The reverse is just as tricky: `"İLETİŞİM".toLowerCase()` returns `i̇leti̇şi̇m`. Hard to see, but every "i" carries an extra combining dot (U+0307). Compare that to `iletisim` in a search box and it won't match.
+## What Are the Turkish Uppercase İ and I Rules?
 
-## CSS won't save you either
+Searches for "turkish capital i", "turkish dotless i uppercase", and "turkish case conversion" point to a classic software edge case: the breakdown of standard ASCII assumptions in the Latin alphabet.
 
-`text-transform: uppercase` leaves the conversion to the browser, which looks at the page's `lang` attribute. If `<html lang="tr">` is set, the result is correct. But:
+In English, casing involves a single letter pair:
+* Lowercase `i` uppercases to dotless `I`.
 
-- render the same component on an English page and the Turkish text uppercases wrong,
-- forget the `lang` attribute and the whole site uppercases wrong,
-- screen readers sometimes spell out uppercase text letter by letter.
+In Turkish, dotted and dotless letters represent two separate phonemes with distinct pronunciations and meanings:
+* **The Dotted Pair:** Lowercase `i` maps to **dotted uppercase İ**.
+* **The Dotless Pair:** Lowercase `ı` maps to **dotless uppercase I**.
 
-That's why this site doesn't use `text-transform: uppercase` at all. When we need capitals, we write them in the source.
+When software algorithms apply standard ASCII conversions without locale awareness, they trigger severe functional bugs:
+* `ilişki` turns into `ILISKI` or `ILIŞKI` instead of the correct `İLİŞKİ`.
+* `IŞIK` turns into `isik` or `işık` instead of the correct `ışık`.
+* `istanbul` turns into `ISTANBUL`, which Turkish readers pronounce with an unnatural "uh" sound instead of `İSTANBUL`.
+* `DİYARBAKIR` turns into corrupted combinations like `di̇yarbakir` rather than `diyarbakır`.
 
-## The correct conversion
+This mismatch is more than an aesthetic defect: it invalidates search query tokens, breaks user logins, disrupts unique constraints, and can introduce security bypasses.
 
-Pass the locale explicitly:
+---
 
-```js
-"istanbul".toLocaleUpperCase("tr"); // "İSTANBUL"
-"İLETİŞİM".toLocaleLowerCase("tr"); // "iletişim"
+## Unicode Anatomy: Code Points of the Four I's
+
+Within the Unicode standard, each of the four letters holds an independent code point:
+
+| Letter | Definition | Unicode Point | UTF-8 Bytes |
+| :--- | :--- | :--- | :--- |
+| **İ** | Latin Capital Letter I with Dot Above | `U+0130` | `0xC4 0xB0` |
+| **i** | Latin Small Letter I | `U+0069` | `0x69` |
+| **I** | Latin Capital Letter I | `U+0049` | `0x49` |
+| **ı** | Latin Small Letter Dotless I | `U+0131` | `0xC4 0xB1` |
+
+### The Normalization Trap: NFC vs. NFD
+
+Unicode allows accented letters to be encoded in two formats:
+1. **NFC (Composition):** Dotted capital `İ` is stored as a single character (`U+0130`).
+2. **NFD (Decomposition):** Dotted capital `İ` is split into uppercase `I` (`U+0049`) and a combining dot above (`U+0307`).
+
+While both forms render identically on screen, binary comparisons (`textA === textB`) evaluate to `false`. Always apply `normalize('NFC')` before indexing, saving, or hashing Turkish strings.
+
+---
+
+## Frontend and JavaScript Solutions
+
+### 1. Why `toUpperCase()` and `toLowerCase()` Break
+
+JavaScript's legacy string methods follow invariant ASCII rules:
+
+```javascript
+// Problematic approach:
+"istanbul".toUpperCase(); // "ISTANBUL" -> Incorrect
+"İSTANBUL".toLowerCase(); // "i̇stanbul" -> Generates combining dot U+0307
+
+// Robust, locale-aware approach:
+"istanbul".toLocaleUpperCase("tr-TR"); // "İSTANBUL"
+"İSTANBUL".toLocaleLowerCase("tr-TR"); // "istanbul"
+"IŞIK".toLocaleLowerCase("tr-TR");     // "ışık"
 ```
 
-If you're matching search terms or commands, go one step further and normalize both sides before comparing:
+### 2. The Danger of CSS `text-transform: uppercase`
 
-```js
-function normalize(text) {
-  return text
-    .toLocaleLowerCase("tr")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/ı/g, "i");
-}
+CSS `text-transform: uppercase` delegates casing to the browser rendering engine, which inspects `<html lang="...">`:
 
-normalize("İletişim") === normalize("iletisim"); // true
+* If `<html lang="tr">` is set, browsers uppercase `istanbul` to `İSTANBUL` correctly.
+* In multilingual setups where components render without explicit language context, browsers default to English, corrupting Turkish text to `ISTANBUL`.
+* Assistive technologies may interpret CSS-capitalized words as individual acronym letters.
+
+For predictable user interfaces, execute casing operations in application logic rather than relying solely on stylesheet transformations.
+
+---
+
+## Regular Expressions and Unicode Property Escapes
+
+Validating Turkish strings with `/[a-zA-Z]/` rejects legitimate names containing 'ç, ğ, ı, ö, ş, ü, İ, I'.
+
+Modern ECMAScript provides Unicode property escapes (`\p{L}`) paired with the `u` flag:
+
+```javascript
+const turkishNamePattern = /^[\p{L}\s]+$/u;
+turkishNamePattern.test("İpek Işık"); // true
 ```
 
-In this site's terminal, typing `iletişim`, `iletisim` or `ILETISIM` all take you to the same place. This function is why.
+* `\p{L}`: Matches any letter across global scripts.
+* `\p{Lu}`: Matches uppercase letters (`İ` and `I` included).
+* `\p{Ll}`: Matches lowercase letters (`i` and `ı` included).
 
-## Fonts matter too
+---
 
-If a font doesn't include Turkish glyphs, the browser borrows the missing letters from another font. The result: "Ş" in one typeface, the rest of the word in another. When choosing fonts, make sure the `latin-ext` subset exists, and check **ğ, ü, ş, ı, İ, ö, ç** once by eye at a large size.
+## Backend Frameworks: Python, Go, Java, and C#
 
-## Quick checklist
+### Python
 
-1. Is `<html lang>` correct on every page?
-2. Are you using the locale-aware versions instead of `toUpperCase()` / `toLowerCase()`?
-3. Do search and filtering normalize text?
-4. Do your fonts include `latin-ext`?
-5. Do you really need `text-transform: uppercase`?
+Standard Python string methods do not incorporate linguistic variations:
+
+```python
+"i".upper() # Returns 'I' instead of 'İ'
+"ı".upper() # Returns 'I'
+# Both yield 'I', producing unintended equality collisions: 'i'.upper() == 'ı'.upper()
+```
+
+Implement custom mapping lookups or rely on the `PyICU` library for accurate Turkish casing.
+
+### Go (Golang)
+
+Go handles localization through its standard `unicode` package:
+
+```go
+import (
+    "strings"
+    "unicode"
+)
+
+upper := strings.ToUpperSpecial(unicode.TurkishCase, "ilişki") // "İLİŞKİ"
+lower := strings.ToLowerSpecial(unicode.TurkishCase, "IŞIK")   // "ışık"
+```
+
+### Java
+
+Unparameterized `.toUpperCase()` in Java is the classic root of the "Turkish-I Problem":
+
+```java
+String upper = "istanbul".toUpperCase(Locale.forLanguageTag("tr-TR")); // "İSTANBUL"
+String lower = "IŞIK".toLowerCase(Locale.forLanguageTag("tr-TR"));     // "ışık"
+```
+
+### C# (.NET) and the Turkish-I Security Vulnerability
+
+In .NET on Turkish servers, `"file".ToUpper()` produces `"FİLE"`. If security filters inspect authorization paths against `"FILE"`, the check fails to match, allowing unauthorized requests to pass.
+
+For protocol headers and internal route validations, always enforce `StringComparison.OrdinalIgnoreCase` or `ToUpperInvariant()`. Use `new CultureInfo("tr-TR")` for human-facing output.
+
+---
+
+## Database Collations and Search Indexing
+
+Database query matching requires proper collation configurations:
+
+1. **MySQL / MariaDB:** Use `utf8mb4_turkish_ci`. This guarantees that queries for `ışık` match `IŞIK` without conflicting with `işık`.
+2. **PostgreSQL:** Initialize databases with `LC_COLLATE = 'tr_TR.utf8'` or append `COLLATE "tr-TR-x-icu"`.
+3. **SQLite:** Default `COLLATE NOCASE` operates purely on ASCII characters. Normalize strings at the application layer before storing them in SQLite indices.
+
+---
+
+## Candemsoft's Real-World Experience and Candemkey
+
+We tackled these intricate morphological and character challenges while developing Candemkey, our Turkish AI-powered keyboard application. Candemsoft's [Candemkey](https://candemkey.com/) ([Candemkey Case Study](/en/projects/candemkey)) integrates deep natural language understanding to disambiguate accents and casing errors in real-time.
+
+Our engineering team applies strict internationalization (i18n) standards across [custom web development](/en/services/web), [mobile application development](/en/services/mobile-apps), and [enterprise AI solutions](/en/services/artificial-intelligence/). You can also explore our technical deep dive into [Turkish Character and OCR Challenges](/en/blog/turkce-karakter-klavye-ve-ocr-sorunlari).
+
+---
+
+## Frequently Asked Questions
+
+### 1. What are the Unicode code points for the Turkish capital İ and small ı?
+The Turkish dotted capital **İ** is `U+0130`, and the dotless small **ı** is `U+0131`. Standard English dotless capital **I** is `U+0049`, and dotted small **i** is `U+0069`.
+
+### 2. Why should developers avoid toUpperCase() for Turkish strings in JavaScript?
+Standard `toUpperCase()` maps lowercase `"i"` to dotless `"I"`, turning `"istanbul"` into `"ISTANBUL"`. Developers should supply explicit language tags via `toLocaleUpperCase('tr-TR')`.
+
+### 3. How does the "Turkish I Problem" create security vulnerabilities?
+When internal security checks convert strings to uppercase on a Turkish operating system, `"file"` becomes `"FİLE"`. Rules checking against `"FILE"` will bypass because strings differ in binary memory.
+
+### 4. Why is CSS text-transform: uppercase unreliable for Turkish typography?
+CSS transforms depend on browser environment settings and the `<html lang>` attribute. If missing, letters capitalize incorrectly, and screen readers may spell words out letter by letter.
+
+### 5. How should databases be configured for Turkish case-insensitive searches?
+For MySQL or MariaDB, apply `utf8mb4_turkish_ci`. In PostgreSQL, configure ICU Turkish collations (`tr-TR-x-icu`). For SQLite, normalize strings at the application tier prior to persistence.

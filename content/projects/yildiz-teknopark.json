@@ -18,10 +18,15 @@
     "en": "Technology park",
     "es": "Parque tecnológico"
   },
+  "metaTitle": {
+    "tr": "Yıldız Teknopark Destek Sistemi Yazılımı | Candemsoft",
+    "en": "Yıldız Teknopark Support System | Candemsoft",
+    "es": "Sistema de Soporte Yıldız Teknopark | Candemsoft"
+  },
   "summary": {
-    "tr": "Yıldız Teknopark için ticket ve destek sistemi.",
-    "en": "Ticket and support system for Yıldız Teknopark.",
-    "es": "Sistema de tickets y soporte para Yıldız Teknopark."
+    "tr": "Yıldız Teknopark için geliştirdiğimiz ticket ve destek sistemi; kurumsal talepleri, arıza bildirimlerini ve süreç yönetimini hızlandırır. İnceleyin.",
+    "en": "The support ticketing system engineered for Yıldız Teknopark streamlines enterprise service requests, issue tracking and operations. Discover it now.",
+    "es": "El sistema de tickets desarrollado para Yıldız Teknopark optimiza la atención de solicitudes empresariales y gestión de incidencias. Conozca la web."
   },
   "year": null,
   "services": [

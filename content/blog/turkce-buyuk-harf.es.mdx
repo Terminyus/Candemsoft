@@ -1,62 +1,182 @@
 export const meta = {
-  title: "İ e ı: por qué las mayúsculas fallan en un sitio en turco",
-  description: "text-transform: uppercase, toUpperCase() y los buscadores. El error con caracteres turcos que más nos da guerra, y cómo resolverlo.",
+  title: "Reglas de Mayúsculas İ e I en Turco: Guía para Software",
+  metaTitle: "Guía de Mayúsculas İ e I en Turco | Candemsoft",
+  description: "Aprenda las reglas de mayúsculas İ e I en turco para software. Descubra puntos Unicode, toLocaleUpperCase, cotejamiento de bases de datos y soluciones clave.",
   date: "2026-10-05",
   author: "Candemsoft",
-  tags: ["frontend", "i18n"]
+  tags: ["caracteres turcos", "i18n", "frontend", "backend", "unicode"]
 };
 
-El turco tiene cuatro íes: **i, İ, ı, I**. El inglés tiene dos. Casi todo el software se escribe con supuestos del inglés, así que la diferencia aparece donde menos lo esperas.
+**Respuesta rápida:** El alfabeto turco contiene cuatro caracteres distintos: **i** minúscula, **İ** mayúscula con punto, **ı** minúscula sin punto e **I** mayúscula sin punto. Los entornos de software occidentales suponen que la 'i' minúscula se convierte en 'I' mayúscula, rompiendo transformaciones de texto en interfaces, búsquedas e inicios de sesión. La solución exige métodos conscientes del idioma como `toLocaleUpperCase('tr')` en JavaScript, `unicode.TurkishCase` en Go, `Locale.forLanguageTag("tr-TR")` en Java y cotejamientos de base de datos adecuados.
 
-## Dónde empieza
+> 🛠️ **Herramienta Online Gratuita:** Resuelva los problemas de mayúsculas y minúsculas en turco desde su navegador con nuestro [Convertidor de Mayúsculas y Minúsculas en Turco](/es/herramientas/convertidor-mayusculas-minusculas).
 
-En JavaScript, `"istanbul".toUpperCase()` devuelve **ISTANBUL**, con una I sin punto. Un lector turco lo lee como otra letra. La forma correcta es **İSTANBUL**.
+---
 
-Al revés es igual de delicado: `"İLETİŞİM".toLowerCase()` devuelve `i̇leti̇şi̇m`. Cuesta verlo, pero cada «i» lleva un punto combinante extra (U+0307). Compáralo con `iletisim` en un buscador y no coincidirá.
+## ¿Cuáles son las reglas de mayúsculas İ e I en turco?
 
-## CSS tampoco te salva
+Las consultas sobre "mayúsculas en turco", "i con punto mayúscula" y "conversión de mayúsculas y minúsculas en turco" abordan un caso límite clásico en software: la ruptura del estándar ASCII.
 
-`text-transform: uppercase` deja la conversión al navegador, que mira el atributo `lang` de la página. Si `<html lang="tr">` está bien puesto, el resultado es correcto. Pero:
+En español o inglés existe un único par:
+* La letra minúscula `i` se convierte en mayúscula `I`.
 
-- si el mismo componente se muestra en una página en inglés, el texto turco se convierte mal,
-- si olvidas el atributo `lang`, todo el sitio se convierte mal,
-- los lectores de pantalla a veces deletrean el texto en mayúsculas letra por letra.
+En turco, las letras con y sin punto son fonemas independientes:
+* **Par con punto:** La minúscula `i` corresponde a la **İ mayúscula con punto**.
+* **Par sin punto:** La minúscula `ı` corresponde a la **I mayúscula sin punto**.
 
-Por eso este sitio no usa `text-transform: uppercase` en absoluto. Cuando necesitamos mayúsculas, las escribimos en el texto original.
+Cuando el software no distingue el idioma (locale), surgen errores graves:
+* `ilişki` se convierte erróneamente en `ILISKI` o `ILIŞKI` en lugar de `İLİŞKİ`.
+* `IŞIK` se transforma de manera incorrecta en `isik` o `işık` en vez de `ışık`.
+* `istanbul` se convierte en `ISTANBUL`, produciendo una lectura errónea en vez de `İSTANBUL`.
+* `DİYARBAKIR` genera cadenas corruptas como `di̇yarbakir` en lugar de `diyarbakır`.
 
-## La conversión correcta
+Esta discrepancia invalida índices de búsqueda, corrompe accesos de usuarios y provoca brechas de seguridad críticas.
 
-Indica el idioma de forma explícita:
+---
 
-```js
-"istanbul".toLocaleUpperCase("tr"); // "İSTANBUL"
-"İLETİŞİM".toLocaleLowerCase("tr"); // "iletişim"
+## Anatomía Unicode: Puntos de Código de las Cuatro Letras
+
+En el estándar Unicode, cada una de estas cuatro letras cuenta con un punto de código único:
+
+| Letra | Definición | Código Unicode | Bytes UTF-8 |
+| :--- | :--- | :--- | :--- |
+| **İ** | Latin Capital Letter I with Dot Above | `U+0130` | `0xC4 0xB0` |
+| **i** | Latin Small Letter I | `U+0069` | `0x69` |
+| **I** | Latin Capital Letter I | `U+0049` | `0x49` |
+| **ı** | Latin Small Letter Dotless I | `U+0131` | `0xC4 0xB1` |
+
+### La trampa de la normalización: NFC frente a NFD
+
+Unicode admite dos formatos:
+1. **NFC (Composición):** La letra `İ` se almacena en un solo punto precompuesto (`U+0130`).
+2. **NFD (Descomposición):** La letra `İ` se divide en una `I` mayúscula (`U+0049`) y un punto combinante (`U+0307`).
+
+Aunque visualmente sean idénticas, las comparaciones binarias (`textoA === textoB`) devuelven `false`. Conviene normalizar siempre con `normalize('NFC')` antes de guardar o indexar cadenas en turco.
+
+---
+
+## Soluciones para Frontend y JavaScript
+
+### 1. ¿Por qué fallan `toUpperCase()` y `toLowerCase()`?
+
+Las funciones tradicionales de JavaScript aplican reglas ASCII universales:
+
+```javascript
+// Enfoque defectuoso:
+"istanbul".toUpperCase(); // "ISTANBUL" -> Incorrecto
+"İSTANBUL".toLowerCase(); // "i̇stanbul" -> Genera U+0069 + U+0307
+
+// Enfoque localizado:
+"istanbul".toLocaleUpperCase("tr-TR"); // "İSTANBUL"
+"İSTANBUL".toLocaleLowerCase("tr-TR"); // "istanbul"
+"IŞIK".toLocaleLowerCase("tr-TR");     // "ışık"
 ```
 
-Si comparas términos de búsqueda o comandos, ve un paso más allá y normaliza ambos lados antes de compararlos:
+### 2. El peligro de CSS `text-transform: uppercase`
 
-```js
-function normalize(text) {
-  return text
-    .toLocaleLowerCase("tr")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/ı/g, "i");
-}
+La regla `text-transform: uppercase` cede la conversión al navegador, que lee `<html lang="...">`:
 
-normalize("İletişim") === normalize("iletisim"); // true
+* Si la página declara `<html lang="tr">`, los navegadores convierten `istanbul` a `İSTANBUL` correctamente.
+* Si falta el atributo de idioma, el navegador recurre al inglés, convirtiendo la palabra en `ISTANBUL`.
+* Los lectores de pantalla pueden deletrear el texto transformado por CSS como un acrónimo.
+
+En interfaces críticas es preferible transformar el texto en la lógica de aplicación antes de enviarlo a la vista.
+
+---
+
+## Expresiones Regulares y Escapes Unicode
+
+Validar texto turco mediante `/[a-zA-Z]/` rechaza nombres válidos con 'ç, ğ, ı, ö, ş, ü, İ, I'.
+
+En JavaScript moderno deben usarse escapes de propiedades Unicode (`\p{L}`) con la bandera `u`:
+
+```javascript
+const patronNombreTurco = /^[\p{L}\s]+$/u;
+patronNombreTurco.test("İpek Işık"); // true
 ```
 
-En la terminal de este sitio da igual escribir `iletişim`, `iletisim` o `ILETISIM`: todos llevan al mismo sitio. Esta función es la razón.
+* `\p{L}`: Coincide con cualquier letra en cualquier idioma.
+* `\p{Lu}`: Letras mayúsculas (`İ` e `I` incluidas).
+* `\p{Ll}`: Letras minúsculas (`i` e `ı` incluidas).
 
-## Las fuentes también cuentan
+---
 
-Si una fuente no incluye los glifos turcos, el navegador toma las letras que faltan de otra fuente. Resultado: la «Ş» en una tipografía y el resto de la palabra en otra. Al elegir fuentes, comprueba que exista el subconjunto `latin-ext` y revisa a ojo **ğ, ü, ş, ı, İ, ö, ç** en tamaño grande.
+## Backend y Arquitectura Multilingüe: Python, Go, Java y C#
 
-## Lista rápida
+### Python
 
-1. ¿Es correcto `<html lang>` en todas las páginas?
-2. ¿Usas las versiones con idioma en lugar de `toUpperCase()` / `toLowerCase()`?
-3. ¿Normalizas el texto en búsquedas y filtros?
-4. ¿Tus fuentes incluyen `latin-ext`?
-5. ¿De verdad necesitas `text-transform: uppercase`?
+Los métodos nativos de Python no aplican reglas locales por defecto:
+
+```python
+"i".upper() # Devuelve 'I' en lugar de 'İ'
+"ı".upper() # Devuelve 'I'
+# 'i'.upper() == 'ı'.upper() provoca colisiones no deseadas
+```
+
+Utilice mapeo de caracteres o la biblioteca `PyICU` para una conversión adecuada.
+
+### Go (Golang)
+
+El paquete estándar `unicode` de Go proporciona tablas de caracteres específicas:
+
+```go
+import (
+    "strings"
+    "unicode"
+)
+
+mayuscula := strings.ToUpperSpecial(unicode.TurkishCase, "ilişki") // "İLİŞKİ"
+minuscula := strings.ToLowerSpecial(unicode.TurkishCase, "IŞIK")   // "ışık"
+```
+
+### Java
+
+Ejecutar `.toUpperCase()` sin idioma en Java causa el célebre "Problema de la I Turca":
+
+```java
+String mayus = "istanbul".toUpperCase(Locale.forLanguageTag("tr-TR")); // "İSTANBUL"
+String minus = "IŞIK".toLowerCase(Locale.forLanguageTag("tr-TR"));     // "ışık"
+```
+
+### C# (.NET) y el fallo de seguridad de la I Turca
+
+En servidores Windows con configuración regional turca, `"file".ToUpper()` genera `"FİLE"`. Si un filtro compara rutas contra `"FILE"`, la comprobación fallará y dejará pasar accesos no autorizados.
+
+Para protocolos internos utilice siempre `StringComparison.OrdinalIgnoreCase` o `ToUpperInvariant()`. Reserve `new CultureInfo("tr-TR")` para textos mostrados al usuario.
+
+---
+
+## Cotejamientos de Base de Datos e Indexación
+
+Las consultas en base de datos requieren configuraciones de cotejamiento adecuadas:
+
+1. **MySQL / MariaDB:** Emplee `utf8mb4_turkish_ci`. Esto garantiza que buscar `ışık` encuentre `IŞIK` sin confundirlo con `işık`.
+2. **PostgreSQL:** Cree la base de datos con `LC_COLLATE = 'tr_TR.utf8'` o use `COLLATE "tr-TR-x-icu"`.
+3. **SQLite:** El cotejamiento `COLLATE NOCASE` solo gestiona caracteres ASCII. Conviene normalizar el texto en la aplicación antes de persistirlo.
+
+---
+
+## Experiencia en Candemsoft y Candemkey
+
+Al crear Candemkey, nuestro teclado inteligente con IA en turco, resolvimos estos problemas morfológicos y de tipografía. [Candemkey](https://candemkey.com/) ([Caso de Estudio de Candemkey](/es/proyectos/candemkey)) incorpora modelos de lenguaje optimizados para desambiguar acentos y mayúsculas en tiempo real.
+
+En Candemsoft aplicamos estándares estrictos de internacionalización en [desarrollo web](/es/servicios/web), [aplicaciones móviles](/es/servicios/aplicaciones-moviles) y [soluciones de IA](/es/servicios/inteligencia-artificial). También puede consultar nuestro análisis sobre [Problemas de Caracteres Turcos y OCR](/es/blog/turkce-karakter-klavye-ve-ocr-sorunlari).
+
+---
+
+## Preguntas Frecuentes
+
+### 1. ¿Cuáles son los códigos Unicode para la İ mayúscula y la ı minúscula en turco?
+La **İ** mayúscula con punto tiene el código `U+0130`, y la **ı** minúscula sin punto es `U+0131`. La **I** mayúscula inglesa es `U+0049`, y la **i** minúscula común es `U+0069`.
+
+### 2. ¿Por qué no debe usarse toUpperCase() en cadenas en turco dentro de JavaScript?
+La función estándar `toUpperCase()` convierte `"i"` en `"I"` sin punto, transformando `"istanbul"` en `"ISTANBUL"`. Es indispensable usar `toLocaleUpperCase('tr-TR')`.
+
+### 3. ¿Cómo genera una vulnerabilidad de seguridad el "Problema de la I Turca"?
+Si un servidor en turco convierte comandos a mayúsculas, `"file"` se transforma en `"FİLE"`. Los filtros que busquen `"FILE"` no coincidirán en memoria binaria, eludiendo la protección.
+
+### 4. ¿Por qué CSS text-transform: uppercase no es fiable en tipografía turca?
+Depende del entorno del navegador y del atributo `<html lang>`. Si falta la etiqueta, las letras se alteran y los lectores de pantalla pueden deletrear el texto como siglas.
+
+### 5. ¿Cómo configurar bases de datos para búsquedas insensibles a mayúsculas en turco?
+En MySQL o MariaDB utilice `utf8mb4_turkish_ci`. En PostgreSQL configure el cotejamiento ICU `tr-TR-x-icu`. En SQLite normalice los textos en el código antes de la consulta.

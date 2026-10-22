@@ -71,7 +71,7 @@ export function V2Header({ lang, home, items, labels }: Props) {
     <header className="sticky top-0 z-50 border-b border-ink-950 bg-white">
       <div className="container-site flex h-(--header-h) items-center justify-between gap-6">
         <Link href={home} onClick={close} aria-label="Candemsoft" className="shrink-0">
-          <Logo surface="paper" />
+          <Logo surface="paper" priority />
         </Link>
         <nav aria-label={labels.primary} className="hidden lg:block">
           <ul className="flex items-center gap-7 font-archivo text-[0.95rem] font-medium">
@@ -118,7 +118,7 @@ export function V2Header({ lang, home, items, labels }: Props) {
           <ul>
             {items.map((item, i) => (
               <li key={item.key} style={{ "--i": i } as React.CSSProperties} className="border-b border-ink-950">
-                <Link href={item.href} onClick={close} className="block py-3 v2-heading text-[2.25rem] aria-[current=page]:text-ember" aria-current={active(item.href) ? "page" : undefined}>
+                <Link href={item.href} onClick={close} prefetch={false} className="block py-3 v2-heading text-[2.25rem] aria-[current=page]:text-ember" aria-current={active(item.href) ? "page" : undefined}>
                   {item.label}
                 </Link>
               </li>

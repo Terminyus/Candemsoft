@@ -18,10 +18,15 @@
     "en": "Finance",
     "es": "Finanzas"
   },
+  "metaTitle": {
+    "tr": "Kredi Turbo Finans Platformu Geliştirme | Candemsoft",
+    "en": "Kredi Turbo Finance Platform Development | Candemsoft",
+    "es": "Plataforma Financiera Kredi Turbo | Candemsoft"
+  },
   "summary": {
-    "tr": "Kredi Turbo finans platformu.",
-    "en": "The Kredi Turbo finance platform.",
-    "es": "La plataforma financiera Kredi Turbo."
+    "tr": "Kredi Turbo için geliştirdiğimiz modern finans platformu; hızlı kredi hesaplama, karşılaştırma ve kolay başvuru akışı sunar. Detayları inceleyin.",
+    "en": "The modern finance platform built for Kredi Turbo offers rapid loan calculation, product comparisons and seamless applications. Explore the project.",
+    "es": "La plataforma desarrollada para Kredi Turbo ofrece cálculo rápido de préstamos, comparador financiero y gestión ágil de solicitudes. Conózcala hoy."
   },
   "year": null,
   "services": [

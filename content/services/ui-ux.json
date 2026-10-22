@@ -1,0 +1,399 @@
+{
+  "key": "ui-ux",
+  "slug": {
+    "tr": "ui-ux-tasarim",
+    "en": "ui-ux-design",
+    "es": "diseno-ui-ux"
+  },
+  "title": {
+    "tr": "UI/UX Tasarım ve Kullanıcı Deneyimi",
+    "en": "UI/UX Design & User Experience",
+    "es": "Diseño UI/UX y Experiencia de Usuario"
+  },
+  "metaTitle": {
+    "tr": "UI/UX Tasarım ve Arayüz Çözümleri | Candemsoft",
+    "en": "UI/UX Design & Product Interface | Candemsoft",
+    "es": "Diseño UI/UX y Experiencia de Usuario | Candemsoft"
+  },
+  "metaDescription": {
+    "tr": "Kullanıcı deneyimini artıran sezgisel UI/UX arayüzleri ve prototipler tasarlıyoruz. Dijital ürününüzü büyütmek için hemen ekibimizle iletişime geçin.",
+    "en": "We design intuitive UI/UX interfaces, design systems and clickable prototypes. Contact our Istanbul team today to craft exceptional digital user journeys.",
+    "es": "Diseñamos interfaces UI/UX intuitivas, sistemas de diseño y prototipos interactivos. Contacte con nuestro equipo en Estambul y mejore su producto digital."
+  },
+  "kicker": {
+    "tr": "Hizmetlerimiz",
+    "en": "Our Services",
+    "es": "Nuestros Servicios"
+  },
+  "lead": {
+    "tr": "Candemsoft olarak kullanıcı arayüzü ve deneyimi (UI/UX) tasarımını yazılım mühendisliğinin temeli olarak görüyoruz. Prensibimiz nettir: Akışı ve ekranları kod yazmadan önce netleştiriyoruz; geliştirme sırasında sürprizler azalıyor, mimari değişiklikler ucuz kalıyor. Kendi ürünlerimiz CandemFit, Seyyah, Orpigo ve Kişisel QR projelerimizde milyonlarca etkileşimle olgunlaştırdığımız tasarım kültürünü kurumsal web ve mobil sistemlerinize taşıyoruz.",
+    "en": "At Candemsoft, we regard UI/UX design as the foundation of software engineering. Our principle is simple: we settle flows and screens before writing code, minimizing costly surprises and keeping changes affordable. We transfer the UX discipline refined across our products CandemFit, Seyyah, Orpigo and Kişisel QR directly into your enterprise web and mobile applications.",
+    "es": "En Candemsoft entendemos el diseño UI/UX como la base de la ingeniería de software. Nuestro principio es directo: definimos flujos y pantallas antes de programar, reduciendo sorpresas y abaratando cambios. Trasladamos la metodología probada en nuestros productos CandemFit, Seyyah, Orpigo y Kişisel QR a sus plataformas web y móviles."
+  },
+  "targetAudience": {
+    "title": {
+      "tr": "UI/UX Tasarım Hizmetimiz Kimler İçin Uygun?",
+      "en": "Who Can Benefit from Our UI/UX Design Services?",
+      "es": "¿A Quién van Dirigidos Nuestros Servicios de Diseño UI/UX?"
+    },
+    "description": {
+      "tr": "Kullanıcı memnuniyetini, dönüşüm oranlarını ve ürün ergonomisini ön planda tutan ekiplere çözümler sunuyoruz.",
+      "en": "We deliver solutions for teams prioritizing user retention, conversion rates and product ergonomics.",
+      "es": "Aportamos soluciones a equipos que priorizan la retención, las tasas de conversión y la ergonomía de producto."
+    },
+    "items": [
+      {
+        "title": {
+          "tr": "Sıfırdan Dijital Ürün Başlatan Girişimler",
+          "en": "Startups Launching Products from Scratch",
+          "es": "Startups que Lanzan Productos desde Cero"
+        },
+        "description": {
+          "tr": "Fikrini doğrulamak, yatırımcılara sunmak ve kullanıcıların kolayca benimseyeceği bir mobil veya web ürünü kurmak isteyenler.",
+          "en": "Founders validating concepts, presenting interactive prototypes to investors and building intuitive apps.",
+          "es": "Emprendedores que buscan validar conceptos, presentar prototipos ante inversores y crear aplicaciones intuitivas."
+        }
+      },
+      {
+        "title": {
+          "tr": "Karmaşık Arayüzlerini Sadeleştirmek İsteyen Kurumlar",
+          "en": "Enterprises Simplifying Complex Interfaces",
+          "es": "Empresas que Simplifican Software Complejo"
+        },
+        "description": {
+          "tr": "Mevcut sistemlerinde yüksek terk edilme oranı yaşayan şirketler için ekranları sadeleştiriyor ve akışları optimize ediyoruz.",
+          "en": "We streamline confusing screens and optimize funnels for companies experiencing user drop-offs and support tickets.",
+          "es": "Optimizamos flujos y simplificamos pantallas para empresas que sufren altas tasas de abandono en sus sistemas."
+        }
+      },
+      {
+        "title": {
+          "tr": "Tasarım ve Kod Uyumsuzluğu Yaşayan Ekipler",
+          "en": "Teams Facing Design-to-Code Friction",
+          "es": "Equipos con Fricción entre Diseño y Código"
+        },
+        "description": {
+          "tr": "Tasarımın koda dökülürken bozulmasını engelleyen, piksel hassasiyetinde bileşen kütüphaneleri ve teknik dokümantasyon arayanlar.",
+          "en": "Engineering teams needing pixel-perfect UI kits and developer-ready specs so production code matches mockups.",
+          "es": "Equipos técnicos que demandan bibliotecas de componentes exactas para que el código replique fielmente el diseño."
+        }
+      },
+      {
+        "title": {
+          "tr": "Tasarım Sistemi ile Büyümek İsteyen Markalar",
+          "en": "Brands Scaling with Unified Design Systems",
+          "es": "Marcas que Escalan con Sistemas de Diseño"
+        },
+        "description": {
+          "tr": "Birden fazla uygulama yöneten, tüm platformlarda tek bir kurumsal tasarım dili ve hız kazanmak isteyen şirketler.",
+          "en": "Companies managing multiple apps that need a shared visual identity and reusable UI tokens to ship faster.",
+          "es": "Empresas que gestionan múltiples aplicaciones y precisan una identidad unificada y librerías reutilizables."
+        }
+      }
+    ]
+  },
+  "process": {
+    "title": {
+      "tr": "UI/UX Tasarım Sürecimiz Nasıl İlerler?",
+      "en": "Our UI/UX Design Process",
+      "es": "Nuestro Proceso de Diseño UI/UX"
+    },
+    "description": {
+      "tr": "Fikirden nihai koda uzanan her aşamada araştırma, prototipleme ve test disipliniyle çalışıyoruz.",
+      "en": "From discovery to developer handoff, we maintain disciplined research, prototyping and user validation.",
+      "es": "Desde el descubrimiento hasta la entrega técnica, aplicamos investigación, prototipado y validación de usuario."
+    },
+    "steps": [
+      {
+        "step": "01",
+        "title": {
+          "tr": "Kullanıcı Araştırması ve İhtiyaç Analizi",
+          "en": "User Research & Discovery",
+          "es": "Investigación de Usuarios y Requisitos"
+        },
+        "description": {
+          "tr": "Hedef kitlenin alışkanlıklarını, sektör standartlarını ve ürünün çözmesi gereken temel problemleri inceliyoruz.",
+          "en": "We investigate user behavior, industry benchmarks and core workflow frictions to establish clear UX priorities.",
+          "es": "Analizamos hábitos de los usuarios, estándares del sector y fricciones clave para fijar prioridades de UX."
+        }
+      },
+      {
+        "step": "02",
+        "title": {
+          "tr": "Bilgi Mimarisi ve Tel Çerçeve (Wireframe)",
+          "en": "Information Architecture & Wireframes",
+          "es": "Arquitectura de Información y Wireframes"
+        },
+        "description": {
+          "tr": "Görsel ayrıntılardan önce sayfa hiyerarşisini, navigasyon yapısını ve kullanıcı akışlarını tel çerçevelerle kurguluyoruz.",
+          "en": "Before visual styling, we map navigation logic, content hierarchy and task flows using structural wireframes.",
+          "es": "Antes de la estética, estructuramos la jerarquía, la navegación y los flujos de tareas con wireframes esquemáticos."
+        }
+      },
+      {
+        "step": "03",
+        "title": {
+          "tr": "Görsel Tasarım ve Bileşen Kütüphanesi",
+          "en": "Visual Design & UI Kits",
+          "es": "Diseño Visual y Kit de Componentes"
+        },
+        "description": {
+          "tr": "Marka kimliğini yansıtan renk paleti, tipografi, ikonografi ve tekrar kullanılabilir UI bileşenlerini hazırlıyoruz.",
+          "en": "We craft high-fidelity visual interfaces reflecting brand identity, complete with typography scales and UI tokens.",
+          "es": "Elaboramos interfaces visuales de alta fidelidad con tipografía escalable, paleta de color y componentes modulares."
+        }
+      },
+      {
+        "step": "04",
+        "title": {
+          "tr": "Tıklanabilir Prototip ve Kullanılabilirlik Testi",
+          "en": "Interactive Prototyping & Testing",
+          "es": "Prototipado Interactivo y Pruebas"
+        },
+        "description": {
+          "tr": "Ekranları birbirine bağlayan etkileşimli prototipler üreterek gerçek kullanıcı senaryoları üzerinde testler yapıyoruz.",
+          "en": "We connect screens into interactive Figma prototypes to stress-test real interaction patterns and validate usability.",
+          "es": "Enlazamos pantallas en prototipos interactivos en Figma para validar la interacción con usuarios reales."
+        }
+      },
+      {
+        "step": "05",
+        "title": {
+          "tr": "Yazılımcı Devri ve Kalite Kontrol (QA)",
+          "en": "Developer Handoff & Quality Assurance",
+          "es": "Entrega a Desarrollo y Control de Calidad"
+        },
+        "description": {
+          "tr": "Ölçüleri, durumları ve animasyon kurallarını yazılım ekibine eksiksiz aktarıyor, kodlama aşamasında eşlik ediyoruz.",
+          "en": "We provide explicit specs, responsive tokens and state guides, pairing with engineers to ensure fidelity.",
+          "es": "Entregamos especificaciones técnicas, estados y medidas a los ingenieros, supervisando la fidelidad visual."
+        }
+      }
+    ]
+  },
+  "deliverables": {
+    "title": {
+      "tr": "Neler Teslim Ediyoruz?",
+      "en": "What Deliverables Do You Receive?",
+      "es": "¿Qué Entregables Recibirá su Empresa?"
+    },
+    "description": {
+      "tr": "Tasarım sürecinin sonunda yazılıma doğrudan aktarılabilir eksiksiz bir varlık seti sunuyoruz.",
+      "en": "At the conclusion of our design cycle, you receive a production-ready design asset library.",
+      "es": "Al finalizar la fase de diseño, entregamos un paquete integral de recursos listos para programación."
+    },
+    "items": [
+      {
+        "title": {
+          "tr": "Figma Tasarım Sistemi ve UI Kiti",
+          "en": "Figma Design System & UI Kit",
+          "es": "Sistema de Diseño Figma y Kit UI"
+        },
+        "description": {
+          "tr": "Butonlar, formlar, modaller ve tipografi hiyerarşisini içeren modüler, otomatik yerleşimli Figma kütüphanesi.",
+          "en": "Modular auto-layout component kit featuring buttons, forms, modals and typography tokens for agile development.",
+          "es": "Librería modular en Figma con auto-layout que reúne botones, formularios, modales y estilos tipográficos."
+        }
+      },
+      {
+        "title": {
+          "tr": "Tıklanabilir ve Test Edilebilir Prototip",
+          "en": "Clickable Interactive Prototype",
+          "es": "Prototipo Interactivo Navegable"
+        },
+        "description": {
+          "tr": "Kod yazılmadan önce ürünün canlı simülasyonunu sunan, kullanıcı testlerine ve sunumlara hazır Figma prototipi.",
+          "en": "Fully clickable screen simulation ideal for usability tests, investor demonstrations and executive alignment.",
+          "es": "Simulación interactiva completa lista para pruebas de usuarios, presentaciones a inversores y directivos."
+        }
+      },
+      {
+        "title": {
+          "tr": "Kullanıcı Akış Haritaları ve Bilgi Mimarisi",
+          "en": "User Journey Maps & Architecture",
+          "es": "Mapas de Flujo y Arquitectura"
+        },
+        "description": {
+          "tr": "Kullanıcıların hedeflerine en az adımla ulaşmasını sağlayan mantıksal şemalar ve kenar durum senaryoları.",
+          "en": "Logical journey maps, screen trees and edge-case handling specs engineered to minimize user drop-off.",
+          "es": "Esquemas de interacción, árboles de navegación y gestión de casos atípicos para eliminar fricción."
+        }
+      },
+      {
+        "title": {
+          "tr": "Geliştirici Teslim Paketi ve Varlık Kütüphanesi",
+          "en": "Developer Handoff Package",
+          "es": "Paquete de Entrega para Desarrolladores"
+        },
+        "description": {
+          "tr": "SVG ikon setleri, optimize görseller, CSS ve Flutter renk değişkenleri ile teknik uygulama kılavuzu.",
+          "en": "Exported SVG icons, optimized graphics, token definitions and responsive layout specs for clean frontend build.",
+          "es": "Iconos SVG, imágenes optimizadas, variables de diseño y guías técnicas para una programación ágil en frontend."
+        }
+      }
+    ]
+  },
+  "technologies": {
+    "title": {
+      "tr": "Kullandığımız Teknolojiler",
+      "en": "Technologies We Use",
+      "es": "Tecnologías que Utilizamos"
+    },
+    "description": {
+      "tr": "Arayüz ve kullanıcı deneyimi tasarımında modern standartları ve sektörün öncü araçlarını kullanıyoruz.",
+      "en": "We employ industry-leading design standards and modern collaborative tooling for interface design.",
+      "es": "Utilizamos estándares líderes en la industria y herramientas colaborativas modernas para el diseño UI/UX."
+    },
+    "items": [
+      "Figma",
+      "TypeScript",
+      "Flutter",
+      "Node.js",
+      "Docker",
+      "AWS",
+      "C#",
+      "PHP"
+    ]
+  },
+  "relatedProjects": [
+    "candemfit",
+    "seyyah",
+    "orpigo",
+    "kisisel-qr"
+  ],
+  "relatedProducts": [
+    "candemfit",
+    "seyyah",
+    "orpigo",
+    "kisisel-qr"
+  ],
+  "faq": [
+    {
+      "question": {
+        "tr": "Tasarım aşamasında teknik uygulanabilirlik nasıl gözetilir?",
+        "en": "How is technical feasibility ensured during UI/UX design?",
+        "es": "¿Cómo se garantiza la viabilidad técnica durante el diseño?"
+      },
+      "answer": {
+        "tr": "Hem kod yazan hem de tasarım yapan bir ekibiz. Tasarladığımız her ekranın Flutter, React veya yerel mobilde nasıl uygulanacağını bilerek çizeriz; hayata geçirilemeyecek fantezi tasarımlar yerine hızlı çalışan gerçekçi arayüzler üretiriz.",
+        "en": "We operate as both an engineering team and a design studio. We evaluate every interface against frameworks like Flutter and React, producing buildable, high-performance interfaces rather than unfeasible visual concepts.",
+        "es": "Al ser un equipo de ingeniería y diseño a la vez, concebimos cada pantalla conociendo su implementación en Flutter o React, entregando interfaces viables y de alto rendimiento en lugar de conceptos irrealizables."
+      }
+    },
+    {
+      "question": {
+        "tr": "Bir UI/UX tasarım süreci ortalama ne kadar sürer?",
+        "en": "How long does a typical UI/UX design engagement take?",
+        "es": "¿Cuánto tiempo dura un proyecto típico de diseño UI/UX?"
+      },
+      "answer": {
+        "tr": "Odaklı bir mobil uygulama veya web platformu arayüz tasarımı genellikle 3 ila 6 hafta arasında tamamlanır. İlk haftalarda araştırma ve tel çerçeveler netleşir, ardından görsel tasarım ve tıklanabilir prototip aşamasına geçilir.",
+        "en": "A focused mobile application or web dashboard design project usually spans 3 to 6 weeks. The initial weeks define user flows and wireframes, followed by high-fidelity styling and interactive prototype validation.",
+        "es": "Un proyecto enfocado de diseño web o móvil suele requerir entre 3 y 6 semanas. Las primeras semanas definen flujos y wireframes, seguidas del diseño en alta fidelidad y la validación con prototipos interactivos."
+      }
+    },
+    {
+      "question": {
+        "tr": "Tasarım teslim edildikten sonra yazılımcılara destek veriyor musunuz?",
+        "en": "Do you support engineering teams after design handoff?",
+        "es": "¿Ofrecen soporte técnico tras la entrega del diseño?"
+      },
+      "answer": {
+        "tr": "Evet. Figma Dev Mode üzerinden bileşen incelemelerine rehberlik ediyor, kodlama sırasında ortaya çıkabilecek kenar durumlar için ek ekranlar çiziyor ve yayından önce tasarım doğrulama testi (QA) uyguluyoruz.",
+        "en": "Yes. We guide developers via Figma Dev Mode, craft views for unanticipated edge scenarios and conduct pre-launch UI audits to ensure production code matches approved design specifications.",
+        "es": "Sí. Asesoramos a los desarrolladores mediante Figma Dev Mode, resolvemos casos límite no previstos y realizamos auditorías visuales antes del lanzamiento para asegurar la fidelidad del producto final."
+      }
+    },
+    {
+      "question": {
+        "tr": "Mevcut çalışan bir sistemin sadece arayüzünü yenileyebilir misiniz?",
+        "en": "Can you redesign only the interface of an existing app?",
+        "es": "¿Pueden rediseñar solo la interfaz de una app existente?"
+      },
+      "answer": {
+        "tr": "Kesinlikle. Veritabanı ve arka uç mantığınıza dokunmadan, kullanıcıların takıldığı adımları analiz ederek arayüzü sadeleştirir, modern tasarım trendlerine ve mobil ergonomi standartlarına uygun hale getiririz.",
+        "en": "Absolutely. Without modifying your database or backend logic, we analyze user friction to declutter complex screens and modernize your interface to current usability and accessibility standards.",
+        "es": "Por supuesto. Sin alterar su base de datos ni lógica backend, analizamos puntos de abandono para simplificar pantallas y actualizar su interfaz con estándares modernos de usabilidad y accesibilidad."
+      }
+    },
+    {
+      "question": {
+        "tr": "Tasarım sistemi kurmak şirkete ne kazandırır?",
+        "en": "What value does a design system bring to a company?",
+        "es": "¿Qué ventajas aporta un sistema de diseño a la empresa?"
+      },
+      "answer": {
+        "tr": "Tasarım sistemi, her yeni ekranda tekerleği yeniden icat etmeyi önler. Butonlar ve formlar standartlaştığı için yeni özellikler çok daha hızlı kodlanır ve ürünleriniz arasında kurumsal görsel tutarlılık sağlanır.",
+        "en": "A design system prevents your team from reinventing components on every new screen. Standardized buttons and inputs accelerate future feature delivery while maintaining cohesive brand consistency.",
+        "es": "Un sistema de diseño evita crear componentes desde cero en cada pantalla. Estandarizar botones y formularios acelera el desarrollo de nuevas funciones y garantiza coherencia visual en toda la marca."
+      }
+    }
+  ],
+  "deepDive": {
+    "sections": [
+      {
+        "heading": {
+          "tr": "Kod Yazmadan Önce Sorunları Çözmek: Tasarım Odaklı Mühendislik",
+          "en": "Solving Problems Before Writing Code: Design-Driven Engineering",
+          "es": "Resolver Problemas Antes de Programar: Ingeniería Centrada en Diseño"
+        },
+        "paragraphs": {
+          "tr": [
+            "Yazılım projelerindeki en maliyetli hatalar, kod yazıldıktan sonra fark edilen kullanıcı deneyimi eksiklikleridir. Yanlış tasarlanmış bir ödeme adımı veya karmaşık bir form akışı, veritabanı şemasının yeniden yazılmasına ve haftalar süren gecikmelere yol açabilir. Tasarım odaklı mühendislik yaklaşımımız, iş mantığını ve ekran geçişlerini tel çerçeve aşamasında çözmeyi zorunlu kılar.",
+            "Kendi ürünlerimizden edindiğimiz tecrübe bu vizyonu doğrular. CandemFit uygulamasında koşu esnasında tek elle ekran kullanım ergonomisi veya Seyyah uygulamasında GPS doğrulamalı check-in butonunun anında fark edilmesi prototipleme testleriyle çözülmüştür. Bu titizliği kurumsal projelerinize de yansıtıyoruz."
+          ],
+          "en": [
+            "The most expensive defects in software engineering are user experience failures identified after code has already shipped. A flawed checkout flow or ambiguous form structure can force database refactoring and weeks of project delays. Our design-driven engineering philosophy mandates validating user tasks at the wireframe stage before coding backend logic.",
+            "Our own products prove this methodology. In CandemFit, single-hand thumb navigation during active running sessions required iterative prototyping, just as Seyyah required instant visual clarity for GPS-verified check-ins. We bring this exact user-centered rigor to every client project."
+          ],
+          "es": [
+            "Los errores más costosos en software son fallos de UX detectados tras programar. Formularios confusos obligan a refactorizar bases de datos y retrasan entregas. Validamos flujos en wireframes antes de escribir código backend.",
+            "Nuestros productos avalan este método: CandemFit requirió prototipado para uso con una mano en carrera, y Seyyah para check-ins con GPS. Llevamos este rigor a sus proyectos."
+          ]
+        }
+      },
+      {
+        "heading": {
+          "tr": "Tasarım Sistemleri (Design Systems) ile Hızlı ve Tutarlı Büyüme",
+          "en": "Scaling Velocity and Brand Consistency Through Design Systems",
+          "es": "Escalabilidad y Coherencia Mediante Sistemas de Diseño"
+        },
+        "paragraphs": {
+          "tr": [
+            "Dijital ürünler büyüdükçe farklı yazılımcı ve tasarımcıların elinden çıkan ekranlar arasında tutarsızlıklar başlar. Renk tonlarındaki uyuşmazlıklar ve dengesiz boşluklar kullanıcı gözünde kurumsal güveni sarsar. Candemsoft, projelerini Figma üzerinde değişkenlere (design tokens) bağlı bir tasarım sistemi kütüphanesi olarak kurgular.",
+            "Bu kütüphane yazılımcıların hızını ikiye katlar. Renkler, boşluk kuralları ve tipografi doğrudan CSS değişkenleri veya Flutter tema dosyalarıyla eşleştirilir. Yeni bir özellik gerektiğinde modüler bileşenler lego gibi bir araya getirilerek günler süren süreçler saatlere indirilir."
+          ],
+          "en": [
+            "As digital platforms grow, visual fragmentation emerges across screens built by different engineers. Inconsistent colors and irregular spacing erode user trust and convey amateur execution. We construct design deliverables around comprehensive tokenized design systems built in Figma.",
+            "This systemic library doubles developer speed. Layout spacing rules, colors and typography map directly to CSS variables and Flutter theme classes. When new features are introduced, teams combine modular components like building blocks, turning days of work into hours."
+          ],
+          "es": [
+            "A medida que una plataforma crece, surgen incoherencias visuales entre pantallas creadas por distintos programadores. Tonos dispares y márgenes irregulares deterioran la confianza del usuario. En Candemsoft creamos los proyectos sobre sistemas de diseño modulares con tokens en Figma.",
+            "Esta estructura multiplica la velocidad del equipo técnico. Las reglas de espaciado, colores y tipografía se sincronizan con variables CSS o temas de Flutter. Al añadir nuevas funciones, se ensamblan componentes modulares, reduciendo días de trabajo a pocas horas."
+          ]
+        }
+      },
+      {
+        "heading": {
+          "tr": "Mobil Ergonomi, Mikro Etkileşimler ve Kullanıcı Sadakati",
+          "en": "Mobile Ergonomics, Micro-Interactions and User Retention",
+          "es": "Ergonomía Móvil, Microinteracciones y Retención de Usuarios"
+        },
+        "paragraphs": {
+          "tr": [
+            "Mobil kullanıcıların dikkati kısıtlıdır. Bir uygulamanın sevilmesi ekranın başparmak erişim bölgesine ne kadar uygun kurgulandığına ve mikro etkileşimlerin sağladığı geri bildirime bağlıdır. Düğme konumlandırmasından kaydırma animasyonlarına kadar her ayrıntıyı ergonomik standartlara göre optimize ediyoruz.",
+            "Başarılı kullanıcı deneyimi, kullanıcının ne yapacağını düşünmek zorunda kalmadığı akıcı deneyimdir. Form alanlarındaki anlık doğrulamalar ve net görsel geri bildirimler kullanıcının ürüne duyduğu güveni artırır. Kurumsal projelerinizde de bu modern arayüz standartlarını eksiksiz uyguluyoruz."
+          ],
+          "en": [
+            "Mobile user attention is fleeting. Whether an application is kept or uninstalled hinges on natural thumb-zone reachability and intuitive micro-interactions. From primary button placement to scroll physics, our team tunes every detail against proven ergonomic standards.",
+            "Exceptional user experience feels effortless because users never have to hesitate. Inline form validation, clear feedback states and crisp transitions build trust and sustain user retention. We apply these refined interaction standards across all enterprise solutions."
+          ],
+          "es": [
+            "La atención de los usuarios móviles es exigente. Que una aplicación se use con agrado depende del alcance del pulgar y de las microinteracciones. Desde la posición de los botones hasta las transiciones táctiles, optimizamos cada detalle según estándares ergonómicos.",
+            "Una experiencia de usuario excelente resulta intuitiva porque no exige esfuerzo mental. Validaciones inmediatas en formularios y respuestas visuales nítidas refuerzan la confianza del usuario. Aplicamos estos estándares de interacción en todas sus soluciones empresariales."
+          ]
+        }
+      }
+    ]
+  }
+}

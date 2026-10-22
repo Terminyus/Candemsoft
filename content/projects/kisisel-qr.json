@@ -20,10 +20,15 @@
     "en": "Vehicle safety and digital business card",
     "es": "Seguridad vehicular y tarjeta de visita digital"
   },
+  "metaTitle": {
+    "tr": "Kişisel QR Kodlu Dijital Kartvizit | Candemsoft",
+    "en": "Kişisel QR Digital Business Card | Candemsoft",
+    "es": "Tarjeta Digital Kişisel QR | Candemsoft"
+  },
   "summary": {
-    "tr": "Kendi ürünümüz: araç camına yapışan QR etiket, sahibine numarasını vermeden bildirim ulaştırır; aynı profil dijital kartvizit olarak da çalışır.",
-    "en": "Our own product: a QR sticker on the windscreen lets people alert the owner without seeing their number, and the same profile works as a digital business card.",
-    "es": "Producto propio: una pegatina QR en el parabrisas permite avisar al dueño sin ver su número, y el mismo perfil funciona como tarjeta de visita digital."
+    "tr": "Kişisel QR; araç camı etiketiyle numaranızı gizleyerek bildirim almanızı ve tek karekodla dijital kartvizit paylaşmanızı sağlar. Hemen oluşturun.",
+    "en": "Kişisel QR lets people notify you from a car sticker without sharing your number, and acts as a digital business card. Create your profile now.",
+    "es": "Kişisel QR permite recibir avisos en su coche sin revelar su número y funciona como tarjeta de visita digital en un solo código. Cree su perfil."
   },
   "year": null,
   "services": [

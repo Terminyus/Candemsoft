@@ -20,10 +20,15 @@
     "en": "Travel and discovery",
     "es": "Viajes y descubrimiento"
   },
+  "metaTitle": {
+    "tr": "Seyyah Sosyal Şehir Keşif Uygulaması | Candemsoft",
+    "en": "Seyyah Social Travel Discovery App | Candemsoft",
+    "es": "Seyyah App de Exploración y Viajes | Candemsoft"
+  },
   "summary": {
-    "tr": "Kendi ürünümüz: GPS doğrulamalı check-in'lerle Türkiye'yi keşfetmeyi bir koleksiyona dönüştüren sosyal keşif uygulaması.",
-    "en": "Our own product: a social discovery app that turns exploring Türkiye into a collection, with GPS-verified check-ins.",
-    "es": "Producto propio: una app social de descubrimiento que convierte recorrer Turquía en una colección, con check-ins verificados por GPS."
+    "tr": "Seyyah; GPS doğrulamalı check-in, 81 il etiket koleksiyonu ve serilerle seyahatlerinizi anıya dönüştüren sosyal keşif uygulamasıdır. Hemen keşfedin.",
+    "en": "Seyyah turns exploring Türkiye into a social quest with GPS-verified check-ins, 81-city tags and streaks. Download the app and start exploring now.",
+    "es": "Seyyah convierte sus viajes por Turquía en una colección con check-ins por GPS, insignias de 81 provincias y retos. Descargue la app y explore hoy."
   },
   "year": null,
   "services": [

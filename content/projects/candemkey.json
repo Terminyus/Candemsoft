@@ -20,10 +20,15 @@
     "en": "AI and productivity",
     "es": "IA y productividad"
   },
+  "metaTitle": {
+    "tr": "Candemkey Akıllı Yapay Zekâ Klavyesi | Candemsoft",
+    "en": "Candemkey Smart AI Keyboard | Candemsoft",
+    "es": "Teclado Inteligente con IA Candemkey | Candemsoft"
+  },
   "summary": {
-    "tr": "Kendi ürünümüz: yazdığın her uygulamada metin düzeltme, resmî e-posta hazırlama ve anında çeviri sunan Türkçe yapay zekâ klavyesi.",
-    "en": "Our own product: a Turkish AI keyboard that fixes your text, drafts formal emails and translates instantly in every app you type in.",
-    "es": "Producto propio: un teclado turco con IA que corrige tu texto, redacta correos formales y traduce al instante en cualquier app."
+    "tr": "Candemkey; tüm mobil uygulamalarda anında yazım düzeltme, e-posta hazırlama ve dil çevirisi sağlayan Türkçe yapay zekâ klavyesidir. Hemen deneyin.",
+    "en": "Candemkey is a Turkish smart AI keyboard that fixes grammar, drafts professional emails and translates text across all your apps. Try it today.",
+    "es": "Candemkey es un teclado inteligente con IA que corrige textos, redacta correos formales y traduce en cualquier app móvil. Pruebe la aplicación."
   },
   "year": null,
   "services": [

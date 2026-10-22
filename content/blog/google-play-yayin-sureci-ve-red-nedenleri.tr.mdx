@@ -1,0 +1,81 @@
+export const meta = {
+  title: "Google Play Yayın Süreci ve Sık Karşılaşılan Red Nedenleri",
+  metaTitle: "Google Play Yayın ve Red Nedenleri | Candemsoft",
+  description: "Google Play Store yayın adımları, 14 günlük 20 test kullanıcısı zorunluluğu ve en sık karşılaşılan red nedenlerini aşma yollarını hemen keşfedin.",
+  date: "2026-10-18",
+  author: "Candemsoft",
+  tags: ["android", "google play", "mobil uygulama", "mobil geliştirme"]
+};
+
+**Kısa cevap:** Google Play Store üzerinde bir Android uygulaması yayınlamak; hesap doğrulamasından 14 günlük kapalı test aşamasına, Android App Bundle derlemesinden Veri Güvenliği formuna uzanan titiz bir süreçtir. Red almamak için arka plan servis izinleri, bildirimler, gizlilik sözleşmesi ve minimum işlevsellik kuralları baştan eksiksiz planlanmalıdır.
+
+## Google Play Console hesap kurulumu ve doğrulama
+
+Android ekosisteminde uygulama dağıtmanın ilk adımı Google Play Console üzerinde yetkili bir geliştirici hesabı açmaktır. Google, mağaza güvenliğini artırmak amacıyla kimlik ve işletme doğrulama adımlarını sıkılaştırmıştır. Bireysel geliştiriciler ile kurumsal şirketler için istenen belgeler farklıdır.
+
+Kurumsal hesaplarda şirketin resmi unvanı, D-U-N-S numarası ve kurumsal e-posta adresi doğrulanırken; bireysel hesaplarda kimlik kartı ve resmi adres kanıtı istenir. Doğrulama adımları tamamlanmadan mağazaya uygulama yüklenemez. Hesap açılışında girilen bilgilerin resmi kayıtlarla harfi harfine uyuşması, ileride yaşanabilecek askıya alma risklerinin önüne geçer. Başarılı bir yayın süreci için profesyonel [mobil uygulama](/hizmetler/mobil-uygulama/) adımları bu temel kontrollerle başlar.
+
+## 14 günlük 20 test kullanıcısı kuralı (Closed Testing)
+
+Kasım 2023 sonrasında açılan tüm bireysel geliştirici hesapları için Google Play zorunlu bir kural getirdi: Uygulamanızı genel üretime (Production) açmadan önce kapalı test kanalında en az 20 bağımsız kullanıcıyla 14 gün boyunca kesintisiz test etmek durumundasınız.
+
+Bu kural sisteme 20 e-posta eklemekten ibaret değildir. Test kullanıcılarının Google Play davetini kabul etmesi (opt-in olması), uygulamayı cihazlarına indirmesi ve 14 gün boyunca bu durumda kalması gerekir. Google algoritmaları test sürecinin aktifliğini ölçer. Kullanıcıların test kanalında geri bildirim bırakması, çökmelerin raporlanması ve ara güncellemelerin test edilmesi sürecin kabul edilme şansını belirgin biçimde artırır.
+
+14 günün sonunda Play Console üzerinden üretim erişimi formu doldurulur. Formda uygulamanın amacı, hedef kitlesi ve test aşamasında hangi hataların tespit edilip çözüldüğü ayrıntılı olarak sorulur. Yanıtlar yetersiz bulunursa Google ek test süresi talep eder. Bu nedenle kapalı test sürecini gerçek bir kalite kontrol fırsatı olarak yönetmek gerekir.
+
+## Android App Bundle (.aab) ve Target API Level politikaları
+
+Google Play Store, geleneksel APK formatı yerine Android App Bundle (.aab) formatını zorunlu tutar. AAB formatı, Google Play'in her kullanıcının cihazına özel optimize edilmiş APK paketleri üretmesini sağlayarak indirme boyutlarını düşürür ve kurulum hızını artırır.
+
+Bununla birlikte Google, her yıl Target API Level (Hedef SDK Seviyesi) politikalarını günceller. Yeni sürümlerin Android'in en güncel işletim sistemi standartlarını hedeflemesi beklenir. Güncel API gereksinimlerini karşılamayan uygulamalar yeni kullanıcılara listelenmez ve güncelleme gönderimleri engellenir. Bu standartlar modern bellek yönetimi ve güvenlik kurallarına uyumu zorunlu kılar.
+
+## Veri Güvenliği (Data Safety) ve gizlilik politikası
+
+Google Play inceleme ekibinin en sık baktığı alan Veri Güvenliği (Data Safety) bölümüdür. Geliştirici, uygulamanın topladığı veya paylaştığı her veri türünü beyan etmekle yükümlüdür:
+
+1. **Kişisel bilgiler ve konum:** Verilerin hangi amaçla toplandığı ve aktarılırken şifrelenip şifrelenmediği net belirtilmelidir.
+2. **Üçüncü taraf SDK'lar:** Uygulamada Firebase Analytics, Crashlytics veya reklam kütüphaneleri varsa bu araçların topladığı veriler de beyana dahil edilmelidir.
+3. **Hesap silme mekanizması:** Kullanıcı hesabı oluşturan uygulamalarda, uygulama içinden ve harici bir web bağlantısından kolayca erişilebilen şeffaf bir hesap silme seçeneği sunulmalıdır.
+4. **Gizlilik politikası URL'si:** Gizlilik sözleşmesi doğrudan erişilebilir, çalışan bir web sayfasında barındırılmalı ve toplanan verilerle tam uyumlu olmalıdır.
+
+## En sık karşılaşılan red nedenleri ve çözümleri
+
+Mağaza inceleme süreçlerinde en sık karşılaşılan politika ihlalleri şunlardır:
+
+### 1. FOREGROUND_SERVICE izinlerinin hatalı kullanımı
+Android 14 ile birlikte ön plan servisleri (Foreground Services) belirli türlere ayrıldı (`location`, `mediaPlayback`, `dataSync` gibi). Gerekçelendirilemeyen veya manifest dosyasında türü belirtilmeyen servisler doğrudan red alır. Google, bu servisin neden vazgeçilmez olduğunu kanıtlayan bir video kaydı talep edebilir.
+
+### 2. Zamansız bildirim izinleri
+Android 13 ve sonrasında gelen `POST_NOTIFICATIONS` izni, uygulama açılır açılmaz ekrana getirilmemelidir. Önce kullanıcıya bildirimlerin sağlayacağı fayda açıklanmalı, bağlam oluştuktan sonra izin istenmelidir.
+
+### 3. Minimum işlevsellik (Minimum Functionality)
+Uygulamanın yalnızca statik bir web sitesini WebView içinde göstermesi, boş menüler veya çalışmayan butonlar içermesi red sebebidir. Uygulama kendine ait yerel bir işlev sunmalıdır.
+
+### 4. Marka ihlalleri (Impersonation)
+Başka bir tanınmış markanın logosuna, adına veya grafiklerine benzeyen öğeler kullanmak otomatik denetim algoritmalarına takılır. Tüm grafik varlıklar özgün olmalıdır.
+
+## Candemsoft saha deneyimi: Seyyah ve Orpigo örnekleri
+
+[Candemsoft](https://candemsoft.com/) olarak kendi ürünlerimizin Google Play yayın süreçlerini bizzat yönetiyoruz. Bu deneyim, teorik kuralların sahada nasıl işlediğini somutlaştırmaktadır.
+
+Sosyal keşif uygulamamız [Seyyah](/projeler/seyyah/), kullanıcıların Türkiye genelinde tarihi ve kültürel noktalarda GPS ile check-in yapmasını sağlar. İnceleme sürecinde hassas konum erişimini ve rota doğrulamasını Google inceleme ekibine ayrıntılı kullanım senaryolarıyla sunduk. Konum verisinin üçüncü taraflarla paylaşılmadığını Veri Güvenliği formunda şeffaf biçimde belgeleyerek onay aldık.
+
+Hız okuma uygulamamız [Orpigo](/projeler/orpigo/) tarafında ise kullanıcıların cihazlarındaki PDF belgelerini okuyabilmesi gerekiyordu. Android ekosisteminde geniş depolama izni (`MANAGE_EXTERNAL_STORAGE`) istemek yerine Android Storage Access Framework (SAF) sistem seçicisini kullandık. Böylece gereksiz depolama izni istemeden dosya okuma sürecini çözdük ve onay aldık. Web platformumuz [orpigo.com](https://orpigo.com/) ile mobil sürümlerimiz arasındaki veri tutarlılığı da mağaza politikalarına uyumu pekiştirdi.
+
+## Red durumunda itiraz ve düzeltme stratejisi
+
+Google Play'den ret aldığınızda Play Console panelindeki Politika Durumu (Policy Status) sekmesinde ihlal edilen kural açıkça gösterilir. Sorun kodlama veya izin fazlalığından kaynaklanıyorsa gerekli düzeltmeler yapılarak yeni bir AAB paketi yüklenir. İnceleme ekibinin uygulamanın amacını yanlış değerlendirdiği durumlarda ise kanıt ve video kayıtlarıyla resmi itiraz formu doldurulmalıdır. Politika süreçlerinde gecikme yaşamamak adına uzman bir ekipten [yazılım danışmanlığı](/hizmetler/danismanlik/) almak süreci hızlandırır.
+
+## Sık sorulan sorular
+
+**20 test kullanıcısının her gün uygulamayı açması gerekir mi?**  
+Katı bir günlük açılış kotası belirtilmemiş olsa da kullanıcıların tamamen pasif kalması üretim onayını riske atar. Test kullanıcılarının uygulamayı periyodik olarak açıp geri bildirim göndermesi kabul sürecini olumlu etkiler.
+
+**Google Play inceleme süresi ne kadar sürer?**  
+İlk yayınlar ve kapalı test değerlendirmeleri genellikle 3 ila 7 iş günü arasında sürerken, rutin mağaza güncellemeleri birkaç saat ile 48 saat içinde onaylanır.
+
+**Kurumsal hesaplar 20 test kullanıcısı kuralından muaf mıdır?**  
+Evet. D-U-N-S numarasıyla doğrulanmış kurumsal şirket hesapları 14 günlük 20 test kullanıcısı kuralına tabi değildir; doğrudan üretim kanalına sürüm gönderebilir.
+
+**Bir uygulamanın reddedilmesi geliştirici hesabını kapatır mı?**  
+Tekil bir güncelleme reddi hesabı kapatmaz. Ancak tekrarlanan ciddi politika ihlalleri veya kötü niyetli yazılım tespitleri hesap askıya alma yaptırımlarına yol açabilir.

@@ -19,10 +19,15 @@
     "en": "Food & beverage · Germany",
     "es": "Restauración · Alemania"
   },
+  "metaTitle": {
+    "tr": "Maria's Restaurant Web Sitesi Tasarımı | Candemsoft",
+    "en": "Maria's Restaurant Website Design | Candemsoft",
+    "es": "Diseño Web de Maria's Restaurant | Candemsoft"
+  },
   "summary": {
-    "tr": "Almanya'daki Maria's Restaurant için restoran sitesi.",
-    "en": "Restaurant website for Maria's Restaurant in Germany.",
-    "es": "Sitio web del restaurante Maria's Restaurant en Alemania."
+    "tr": "Almanya'daki Maria's Restaurant için hazırladığımız çok dilli restoran web sitesi; lezzetli menü sunumu ve rezervasyon kolaylığı sunar. Bizi inceleyin.",
+    "en": "The multilingual restaurant website designed for Maria's Restaurant in Germany showcases dining menus and effortless contact for bookings. Learn more.",
+    "es": "El sitio web desarrollado para Maria's Restaurant en Alemania ofrece presentación de menús y reservas sencillas. Conozca este proyecto gastronómico."
   },
   "year": null,
   "services": [

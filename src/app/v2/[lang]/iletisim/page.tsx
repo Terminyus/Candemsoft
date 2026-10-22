@@ -5,12 +5,12 @@ import { resolveLang } from "@/lib/params";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { V2PageHead } from "@/components/v2/V2PageHead";
 import { v2Href } from "@/components/v2/nav";
-import { pageMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, jsonLd, pageBreadcrumbs, pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({ params }: PageProps<"/v2/[lang]/iletisim">): Promise<Metadata> {
   const lang = await resolveLang(params);
   const dict = await getDictionary(lang);
-  return pageMetadata({ lang, route: "contact", title: dict.nav.contact, description: dict.meta.siteDescription });
+  return pageMetadata({ lang, route: "contact", title: dict.meta.contactTitle, description: dict.meta.contactDescription });
 }
 
 export default async function Page({ params }: PageProps<"/v2/[lang]/iletisim">) {
@@ -26,6 +26,10 @@ export default async function Page({ params }: PageProps<"/v2/[lang]/iletisim">)
   ];
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLd(breadcrumbJsonLd(pageBreadcrumbs(lang, "contact")))}
+      />
       <V2PageHead kicker={t.label} title={t.title} lead={t.lead} />
       <section className="container-site grid gap-14 py-(--section-sm) lg:grid-cols-[1fr_1.4fr]">
         <dl className="self-start rounded-3xl bg-signal p-6 sm:p-8">

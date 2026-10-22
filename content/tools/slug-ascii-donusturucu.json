@@ -1,0 +1,181 @@
+{
+  "key": "slug-ascii-donusturucu",
+  "slug": {
+    "tr": "slug-ascii-donusturucu",
+    "en": "slug-generator",
+    "es": "generador-slug"
+  },
+  "title": {
+    "tr": "Slug ve ASCII Dönüştürücü",
+    "en": "Slug Generator & ASCII URL Cleaner",
+    "es": "Generador de Slug y Limpiador ASCII"
+  },
+  "metaTitle": {
+    "tr": "Slug ve ASCII URL Dönüştürücü | Candemsoft",
+    "en": "Online Slug Generator & URL Cleaner | Candemsoft",
+    "es": "Generador de Slug y Limpiador URL | Candemsoft"
+  },
+  "metaDescription": {
+    "tr": "Türkçe ve özel karakterleri SEO uyumlu, temiz ve güvenli URL slug formatına dönüştürün. Percent-encoding hatalarını önleyen ücretsiz çevrim içi araç.",
+    "en": "Transform Turkish and special characters into clean, SEO-friendly URL slugs. Prevent percent-encoding issues and broken routes with this online tool.",
+    "es": "Convierte caracteres especiales y acentos en slugs limpios y aptos para SEO. Evita fallos de codificación porcentual con esta herramienta online gratuita."
+  },
+  "kicker": {
+    "tr": "URL Yapılandırması ve Transliterasyon",
+    "en": "URL Optimization & Transliteration",
+    "es": "Optimización de URLs y Transliteración"
+  },
+  "lead": {
+    "tr": "Başlık ve metinlerinizi arama motoru dostu, temiz ve güvenli URL bağlantılarına (slug) dönüştürün. Türkçe ve özel karakterleri ASCII standartlarına hatasız uyarlayın.",
+    "en": "Turn titles and phrases into clean, SEO-optimized URL slugs. Effortlessly transliterate Turkish and regional accented characters into web-safe ASCII format.",
+    "es": "Convierte títulos y frases en slugs de URL limpios y optimizados para SEO. Translitera sin errores caracteres especiales a formato ASCII seguro para la web."
+  },
+  "article": {
+    "title": {
+      "tr": "Web Standartlarında URL Mimarisi, Transliterasyon ve Percent-Encoding",
+      "en": "URL Architecture, Transliteration, and the Pitfalls of Percent-Encoding",
+      "es": "Arquitectura de URLs, Transliteración y los Peligros del Percent-Encoding"
+    },
+    "sections": [
+      {
+        "heading": {
+          "tr": "Neden URL'lerde Türkçe ve Özel Karakterler Doğrudan Kullanılamaz?",
+          "en": "Why Special and Accented Characters Break Raw URL Structures",
+          "es": "Por Qué los Caracteres Especiales no Deben Usarse Directamente en URLs"
+        },
+        "paragraphs": {
+          "tr": [
+            "İnternetin temel taşı olan RFC 3986 (Uniform Resource Identifier) şartnamesi, bir web adresinde yalnızca sınırlı bir ASCII karakter kümesine doğrudan izin verir. Bu küme; temel Latin alfabesi (A-Z, a-z), rakamlar (0-9) ve unreserved olarak adlandırılan kısa çizgi (-), alt çizgi (_), nokta (.) ve tilde (~) işaretlerinden oluşur. Türkçedeki ç, ğ, ı, ö, ş, ü harfleri ve büyük İ karakteri bu korumalı listenin dışındadır.",
+            "Tarayıcılar veya web istemcileri bu harfleri bir URL içinde doğrudan göndermeye çalıştığında, HTTP protokolü gereği bu karakterleri 'percent-encoding' işlemine tabi tutar. Örneğin 'sağlık' kelimesi adres satırında 'sa%C4%9Fl%C4%B1k' formuna bürünür. 6 karakterlik kısa ve anlaşılır bir ifade, bir anda 18 karakterlik karmaşık bir dizeye dönüşür. Bu durum metin mesajlarında, e-postalarda veya sosyal medya paylaşımlarında linklerin kırılmasına ve kullanıcı güveninin zedelenmesine yol açar."
+          ],
+          "en": [
+            "The foundational internet specification RFC 3986 (Uniform Resource Identifier) dictates that web addresses may only host a strictly defined subset of ASCII characters without encoding. This safe harbor encompasses alphanumeric characters (A-Z, a-z, 0-9) and four unreserved punctuation marks: hyphens (-), underscores (_), periods (.), and tildes (~). Regional letters such as Turkish ç, ğ, ı, ö, ş, ü, and capitalized İ fall entirely outside this specification.",
+            "When a web browser, mobile client, or automated bot transmits a URL containing these unreserved characters, HTTP network conventions mandate instant percent-encoding. For example, the Turkish word 'sağlık' (health) is serialized into 'sa%C4%9Fl%C4%B1k'. A concise 6-character path suddenly expands into an unwieldy 18-character byte sequence. When copied into emails, SMS messages, or social apps, these elongated addresses look spammy, trigger line breaks, and often fail to resolve properly."
+          ],
+          "es": [
+            "La especificación fundamental de internet RFC 3986 (Identificador Uniforme de Recursos) establece que las direcciones web solo pueden utilizar un subconjunto restringido de caracteres ASCII sin codificar. Este conjunto seguro incluye letras latinas (A-Z, a-z), dígitos (0-9) y cuatro símbolos no reservados: guion (-), guion bajo (_), punto (.) y virgulilla (~). Letras especiales como la ç, la ñ o los caracteres turcos ç, ğ, ı, ö, ş, ü e İ quedan fuera de esta lista.",
+            "Cuando un navegador web o una aplicación móvil envía una dirección con estos caracteres, el protocolo HTTP aplica de inmediato la codificación porcentual (percent-encoding). Por ejemplo, el vocablo 'sağlık' se transforma en 'sa%C4%9Fl%C4%B1k'. Una palabra de 6 letras pasa a ocupar 18 caracteres crípticos. Al compartirse en mensajes de texto o redes sociales, estas cadenas parecen enlaces sospechosos, se cortan y sufren fallos de redirección."
+          ]
+        }
+      },
+      {
+        "heading": {
+          "tr": "Sunucu Yönlendirme (Routing) ve Reverse Proxy Hataları",
+          "en": "Server Routing Discrepancies and Reverse Proxy Failures",
+          "es": "Fallos de Enrutamiento en Servidores y Problemas con Proxies Inversos"
+        },
+        "paragraphs": {
+          "tr": [
+            "Percent-encoding uygulanan URL'ler yalnızca görsel bir kirlilik yaratmakla kalmaz; modern bulut altyapılarında ciddi yönlendirme (routing) hatalarına neden olur. Nginx, Apache, Caddy gibi web sunucuları veya Cloudflare ve AWS CloudFront gibi reverse proxy katmanları, gelen istekleri alt sunuculara iletirken URL deşifreleme (decoding) aşamalarında farklı mantıklar yürütebilir.",
+            "En tehlikeli senaryo ise 'Double Encoding' (çift kodlama) hatasıdır. Zaten encode edilmiş olan bir '%C4%9F' baytı, bir ara katman veya API gateway tarafından yanlışlıkla bir kez daha kodlandığında '%25C4%259F' dizesine evrilir. Sonuç olarak sunucu rotayı tanıyamaz ve kullanıcıya 404 Sayfa Bulunamadı hatası döner. Türkçe karakterleri doğrudan evrensel ASCII karşılıklarına (ç->c, ğ->g, ı->i, ö->o, ş->s, ü->u) dönüştüren temiz bir slug yapısı, bu teknik felaketlerin tamamını kaynağında engeller."
+          ],
+          "en": [
+            "Percent-encoded URLs do not merely degrade aesthetic readability; they create catastrophic routing and proxy bottlenecks in modern cloud architectures. Infrastructure gateways such as Nginx, Apache, Caddy, Cloudflare, and AWS CloudFront frequently interpret and decode percent-encoded URI paths according to varying internal specifications before proxying requests downstream.",
+            "The most destructive outcome is the infamous 'Double Encoding' bug. In this scenario, an already encoded byte sequence like '%C4%9F' is erroneously re-encoded by an intermediate load balancer into '%25C4%259F'. The backend framework subsequently fails to reconcile the route parameters and serves an unexpected 404 Not Found error. Transliterating regional characters directly into universal ASCII equivalents (ç->c, ğ->g, ı->i, ö->o, ş->s, ü->u) completely insulates your web infrastructure against these routing breakdowns."
+          ],
+          "es": [
+            "Las URLs codificadas no solo deterioran la legibilidad; generan fallos críticos de enrutamiento en infraestructuras en la nube. Servidores como Nginx, Apache o Caddy, y redes de distribución como Cloudflare o AWS CloudFront, decodifican y procesan las rutas con reglas distintas antes de entregarlas a la aplicación de destino.",
+            "La incidencia más destructiva es el error de 'Doble Codificación' (Double Encoding). En este caso, una secuencia ya codificada como '%C4%9F' es recodificada por una capa intermedia convirtiéndose en '%25C4%259F'. En consecuencia, el servidor no reconoce la ruta y devuelve un error 404 de página no encontrada. Convertir los caracteres a equivalentes ASCII universales (ç->c, ğ->g, ı->i, ö->o, ş->s, ü->u) elimina de raíz estos fallos de arquitectura."
+          ]
+        }
+      },
+      {
+        "heading": {
+          "tr": "İ ve I Harflerinin Doğru Transliterasyonu ve Slug Algoritması",
+          "en": "Accurate Turkish I Transliteration and Slug Generation Algorithms",
+          "es": "Transliteración Precisa de la I Turca y Algoritmos de Slug"
+        },
+        "paragraphs": {
+          "tr": [
+            "Bir metni güvenli bir slug dizesine dönüştürürken en çok yapılan hata, doğrudan genel bir toLowerCase() fonksiyonu çalıştırıp ardından boşlukları tireye çevirmektir. Türkçedeki büyük noktalı 'İ' harfi standart İngilizce kütüphanelerle küçültüldüğünde çoğunlukla 'i\\u0307' (Unicode birleştirici nokta) karakterine ayrışır. Ardından gelen alfa-sayısal temizleme filtreleri bu noktayı algılayamayarak ya gereksiz çift tireler üretir ya da geçersiz karakter artıkları bırakır.",
+            "Kusursuz bir slug algoritması önce Türkçeye özgü transliterasyon haritasını çalıştırmalıdır. Büyük 'İ', noktasız büyük 'I' ve küçük 'ı' harflerinin tümü web adresinde standart 'i' karakterine indirgenmelidir. Benzer şekilde 'ş' harfi 's'ye, 'ç' harfi 'c'ye, 'ğ' harfi 'g'ye, 'ü' harfi 'u'ya ve 'ö' harfi 'o'ya dönüştürülmelidir. Ardından tüm noktalama işaretleri ayıklanmalı, kelimeler arasındaki boşluklar tekil tire ('-') ile bağlanmalı ve baştaki/sondaki gereksiz çizgiler temizlenmelidir."
+          ],
+          "en": [
+            "The most common flaw in DIY slug generators is naively invoking a standard toLowerCase() function before replacing spaces with dashes. When a Turkish capital dotted 'İ' passes through an English-biased lowercasing process, it often decomposes into 'i\\u0307' (the letter 'i' coupled with a combining dot above). Standard regex sanitation routines choke on this invisible codepoint, generating awkward double hyphens or lingering byte corruption.",
+            "A robust slug generation pipeline must execute an explicit Turkish transliteration map as its first step. Dotted capital 'İ', dotless capital 'I', and small 'ı' must all normalize deterministically to standard ASCII 'i'. Similarly, 'ş' maps to 's', 'ç' to 'c', 'ğ' to 'g', 'ü' to 'u', and 'ö' to 'o'. Only after this linguistic transliteration is complete should punctuation be purged, whitespace collapsed into single hyphens ('-'), and leading or trailing dashes systematically trimmed."
+          ],
+          "es": [
+            "El fallo más repetido en la generación de slugs consiste en aplicar un toLowerCase() genérico antes de sustituir espacios por guiones. Cuando la 'İ' turca mayúscula se procesa con funciones estándar, suele descomponerse en 'i\\u0307' (una 'i' con punto combinatorio invisible). Los filtros de expresiones regulares no reconocen este código y generan dobles guiones antiestéticos o restos de caracteres inválidos.",
+            "Un algoritmo fiable debe ejecutar en primer lugar una tabla de transliteración específica para el turco y caracteres regionales. La 'İ' mayúscula con punto, la 'I' mayúscula y la 'ı' minúscula deben converger limpiamente en la 'i' estándar de ASCII. Asimismo, 'ş' se transforma en 's', 'ç' en 'c', 'ğ' en 'g', 'ü' en 'u' y 'ö' en 'o'. Tras esta conversión, se eliminan signos de puntuación, se sustituyen espacios por guiones simples y se descartan guiones al inicio y final."
+          ]
+        }
+      },
+      {
+        "heading": {
+          "tr": "SEO Dostu Temiz URL Standartları: Tire (-) vs Alt Çizgi (_)",
+          "en": "SEO-Friendly URL Standards: Hyphens (-) vs Underscores (_)",
+          "es": "Estándares de URLs para SEO: Guion (-) frente a Guion Bajo (_)"
+        },
+        "paragraphs": {
+          "tr": [
+            "URL yapılarında kelimeleri ayırmak için hangi karakterin kullanılacağı konusu, arama motoru optimizasyonunun (SEO) en temel ilkelerinden biridir. Google Arama Merkezi rehberleri, kelime ayracı olarak alt çizgi (_) yerine kesin bir dille kısa çizgi / tire (-) kullanılmasını şart koşar. Çünkü Google tarayıcıları tire işaretini kelimeleri birbirinden ayıran doğal bir boşluk (space) gibi yorumlar. Örneğin 'mobil-uygulama' adresi iki ayrı anahtar kelime olarak taranır.",
+            "Buna karşılık alt çizgi kullanıldığında ('mobil_uygulama'), arama motoru botları bu ifadeyi çoğunlukla tek parça birleşik bir kelime ('mobiluygulama') olarak algılar. Bu durum sayfalarınızın hedeflenen arama sorgularıyla eşleşme şansını düşürür. Ayrıca tamamen küçük harflerden oluşan, temiz ve mantıklı hiyerarşiye sahip kısa URL'ler kullanıcıların bağlantıya tıklama güvenini pekiştirir. Candemsoft Slug Dönüştürücü, tüm bu modern SEO kriterlerini tek tıkla otomatik olarak hayata geçirir."
+          ],
+          "en": [
+            "The choice of word separator in URI design is a fundamental pillar of technical search engine optimization (SEO). Official Google Search Central documentation unambiguously recommends using hyphens (-) rather than underscores (_) to separate words in web addresses. Google's search algorithms treat a hyphen as a natural word boundary, equivalent to an editorial space. Consequently, an address like 'mobile-app' is parsed cleanly into two distinct, searchable keywords.",
+            "Conversely, when underscores are employed ('mobile_app'), search crawlers frequently treat the phrase as a single joined compound token ('mobileapp'). This misinterpretation hampers the page's ranking potential for targeted search queries. Furthermore, lowercase, clean, and predictably structured URLs foster human trust and bolster click-through rates across search results. Candemsoft's Slug Generator automates all of these SEO best practices in a single instantaneous step."
+          ],
+          "es": [
+            "La elección del separador de palabras en la estructura de una URI es un pilar esencial del posicionamiento web (SEO). La documentación oficial de Google Search Central recomienda expresamente el uso de guiones simples (-) en lugar de guiones bajos (_). Los algoritmos de búsqueda interpretan el guion como un espacio natural de separación. De este modo, una dirección como 'app-movil' se indexa correctamente como dos palabras clave independientes.",
+            "Por el contrario, el uso de guiones bajos ('app_movil') hace que los rastreadores consideren la expresión como un término continuo ('appmovil'), reduciendo la relevancia para las búsquedas clave. Además, una estructura de URL en minúsculas, limpia y sin parámetros redundantes transmite confianza al usuario y mejora la tasa de clics. El generador de Candemsoft aplica de forma automática todas estas directrices de optimización en un solo clic."
+          ]
+        }
+      }
+    ]
+  },
+  "faq": [
+    {
+      "question": {
+        "tr": "Neden URL'lerde Türkçe karakter yerine ASCII harfleri kullanılmalıdır?",
+        "en": "Why should ASCII characters replace Turkish letters in URLs?",
+        "es": "¿Por qué deben usarse caracteres ASCII en lugar de letras turcas en URLs?"
+      },
+      "answer": {
+        "tr": "URL standartları gereği Türkçe karakterler percent-encoding ile kodlanır ve 'sağlık' kelimesi 'sa%C4%9Fl%C4%B1k' gibi karmaşık bir hale gelir. ASCII dönüşümü linklerin kırılmasını önler, paylaşımı kolaylaştırır ve sunucu yönlendirme hatalarının önüne geçer.",
+        "en": "Web protocols subject non-ASCII characters to percent-encoding, turning 'sağlık' into 'sa%C4%9Fl%C4%B1k'. Transliterating into ASCII prevents broken links, keeps URLs human-readable, and avoids routing failures across reverse proxies.",
+        "es": "Los estándares web codifican los caracteres especiales en percent-encoding, convirtiendo 'sağlık' en 'sa%C4%9Fl%C4%B1k'. El formato ASCII evita enlaces rotos, facilita compartir la URL y previene fallos de enrutamiento en servidores."
+      }
+    },
+    {
+      "question": {
+        "tr": "URL slug yapısında neden alt çizgi (_) yerine tire (-) kullanılır?",
+        "en": "Why are hyphens (-) preferred over underscores (_) in URL slugs?",
+        "es": "¿Por qué se prefieren los guiones (-) frente a los guiones bajos (_) en los slugs?"
+      },
+      "answer": {
+        "tr": "Google ve diğer arama motorları tireyi kelime ayırıcı (boşluk) olarak yorumlar ve anahtar kelimeleri bağımsız algılar. Alt çizgi ise kelimeleri birleşik bir bütün olarak okuyarak arama sıralamasını olumsuz etkileyebilir.",
+        "en": "Google and other search crawlers interpret hyphens as natural word separators, indexing keywords individually. In contrast, underscores join words into a single compound token, weakening keyword discoverability.",
+        "es": "Google y otros buscadores leen el guion como un separador de palabras equivalente a un espacio. Por el contrario, el guion bajo une los términos en un solo vocablo, perjudicando la indexación de las palabras clave."
+      }
+    },
+    {
+      "question": {
+        "tr": "Percent-encoding (yüzde kodlama) ve Double Encoding nedir?",
+        "en": "What are percent-encoding and the dangerous Double Encoding bug?",
+        "es": "¿Qué son el percent-encoding y el fallo de doble codificación?"
+      },
+      "answer": {
+        "tr": "Percent-encoding, standart dışı karakterlerin % baytları ile ifade edilmesidir. Çok katmanlı sunucularda bu kodlanmış metnin (%C4%9F) yanlışlıkla bir kez daha kodlanarak (%25C4%259F) bozulmasına ise Double Encoding denir ve 404 hatasına yol açar.",
+        "en": "Percent-encoding serializes reserved and non-ASCII characters into percent-escaped bytes. Double Encoding occurs when a server or proxy re-encodes '%C4%9F' into '%25C4%259F', rendering the route unreadable and causing 404 errors.",
+        "es": "El percent-encoding representa caracteres especiales mediante bytes con signo %. La doble codificación ocurre cuando un proxy vuelve a codificar '%C4%9F' convirtiéndolo en '%25C4%259F', lo que rompe la ruta y produce un error 404."
+      }
+    },
+    {
+      "question": {
+        "tr": "Büyük 'İ' ve 'I' harfleri slug oluştururken nasıl dönüştürülmelidir?",
+        "en": "How must capital 'İ' and 'I' be mapped during slug generation?",
+        "es": "¿Cómo deben transformarse la 'İ' y la 'I' al generar un slug?"
+      },
+      "answer": {
+        "tr": "Büyük 'İ', noktasız büyük 'I' ve küçük 'ı' harflerinin tamamı doğrudan küçük ASCII 'i' harfine dönüştürülmelidir. Standart toLowerCase kullanılırsa 'i' harfinin üstüne eklenen birleştirici nokta slug yapısını bozar.",
+        "en": "Capital 'İ', dotless capital 'I', and small 'ı' must all map cleanly to standard ASCII 'i'. Naive lowercasing introduces combining dot diacritics (U+0307) that produce corrupted double hyphens in the final URL.",
+        "es": "Tanto la 'İ' mayúscula con punto como la 'I' mayúscula y la 'ı' minúscula deben convertirse a la 'i' estándar de ASCII. Si se usan funciones genéricas, se generan puntos combinatorios que rompen la estructura del enlace."
+      }
+    }
+  ],
+  "relatedProducts": [
+    "candemkey",
+    "orpigo"
+  ],
+  "relatedBlogSlug": "turkce-karakter-klavye-ve-ocr-sorunlari"
+}

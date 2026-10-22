@@ -3,8 +3,10 @@ import { locales, type Locale } from "@/i18n/config";
 import { href, type RouteKey } from "@/i18n/routes";
 import { getPostSlugs, getProjects } from "@/lib/content";
 import { siteUrl } from "@/lib/seo";
+import { serviceKeys } from "@/lib/services";
+import { toolKeys } from "@/lib/tools";
 
-const pages: RouteKey[] = ["home", "about", "services", "projects", "products", "team", "blog", "contact", "privacy"];
+const pages: RouteKey[] = ["home", "about", "services", "projects", "products", "team", "blog", "contact", "privacy", "tools"];
 
 function entry(route: RouteKey, rest: string[] = [], availableIn: readonly Locale[] = locales): MetadataRoute.Sitemap {
   const languages = Object.fromEntries(availableIn.map((l) => [l, `${siteUrl}${href(l, route, ...rest)}`]));
@@ -22,6 +24,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const posts = [...new Set(locales.flatMap((l) => getPostSlugs(l)))];
   return [
     ...pages.flatMap((p) => entry(p)),
+    ...serviceKeys.flatMap((key) => entry("services", [key])),
+    ...toolKeys.flatMap((key) => entry("tools", [key])),
     ...getProjects().flatMap((p) => entry("projects", [p.slug])),
     ...posts.flatMap((slug) => entry("blog", [slug], locales.filter((l) => getPostSlugs(l).includes(slug)))),
   ];

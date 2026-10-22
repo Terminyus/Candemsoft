@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import { getDictionary } from "@/lib/dictionary";
 import { resolveLang } from "@/lib/params";
 import { V2PageHead } from "@/components/v2/V2PageHead";
-import { pageMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, jsonLd, pageBreadcrumbs, pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({ params }: PageProps<"/v2/[lang]/gizlilik">): Promise<Metadata> {
   const lang = await resolveLang(params);
   const dict = await getDictionary(lang);
-  return pageMetadata({ lang, route: "privacy", title: dict.nav.privacy, description: dict.meta.siteDescription });
+  return pageMetadata({ lang, route: "privacy", title: dict.meta.privacyTitle, description: dict.meta.privacyDescription });
 }
 
 export default async function Page({ params }: PageProps<"/v2/[lang]/gizlilik">) {
@@ -16,6 +16,10 @@ export default async function Page({ params }: PageProps<"/v2/[lang]/gizlilik">)
   const { default: Body } = await import(`@content/legal/privacy.${lang}.mdx`);
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLd(breadcrumbJsonLd(pageBreadcrumbs(lang, "privacy")))}
+      />
       <V2PageHead kicker={dict.privacyPage.label} title={dict.privacyPage.title} />
       <div className="container-site py-(--section-sm)">
         <div className="mx-auto max-w-2xl">

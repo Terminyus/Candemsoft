@@ -55,9 +55,9 @@
 
   --font-display: var(--ff-body), system-ui, sans-serif;
   --font-body: var(--ff-body), system-ui, sans-serif;
-  --font-mono: var(--ff-mono), ui-monospace, monospace;
+  --font-mono: var(--ff-mono, ui-monospace, monospace);
   --font-archivo: "Archivo V2 Heading", "Archivo V2 Heading Fallback", system-ui, sans-serif;
-  --font-hand: "Caveat V2", "Comic Sans MS", cursive;
+  --font-hand: "Caveat V2", "Caveat Fallback", cursive;
 
   /* Fluid type: 360px → 1440px */
   --text-display: clamp(3.5rem, 1.67rem + 8.15vw, 10.5rem);
@@ -382,10 +382,31 @@
 }
 
 /* Vitrin: below-the-fold rooms and sections skip rendering until they come near the
-   viewport, so their images and the Seyyah handwriting font load late. */
+   viewport, so their images and the Seyyah handwriting font load late.
+   Tuned contain-intrinsic-size per section prevents scrollbar jumps and CLS. */
 .cv-auto {
   content-visibility: auto;
-  contain-intrinsic-size: auto 1000px;
+  contain-intrinsic-size: auto 750px;
+}
+.cv-auto-room {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 700px;
+}
+.cv-auto-footer {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
+}
+.cv-auto-sm {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 350px;
+}
+
+@font-face {
+  font-family: "Caveat Fallback";
+  src: local("Comic Sans MS"), local("Segoe Print"), cursive;
+  size-adjust: 104%;
+  ascent-override: 95%;
+  descent-override: 25%;
 }
 
 /* ---- Gazete (v3) ---- */

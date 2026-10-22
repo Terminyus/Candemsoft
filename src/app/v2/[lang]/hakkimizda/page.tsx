@@ -4,12 +4,12 @@ import { getDictionary } from "@/lib/dictionary";
 import { resolveLang } from "@/lib/params";
 import { V2PageHead } from "@/components/v2/V2PageHead";
 import { V2TeamGrid } from "@/components/v2/V2TeamGrid";
-import { pageMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, jsonLd, pageBreadcrumbs, pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({ params }: PageProps<"/v2/[lang]/hakkimizda">): Promise<Metadata> {
   const lang = await resolveLang(params);
   const dict = await getDictionary(lang);
-  return pageMetadata({ lang, route: "about", title: dict.nav.about, description: dict.meta.siteDescription });
+  return pageMetadata({ lang, route: "about", title: dict.meta.aboutTitle, description: dict.meta.aboutDescription });
 }
 
 export default async function Page({ params }: PageProps<"/v2/[lang]/hakkimizda">) {
@@ -24,6 +24,10 @@ export default async function Page({ params }: PageProps<"/v2/[lang]/hakkimizda"
   ];
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLd(breadcrumbJsonLd(pageBreadcrumbs(lang, "about")))}
+      />
       <V2PageHead kicker={a.label} title={a.title} lead={a.lead} />
       <section className="container-site grid gap-px bg-ink-950 md:grid-cols-2">
         {[

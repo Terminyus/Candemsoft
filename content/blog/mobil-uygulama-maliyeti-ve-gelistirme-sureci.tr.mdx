@@ -1,0 +1,106 @@
+export const meta = {
+  title: "Mobil Uygulama Geliştirme Süreci ve Maliyeti Neye Bağlı?",
+  metaTitle: "Mobil Uygulama Maliyeti ve Süreci | Candemsoft",
+  description: "Mobil uygulama maliyetini belirleyen etkenler, mimari kararlar ve geliştirme aşamaları hakkında bilmeniz gereken her şeyi kapsamlı rehberimizde öğrenin.",
+  date: "2026-10-21",
+  author: "Candemsoft",
+  tags: ["mobil uygulama", "yazılım maliyeti", "mobil geliştirme", "danışmanlık"]
+};
+
+**Kısa cevap:** Bir mobil uygulamanın maliyeti ve geliştirme takvimi; seçilen platform mimarisinden backend karmaşıklığına, UI/UX tasarımının derinliğinden üçüncü parti entegrasyonlara ve yayın sonrası bakım gereksinimlerine kadar uzanan mühendislik kararlarına bağlıdır. Sabit paket fiyatlar yerine, projenin fonksiyonel kapsamı, hedeflenen performans ve ölçeklenebilirlik vizyonu bütçeyi belirler.
+
+Bir mobil ürün geliştirmek yalnızca ekranları kodlayıp mağazaya yüklemek değildir. Başarılı bir dijital ürün; doğru kurgulanmış bir mimari, güvenli veri akışı, akıcı bir arayüz ve uzun vadeli bir operasyon planı gerektirir. Sektördeki yaygın yanılgı, mobil geliştirmeyi tek seferlik bir masraf olarak görmektir. Oysa yazılım mühendisliğinde maliyet, teknik kararların ve mimari ödünleşimlerin doğrudan sonucudur.
+
+## Platform seçimi: Native ve cross-platform mimari ayrımı
+
+Geliştirme sürecinin başında verilen en kritik karar platform mimarisidir:
+
+1. **Native (Yerel) Geliştirme (Swift / Kotlin):** iOS için Swift, Android için Kotlin dilleriyle iki bağımsız kod tabanı inşa edilir. Donanım kaynaklarına doğrudan erişim ve işletim sistemi güncellemelerini anında destekleme avantajı sunar. Ancak iki ayrı mühendislik ekibi ve iki ayrı kod tabanı yönetimi getirdiğinden maliyet çarpanı en yüksek yaklaşımdır.
+2. **Cross-Platform Geliştirme (Flutter):** Tek bir kod tabanından hem iOS hem Android için yerel performans seviyesine yakın çıktılar üretilir. İş mantığının, arayüz bileşenlerinin ve testlerin merkezi yönetilmesi; geliştirme süresini ve ilk yatırım bütçesini belirgin biçimde optimize eder.
+
+Uygulamanız özel Bluetooth donanım sürücüleri veya karmaşık 3D grafik motorları gerektirmiyorsa, Flutter gibi cross-platform teknolojiler maliyet ve hız dengesini en verimli şekilde kurar.
+
+## Backend mimarisi ve API gereksinimleri
+
+Mobil uygulamanın görünen yüzü buzdağının yalnızca küçük bir kısmıdır. Verilerin nerede saklanacağı ve iş kurallarının nerede doğrulanacağı backend mimarisini şekillendirir:
+
+- **RESTful ve GraphQL API'ler:** Standart veri akışlarında RESTful uç noktalar kullanılırken, ağ trafiğini azaltmak ve dinamik ekran ihtiyaçlarını karşılamak için GraphQL tercih edilebilir.
+- **Gerçek zamanlı iletişim:** Anlık mesajlaşma veya canlı veri akışları için WebSocket altyapılarının kurulması gerekir.
+- **Kimlik doğrulama ve güvenlik:** OAuth 2.0, JWT, Apple ile Giriş Yap (Sign in with Apple) ve biyometrik doğrulama backend güvenliğinin temelidir.
+- **Veri tabanı ve ölçeklenebilirlik:** Kullanıcı sayısı arttığında çökmeyen, iyi indekslenmiş ve Redis önbelleğine sahip bir veri mimarisi başlangıç eforunu artırsa da ilerideki krizleri önler.
+
+Yalnızca yerel hafızayı kullanan basit bir araç ile binlerce eşzamanlı isteği işleyen kurumsal bir sistemin sunucu geliştirme maliyeti doğal olarak farklıdır.
+
+## UI/UX tasarım derinliği ve prototipleme
+
+Kullanıcı deneyimi (UX) ve kullanıcı arayüzü (UI) tasarımı, kodlamadan önceki en belirleyici aşamadır. Tasarım sadece görsel estetik değil, uygulamanın mantıksal omurgasıdır.
+
+Kapsamlı bir tasarım süreci şunları kapsar:
+- **Kullanıcı akışları ve tel kafes (Wireframe):** Ekranların mantıksal hiyerarşisi netleştirilir.
+- **Tasarım sistemi (Design System):** Tipografi, renk paletleri ve bileşen kütüphaneleri standardize edilir.
+- **İnteraktif prototipler:** Kod yazılmadan önce iş akışları test edilerek gereksiz geliştirme eforunun önüne geçilir.
+- **Kullanılabilirlik testleri:** Gerçek kullanıcı davranışları gözlemlenerek karmaşık adımlar sadeleştirilir.
+
+Tasarım sürecine yeterli bütçe ayırmayan projeler, geliştirme sırasında sürekli revizyon yaparak çok daha büyük finansal kayıplara uğrar. Profesyonel [UI/UX tasarım](/hizmetler/ui-ux-tasarim/) yatırımı yazılım bütçesini korur.
+
+## Üçüncü parti entegrasyonlar
+
+Uygulamanın dış servislerle etkileşimi maliyeti doğrudan etkiler:
+
+- **Ödeme altyapıları:** Apple StoreKit, Google Play Billing (IAP) veya Stripe ve iyzico gibi geleneksel ödeme ağ geçitleri.
+- **Bildirim servisleri:** APNs ve Firebase Cloud Messaging (FCM) ile kişiselleştirilmiş bildirim kurguları.
+- **Konum ve harita servisleri:** Apple Maps, Google Maps veya Mapbox entegrasyonları ve arka plan konum optimizasyonları.
+- **Hata izleme araçları:** Sentry ve Crashlytics ile canlı ortam çökmelerinin anlık tespiti.
+
+Her bir SDK, uygulamanın yaşam döngüsüne yeni bir bağımlılık ekler ve düzenli bakım eforu gerektirir.
+
+## Test, kalite güvencesi (QA) ve cihaz parçalanması
+
+Yazılım geliştirme süresinin önemli bir bölümü test süreçlerine ayrılmalıdır. Özellikle Android dünyasındaki yüzlerce farklı ekran boyutu ve üretici arayüzü "cihaz parçalanması" sorununu doğurur.
+
+Kaliteli bir süreçte:
+- İş mantığını doğrulayan birim testleri (Unit Tests),
+- Arayüz bileşenlerini sınayan widget testleri,
+- Akışları baştan sona simüle eden entegrasyon testleri,
+- TestFlight ve Google Play dahili test gruplarıyla saha denemeleri yürütülür.
+
+Test aşamasını atlayan uygulamalar, mağazada düşük puanlarla cezalandırılarak organik büyüme potansiyellerini yitirir.
+
+## Gerçek dünya örnekleri: CandemFit ve Orpigo tecrübesi
+
+Gereksinimlerin bütçeyi nasıl değiştirdiğini anlamak için [Candemsoft](https://candemsoft.com/) bünyesindeki canlı ürünlere bakabiliriz:
+
+- **[CandemFit](/projeler/candemfit/):** Yargılamayan yaklaşımıyla öne çıkan sosyal fitness uygulamamızda, açık hava antrenmanlarının GPS ile kaydedilmesi, pil ömrünü koruyan CoreLocation optimizasyonları, animasyonlu rota haritaları ve haftalık lig hesaplama motoru yoğun bir mühendislik çalışması gerektirdi. Bu seviyedeki gerçek zamanlı veri akışı ve donanım entegrasyonu geliştirme eforunu artırır. Projeyi [candemfit.com](https://candemfit.com/) adresinden inceleyebilirsiniz.
+- **[Orpigo](/projeler/orpigo/):** ORP tekniğiyle hız okuma sağlayan uygulamamızda ise odak noktası cihaz içi yüksek performanslı metin ayrıştırma, EPUB/PDF dosyalarının yerel işlenmesi ve akıcı kelime akışıdır. Burada backend karmaşıklığından ziyade cihaz içi bellek yönetimi ve arayüz tepkiselliği ön plana çıkmıştır.
+
+Görüldüğü üzere her ürünün mimari gereksinimi farklıdır ve bütçe bu önceliklere göre şekillenir.
+
+## Yayın sonrası bakım ve altyapı giderleri
+
+Uygulamanın mağazalarda yer alması sürecin sonu değil, başlangıcıdır. Canlı bir uygulamanın düzenli operasyonel giderleri bulunur:
+
+1. **İşletim sistemi güncellemeleri:** Apple ve Google her yıl yeni işletim sistemi sürümleri (iOS 18, Android 15 vb.) yayınlar. Yeni gizlilik kurallarına ve ekran boyutlarına uyum için düzenli güncelleme şarttır.
+2. **Bulut altyapısı:** Sunucu kiraları, veri tabanı barındırma, trafik maliyetleri ve SSL sertifikaları aylık operasyonel giderlerdir.
+3. **Geliştirici hesap aidatları:** Apple Developer Program için yıllık 99 USD, Google Play Console için bir defalık 25 USD ödenir.
+
+Yıllık bakım bütçesi projenin kapsamına, kullanıcı trafiğine ve entegrasyon sıklığına bağlı olarak değişir; işletim sistemi güncellemeleri ve sunucu bakımını karşılayacak düzenli bir mühendislik payı ayrılmalıdır.
+
+## Projeniz için doğru yol haritasını çizmek
+
+Bütçeyi korumanın en etkili yolu, MVP (Minimum Viable Product) yaklaşımıyla yola çıkmaktır. İlk etapta ana problemi çözen çekirdek özellikler kodlanıp pazar doğrulaması yapılır; bütçe gereksiz fonksiyonlara harcanmaz.
+
+İhtiyaçlarınıza uygun yol haritasını belirlemek ve riskleri azaltmak için erken aşamada uzman bir ekipten [yazılım danışmanlığı](/hizmetler/danismanlik/) almak kritik önem taşır. Candemsoft ekibi olarak, kurumsal ölçekten girişimlere kadar uçtan uca modern [mobil uygulama](/hizmetler/mobil-uygulama/) çözümleri üretiyoruz.
+
+## Sık sorulan sorular
+
+### Bir mobil uygulamanın maliyetinde en sık unutulan gider nedir?
+Yayın sonrası bakım, sunucu altyapı maliyetleri ve üçüncü parti servislerin (harita API'leri, SMS servisleri) kullanım ücretleridir. İşletim sistemi güncellemelerine uyum sağlamak için her yıl sürekli bir mühendislik bütçesi ayrılmalıdır.
+
+### MVP yaklaşımı geliştirme bütçesini nasıl korur?
+Tüm olası özellikleri ilk sürüme doldurmak yerine sadece temel problemi çözen işlevler kodlanır. Gerçek kullanıcı geri bildirimleriyle ilerlenerek bütçe yalnızca talep gören alanlara yatırılır.
+
+### Cross-platform (Flutter) kullanmak maliyeti yarı yarıya düşürür mü?
+Tek kod tabanı yönetmek geliştirme süresinde ve arayüz kodlamasında önemli bir hız kazandırır. Ancak kullanıcı deneyimi testleri, arka uç API entegrasyonları ve iki mağazanın ayrı onay süreçleri devam ettiği için toplam bütçe doğrudan yarı yarıya azalmaz; maliyet tasarrufu projenin mimari kapsamına göre değişir.
+
+### Sabit paket fiyatlı mobil uygulama teklifleri neden risklidir?
+Her uygulamanın veri güvenliği, hedef kitlesi ve entegrasyon yapısı farklıdır. Sabit fiyatlı paketler genellikle hazır şablonlar kullanır ve teknik zorluklarda kapsamı daraltarak kaliteyi düşürür. Gerçekçi maliyetleme şeffaf analizle mümkündür.

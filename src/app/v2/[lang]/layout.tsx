@@ -10,7 +10,6 @@ import { V2Footer } from "@/components/v2/V2Footer";
 import { v2Root } from "@/lib/static";
 import { jsonLd, organizationJsonLd } from "@/lib/seo";
 import { v2Href, v2Nav } from "@/components/v2/nav";
-import { mono } from "../../fonts-lib/mono";
 import { V2Fonts } from "../fonts";
 import "../../globals.css";
 
@@ -27,8 +26,8 @@ export async function generateMetadata({ params }: LayoutProps<"/v2/[lang]">): P
   const dict = await getDictionary(await resolveLang(params));
   return {
     metadataBase: new URL(siteUrl),
-    title: { default: v2Root ? "Candemsoft — Yazılım, mobil uygulama ve yapay zekâ" : dict.v2.metaTitle, template: `%s — ${v2Root ? "Candemsoft" : dict.v2.metaTitle}` },
-    description: dict.meta.siteDescription,
+    title: { default: dict.meta.homeTitle, template: `%s — ${v2Root ? "Candemsoft" : dict.v2.metaTitle}` },
+    description: dict.meta.homeDescription,
     // An alternative design of the same content: keep it out of search results.
     robots: v2Root ? { index: true, follow: true } : { index: false, follow: false },
   };
@@ -38,7 +37,7 @@ export default async function V2Layout({ children, params }: LayoutProps<"/v2/[l
   const lang = await resolveLang(params);
   const dict = await getDictionary(lang);
   return (
-    <html lang={lang} className={mono.variable}>
+    <html lang={lang}>
       <head>
         <V2Fonts />
         <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(organizationJsonLd(lang, dict.meta.siteDescription))} />

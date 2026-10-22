@@ -6,12 +6,12 @@ import { resolveLang } from "@/lib/params";
 import { ProjectVisual } from "@/components/project/ProjectVisual";
 import { V2PageHead } from "@/components/v2/V2PageHead";
 import { v2Href } from "@/components/v2/nav";
-import { pageMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, jsonLd, pageBreadcrumbs, pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({ params }: PageProps<"/v2/[lang]/projeler">): Promise<Metadata> {
   const lang = await resolveLang(params);
   const dict = await getDictionary(lang);
-  return pageMetadata({ lang, route: "projects", title: dict.nav.projects, description: dict.meta.siteDescription });
+  return pageMetadata({ lang, route: "projects", title: dict.meta.projectsTitle, description: dict.meta.projectsDescription });
 }
 
 export default async function Page({ params }: PageProps<"/v2/[lang]/projeler">) {
@@ -22,6 +22,10 @@ export default async function Page({ params }: PageProps<"/v2/[lang]/projeler">)
   const offline = projects.filter((p) => p.status === "offline");
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLd(breadcrumbJsonLd(pageBreadcrumbs(lang, "projects")))}
+      />
       <V2PageHead kicker={dict.projectsPage.label} title={dict.projectsPage.title} lead={dict.projectsPage.lead} />
       <section className="container-site py-(--section-sm)">
         <ul className="grid gap-x-8 gap-y-14 md:grid-cols-2">

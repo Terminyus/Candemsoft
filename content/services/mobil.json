@@ -1,0 +1,400 @@
+{
+  "key": "mobil",
+  "slug": {
+    "tr": "mobil-uygulama",
+    "en": "mobile-apps",
+    "es": "desarrollo-movil"
+  },
+  "title": {
+    "tr": "Mobil Uygulama Geliştirme (iOS & Android)",
+    "en": "Mobile App Development (iOS & Android)",
+    "es": "Desarrollo de Apps Móviles (iOS y Android)"
+  },
+  "metaTitle": {
+    "tr": "Mobil Uygulama Geliştirme iOS Android | Candemsoft",
+    "en": "Mobile App Development iOS & Android | Candemsoft",
+    "es": "Desarrollo Apps Móviles iOS y Android | Candemsoft"
+  },
+  "metaDescription": {
+    "tr": "İstanbul merkezli Candemsoft ile iOS ve Android için performanslı mobil uygulamalar geliştirin. Mağaza yayını ve teknik destek için hemen teklif alın.",
+    "en": "Build high-performance iOS and Android apps with Istanbul-based Candemsoft. Launch smoothly on app stores. Contact our engineering team for a quote.",
+    "es": "Cree aplicaciones móviles para iOS y Android de alto rendimiento con Candemsoft en Estambul. Publique con éxito en tiendas y solicite su presupuesto."
+  },
+  "kicker": {
+    "tr": "Hizmetlerimiz",
+    "en": "Our Services",
+    "es": "Nuestros Servicios"
+  },
+  "lead": {
+    "tr": "Candemsoft olarak iOS ve Android ekosistemleri için modern, akıcı ve yüksek performanslı mobil uygulamalar geliştiriyoruz. İstanbul merkezli mühendislik ekibimiz; Flutter ve yerel teknolojileri kullanarak mimari tasarım, kullanıcı arayüzü, arka yüz entegrasyonu ve mağaza yayın süreçlerini uçtan uca yönetir. Kendi ürünlerimizi App Store ve Google Play'e taşıdığımız titizlikle müşteri projelerinizi hayata geçiriyoruz.",
+    "en": "At Candemsoft, we engineer fluid, high-performance mobile applications for iOS and Android ecosystems. Based in Istanbul, our engineering team utilizes Flutter and native technologies to deliver end-to-end architecture, intuitive UI, backend integration, and store submission. We publish client applications with the same rigor we apply to our own App Store and Google Play products.",
+    "es": "En Candemsoft desarrollamos aplicaciones móviles fluidas y de alto rendimiento para iOS y Android. Con sede en Estambul, nuestro equipo de ingeniería emplea Flutter y tecnologías nativas para cubrir arquitectura, diseño de interfaz, integración backend y publicación en tiendas. Lanzamos apps con el mismo rigor que aplicamos a nuestros productos propios."
+  },
+  "targetAudience": {
+    "title": {
+      "tr": "Kimler İçin Uygun?",
+      "en": "Who Is This For?",
+      "es": "¿Para Quién es Este Servicio?"
+    },
+    "description": {
+      "tr": "Mobil uygulama çözümlerimiz, kullanıcılara doğrudan akıllı telefonlar üzerinden ulaşmak ve kusursuz bir deneyim sunmak isteyen ekipler için uygundur.",
+      "en": "Our mobile development services are designed for businesses aiming to engage users directly through frictionless smartphone experiences.",
+      "es": "Nuestros servicios de desarrollo móvil están diseñados para negocios que buscan conectar directamente con usuarios en sus teléfonos móviles."
+    },
+    "items": [
+      {
+        "title": {
+          "tr": "Mobil Odaklı Girişimler",
+          "en": "Mobile-First Startups",
+          "es": "Startups Móviles"
+        },
+        "description": {
+          "tr": "Pazara hızla çıkmak, App Store ve Google Play'de güçlü bir ilk izlenim bırakmak ve hızla büyümek isteyen yenilikçi girişimler.",
+          "en": "Innovative ventures looking to validate their market rapidly on the App Store and Google Play with an engaging initial release.",
+          "es": "Startups innovadoras que buscan validar su modelo en tiendas de aplicaciones con una versión inicial sólida y atractiva."
+        }
+      },
+      {
+        "title": {
+          "tr": "Müşteri Deneyimini Genişleten Şirketler",
+          "en": "Customer Experience Expansion",
+          "es": "Expansión de Experiencia al Cliente"
+        },
+        "description": {
+          "tr": "Mevcut web platformlarını mobil kanallara taşıyarak müşteri sadakatini ve anlık bildirimlerle etkileşimi artırmak isteyen işletmeler.",
+          "en": "Businesses expanding web services onto mobile channels to boost customer retention and engagement through push notifications.",
+          "es": "Empresas que llevan sus servicios al móvil para mejorar la retención de clientes mediante notificaciones push oportunas."
+        }
+      },
+      {
+        "title": {
+          "tr": "Saha ve Operasyon Ekipleri",
+          "en": "Field & Operational Teams",
+          "es": "Equipos de Campo y Operaciones"
+        },
+        "description": {
+          "tr": "Çevrimdışı çalışma desteği, konum takibi ve donanım entegrasyonu (kamera, Bluetooth, QR) gerektiren kurumsal operasyon uygulamaları.",
+          "en": "Enterprise teams requiring offline capabilities, GPS tracking, and hardware integration (camera, Bluetooth, QR scanners).",
+          "es": "Equipos que necesitan funcionamiento sin conexión, geolocalización por GPS e integración con hardware del dispositivo."
+        }
+      },
+      {
+        "title": {
+          "tr": "Abonelik ve İçerik Servisleri",
+          "en": "Subscription & Content Services",
+          "es": "Servicios de Contenido y Suscripción"
+        },
+        "description": {
+          "tr": "Uygulama içi satın alma (IAP), abonelik yönetimi ve medya akışı gerektiren dijital yayıncılar ve eğitim platformları.",
+          "en": "Publishers and educational platforms requiring in-app purchases (IAP), recurring subscriptions, and streaming audio or video.",
+          "es": "Plataformas educativas y editoriales que requieren compras integradas (IAP), suscripciones periódicas y reproducción multimedia."
+        }
+      }
+    ]
+  },
+  "process": {
+    "title": {
+      "tr": "Mobil Geliştirme Sürecimiz",
+      "en": "Our Mobile Development Process",
+      "es": "Nuestro Proceso de Desarrollo Móvil"
+    },
+    "description": {
+      "tr": "Fikirden mağaza onayına kadar tüm aşamaları şeffaf ve kanıtlanmış bir mühendislik disipliniyle yürütüyoruz.",
+      "en": "From initial concept to store approval, we manage every phase with proven engineering rigor and complete transparency.",
+      "es": "Desde la idea inicial hasta la aprobación en tiendas, gestionamos cada fase con disciplina técnica y transparencia."
+    },
+    "steps": [
+      {
+        "step": "01",
+        "title": {
+          "tr": "Keşif & Kapsam Analizi",
+          "en": "Discovery & Scope Definition",
+          "es": "Descubrimiento y Alcance"
+        },
+        "description": {
+          "tr": "Kullanıcı yolculuklarını, platform gereksinimlerini (iOS / Android) ve teknik mimariyi belirleyerek kapsamı netleştiririz.",
+          "en": "We clarify user journeys, platform requirements (iOS / Android), and technical architecture to establish clear project boundaries.",
+          "es": "Definimos los recorridos de usuario, los requisitos de plataforma (iOS / Android) y la arquitectura técnica inicial."
+        }
+      },
+      {
+        "step": "02",
+        "title": {
+          "tr": "Mimari Tasarım & Prototipleme",
+          "en": "Architecture & Interactive Prototypes",
+          "es": "Arquitectura y Prototipado"
+        },
+        "description": {
+          "tr": "Durum yönetimi (State Management), API sözleşmeleri ve ekran tasarımlarını cihaz testlerine hazır prototiplere dönüştürürüz.",
+          "en": "We select state management patterns, define API contracts, and transform designs into clickable prototypes for testing.",
+          "es": "Estructuramos la gestión de estado, definimos contratos de API y convertimos diseños en prototipos interactivos."
+        }
+      },
+      {
+        "step": "03",
+        "title": {
+          "tr": "Çevik Geliştirme (Sprintler)",
+          "en": "Agile Mobile Sprints",
+          "es": "Desarrollo Ágil por Sprints"
+        },
+        "description": {
+          "tr": "İki haftalık sprintlerle temiz kod üretir; TestFlight ve Google Play Dahili Test üzerinden çalışan derlemeler sunarız.",
+          "en": "Working in two-week sprints, we deliver testable builds via TestFlight and Google Play Internal Testing at every review.",
+          "es": "Mediante sprints de dos semanas creamos código limpio y facilitamos compilaciones funcionales en TestFlight y Google Play."
+        }
+      },
+      {
+        "step": "04",
+        "title": {
+          "tr": "Test & Kalite Güvencesi",
+          "en": "Testing & Quality Assurance",
+          "es": "Pruebas y Control de Calidad"
+        },
+        "description": {
+          "tr": "Farklı ekran boyutlarında, işletim sistemi sürümlerinde ve zayıf ağ koşullarında cihaz üzeri testler gerçekleştiririz.",
+          "en": "We conduct on-device testing across varied screen sizes, OS versions, edge network conditions, and battery constraints.",
+          "es": "Efectuamos pruebas en dispositivos reales con distintas resoluciones, versiones de sistema y conexiones inestables."
+        }
+      },
+      {
+        "step": "05",
+        "title": {
+          "tr": "Mağaza Yayını & Sürekli Destek",
+          "en": "Store Launch & Ongoing Support",
+          "es": "Lanzamiento en Tiendas y Soporte"
+        },
+        "description": {
+          "tr": "Apple App Store ve Google Play kılavuzlarına tam uyumlu yayın yapar; sürüm güncellemeleri ve izleme araçlarıyla destek veririz.",
+          "en": "We manage store submissions compliant with Apple and Google guidelines, followed by ongoing updates and crash monitoring.",
+          "es": "Gestionamos la publicación cumpliendo directrices de Apple y Google, garantizando soporte técnico y monitorización continua."
+        }
+      }
+    ]
+  },
+  "deliverables": {
+    "title": {
+      "tr": "Teslim Edilenler",
+      "en": "What We Deliver",
+      "es": "¿Qué Entregamos?"
+    },
+    "description": {
+      "tr": "Müşterilerimize yalnızca mağaza bağlantısı değil, uzun yıllar yönetebilecekleri eksiksiz bir mobil ekosistem bırakıyoruz.",
+      "en": "We deliver full intellectual ownership and technical infrastructure, empowering your team to operate independently.",
+      "es": "Entregamos la propiedad intelectual completa y la infraestructura necesaria para que su equipo opere con autonomía."
+    },
+    "items": [
+      {
+        "title": {
+          "tr": "Kaynak Kod & Git Deposu",
+          "en": "Source Code & Git Repository",
+          "es": "Código Fuente y Repositorio Git"
+        },
+        "description": {
+          "tr": "Temiz mimari standartlarında hazırlanmış, tüm sürüm geçmişini içeren mobil uygulama ve arka yüz kaynak kodları.",
+          "en": "Fully modular mobile app and backend source code hosted in a dedicated repository with comprehensive git commit history.",
+          "es": "Código fuente completo de la app móvil y el backend estructurado bajo estándares limpios en un repositorio Git."
+        }
+      },
+      {
+        "title": {
+          "tr": "Mağaza Dağıtım Paketleri",
+          "en": "Store Release Packages",
+          "es": "Paquetes para Tiendas"
+        },
+        "description": {
+          "tr": "İmzalanmış iOS (.ipa) ve Android (.aab) üretim paketleri, mağaza görselleri, açıklamaları ve yayın konfigürasyonu.",
+          "en": "Signed iOS (.ipa) and Android (.aab) release bundles, store graphic assets, localized metadata, and deployment configs.",
+          "es": "Paquetes de producción firmados para iOS (.ipa) y Android (.aab), capturas de pantalla y metadatos listos para publicar."
+        }
+      },
+      {
+        "title": {
+          "tr": "Otomatik CI/CD Mobil Hatları",
+          "en": "Automated Mobile CI/CD Pipelines",
+          "es": "Pipelines Móviles de CI/CD"
+        },
+        "description": {
+          "tr": "TestFlight ve Google Play test kanallarına otomatik derleme ve dağıtım sağlayan Fastlane veya bulut boru hatları.",
+          "en": "Fastlane or cloud pipelines automating build compilation, code signing, and deployment to TestFlight and Google Play.",
+          "es": "Pipelines con Fastlane o servicios en la nube para automatizar compilación, firmado y distribución a canales de prueba."
+        }
+      },
+      {
+        "title": {
+          "tr": "Analitik ve Çökme İzleme Kurulumu",
+          "en": "Analytics & Crash Monitoring Setup",
+          "es": "Configuración de Analítica y Errores"
+        },
+        "description": {
+          "tr": "Firebase Crashlytics, performans izleme ve temel analitik olaylarının eksiksiz entegrasyonu.",
+          "en": "Full instrumentation of Firebase Crashlytics, performance monitoring, and foundational user event telemetry.",
+          "es": "Integración de Firebase Crashlytics, monitorización de rendimiento y registro de eventos clave de usuario."
+        }
+      }
+    ]
+  },
+  "technologies": {
+    "title": {
+      "tr": "Kullandığımız Teknolojiler",
+      "en": "Technologies We Use",
+      "es": "Tecnologías que Utilizamos"
+    },
+    "description": {
+      "tr": "Hem tek kod tabanından çift platform avantajı sağlayan modern çapraz platform araçlarını hem de yerel teknolojileri kullanıyoruz.",
+      "en": "We employ modern cross-platform frameworks for unified development alongside native platform toolsets.",
+      "es": "Utilizamos frameworks multiplataforma modernos junto con tecnologías nativas para maximizar eficiencia y rendimiento."
+    },
+    "items": [
+      "Flutter",
+      "Dart",
+      "Swift",
+      "Kotlin",
+      "Firebase",
+      "Node.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Docker"
+    ]
+  },
+  "relatedProjects": [
+    "orpigo",
+    "seyyah",
+    "candemfit",
+    "kisisel-qr"
+  ],
+  "relatedProducts": [
+    "orpigo",
+    "kisisel-qr",
+    "candemfit",
+    "candemkey"
+  ],
+  "faq": [
+    {
+      "question": {
+        "tr": "Flutter mı yoksa Native (Swift/Kotlin) mi tercih edilmelidir?",
+        "en": "Should we choose Flutter or Native (Swift/Kotlin)?",
+        "es": "¿Conviene elegir Flutter o desarrollo nativo (Swift/Kotlin)?"
+      },
+      "answer": {
+        "tr": "Projelerin büyük bölümünde Flutter; tek kod tabanıyla hem iOS hem de Android için yüksek performans, hızlı geliştirme ve düşük bakım maliyeti sunar. Çok özel donanım entegrasyonu gereken durumlarda yerel teknolojileri öneririz.",
+        "en": "For most projects, Flutter delivers near-native performance, rapid cross-platform deployment, and reduced maintenance costs from a single codebase. Native Swift or Kotlin is recommended when apps require specialized OS-level integrations.",
+        "es": "Para la mayoría de proyectos, Flutter ofrece rendimiento excelente, desarrollo ágil en iOS y Android con una sola base de código y menores costes. Recomendamos desarrollo nativo puro cuando existen integraciones profundas con hardware específico."
+      }
+    },
+    {
+      "question": {
+        "tr": "App Store ve Google Play onay süreçlerini nasıl yönetiyorsunuz?",
+        "en": "How do you handle App Store and Google Play approvals?",
+        "es": "¿Cómo gestionan la aprobación en App Store y Google Play?"
+      },
+      "answer": {
+        "tr": "Apple ve Google'ın mağaza yönergelerini baştan itibaren dikkate alıyoruz. Gizlilik beyanları, izin metinleri, hesap silme kuralları ve test hesaplarını eksiksiz hazırlayarak reddedilme riskini en aza indiriyoruz.",
+        "en": "We design applications according to Apple and Google store guidelines from day one. By preparing compliant privacy policies, permission rationale, and review credentials, we minimize rejection risks.",
+        "es": "Diseñamos las aplicaciones cumpliendo las directrices de Apple y Google desde el primer día. Preparamos políticas de privacidad, permisos de usuario y cuentas de prueba para minimizar cualquier rechazo."
+      }
+    },
+    {
+      "question": {
+        "tr": "Uygulama çevrimdışı (offline) çalışabilir mi?",
+        "en": "Can the mobile application work offline?",
+        "es": "¿Puede la aplicación móvil funcionar sin conexión?"
+      },
+      "answer": {
+        "tr": "Evet. Yerel veri tabanı mimarileri (SQLite, Hive) ve arka plan senkronizasyon mekanizmaları kurgulayarak kullanıcıların internet bağlantısı olmadan da veriye erişmesini ve işlem yapabilmesini sağlıyoruz.",
+        "en": "Yes. By implementing local persistence (SQLite, Hive) and background synchronization queues, we enable users to view content and queue actions even without active network access.",
+        "es": "Sí. Mediante almacenamiento local (SQLite, Hive) y colas de sincronización en segundo plano, permitimos consultar datos y registrar acciones incluso sin conexión a internet."
+      }
+    },
+    {
+      "question": {
+        "tr": "Uygulama içi satın alma ve abonelik sistemleri nasıl kurulur?",
+        "en": "How are in-app purchases and subscriptions implemented?",
+        "es": "¿Cómo se configuran las compras integradas y suscripciones?"
+      },
+      "answer": {
+        "tr": "StoreKit ve Google Play Billing sistemlerini RevenueCat veya doğrudan mağaza API'leri üzerinden kuruyoruz. Abonelik yenilemeleri ve makbuz doğrulamalarını güvenli arka yüz servisleriyle yönetiyoruz.",
+        "en": "We integrate StoreKit and Google Play Billing using RevenueCat or native store APIs. Server-side receipt validation and webhook handlers securely manage subscription renewals and tier entitlements.",
+        "es": "Integramos StoreKit y Google Play Billing mediante RevenueCat o APIs nativas. Gestionamos validaciones de recibos en servidor y webhooks para controlar renovaciones y accesos de suscripción."
+      }
+    },
+    {
+      "question": {
+        "tr": "Uygulama yayına girdikten sonra bakım ve güncelleme gerekir mi?",
+        "en": "Is ongoing maintenance required after launching on app stores?",
+        "es": "¿Se requiere mantenimiento tras el lanzamiento en tiendas?"
+      },
+      "answer": {
+        "tr": "Evet. Apple ve Google her yıl yeni işletim sistemi sürümleri yayınlar. Uygulamanın uyumluluğunu korumak, güvenlik açıklarını kapatmak ve kütüphaneleri güncel tutmak için periyodik destek sağlıyoruz.",
+        "en": "Yes. Apple and Google release major OS updates annually. We provide recurring maintenance to ensure ongoing compatibility, patch vulnerabilities, and update third-party SDKs smoothly.",
+        "es": "Sí. Apple y Google publican versiones mayores anualmente. Ofrecemos mantenimiento continuo para preservar la compatibilidad con nuevos dispositivos, corregir fallos y actualizar librerías."
+      }
+    }
+  ],
+  "deepDive": {
+    "sections": [
+      {
+        "heading": {
+          "tr": "Çapraz Platform ve Yerel Performans Dengesi",
+          "en": "Cross-Platform Efficiency & Native Performance",
+          "es": "Eficiencia Multiplataforma y Rendimiento Nativo"
+        },
+        "paragraphs": {
+          "tr": [
+            "Mobil projelerde teknoloji seçimi, bütçe verimliliği ve kullanıcı memnuniyeti açısından belirleyicidir. Flutter, doğrudan makine koduna derlenen grafik motorları sayesinde yerel uygulamalardan farksız 60 ve 120 FPS akıcılık sağlar. Tek kod tabanı üzerinden hem iOS hem de Android için geliştirme yapmak, güncellemeleri iki platforma aynı anda ulaştırma avantajı sunar.",
+            "Donanım düzeyinde derin erişim gereken modüllerde ise platform kanalları (Method Channels) üzerinden Swift ve Kotlin kodları yazarak hibrit bir köprü kurarız. Bu sayede çapraz platformun geliştirme hızı ile yerel kodun sunduğu donanım yeteneklerini birleştiririz."
+          ],
+          "en": [
+            "Selecting the optimal technical stack is critical for budget efficiency and user satisfaction. Flutter compiles directly to native machine code via modern rendering engines, delivering consistent 60 and 120 FPS interactions indistinguishable from native builds. Maintaining a single codebase allows rapid feature parity across both iOS and Android releases.",
+            "When low-level hardware access is required, we bridge Flutter with native Swift and Kotlin modules using platform method channels. This hybrid architecture pairs the velocity of cross-platform development with the raw capabilities of device-specific APIs."
+          ],
+          "es": [
+            "Elegir el stack adecuado determina la eficiencia del presupuesto y la satisfacción del usuario. Flutter compila directamente a código máquina nativo mediante motores gráficos modernos, ofreciendo 60 y 120 FPS con una fluidez indistinguible de apps nativas. Gestionar una única base de código permite desplegar novedades simultáneamente en iOS y Android.",
+            "Cuando se requiere acceso a hardware especializado, comunicamos Flutter con módulos en Swift y Kotlin mediante canales de plataforma. Esta arquitectura híbrida combina la velocidad del desarrollo multiplataforma con la potencia del código nativo."
+          ]
+        }
+      },
+      {
+        "heading": {
+          "tr": "Pil Tüketimi, Bellek Yönetimi ve Çevrimdışı Mimari",
+          "en": "Battery Consumption, Memory Management & Offline Architecture",
+          "es": "Consumo de Batería, Memoria y Arquitectura Offline"
+        },
+        "paragraphs": {
+          "tr": [
+            "Başarılı bir mobil uygulama, yalnızca görsel açıdan değil; cihaz kaynaklarını kullanımında da dengeli olmalıdır. Konum servisleri, arka plan görevleri ve ağ isteklerini akıllıca planlayarak aşırı pil tüketiminin ve ısınmanın önüne geçeriz. Bellek sızıntılarını önlemek için nesne yaşam döngülerini ve görsel önbelleklerini titizlikle denetleriz.",
+            "Kullanıcıların internet bağlantısının kesildiği durumlarda uygulamanın kesintisiz çalışması için yerel veri tabanı önbelleklemesi (SQLite / Hive) uygularız. Ağ bağlantısı yeniden kurulduğunda senkronizasyon kuyruğu, çakışmaları otomatik çözerek verileri sunucuya aktarır."
+          ],
+          "en": [
+            "A superior mobile application balances visual polish with respectful resource utilization. We schedule location queries, background tasks, and network requests intelligently to prevent unnecessary battery drain and device overheating. Continuous profiling identifies memory leaks and optimizes image caching.",
+            "To handle intermittent connectivity in transit or remote areas, we implement robust local persistence using SQLite or Hive. Once connectivity returns, background synchronization queues automatically reconcile conflicting records and upload changes without interrupting the user."
+          ],
+          "es": [
+            "Una app excelente combina diseño atractivo con uso responsable de recursos. Programamos peticiones de red, geolocalización y tareas en segundo plano de manera eficiente para evitar calentamiento y drenaje de batería. Auditamos el ciclo de vida de los componentes para prevenir fugas de memoria.",
+            "Para garantizar la continuidad en zonas sin cobertura, implementamos almacenamiento local con SQLite o Hive. Cuando se recupera la conexión, colas de sincronización resuelven conflictos y transmiten los datos pendientes al servidor de forma transparente."
+          ]
+        }
+      },
+      {
+        "heading": {
+          "tr": "Canlı Ürünlerimizden Edinilen Mağaza ve Ürün Deneyimi",
+          "en": "Store Release Experience Driven by Live Consumer Products",
+          "es": "Experiencia en Tiendas Respaldada por Productos Propios"
+        },
+        "paragraphs": {
+          "tr": [
+            "Candemsoft mühendisleri, mobil uygulama mağazalarının kurallarını yalnızca kılavuzlardan değil; kendi ürünlerini başarıyla yayına alıp yöneterek öğrenmiştir. Hız okuma uygulamamız Orpigo'nun App Store ve Google Play yayın süreçleri, Seyyah'ın harita ve arka plan GPS onayları ve Kişisel QR'ın widget ve bildirim mimarisi bu tecrübenin somut kanıtlarıdır.",
+            "Apple'ın titiz inceleme süreçlerini, Google'ın test politikalarını ve mağaza içi abonelik optimizasyonlarını kendi ürünlerimizde bizzat deneyimledik. Müşteri projelerimizde bu tecrübeden yararlanarak ret kararlarının önüne geçiyor, onay süreçlerini hızlandırıyor ve sorunsuz yayınlar sağlıyoruz."
+          ],
+          "en": [
+            "Candemsoft engineers understand store submission guidelines from firsthand operational experience rather than theory. Launching our speed-reading app Orpigo on the App Store and Google Play, handling background GPS reviews for Seyyah, and architecting push widgets for Kişisel QR have refined our publishing workflows.",
+            "We navigate Apple's rigorous review standards, Google's closed testing mandates, and in-app purchase validation from our own commercial deployments. Applying these hard-won insights to client engagements eliminates rejection surprises and accelerates time-to-market."
+          ],
+          "es": [
+            "Los ingenieros de Candemsoft dominan los requisitos de las tiendas por experiencia práctica directa. La publicación de nuestra app de lectura rápida Orpigo, la aprobación de tareas de GPS para Seyyah y los widgets de Kişisel QR han perfeccionado nuestros procesos de lanzamiento.",
+            "Gestionamos las revisiones de Apple, las pruebas de Google y la validación de suscripciones basándonos en aprendizajes reales de producción. Trasladamos esta experiencia a los proyectos de nuestros clientes para evitar rechazos inesperados y agilizar aprobaciones."
+          ]
+        }
+      }
+    ]
+  }
+}

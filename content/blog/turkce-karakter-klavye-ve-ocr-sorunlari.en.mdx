@@ -1,0 +1,60 @@
+export const meta = {
+  title: "Turkish Character Pitfalls in OCR, Keyboards, and Text Processing",
+  metaTitle: "Turkish Characters in OCR & Keyboards | Candemsoft",
+  description: "Explore subtle Unicode pitfalls, OCR recognition errors and AI keyboard correction challenges when processing Turkish text in modern software systems.",
+  date: "2026-10-11",
+  author: "Candemsoft",
+  tags: ["turkish characters", "ocr", "orpigo", "candemkey", "software"]
+};
+
+**Short answer:** Processing Turkish text in software systems presents persistent algorithmic pitfalls due to the language's unique character topology—notably the dotted 'İ' / dotless 'I' pair, cedillas ('ş', 'ç'), breves ('ğ'), and umlauts ('ö', 'ü'). When applications rely on ASCII-centric string operations or English locale assumptions, Unicode transformations break search indexes; OCR (Optical Character Recognition) pipelines misread 'ı' as 'l' or '1'; and mobile keyboard auto-correct routines produce inaccurate suggestions. Resolving these failures requires locale-aware transformations, character bounding-box geometry, morphological n-gram filtering, and contextual AI language models.
+
+## The Unicode challenge: Dotted İ, dotless I, and normalization traps
+
+In English, casing follows a simple rule: lowercase 'i' maps to uppercase 'I'. In Turkish, however, there are two distinct letter pairs: dotted 'i' maps to dotted 'İ', while dotless 'ı' maps to dotless 'I'. When code runs standard casing methods like JavaScript's `toUpperCase()` without locale awareness, `"istanbul"` becomes `"ISTANBUL"` with a dotless 'I'. This alters meaning and pronunciation. The correct implementation requires locale-aware methods, such as `toLocaleUpperCase('tr-TR')` and `toLocaleLowerCase('tr-TR')`.
+
+A subtler pitfall lies in Unicode normalization: NFC (Composition) versus NFD (Decomposition). In decomposed forms, dotted 'İ' is represented by two code points: `U+0049` (Capital I) and `U+0307` (Combining Dot Above). While rendered identically on screens, binary string comparisons (`textA === textB`), database keys, and unique constraints fail unexpectedly. Systems handling Turkish text must enforce canonical normalization via `normalize('NFC')` before storage or indexing.
+
+## Optical Character Recognition (OCR) failures in Turkish typography
+
+When digitizing printed documents, standard OCR engines like Tesseract face recurring architectural hurdles when processing Turkish glyphs:
+
+1. **Confusion Between 'ı', 'l', and '1':** The Turkish dotless lowercase 'ı' consists of a single vertical stroke. In sans-serif typefaces or lower-resolution scans (below 300 DPI), the optical geometry of 'ı' is virtually indistinguishable from lowercase 'l' (el) or the numeral '1'. Without lexical disambiguation, optical classifiers frequently select the wrong glyph.
+2. **Aggressive Noise Filtering on Dots:** Standard binarization pipelines (such as Otsu or Sauvola thresholding) strip small pixel clusters to clean speckles and scanner noise. The floating dot above the lowercase 'i' or uppercase 'İ' is frequently misidentified as dust and filtered out, turning 'i' into 'ı' or 'l'.
+3. **Cedilla and Breve Detachment:** Under faint print conditions or repeated photocopying, the delicate lower cedilla hook on 'ş' and 'ç', as well as the upper curved breve on 'ğ', can detach from the base letter. The OCR engine subsequently misclassifies them as plain 's', 'c', or 'g'.
+
+To mitigate these physical scan deficiencies, image pre-processing must be paired with post-OCR linguistic filtering. Combining adaptive binarization with Turkish dictionary lookups and n-gram statistical models corrects isolated character dropouts based on sentence context.
+
+## Text extraction and focal alignment in Orpigo's speed-reading engine
+
+At Candemsoft, we developed [Orpigo](/en/projects/orpigo/) ([orpigo.com](https://orpigo.com/)), an RSVP (Rapid Serial Visual Presentation) speed-reading application that presents words centered around their Optimal Recognition Point (ORP). The ORP technique locks the reader's visual gaze to a specific focal anchor—typically positioned slightly left of the word's physical center—to eliminate the need for horizontal eye saccades.
+
+Building this engine for Turkish literature uncovered two distinct engineering challenges. First, PDF text extraction frequently suffers from scrambled character mappings due to non-standard CIDFont and ToUnicode CMap tables in digital documents. Orpigo incorporates an extraction pipeline that reconstructs glyph geometries to preserve Turkish diacritics accurately.
+
+Second, calculating the visual ORP focal anchor requires sub-pixel typography metrics rather than character counts. In proportional typefaces, Turkish has severe width disparities: narrow glyphs like 'ı' and 'i' take few pixels, while wide glyphs like 'm', 'ğ', and 'ş' demand substantial space. Highlighting a fixed character index makes words jump horizontally. Orpigo calculates the exact horizontal bounding box of each glyph, centering the focal letter smoothly on the vertical axis without visual jitter.
+
+## Mobile keyboard ergonomics and spatial auto-correct heuristics
+
+Typing on mobile touchscreens is inherently probabilistic. Touch events do not hit the exact center of a virtual key; instead, they generate touch coordinates that software interprets using spatial Gaussian distributions. Adding Turkish letters ('ğ', 'ü', 'ş', 'i', 'ö', 'ç') onto a standard QWERTY layout compresses key widths, placing critical keys near device edges where thumb curvature introduces higher touch variance.
+
+Traditional autocorrect algorithms compute edit distance using Levenshtein distance metrics. However, standard edit distance treats all character substitutions equally. On a Turkish keyboard, a user tapping the 's' key is significantly more likely to intend 'ş' than 'p' or 'k'. An effective autocorrect system must employ weighted cost matrices that combine physical key-neighbor coordinates with Turkish morphological affix grammar.
+
+## Contextual AI text enhancement: Inside Candemkey
+
+Static dictionary lookups fail to resolve ambiguous words whose correct form depends entirely on sentence context. In Turkish, unaccented words often collide with accented counterparts: "kar" (snow) vs. "kâr" (profit), or "hala" (paternal aunt) vs. "hâlâ" (still/yet). Furthermore, fast typists frequently omit diacritics altogether, typing "sana" when the context demands "şana".
+
+In [Candemsoft](https://candemsoft.com/)'s smart keyboard product [Candemkey](/en/projects/candemkey/) ([candemkey.com](https://candemkey.com/)), we bypassed static wordlists by integrating lightweight [AI solutions](/en/services/artificial-intelligence/) directly into the typing workflow. Candemkey utilizes a transformer-based language model optimized for mobile edge runtimes. By evaluating the surrounding semantic context, Candemkey automatically determines whether an ambiguous word represents formal or casual phrasing, correcting missed diacritics in real time. Combined with responsive [mobile apps](/en/services/mobile-apps/) engineering, the keyboard delivers contextual autocorrect, translation, and text transformation without perceptual typing latency.
+
+## Frequently asked questions
+
+### Why should developers avoid toUpperCase() when handling Turkish strings in JavaScript?
+Standard `toUpperCase()` defaults to host system locales, which typically follow English rules where lowercase 'i' becomes dotless 'I'. In Turkish, 'i' must become dotted 'İ', and 'ı' must become dotless 'I'. Developers should explicitly pass the locale using `toLocaleUpperCase('tr-TR')`.
+
+### How can OCR accuracy for Turkish diacritics like 'ş' and 'ç' be improved?
+Pixel binarization alone is insufficient because faint scan lines easily break small cedillas. Teams should apply morphological dilation during pre-processing and implement post-processing n-gram dictionaries to reconstruct degraded characters based on word probability.
+
+### How does Orpigo prevent eye fatigue when displaying Turkish text at high speeds?
+Orpigo computes glyph bounding-box dimensions rather than character counts. Because Turkish glyphs like 'ı' and 'm' have drastic width differences, pixel-level ORP centering keeps the reader's focal letter anchored to the exact center line without distracting horizontal jumps.
+
+### How does Candemkey distinguish between words like "kar" and "kâr"?
+Unlike traditional keyboards that inspect single words in isolation, Candemkey evaluates the entire sentence using contextual AI language models, determining the appropriate semantic meaning and automatically inserting circumflexes or diacritics where appropriate.

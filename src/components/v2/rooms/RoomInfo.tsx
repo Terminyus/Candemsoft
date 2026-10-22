@@ -1,4 +1,3 @@
-import Image from "next/image";
 import type { Locale } from "@/i18n/config";
 import type { Product } from "@/lib/content";
 import { publicFileExists } from "@/lib/content";
@@ -18,11 +17,29 @@ export type RoomTheme = {
 
 const platformName = { ios: "iOS", android: "Android", web: "Web" } as const;
 
-export function RoomIcon({ product, className }: { product: Product; className?: string }) {
+export function RoomIcon({ product, className, priority }: { product: Product; className?: string; priority?: boolean }) {
+  const icon = product.icon;
+  const base = icon ? icon.replace(/\.[^.]+$/, "") : "";
+  const hasAvif = icon ? publicFileExists(`${base}.avif`) : false;
+  const hasWebp = icon ? publicFileExists(`${base}.webp`) : false;
+
   return (
     <span className={cn("relative block size-16 shrink-0 overflow-hidden rounded-[22%] bg-white md:size-20", className)}>
-      {product.icon && publicFileExists(product.icon) ? (
-        <Image src={asset(product.icon)} alt={`${product.name} logo`} fill sizes="80px" className="object-contain" />
+      {icon && publicFileExists(icon) ? (
+        <picture className="absolute inset-0 size-full">
+          {hasAvif && <source type="image/avif" srcSet={asset(`${base}.avif`)} />}
+          {hasWebp && <source type="image/webp" srcSet={asset(`${base}.webp`)} />}
+          <img
+            src={asset(icon)}
+            alt={`${product.name} logo`}
+            width={80}
+            height={80}
+            loading={priority ? "eager" : "lazy"}
+            decoding={priority ? "sync" : "async"}
+            fetchPriority={priority ? "high" : "low"}
+            className="size-full object-contain"
+          />
+        </picture>
       ) : (
         <span aria-hidden className="absolute inset-0 grid place-items-center v2-heading text-2xl text-ink-950">
           {product.name[0]}

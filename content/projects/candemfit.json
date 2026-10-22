@@ -20,10 +20,15 @@
     "en": "Fitness and wellness",
     "es": "Fitness y bienestar"
   },
+  "metaTitle": {
+    "tr": "CandemFit Sosyal Fitness Uygulaması | Candemsoft",
+    "en": "CandemFit Social Fitness App | Candemsoft",
+    "es": "CandemFit App de Fitness Social | Candemsoft"
+  },
   "summary": {
-    "tr": "Kendi ürünümüz: GPS antrenman takibi, rozetler, haftalık lig ve wellness takibini tek uygulamada birleştiren sosyal fitness uygulaması.",
-    "en": "Our own product: a social fitness app that brings GPS workout tracking, badges, a weekly league and wellness tracking into one place.",
-    "es": "Producto propio: una app social de fitness que reúne seguimiento de entrenamientos por GPS, insignias, liga semanal y bienestar en un solo lugar."
+    "tr": "CandemFit; GPS antrenman takibi, haftalık ligler, rozetler ve sağlık takibini yargılamayan bir toplulukta birleştirir. Hemen aramıza katılın.",
+    "en": "CandemFit pairs GPS workout tracking, weekly leagues, achievement badges and wellness in a positive community. Join us and get active today.",
+    "es": "CandemFit combina registro de entrenamientos por GPS, ligas semanales, insignias y bienestar en una comunidad positiva. Únase y empiece hoy."
   },
   "year": null,
   "services": [

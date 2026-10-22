@@ -1,13 +1,15 @@
+import dynamic from "next/dynamic";
 import type { Locale } from "@/i18n/config";
 import type { Product } from "@/lib/content";
 import type { Dictionary } from "@/lib/dictionary";
-import { KeyDemo } from "./KeyDemo";
+
+const KeyDemo = dynamic(() => import("./KeyDemo").then((m) => m.KeyDemo));
 
 export function KeyRoom({ product, lang, dict, level = 3 }: { product: Product; lang: Locale; dict: Dictionary; level?: 2 | 3 }) {
   const t = dict.v2;
   const Title = level === 2 ? "h2" : "h3";
   return (
-    <section id={product.slug} aria-labelledby={`room-${product.slug}`} className="cv-auto bg-signal py-(--section) text-ink-950">
+    <section id={product.slug} aria-labelledby={`room-${product.slug}`} className="cv-auto-room bg-signal py-(--section) text-ink-950">
       <div className="container-site grid items-center gap-10 lg:grid-cols-[5fr_6fr] lg:gap-16">
         <div className="flex flex-col gap-6">
           <p className="font-mono text-mono-sm">{dict.common.comingSoon} · {t.keyLayouts}</p>

@@ -24,7 +24,7 @@ export function FitRoom({ product, lang, dict, index, level = 3 }: { product: Pr
     { k: t.fitTime, v: "30:10" },
   ];
   return (
-    <section id={product.slug} aria-labelledby={`room-${product.slug}`} className="cv-auto relative overflow-hidden bg-fit-night py-(--section) text-white">
+    <section id={product.slug} aria-labelledby={`room-${product.slug}`} className="cv-auto-room relative overflow-hidden bg-fit-night py-(--section) text-white">
       <div className="container-site grid items-center gap-12 lg:grid-cols-[6fr_5fr] lg:gap-16">
         <figure className="order-2 lg:order-1">
           <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#04121a] p-4 sm:p-6">

@@ -3,7 +3,7 @@ import Image from "next/image";
 import { getTeam, publicFileExists } from "@/lib/content";
 import { getDictionary } from "@/lib/dictionary";
 import { resolveLang } from "@/lib/params";
-import { pageMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, jsonLd, pageBreadcrumbs, pageMetadata } from "@/lib/seo";
 import { PageIntro } from "@/components/page/PageIntro";
 import { Monogram } from "@/components/ui/Monogram";
 import { MonoLabel } from "@/components/ui/MonoLabel";
@@ -13,7 +13,7 @@ import { cn } from "@/components/ui/cn";
 export async function generateMetadata({ params }: PageProps<"/[lang]/ekip">): Promise<Metadata> {
   const lang = await resolveLang(params);
   const dict = await getDictionary(lang);
-  return pageMetadata({ lang, route: "team", title: dict.nav.team, description: dict.teamPage.lead });
+  return pageMetadata({ lang, route: "team", title: dict.meta.teamTitle, description: dict.meta.teamDescription });
 }
 
 export default async function TeamPage({ params }: PageProps<"/[lang]/ekip">) {
@@ -25,6 +25,10 @@ export default async function TeamPage({ params }: PageProps<"/[lang]/ekip">) {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLd(breadcrumbJsonLd(pageBreadcrumbs(lang, "team")))}
+      />
       <PageIntro label={t.label} title={t.title} lead={t.lead} />
       <section data-surface="paper" aria-labelledby="page-title" className="py-(--section-sm)">
         <div className="container-site">

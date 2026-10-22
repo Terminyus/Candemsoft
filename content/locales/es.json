@@ -1,7 +1,27 @@
 {
   "meta": {
     "siteTitle": "Candemsoft — Software web, móvil e IA desde Estambul",
-    "siteDescription": "Candemsoft es un equipo de software en Estambul que crea sitios web, apps móviles, funciones de IA, diseño UI/UX y ofrece consultoría."
+    "siteDescription": "Candemsoft es un equipo de software en Estambul que crea sitios web, apps móviles, funciones de IA, diseño UI/UX y ofrece consultoría.",
+    "homeTitle": "Desarrollo Web y Apps Móviles Estambul | Candemsoft",
+    "homeDescription": "Desarrolle software web moderno, aplicaciones móviles e IA con el equipo de Candemsoft en Estambul. Conozca nuestros servicios y contáctenos hoy.",
+    "aboutTitle": "Sobre Nosotros: Estudio de Software | Candemsoft",
+    "aboutDescription": "Candemsoft es un estudio de desarrollo en Estambul que crea apps móviles innovadoras y software a medida para clientes. Conozca nuestra historia.",
+    "servicesTitle": "Servicios de Software, Móvil e IA | Candemsoft",
+    "servicesDescription": "Ofrecemos desarrollo web moderno, aplicaciones móviles, integraciones de IA y diseño UI/UX. Conozca todos nuestros servicios y cotice hoy mismo.",
+    "projectsTitle": "Proyectos de Software Web y Móvil | Candemsoft",
+    "projectsDescription": "Explore nuestro portafolio de proyectos en plataformas financieras, sistemas de soporte y aplicaciones móviles. Conozca nuestros casos de éxito.",
+    "productsTitle": "Nuestros Productos Web y Móviles | Candemsoft",
+    "productsDescription": "Descubra Orpigo, Kişisel QR, Seyyah, CandemFit y Candemkey: aplicaciones móviles y web creadas por Candemsoft. Conozca sus funciones y pruébelas.",
+    "teamTitle": "Equipo de Software y Diseño | Candemsoft",
+    "teamDescription": "Conozca a los ingenieros de software, desarrolladores móviles y diseñadores de Candemsoft. Descubra nuestro equipo y construyamos su proyecto.",
+    "blogTitle": "Blog de Software y Tecnología | Candemsoft",
+    "blogDescription": "Lea artículos técnicos sobre desarrollo móvil, soluciones web, inteligencia artificial y buenas prácticas de ingeniería. Lea nuestras guías hoy.",
+    "contactTitle": "Contacto: Inicie su Proyecto Hoy | Candemsoft",
+    "contactDescription": "Comuníquese con nuestro equipo de desarrollo en Estambul para hablar de su proyecto web, móvil o de IA. Escríbanos hoy y solicite una consulta.",
+    "privacyTitle": "Política de Privacidad y Datos | Candemsoft",
+    "privacyDescription": "Conozca cómo Candemsoft protege los datos personales, garantiza la privacidad y gestiona las cookies en sus plataformas. Lea nuestra política hoy.",
+    "toolsTitle": "Herramientas de Texto en Línea | Candemsoft",
+    "toolsDescription": "Herramientas de texto gratuitas: convertidor de mayúsculas, contador de palabras y caracteres y generador de slugs en su navegador sin registro."
   },
   "nav": {
     "home": "Inicio",
@@ -18,7 +38,8 @@
     "language": "Idioma",
     "switchTo": "Türkçe",
     "primary": "Menú principal",
-    "privacy": "Privacidad"
+    "privacy": "Privacidad",
+    "tools": "Herramientas"
   },
   "common": {
     "visitSite": "Visitar el sitio",
@@ -229,7 +250,9 @@
     "title": "Artículos.",
     "lead": "Lo que aprendemos trabajando. Breve, técnico y útil.",
     "readingTime": "{n} min de lectura",
-    "empty": "Todavía no hay artículos."
+    "empty": "Todavía no hay artículos.",
+    "relatedPosts": "Artículos relacionados",
+    "tags": "Etiquetas"
   },
   "contactPage": {
     "label": "Contacto",
@@ -312,9 +335,43 @@
     "qrAlertHint": "Pruébalo: elige una situación",
     "qrAlertApp": "Kişisel QR",
     "qrAlertNow": "ahora",
-    "qrAlertSituations": [["Ventana abierta", "La ventanilla de tu coche está abierta"], ["Mal aparcado", "Tu coche está mal aparcado"], ["Luces encendidas", "Las luces de tu coche están encendidas"], ["Rueda pinchada", "Tu coche tiene una rueda pinchada"]],
+    "qrAlertSituations": [
+      [
+        "Ventana abierta",
+        "La ventanilla de tu coche está abierta"
+      ],
+      [
+        "Mal aparcado",
+        "Tu coche está mal aparcado"
+      ],
+      [
+        "Luces encendidas",
+        "Las luces de tu coche están encendidas"
+      ],
+      [
+        "Rueda pinchada",
+        "Tu coche tiene una rueda pinchada"
+      ]
+    ],
     "qrAlertNote": "Quien escanea no instala nada ni necesita tu número. El aviso llega directo a tu móvil.",
-    "qrFacts": [["5 × 8 cm", "pegatina para el interior del parabrisas"], ["Resistente al agua", "a los rayos UV y a los arañazos"], ["350 ₺", "envío incluido, sin suscripción"], ["3 idiomas", "perfil en TR, EN o KG"]],
+    "qrFacts": [
+      [
+        "5 × 8 cm",
+        "pegatina para el interior del parabrisas"
+      ],
+      [
+        "Resistente al agua",
+        "a los rayos UV y a los arañazos"
+      ],
+      [
+        "350 ₺",
+        "envío incluido, sin suscripción"
+      ],
+      [
+        "3 idiomas",
+        "perfil en TR, EN o KG"
+      ]
+    ],
     "qrRole": "Cargo · Empresa",
     "fitWorkout": "Entrenamiento de ejemplo",
     "fitDistance": "distancia",
@@ -324,13 +381,47 @@
     "keyDemoLabel": "Ejemplo: la tecla AI",
     "keyChat": "¿Llega hoy el archivo?",
     "keyRaw": "oye no voy a poder acabar el archivo hoy te lo mando mañana temprano",
-    "keyActions": [["Corregir", "Oye, no voy a poder acabar el archivo hoy. ¿Te lo mando mañana temprano?"], ["Formal", "No podré terminar el archivo hoy. ¿Le parecería bien que se lo enviara mañana por la mañana?"], ["Cercano", "Oye, no me dio tiempo del archivo hoy, ¿mañana temprano vale? 🙏"], ["Acortar", "¿Archivo mañana temprano?"], ["Ampliar", "Oye, parece que hoy no llego a terminar el archivo. ¿Te parece bien si te lo envío mañana a primera hora?"]],
+    "keyActions": [
+      [
+        "Corregir",
+        "Oye, no voy a poder acabar el archivo hoy. ¿Te lo mando mañana temprano?"
+      ],
+      [
+        "Formal",
+        "No podré terminar el archivo hoy. ¿Le parecería bien que se lo enviara mañana por la mañana?"
+      ],
+      [
+        "Cercano",
+        "Oye, no me dio tiempo del archivo hoy, ¿mañana temprano vale? 🙏"
+      ],
+      [
+        "Acortar",
+        "¿Archivo mañana temprano?"
+      ],
+      [
+        "Ampliar",
+        "Oye, parece que hoy no llego a terminar el archivo. ¿Te parece bien si te lo envío mañana a primera hora?"
+      ]
+    ],
     "keyResult": "Resultado",
     "keyApply": "Aplicar",
     "keyCopy": "Copiar",
     "keyRetry": "Repetir",
     "keySample": "La respuesta de la IA es un ejemplo; el resultado real puede variar.",
-    "keyFacts": [["En cada app", "Mensaje, correo, nota o barra de direcciones: el teclado reconoce el campo y adapta sus teclas."], ["Línea de comandos", "Si los botones no bastan, escribe tu petición: “Tradúcelo al inglés”."], ["Privacidad", "Sin IA en campos de contraseña. Los textos nuevos de petición y respuesta no se guardan en registros."]],
+    "keyFacts": [
+      [
+        "En cada app",
+        "Mensaje, correo, nota o barra de direcciones: el teclado reconoce el campo y adapta sus teclas."
+      ],
+      [
+        "Línea de comandos",
+        "Si los botones no bastan, escribe tu petición: “Tradúcelo al inglés”."
+      ],
+      [
+        "Privacidad",
+        "Sin IA en campos de contraseña. Los textos nuevos de petición y respuesta no se guardan en registros."
+      ]
+    ],
     "keyLayouts": "Turco Q · English · Español",
     "keySoonStores": "App Store y Google Play: próximamente",
     "keyTitle": "IA en todo lo que escribes.",
@@ -459,5 +550,13 @@
     "home": "Inicio",
     "status": "Estado",
     "location": "Ubicación"
+  },
+  "toolsPage": {
+    "label": "Herramientas Gratuitas",
+    "title": "Utilidades de Texto y SEO",
+    "lead": "Utilidades de texto gratuitas que funcionan en su navegador sin enviar datos a servidores, con soporte completo para reglas tipográficas.",
+    "openTool": "Usar Herramienta",
+    "privacyNotice": "Todas las operaciones se procesan localmente en su navegador; no se envían datos a ningún servidor.",
+    "exploreTitle": "Otras Herramientas"
   }
 }

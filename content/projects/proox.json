@@ -19,10 +19,15 @@
     "en": "Corporate",
     "es": "Corporativo"
   },
+  "metaTitle": {
+    "tr": "Proox Kurumsal Web Sitesi Tasarımı | Candemsoft",
+    "en": "Proox Corporate Website Development | Candemsoft",
+    "es": "Sitio Web Corporativo Proox | Candemsoft"
+  },
   "summary": {
-    "tr": "Proox'un kurumsal web sitesi.",
-    "en": "Proox's company website.",
-    "es": "Sitio web corporativo de Proox."
+    "tr": "Proox markası için tasarlayıp geliştirdiğimiz kurumsal web sitesi; modern arayüzü, mobil uyumu ve yüksek performanslı altyapısıyla öne çıkar. İnceleyin.",
+    "en": "The corporate website designed and developed for Proox features an elegant interface, mobile responsiveness and fast load times. View this case study.",
+    "es": "El sitio web corporativo desarrollado para Proox destaca por su interfaz moderna, diseño adaptable y alto rendimiento técnico. Descubra los detalles."
   },
   "year": null,
   "services": [

@@ -1,0 +1,60 @@
+export const meta = {
+  title: "Türkçe Karakter ve Yazım Sorunları: Mobil Klavye ve OCR Hataları",
+  metaTitle: "Türkçe Karakter, Klavye ve OCR Hataları | Candemsoft",
+  description: "Yazılımda Türkçe karakterlerin, mobil klavye düzeltmelerinin ve OCR metin tanıma algoritmalarının sık karşılaştığı teknik sorunları ve çözümleri keşfedin.",
+  date: "2026-10-11",
+  author: "Candemsoft",
+  tags: ["türkçe karakter", "ocr", "orpigo", "candemkey", "yazılım"]
+};
+
+**Kısa cevap:** Türkçe; noktalı 'İ' ve noktasız 'I' ayrımı, çengelli harfler ('ç', 'ş'), yumuşak 'ğ' ve inceltme işaretleri nedeniyle küresel yazılım standartlarında en çok veri hatası üreten dillerden biridir. Standart ASCII varsayımıyla çalışan algoritmalar Unicode normalizasyonunda (NFC ve NFD) metinleri bozar; Tesseract benzeri OCR (Optik Karakter Tanıma) motorları 'ı' ile 'l' veya '1' karakterlerini karıştırır; geleneksel mobil klavyeler ise dar dokunma alanları ve yetersiz dil modelleri yüzünden yanlış kelime önerileri üretir. Bu teknik zorlukları aşmak için yerelleştirilmiş (locale-aware) metin işleme, piksel tabanlı görsel hizalama ve bağlamsal yapay zekâ modelleri gerekir.
+
+## Unicode'un Türkçe sınavı: Noktalı İ, noktasız I ve normalizasyon tuzakları
+
+Latin alfabesini temel alan çoğu programlama dili, İngilizcedeki büyük-küçük harf kurallarını evrensel kabul eder. İngilizcede 'i' harfinin büyüğü 'I' iken, Türkçede iki bağımsız harf çifti bulunur: 'i' harfinin büyüğü noktalı 'İ', 'ı' harfinin büyüğü ise noktasız 'I' karakteridir. Sistem dili açıkça belirtilmeden çalıştırılan standart fonksiyonlar (örneğin JavaScript'teki `toUpperCase()` veya C#'taki `ToUpper()`) `"istanbul"` kelimesini `"ISTANBUL"` olarak büyütür. Bu durum arama motoru dizinlerinde, kullanıcı adı doğrulamalarında ve veri tabanı sorgularında ciddi eşleşme hatalarına yol açar. Doğru yaklaşım, dil parametresini açıkça vererek `toLocaleUpperCase('tr-TR')` ve `toLocaleLowerCase('tr-TR')` fonksiyonlarını kullanmaktır.
+
+Bir diğer sinsi problem ise Unicode normalizasyonudur. Unicode standardında bir harf tek bir kod noktasıyla (NFC - Canonical Composition) temsil edilebileceği gibi, temel harf ve birleştirici işaretin ayrılmasıyla (NFD - Canonical Decomposition) da saklanabilir. Örneğin Türkçedeki noktalı büyük 'İ' harfi, bazen `U+0049` (büyük I) ve `U+0307` (Combining Dot Above) şeklinde iki ayrı bayt dizilimiyle sisteme girer. Kullanıcı ekranda standart bir 'İ' görür; ancak iki metin dize karşılaştırmasına tabi tutulduğunda `text1 === text2` ifadesi `false` döner. Veri tabanına yazmadan veya arama indeksine almadan önce metinleri mutlaka `normalize('NFC')` işleminden geçirmek gerekir.
+
+## Optik Karakter Tanıma (OCR) motorlarında Türkçe karakter kayıpları
+
+Tesseract ve benzeri açık kaynaklı veya ticari OCR motorları, basılı veya taranmış belgelerdeki pikselleri metne dönüştürürken Türkçe tipografisinde belirgin zorluklarla karşılaşır:
+
+1. **'ı', 'l' ve '1' Karışıklığı:** Noktasız küçük 'ı' harfi, küçük 'l' (L) ve rakam olan '1' ile neredeyse birebir aynı dikey piksel hattına sahiptir. Görüntüdeki çözünürlük düşükse veya font sans-serif ise OCR motoru bu harfleri birbiri yerine okur.
+2. **Nokta Kaybı (Noise Filtering Sorunu):** OCR motorları görüntüdeki toz ve lekeleri temizlemek için binarizasyon (siyah-beyaz eşikleme) ve gürültü filtreleme algoritmaları uygular. 'i' harfinin gövdesinden ayrı duran küçük noktası, filtre tarafından leke sanılarak silinebilir; bu da 'i' harfinin 'ı' veya 'l' olarak etiketlenmesine neden olur.
+3. **Çengel ve Breve Deformasyonu:** 'ş' ve 'ç' harflerinin altındaki çengeller (cedilla) ile 'ğ' harfinin üzerindeki yumuşak dalga (breve), silik fotokopilerde gövdeden kopar. Sonuçta motor bu harfleri hatalı şekilde 's', 'c' ve 'g' olarak kaydeder.
+
+Bu hataların önüne geçmek için salt piksel analizi yeterli değildir. Görüntüye uygulanan adaptif eşikleme (Otsu veya Sauvola yöntemleri) sonrasında, metin mutlaka Türkçe n-gram frekans modelleri ve morfolojik sözlük filtrelerinden geçirilmelidir.
+
+## Orpigo hız okuma motorunda metin ayrıştırma ve ORP hizalama
+
+Candemsoft bünyesinde geliştirdiğimiz [Orpigo](/projeler/orpigo/) ([orpigo.com](https://orpigo.com/)), metinleri kelime kelime ekranda göstererek göz kaslarının hareket ihtiyacını en aza indiren bir ORP (Optimal Recognition Point - Optimum Tanıma Noktası) hız okuma uygulamasıdır. Bu sistemde Türkçe metin işleme iki kritik mühendislik katmanından geçer.
+
+İlk katman, PDF belgelerinden Türkçe karakterlerin kayıpsız çıkarılmasıdır. Birçok PDF oluşturucu, Türkçe glifleri font dosyasına gömerken standart harf eşlemelerini bozar (ToUnicode CMap tablolarının eksikliği). Orpigo'nun metin ayrıştırıcısı, glif koordinatlarını ve CIDFont haritalarını yeniden inşa ederek bozuk taranan belgelerde dahi doğru Türkçe karakterleri elde eder.
+
+İkinci katman ise ORP odak noktasının piksel bazlı dengelenmesidir. Hız okumada göz, kelimenin ortalama üçte birlik bölümündeki harfe kilitlenir. Ancak İngilizceden farklı olarak Türkçede 'ı' ve 'i' gibi son derece dar harfler ile 'm', 'ğ', 'ş' gibi geniş harfler ardışık yer aldığında, salt harf sayısına dayalı bir indeksleme görsel dengeyi bozar. Orpigo, kelimenin harf sayısını değil, seçilen font ailesindeki gliflerin piksel genişliklerini (bounding box) anlık hesaplar. Böylece gözün odaklandığı kırmızı harf tam olarak ekranın merkez çizgisinde sabit kalır ve okuma hızı kesintiye uğramaz.
+
+## Mobil klavyelerde dokunma hedefleri ve akıllı tamamlama
+
+Mobil cihazlarda yazı yazarken parmaklarımız ekrandaki tuşların tam geometrik merkezine basmaz; her vuruş belirli bir Gauss dağılımına sahip dokunma koordinatları (touch heuristics) üretir. Türkçe Q klavyelerde 'ğ', 'ü', 'ş', 'i', 'ö', 'ç' harflerinin eklenmesiyle ekran yatay eksende ciddi şekilde sıkışır. Tuş genişlikleri daralır ve kenarlara yerleşen harflerde dokunma sapmaları artar.
+
+Geleneksel mobil klavyeler yazım düzeltmesi yaparken Levenshtein mesafesi algoritmasını kullanır. Ancak standart algoritmalar tüm harf hatalarına eşit ceza puanı verir. Oysa Türkçe bir klavyede 's' harfine basan bir kullanıcının aslında 'ş' yazmak isteme olasılığı, 's' yerine 'p' yazma olasılığından katbekat yüksektir. Mobil sistemlerde başarıya ulaşmak için klavye tuş matrisinin fiziksel komşuluk haritası ile Türkçe kök-ek morfolojisini birleştiren ağırlıklı hata matrisleri uygulanmalıdır.
+
+## Candemkey yapay zekâ klavyesi ve bağlamsal düzeltme
+
+Kural tabanlı yazım düzeltme sözlükleri modern dil kullanımında yetersiz kalmaktadır. Çünkü bir kelimenin doğruluğu sadece harflerine değil, cümlenin bütününe bağlıdır. Örneğin "Hala gelmedin" cümlesindeki kelime bir akraba adı değil, "hâlâ" (henüz) anlamındadır. Benzer şekilde "kar" ile "kâr", "sana" ile "şana" ayrımları ancak bağlamsal analizle anlaşılabilir.
+
+[Candemsoft](https://candemsoft.com/) olarak hayata geçirdiğimiz [Candemkey](/projeler/candemkey/) ([candemkey.com](https://candemkey.com/)) projesinde, klasik sözlük yaklaşımının ötesine geçerek derin öğrenme tabanlı [yapay zekâ çözümleri](/hizmetler/yapay-zeka/) geliştirdik. Candemkey mimarisi, kullanıcının yazdığı önceki kelimeleri analiz eden hafif ve hızlı bir dil modeliyle çalışır. Model, kullanıcının mesleki diline veya günlük sohbet tarzına göre cümlenin akışını kavrar ve yanlış girilen harfleri anında doğru Türkçe biçimine dönüştürür. Gelişmiş [mobil uygulama](/hizmetler/mobil-uygulama/) mühendisliği sayesinde bu işlemler cihaz üzerinde düşük gecikmeyle gerçekleşir.
+
+## Sık sorulan sorular
+
+### JavaScript'te metin büyütürken neden toUpperCase yerine toLocaleUpperCase kullanılmalıdır?
+Standart `toUpperCase()` fonksiyonu sistem diline bakar ve çoğunlukla İngilizce kurallarla çalışarak 'i' harfini noktasız 'I' yapar. Türkçe karakterlerin doğru büyümesi ('i' -> 'İ', 'ı' -> 'I') için `toLocaleUpperCase('tr-TR')` kullanılması şarttır.
+
+### OCR süreçlerinde silik çıkan Türkçe çengelli harfler nasıl kurtarılır?
+Yalnızca görüntü eşikleme yeterli olmaz. Adaptif binarizasyon sonrasında Türkçe n-gram frekans modelleri ve morfolojik sözlük filtreleri devreye sokulmalı; anlamsız kalan 's' veya 'c' harfleri kelime bağlamına göre 'ş' ve 'ç' ile düzeltilmelidir.
+
+### Orpigo hız okuma uygulamasında Türkçe karakterler okuma odağını nasıl etkiler?
+Türkçedeki 'ı' ve 'i' gibi dar karakterler ile 'm' ve 'ğ' gibi geniş karakterler kelime genişliğini asimetrik değiştirir. Orpigo, karakter sayısına göre değil, font gliflerinin piksel bazlı genişliğine göre ORP hesaplayarak odak harfinin her zaman merkezde kalmasını sağlar.
+
+### Candemkey geleneksel klavye düzeltmelerinden nasıl ayrışır?
+Klasik klavyeler sadece izole kelime sözlüğüne bakar. Candemkey ise cümlenin bağlamını yapay zekâ modelleriyle analiz ederek "kar/kâr" veya "hala/hâlâ" gibi ikilemleri cümlenin anlamına göre hatasız olarak tamamlar.

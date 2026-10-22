@@ -1,0 +1,72 @@
+export const meta = {
+  title: "QR Kodlu Dijital Kartvizit ve Araç QR Etiketi Nasıl Çalışır?",
+  metaTitle: "QR Kodlu Dijital Kartvizit ve Etiket | Candemsoft",
+  description: "Dinamik QR kartvizitlerin ve numara gizleyen araç camı karekod etiketlerinin çalışma prensiplerini, gizlilik avantajlarını ve kullanımını inceleyin.",
+  date: "2026-10-12",
+  author: "Candemsoft",
+  tags: ["kisisel qr", "qr kod", "dijital kartvizit", "mobil uygulama"]
+};
+
+**Kısa cevap:** QR kodlu dijital kartvizitler ve araç camı etiketleri, fiziksel temas noktalarını bulut tabanlı bir kimlik profili veya anonim bildirim arayüzüyle buluşturan modern sistemlerdir. Statik karekodların aksine dinamik QR mimarisiyle çalışan bu yapılar, basılı materyali değiştirmeye gerek kalmadan hedef URL adresini, profil verilerini ve bildirim kurallarını anlık güncellemeyi sağlar. Araç camı etiketlerinde ise sürücünün kişisel telefon numarası gizlenerek, etiketi tarayan kişilerin önceden tanımlanmış durum bildirimlerini güvenle iletmesi sağlanır. Kullanıcıların herhangi bir mobil uygulama yüklemesine gerek kalmadan doğrudan mobil tarayıcı üzerinden çalışan sistem, hem pratiklik hem de KVKK uyumlu kişisel veri gizliliği sunar.
+
+## Statik ve dinamik QR kodlar arasındaki teknik ayrım
+
+Geleneksel karekod sistemleri iki temel mimariye ayrılır: statik ve dinamik kodlar. Statik bir QR kod oluşturulduğunda hedef veri (örneğin tam bir vCard metni veya uzun bir URL) doğrudan matrisin siyah-beyaz modüllerine kodlanır. Veri boyutu büyüdükçe matris yoğunluğu artar; bu da küçük baskılarda veya düşük ışıkta kameranın odaklanmasını zorlaştırır. En büyük dezavantaj ise kalıcılıktır; statik koddaki tek bir harf veya telefon numarası basıldıktan sonra geriye dönük olarak değiştirilemez.
+
+Dinamik QR mimarisinde ise fiziksel koda yalnızca kısa ve benzersiz bir yönlendirme bağlantısı yazılır. Yüzlerce karakterlik karmaşık kişi kartı yerine sunucuya işaret eden sade bir adres yer alır. Böylece karekod matrisi düşük yoğunlukta kalır ve akıllı telefon kameraları tarafından çok daha uzaktan veya açılı açılardan hızla taranır. Ayrıca dinamik kodlar, Reed-Solomon hata düzeltme algoritmasının Seviye H standardı (yüksek veri kurtarma toleransı) ile üretilebilir. Fiziksel etiket üzerinde çizik, toz veya yıpranma meydana gelse dahi tarayıcı kodu eksiksiz çözer. Arka uçtaki bulut sunucusu, gelen isteği kullanıcının güncel profiline yönlendirir.
+
+## Dijital kartvizitin perde arkası: Sıfır kurulum ve vCard altyapısı
+
+Kâğıt kartvizitlerin en büyük sorunu bilgilerin hızla eskimesi ve karşı tarafın verileri rehbere elle kaydetme zorunluluğudur. QR kodlu dijital kartvizitler sıfır kurulum (zero-install) prensibiyle çalışır. Kartviziti inceleyen kişinin özel bir uygulama indirmesine gerek yoktur. iOS ve Android cihazların yerleşik kamera yazılımı karekodu algıladığında varsayılan tarayıcıda optimize edilmiş mobil profili açar.
+
+Sayfa yüklendiğinde modern [web yazılım](/hizmetler/web-yazilim/) mimarisi devreye girer. Kullanıcının unvanı, şirket bilgisi, sosyal medya hesapları ve iletişim kanalları listelenir. Ziyaretçi "Rehbere Kaydet" düğmesine dokunduğunda, sunucu RFC 6350 standartlarına uygun bir vCard (.vcf) dosyasını `text/vcard` MIME türüyle istemciye sunar. Mobil işletim sistemi bu dosyayı yerel rehber uygulamasıyla eşleştirir; ad, soyad, telefon numaraları ve kurumsal e-posta alanları tek dokunuşla rehbere aktarılır. Kullanıcı telefonunu veya şirketini değiştirdiğinde, yönetim panelinden yapacağı tek bir güncelleme tüm ağın en güncel bilgiye ulaşmasını sağlar.
+
+## Araç camı QR etiketi mimarisi ve numara gizleme mekanizması
+
+Araç sahipleri hatalı park, açık unutulan camlar veya yanan farlar gibi durumlarda ulaşılabilir olmak ister. Geleneksel yöntem ön cama telefon numarası yazmaktır. Ancak bu durum, numara toplayıcı spam botlarına, dolandırıcılık girişimlerine ve istenmeyen mesajlara davetiye çıkarır.
+
+Akıllı araç camı QR etiketleri bu güvenlik açığını kapatan bir gizlilik kalkanı oluşturur. Cama yapıştırılan etikette yalnızca şifreli bir token barındıran dinamik bir karekod bulunur. Etiketi tarayan kişi açılan mobil sayfada araç sahibinin telefon numarasını veya kimliğini göremez. Bunun yerine sistem, duruma uygun hazır şablon bildirim butonları sunar:
+- "Aracınızı çeker misiniz? / Çıkışım kapandı"
+- "Farınız açık kaldı"
+- "Camınız açık unutuldu"
+- "Aracınızın alarmı çalıyor"
+- Denetimli kısa durum notu.
+
+Tarayıcı bu şablonlardan birini seçtiğinde istek güvenli API ağ geçidine iletilir. Sunucu, etiketin arkasındaki araç sahibiyle eşleşen hesaba anlık bildirim (push notification) gönderir. Böylece fiziksel dünyada kişisel veri ifşa edilmeden kritik iletişim sağlanmış olur.
+
+## Bildirim iletimi, kötüye kullanım önleme ve hız sınırlama
+
+Açık web üzerinden tetiklenen bildirim sistemlerinde spam ve kötüye kullanımın engellenmesi şarttır. Sistemin güvenliği şu mekanizmalarla sağlanır:
+
+- **Hız Sınırlama (Rate Limiting):** Aynı IP adresinden veya cihazdan belirli bir araca gönderilebilecek bildirim sayısı sınırlandırılır (örneğin 10 dakikada en fazla 2 bildirim).
+- **Soğuma Süresi (Cooldown):** Belirli bir bildirim türü iletildikten sonra sistem aynı bildirim için bekleme süresi uygular.
+- **Bot Koruması:** Anormal trafik modellerinde sessiz doğrulama kontrolleri veya captcha devreye girer.
+- **Çift Yönlü Güvenli İletişim:** Araç sahibi bildirim paneli üzerinden "Geliyorum" gibi hazır yanıtlarla geri dönüş yapabilir; iki taraf da birbirinin numarasını görmez.
+
+Bildirimlerin anında iletilmesi için modern [mobil uygulama geliştirme](/hizmetler/mobil-uygulama/) altyapısında Apple APNs ve Firebase Cloud Messaging servisleri kullanılır.
+
+## KVKK ve kişisel veri gizliliği avantajları
+
+6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) uyarınca cep telefonu numarası doğrudan kişisel veridir. Araç ön camı ve otoparklar kamuya açık alanlardır; buraya yazılan bir numara yabancılar tarafından kopyalanabilir.
+
+Dinamik QR tabanlı iletişim altyapısı, verinin doğrudan ifşa edilmesini engelleyerek tasarımdan gelen gizlilik (privacy by design) ilkesini korur. İletişim anonimleştirilmiş token'lar üzerinden yönetilir. Araç sahibi dilediği zaman bildirim durumunu pasife alabilir veya bildirim kurallarını değiştirebilir. Bu sayede fiziksel nesneler üzerinden iletişim kurulurken kişisel veriler güvence altında tutulur.
+
+## Candemsoft ve Kişisel QR deneyimi
+
+[Candemsoft](https://candemsoft.com/) olarak hayata geçirdiğimiz [Kişisel QR](/projeler/kisisel-qr/) projesi ([kisiselqr.com](https://kisiselqr.com/)), hem dijital kartvizit gereksinimlerini hem de araç güvenliği senaryolarını tek ekosistemde buluşturur. Saha deneyimlerimiz, yalnızca yazılım mimarisinin değil, fiziksel etiket materyalinin de önemli olduğunu göstermiştir. Araç camına yapıştırılan etiketler güneş ışığına, UV ışınlarına ve yıkama kimyasallarına maruz kaldığı için yüksek kontrastlı ve dış ortama dayanıklı kaplamalarla üretilir.
+
+Kullanıcılar tek bir mobil panelden hem dijital iş kartvizitlerinin görünümünü ve bağlantılarını düzenleyebilir hem de araç etiketlerinden gelen bildirimleri gerçek zamanlı yönetebilir.
+
+## Sık sorulan sorular
+
+### QR kodu okutmak için karşı tarafın özel bir uygulama indirmesi gerekir mi?
+Hayır. Kişisel QR profilleri ve araç bildirim ekranları tamamen web tabanlıdır. Standart telefon kamerasıyla kod tarandığında yerleşik tarayıcı açılır; ziyaretçinin herhangi bir uygulama indirmesine gerek yoktur.
+
+### Araç camındaki QR etiketini tarayan kişi telefon numaramı görebilir mi?
+Kesinlikle göremez. Araç QR etiketleri şifreli token mimarisiyle çalışır. Tarayan kişi yalnızca hazır bildirim butonlarının bulunduğu web sayfasını görür; kişisel numaranız sistemde saklı kalır.
+
+### Bilgilerim veya unvanım değiştiğinde yeni bir QR kod bastırmam gerekir mi?
+Hayır. Dinamik QR kod mimarisi sayesinde kartınızdaki karekod değişmez. Profil bilgilerinizi panelden güncellediğiniz anda mevcut kartviziti tarayan herkes en güncel bilgilerinizi görür.
+
+### Kötü niyetli kişilerin aracıma sürekli bildirim göndermesi nasıl engellenir?
+Platform, IP adresi ve cihaz bazlı hız sınırlama algoritmaları uygular. Belirli zaman aralığında aynı kaynaktan peş peşe bildirim gönderilemez ve her bildirim için soğuma süreleri uygulanır.

@@ -3,7 +3,7 @@ import { href } from "@/i18n/routes";
 import { getSite } from "@/lib/content";
 import { getDictionary } from "@/lib/dictionary";
 import { resolveLang } from "@/lib/params";
-import { pageMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, jsonLd, pageBreadcrumbs, pageMetadata } from "@/lib/seo";
 import { PageIntro } from "@/components/page/PageIntro";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { MonoLabel } from "@/components/ui/MonoLabel";
@@ -11,7 +11,7 @@ import { MonoLabel } from "@/components/ui/MonoLabel";
 export async function generateMetadata({ params }: PageProps<"/[lang]/iletisim">): Promise<Metadata> {
   const lang = await resolveLang(params);
   const dict = await getDictionary(lang);
-  return pageMetadata({ lang, route: "contact", title: dict.nav.contact, description: dict.contactPage.lead });
+  return pageMetadata({ lang, route: "contact", title: dict.meta.contactTitle, description: dict.meta.contactDescription });
 }
 
 export default async function ContactPage({ params }: PageProps<"/[lang]/iletisim">) {
@@ -28,6 +28,10 @@ export default async function ContactPage({ params }: PageProps<"/[lang]/iletisi
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLd(breadcrumbJsonLd(pageBreadcrumbs(lang, "contact")))}
+      />
       <PageIntro label={t.label} title={t.title} lead={t.lead} />
       <section data-surface="paper" aria-label={t.label} className="py-(--section-sm)">
         <div className="container-site grid-site gap-y-14">

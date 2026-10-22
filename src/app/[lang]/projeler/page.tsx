@@ -4,7 +4,7 @@ import { href } from "@/i18n/routes";
 import { getProjects, publicFileExists } from "@/lib/content";
 import { getDictionary } from "@/lib/dictionary";
 import { resolveLang } from "@/lib/params";
-import { pageMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, jsonLd, pageBreadcrumbs, pageMetadata } from "@/lib/seo";
 import { PageIntro } from "@/components/page/PageIntro";
 import { asset } from "@/lib/static";
 import { ProjectIndex, ProjectIndexStatic, type IndexItem } from "@/components/project/ProjectIndex";
@@ -12,7 +12,7 @@ import { ProjectIndex, ProjectIndexStatic, type IndexItem } from "@/components/p
 export async function generateMetadata({ params }: PageProps<"/[lang]/projeler">): Promise<Metadata> {
   const lang = await resolveLang(params);
   const dict = await getDictionary(lang);
-  return pageMetadata({ lang, route: "projects", title: dict.nav.projects, description: dict.projectsPage.lead });
+  return pageMetadata({ lang, route: "projects", title: dict.meta.projectsTitle, description: dict.meta.projectsDescription });
 }
 
 export default async function ProjectsPage({ params }: PageProps<"/[lang]/projeler">) {
@@ -50,6 +50,10 @@ export default async function ProjectsPage({ params }: PageProps<"/[lang]/projel
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={jsonLd(breadcrumbJsonLd(pageBreadcrumbs(lang, "projects")))}
+      />
       <PageIntro label={t.label} title={t.title} lead={t.lead} />
       <section data-surface="paper" aria-label={t.label} className="py-(--section-sm)">
         <div className="container-site">

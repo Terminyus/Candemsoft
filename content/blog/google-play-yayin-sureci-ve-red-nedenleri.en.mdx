@@ -1,0 +1,81 @@
+export const meta = {
+  title: "Google Play Submission Guide and Common Rejection Reasons",
+  metaTitle: "Google Play Launch & Rejection Guide | Candemsoft",
+  description: "Master the Google Play submission process, the 20-tester closed testing rule and how to avoid common app rejection pitfalls with our hands-on guide.",
+  date: "2026-10-18",
+  author: "Candemsoft",
+  tags: ["android", "google play", "mobile app", "mobile development"]
+};
+
+**Short answer:** Publishing an Android app on Google Play requires verified developer credentials, completing a 14-day closed test with at least 20 testers, compiling Android App Bundles, and declaring full Data Safety details. Avoiding store rejections requires configuring foreground services correctly, timing notification requests thoughtfully, providing an active privacy policy, and ensuring original in-app functionality.
+
+## Google Play Console setup and developer verification
+
+Distributing software on Android begins with registering a verified Google Play Console account. Google has updated identity and business verification standards to safeguard the marketplace against fraudulent submissions.
+
+Corporate and individual developer accounts follow distinct verification paths. Corporate accounts require formal business documentation, a valid D-U-N-S number, and an official domain email. Individual accounts require government-issued photo identification and proof of address. Until verification is complete, uploading release packages remains disabled. Guaranteeing that submitted details match official public records avoids account suspensions. Professional [mobile app development](/en/services/mobile-apps/) teams always treat these administrative requirements as the initial priority.
+
+## The 20-tester, 14-day closed testing rule
+
+For individual developer accounts registered after November 2023, Google enforces a mandatory testing requirement: apps must complete a closed testing phase with at least 20 opt-in testers continuously for 14 days before applying for production access.
+
+This rule involves more than adding 20 email addresses to an invite list. Testers must accept the Play Store invitation, install the application, and remain opted in throughout the 14 days. Google monitors testing activity. Testers who open the app, test new builds, and submit feedback via the Play Store strengthen your submission.
+
+After 14 days, developers complete a production application form in the console. This form covers user feedback, identified bugs, and technical revisions applied during testing. Superficial answers often cause reviewers to mandate extended testing cycles. Treating closed testing as genuine quality assurance ensures a smooth transition to production.
+
+## Android App Bundle (.aab) and Target API Level policies
+
+Google Play requires applications to use the Android App Bundle (.aab) format instead of standalone APKs. The App Bundle format allows Google Play to generate optimized APKs tailored to each user's device screen density, CPU architecture, and language. This setup shrinks download footprints and improves install efficiency.
+
+In addition, Google updates Target API Level rules annually. Apps submitted or updated on the store must target modern Android versions (such as API 34 or higher). Applications that miss target API baselines will be hidden from users with newer devices and cannot release feature updates. Meeting these targets requires engineering teams to adopt contemporary runtime permission patterns, memory controls, and updated core libraries.
+
+## Data Safety declarations and privacy disclosures
+
+The Data Safety section in the Google Play Console receives thorough manual review. Developers must disclose every category of user information their app collects or transmits:
+
+1. **User data and location:** Document why location or profile data is gathered and confirm whether information is encrypted in transit.
+2. **Third-party SDKs:** Libraries like Firebase Analytics or Crashlytics collect data that must be explicitly listed in your declaration.
+3. **Account deletion:** If your application supports account registration, you must provide a deletion option inside the app and through an external web page.
+4. **Active privacy policy URL:** The privacy policy must be hosted on an active, publicly available web page that accurately explains data processing.
+
+## Common app rejection reasons and solutions
+
+Reviewers frequently reject applications for several preventable policy infractions:
+
+### 1. FOREGROUND_SERVICE permission issues
+Android 14 requires specifying granular foreground service types (`location`, `mediaPlayback`, `dataSync`). Using foreground services without specifying a valid type in the manifest results in immediate rejection. Google may request a video demonstrating why the foreground service is necessary.
+
+### 2. Immediate notification permission requests
+Android 13 introduced the `POST_NOTIFICATIONS` runtime permission. Prompting users for permission immediately upon launch leads to denials and policy scrutiny. Apps should explain the value of notifications first and prompt only after the user triggers a relevant action.
+
+### 3. Minimum functionality and broken screens
+Apps that merely wrap a website inside a WebView, contain broken buttons, or display empty pages violate the Minimum Functionality guideline. Applications must deliver genuine native utility.
+
+### 4. Trademark and intellectual property violations
+Using logos, names, or icons similar to established brands triggers automated copyright and impersonation systems. All graphic assets and app metadata must remain completely original.
+
+## Real-world insights from Seyyah and Orpigo
+
+At [Candemsoft](https://candemsoft.com/), we maintain our own production mobile applications, giving us firsthand experience with Google Play compliance pipelines.
+
+Our social travel exploration application, [Seyyah](/en/projects/seyyah/), allows travelers to visit historic locations across Turkey and collect GPS check-in badges. During store review, precise location handling was our primary compliance focus. We documented foreground location needs and route tracking flows with detailed explanations and demo recordings. Demonstrating that GPS coordinates are never sold to third parties allowed Seyyah to pass review smoothly.
+
+For our speed-reading tool, [Orpigo](/en/projects/orpigo/), users load local PDF documents into an RSVP reading engine. Requesting broad filesystem access through `MANAGE_EXTERNAL_STORAGE` commonly triggers rejections. Instead, we used the Android Storage Access Framework (SAF). By having users select files through the system picker, we removed the need for intrusive storage permissions entirely. Maintaining parity with our web version at [orpigo.com](https://orpigo.com/) supported consistent store approval.
+
+## Handling appeals and re-submissions
+
+If Google Play rejects an update, the Policy Status section outlines the exact guideline violation. When rejections stem from technical bugs or unnecessary permissions, engineers should modify the code, increment the version code, and submit an updated AAB. If you believe the review team misunderstood your app's intended purpose, submit a concise appeal including screen recordings and architectural documentation. Teams looking to navigate these compliance checks can rely on experienced [software consulting](/en/services/consulting/) to prevent costly launch delays.
+
+## Frequently asked questions
+
+**Do all 20 testers need to open the app every single day?**  
+Google does not mandate daily opens for every tester, but complete inactivity can lead to rejection when requesting production access. Having testers launch builds and submit feedback confirms genuine engagement.
+
+**How long does Google Play review usually take?**  
+Initial store submissions and closed testing reviews generally take between 3 and 7 business days. Routine maintenance updates for verified apps often finish within a few hours to 48 hours.
+
+**Are corporate developer accounts exempt from the 20-tester rule?**  
+Yes. The 14-day closed testing requirement applies to individual accounts registered after November 2023. Verified organization accounts with a valid D-U-N-S number can release directly to production.
+
+**Does a single app rejection terminate your developer account?**  
+No. A standard policy rejection does not terminate your account. However, severe or repeated violations, deceptive impersonation, or malicious code can trigger account suspension and registry bans.

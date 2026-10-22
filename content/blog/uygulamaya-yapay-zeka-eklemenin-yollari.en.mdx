@@ -1,0 +1,81 @@
+export const meta = {
+  title: "Realistic Ways to Integrate AI into Mobile and Web Apps",
+  metaTitle: "Practical AI Integration for Apps | Candemsoft",
+  description: "Discover realistic patterns for adding LLMs, RAG pipelines and on-device models to web and mobile apps with strong security and cost-effective latency.",
+  date: "2026-10-14",
+  author: "Candemsoft",
+  tags: ["artificial intelligence", "llm", "mobile app", "web development"]
+};
+
+**Short answer:** Integrating artificial intelligence into web and mobile applications involves much more than connecting a cloud API key to a chat box. Production deployments require choosing the right architecture—cloud LLM APIs, retrieval-augmented generation (RAG), or on-device edge models—while managing token costs, minimizing latency, and protecting customer data.
+
+The rise of generative language models has made intelligent functionality standard across software products. However, while creating a prototype takes hours, deploying that feature to thousands of users requires rigorous engineering. Uncontrolled token bills, slow response delays, and privacy risks frequently undermine poorly planned rollouts.
+
+At [Candemsoft](https://candemsoft.com/), we build client software spanning [AI solutions](/en/services/artificial-intelligence/), [web development](/en/services/web-development/), and [mobile apps](/en/services/mobile-apps/), while engineering our own products like the smart mobile keyboard [Candemkey](/en/projects/candemkey/). In this guide, we outline the primary technical architectures, latency mitigation strategies, and security protocols needed to deploy artificial intelligence reliably.
+
+## Three architectural patterns for integrating AI
+
+There is no universal blueprint for embedding machine learning into software. Depending on your operational needs, response speed, and privacy requirements, three primary patterns stand out:
+
+### 1. Cloud LLM APIs and structured outputs
+
+The most direct integration path is querying hosted frontier models (such as OpenAI, Anthropic, or Google) via REST or gRPC APIs. These models excel at language comprehension, content synthesis, and flexible reasoning.
+
+However, production applications rarely need unstructured text; they require typed data structures that backend code can reliably parse. Function calling and JSON Schema structured outputs solve this challenge. Rather than asking a model to describe booking details conversationally, the application enforces a strict JSON schema. The engine guarantees a validated object containing exact values—such as dates, quantities, and identifiers—enabling reliable database updates.
+
+### 2. Retrieval-Augmented Generation (RAG) and vector search
+
+Commercial foundation models possess broad public knowledge but lack visibility into internal documents, customer databases, or proprietary catalogs. Re-training foundation weights or performing fine-tuning is expensive, slow, and becomes outdated as internal records change.
+
+Retrieval-Augmented Generation (RAG) solves this limitation by supplying verified context dynamically at runtime:
+- Internal documents, catalogs, or support logs are segmented into semantic chunks.
+- These chunks are converted into dense vector embeddings and stored in a vector database (such as pgvector or Qdrant).
+- When a user submits an inquiry, an embedding of the query performs a similarity search against indexed records.
+- Relevant passages are injected into the prompt context alongside instructions directing the model to answer solely using the verified reference material.
+
+This approach grounds model reasoning, eliminates hallucinations, and ensures business records remain fresh without model retraining.
+
+### 3. On-device edge models
+
+When sub-millisecond response speed is critical or when devices must function offline, cloud APIs fall short. Using technologies such as Apple CoreML, ONNX Runtime, or TensorFlow Lite, compact Small Language Models (SLMs) can run directly on consumer smartphones and browsers.
+
+The fundamental advantage of on-device computation is zero marginal server cost: serving one million client queries incurs no API hosting bills. Furthermore, because user inputs never leave the physical device, privacy compliance is built in by default. On-device inference is ideal for typing assistance, autocorrection, predictive text completion, and offline sentiment classification.
+
+## Latency and cost optimization in production
+
+Deploying AI features without cost safeguards often leads to budget shocks and sluggish user experiences. To maintain sustainable performance, adopt these engineering practices:
+
+- **Prompt caching:** Use API prompt caching to store static system instructions and recurring reference context on provider nodes, reducing input token costs and time-to-first-token.
+- **Context window budgeting:** Avoid sending entire chat histories with every roundtrip. Use rolling window algorithms or background summarization to keep message history tight.
+- **Streaming responses:** Waiting for a full text payload creates the perception of a frozen app. Deliver tokens progressively using Server-Sent Events (SSE) or WebSockets to display instant progress.
+- **Tiered fallback routing:** Do not route every routine task to the largest, most expensive model. Use compact, low-latency models for categorization, reserving heavy frontier models only for complex reasoning.
+
+## Security, user privacy, and data governance
+
+Integrating intelligent services into client applications requires strong governance to maintain customer confidence:
+
+- **Zero data retention agreements:** Always utilize commercial enterprise API endpoints that guarantee user payloads are neither retained on external servers nor used to train foundation models.
+- **Isolating sensitive form fields:** Intelligent assistive features must be disabled whenever focus lands on credential fields, payment card inputs, or national identification numbers.
+- **Local PII redaction:** Mask personally identifiable information using client-side regular expressions before payloads are transmitted off-device.
+
+## Engineering lessons from Candemkey
+
+Candemsoft's smart mobile keyboard [Candemkey](/en/projects/candemkey/) ([candemkey.com](https://candemkey.com/)) represents a real-world application of these design principles.
+
+Developing a mobile keyboard extension for iOS imposes extreme technical constraints. Apple restricts keyboard extensions to an exceptionally narrow memory boundary—typically around 30 MB of RAM. Exceeding this allocation causes the operating system to terminate the keyboard process immediately. Consequently, running large models in extension memory is impossible, necessitating a hybrid system architecture.
+
+In Candemkey, instantaneous keystrokes and core syntax checks are processed locally through optimized heuristics. Meanwhile, generative capabilities—such as drafting formal emails, adjusting tone, and translating sentences—are handled asynchronously through secure, low-latency cloud microservices. Crucially, when a user enters a password or credit card field, Candemkey automatically suppresses external network requests and reverts to a native secure mode. This architecture delivers sophisticated assistance while guaranteeing privacy and stability.
+
+## Frequently asked questions
+
+**How do you estimate API and infrastructure costs for app AI?**
+Costs depend on architecture, user inquiry volume, and average token usage. On-device edge models generate zero server hosting fees. For cloud LLMs, expense corresponds directly to input and output tokens consumed. Implementing prompt caching, small tier models, and strict context budgets keeps operating costs predictable.
+
+**Is a RAG pipeline necessary for every application?**
+No. Applications performing basic text rephrasing, language translation, or general summarization operate effectively with standard zero-shot LLM requests. RAG is only necessary when responses must reflect non-public business documents, live inventory statuses, or personalized internal knowledge.
+
+**Do on-device models work reliably on older mobile phones?**
+On-device models rely heavily on modern Neural Processing Units (NPUs) and available system RAM. While recent devices run quantized edge models effortlessly, older hardware may experience battery drain. Applications should employ graceful degradation, routing tasks to cloud endpoints when local hardware is constrained.
+
+**How can companies prevent user data from training public AI models?**
+Enterprise API tiers explicitly exclude customer payload data from model training cycles and support zero-retention policies. Verifying vendor data processing agreements and stripping personal identifiers before transmission ensures user data remains completely confidential.

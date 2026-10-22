@@ -1,7 +1,27 @@
 {
   "meta": {
     "siteTitle": "Candemsoft — İstanbul'dan web, mobil ve yapay zekâ yazılımı",
-    "siteDescription": "Candemsoft, İstanbul'da web yazılım, mobil uygulama, yapay zekâ, UI/UX ve danışmanlık işleri yapan bir yazılım ekibi."
+    "siteDescription": "Candemsoft, İstanbul'da web yazılım, mobil uygulama, yapay zekâ, UI/UX ve danışmanlık işleri yapan bir yazılım ekibi.",
+    "homeTitle": "Web ve Mobil Uygulama Geliştirme İstanbul | Candemsoft",
+    "homeDescription": "İstanbul merkezli Candemsoft ile modern web yazılımı, mobil uygulama ve yapay zekâ çözümlerinizi hayata geçirin. Hemen bizimle iletişime geçin.",
+    "aboutTitle": "Hakkımızda: İstanbul Yazılım Şirketi | Candemsoft",
+    "aboutDescription": "Candemsoft; kendi mobil uygulamalarını geliştiren ve kurumsal müşterilere özel web, mobil ve yapay zekâ yazılımları sunan bir ekiptir. Bizi tanıyın.",
+    "servicesTitle": "Web, Mobil ve Yapay Zekâ Hizmetleri | Candemsoft",
+    "servicesDescription": "Modern web yazılımı, mobil uygulamalar, yapay zekâ entegrasyonu ve UI/UX tasarım hizmetleri sunuyoruz. Detaylı bilgi alıp hemen teklif isteyin.",
+    "projectsTitle": "Web ve Mobil Yazılım Projelerimiz | Candemsoft",
+    "projectsDescription": "Finanstan teknopark sistemlerine kadar başarıyla tamamladığımız web ve mobil projelerimizi inceleyin; yeni dijital projenizi birlikte başlatalım.",
+    "productsTitle": "Kendi Mobil ve Web Ürünlerimiz | Candemsoft",
+    "productsDescription": "Orpigo, Kişisel QR, Seyyah, CandemFit ve Candemkey: Candemsoft ekibinin geliştirdiği yenilikçi mobil uygulamaları keşfedin ve hemen kullanın.",
+    "teamTitle": "Yazılım ve Tasarım Ekibimiz | Candemsoft",
+    "teamDescription": "Web geliştiriciler, mobil mühendisler ve UI/UX tasarımcılardan oluşan dinamik Candemsoft ekibiyle tanışın; yeni dijital fikrinizi geliştirelim.",
+    "blogTitle": "Yazılım ve Teknoloji Blogu | Candemsoft",
+    "blogDescription": "Mobil uygulama geliştirme, web teknolojileri ve yapay zekâ deneyimlerimizi paylaştığımız teknik rehberleri inceleyin; hemen okumaya başlayın.",
+    "contactTitle": "İletişim: Projenizi Birlikte Başlatalım | Candemsoft",
+    "contactDescription": "Web, mobil uygulama veya yapay zekâ projeniz için İstanbul'daki ekibimizle iletişime geçin; projenizi konuşalım ve hemen teklif hazırlayalım.",
+    "privacyTitle": "Gizlilik Politikası ve KVKK Metni | Candemsoft",
+    "privacyDescription": "Candemsoft web sitesi ve mobil uygulamalarında kişisel verilerin korunması ve KVKK aydınlatma bildirimlerini öğrenmek için metni hemen okuyun.",
+    "toolsTitle": "Ücretsiz Türkçe Metin Araçları | Candemsoft",
+    "toolsDescription": "Büyük küçük harf dönüştürücü, karakter ve kelime sayacı ile Türkçe slug üretici araçlarını tarayıcınızda ücretsiz, güvenli ve hızlıca hemen deneyin."
   },
   "nav": {
     "home": "Ana sayfa",
@@ -18,7 +38,8 @@
     "language": "Dil",
     "switchTo": "English",
     "primary": "Ana menü",
-    "privacy": "Gizlilik"
+    "privacy": "Gizlilik",
+    "tools": "Araçlar"
   },
   "common": {
     "visitSite": "Siteyi ziyaret et",
@@ -229,7 +250,9 @@
     "title": "Yazılar.",
     "lead": "Çalışırken öğrendiklerimiz. Kısa, teknik, işe yarar.",
     "readingTime": "{n} dk okuma",
-    "empty": "Henüz yazı yok."
+    "empty": "Henüz yazı yok.",
+    "relatedPosts": "İlgili Yazılar",
+    "tags": "Etiketler"
   },
   "contactPage": {
     "label": "İletişim",
@@ -312,9 +335,43 @@
     "qrAlertHint": "Dene: bir durum seç",
     "qrAlertApp": "Kişisel QR",
     "qrAlertNow": "şimdi",
-    "qrAlertSituations": [["Cam açık", "Aracınızın camı açık"], ["Yanlış park", "Aracınız yanlış park edilmiş"], ["Farlar açık", "Aracınızın farları yanıyor"], ["Lastik inik", "Aracınızın lastiği inik görünüyor"]],
+    "qrAlertSituations": [
+      [
+        "Cam açık",
+        "Aracınızın camı açık"
+      ],
+      [
+        "Yanlış park",
+        "Aracınız yanlış park edilmiş"
+      ],
+      [
+        "Farlar açık",
+        "Aracınızın farları yanıyor"
+      ],
+      [
+        "Lastik inik",
+        "Aracınızın lastiği inik görünüyor"
+      ]
+    ],
     "qrAlertNote": "Okutan kişi uygulama kurmaz, numaranı görmesi gerekmez. Bildirim doğrudan telefonuna düşer.",
-    "qrFacts": [["5 × 8 cm", "araç camının içine yapışan etiket"], ["Su geçirmez", "UV dayanımlı, kazınmaya dirençli"], ["350 ₺", "kargo dahil, abonelik yok"], ["3 dil", "profil TR, EN ve KG açılır"]],
+    "qrFacts": [
+      [
+        "5 × 8 cm",
+        "araç camının içine yapışan etiket"
+      ],
+      [
+        "Su geçirmez",
+        "UV dayanımlı, kazınmaya dirençli"
+      ],
+      [
+        "350 ₺",
+        "kargo dahil, abonelik yok"
+      ],
+      [
+        "3 dil",
+        "profil TR, EN ve KG açılır"
+      ]
+    ],
     "qrRole": "Unvan · Şirket",
     "fitWorkout": "Örnek antrenman",
     "fitDistance": "mesafe",
@@ -324,13 +381,47 @@
     "keyDemoLabel": "Örnek: AI tuşu",
     "keyChat": "Dosya bugün gelir mi?",
     "keyRaw": "Abi dosyayı bugün yetiştiremiycem yarın sabah atsam olur mu",
-    "keyActions": [["Düzelt", "Abi, dosyayı bugün yetiştiremeyeceğim, yarın sabah göndersem olur mu?"], ["Resmî", "Dosyayı bugün yetiştiremeyeceğim. Yarın sabah göndermem uygun olur mu?"], ["Samimi", "Abi dosyayı bugün bitiremedim, yarın sabah atsam olur mu? 🙏"], ["Kısalt", "Dosya yarın sabah olur mu?"], ["Uzat", "Abi, dosyayı bugün yetiştirmem mümkün görünmüyor. Yarın sabah ilk iş olarak gönderirsem uygun olur mu?"]],
+    "keyActions": [
+      [
+        "Düzelt",
+        "Abi, dosyayı bugün yetiştiremeyeceğim, yarın sabah göndersem olur mu?"
+      ],
+      [
+        "Resmî",
+        "Dosyayı bugün yetiştiremeyeceğim. Yarın sabah göndermem uygun olur mu?"
+      ],
+      [
+        "Samimi",
+        "Abi dosyayı bugün bitiremedim, yarın sabah atsam olur mu? 🙏"
+      ],
+      [
+        "Kısalt",
+        "Dosya yarın sabah olur mu?"
+      ],
+      [
+        "Uzat",
+        "Abi, dosyayı bugün yetiştirmem mümkün görünmüyor. Yarın sabah ilk iş olarak gönderirsem uygun olur mu?"
+      ]
+    ],
     "keyResult": "Sonuç",
     "keyApply": "Uygula",
     "keyCopy": "Kopyala",
     "keyRetry": "Yeniden",
     "keySample": "AI yanıtı örnektir; gerçek sonuç değişebilir.",
-    "keyFacts": [["Her uygulamada", "Mesaj, e-posta, not ya da adres çubuğu: klavye alanı tanır, tuşlarını ona göre değiştirir."], ["Komut satırı", "Hazır düğmeler yetmezse kendi cümleni yaz: “Bunu İspanyolcaya çevir”."], ["Gizlilik", "Şifre alanlarında AI açılmaz. Yeni istek ve yanıt metinleri loglara yazılmıyor."]],
+    "keyFacts": [
+      [
+        "Her uygulamada",
+        "Mesaj, e-posta, not ya da adres çubuğu: klavye alanı tanır, tuşlarını ona göre değiştirir."
+      ],
+      [
+        "Komut satırı",
+        "Hazır düğmeler yetmezse kendi cümleni yaz: “Bunu İspanyolcaya çevir”."
+      ],
+      [
+        "Gizlilik",
+        "Şifre alanlarında AI açılmaz. Yeni istek ve yanıt metinleri loglara yazılmıyor."
+      ]
+    ],
     "keyLayouts": "Türkçe Q · English · Español",
     "keySoonStores": "App Store ve Google Play: yakında",
     "keyTitle": "Yazdığın her şeye yapay zekâ.",
@@ -459,5 +550,13 @@
     "home": "Ana sayfa",
     "status": "Durum",
     "location": "Konum"
+  },
+  "toolsPage": {
+    "label": "Ücretsiz Araçlar",
+    "title": "Türkçe Metin ve SEO Araçları",
+    "lead": "Tarayıcınızda çalışan, sunucuya veri göndermeyen ve Türkçe dil kurallarına tam uyumlu ücretsiz metin işleme araçları.",
+    "openTool": "Aracı Kullan",
+    "privacyNotice": "Tüm işlemler tarayıcınızda yerel olarak gerçekleşir; hiçbir veri sunucuya iletilmez.",
+    "exploreTitle": "Diğer Ücretsiz Araçlar"
   }
 }

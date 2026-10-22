@@ -46,7 +46,7 @@ export function CookieNotice({ text, ok, more, moreHref }: { text: string; ok: s
         <button type="button" onClick={close} className="min-h-10 rounded-md bg-paper-100 px-4 text-sm font-medium text-ink-950 hover:bg-signal">
           {ok}
         </button>
-        <Link href={moreHref} className="text-sm text-stone-400 underline underline-offset-4 hover:text-paper-100">
+        <Link href={moreHref} prefetch={false} className="text-sm text-stone-400 underline underline-offset-4 hover:text-paper-100">
           {more}
         </Link>
       </div>

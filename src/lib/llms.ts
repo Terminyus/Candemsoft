@@ -40,7 +40,7 @@ export async function buildLlms(full: boolean): Promise<string> {
     ...productLines("tr", full),
     "",
     "## Hizmetler / Services",
-    ...getServices().map((s) => `- [${s.title.tr}](${abs(href("tr", "services"))}#${s.slug}): ${s.summary.tr}`),
+    ...getServices().map((s) => `- [${s.title.tr}](${abs(href("tr", "services", s.slug))}): ${s.summary.tr}`),
     "",
     "## Projeler / Projects",
     ...getProjects().map((p) => `- [${p.name}](${abs(href("tr", "projects", p.slug))}): ${p.summary.tr}${p.status === "live" ? ` (${p.url})` : ""}`),

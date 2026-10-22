@@ -18,10 +18,15 @@
     "en": "Public · dormitories",
     "es": "Público · residencias"
   },
+  "metaTitle": {
+    "tr": "KYK Yemek Menüsü Bilgi Sistemi | Candemsoft",
+    "en": "KYK Dormitory Meal Menu System | Candemsoft",
+    "es": "Sistema de Menú de Comedor KYK | Candemsoft"
+  },
   "summary": {
-    "tr": "KYK yurtlarının yemek menüsünü gösteren sistem.",
-    "en": "A system that shows meal menus for KYK dormitories.",
-    "es": "Un sistema que muestra los menús de las residencias KYK."
+    "tr": "KYK yurtlarındaki öğrencilerin günlük yemek listelerine kolayca erişebilmesi için geliştirdiğimiz pratik ve hızlı menü takip sistemini hemen keşfedin.",
+    "en": "The meal menu platform developed for KYK dormitories allows university students to check daily breakfast and dinner listings quickly. Explore it now.",
+    "es": "El sistema desarrollado para las residencias KYK permite a los estudiantes consultar menús diarios de forma ágil y sencilla. Conozca la app hoy."
   },
   "year": null,
   "services": [

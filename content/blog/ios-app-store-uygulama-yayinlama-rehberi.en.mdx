@@ -1,0 +1,98 @@
+export const meta = {
+  title: "First-Time iOS App Store Submission Checklist & Guide",
+  metaTitle: "iOS App Store Submission Checklist | Candemsoft",
+  description: "Prepare your first iOS release smoothly with our complete App Store submission checklist covering certificates, privacy labels and Apple review policies.",
+  date: "2026-10-20",
+  author: "Candemsoft",
+  tags: ["ios", "app store", "mobile app", "apple"]
+};
+
+**Short answer:** Submitting your first iOS application to the Apple App Store requires much more than uploading a compiled binary. It demands a structured release workflow covering Apple Developer account setup, D-U-N-S verification for corporate entities, certificate and provisioning management, TestFlight beta cycles, App Privacy nutrition disclosures, and strict adherence to Apple App Store Review Guidelines.
+
+The Apple ecosystem is known for high security and polished user experiences. However, this benchmark brings a stringent review process. Teams launching an iOS application for the first time often encounter unexpected bureaucratic and technical hurdles. This submission checklist walks you through every essential step to secure store approval.
+
+## 1. Apple Developer account setup and corporate D-U-N-S verification
+
+Your release journey starts with enrollment in the Apple Developer Program:
+
+- **Individual Account:** The developer's personal name appears as the seller. Setup is fast, but delegating granular permissions to external engineers is limited.
+- **Organization Account:** Registered under a legal company entity, displaying the corporate name. It allows role-based access for multiple engineers and designers.
+
+Enrolling as an organization requires a valid 9-digit D-U-N-S number from Dun & Bradstreet. Requesting a D-U-N-S number is free, but verification can take one to three weeks. If publishing under a corporate entity, start this process well before engineering finishes. Annual membership costs $99.
+
+## 2. Certificates, Identifiers, and Provisioning Profiles
+
+To run on devices and upload to App Store Connect, iOS apps rely on Apple's cryptographic signing infrastructure:
+
+- **Certificates:** An "Apple Distribution" certificate is required to sign production binaries for store submission.
+- **App IDs and Capabilities:** Defines the unique bundle identifier (e.g., `com.yourcompany.app`). Native capabilities like Push Notifications, Sign in with Apple, or HealthKit are configured here.
+- **Provisioning Profiles:** Binds certificates, App IDs, and entitlements together. Production builds require an "App Store" distribution profile.
+
+While Xcode's automatic signing simplifies local testing, CI/CD pipelines typically manage certificates through `fastlane match`.
+
+## 3. TestFlight beta testing: Internal vs. external groups
+
+Never submit directly to production review without validating builds through TestFlight:
+
+- **Internal Testing:** Supports up to 100 internal team members. Builds become available immediately without requiring Apple review.
+- **External Testing:** Distributes builds to up to 10,000 public testers via invite links. The first build uploaded for an external group undergoes a lightweight Beta App Review by Apple.
+
+TestFlight is invaluable for capturing real-world crash logs, collecting feedback, and catching regressions across hardware configurations before public release.
+
+## 4. App Store Connect metadata and visual assets
+
+Store listing metadata is just as critical as compiled code:
+
+- **Screenshots:** High-resolution captures for 6.9-inch and 6.5-inch devices are required. If supporting iPad, 13-inch iPad Pro screenshots are mandatory. Display authentic in-app workflows rather than marketing claims.
+- **App Icon:** A 1024x1024 pixel PNG image without transparency in RGB color space.
+- **Listing Copy:** App Name (up to 30 characters), Subtitle (up to 30 characters), a 100-character keyword list, and an informative description.
+- **Mandatory URLs:** An active Support URL for user assistance, and a publicly accessible Privacy Policy URL.
+
+## 5. Privacy requirements: App Privacy labels and ATT
+
+Apple treats user privacy as a foundational requirement:
+
+- **App Privacy Nutrition Labels:** Disclose every category of data collected by your app and embedded third-party SDKs (such as Firebase or Sentry). Declare whether data links to user identity or tracks behavior across apps.
+- **App Tracking Transparency (ATT):** If your app collects an IDFA or shares user data across apps for advertising, implement ATT and provide a clear `NSUserTrackingUsageDescription`.
+- **Permission Strings in Info.plist:** Declarations for camera, photos, or location (`NSLocationWhenInUseUsageDescription`) must state exact, user-facing reasons rather than generic placeholders.
+
+## 6. App Store Review Guidelines: Avoiding common rejections
+
+Review rejections usually stem from violations of specific guidelines:
+
+- **Guideline 4.2 (Minimum Functionality):** Apps that merely wrap a website inside a WebView or provide minimal utility will be rejected. An app must deliver lasting value, interactivity, and native mobile functionality.
+- **Guideline 2.1 (App Completeness & Demo Accounts):** If your app requires authentication, provide the review team with a fully functioning test account in the App Review Notes. This account must not require SMS two-factor authentication and should contain realistic sample data. Broken links or placeholder text trigger immediate rejections.
+- **Guideline 3.1.1 (In-App Purchase):** Digital goods, premium tiers, and subscriptions must use Apple's In-App Purchase (IAP) system. Directing users to external payment processors for digital unlocks is strictly prohibited.
+
+## 7. Real-world insights: Lessons from Seyyah and Orpigo
+
+Our team at [Candemsoft](https://candemsoft.com/) applies production experience across diverse applications:
+
+- **[Seyyah](/en/projects/seyyah/):** For our social travel exploration app featuring GPS-verified check-ins, we documented our location verification logic and anti-spoofing measures in the submission notes. Providing clear background explanations and public documentation via [seyyah.info](https://seyyah.info/) enabled swift clearance without delays.
+- **[Orpigo](/en/projects/orpigo/):** For our ORP speed-reading platform, we outlined how local file storage handles EPUB/PDF parsing without compromising device sandboxing. By providing sample test documents and linking clear support channels on [orpigo.com](https://orpigo.com/), we ensured a frictionless approval cycle.
+
+Providing thorough context to reviewers preemptively eliminates ambiguities before they cause formal rejections.
+
+## 8. Navigating review feedback in Resolution Center
+
+Standard app reviews typically take between 24 and 48 hours. If your submission receives a rejection, approach it methodically:
+
+- Review the specific guideline cited and examine any attached reviewer screenshots in Resolution Center.
+- If the rejection involves a misunderstanding, reply respectfully with clear explanations and, if necessary, an unlisted video demonstration.
+- If the issue stems from an unhandled edge case or missing permission prompt, resolve the bug in your code and upload a fresh build.
+
+Adopting an engineering-led approach to [mobile app development](/en/services/mobile-apps/) ensures App Store compliance is treated as a core architectural milestone rather than a last-minute obstacle.
+
+## Frequently asked questions
+
+### Should I enroll in the Apple Developer Program as an individual or an organization?
+Choose an organization account if you operate a registered company. It displays your company name on the store listing, shields personal names, and enables multiple developers to access the account with distinct permissions.
+
+### What are the key requirements for a reviewer demo account?
+The demo account must be pre-populated with realistic sample data, remain free of SMS two-factor authentication requirements, and provide unrestricted access to all features requiring evaluation.
+
+### If my submission is rejected, does the review cycle start from scratch?
+No. Responding directly in Resolution Center or uploading an updated build continues the review within the existing ticket context, usually resulting in a much faster turnaround.
+
+### Is TestFlight external testing review identical to final App Store review?
+No. External TestFlight review is a lighter verification checking for obvious crashes and basic policy compliance. The production App Store review evaluates all guidelines, metadata, in-app purchases, and privacy disclosures thoroughly.

@@ -15,17 +15,16 @@ const LATIN_EXT =
   "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF";
 
 const faces = [
-  { family: "Instrument Sans", file: "instrument", weight: "400 700", preload: true },
-  { family: "Archivo V2 Display", file: "archivo-v2-display", weight: 800, preload: true },
-  { family: "Archivo V2 Heading", file: "archivo-v2-heading", weight: 700, preload: false }, // nav/subheads: fine to swap in
-  { family: "Caveat V2", file: "caveat-v2", weight: 700, preload: false },
+  { family: "Instrument Sans", file: "instrument", weight: "400 700", preload: true, display: "swap" },
+  { family: "Archivo V2 Display", file: "archivo-v2-display", weight: 800, preload: true, display: "swap" },
+  { family: "Archivo V2 Heading", file: "archivo-v2-heading", weight: 700, preload: false, display: "swap" }, // nav/subheads: swaps in smoothly
 ];
 
 const css = faces
   .flatMap((f) =>
     (["latin-ext", "latin"] as const).map(
       (sub) =>
-        `@font-face{font-family:"${f.family}";src:url("${asset(`/fonts/${f.file}-${sub}.v1.woff2`)}") format("woff2");font-weight:${f.weight};font-display:swap;unicode-range:${sub === "latin" ? LATIN : LATIN_EXT}}`,
+        `@font-face{font-family:"${f.family}";src:url("${asset(`/fonts/${f.file}-${sub}.v1.woff2`)}") format("woff2");font-weight:${f.weight};font-display:${f.display};unicode-range:${sub === "latin" ? LATIN : LATIN_EXT}}`,
     ),
   )
   .join("\n");

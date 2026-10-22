@@ -48,7 +48,7 @@ export function V2Hero({ lang, dict }: { lang: Locale; dict: Dictionary }) {
                   href={`#${p.slug}`}
                   className="group flex h-full flex-col items-start gap-3 rounded-2xl border border-ink-950 p-3 transition-colors hover:bg-ink-950 hover:text-white"
                 >
-                  <RoomIcon product={p} className="size-12 ring-1 ring-ink-950/10" />
+                  <RoomIcon product={p} priority className="size-12 ring-1 ring-ink-950/10" />
                   <span className="w-full font-archivo text-[0.95rem] font-semibold leading-tight [overflow-wrap:anywhere]">{p.name}</span>
                 </a>
               </li>

@@ -1,0 +1,181 @@
+{
+  "key": "kelime-karakter-sayaci",
+  "slug": {
+    "tr": "kelime-karakter-sayaci",
+    "en": "word-character-counter",
+    "es": "contador-palabras-caracteres"
+  },
+  "title": {
+    "tr": "Kelime ve Karakter Sayacı",
+    "en": "Word and Character Counter",
+    "es": "Contador de Palabras y Caracteres"
+  },
+  "metaTitle": {
+    "tr": "Kelime ve Karakter Sayacı | Candemsoft",
+    "en": "Word & Character Counter Online | Candemsoft",
+    "es": "Contador Palabras y Caracteres | Candemsoft"
+  },
+  "metaDescription": {
+    "tr": "Metinlerinizin kelime, boşluklu ve boşluksuz karakter sayısını anında hesaplayın. SEO, sosyal medya ve akademik çalışmalar için okuma süresi analizi.",
+    "en": "Accurately count words, characters with and without spaces, and reading time. Ideal for SEO meta descriptions, social media limits, and academic essays.",
+    "es": "Calcula al instante palabras, caracteres con y sin espacios y el tiempo estimado de lectura. Ideal para SEO, redes sociales y textos académicos."
+  },
+  "kicker": {
+    "tr": "Metin Analizi ve Uzunluk Kontrolü",
+    "en": "Text Analytics & Length Optimization",
+    "es": "Análisis de Texto y Control de Longitud"
+  },
+  "lead": {
+    "tr": "Yazılarınızın kelime ve karakter dağılımını, boşluklu/boşluksuz uzunluğunu ve tahmini okuma süresini anında ölçün. Arama motorları, sosyal medya ağları ve profesyonel içerik üretimi için ideal analiz.",
+    "en": "Instantly analyze word count, character density with or without spaces, and estimated reading time. Tailored for search engine limits, social publishing, and professional copywriting.",
+    "es": "Mide al instante el recuento de palabras, caracteres con y sin espacios y el tiempo estimado de lectura. Diseñado para optimización SEO, redes sociales y redacción profesional."
+  },
+  "article": {
+    "title": {
+      "tr": "Karakter ve Kelime Sayımının SEO, Sosyal Medya ve Yayıncılıktaki Rolü",
+      "en": "The Strategic Value of Character and Word Counting in Digital Media",
+      "es": "El Valor Estratégico del Conteo de Palabras y Caracteres en Medios Digitales"
+    },
+    "sections": [
+      {
+        "heading": {
+          "tr": "Arama Motoru Optimizasyonunda (SEO) Karakter Sınırları ve Snippet Güvenliği",
+          "en": "SEO Character Limits and Search Engine Snippet Integrity",
+          "es": "Límites de Caracteres en SEO e Integridad de Snippets"
+        },
+        "paragraphs": {
+          "tr": [
+            "Arama motoru sonuç sayfalarında (SERP) kullanıcıların ilk gördüğü unsur sayfa başlığı ve meta açıklamadır. Google algoritmaları sayfa başlıklarını genellikle 50 ila 60 karakter aralığında görüntüler. Bu sınır aşıldığında başlığın sonu arama sonuçlarında üç nokta (...) ile kırpılır ve kullanıcının göreceği temel mesaj kaybolur. Başlığın kesilmesi yalnızca estetik bir problem yaratmakla kalmaz; tıklama oranını (CTR) belirgin biçimde aşağı çeker.",
+            "Meta açıklamalarda (meta description) ise ideal uzunluk 140 ile 160 karakter aralığındadır. 140 karakterden kısa kalan açıklamalar çoğunlukla Google tarafından yetersiz bulunur ve motor sayfa içerisinden rastgele paragrafları snippet olarak seçmeye yönelir. 160 karakterin üzerine çıkan metinler ise hem masaüstünde hem de dar ekranlı mobil cihazlarda kesintiye uğrar. Kelime ve karakter sayacı, yayın öncesinde içeriklerinizin bu dar sınır içinde kalarak maksimum görünürlük elde etmesini temin eder."
+          ],
+          "en": [
+            "On search engine results pages (SERPs), the title tag and meta description constitute the primary touchpoint for prospective visitors. Google displays title tags within a safe threshold of 50 to 60 characters (approximately 600 pixels). Exceeding this boundary causes search crawlers to truncate the heading with an ellipsis (...), severing vital marketing hooks and brand keywords. Truncation does not merely produce an unsightly snippet; it directly degrades organic click-through rates.",
+            "Similarly, the optimal window for meta descriptions spans strictly between 140 and 160 characters. Descriptions that fall below 140 characters are frequently disregarded by search engines, prompting algorithms to pull arbitrary text fragments directly from the page body. Conversely, descriptions exceeding 160 characters suffer abrupt truncation on both mobile screens and desktop viewports. Using a dedicated character counter safeguards your metadata so that each character drives engagement."
+          ],
+          "es": [
+            "En las páginas de resultados de los motores de búsqueda (SERP), la etiqueta de título y la meta descripción son el primer punto de contacto con la audiencia. Google muestra los títulos dentro de un límite seguro de entre 50 y 60 caracteres (unos 600 píxeles). Superar este umbral provoca que el buscador recorte el titular con puntos suspensivos (...), mutilando palabras clave esenciales y reduciendo la tasa de clics orgánicos (CTR).",
+            "Por su parte, la extensión óptima para las meta descripciones oscila estrictamente entre 140 y 160 caracteres. Los textos con menos de 140 caracteres suelen ser descartados por el algoritmo, que acaba extrayendo frases aleatorias del cuerpo de la página. Por el contrario, los textos que superan los 160 caracteres se truncan en pantallas móviles y de escritorio. Un contador preciso garantiza que tus metadatos comuniquen su mensaje completo sin cortes inesperados."
+          ]
+        }
+      },
+      {
+        "heading": {
+          "tr": "Sosyal Medya Platform Limitleri ve Kanca (Hook) Yönetimi",
+          "en": "Social Media Constraints and Strategic Hook Positioning",
+          "es": "Límites en Redes Sociales y Gestión Estratégica del Gancho"
+        },
+        "paragraphs": {
+          "tr": [
+            "Sosyal medya platformları, kullanıcı deneyimini hızlı ve akıcı tutmak adına katı karakter sınırları uygular. X (eski adıyla Twitter) standart kullanıcı hesaplarında gönderi başına 280 karakter sınırı koyar. Tek bir boşluk dahi bu limitin aşılmasına ve gönderi düğmesinin pasif hale gelmesine sebep olur. Instagram profil biyografilerinde ise 150 karakterlik net bir sınır bulunur ve bu alanda her harfin değeri paha biçilemezdir.",
+            "LinkedIn gibi profesyonel ağlarda ise durum daha stratejiktir. Platform gönderi gövdesinde 3000 karaktere kadar izin verse de, akışta (feed) kullanıcıların karşısına yalnızca ilk 140-150 karakterlik bölüm çıkar. Bu bölümden sonra 'daha fazlasını gör' bağlantısı yer alır. Dolayısıyla okuyucunun dikkatini çekecek ana kanca (hook) ifadesinin ilk 140 karakter içerisine eksiksiz sığdırılması gerekir. Sayacımız, bu mikro metinlerin karakter bütçesini milimetrik olarak yönetmenize yardımcı olur."
+          ],
+          "en": [
+            "Social platforms impose rigorous textual constraints to keep user feeds dynamic and easily scannable. X (formerly Twitter) maintains a strict ceiling of 280 characters for standard accounts, where a single extra space or punctuation mark disables the publish trigger. Instagram personal and business biographies allow a maximum of 150 characters, demanding meticulous brevity to communicate identity, value proposition, and call to action.",
+            "On professional networks like LinkedIn, character counts dictate visibility and engagement mechanics. While the platform accepts long-form posts up to 3,000 characters, users browsing their main feed only observe the opening 140 to 150 characters before encountering the 'see more' truncation fold. The initial hook must hook the reader entirely within this narrow preview window. Accurate counting ensures that your opening statement converts feed scrollers into engaged readers without getting clipped prematurely."
+          ],
+          "es": [
+            "Las plataformas sociales aplican límites de caracteres rigurosos para favorecer un consumo rápido de contenido. En X (antiguo Twitter), las cuentas estándar cuentan con un tope inflexible de 280 caracteres por publicación, donde un solo espacio sobrante impide el envío. En Instagram, las biografías de perfil admiten un máximo de 150 caracteres, lo que exige condensar propuesta de valor, enlaces y contacto con extrema síntesis.",
+            "En redes profesionales como LinkedIn, el recuento de caracteres cobra un matiz estratégico crucial. Aunque la plataforma admite hasta 3.000 caracteres por publicación, el feed solo expone los primeros 140 o 150 caracteres antes del enlace 'ver más'. El gancho principal del mensaje debe resolverse por completo dentro de ese fragmento visible. Nuestro contador permite calibrar al milímetro ese espacio para maximizar la tasa de lectura y la interacción."
+          ]
+        }
+      },
+      {
+        "heading": {
+          "tr": "Boşluklu vs Boşluksuz Karakter: Çeviri, Matbaa ve Akademik Ayrım",
+          "en": "Characters With vs Without Spaces: Translation, Print, and Academia",
+          "es": "Caracteres con y sin Espacio: Traducción, Imprenta y Ámbito Académico"
+        },
+        "paragraphs": {
+          "tr": [
+            "Metin uzunluğu ölçülürken en sık karşılaşılan kafa karışıklıklarından biri boşluklu ve boşluksuz karakter sayısı arasındaki farktır. Çeviri ve yerelleştirme sektöründe uluslararası standartlar çoğunlukla boşluksuz karakter sayısına veya standart sayfa birimine (örneğin 1000 karakter boşluksuz ya da 1800 vuruş) göre fiyatlandırma yapar. Boşlukların hesaba katılıp katılmaması, yüzlerce sayfalık projelerde bütçeyi ve iş yükü tahminlerini ciddi oranda değiştirir.",
+            "Buna karşın basılı yayıncılıkta, grafik tasarımda ve dergi mizanpajında boşluklu karakter sayısı esas alınır; çünkü harfler arasındaki boşluklar da fiziksel sayfada satır uzunluğunu ve sütun yerleşimini belirler. Akademik dünyada ise üniversite tezleri ve bilimsel makaleler çoğunlukla kelime kotası koyar. Örneğin bir özet (abstract) için 250 kelime, araştırma makalesi için 6000 kelime üst sınırı katı biçimde denetlenir. Sayacımız her iki metriği de eşzamanlı sunarak belirsizliği ortadan kaldırır."
+          ],
+          "en": [
+            "A frequent point of ambiguity in textual analysis is the distinction between character counts with and without whitespace. In the translation and localization industries, billing matrices frequently depend on character counts excluding spaces (such as the standard 1,000 characters without spaces model) or on keystroke equivalents. Whether whitespace is counted can cause substantial variance in cost estimates and workload planning across expansive translation projects.",
+            "Conversely, print publishing, editorial typesetting, and graphic layout design rely fundamentally on character counts including spaces. Every space bar stroke occupies physical typographic width across print columns and grid margins. Meanwhile, academic institutions and peer-reviewed journals enforce strict word count quotas—such as a 250-word cap for abstracts and 6,000 words for full empirical papers. Our analytical counter evaluates both metrics simultaneously to prevent formatting rejections."
+          ],
+          "es": [
+            "Un motivo habitual de confusión en el análisis de textos es la diferencia entre el recuento de caracteres con y sin espacios. En el sector de la traducción y la localización, las tarifas suelen calcularse sobre caracteres sin espacios (como la norma de 1.000 caracteres sin espacios) o matrices de texto traducido. Incluir o excluir los espacios modifica de manera notable los presupuestos y los plazos en proyectos editoriales y de localización.",
+            "Por el contrario, en diseño editorial, maquetación de libros y prensa impresa se contabilizan los caracteres con espacios, ya que cada espacio en blanco ocupa un ancho tipográfico real en la columna de texto. En el ámbito académico, tesis y publicaciones científicas imponen límites estrictos de palabras, como 250 palabras para resúmenes o 6.000 para artículos completos. Nuestra herramienta calcula ambas métricas en paralelo con total exactitud."
+          ]
+        }
+      },
+      {
+        "heading": {
+          "tr": "Okuma Süresi Hesaplama Mantığı ve Orpigo ile Hız Okuma",
+          "en": "Reading Time Estimation and Speed Reading Dynamics with Orpigo",
+          "es": "Cálculo del Tiempo de Lectura y Lectura Rápida con Orpigo"
+        },
+        "paragraphs": {
+          "tr": [
+            "Dijital dünyada kullanıcıların bir içeriği okumaya başlayıp başlamayacağını belirleyen en kritik unsurlardan biri tahmini okuma süresidir. Web yayıncılığında genel kabul, yetişkin bir bireyin sessiz okuma hızının dakikada ortalama 200 kelime civarında olduğudur. Metnin teknik yoğunluğuna, dil yapısına ve okuyucunun alışkanlıklarına göre bu süre doğal olarak değişiklik gösterir. Okuma süresi göstergesi, ziyaretçiye zaman maliyetini şeffafça sunarak sayfada kalma süresini ve etkileşimi destekler.",
+            "Candemsoft tarafından geliştirilen Orpigo hız okuma uygulaması ise okuma sürecini kelime odaklı modern bir yaklaşımla kolaylaştırır. Optimal Tanıma Noktası (ORP) tekniğini kullanan Orpigo, kelimeleri gözün doğal odak merkezinde tek tek görüntüleyerek gözün satırlar arasında yorulmasını ve sıçrama yapma zorunluluğunu azaltır. Sayacımız, metinlerinizin hem standart okuma süresini hem de toplam hacmini anında hesaplayarak içerik planlamanızı güvenle destekler."
+          ],
+          "en": [
+            "In modern digital publishing, an estimated reading time indicator serves as a helpful orientation metric for incoming readers. The common industry standard assumes an average silent reading rate of approximately 200 words per minute for general text. In practice, actual reading velocity fluctuates based on conceptual complexity, technical terminology, and individual familiarity. Providing a realistic reading estimate helps visitors organize their reading sessions effectively.",
+            "Candemsoft speed-reading application, Orpigo, approaches text processing through visual focus optimization. By utilizing the Optimal Recognition Point (ORP) technique, Orpigo presents words sequentially at the natural fixation point of the eye, minimizing extraneous saccadic eye movements across text lines. Our analytical text counter evaluates both word volume and estimated reading duration to support thorough content planning."
+          ],
+          "es": [
+            "En la edición digital contemporánea, el tiempo estimado de lectura es un indicador sumamente útil para orientar a los lectores. El estándar habitual en publicaciones web toma como referencia una velocidad promedio de lectura silenciosa de aproximadamente 200 palabras por minuto. La velocidad real varía en función de la complejidad conceptual, la terminología técnica y los hábitos de cada persona. Indicar un tiempo orientativo aporta transparencia sobre la duración del contenido.",
+            "La aplicación de lectura rápida Orpigo, desarrollada por Candemsoft, optimiza este proceso mediante un enfoque visual centrado en cada palabra. Al aplicar la técnica del Punto Óptimo de Reconocimiento (ORP), Orpigo presenta las palabras de forma secuencial en el centro de enfoque ocular, reduciendo los desplazamientos sacádicos entre líneas. Nuestro contador calcula la duración estimada para facilitar la planificación y estructura de sus textos."
+          ]
+        }
+      }
+    ]
+  },
+  "faq": [
+    {
+      "question": {
+        "tr": "Neden meta açıklamalarda 140 ile 160 karakter aralığına uymalıyız?",
+        "en": "Why is the 140 to 160 character range crucial for meta descriptions?",
+        "es": "¿Por qué es crucial mantener las meta descripciones entre 140 y 160 caracteres?"
+      },
+      "answer": {
+        "tr": "140 karakterden kısa açıklamalar Google tarafından çoğunlukla yetersiz bulunup yok sayılır ve sayfa içinden alakasız kısımlar gösterilir. 160 karakteri aşan metinler ise arama sonuçlarında kırpılarak cümlenin ortasında kesilir.",
+        "en": "Descriptions under 140 characters are frequently replaced by Google with arbitrary snippets from the page. Conversely, text exceeding 160 characters gets truncated with ellipses, cutting off key call-to-actions.",
+        "es": "Las descripciones de menos de 140 caracteres suelen ser ignoradas por Google y sustituidas por texto arbitrario. Si superan los 160 caracteres, se cortan con puntos suspensivos en los resultados de búsqueda."
+      }
+    },
+    {
+      "question": {
+        "tr": "Boşluklu ve boşluksuz karakter sayısı nerede önem kazanır?",
+        "en": "Where does the distinction between characters with and without spaces matter?",
+        "es": "¿Dónde resulta relevante la diferencia entre caracteres con y sin espacios?"
+      },
+      "answer": {
+        "tr": "Çeviri ve metin yazarlığı sektöründe fiyatlandırma ve standart iş yükü hesabı çoğunlukla boşluksuz karakter üzerinden yapılır. Baskı, tipografi ve dergi mizanpajında ise boşluklar fiziksel yer kapladığı için boşluklu sayı esastır.",
+        "en": "Translation, localization, and copywriting agencies calculate billing and workloads primarily based on characters without spaces. In contrast, print typesetting and layout design require counts with spaces because whitespace occupies physical layout area.",
+        "es": "En traducción y redacción profesional, los presupuestos y tarifas se fijan habitualmente según caracteres sin espacios. En cambio, en imprenta y diseño editorial los espacios cuentan ya que ocupan espacio físico en la página."
+      }
+    },
+    {
+      "question": {
+        "tr": "Tahmini okuma süresi nasıl hesaplanır?",
+        "en": "How is estimated reading time calculated?",
+        "es": "¿Cómo se calcula el tiempo estimado de lectura?"
+      },
+      "answer": {
+        "tr": "Hesaplama yetişkin bir insanın dakikada ortalama 200 kelime okuduğu kabul edilerek yapılır. Toplam kelime sayısı 200'e bölünerek dakikalık okuma süresi elde edilir. Teknik metinlerde bu oran dakikada 160-180 kelimeye çekilebilir.",
+        "en": "The calculation assumes an average adult silent reading rate of 200 words per minute (WPM). Dividing total words by 200 yields the estimated minutes. For denser technical papers, a rate of 160 to 180 WPM is commonly applied.",
+        "es": "El cálculo se fundamenta en un promedio de lectura para adultos de 200 palabras por minuto (PPM). Dividir el total de palabras entre 200 proporciona los minutos estimados. En textos especializados se utiliza una tasa de 160-180 PPM."
+      }
+    },
+    {
+      "question": {
+        "tr": "LinkedIn ve X paylaşımlarında karakter yönetimi neden kritiktir?",
+        "en": "Why is character count management critical for LinkedIn and X posts?",
+        "es": "¿Por qué es crítico gestionar los caracteres en publicaciones de LinkedIn y X?"
+      },
+      "answer": {
+        "tr": "X platformunda 280 karakterlik sert bir sınır vardır. LinkedIn'de ise 3000 karaktere izin verilmesine rağmen ilk 140-150 karakter 'daha fazlasını gör' öncesinde göründüğü için kanca cümlenin bu alana sığması hayati önem taşır.",
+        "en": "X enforces an unyielding 280-character ceiling per post. On LinkedIn, while the total limit is 3,000 characters, only the initial 140-150 characters appear before the 'see more' cutoff, making hook placement crucial.",
+        "es": "En X existe un límite inflexible de 280 caracteres. En LinkedIn, aunque se admiten hasta 3.000 caracteres, solo los primeros 140-150 son visibles antes de 'ver más', por lo que el gancho inicial debe encajar con exactitud."
+      }
+    }
+  ],
+  "relatedProducts": [
+    "orpigo",
+    "candemkey"
+  ],
+  "relatedBlogSlug": "orp-hiz-okuma-nedir"
+}

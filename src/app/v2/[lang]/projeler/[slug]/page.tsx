@@ -2,13 +2,22 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { locales } from "@/i18n/config";
+import { href } from "@/i18n/routes";
 import { getProductByProject, getProject, getProjects, getServices } from "@/lib/content";
 import { getDictionary } from "@/lib/dictionary";
 import { resolveLang } from "@/lib/params";
 import { ProjectVisual } from "@/components/project/ProjectVisual";
 import { V2PageHead } from "@/components/v2/V2PageHead";
 import { v2Href } from "@/components/v2/nav";
-import { pageMetadata, jsonLd, softwareJsonLd } from "@/lib/seo";
+import {
+  breadcrumbJsonLd,
+  jsonLd,
+  mergeJsonLd,
+  pageBreadcrumbs,
+  pageMetadata,
+  siteUrl,
+  softwareJsonLd,
+} from "@/lib/seo";
 
 export const dynamicParams = false;
 
@@ -19,7 +28,16 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps<"/v2/[lang]/projeler/[slug]">): Promise<Metadata> {
   const lang = await resolveLang(params);
   const p = getProject((await params).slug);
-  return p ? pageMetadata({ lang, route: "projects", rest: [p.slug], title: p.name, description: p.summary[lang] }) : {};
+  if (!p) return {};
+  const title = p.metaTitle?.[lang] ?? `${p.name} | Candemsoft`;
+  return pageMetadata({
+    lang,
+    route: "projects",
+    rest: [p.slug],
+    title,
+    description: p.summary[lang],
+    image: p.images?.desktop,
+  });
 }
 
 export default async function Page({ params }: PageProps<"/v2/[lang]/projeler/[slug]">) {
@@ -33,9 +51,13 @@ export default async function Page({ params }: PageProps<"/v2/[lang]/projeler/[s
   const services = getServices().filter((s) => project.services.includes(s.slug)).map((s) => s.title[lang]);
   const story = (["challenge", "approach", "outcome"] as const).filter((k) => project.caseStudy[k][lang]?.trim());
   const product = getProductByProject(project.slug);
+  const projectUrl = `${siteUrl}${href(lang, "projects", project.slug)}`;
+  const breadcrumbs = breadcrumbJsonLd(pageBreadcrumbs(lang, "projects", { name: project.name, url: projectUrl }));
+  const productSchema = product ? softwareJsonLd(lang, product, project.name, projectUrl) : null;
+  const merged = mergeJsonLd(productSchema, breadcrumbs);
   return (
     <>
-      {product && <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(softwareJsonLd(lang, product, project.name))} />}
+      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLd(merged)} />
       <V2PageHead kicker={`${dict.projectsPage.label} / ${project.type[lang]}`} title={project.name} lead={project.summary[lang]}>
         <div className="container-site flex flex-wrap items-center gap-x-10 gap-y-3 pb-8 font-mono text-mono-sm">
           <span>
@@ -66,18 +88,20 @@ export default async function Page({ params }: PageProps<"/v2/[lang]/projeler/[s
             sizes="(min-width: 768px) 70vw, 100vw"
             className="rounded-2xl ring-1 ring-ink-950"
           />
-          <ProjectVisual
-            project={project}
-            variant="mobile"
-            pendingLabel={dict.home.visualPending}
-            alt={dict.common.shotMobile.replace("{name}", project.name)}
-            sizes="(min-width: 768px) 22vw, 60vw"
-            className="mx-auto w-2/3 rounded-2xl ring-1 ring-ink-950 md:w-full"
-          />
+          <div className="cv-auto mx-auto w-2/3 md:w-full">
+            <ProjectVisual
+              project={project}
+              variant="mobile"
+              pendingLabel={dict.home.visualPending}
+              alt={dict.common.shotMobile.replace("{name}", project.name)}
+              sizes="(min-width: 768px) 22vw, 60vw"
+              className="rounded-2xl ring-1 ring-ink-950"
+            />
+          </div>
         </section>
       )}
       {story.length > 0 && (
-        <section className="container-site grid gap-10 pb-(--section-sm) md:grid-cols-3">
+        <section className="cv-auto-sm container-site grid gap-10 pb-(--section-sm) md:grid-cols-3">
           {story.map((k, i) => (
             <div key={k} className="border-t border-ink-950 pt-4">
               <span className="v2-display text-3xl text-signal">{String(i + 1).padStart(2, "0")}</span>
@@ -87,8 +111,8 @@ export default async function Page({ params }: PageProps<"/v2/[lang]/projeler/[s
           ))}
         </section>
       )}
-      <nav aria-label={t.next} className="border-t border-ink-950">
-        <Link href={v2Href(lang, "projects", next.slug)} className="container-site group flex items-center justify-between gap-6 py-10">
+      <nav aria-label={t.next} className="cv-auto-sm border-t border-ink-950">
+        <Link href={v2Href(lang, "projects", next.slug)} prefetch={false} className="container-site group flex items-center justify-between gap-6 py-10">
           <span>
             <span className="block font-mono text-mono-sm text-stone-600">{t.next}</span>
             <span className="v2-display mt-2 block text-[clamp(2rem,1.3rem+3vw,4rem)] group-hover:text-ember">{next.name}</span>

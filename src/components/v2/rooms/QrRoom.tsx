@@ -1,11 +1,13 @@
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import QRCode from "qrcode";
 import type { Locale } from "@/i18n/config";
 import type { Product } from "@/lib/content";
 import type { Dictionary } from "@/lib/dictionary";
 import { asset } from "@/lib/static";
-import { QrAlert } from "./QrAlert";
 import { RoomInfo, type RoomTheme } from "./RoomInfo";
+
+const QrAlert = dynamic(() => import("./QrAlert").then((m) => m.QrAlert));
 
 const theme: RoomTheme = {
   kicker: "text-qr-yellow",
@@ -64,7 +66,7 @@ function ProfileCard({ t }: { t: Dictionary["v2"] }) {
 export function QrRoom({ product, lang, dict, index, level = 3 }: { product: Product; lang: Locale; dict: Dictionary; index: number; level?: 2 | 3 }) {
   const t = dict.v2;
   return (
-    <section id={product.slug} aria-labelledby={`room-${product.slug}`} className="cv-auto relative overflow-hidden bg-black py-(--section) text-white">
+    <section id={product.slug} aria-labelledby={`room-${product.slug}`} className="cv-auto-room relative overflow-hidden bg-black py-(--section) text-white">
       {/* dotted grid, like the app's background */}
       <div
         aria-hidden

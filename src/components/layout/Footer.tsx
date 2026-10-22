@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Locale } from "@/i18n/config";
 import { href } from "@/i18n/routes";
 import type { Dictionary } from "@/lib/dictionary";
-import { getSite } from "@/lib/content";
+import { getServices, getSite } from "@/lib/content";
 import { Logo } from "@/components/ui/Logo";
 import { MonoLabel } from "@/components/ui/MonoLabel";
 import type { NavItem } from "./Header";
@@ -11,11 +11,12 @@ export function Footer({ lang, dict, items }: { lang: Locale; dict: Dictionary; 
   const site = getSite();
   const { contact } = site;
   const year = new Date().getFullYear();
+  const services = getServices();
   return (
     <footer data-surface="ink" className="border-t border-ink-800 pb-8 pt-(--section-sm)">
       <div className="container-site">
         <div className="grid-site gap-y-12">
-          <div className="col-span-full lg:col-span-7">
+          <div className="col-span-full lg:col-span-5">
             <MonoLabel as="p">{dict.footer.lead}</MonoLabel>
             <a
               href={`mailto:${contact.email}`}
@@ -25,7 +26,20 @@ export function Footer({ lang, dict, items }: { lang: Locale; dict: Dictionary; 
             </a>
           </div>
 
-          <div className="col-span-2 lg:col-span-2 lg:col-start-9">
+          <div className="col-span-2 lg:col-span-2 lg:col-start-7">
+            <MonoLabel as="p">{dict.nav.services}</MonoLabel>
+            <ul className="mt-4 space-y-2">
+              {services.map((s) => (
+                <li key={s.slug}>
+                  <Link href={href(lang, "services", s.slug)} className="text-stone-400 transition-colors hover:text-paper-100">
+                    {s.title[lang]}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="col-span-2 lg:col-span-2">
             <MonoLabel as="p">{dict.footer.sitemap}</MonoLabel>
             <ul className="mt-4 space-y-2">
               {items.map((item) => (

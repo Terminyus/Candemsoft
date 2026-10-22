@@ -2,6 +2,7 @@ import type { Locale } from "@/i18n/config";
 import type { Product } from "@/lib/content";
 import type { Dictionary } from "@/lib/dictionary";
 import { RoomInfo, type RoomTheme } from "./RoomInfo";
+import { SeyyahFont } from "./SeyyahFont";
 
 const theme: RoomTheme = {
   kicker: "text-seyyah",
@@ -101,13 +102,14 @@ export function SeyyahRoom({ product, lang, dict, index, level = 3 }: { product:
     <section
       id={product.slug}
       aria-labelledby={`room-${product.slug}`}
-      className="cv-auto relative overflow-hidden bg-seyyah-paper py-(--section) text-ink-950"
+      className="cv-auto-room relative overflow-hidden bg-seyyah-paper py-(--section) text-ink-950"
       // Notebook paper: faint ruled lines and a margin, drawn in the app's blue.
       style={{
         backgroundImage:
           "linear-gradient(90deg, transparent 0 56px, rgba(0,104,200,.28) 56px 57px, transparent 57px), repeating-linear-gradient(180deg, transparent 0 35px, rgba(0,104,200,.11) 35px 36px)",
       }}
     >
+      <SeyyahFont />
       <div className="container-site grid items-center gap-12 lg:grid-cols-[5fr_6fr] lg:gap-16">
         <RoomInfo level={level}
           product={product}

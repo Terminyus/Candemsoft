@@ -1,0 +1,81 @@
+export const meta = {
+  title: "Mobil ve Web Uygulamalarına Yapay Zekâ Eklemenin Gerçekçi Yolları",
+  metaTitle: "Uygulamalara Yapay Zekâ Ekleme Rehberi | Candemsoft",
+  description: "Web ve mobil uygulamalarınıza LLM, RAG ve cihaz üstü yapay zekâ modellerini güvenli, ölçeklenebilir ve uygun maliyetle entegre etme yöntemlerini öğrenin.",
+  date: "2026-10-14",
+  author: "Candemsoft",
+  tags: ["yapay zekâ", "llm", "mobil uygulama", "web yazılım"]
+};
+
+**Kısa cevap:** Uygulamalara yapay zekâ eklemek yalnızca bir bulut API anahtarı alıp arayüze sohbet kutusu yerleştirmekten ibaret değildir. Gerçek dünya üretim ortamlarında başarılı bir yapay zekâ entegrasyonu; bulut LLM API'leri, kurumsal veriyi işleyen RAG mimarileri ve cihaz üstü (on-device) küçük modeller arasında doğru mimari seçimi yapmayı, token maliyetlerini ve ağ gecikmesini kontrol altında tutmayı ve hassas kullanıcı verilerini korumayı gerektirir.
+
+Son yıllarda üretken yapay zekâ alanındaki gelişmeler, her ölçekten yazılım projesinde yapay zekâ özelliklerini bir standart hâline getirdi. Ancak bir prototip hazırlamak birkaç saat sürerken, bu özelliği binlerce aktif kullanıcının güvenle ve kesintisiz kullandığı bir mobil veya web ürününe dönüştürmek ciddi mühendislik kararları gerektirir. Öngörülemeyen API faturaları, birkaç saniyeyi bulan gecikmeler (latency) ve gizlilik ihlalleri; plansız entegrasyonların en büyük handikaplarıdır.
+
+[Candemsoft](https://candemsoft.com/) olarak hem kurumsal müşterilerimize [yapay zekâ çözümleri](/hizmetler/yapay-zeka/), [web yazılım](/hizmetler/web-yazilim/) ve [mobil uygulama](/hizmetler/mobil-uygulama/) geliştirirken hem de kendi ürünümüz olan akıllı klavye [Candemkey](/projeler/candemkey/) üzerinde çalışırken edindiğimiz pratik tecrübeleri bu rehberde derledik.
+
+## Yapay zekâ entegrasyonunda 3 ana mimari model
+
+Bir uygulamaya yapay zekâ yetenekleri kazandırırken izlenebilecek tek bir doğru yol yoktur. İş ihtiyacına, bütçeye ve gizlilik beklentisine göre üç ana mimari öne çıkar:
+
+### 1. Bulut API'leri ve yapılandırılmış çıktılar (Structured Output)
+
+En hızlı devreye alınan yaklaşım; OpenAI, Anthropic veya Google gibi sağlayıcıların büyük dil modellerini (LLM) REST ya da gRPC API'leri üzerinden çağırmaktır. Bu modeller dil anlama, metin özetleme ve serbest metin üretiminde son derece güçlüdür.
+
+Ancak uygulamalarda serbest metin yerine JSON gibi yapılandırılmış verilere ihtiyaç duyulur. Bu noktada "Function Calling" ve JSON Schema destekli "Structured Output" mekanizmaları devreye girer. Örneğin kullanıcının girdiği bir metinden randevu tarihi veya sipariş kalemleri çıkarılacaksa, modelin rastgele sohbet cümleleri kurması yerine kesin veri tipinde bir JSON objesi döndürmesi sağlanır. Bu sayede uygulamanızın arka plan kodları model yanıtını güvenle ayrıştırabilir.
+
+### 2. Şirket verisiyle çalışan RAG ve vektör arama
+
+Genel LLM modelleri şirketinizin iç süreçlerini, özel ürün kataloğunu veya güncel veritabanını bilmez. Modeli sıfırdan eğitmek (pre-training) ya da ince ayar yapmak (fine-tuning) ise hem çok maliyetlidir hem de veriler değiştikçe güncelliğini yitirir.
+
+Bu sorunun en yaygın ve güvenilir çözümü Retrieval-Augmented Generation (RAG) mimarisidir. RAG sürecinde:
+- Şirket dökümanları, ürün bilgileri veya destek kayıtları küçük parçalara (chunk) bölünür.
+- Bu parçalar bir embedding modeliyle sayısal vektörlere dönüştürülür ve vektör veri tabanında (pgvector, Qdrant vb.) saklanır.
+- Kullanıcı bir soru sorduğunda, sorunun vektörüyle en alakalı döküman parçaları anlamsal arama (semantic search) ile bulunur.
+- Bulunan doğrulanmış bağlam, kullanıcının sorusuyla birlikte LLM'e "Yalnızca bu bağlama dayanarak yanıtla" promptuyla iletilir.
+
+RAG, modelin hayal görmesini (halüsinasyon) engellerken şirket verisinin güvenli bir çerçevede kalmasını sağlar.
+
+### 3. Cihaz üstü (On-Device) küçük modeller
+
+Hızın milisaniyeler seviyesinde olması gerektiği veya internet bağlantısının bulunmadığı senaryolarda bulut API'leri yetersiz kalır. Apple'ın CoreML altyapısı, ONNX Runtime veya TensorFlow Lite gibi teknolojiler sayesinde optimize edilmiş küçük modeller (SLM) doğrudan kullanıcının telefonunda veya tarayıcısında çalıştırılabilir.
+
+Cihaz üstü modellerin en büyük avantajı sıfır sunucu maliyetidir; yüz bin kullanıcı aynı anda sorgu yapsa dahi işletmeye ek bir API faturası yansımaz. Ayrıca kullanıcı verisi cihazı asla terk etmediği için en yüksek gizlilik standardı sağlanır. Yazım denetimi, sonraki kelime tahmini ve anlık duygu analizi gibi görevlerde cihaz üstü modeller idealdir.
+
+## Maliyet ve gecikme optimizasyonu: Üretimde sürdürülebilirlik
+
+Yapay zekâ özelliklerini yayına aldıktan sonra en sık karşılaşılan krizler fahiş API faturaları ve kullanıcıyı bekleten yanıt süreleridir. Bu riskleri yönetmek için şu teknik stratejiler uygulanmalıdır:
+
+- **Prompt Caching (Önbellekleme):** Sağlayıcıların sunduğu prompt caching özellikleri, her istekte tekrar eden sistem talimatlarının ve uzun bağlamların çok daha ucuz ve hızlı işlenmesini sağlar.
+- **Token bütçeleme ve context window yönetimi:** Kullanıcının her mesajında geçmiş tüm sohbet geçmişini modele göndermek maliyeti katlar. Mesaj geçmişini özetleyen ya da belirli bir pencereyle sınırlayan kayar pencere (sliding window) algoritmaları kullanılmalıdır.
+- **Streaming (Akışkan) yanıtlar:** Model yanıtının tamamının beklenmesi mobil kullanıcıda donma hissi yaratır. Server-Sent Events (SSE) veya WebSockets ile yanıtın üretilen her kelimesi ekrana anında aktarılmalı, böylece algılanan gecikme (perceived latency) minimuma indirilmelidir.
+- **Katmanlı (Fallback) mimari:** Her işlem için en pahalı modeli kullanmak gereksizdir. Basit sınıflandırmalar için hafif ve ekonomik modeller (örneğin GPT-4o-mini), yalnızca karmaşık muhakeme gerektiren adımlarda büyük modeller devreye sokulmalıdır.
+
+## Güvenlik, veri gizliliği ve kurumsal uyum
+
+Uygulamanıza yapay zekâ entegre ederken kullanıcı güvenini korumak en kritik önceliktir:
+
+- **Eğitim verisi politikaları:** LLM sağlayıcılarıyla kurumsal API sözleşmesi (Zero Data Retention) yapılmalı ve kullanıcı verilerinin modellerin eğitiminde kullanılmayacağı garanti altına alınmalıdır.
+- **Hassas alanların yalıtımı:** Şifre, kredi kartı veya T.C. kimlik numarası gibi alanlarda yapay zekâ tetikleyicileri tamamen devre dışı bırakılmalıdır.
+- **PII maskeleme:** Kullanıcı girdileri modele gönderilmeden önce e-posta ve telefon gibi kişisel veriler regex veya yerel filtrelerle maskelenmelidir.
+
+## Candemkey mimarisinden pratik mühendislik dersleri
+
+Candemsoft tarafından geliştirilen akıllı yapay zekâ klavyesi [Candemkey](/projeler/candemkey/) ([candemkey.com](https://candemkey.com/)), bu mimari prensiplerin sahada nasıl birleştiğine somut bir örnektir.
+
+Bir mobil klavye uzantısı (iOS Keyboard Extension) geliştirmek çok katı teknik kısıtlar içerir. iOS, klavye uzantılarına yaklaşık 30 MB gibi son derece dar bir bellek (RAM) sınırı tanır. Bu sınırı aşan uygulamalar sistem tarafından anında kapatılır. Dolayısıyla Candemkey mimarisinde ağır modeller doğrudan cihaz belleğinde tutulamaz; hibrit bir mühendislik yaklaşımı gerekir.
+
+Candemkey'de anlık klavye vuruşları ve temel yazım kuralları yerel kurallarla optimize edilirken; profesyonel e-posta taslağı oluşturma, üslup dönüştürme ve dil çevirisi gibi karmaşık üretken işlemler güvenli ve optimize edilmiş bulut servisleri üzerinden asenkron yönetilir. En kritik güvenlik önlemi olarak, kullanıcı parola veya kredi kartı alanına odaklandığında klavye otomatik olarak yapay zekâ ve ağ bağlantısını keser, işletim sisteminin güvenli moduna geçer. Böylece kullanıcı gizliliğinden ödün vermeden akıcı bir yapay zekâ deneyimi sunulur.
+
+## Sık sorulan sorular
+
+**Uygulamaya yapay zekâ eklemenin sunucu ve API maliyeti nasıl hesaplanır?**
+Maliyet sabit değildir; kullanıcı başına yapılan istek sayısına, kullanılan modelin girdi ve çıktı token fiyatlarına ve mimari tercihlere göre değişir. Cihaz üstü modellerde sunucu maliyeti sıfırken, bulut LLM'lerinde token tüketimi bütçeyi belirler. Prompt caching, küçük modeller ve sıkı token limitleri maliyeti büyük oranda düşürür.
+
+**RAG mimarisi her uygulama için zorunlu mudur?**
+Hayır. Uygulamanız yalnızca metin çevirisi, dil bilgisi düzeltme veya genel sohbet gibi temel görevler yapıyorsa standart LLM çağrıları yeterlidir. Ancak şirket içi dökümanlara, güncel ürün stoklarına veya kişiselleştirilmiş verilere dayalı kesin yanıtlar gerekirse RAG mimarisi kaçınılmazdır.
+
+**Cihaz üstü (on-device) küçük modeller eski telefonlarda da çalışır mı?**
+Cihaz üstü modeller telefonun NPU (Neural Processing Unit), GPU ve RAM kapasitesini kullanır. Modern amiral gemisi cihazlarda yüksek hızda çalışan modeller, eski donanımlarda pil tüketimine ve yavaşlamaya neden olabilir. Bu nedenle donanım yetersiz olduğunda bulut API'sine geçiş yapan uyarlanabilir (adaptive) yapılar tercih edilmelidir.
+
+**Kullanıcı verilerinin yapay zekâ şirketi tarafından öğrenilmesini nasıl engelleriz?**
+Tüketici odaklı ücretsiz web arayüzleri verileri eğitimde kullanabilirken, kurumsal API uç noktaları verileri saklamaz ve eğitimde kullanmaz. Sağlayıcının API sözleşmesindeki veri saklama (data retention) şartlarını doğrulamak ve hassas kişisel verileri modele göndermeden önce yerel filtrelerle temizlemek en güvenli yoldur.

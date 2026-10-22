@@ -1,0 +1,393 @@
+{
+  "key": "yapay-zeka",
+  "slug": {
+    "tr": "yapay-zeka",
+    "en": "artificial-intelligence",
+    "es": "inteligencia-artificial"
+  },
+  "title": {
+    "tr": "Yapay Zekâ Çözümleri ve LLM Entegrasyonu",
+    "en": "AI Solutions & LLM Integration",
+    "es": "Soluciones de Inteligencia Artificial e Integración LLM"
+  },
+  "metaTitle": {
+    "tr": "Yapay Zekâ ve LLM Çözümleri | Candemsoft",
+    "en": "AI Solutions & LLM Integration | Candemsoft",
+    "es": "Soluciones de Inteligencia Artificial | Candemsoft"
+  },
+  "metaDescription": {
+    "tr": "İş süreçlerinizi hızlandıran LLM entegrasyonu, yapay zekâ asistanları ve veri işleme çözümleri geliştiriyoruz. Detaylı bilgi alıp hemen teklif isteyin.",
+    "en": "We build custom LLM integrations, intelligent workflow assistants and AI data processing pipelines. Contact our team in Istanbul to start your project.",
+    "es": "Desarrollamos integración de LLM, asistentes inteligentes y procesamiento de datos con IA para empresas. Contacte con nuestro equipo e inicie su proyecto."
+  },
+  "kicker": {
+    "tr": "Hizmetlerimiz",
+    "en": "Our Services",
+    "es": "Nuestros Servicios"
+  },
+  "lead": {
+    "tr": "Candemsoft olarak yapay zekâyı pazarlama gösterisi değil, iş süreçlerini kısaltan bir mühendislik disiplini olarak görüyoruz. İstanbul merkezli ekibimizle büyük dil modellerini (LLM), anlamsal aramayı ve doküman analizini sistemlerinize entegre ediyoruz. Kendi ürünlerimiz Orpigo ve Candemkey'de edindiğimiz tecrübeyi kurumunuza özel güvenli yapay zekâ çözümlerine aktarıyoruz.",
+    "en": "At Candemsoft, we approach AI not as marketing hype, but as an engineering discipline that shortens workflows. Based in Istanbul, our team integrates Large Language Models (LLMs), semantic search and document parsing into your systems. We transfer real-world lessons from our products Orpigo and Candemkey into secure AI architectures.",
+    "es": "En Candemsoft entendemos la IA no como moda pasajera, sino como disciplina técnica que agiliza procesos de negocio. Desde Estambul, integramos Modelos de Lenguaje Extensos (LLM), búsqueda semántica y análisis documental en sus sistemas, aplicando la experiencia real de nuestros productos Orpigo y Candemkey."
+  },
+  "targetAudience": {
+    "title": {
+      "tr": "Yapay Zekâ Çözümlerimiz Kimler İçin Uygun?",
+      "en": "Who Can Benefit from Our AI Solutions?",
+      "es": "¿A Quién van Dirigidas Nuestras Soluciones de IA?"
+    },
+    "description": {
+      "tr": "Operasyonel verimliliği artırmak ve veri odaklı akıllı sistemler kurmak isteyen kurumlara çözümler sunuyoruz.",
+      "en": "We deliver solutions for organizations looking to increase operational efficiency through intelligent systems.",
+      "es": "Ofrecemos soluciones para empresas que buscan elevar su eficiencia operativa mediante sistemas inteligentes."
+    },
+    "items": [
+      {
+        "title": {
+          "tr": "Rutin Süreçleri Otomatikleştirmek İsteyen Şirketler",
+          "en": "Companies Automating Repetitive Workflows",
+          "es": "Empresas que Automatizan Procesos Repetitivos"
+        },
+        "description": {
+          "tr": "Müşteri talepleri, fatura okuma ve metin özetleme gibi operasyonel yükleri akıllı modellerle otomatikleştiriyoruz.",
+          "en": "We automate support tickets, invoice parsing and document summaries to lift operational workload from your team.",
+          "es": "Automatizamos tiques de soporte, lectura de facturas y resúmenes de texto para aligerar la carga operativa."
+        }
+      },
+      {
+        "title": {
+          "tr": "Mevcut Yazılımlarına LLM Eklemek İsteyen Ekipler",
+          "en": "Teams Adding LLMs to Existing Software",
+          "es": "Equipos que Integran LLM en Software Actual"
+        },
+        "description": {
+          "tr": "Mevcut CRM veya ERP yazılımlarınızı değiştirmeden, API seviyesinde doğal dil işleme yetenekleri kazandırıyoruz.",
+          "en": "Without rebuilding your CRM or ERP, we embed natural language processing and smart queries at the API layer.",
+          "es": "Sin sustituir su CRM o ERP, incorporamos procesamiento de lenguaje natural y consultas inteligentes vía API."
+        }
+      },
+      {
+        "title": {
+          "tr": "Kurumsal Doküman ve Bilgi Havuzuna Sahip Kurumlar",
+          "en": "Organizations with Rich Knowledge Repositories",
+          "es": "Organizaciones con Amplios Archivos de Documentos"
+        },
+        "description": {
+          "tr": "Şirket içi kılavuzları ve arşivleri RAG mimarisiyle aranabilir, konuşulabilir akıllı asistanlara dönüştürüyoruz.",
+          "en": "We turn internal manuals and archives into searchable, conversational assistants using RAG architecture.",
+          "es": "Convertimos manuales internos y archivos en asistentes conversacionales consultables con arquitectura RAG."
+        }
+      },
+      {
+        "title": {
+          "tr": "Yapay Zekâ Odaklı Ürün Geliştiren Girişimler",
+          "en": "Startups Building AI-First Products",
+          "es": "Startups que Crean Productos Centrados en IA"
+        },
+        "description": {
+          "tr": "Sıfırdan yapay zekâ destekli mobil ve web ürünleri inşa eden girişimcilere mimari ve dağıtım desteği sağlıyoruz.",
+          "en": "We guide startups building AI-native mobile and web apps with architecture, prompt tuning and cloud deployment.",
+          "es": "Apoyamos a startups que crean aplicaciones móviles y web con IA en arquitectura, prompts y despliegue cloud."
+        }
+      }
+    ]
+  },
+  "process": {
+    "title": {
+      "tr": "Yapay Zekâ Geliştirme Sürecimiz Nasıl İşler?",
+      "en": "How We Deliver AI Projects",
+      "es": "¿Cómo Desarrollamos Proyectos de IA?"
+    },
+    "description": {
+      "tr": "Projelerimizde net aşamalar, ölçülebilir fayda ve veri güvenliği ilkeleriyle ilerliyoruz.",
+      "en": "We advance through structured milestones, measurable ROI and strict data security protocols.",
+      "es": "Avanzamos con etapas estructuradas, retorno medible y rigurosos protocolos de seguridad."
+    },
+    "steps": [
+      {
+        "step": "01",
+        "title": {
+          "tr": "Fizibilite ve Kapsam Analizi",
+          "en": "Feasibility & Use Case Scoping",
+          "es": "Viabilidad y Alcance de Casos de Uso"
+        },
+        "description": {
+          "tr": "Yapay zekânın hangi iş adımında gerçek zaman ve maliyet tasarrufu sağlayacağını belirleyip kapsamı netleştiriyoruz.",
+          "en": "We identify which workflow steps yield genuine time and cost savings with AI to define precise scope.",
+          "es": "Identificamos los pasos operativos donde la IA aporta ahorro real de tiempo y costes para fijar el alcance."
+        }
+      },
+      {
+        "step": "02",
+        "title": {
+          "tr": "Model Seçimi ve Mimari Tasarım",
+          "en": "Model Selection & Architecture",
+          "es": "Selección de Modelos y Arquitectura"
+        },
+        "description": {
+          "tr": "Gecikme, maliyet ve gizlilik şartlarına göre en uygun ticari veya açık kaynaklı modeli seçip mimariyi kuruyoruz.",
+          "en": "We evaluate latency, budget and privacy constraints to select the optimal proprietary or open-source model.",
+          "es": "Evaluamos latencia, coste y privacidad para seleccionar el modelo idóneo y diseñar la arquitectura técnica."
+        }
+      },
+      {
+        "step": "03",
+        "title": {
+          "tr": "İstem Mühendisliği ve RAG Kurulumu",
+          "en": "Prompt Engineering & RAG Setup",
+          "es": "Ingeniería de Prompts y Configuración RAG"
+        },
+        "description": {
+          "tr": "Vektör veritabanlarını yapılandırıyor, bağlamsal veri getirmeyi sağlıyor ve model yanıtlarını kalibre ediyoruz.",
+          "en": "We configure vector databases, connect contextual retrieval pipelines and calibrate model prompts with test datasets.",
+          "es": "Configuramos bases vectoriales, conectamos recuperación contextual y calibramos respuestas con datos de prueba."
+        }
+      },
+      {
+        "step": "04",
+        "title": {
+          "tr": "Güvenlik Katmanı ve Sistem Entegrasyonu",
+          "en": "Security Guardrails & System Integration",
+          "es": "Cortafuegos de Seguridad e Integración"
+        },
+        "description": {
+          "tr": "Hassas verileri maskeleyen güvenlik katmanlarını ekliyor, servisleri mevcut kurumsal veritabanlarınıza bağlıyoruz.",
+          "en": "We implement data sanitization guardrails and connect secure API endpoints directly to your production databases.",
+          "es": "Implementamos filtros de anonimización de datos y conectamos las API seguras con sus bases de datos operativas."
+        }
+      },
+      {
+        "step": "05",
+        "title": {
+          "tr": "Canlıya Alma ve Maliyet Takibi",
+          "en": "Deployment & Observability",
+          "es": "Despliegue y Monitorización de Costes"
+        },
+        "description": {
+          "tr": "Sistemi canlıya alıyor, belirteç (token) tüketimini ve yanıt doğruluğunu anlık panellerle izliyoruz.",
+          "en": "We roll out to production, monitoring token burn rates, latency and output accuracy via real-time telemetry.",
+          "es": "Lanzamos a producción y monitorizamos el consumo de tokens, la latencia y la precisión con telemetría en tiempo real."
+        }
+      }
+    ]
+  },
+  "deliverables": {
+    "title": {
+      "tr": "Neler Teslim Ediyoruz?",
+      "en": "What Deliverables Do You Receive?",
+      "es": "¿Qué Entregables Recibirá su Empresa?"
+    },
+    "description": {
+      "tr": "Projelerimizde tam dokümante edilmiş ve üretime hazır yapay zekâ bileşenleri teslim ediyoruz.",
+      "en": "We deliver fully documented, production-ready AI components built for stability and scale.",
+      "es": "Entregamos componentes de IA completamente documentados y listos para producción empresarial."
+    },
+    "items": [
+      {
+        "title": {
+          "tr": "Üretime Hazır Yapay Zekâ API Servisleri",
+          "en": "Production-Ready AI APIs",
+          "es": "APIs de IA Listas para Producción"
+        },
+        "description": {
+          "tr": "Mevcut sistemlerinizle sorunsuz haberleşen, yüksek erişilebilirliğe sahip REST ve GraphQL yapay zekâ servisleri.",
+          "en": "High-availability REST and GraphQL backend services engineered to integrate with your existing software stack.",
+          "es": "Servicios backend REST y GraphQL de alta disponibilidad listos para conectarse con su software existente."
+        }
+      },
+      {
+        "title": {
+          "tr": "Vektör Veritabanı ve RAG Boru Hattı",
+          "en": "Vector Database & RAG Pipeline",
+          "es": "Base Vectorial y Canalización RAG"
+        },
+        "description": {
+          "tr": "Şirket belgelerinizi anlamsal olarak indeksleyen ve bağlama duyarlı doğru yanıtlar üreten veri altyapısı.",
+          "en": "Vector indexing architecture that parses corporate documents to generate factual, context-aware responses.",
+          "es": "Infraestructura vectorial que indexa documentos corporativos para generar respuestas fiables y contextuales."
+        }
+      },
+      {
+        "title": {
+          "tr": "Yönetim Paneli ve İstem Yönetimi",
+          "en": "Admin Console & Prompt Management",
+          "es": "Panel de Control y Gestión de Prompts"
+        },
+        "description": {
+          "tr": "Sistem istemlerini güncelleyebileceğiniz ve model çıktılarını denetleyebileceğiniz web tabanlı yönetim ekranı.",
+          "en": "Web-based console allowing your team to update system prompts, review audit logs and verify model output.",
+          "es": "Consola web para actualizar instrucciones del sistema, revisar registros de auditoría y validar salidas."
+        }
+      },
+      {
+        "title": {
+          "tr": "Belirteç (Token) ve Maliyet Denetim Katmanı",
+          "en": "Token Quota & Cost Control Layer",
+          "es": "Control de Tokens y Optimización de Costes"
+        },
+        "description": {
+          "tr": "Önbellekleme mekanizmaları ve kullanıcı kotaları sayesinde API harcamalarını sabit tutan maliyet kontrol katmanı.",
+          "en": "Semantic caching and quota throttling layers that keep third-party model inference costs strictly predictable.",
+          "es": "Caché semántica y cuotas de uso que mantienen los costes de inferencia de modelos bajo estricto control."
+        }
+      }
+    ]
+  },
+  "technologies": {
+    "title": {
+      "tr": "Kullandığımız Teknolojiler",
+      "en": "Technologies We Use",
+      "es": "Tecnologías que Utilizamos"
+    },
+    "description": {
+      "tr": "Yapay zekâ altyapılarında güvenilir, ölçeklenebilir ve modern araçları tercih ediyoruz.",
+      "en": "We rely on reliable, scalable and modern tools for artificial intelligence architectures.",
+      "es": "Confiamos en herramientas fiables, escalables y modernas para arquitecturas de IA."
+    },
+    "items": [
+      "Python",
+      "Node.js",
+      "TypeScript",
+      "Docker",
+      "AWS",
+      "C#"
+    ]
+  },
+  "relatedProjects": [
+    "orpigo",
+    "candemkey"
+  ],
+  "relatedProducts": [
+    "orpigo",
+    "candemkey"
+  ],
+  "faq": [
+    {
+      "question": {
+        "tr": "Hangi yapay zekâ ve büyük dil modellerini (LLM) kullanıyorsunuz?",
+        "en": "Which AI and LLM models do you support?",
+        "es": "¿Qué modelos de IA y LLM utilizan habitualmente?"
+      },
+      "answer": {
+        "tr": "OpenAI, Anthropic Claude ve açık kaynaklı Llama modelleriyle çalışıyoruz. Hız, maliyet ve veri gizliliği kriterlerine göre göreve en uygun modeli belirliyor, basit sınıflandırmalarda hafif modelleri, karmaşık analizlerde güçlü modelleri seçiyoruz.",
+        "en": "We build with OpenAI models, Anthropic Claude and open-source Llama architectures. We select the best fit according to latency, cost and privacy requirements, using lightweight models for classification and frontier models for reasoning.",
+        "es": "Trabajamos con modelos de OpenAI, Anthropic Claude y arquitecturas abiertas como Llama. Elegimos el modelo según latencia, coste y privacidad, empleando modelos ligeros para clasificaciones y modelos avanzados para razonamiento complejo."
+      }
+    },
+    {
+      "question": {
+        "tr": "Şirket verilerimizin gizliliği nasıl korunuyor?",
+        "en": "How do you protect enterprise data privacy?",
+        "es": "¿Cómo protegen la privacidad de los datos empresariales?"
+      },
+      "answer": {
+        "tr": "Kurumsal sözleşmelerde veri saklamama protokollerini uyguluyoruz; verileriniz herkese açık modellerin eğitiminde kullanılmaz. Hassas müşteri verilerini yerel katmanda maskeliyor, gerektiğinde şirket içi sunucularda çalışan açık modeller kuruyoruz.",
+        "en": "We enforce zero-data retention enterprise terms so your data is never used to train public models. Sensitive customer identifiers are sanitized locally before processing, and we deploy self-hosted models for strict compliance needs.",
+        "es": "Aplicamos acuerdos de retención cero para que su información nunca entrene modelos públicos. Anonimizamos datos sensibles localmente antes del procesamiento y podemos desplegar modelos autohospedados en servidores privados."
+      }
+    },
+    {
+      "question": {
+        "tr": "Model API maliyetlerinin yükselmesi nasıl önlenir?",
+        "en": "How do you keep model API expenses under control?",
+        "es": "¿Cómo evitan que los costes de API se disparen?"
+      },
+      "answer": {
+        "tr": "Anlamsal önbellekleme (semantic caching) kurarak tekrarlayan soruları harici modele gitmeden yerel veritabanından yanıtlıyoruz. Kullanıcı bazlı kotalar ve harcama limitleri tanımlayarak aylık faturaların öngörülebilir kalmasını sağlıyoruz.",
+        "en": "We deploy semantic caching to resolve recurrent queries locally without triggering external API calls. Granular user quotas, rate limiting and budget alerts ensure your monthly operating expenses remain predictable.",
+        "es": "Implementamos almacenamiento en caché semántica para responder consultas frecuentes localmente sin invocar la API externa. Cuotas por usuario y límites de gasto ayudan a mantener presupuestos mensuales predecibles."
+      }
+    },
+    {
+      "question": {
+        "tr": "Mevcut CRM veya ERP sistemimize yapay zekâ bağlanabilir mi?",
+        "en": "Can AI connect to our existing CRM or ERP platform?",
+        "es": "¿Se puede integrar IA en nuestro CRM o ERP actual?"
+      },
+      "answer": {
+        "tr": "Evet. Mevcut yazılımlarınızı değiştirmeden API katmanı üzerinden veritabanlarınıza, CRM ve ERP sistemlerinize güvenli bağlantılar kuruyoruz. Çalışanlarınız alıştıkları araçlar içinden ayrılmadan yapay zekâ destekli analiz ve otomasyonları kullanır.",
+        "en": "Yes. Rather than replacing your operational software, we connect custom AI endpoints directly to your existing databases, CRM and ERP via secure APIs. Your team leverages automated intelligence without leaving familiar software.",
+        "es": "Sí. Sin sustituir su software operativo, conectamos módulos de IA mediante API seguras a sus bases de datos, CRM y ERP. Sus empleados aprovechan la automatización inteligente sin abandonar sus herramientas cotidianas."
+      }
+    },
+    {
+      "question": {
+        "tr": "RAG mimarisi şirketimize ne kazandırır?",
+        "en": "What advantages does RAG architecture provide?",
+        "es": "¿Qué ventajas aporta la arquitectura RAG a la empresa?"
+      },
+      "answer": {
+        "tr": "RAG mimarisi modelin genel internet bilgisiyle tahmin yürütmesi yerine, sadece şirketinizin onaylı PDF, kılavuz ve veritabanı kayıtlarına dayanarak yanıt üretmesini sağlar. Böylece model yanılsamaları asgariye indirilir ve cevaplar kaynak gösterir.",
+        "en": "RAG ensures models generate answers grounded strictly in your verified internal documentation and records rather than guessing from web data. This minimizes hallucinations and produces factual answers citing exact source references.",
+        "es": "RAG ayuda a que los modelos respondan basándose únicamente en sus documentos y registros verificados en lugar de especular. Esto reduce drásticamente las alucinaciones y genera respuestas exactas que citan las fuentes internas."
+      }
+    }
+  ],
+  "deepDive": {
+    "sections": [
+      {
+        "heading": {
+          "tr": "Gösteriş Değil Verimlilik: Gerçek Değer Üreten Yapay Zekâ",
+          "en": "Practical AI Over Hype: Delivering Measurable Business Value",
+          "es": "IA Práctica frente a la Moda: Valor de Negocio Medible"
+        },
+        "paragraphs": {
+          "tr": [
+            "Yapay zekâyı pazarlama süsü değil, operasyonel tasarruf aracı olarak görüyoruz. Bir sürece yapay zekâ eklemeden önce geleneksel kodlamanın mı yoksa dil modelinin mi daha uygun olduğunu analiz ediyoruz. Doğru kurgulanan bir entegrasyon, çalışanların saatler süren manuel evrak inceleme işini saniyelere indirebilir.",
+            "Kendi ürünlerimiz Orpigo'da hızlı okuma algoritmaları ve Candemkey'de mobil metin düzeltme geliştirirken edindiğimiz düşük gecikmeli mimari tecrübesini, kurumsal müşterilerimizin üretim ortamlarına güvenle uyguluyoruz."
+          ],
+          "en": [
+            "We treat artificial intelligence as an operational efficiency lever rather than marketing window dressing. Before applying an LLM, we verify whether deterministic software logic or probabilistic inference yields better ROI. A well-designed workflow cuts hours of manual document review down to automated seconds.",
+            "Field lessons from our products—low-latency processing in Orpigo and instant text rewriting in Candemkey—directly shape our enterprise implementations, ensuring fast, stable performance under real production workloads."
+          ],
+          "es": [
+            "Entendemos la inteligencia artificial como una palanca de eficiencia operativa y no como escaparate publicitario. Antes de aplicar un LLM, comprobamos si la lógica tradicional o los modelos ofrecen mayor retorno. Una integración bien diseñada reduce horas de revisión manual de documentos a segundos.",
+            "Las lecciones técnicas de nuestros productos—baja latencia en Orpigo y corrección instantánea en Candemkey—respaldan nuestras arquitecturas empresariales, asegurando estabilidad y rendimiento en producción real."
+          ]
+        }
+      },
+      {
+        "heading": {
+          "tr": "RAG ile Kurumsal Belgeleri Akıllı Asistanlara Dönüştürmek",
+          "en": "Turning Enterprise Documents into Intelligent Assistants with RAG",
+          "es": "Transformación de Archivos Corporativos en Asistentes con RAG"
+        },
+        "paragraphs": {
+          "tr": [
+            "Büyük dil modelleri şirketinizin iç yönetmeliklerini, ürün kılavuzlarını veya sözleşmelerini bilmez. Bu belgeleri güvenli biçimde modele aktarmak için RAG mimarisini kuruyor; dokümanlarınızı vektör veritabanlarında parçalayarak anlamsal dizinlere çeviriyoruz.",
+            "Kullanıcı bir soru sorduğunda arama motorumuz şirketinizin en ilgili doküman bölümlerini bulup modele iletir. Model onaylı kurumsal kaynaklarınıza dayanarak ve kaynak göstererek yanıt üretir; böylece yanılsama riski belirgin şekilde azalır."
+          ],
+          "en": [
+            "Foundation language models lack knowledge of your proprietary internal policies, product specifications and contracts. To feed this context securely, we establish RAG pipelines that segment and index corporate documents into high-speed vector databases.",
+            "When a query arrives, our retrieval engine fetches relevant passages and passes them to the model context. The model synthesizes answers citing verified internal sources, minimizing speculative drift and safeguarding organizational trust."
+          ],
+          "es": [
+            "Los modelos fundacionales desconocen las políticas internas, manuales y contratos de su empresa. Para suministrar esta información de forma segura, creamos canalizaciones RAG que dividen e indexan su documentación en bases vectoriales.",
+            "Cuando se formula una consulta, el motor extrae los fragmentos relevantes y los traslada al contexto del modelo. La IA genera respuestas citando fuentes verificadas de su empresa, reduciendo significativamente el riesgo de alucinaciones."
+          ]
+        }
+      },
+      {
+        "heading": {
+          "tr": "Veri Güvenliği ve Belirteç (Token) Maliyet Optimizasyonu",
+          "en": "Data Governance and Token Cost Management",
+          "es": "Seguridad de Datos y Gestión Eficiente de Tokens"
+        },
+        "paragraphs": {
+          "tr": [
+            "Yapay zekâ projelerinde en kritik konular veri gizliliği ve beklenmedik API harcamalarıdır. Candemsoft olarak kurduğumuz filtreleme katmanlarıyla müşteri kimlik verilerini yapay zekâ servislerine göndermeden önce yerel olarak maskeliyoruz.",
+            "Maliyet tarafında ise anlamsal önbellek ile sık sorulan soruları yerel veritabanından yanıtlıyor, hafif görevleri ekonomik modellere yönlendirerek aylık belirteç harcamalarınızı optimize ediyoruz."
+          ],
+          "en": [
+            "The primary priorities in corporate AI deployments are sensitive data governance and predictable operating expenses. Our middleware layers sanitize customer identifiers and private data locally before any API request leaves your infrastructure.",
+            "On the cost side, semantic caching fulfills recurrent queries locally, while smart model routing sends simpler tasks to lightweight models, keeping token consumption efficient without compromising accuracy."
+          ],
+          "es": [
+            "Las prioridades esenciales en despliegues corporativos de IA son la privacidad de los datos y la previsibilidad de los costes de API. Nuestras capas intermedias anonimizan identificadores y datos confidenciales antes de emitir peticiones externas.",
+            "En costes, la caché semántica atiende consultas repetitivas de forma local y el enrutador asigna tareas sencillas a modelos económicos, optimizando el consumo de tokens con alta fiabilidad."
+          ]
+        }
+      }
+    ]
+  }
+}

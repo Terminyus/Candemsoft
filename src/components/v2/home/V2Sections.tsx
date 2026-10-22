@@ -49,7 +49,7 @@ export function ClientWork({ lang, dict }: { lang: Locale; dict: Dictionary }) {
             />
             <div className="mt-4 flex items-baseline justify-between gap-4 border-b border-ink-950 pb-4">
               <h3 className="v2-heading text-2xl">
-                <Link href={v2Href(lang, "projects", p.slug)} className="after:absolute after:inset-0 group-hover:text-ember">
+                <Link href={v2Href(lang, "projects", p.slug)} prefetch={false} className="after:absolute after:inset-0 group-hover:text-ember">
                   {p.name}
                 </Link>
               </h3>
@@ -60,7 +60,7 @@ export function ClientWork({ lang, dict }: { lang: Locale; dict: Dictionary }) {
         <ul className="self-start border-t border-ink-950">
           {offline.map((p) => (
             <li key={p.slug} className="relative flex items-baseline justify-between gap-4 border-b border-ink-950/20 py-4">
-              <Link href={v2Href(lang, "projects", p.slug)} className="v2-heading text-xl after:absolute after:inset-0 hover:text-ember">
+              <Link href={v2Href(lang, "projects", p.slug)} prefetch={false} className="v2-heading text-xl after:absolute after:inset-0 hover:text-ember">
                 {p.name}
               </Link>
               <span className="text-right font-mono text-mono-sm text-stone-600">
@@ -85,7 +85,7 @@ export function ServicesGrid({ lang, dict }: { lang: Locale; dict: Dictionary })
             <li key={s.slug} className="relative border-b border-ink-950 py-6 sm:pr-6 lg:border-b-0 lg:border-r lg:px-5 lg:first:pl-0 lg:last:border-r-0">
               <span className="v2-display text-4xl text-signal">{String(i + 1).padStart(2, "0")}</span>
               <h3 className="v2-heading mt-4 text-xl">
-                <Link href={`${v2Href(lang, "services")}#${s.slug}`} className="after:absolute after:inset-0 hover:text-ember">
+                <Link href={v2Href(lang, "services", s.slug)} prefetch={false} className="after:absolute after:inset-0 hover:text-ember">
                   {s.title[lang]}
                 </Link>
               </h3>
@@ -113,7 +113,7 @@ export function AboutBand({ lang, dict }: { lang: Locale; dict: Dictionary }) {
         <p>{dict.about.lead}</p>
         <p className="text-stone-600">{dict.about.ownBody}</p>
         <div className="flex flex-wrap gap-4 pt-2">
-          <Link href={v2Href(lang, "about")} className="font-archivo font-semibold underline decoration-signal decoration-2 underline-offset-[6px] hover:text-ember">
+          <Link href={v2Href(lang, "about")} prefetch={false} className="font-archivo font-semibold underline decoration-signal decoration-2 underline-offset-[6px] hover:text-ember">
             {dict.nav.about} →
           </Link>
           <span className="font-mono text-mono-sm text-stone-600">

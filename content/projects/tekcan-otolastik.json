@@ -19,10 +19,15 @@
     "en": "Automotive",
     "es": "Automoción"
   },
+  "metaTitle": {
+    "tr": "Tekcan Otolastik Web Sitesi Geliştirme | Candemsoft",
+    "en": "Tekcan Otolastik Web Development | Candemsoft",
+    "es": "Desarrollo Web Tekcan Otolastik | Candemsoft"
+  },
   "summary": {
-    "tr": "Tekcan Otolastik'in kurumsal web sitesi.",
-    "en": "Tekcan Otolastik's company website.",
-    "es": "Sitio web corporativo de Tekcan Otolastik."
+    "tr": "Tekcan Otolastik için geliştirdiğimiz kurumsal web sitesi; lastik ve servis hizmetlerini modern katalog ve kolay iletişim yapısıyla sunar. Göz atın.",
+    "en": "The corporate website built for Tekcan Otolastik presents tire products and maintenance services with clear contact flows. Check out the project now.",
+    "es": "El sitio web corporativo desarrollado para Tekcan Otolastik muestra servicios y catálogo de neumáticos con navegación intuitiva. Conozca el proyecto."
   },
   "year": null,
   "services": [

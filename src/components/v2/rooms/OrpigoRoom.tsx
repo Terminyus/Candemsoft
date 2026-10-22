@@ -1,8 +1,10 @@
+import dynamic from "next/dynamic";
 import type { Locale } from "@/i18n/config";
 import type { Product } from "@/lib/content";
 import type { Dictionary } from "@/lib/dictionary";
 import { RoomInfo, type RoomTheme } from "./RoomInfo";
-import { OrpigoReader } from "./OrpigoReader";
+
+const OrpigoReader = dynamic(() => import("./OrpigoReader").then((m) => m.OrpigoReader));
 
 const theme: RoomTheme = {
   kicker: "text-[#ff8a95]",
@@ -16,7 +18,7 @@ const theme: RoomTheme = {
 export function OrpigoRoom({ product, lang, dict, index, level = 3 }: { product: Product; lang: Locale; dict: Dictionary; index: number; level?: 2 | 3 }) {
   const t = dict.v2;
   return (
-    <section id={product.slug} aria-labelledby={`room-${product.slug}`} className="cv-auto relative overflow-hidden bg-orpigo-navy py-(--section) text-white">
+    <section id={product.slug} aria-labelledby={`room-${product.slug}`} className="cv-auto-room relative overflow-hidden bg-orpigo-navy py-(--section) text-white">
       {/* the app's motion lines, as one quiet graphic */}
       <svg aria-hidden viewBox="0 0 400 120" className="absolute -left-10 top-10 w-[34rem] max-w-none text-orpigo-red opacity-30">
         {[20, 46, 72, 98].map((y, i) => (

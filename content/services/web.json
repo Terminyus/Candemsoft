@@ -1,0 +1,402 @@
+{
+  "key": "web",
+  "slug": {
+    "tr": "web-yazilim",
+    "en": "web-development",
+    "es": "desarrollo-web"
+  },
+  "title": {
+    "tr": "Web Yazılım ve Özel Web Uygulamaları",
+    "en": "Web Development & Custom Web Apps",
+    "es": "Desarrollo Web y Aplicaciones a Medida"
+  },
+  "metaTitle": {
+    "tr": "Web Yazılım ve Web Uygulamaları | Candemsoft",
+    "en": "Web Development & Web Applications | Candemsoft",
+    "es": "Desarrollo Web y Apps a Medida | Candemsoft"
+  },
+  "metaDescription": {
+    "tr": "İstanbul merkezli Candemsoft ile ölçeklenebilir web yazılımları ve modern web uygulamaları geliştirin. İhtiyacınıza uygun çözümler için teklif alın.",
+    "en": "Build fast, scalable web software and custom applications with Istanbul-based Candemsoft. Contact us today to discuss your project and get a quote.",
+    "es": "Desarrolle software web escalable y aplicaciones a medida con Candemsoft en Estambul. Contáctenos hoy para analizar su proyecto y cotizar su idea."
+  },
+  "kicker": {
+    "tr": "Hizmetlerimiz",
+    "en": "Our Services",
+    "es": "Nuestros Servicios"
+  },
+  "lead": {
+    "tr": "Candemsoft olarak işletmelerin ihtiyaçlarına yanıt veren yüksek performanslı web yazılımları, kurumsal sistemler ve özel web uygulamaları geliştiriyoruz. İstanbul merkezli mühendislik ekibimiz; temiz kod mimarisi, güvenli API entegrasyonları, modern ön yüz teknolojileri ve sağlam veri tabanı yapılarıyla işinizi dijitale taşıyan güvenilir çözümler üretir.",
+    "en": "At Candemsoft, we engineer high-performance web software, corporate systems, and custom web applications tailored to business workflows. Based in Istanbul, our engineering team builds dependable digital solutions using clean architectural patterns, secure API integrations, modern frontend frameworks, and resilient database architectures.",
+    "es": "En Candemsoft desarrollamos software web de alto rendimiento, plataformas empresariales y aplicaciones a medida. Con sede en Estambul, nuestro equipo crea soluciones digitales fiables mediante código limpio, integraciones de API seguras y tecnologías frontend modernas."
+  },
+  "targetAudience": {
+    "title": {
+      "tr": "Kimler İçin Uygun?",
+      "en": "Who Is This For?",
+      "es": "¿Para Quién es Este Servicio?"
+    },
+    "description": {
+      "tr": "Web yazılım çözümlerimiz, sağlam bir dijital altyapıya ve operasyonel verimliliğe ihtiyaç duyan ekipler için tasarlanmıştır.",
+      "en": "Our web development services are built for organizations requiring robust digital infrastructure and operational efficiency.",
+      "es": "Nuestros servicios de desarrollo web están diseñados para organizaciones que requieren infraestructura digital sólida y eficiencia operativa."
+    },
+    "items": [
+      {
+        "title": {
+          "tr": "Kurumsal Şirketler",
+          "en": "Enterprise Companies",
+          "es": "Empresas Corporativas"
+        },
+        "description": {
+          "tr": "İş akışlarını dijitalleştirmek, departmanlar arası veri akışını hızlandırmak ve kurumsal bir web varlığı kurmak isteyenler.",
+          "en": "Organizations seeking to digitalize business workflows, accelerate data exchange, and establish an authoritative web presence.",
+          "es": "Organizaciones que buscan digitalizar flujos de trabajo, acelerar el intercambio de datos y consolidar una presencia web sólida."
+        }
+      },
+      {
+        "title": {
+          "tr": "Dijital Girişimler ve SaaS",
+          "en": "Digital Startups & SaaS",
+          "es": "Startups Digitales y SaaS"
+        },
+        "description": {
+          "tr": "Hızlı prototiplemeyle pazara çıkmak, kullanıcı deneyimini yükseltmek ve kolayca ölçeklenebilecek bir altyapı kurmak isteyen girişimler.",
+          "en": "Ventures aiming for rapid market validation, superior user experience, and a modular architecture engineered to scale smoothly.",
+          "es": "Iniciativas orientadas a validar rápidamente su mercado, elevar la experiencia de usuario y contar con una base escalable."
+        }
+      },
+      {
+        "title": {
+          "tr": "B2B ve B2C Ticaret Platformları",
+          "en": "B2B & B2C Commerce Platforms",
+          "es": "Plataformas B2B y B2C"
+        },
+        "description": {
+          "tr": "Yüksek işlem hacmi, çoklu ödeme geçitleri ve gelişmiş sipariş yönetim panellerine ihtiyaç duyan e-ticaret yapıları.",
+          "en": "Commerce operations requiring high throughput, multiple payment gateways, and advanced order management panels.",
+          "es": "Operaciones comerciales que requieren alto volumen de transacciones, múltiples pasarelas de pago y gestión avanzada de pedidos."
+        }
+      },
+      {
+        "title": {
+          "tr": "Özel Yönetim ve Takip Panelleri",
+          "en": "Custom Admin & Operations Panels",
+          "es": "Paneles de Gestión y Operaciones"
+        },
+        "description": {
+          "tr": "Hazır paketlerin yetersiz kaldığı, karmaşık yetkilendirme modelleri ve rol bazlı analitik gerektiren şirket içi sistemler.",
+          "en": "Internal business systems where generic software falls short, demanding granular permissions and specialized reporting.",
+          "es": "Sistemas internos donde las soluciones genéricas no bastan, exigiendo permisos por roles y análisis detallado de datos."
+        }
+      }
+    ]
+  },
+  "process": {
+    "title": {
+      "tr": "Geliştirme Sürecimiz",
+      "en": "Our Development Process",
+      "es": "Nuestro Proceso de Desarrollo"
+    },
+    "description": {
+      "tr": "Projelerimizi şeffaf iletişim ve beş aşamalı yazılım mühendisliği disipliniyle hayata geçiriyoruz.",
+      "en": "We deliver web projects through transparent communication and a structured five-stage engineering discipline.",
+      "es": "Llevamos a cabo los proyectos con comunicación transparente y una disciplina de ingeniería en cinco fases."
+    },
+    "steps": [
+      {
+        "step": "01",
+        "title": {
+          "tr": "Keşif & Kapsam Analizi",
+          "en": "Discovery & Scope Analysis",
+          "es": "Descubrimiento y Alcance"
+        },
+        "description": {
+          "tr": "İş hedeflerinizi, kullanıcı ihtiyaçlarını ve teknik gereksinimleri detaylıca inceleyerek net bir proje yol haritası hazırlarız.",
+          "en": "We analyze your business objectives, user requirements, and technical constraints to outline an actionable project roadmap.",
+          "es": "Analizamos objetivos de negocio, requerimientos de usuario y límites técnicos para definir una hoja de ruta clara."
+        }
+      },
+      {
+        "step": "02",
+        "title": {
+          "tr": "Mimari Tasarım & Prototipleme",
+          "en": "Architectural Design & Prototyping",
+          "es": "Diseño de Arquitectura y Prototipado"
+        },
+        "description": {
+          "tr": "Veri tabanı şemasını, API yapısını ve ekran akışlarını belirleyerek güvenli ve genişletilebilir bir temel kurarız.",
+          "en": "We establish database schemas, API contracts, and interface flows to secure a resilient, extensible foundation.",
+          "es": "Definimos esquemas de bases de datos, contratos de API y flujos visuales para consolidar una base extensible."
+        }
+      },
+      {
+        "step": "03",
+        "title": {
+          "tr": "Çevik Geliştirme (Sprintler)",
+          "en": "Agile Sprint Development",
+          "es": "Desarrollo Ágil por Sprints"
+        },
+        "description": {
+          "tr": "İki haftalık sprintlerle modüler ve test edilebilir kod üretir; her aşamada çalışan özellikleri incelemenize sunarız.",
+          "en": "Through two-week sprints, we produce modular, testable code and review functional increments directly with you.",
+          "es": "Mediante sprints de dos semanas creamos código modular y comprobable, revisando los avances funcionales con usted."
+        }
+      },
+      {
+        "step": "04",
+        "title": {
+          "tr": "Test & Kalite Güvencesi",
+          "en": "Testing & Quality Assurance",
+          "es": "Pruebas y Control de Calidad"
+        },
+        "description": {
+          "tr": "Birim, entegrasyon, güvenlik ve performans testleriyle sistemi yayına eksiksiz hazırlarız.",
+          "en": "We perform automated unit, integration, security, and performance audits to ensure the platform is production-ready.",
+          "es": "Ejecutamos pruebas unitarias, de integración, seguridad y rendimiento para certificar que el sistema esté listo."
+        }
+      },
+      {
+        "step": "05",
+        "title": {
+          "tr": "Dağıtım & Sürekli Destek",
+          "en": "Deployment & Ongoing Support",
+          "es": "Despliegue y Soporte Continuo"
+        },
+        "description": {
+          "tr": "Otomatik CI/CD hatlarıyla kesintisiz canlı dağıtım yapar; izleme araçları ve periyodik bakımla sistemi koruruz.",
+          "en": "We execute zero-downtime releases via automated CI/CD pipelines, supported by active monitoring and regular maintenance.",
+          "es": "Realizamos despliegues sin interrupciones con pipelines de CI/CD, respaldados por monitorización activa y mantenimiento."
+        }
+      }
+    ]
+  },
+  "deliverables": {
+    "title": {
+      "tr": "Teslim Edilenler",
+      "en": "What We Deliver",
+      "es": "¿Qué Entregamos?"
+    },
+    "description": {
+      "tr": "Proje tamamlandığında tam kontrole ve bağımsızlığa sahip olacağınız eksiksiz bir dijital varlık teslim ederiz.",
+      "en": "Upon project completion, we hand over full digital ownership and complete technical assets to ensure your autonomy.",
+      "es": "Al concluir el proyecto, entregamos activos técnicos completos y propiedad absoluta para asegurar su independencia."
+    },
+    "items": [
+      {
+        "title": {
+          "tr": "Temiz Kaynak Kod & Git Deposu",
+          "en": "Clean Source Code & Git Repository",
+          "es": "Código Fuente Limpio y Repositorio Git"
+        },
+        "description": {
+          "tr": "Modüler standartlarda yazılmış, eksiksiz kaynak kodları ve tüm sürüm geçmişini içeren Git deposu.",
+          "en": "Standards-compliant, maintainable source code hosted in a dedicated Git repository with complete commit history.",
+          "es": "Código fuente modular y mantenible alojado en un repositorio Git con el historial completo de versiones."
+        }
+      },
+      {
+        "title": {
+          "tr": "Kapsamlı Dokümantasyon",
+          "en": "Comprehensive Documentation",
+          "es": "Documentación Exhaustiva"
+        },
+        "description": {
+          "tr": "Kurulum rehberleri, API uç noktası belgeleri ve sistem yöneticisi kılavuzlarını içeren teknik kaynaklar.",
+          "en": "Setup guides, API endpoint specifications, and administrative handbooks for your internal engineering team.",
+          "es": "Guías de instalación, especificaciones de endpoints de API y manuales técnicos para la gestión del sistema."
+        }
+      },
+      {
+        "title": {
+          "tr": "Otomatik CI/CD Hatları",
+          "en": "Automated CI/CD Pipelines",
+          "es": "Tuberías Automatizadas de CI/CD"
+        },
+        "description": {
+          "tr": "Kod denetimlerini ve testleri otomatik çalıştırarak canlı ortama güvenli dağıtım sağlayan boru hatları.",
+          "en": "Automated deployment pipelines running automated test suites, linting checks, and secure server rollouts.",
+          "es": "Flujos automatizados que ejecutan pruebas técnicas, revisiones de formato y despliegues seguros al servidor."
+        }
+      },
+      {
+        "title": {
+          "tr": "Üretim Dağıtımı & İzleme",
+          "en": "Production Setup & Monitoring",
+          "es": "Configuración en Producción y Monitorización"
+        },
+        "description": {
+          "tr": "Sunucu ayarları, SSL yapılandırması ve gerçek zamanlı hata izleme araçlarının canlıya entegrasyonu.",
+          "en": "Optimized server architecture, SSL configuration, and real-time error observability instrumentation.",
+          "es": "Configuración de servidores, certificados SSL y herramientas de observabilidad de incidencias en tiempo real."
+        }
+      }
+    ]
+  },
+  "technologies": {
+    "title": {
+      "tr": "Kullandığımız Teknolojiler",
+      "en": "Technologies We Use",
+      "es": "Tecnologías que Utilizamos"
+    },
+    "description": {
+      "tr": "Projelerimizde modern endüstri standardı olan, uzun vadeli desteğe sahip ve performansı kanıtlanmış araçları seçiyoruz.",
+      "en": "We select industry-standard, battle-tested technologies backed by active communities and enterprise ecosystems.",
+      "es": "Seleccionamos tecnologías modernas avaladas por la industria, con soporte a largo plazo y rendimiento contrastado."
+    },
+    "items": [
+      "Node.js",
+      "C#",
+      "Flutter",
+      "PHP",
+      "AWS",
+      "Docker",
+      "TypeScript",
+      "Next.js",
+      "PostgreSQL"
+    ]
+  },
+  "relatedProjects": [
+    "proox",
+    "kredi-turbo",
+    "marias-restaurant",
+    "tekcan-otolastik",
+    "kyk-yemek-menusu",
+    "yildiz-teknopark"
+  ],
+  "relatedProducts": [
+    "orpigo",
+    "kisisel-qr",
+    "candemfit",
+    "candemkey"
+  ],
+  "faq": [
+    {
+      "question": {
+        "tr": "Web yazılım projesinin süresi nasıl belirlenir?",
+        "en": "How is the timeline for a web project determined?",
+        "es": "¿Cómo se define el plazo de un proyecto web?"
+      },
+      "answer": {
+        "tr": "Proje süresi; modül sayısı, üçüncü parti entegrasyonlar ve arayüz taleplerine göre şekillenir. Kapsam analizinin ardından net teslim tarihlerini içeren iki haftalık sprint takvimi sunarız.",
+        "en": "Project duration depends on functional scope, third-party integrations, and interface needs. Following scope analysis, we provide a milestone schedule organized into two-week sprints.",
+        "es": "El plazo depende del alcance funcional, las integraciones con terceros y el diseño visual. Tras el análisis inicial, facilitamos un cronograma por sprints con fechas claras."
+      }
+    },
+    {
+      "question": {
+        "tr": "Geliştirilen yazılımın kaynak kodları kime aittir?",
+        "en": "Who owns the source code upon project completion?",
+        "es": "¿A quién pertenece el código fuente desarrollado?"
+      },
+      "answer": {
+        "tr": "Yazılan tüm kaynak kodlar, veritabanı şemaları ve teknik varlıklar tamamen size aittir. Proje bitiminde Git deposunun ve sunucu erişimlerinin tam yönetici yetkileri kuruluşunuza devredilir.",
+        "en": "All source code, database architectures, and digital assets belong exclusively to your organization. Complete repository ownership and administrative server credentials are fully transferred upon delivery.",
+        "es": "Todo el código fuente, esquemas de bases de datos y activos digitales son propiedad exclusiva de su empresa. Transferimos el control total del repositorio al concluir."
+      }
+    },
+    {
+      "question": {
+        "tr": "Mevcut sistemlerimiz ve veri tabanlarımızla entegrasyon mümkün mü?",
+        "en": "Can the web software integrate with our existing systems?",
+        "es": "¿Es posible integrar el software con nuestros sistemas actuales?"
+      },
+      "answer": {
+        "tr": "Evet. RESTful ve GraphQL standartlarını kullanarak ERP, CRM, muhasebe yazılımları ve ödeme altyapılarınızla güvenli, çift yönlü veri akışları kuruyoruz.",
+        "en": "Yes. Using RESTful and GraphQL standards, we engineer secure, bidirectional integrations with your existing ERP, CRM, accounting software, and payment processors.",
+        "es": "Sí. Mediante estándares RESTful y GraphQL construimos flujos seguros con sus sistemas de ERP, CRM, contabilidad y plataformas de pago existentes."
+      }
+    },
+    {
+      "question": {
+        "tr": "Web uygulamalarında SEO ve arama görünürlüğünü nasıl sağlıyorsunuz?",
+        "en": "How do you ensure search engine discoverability (SEO)?",
+        "es": "¿Cómo optimizan el posicionamiento en buscadores (SEO)?"
+      },
+      "answer": {
+        "tr": "Sunucu taraflı işleme (SSR), semantik HTML, meta etiket mimarisi ve optimize edilmiş Core Web Vitals metrikleriyle arama motorlarının sitenizi eksiksiz taramasını sağlıyoruz.",
+        "en": "We implement server-side rendering (SSR), semantic HTML, structured metadata, and optimized Core Web Vitals to guarantee search engines index your platform effectively.",
+        "es": "Aplicamos renderizado en servidor (SSR), HTML semántico, metadatos estructurados y optimización de Core Web Vitals para garantizar una indexación óptima."
+      }
+    },
+    {
+      "question": {
+        "tr": "Canlıya geçiş sonrasında bakım ve teknik destek sunuyor musunuz?",
+        "en": "Do you provide post-launch maintenance and technical support?",
+        "es": "¿Ofrecen soporte técnico y mantenimiento tras el lanzamiento?"
+      },
+      "answer": {
+        "tr": "Evet. Dağıtım sonrasında sunucu izleme, güvenlik güncellemeleri, düzenli yedekleme ve yeni modül eklemelerini kapsayan sürekli teknik destek hizmeti veriyoruz.",
+        "en": "Yes. After deployment, we offer continuous maintenance agreements covering server observability, security updates, regular data backups, and feature improvements.",
+        "es": "Sí. Tras la publicación ofrecemos acuerdos de mantenimiento con monitorización de servidores, parches de seguridad, copias de seguridad y mejoras continuas."
+      }
+    }
+  ],
+  "deepDive": {
+    "sections": [
+      {
+        "heading": {
+          "tr": "Performans, Güvenlik ve Modern Ön Yüz Mimarisi",
+          "en": "Performance, Security & Modern Frontend Architecture",
+          "es": "Rendimiento, Seguridad y Arquitectura Frontend Moderna"
+        },
+        "paragraphs": {
+          "tr": [
+            "Modern web uygulamalarında hız ve akıcılık temel bir gereksinimdir. Next.js ve TypeScript ile geliştirdiğimiz ön yüzlerde sunucu taraflı oluşturma (SSR) ve statik sayfa üretimini (SSG) dengeli biçimde kullanıyoruz. Bu mimari, sayfa açılış sürelerini milisaniyeler seviyesine çekerken organik arama motoru görünürlüğünü artırır. Sadeleştirilmiş kod paketleriyle tarayıcı belleğini verimli kullanıyoruz.",
+            "Güvenlik yaklaşımımız OWASP standartlarına dayanır. Siteler Arası Betik Çalıştırma (XSS), Siteler Arası İstek Sahteciliği (CSRF) ve SQL enjeksiyonlarına karşı çok katmanlı denetimler uygularız. TLS şifrelemesi, güvenli çerez yönetimi ve İçerik Güvenlik İlkeleri (CSP) ile verilerinizin korunmasını garanti altına alırız."
+          ],
+          "en": [
+            "Speed and fluid interactions are critical for modern web users. We build frontends with Next.js and TypeScript, balancing server-side rendering (SSR) and static site generation (SSG) to achieve sub-second page loads. This architecture maximizes client responsiveness while optimizing search visibility. Clean dependency structures maintain a lightweight runtime footprint in the browser.",
+            "Our security posture strictly follows OWASP standards. We implement multi-layered defenses against Cross-Site Scripting (XSS), Cross-Site Request Forgery (CSRF), and SQL injection vulnerabilities. With TLS encryption, hardened session policies, and robust Content Security Policies (CSP), enterprise data remains protected."
+          ],
+          "es": [
+            "La velocidad y la interacción fluida son esenciales en la web actual. Construimos aplicaciones frontend con Next.js y TypeScript, combinando renderizado en servidor (SSR) y generación estática (SSG) para lograr aperturas inmediatas. Esta arquitectura optimiza tanto la experiencia interactiva como el posicionamiento en buscadores, manteniendo una carga mínima en el navegador.",
+            "Nuestro enfoque de seguridad aplica rigurosamente estándares OWASP. Implementamos defensas multicapa frente a vulnerabilidades como Cross-Site Scripting (XSS), Cross-Site Request Forgery (CSRF) e inyección SQL. El cifrado TLS, la gestión de cookies y directivas de seguridad garantizan la protección de los datos corporativos."
+          ]
+        }
+      },
+      {
+        "heading": {
+          "tr": "Ölçeklenebilir Arka Yüz ve Mikroservis Mimarisi",
+          "en": "Scalable Backend Architecture & Microservices",
+          "es": "Arquitectura de Backend Escalable y Microservicios"
+        },
+        "paragraphs": {
+          "tr": [
+            "Büyüyen kullanıcı trafiğini ve iş mantığını sürdürülebilir kılmak için Node.js ve C# teknolojilerini kullanıyoruz. Temiz mimari ve etki alanı odaklı tasarım (DDD) prensipleriyle geliştirdiğimiz arka yüz servisleri, gelecekteki büyüme gereksinimlerine göre kolayca genişletilebilir. Modüler tasarım, mikroservislere geçişi zahmetsiz hale getirir.",
+            "Veri tabanı katmanında PostgreSQL'in tutarlılığı ile Redis'in bellek içi hızını bir arada kullanırız. Optimize edilmiş indeksleme ve sorgu planlaması sayesinde veri tabanı darboğazlarının önüne geçeriz. Docker konteynerleri sayesinde geliştirme ve canlı ortamlar arasında mutlak bir uyum sağlayarak dağıtım risklerini sıfıra indiririz."
+          ],
+          "en": [
+            "To handle growing traffic and business logic sustainably, we develop backend systems using Node.js and C#. Following Domain-Driven Design (DDD) and Clean Architecture principles, our services are structured for horizontal extensibility. This modular framework allows components to scale independently and eases transitions to microservices.",
+            "At the persistence layer, we unite the relational integrity of PostgreSQL with the high-speed caching of Redis. Advanced query profiling and index strategies prevent performance bottlenecks under peak load. Packaging services into Docker containers ensures total environment parity across staging and production tiers."
+          ],
+          "es": [
+            "Para absorber el tráfico creciente y procesar lógica empresarial, desarrollamos backends empleando Node.js y C#. Siguiendo principios de arquitectura limpia y diseño guiado por el dominio (DDD), nuestros servicios crecen de forma modular. Esta estructura facilita transiciones ágiles hacia microservicios independientes.",
+            "En la capa de persistencia unimos la consistencia de PostgreSQL con la aceleración en memoria de Redis. La optimización de consultas e indexación estratégica previene cuellos de botella ante picos de demanda. El uso de Docker garantiza paridad total entre entornos de prueba y producción."
+          ]
+        }
+      },
+      {
+        "heading": {
+          "tr": "Kendi Ürünlerimizden Edinilen Mühendislik Deneyimi",
+          "en": "Engineering Experience Driven by In-House Products",
+          "es": "Experiencia de Ingeniería Derivada de Productos Propios"
+        },
+        "paragraphs": {
+          "tr": [
+            "Candemsoft yalnızca müşteri projeleri geliştiren bir stüdyo değil; kendi dijital ürünlerini sıfırdan üretip yöneten aktif bir yazılım ekibidir. Hızlı okuma uygulamamız Orpigo'da çözdüğümüz metin işleme zorlukları ve Seyyah platformunda kurduğumuz yüksek hacimli GPS sorguları, web altyapılarımıza doğrudan birer mühendislik tecrübesi olarak yansır.",
+            "Kişisel QR projesinde kurguladığımız gizlilik odaklı mimari veya CandemFit'in arka planındaki optimizasyonlar, müşteri projelerimize hız ve maliyet avantajı kazandırır. Kendi ürünlerimizde deneyimlediğimiz ve güvendiğimiz kütüphaneleri, dağıtım araçlarını ve izleme sistemlerini müşterilerimizin projelerine uygularız."
+          ],
+          "en": [
+            "Candemsoft is not simply a service provider; we are an active software studio that designs and operates proprietary digital products. Real-time text rendering challenges solved in our reading app Orpigo and high-frequency geospatial routing engineered for Seyyah directly strengthen our web architectures.",
+            "Privacy-first mechanisms implemented in Kişisel QR and telemetry optimizations developed for CandemFit bring concrete reliability and infrastructure savings to client projects. We exclusively apply libraries, deployment workflows, and observability setups that have proven their value within our own production ecosystems."
+          ],
+          "es": [
+            "Candemsoft no es únicamente un proveedor de servicios; somos un estudio activo que crea productos digitales propios. Los retos de procesamiento resueltos en nuestra app Orpigo y la gestión geoespacial desarrollada para Seyyah enriquecen directamente nuestras arquitecturas web.",
+            "Los patrones de privacidad de Kişisel QR y la optimización de recursos en CandemFit aportan fiabilidad y eficiencia de costes a los proyectos de nuestros clientes. Solo aplicamos librerías, flujos de integración y monitorización probados con éxito en producción."
+          ]
+        }
+      }
+    ]
+  }
+}

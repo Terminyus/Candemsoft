@@ -1,0 +1,76 @@
+export const meta = {
+  title: "Flutter mı Native mi? Mobil Projeler İçin Teknoloji Seçimi",
+  metaTitle: "Flutter mı Native mi? Teknoloji Seçimi | Candemsoft",
+  description: "Mobil projenizde Flutter mı yoksa Swift/Kotlin native mi seçmelisiniz? Performans, geliştirme hızı ve bütçe kriterlerine göre karşılaştırmayı inceleyin.",
+  date: "2026-10-17",
+  author: "Candemsoft",
+  tags: ["flutter", "native", "ios", "android", "mobil uygulama"]
+};
+
+**Kısa cevap:** Bir mobil projede Flutter ile Native (Swift/Kotlin) arasındaki tercih; projenin donanım gereksinimlerine, bütçesine, pazara çıkış takvimine ve kullanıcı deneyimi hedeflerine bağlıdır. Tek kod tabanıyla iki platformda hızlıca MVP çıkarmak ve arayüz tutarlılığı sağlamak için Flutter son derece avantajlıyken; derin donanım entegrasyonu, düşük seviyeli Bluetooth iletişimi ve sıfır köprü maliyeti gerektiren senaryolarda Native geliştirme rakipsizdir.
+
+## Flutter'ın çalışma prensibi ve sunduğu avantajlar
+
+Google tarafından geliştirilen Flutter, tek bir Dart kod tabanından hem iOS hem de Android için yerel makine koduna (AOT - Ahead-of-Time) derlenen modern bir çapraz platform (cross-platform) çatı aracıdır. Diğer bazı melez çözümlerin aksine JavaScript köprüsü (bridge) kullanmaz; kendi arayüz bileşenlerini doğrudan ekrana çizer.
+
+Flutter'ın en büyük teknik sıçramalarından biri, Skia motorunun yerine devreye alınan yeni nesil Impeller grafik motorudur. Impeller, özellikle iOS tarafında önceden derlenmiş gölgelendiriciler (runtime shader compilation) kullanarak arayüz takılmalarını (shader jank) ortadan kaldırmıştır. Android'te ise Vulkan ve OpenGL arka uçlarıyla yüksek kare hızlarında akıcı bir çizim performansı sunar.
+
+Flutter geliştirme sürecinin bir diğer gücü "Stateful Hot Reload" özelliğidir. Tasarımcı ve mühendisler arayüz değişikliklerini uygulamanın mevcut durumunu kaybetmeden milisaniyeler içinde cihazda görebilir. Bu kabiliyet, pazara çıkış süresini (Time to Market) önemli ölçüde kısaltır ve ürün doğrulama evresindeki girişimler için maliyet avantajı yaratır.
+
+## Native mobil geliştirme dünyası: Swift ve Kotlin
+
+Native geliştirme, her platformun kendi resmi programlama dili, araç seti ve tasarım kılavuzlarıyla bağımsız olarak inşa edilmesidir:
+
+- **Apple ekosistemi (iOS):** Swift dili ve SwiftUI çatısıyla Apple ekosistemine (iPhone, Apple Watch, iPad) tam uyumlu, Human Interface Guidelines standartlarına sadık uygulamalar geliştirilir.
+- **Android ekosistemi:** Kotlin dili ve Jetpack Compose deklaratif arayüz mimarisiyle Android cihaz çeşitliliğine uyarlanmış, Material 3 standartlarında çözümler üretilir.
+
+Native mimarinin sunduğu en büyük üstünlük, işletim sisteminin tüm donanım ve yazılım API'lerine doğrudan ve gecikmesiz erişebilmesidir. İşletim sistemi güncellemeleri yayınlandığı ilk gün (örneğin iOS'un yeni Dynamic Island özellikleri veya Android'in yeni arka plan kısıtlamaları) Native projelerde doğrudan kullanılabilir. Harici eklenti yazarlarının köprü hazırlamasını beklemek gerekmez.
+
+## Karşılaştırma boyutları
+
+Teknoloji seçimini doğru yapabilmek için projeyi temel mühendislik boyutlarıyla ele almak gerekir:
+
+### 1. Geliştirme süresi ve maliyeti
+Flutter ile tek bir ekip, tek bir kod tabanı üzerinden iki işletim sistemi için de çıktı üretebilir. İş mantığının ve arayüz bileşenlerinin büyük bir bölümü iki platform arasında ortaklaşa kullanılır; ortak kod oranı projenin yerel donanım ihtiyaçlarına göre değişir. Native tarafta ise iOS için Swift, Android için Kotlin bilen iki ayrı uzman ekip veya geliştirici gerekir. Bu durum ilk aşamada geliştirme maliyetini ve bakım eforunu artırabilir.
+
+### 2. UI/UX esnekliği ve tasarım kontrolü
+Flutter'da piksel seviyesinde kontrol mümkündür; uygulama her iki işletim sisteminde de harfi harfine aynı görünür. Özel animasyonlar, oyunlaştırılmış arayüzler ve markaya özgü tasarımlar Flutter ile çok rahat inşa edilir. Buna karşılık kullanıcıların platforma özgü alışkanlıkları (iOS geri kaydırma hareketi, klavye etkileşimleri) Native'de tamamen doğaldır.
+
+### 3. Donanım sensörleri, Bluetooth ve arka plan GPS performansı
+Uygulamanız harici bir medikal cihaza Bluetooth Low Energy (BLE) ile sürekli veri aktarıyorsa, karmaşık arka plan GPS izleme servisleri çalıştırıyorsa veya kameradan gelen görüntüleri düşük gecikmeyle işliyorsa Native mimari açık ara öndedir. Çapraz platform çatılarda donanım katmanı arasına giren her soyutlama katmanı hata ayıklamayı zorlaştırabilir.
+
+### 4. Kütüphane ekosistemi ve uzun vadeli bakım
+Flutter ekosistemi (`pub.dev`) oldukça zengin olsa da bazı niş platform özellikleri topluluk paketlerine bağımlıdır. Bir paket sahibi güncellemeyi bıraktığında paketi kendi ekibinizin sürdürmesi gerekebilir. Native dünyada ise Apple ve Google'ın birinci parti resmi desteği uzun vadeli mimari güvence sağlar.
+
+## Candemsoft'un mobil mimari yaklaşımı ve ürün deneyimleri
+
+[Candemsoft](https://candemsoft.com/) olarak geliştirdiğimiz mobil projelerde teknoloji seçimini peşin hükümlerle değil, her ürünün temel kullanıcı deneyimi ve donanım gereksinimlerine göre değerlendiriyoruz:
+
+Hız okuma uygulamamız [Orpigo](/projeler/orpigo/) ve web platformumuz [orpigo.com](https://orpigo.com/), yüksek kelime frekanslarında (RSVP) sabit bir odak noktasında metin akışı sunar. Bu tip içerik ve okuma odaklı arayüzlerde, görsel bileşenlerin akıcılığı ve iki platformda tutarlı bir tipografi dengesi sağlanması önceliklidir.
+
+Sosyal keşif platformumuz [Seyyah](/projeler/seyyah/), kullanıcıların Türkiye genelinde fiziksel olarak bulundukları mekanları harita üzerinden keşfetmesini ve GPS doğrulamalı check-in yapmasını sağlar. Harita görselleştirmesi ve sosyal profil etkileşimleri sunan ürünlerde, pazara hızlı çıkış ve iki mağazada eşzamanlı özellik güncellemesi kritik bir avantajdır.
+
+Buna karşın sosyal fitness uygulamamız [CandemFit](/projeler/candemfit/) gibi projelerde; açık havada kesintisiz GPS antrenman kaydı, animasyonlu rota haritaları ve pil tüketimi optimizasyonu gibi donanıma yakın gereksinimler öne çıkar. Arka plan servislerinin işletim sistemi kısıtlamalarına takılmadan çalışması gereken durumlarda, platform servislerinin ve yerel API'lerin doğrudan yönetimi mimari kararın merkezinde yer alır.
+
+## Hangi senaryoda hangisi seçilmeli?
+
+Mobil projeler için karar matrisi şu şekilde özetlenebilir:
+
+- **Flutter tercih edilmeli:** Pazara hızlı çıkması gereken MVP projeleri, e-ticaret uygulamaları, kurumsal içerik platformları, bütçesi tek ekibe uygun girişimler ve iki platformda birebir aynı özel tasarımı arayan projeler.
+- **Native tercih edilmeli:** Bluetooth LE ile sürekli donanım haberleşmesi yapan IoT projeleri, gelişmiş ses/video işleme araçları, derin arka plan sensör kaydı gerektiren kompleks uygulamalar ve işletim sisteminin en yeni sürümlerini çıktığı gün desteklemek isteyen kurumsal yapılar.
+
+Mevcut projenizin ölçeğine ve teknik gereksinimlerine göre en doğru mimariyi kurgulamak için profesyonel [mobil uygulama geliştirme](/hizmetler/mobil-uygulama/) süreçlerimizi inceleyebilir ve uzman kadromuzdan [yazılım danışmanlığı](/hizmetler/danismanlik/) alabilirsiniz.
+
+## Sık sorulan sorular
+
+**Flutter uygulamaları Native kadar akıcı çalışabilir mi?**  
+Evet. Özellikle Impeller grafik motorunun kullanıma girmesiyle birlikte Flutter uygulamaları 60 FPS ve 120 FPS ekranlarda son derece akıcı çalışır. Standart iş mantığı ve içerik arayüzlerinde son kullanıcının performans farkını anlaması neredeyse imkansızdır.
+
+**Flutter öğrenmek veya ekip kurmak Native'e göre daha mı kolaydır?**  
+Tek bir programlama dili (Dart) öğrenerek hem iOS hem de Android çıktısı üretmek geliştirici ekiplerinin adaptasyonunu hızlandırır. İki farklı dilde (Swift ve Kotlin) uzmanlaşmış iki ayrı ekip kurmaya kıyasla tek dilde uzmanlaşmış bir ekibi yönetmek operasyonel olarak daha pratiktir.
+
+**Flutter projesine sonradan Native kod eklenebilir mi?**  
+Evet. Flutter, Platform Channels (Platform Kanalları) mekanizması sunar. Özel bir donanım API'sine veya işletim sistemine özgü bir kütüphaneye ihtiyaç duyulduğunda Swift veya Kotlin ile yerel kod yazılıp Flutter katmanına bağlanabilir.
+
+**Candemsoft yeni projelerde hangi yaklaşımı öneriyor?**  
+Candemsoft olarak teknolojiye ezbere yaklaşmıyoruz. Projenizin bütçesi, pazara çıkış süresi ve donanım bağımlılıkları analiz edilir; içerik ve hız odaklı işlerde Flutter, donanım ve sistem odaklı işlerde Native mimari tercih edilir.
