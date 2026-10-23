@@ -306,7 +306,7 @@
     "heroLine1": "We build",
     "heroLine2": "for clients.",
     "heroLine3": "And for ourselves.",
-    "heroLead": "Websites, mobile apps and AI features. Four of our own apps are on the App Store and Google Play; below, each one has a section of its own.",
+    "heroLead": "Websites, mobile apps and AI features. Four of our own apps are on the App Store and Google Play and a fifth is on its way; below, each one has a room of its own.",
     "heroCta": "Tell us about your project",
     "heroSecondary": "Go to the products",
     "shelf": "Shelf",
@@ -316,10 +316,6 @@
     "roomEnter": "Go to section",
     "sample": "sample",
     "sampleNote": "The data in this area is a sample.",
-    "seyyahNote1": "go there first",
-    "seyyahNote2": "GPS verifies",
-    "seyyahNote3": "the sticker is yours",
-    "seyyahRoute": "a weekend route",
     "orpigoDemo": "Try it: this is how Orpigo reads",
     "orpigoPlay": "Play",
     "orpigoPause": "Pause",
@@ -327,10 +323,117 @@
     "orpigoWpm": "words/min",
     "orpigoText": "Orpigo shows text one word at a time. The red letter is your focal point. Your eyes don't travel along the line; the words come to you. You pick the speed and continue where you left off.",
     "qrReal": "This QR code is real: scan it with your phone and kisiselqr.com opens.",
-    "qrStickerCaption": "Our real sticker: 5 × 8 cm, sticks to the inside of the glass.",
-    "qrStickerAlt": "Kişisel QR car sticker: “Scan the QR code to reach the car owner”",
     "qrCard": "Sample profile",
     "qrName": "First Last",
+    "qrRole": "Title · Company",
+    "fitWorkout": "Sample workout",
+    "fitDistance": "distance",
+    "fitPace": "pace",
+    "fitTime": "time",
+    "fitWeekly": "Weekly league",
+    "keyTitle": "AI in everything you type.",
+    "clientsKicker": "Client work",
+    "clientsTitle": "What we've built for others.",
+    "clientsOffline": "currently offline",
+    "servicesKicker": "Services",
+    "aboutKicker": "Us",
+    "aboutTitle": "A small team, in it for the long run.",
+    "ctaTitle": "The next section could be your project.",
+    "ctaButton": "Write to us",
+    "switchDesign": "Classic design",
+    "switchDesignHint": "This is an alternative design of the site.",
+    "seyyahNotebook": "Explore · Save · Remember",
+    "seyyahPins": [
+      "morning coffee",
+      "old bazaar",
+      "sunset ★"
+    ],
+    "seyyahVerified": "GPS verified",
+    "seyyahStickers": "the sticker's yours",
+    "seyyahArt": "A Seyyah notebook: a day's route, a GPS check stamp, a pencil drawing of Galata Tower and collected stickers",
+    "keyKicker": "Turkish AI keyboard",
+    "keyStores": "Coming soon to the stores",
+    "keyBefore": "Before",
+    "keyAfter": "After",
+    "keyActions": "Pick an AI action",
+    "keyDemoNote": "Examples from candemkey.com; real results may vary.",
+    "keyDemo": {
+      "before": "gonna be late to the meeting tmrw start without me",
+      "actions": [
+        [
+          "Fix",
+          "I'm going to be late to the meeting tomorrow. Start without me."
+        ],
+        [
+          "Formal",
+          "I'll be slightly late to tomorrow's meeting; please start without me."
+        ],
+        [
+          "Casual",
+          "Running a bit late tomorrow, go ahead and start without me!"
+        ],
+        [
+          "Shorten",
+          "Late tomorrow, start without me."
+        ],
+        [
+          "Expand",
+          "I'll be a few minutes late to tomorrow's meeting. Please go ahead and start; I'll catch up when I get there."
+        ]
+      ]
+    },
+    "keyHighlight": "one key",
+    "seyyahCheckin": "I'm here",
+    "seyyahLocating": "Checking GPS…",
+    "seyyahDone": "Route complete",
+    "seyyahReset": "Walk it again",
+    "seyyahProgress": "{n}/3 stops",
+    "seyyahTry": "Try it: check in at each stop",
+    "keyPause": "Pause animation",
+    "keyPlay": "Play animation",
+    "fitPause": "Pause the run",
+    "fitPlay": "Play the run",
+    "fitNote": "A real map and a real 4 km route; pace and time are sample values. Map data",
+    "qrPause": "Pause animation",
+    "keyChat": "Team",
+    "keyIncoming": "Meeting's tomorrow at 10, can you make it?",
+    "keySpace": "space",
+    "keyReturn": "send",
+    "aboutFlowKicker": "Process",
+    "aboutFlowTitle": "How a project runs",
+    "aboutFlowLead": "We start by talking, and we finish by shipping and handing over. Every step in between happens in the same team.",
+    "aboutFlow": [
+      [
+        "talk",
+        "We put the need, the scope and the timeline in writing together."
+      ],
+      [
+        "design",
+        "Flows and screens are settled before any code is written."
+      ],
+      [
+        "build",
+        "Web, mobile or AI: all written in the same team."
+      ],
+      [
+        "ship",
+        "We put the site live and the app in the stores."
+      ],
+      [
+        "handover",
+        "We hand over the code and the access."
+      ]
+    ],
+    "blogLatest": "Latest",
+    "blogMore": "More posts",
+    "blogRead": "Read the post",
+    "blogToc": "Contents",
+    "blogBy": "By",
+    "blogCopy": "Copy link",
+    "blogCopied": "Copied",
+    "blogNext": "Next post",
+    "qrStickerCaption": "Our real sticker: 5 × 8 cm, sticks to the inside of the glass.",
+    "qrStickerAlt": "Kişisel QR car sticker: “Scan the QR code to reach the car owner”",
     "qrAlertTitle": "Notify the car owner",
     "qrAlertHint": "Try it: pick a situation",
     "qrAlertApp": "Kişisel QR",
@@ -372,37 +475,8 @@
         "profile opens in TR, EN or KG"
       ]
     ],
-    "qrRole": "Title · Company",
-    "fitWorkout": "Sample workout",
-    "fitDistance": "distance",
-    "fitPace": "pace",
-    "fitTime": "time",
-    "fitWeekly": "Weekly league",
     "keyDemoLabel": "Example: the AI key",
-    "keyChat": "Will the file arrive today?",
     "keyRaw": "hey i cant finish the file today can i send it tmrw morning",
-    "keyActions": [
-      [
-        "Fix",
-        "Hey, I can't finish the file today. Can I send it tomorrow morning?"
-      ],
-      [
-        "Formal",
-        "I will not be able to finish the file today. Would it be acceptable if I sent it tomorrow morning?"
-      ],
-      [
-        "Casual",
-        "Hey, couldn't finish the file today, tomorrow morning okay? 🙏"
-      ],
-      [
-        "Shorten",
-        "File tomorrow morning okay?"
-      ],
-      [
-        "Expand",
-        "Hey, it doesn't look like I can finish the file today. Would it be alright if I sent it first thing tomorrow morning?"
-      ]
-    ],
     "keyResult": "Result",
     "keyApply": "Apply",
     "keyCopy": "Copy",
@@ -423,19 +497,7 @@
       ]
     ],
     "keyLayouts": "Turkish Q · English · Español",
-    "keySoonStores": "App Store and Google Play: coming soon",
-    "keyTitle": "AI in everything you type.",
-    "keyNote": "The keyboard is in design.",
-    "clientsKicker": "Client work",
-    "clientsTitle": "What we've built for others.",
-    "clientsOffline": "currently offline",
-    "servicesKicker": "Services",
-    "aboutKicker": "Us",
-    "aboutTitle": "A small team, in it for the long run.",
-    "ctaTitle": "The next section could be your project.",
-    "ctaButton": "Write to us",
-    "switchDesign": "Classic design",
-    "switchDesignHint": "This is an alternative design of the site."
+    "keySoonStores": "App Store and Google Play: coming soon"
   },
   "v3": {
     "metaTitle": "The Candemsoft Gazette",

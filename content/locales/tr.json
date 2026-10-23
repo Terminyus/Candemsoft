@@ -306,7 +306,7 @@
     "heroLine1": "Müşterilerimiz",
     "heroLine2": "için yazıyoruz.",
     "heroLine3": "Kendimiz için de.",
-    "heroLead": "Web siteleri, mobil uygulamalar ve yapay zekâ özellikleri geliştiriyoruz. Dört uygulamamız App Store ve Google Play'de; aşağıda her biri kendi bölümünde.",
+    "heroLead": "Web siteleri, mobil uygulamalar ve yapay zekâ özellikleri geliştiriyoruz. Dört uygulamamız App Store ve Google Play'de, beşincisi yolda; aşağıda her biri kendi odasında.",
     "heroCta": "Projenizi anlatın",
     "heroSecondary": "Ürünlere in",
     "shelf": "Raf",
@@ -316,10 +316,6 @@
     "roomEnter": "Bölüme git",
     "sample": "örnek",
     "sampleNote": "Bu alandaki veriler örnektir.",
-    "seyyahNote1": "önce git",
-    "seyyahNote2": "GPS doğrular",
-    "seyyahNote3": "etiket senin",
-    "seyyahRoute": "bir haftasonu rotası",
     "orpigoDemo": "Deneyin: Orpigo böyle okutur",
     "orpigoPlay": "Oynat",
     "orpigoPause": "Duraklat",
@@ -327,10 +323,117 @@
     "orpigoWpm": "kelime/dk",
     "orpigoText": "Orpigo metni kelime kelime gösterir. Kırmızı harf gözünün odak noktası. Gözlerin satır boyunca gezmez; kelimeler sana gelir. Hızı sen seçersin ve kaldığın yerden devam edersin.",
     "qrReal": "Bu QR kod gerçek: telefonunuzla okutun, kisiselqr.com açılır.",
-    "qrStickerCaption": "Gerçek etiketimiz: 5 × 8 cm, camın içine yapışır.",
-    "qrStickerAlt": "Kişisel QR araç etiketi: “Araç sahibine ulaşmak için karekodu okutun”",
     "qrCard": "Örnek profil",
     "qrName": "Ad Soyad",
+    "qrRole": "Unvan · Şirket",
+    "fitWorkout": "Örnek antrenman",
+    "fitDistance": "mesafe",
+    "fitPace": "tempo",
+    "fitTime": "süre",
+    "fitWeekly": "Haftalık lig",
+    "keyTitle": "Yazdığın her şeye yapay zekâ.",
+    "clientsKicker": "Müşteri işleri",
+    "clientsTitle": "Başkaları için yaptıklarımız.",
+    "clientsOffline": "şu an yayında değil",
+    "servicesKicker": "Hizmetler",
+    "aboutKicker": "Biz",
+    "aboutTitle": "Küçük ekip, uzun soluklu iş.",
+    "ctaTitle": "Sıradaki bölüm sizin projeniz olabilir.",
+    "ctaButton": "Bize yazın",
+    "switchDesign": "Klasik tasarım",
+    "switchDesignHint": "Bu, sitenin alternatif tasarımı.",
+    "seyyahNotebook": "Keşfet · Kaydet · Hatırla",
+    "seyyahPins": [
+      "sabah kahvesi",
+      "eski çarşı",
+      "gün batımı ★"
+    ],
+    "seyyahVerified": "GPS doğrulandı",
+    "seyyahStickers": "etiket senin",
+    "seyyahArt": "Seyyah defteri: bir günlük rota, GPS onay damgası, Galata Kulesi'nin karakalem çizimi ve toplanan etiketler",
+    "keyKicker": "Türkçe yapay zekâ klavyesi",
+    "keyStores": "Mağazalarda yakında",
+    "keyBefore": "Önce",
+    "keyAfter": "Sonra",
+    "keyActions": "AI aksiyonu seçin",
+    "keyDemoNote": "Örnekler candemkey.com'dan; gerçek sonuç değişebilir.",
+    "keyDemo": {
+      "before": "yarın toplantıya gecikcem başlayın siz",
+      "actions": [
+        [
+          "Düzelt",
+          "Yarın toplantıya gecikeceğim, siz başlayın."
+        ],
+        [
+          "Resmî",
+          "Yarın toplantıya biraz geç katılacağım; lütfen beklemeden başlayın."
+        ],
+        [
+          "Samimi",
+          "Yarın toplantıya biraz geç kalacağım, siz başlayın, ben yetişirim."
+        ],
+        [
+          "Kısalt",
+          "Yarın gecikeceğim, başlayın."
+        ],
+        [
+          "Uzat",
+          "Yarın toplantıya birkaç dakika geç katılacağım. Beklemeden başlayabilirsiniz; geldiğimde kaldığınız yerden devam ederim."
+        ]
+      ]
+    },
+    "keyHighlight": "bir tuş",
+    "seyyahCheckin": "Buradayım",
+    "seyyahLocating": "GPS doğrulanıyor…",
+    "seyyahDone": "Rota tamam",
+    "seyyahReset": "Yeniden yürü",
+    "seyyahProgress": "{n}/3 durak",
+    "seyyahTry": "Dene: durakları sırayla check-in yap",
+    "keyPause": "Animasyonu durdur",
+    "keyPlay": "Animasyonu oynat",
+    "fitPause": "Koşuyu durdur",
+    "fitPlay": "Koşuyu oynat",
+    "fitNote": "Gerçek harita ve gerçek bir 4 km'lik rota; tempo ve süre örnektir. Harita verisi",
+    "qrPause": "Animasyonu durdur",
+    "keyChat": "Ekip",
+    "keyIncoming": "Toplantı yarın 10'da, gelebiliyor musun?",
+    "keySpace": "boşluk",
+    "keyReturn": "gönder",
+    "aboutFlowKicker": "Süreç",
+    "aboutFlowTitle": "Bir proje nasıl yürür",
+    "aboutFlowLead": "Konuşarak başlıyoruz, yayına alıp devrediyoruz. Aradaki her adım aynı ekipte.",
+    "aboutFlow": [
+      [
+        "konuşma",
+        "İhtiyacı, kapsamı ve takvimi birlikte yazıya dökeriz."
+      ],
+      [
+        "tasarım",
+        "Akış ve ekranlar kod yazılmadan önce netleşir."
+      ],
+      [
+        "geliştirme",
+        "Web, mobil ya da yapay zekâ: hepsi aynı ekipte yazılır."
+      ],
+      [
+        "yayın",
+        "Siteyi yayına alır, uygulamayı mağazaya çıkarırız."
+      ],
+      [
+        "devir",
+        "Kodu ve erişimleri size teslim ederiz."
+      ]
+    ],
+    "blogLatest": "Son yazı",
+    "blogMore": "Diğer yazılar",
+    "blogRead": "Yazıyı oku",
+    "blogToc": "İçindekiler",
+    "blogBy": "Yazan",
+    "blogCopy": "Bağlantıyı kopyala",
+    "blogCopied": "Kopyalandı",
+    "blogNext": "Sıradaki yazı",
+    "qrStickerCaption": "Gerçek etiketimiz: 5 × 8 cm, camın içine yapışır.",
+    "qrStickerAlt": "Kişisel QR araç etiketi: “Araç sahibine ulaşmak için karekodu okutun”",
     "qrAlertTitle": "Araç sahibine bildir",
     "qrAlertHint": "Dene: bir durum seç",
     "qrAlertApp": "Kişisel QR",
@@ -372,37 +475,8 @@
         "profil TR, EN ve KG açılır"
       ]
     ],
-    "qrRole": "Unvan · Şirket",
-    "fitWorkout": "Örnek antrenman",
-    "fitDistance": "mesafe",
-    "fitPace": "tempo",
-    "fitTime": "süre",
-    "fitWeekly": "Haftalık lig",
     "keyDemoLabel": "Örnek: AI tuşu",
-    "keyChat": "Dosya bugün gelir mi?",
     "keyRaw": "Abi dosyayı bugün yetiştiremiycem yarın sabah atsam olur mu",
-    "keyActions": [
-      [
-        "Düzelt",
-        "Abi, dosyayı bugün yetiştiremeyeceğim, yarın sabah göndersem olur mu?"
-      ],
-      [
-        "Resmî",
-        "Dosyayı bugün yetiştiremeyeceğim. Yarın sabah göndermem uygun olur mu?"
-      ],
-      [
-        "Samimi",
-        "Abi dosyayı bugün bitiremedim, yarın sabah atsam olur mu? 🙏"
-      ],
-      [
-        "Kısalt",
-        "Dosya yarın sabah olur mu?"
-      ],
-      [
-        "Uzat",
-        "Abi, dosyayı bugün yetiştirmem mümkün görünmüyor. Yarın sabah ilk iş olarak gönderirsem uygun olur mu?"
-      ]
-    ],
     "keyResult": "Sonuç",
     "keyApply": "Uygula",
     "keyCopy": "Kopyala",
@@ -423,19 +497,7 @@
       ]
     ],
     "keyLayouts": "Türkçe Q · English · Español",
-    "keySoonStores": "App Store ve Google Play: yakında",
-    "keyTitle": "Yazdığın her şeye yapay zekâ.",
-    "keyNote": "Klavye tasarımı sürüyor.",
-    "clientsKicker": "Müşteri işleri",
-    "clientsTitle": "Başkaları için yaptıklarımız.",
-    "clientsOffline": "şu an yayında değil",
-    "servicesKicker": "Hizmetler",
-    "aboutKicker": "Biz",
-    "aboutTitle": "Küçük ekip, uzun soluklu iş.",
-    "ctaTitle": "Sıradaki bölüm sizin projeniz olabilir.",
-    "ctaButton": "Bize yazın",
-    "switchDesign": "Klasik tasarım",
-    "switchDesignHint": "Bu, sitenin alternatif tasarımı."
+    "keySoonStores": "App Store ve Google Play: yakında"
   },
   "v3": {
     "metaTitle": "Candemsoft Gazetesi",

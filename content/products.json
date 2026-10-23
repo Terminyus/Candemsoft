@@ -226,44 +226,44 @@
     "name": "Candemkey",
     "status": "soon",
     "platforms": [],
-    "icon": "",
+    "icon": "/products/candemkey.png",
     "tagline": {
       "tr": "Yazdığın her yerde, yapay zekâ bir tuş uzakta.",
       "en": "Wherever you type, AI is one key away.",
-      "es": "Dondequiera que escribas, la IA está a una tecla."
+      "es": "Escribas donde escribas, la IA está a una tecla."
     },
     "description": {
-      "tr": "Candemkey, yazdığın her yerde yanında olan Türkçe yapay zekâ klavyen. Metin düzeltme, resmî e-posta hazırlama ve anında çeviri parmaklarının ucunda. Yakında App Store ve Google Play'de.",
-      "en": "Candemkey is the AI keyboard that goes wherever you type. Fix your text, draft a formal email or translate instantly, all from the keyboard. Coming soon to the App Store and Google Play.",
-      "es": "Candemkey es el teclado con IA que te acompaña dondequiera que escribas. Corrige tu texto, redacta un correo formal o traduce al instante desde el teclado. Muy pronto en App Store y Google Play."
+      "tr": "Yazdığın her yerde çalışan Türkçe yapay zekâ klavyesi. Yazım düzeltme, resmî mesaj, ton değiştirme ve çeviri doğrudan klavyede. iOS ve Android için yakında.",
+      "en": "A Turkish-first AI keyboard that works wherever you type. Fix grammar, write formal messages, change the tone and translate, right from the keyboard. Coming soon to iOS and Android.",
+      "es": "Un teclado con IA que funciona dondequiera que escribas. Corrección de texto, mensajes formales, cambio de tono y traducción desde el teclado. Próximamente en iOS y Android."
     },
     "features": {
       "tr": [
-        "Düzelt, Resmî, Samimi, Kısalt, Uzat",
-        "Komut satırı: “Bunu İspanyolcaya çevir”",
-        "Alana göre değişen klavye",
-        "Türkçe Q, English ve Español dizilim",
-        "Şifre alanlarında AI kapalı"
+        "Beş AI düğmesi: Düzelt, Resmî, Samimi, Kısalt, Uzat",
+        "Komut satırı: çeviri ya da kendi isteğin",
+        "Alana göre değişen tuşlar (mesaj, e-posta, adres çubuğu)",
+        "Türkçe Q, İngilizce ve İspanyolca QWERTY",
+        "Şifre alanlarında AI kapalı, hiçbir şey kaydedilmez"
       ],
       "en": [
-        "Fix, Formal, Casual, Shorten, Expand",
-        "Command line: “Translate this into Spanish”",
-        "A keyboard that adapts to the field",
-        "Turkish Q, English and Español layouts",
-        "AI is off in password fields"
+        "Five AI buttons: Fix, Formal, Casual, Shorten, Expand",
+        "Command line: translate or ask in your own words",
+        "Keys that adapt to the field (message, email, address bar)",
+        "Turkish Q, English and Spanish QWERTY",
+        "AI off in password fields, nothing is recorded"
       ],
       "es": [
-        "Corregir, Formal, Cercano, Acortar, Ampliar",
-        "Línea de comandos: “Tradúcelo al inglés”",
-        "Un teclado que se adapta al campo",
-        "Disposiciones turco Q, English y Español",
-        "IA desactivada en campos de contraseña"
+        "Cinco botones de IA: Corregir, Formal, Informal, Acortar, Ampliar",
+        "Línea de comandos: traduce o pide con tus palabras",
+        "Teclas que se adaptan al campo (mensaje, correo, barra de direcciones)",
+        "Q turco, QWERTY inglés y español",
+        "IA desactivada en campos de contraseña, no se registra nada"
       ]
     },
     "links": {
       "appStore": "",
       "googlePlay": "",
-      "web": "https://candemkey.com/"
+      "web": "https://candemkey.com"
     }
   }
 ]

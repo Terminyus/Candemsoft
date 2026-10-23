@@ -6,6 +6,7 @@ import services from "@content/services.json";
 import stack from "@content/stack.json";
 import products from "@content/products.json";
 import team from "@content/team.json";
+import { slugify } from "./text";
 
 export type Localized<T = string> = Record<Locale, T>;
 
@@ -106,6 +107,8 @@ export type PostMeta = {
   author: string;
   tags: string[];
   image?: string;
+  /** A few large characters set on the post's cover (optional; defaults to the title's first word). */
+  cover?: string;
 };
 
 export function getPostSlugs(lang: Locale): string[] {
@@ -200,6 +203,15 @@ export function publicFileExists(publicPath: string): boolean {
   const target = path.resolve(publicDir, cleanPath);
   if (!target.startsWith(publicDir + path.sep) && target !== publicDir) return false;
   return fs.existsSync(target);
+}
+
+/** The post's ## headings, for its table of contents (ids follow the same slugify as the MDX h2). */
+export function getPostHeadings(lang: Locale, slug: string): { id: string; text: string }[] {
+  const src = fs.readFileSync(path.join(root, "blog", `${slug}.${lang}.mdx`), "utf8");
+  return [...src.matchAll(/^##\s+(.+)$/gm)].map((m) => {
+    const text = m[1]!.replace(/[`*_]/g, "").trim();
+    return { id: slugify(text), text };
+  });
 }
 
 export function readingMinutes(lang: Locale, slug: string): number {

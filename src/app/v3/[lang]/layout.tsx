@@ -12,6 +12,7 @@ import { v3Href, v3Nav } from "@/components/v3/nav";
 import { mono } from "../../fonts-lib/mono";
 import { V3Fonts } from "../fonts";
 import "../../globals.css";
+import { ScrollFallback } from "@/components/fx/ScrollFallback";
 
 // Unknown values are unmatched routes → app/global-not-found.tsx (server-rendered 404).
 export const dynamicParams = false;
@@ -45,6 +46,7 @@ export default async function V3Layout({ children, params }: LayoutProps<"/v3/[l
         <V3Fonts />
       </head>
       <body className="v3 bg-news-paper text-news-ink">
+        <ScrollFallback />
         <SkipLink label={dict.nav.skip} />
         <V3Header
           lang={lang}

@@ -5,6 +5,7 @@ import { resolveLang } from "@/lib/params";
 import { V2PageHead } from "@/components/v2/V2PageHead";
 import { V2TeamGrid } from "@/components/v2/V2TeamGrid";
 import { breadcrumbJsonLd, jsonLd, pageBreadcrumbs, pageMetadata } from "@/lib/seo";
+import { AboutFlow } from "@/components/v2/AboutFlow";
 
 export async function generateMetadata({ params }: PageProps<"/v2/[lang]/hakkimizda">): Promise<Metadata> {
   const lang = await resolveLang(params);
@@ -39,6 +40,18 @@ export default async function Page({ params }: PageProps<"/v2/[lang]/hakkimizda"
             <p className="mt-4 text-lead">{x.b}</p>
           </div>
         ))}
+      </section>
+      <section aria-labelledby="about-flow" className="border-y border-ink-950 bg-paper-50 py-(--section-sm)">
+        <div className="container-site">
+          <p className="font-mono text-mono-sm text-stone-600">{dict.v2.aboutFlowKicker}</p>
+          <h2 id="about-flow" className="v2-display mt-3 text-[clamp(2rem,1.4rem+2.6vw,3.5rem)]">
+            {dict.v2.aboutFlowTitle}
+          </h2>
+          <p className="mt-4 max-w-2xl text-lead text-stone-600">{dict.v2.aboutFlowLead}</p>
+          <div className="mt-12">
+            <AboutFlow stages={dict.v2.aboutFlow} />
+          </div>
+        </div>
       </section>
       <section aria-labelledby="principles" className="container-site py-(--section-sm)">
         <p id="principles" className="font-mono text-mono-sm text-stone-600">

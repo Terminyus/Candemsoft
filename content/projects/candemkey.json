@@ -3,8 +3,8 @@
   "name": "Candemkey",
   "url": "https://candemkey.com/",
   "status": "live",
-  "order": 6,
-  "featured": false,
+  "order": 5,
+  "featured": true,
   "ownProduct": true,
   "categories": [
     "mobil",
@@ -16,14 +16,9 @@
     "es": "App móvil y sitio web"
   },
   "sector": {
-    "tr": "Yapay zekâ ve üretkenlik",
+    "tr": "Yapay zekâ ve verimlilik",
     "en": "AI and productivity",
     "es": "IA y productividad"
-  },
-  "metaTitle": {
-    "tr": "Candemkey Akıllı Yapay Zekâ Klavyesi | Candemsoft",
-    "en": "Candemkey Smart AI Keyboard | Candemsoft",
-    "es": "Teclado Inteligente con IA Candemkey | Candemsoft"
   },
   "summary": {
     "tr": "Candemkey; tüm mobil uygulamalarda anında yazım düzeltme, e-posta hazırlama ve dil çevirisi sağlayan Türkçe yapay zekâ klavyesidir. Hemen deneyin.",
@@ -33,6 +28,7 @@
   "year": null,
   "services": [
     "mobil",
+    "yapay-zeka",
     "web",
     "ui-ux"
   ],
@@ -58,5 +54,10 @@
     "desktop": "/projects/candemkey/desktop.webp",
     "mobile": "/projects/candemkey/mobile.webp"
   },
-  "_todo": "year, stack ve caseStudy alanlarını doldurun. Boş alanlar sitede gösterilmez."
+  "_todo": "year, stack ve caseStudy alanlarını doldurun. Boş alanlar sitede gösterilmez.",
+  "metaTitle": {
+    "tr": "Candemkey Akıllı Yapay Zekâ Klavyesi | Candemsoft",
+    "en": "Candemkey Smart AI Keyboard | Candemsoft",
+    "es": "Teclado Inteligente con IA Candemkey | Candemsoft"
+  }
 }

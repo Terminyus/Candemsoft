@@ -4,7 +4,8 @@ export const meta = {
   description: "Master Turkish uppercase İ and I rules in software. Learn Unicode points, toLocaleUpperCase tricks, database collations, and avoid casing bugs with our guide.",
   date: "2026-10-05",
   author: "Candemsoft",
-  tags: ["turkish characters", "i18n", "frontend", "backend", "unicode"]
+  tags: ["turkish characters", "i18n", "frontend", "backend", "unicode"],
+  cover: "i İ ı I"
 };
 
 **Short answer:** Turkish features four distinct characters: lowercase **i**, uppercase **İ**, lowercase **ı**, and uppercase **I**. English-centric software engines assume 'i' maps to 'I', which breaks Turkish string conversions across user interfaces, search indices, and validation logic. Resolving these issues requires locale-aware implementations such as `toLocaleUpperCase('tr')` in JavaScript, `unicode.TurkishCase` in Go, `Locale.forLanguageTag("tr-TR")` in Java, and proper database collations rather than generic CSS transformations.

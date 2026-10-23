@@ -19,7 +19,7 @@ export function V3Team({ lang }: { lang: Locale }) {
             )}
           </div>
           <p className="v3-sub mt-2 text-lg">{m.name}</p>
-          <p className="italic text-news-gray">{m.role[lang]}</p>
+          {m.role[lang] && <p className="italic text-news-gray">{m.role[lang]}</p>}
         </li>
       ))}
     </ul>
