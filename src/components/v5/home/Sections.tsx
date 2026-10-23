@@ -384,7 +384,7 @@ export function Team({ lang, dict, limit }: { lang: Locale; dict: Dictionary; li
                 {m.photo && publicFileExists(m.photo) ? <Image src={asset(m.photo)} alt={m.name} fill sizes="80px" className="object-cover" /> : initials(m.name)}
               </span>
               <p className="mt-4 font-bold">{m.name}</p>
-              <p className="text-sm text-corp-muted">{m.role[lang]}</p>
+              {m.role[lang] && <p className="text-sm text-corp-muted">{m.role[lang]}</p>}
             </li>
           ))}
         </ul>

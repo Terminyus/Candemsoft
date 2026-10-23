@@ -306,7 +306,7 @@
     "heroLine1": "Creamos",
     "heroLine2": "para clientes.",
     "heroLine3": "Y para nosotros.",
-    "heroLead": "Sitios web, apps móviles y funciones de IA. Cuatro de nuestras apps están en App Store y Google Play; abajo, cada una tiene su propia sección.",
+    "heroLead": "Sitios web, apps móviles y funciones de IA. Cuatro de nuestras apps están en App Store y Google Play y la quinta está en camino; abajo, cada una tiene su propia sala.",
     "heroCta": "Cuéntanos tu proyecto",
     "heroSecondary": "Ir a los productos",
     "shelf": "Estante",
@@ -316,10 +316,6 @@
     "roomEnter": "Ir a la sección",
     "sample": "ejemplo",
     "sampleNote": "Los datos de esta zona son de ejemplo.",
-    "seyyahNote1": "primero ve",
-    "seyyahNote2": "el GPS lo verifica",
-    "seyyahNote3": "la pegatina es tuya",
-    "seyyahRoute": "una ruta de fin de semana",
     "orpigoDemo": "Pruébalo: así lee Orpigo",
     "orpigoPlay": "Reproducir",
     "orpigoPause": "Pausa",
@@ -327,10 +323,117 @@
     "orpigoWpm": "palabras/min",
     "orpigoText": "Orpigo muestra el texto palabra a palabra. La letra roja es tu punto de enfoque. Tus ojos no recorren la línea; las palabras vienen a ti. Tú eliges la velocidad y sigues donde lo dejaste.",
     "qrReal": "Este código QR es real: escanéalo con el móvil y se abre kisiselqr.com.",
-    "qrStickerCaption": "Nuestra pegatina real: 5 × 8 cm, se pega por dentro del cristal.",
-    "qrStickerAlt": "Pegatina Kişisel QR para el coche: “Escanea el código QR para contactar al dueño”",
     "qrCard": "Perfil de ejemplo",
     "qrName": "Nombre Apellido",
+    "qrRole": "Cargo · Empresa",
+    "fitWorkout": "Entrenamiento de ejemplo",
+    "fitDistance": "distancia",
+    "fitPace": "ritmo",
+    "fitTime": "tiempo",
+    "fitWeekly": "Liga semanal",
+    "keyTitle": "IA en todo lo que escribes.",
+    "clientsKicker": "Trabajo para clientes",
+    "clientsTitle": "Lo que hemos hecho para otros.",
+    "clientsOffline": "fuera de línea por ahora",
+    "servicesKicker": "Servicios",
+    "aboutKicker": "Nosotros",
+    "aboutTitle": "Un equipo pequeño, para largo plazo.",
+    "ctaTitle": "La próxima sección puede ser tu proyecto.",
+    "ctaButton": "Escríbenos",
+    "switchDesign": "Diseño clásico",
+    "switchDesignHint": "Este es un diseño alternativo del sitio.",
+    "seyyahNotebook": "Explora · Guarda · Recuerda",
+    "seyyahPins": [
+      "café de la mañana",
+      "bazar antiguo",
+      "atardecer ★"
+    ],
+    "seyyahVerified": "GPS verificado",
+    "seyyahStickers": "la pegatina es tuya",
+    "seyyahArt": "Un cuaderno de Seyyah: la ruta de un día, un sello de verificación GPS, un dibujo a lápiz de la Torre de Gálata y pegatinas coleccionadas",
+    "keyKicker": "Teclado turco con IA",
+    "keyStores": "Próximamente en las tiendas",
+    "keyBefore": "Antes",
+    "keyAfter": "Después",
+    "keyActions": "Elige una acción de IA",
+    "keyDemoNote": "Ejemplos de candemkey.com; el resultado real puede variar.",
+    "keyDemo": {
+      "before": "mañana llego tarde a la reunion empiecen sin mi",
+      "actions": [
+        [
+          "Corregir",
+          "Mañana llego tarde a la reunión, empiecen sin mí."
+        ],
+        [
+          "Formal",
+          "Mañana llegaré con algo de retraso a la reunión; por favor, comiencen sin mí."
+        ],
+        [
+          "Informal",
+          "Mañana llego un poco tarde, ¡empiecen sin mí!"
+        ],
+        [
+          "Acortar",
+          "Llego tarde mañana; empiecen sin mí."
+        ],
+        [
+          "Ampliar",
+          "Mañana llegaré unos minutos tarde a la reunión. Pueden empezar sin mí; me pongo al día en cuanto llegue."
+        ]
+      ]
+    },
+    "keyHighlight": "una tecla",
+    "seyyahCheckin": "Estoy aquí",
+    "seyyahLocating": "Verificando GPS…",
+    "seyyahDone": "Ruta completa",
+    "seyyahReset": "Recorrer de nuevo",
+    "seyyahProgress": "{n}/3 paradas",
+    "seyyahTry": "Pruébalo: haz check-in en cada parada",
+    "keyPause": "Pausar animación",
+    "keyPlay": "Reproducir animación",
+    "fitPause": "Pausar la carrera",
+    "fitPlay": "Reproducir la carrera",
+    "fitNote": "Un mapa real y una ruta real de 4 km; el ritmo y el tiempo son de ejemplo. Datos del mapa",
+    "qrPause": "Pausar animación",
+    "keyChat": "Equipo",
+    "keyIncoming": "La reunión es mañana a las 10, ¿puedes venir?",
+    "keySpace": "espacio",
+    "keyReturn": "enviar",
+    "aboutFlowKicker": "Proceso",
+    "aboutFlowTitle": "Cómo avanza un proyecto",
+    "aboutFlowLead": "Empezamos hablando y terminamos publicando y entregando. Cada paso intermedio ocurre en el mismo equipo.",
+    "aboutFlow": [
+      [
+        "conversación",
+        "Ponemos por escrito la necesidad, el alcance y el calendario."
+      ],
+      [
+        "diseño",
+        "Los flujos y las pantallas se definen antes de escribir código."
+      ],
+      [
+        "desarrollo",
+        "Web, móvil o IA: todo se escribe en el mismo equipo."
+      ],
+      [
+        "publicación",
+        "Publicamos el sitio y llevamos la app a las tiendas."
+      ],
+      [
+        "entrega",
+        "Te entregamos el código y los accesos."
+      ]
+    ],
+    "blogLatest": "Lo último",
+    "blogMore": "Más artículos",
+    "blogRead": "Leer el artículo",
+    "blogToc": "Contenido",
+    "blogBy": "Por",
+    "blogCopy": "Copiar enlace",
+    "blogCopied": "Copiado",
+    "blogNext": "Siguiente artículo",
+    "qrStickerCaption": "Nuestra pegatina real: 5 × 8 cm, se pega por dentro del cristal.",
+    "qrStickerAlt": "Pegatina Kişisel QR para el coche: “Escanea el código QR para contactar al dueño”",
     "qrAlertTitle": "Avisa al dueño del coche",
     "qrAlertHint": "Pruébalo: elige una situación",
     "qrAlertApp": "Kişisel QR",
@@ -372,37 +475,8 @@
         "perfil en TR, EN o KG"
       ]
     ],
-    "qrRole": "Cargo · Empresa",
-    "fitWorkout": "Entrenamiento de ejemplo",
-    "fitDistance": "distancia",
-    "fitPace": "ritmo",
-    "fitTime": "tiempo",
-    "fitWeekly": "Liga semanal",
     "keyDemoLabel": "Ejemplo: la tecla AI",
-    "keyChat": "¿Llega hoy el archivo?",
     "keyRaw": "oye no voy a poder acabar el archivo hoy te lo mando mañana temprano",
-    "keyActions": [
-      [
-        "Corregir",
-        "Oye, no voy a poder acabar el archivo hoy. ¿Te lo mando mañana temprano?"
-      ],
-      [
-        "Formal",
-        "No podré terminar el archivo hoy. ¿Le parecería bien que se lo enviara mañana por la mañana?"
-      ],
-      [
-        "Cercano",
-        "Oye, no me dio tiempo del archivo hoy, ¿mañana temprano vale? 🙏"
-      ],
-      [
-        "Acortar",
-        "¿Archivo mañana temprano?"
-      ],
-      [
-        "Ampliar",
-        "Oye, parece que hoy no llego a terminar el archivo. ¿Te parece bien si te lo envío mañana a primera hora?"
-      ]
-    ],
     "keyResult": "Resultado",
     "keyApply": "Aplicar",
     "keyCopy": "Copiar",
@@ -423,19 +497,7 @@
       ]
     ],
     "keyLayouts": "Turco Q · English · Español",
-    "keySoonStores": "App Store y Google Play: próximamente",
-    "keyTitle": "IA en todo lo que escribes.",
-    "keyNote": "El teclado está en diseño.",
-    "clientsKicker": "Trabajo para clientes",
-    "clientsTitle": "Lo que hemos hecho para otros.",
-    "clientsOffline": "fuera de línea por ahora",
-    "servicesKicker": "Servicios",
-    "aboutKicker": "Nosotros",
-    "aboutTitle": "Un equipo pequeño, para largo plazo.",
-    "ctaTitle": "La próxima sección puede ser tu proyecto.",
-    "ctaButton": "Escríbenos",
-    "switchDesign": "Diseño clásico",
-    "switchDesignHint": "Este es un diseño alternativo del sitio."
+    "keySoonStores": "App Store y Google Play: próximamente"
   },
   "v3": {
     "metaTitle": "La Gaceta de Candemsoft",

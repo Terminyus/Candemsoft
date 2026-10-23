@@ -22,7 +22,22 @@
 
   /* Vitrin (v2) product rooms: each app's own colours, measured from its logo. */
   --color-seyyah: #0068c8;
-  --color-seyyah-paper: #f6f3ea;
+  --color-seyyah-paper: #faf8f3;
+  /* Seyyah's revised site (seyyah.info): blue ink on paper */
+  --color-seyyah-ink: #1f4fbf;
+  --color-seyyah-deep: #0e2a6b;
+  --color-seyyah-title: #0e1b3d;
+  --color-seyyah-soft: #dce6fa;
+  /* Candemkey (candemkey.com) */
+  --color-ck-bg: #070b1a;
+  --color-ck-surface: #0f1629;
+  --color-ck-line: #26304d;
+  --color-ck-text: #f5f7ff;
+  --color-ck-muted: #a3acc7;
+  --color-ck-purple: #8b5cf6;
+  --color-ck-violet: #7c3aed;
+  --color-ck-blue: #3b82f6;
+  --color-ck-cyan: #22d3ee;
   --color-orpigo-navy: #101838;
   --color-orpigo-red: #e80820;
   --color-qr-yellow: #f8d008;
@@ -360,24 +375,22 @@
   line-height: 1;
 }
 
-/* CandemFit room: the route draws itself as the room scrolls into view. Without support
-   (or with reduced motion) it simply shows the finished route. */
-@supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .fit-route {
-      stroke-dasharray: 1;
-      animation: fit-draw linear both;
-      animation-timeline: view();
-      animation-range: entry 10% cover 55%;
-    }
+/* CandemFit room: the runner's halo breathes during the replay (FitMap.tsx). */
+@media (prefers-reduced-motion: no-preference) {
+  .fit-pulse {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: fit-pulse 1.2s ease-out infinite;
   }
 }
-@keyframes fit-draw {
+@keyframes fit-pulse {
   from {
-    stroke-dashoffset: 1;
+    transform: scale(0.6);
+    opacity: 1;
   }
   to {
-    stroke-dashoffset: 0;
+    transform: scale(1.6);
+    opacity: 0;
   }
 }
 
@@ -618,4 +631,424 @@
   50% {
     transform: translateY(-10px);
   }
+}
+
+/* ---------- Vitrin · Seyyah room: pencil on paper (from seyyah.info) ---------- */
+.sy-paper {
+  background-color: var(--color-white);
+  border: 1.5px solid rgb(31 79 191 / 0.32);
+  border-radius: 10px 14px 12px 16px;
+  box-shadow: 0 1px 0 rgb(14 42 107 / 0.05), 5px 6px 0 -1px var(--color-seyyah-soft);
+}
+.sy-notebook {
+  background-image: linear-gradient(to bottom, transparent 27px, rgb(31 79 191 / 0.1) 27px, rgb(31 79 191 / 0.1) 28px);
+  background-size: 100% 28px;
+}
+/* spiral holes down the left edge */
+.sy-notebook::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 18px;
+  bottom: 18px;
+  width: 10px;
+  background: radial-gradient(circle at 5px 5px, var(--color-seyyah-paper) 3.2px, rgb(31 79 191 / 0.32) 3.6px, transparent 4.2px) 0 0 / 10px 26px repeat-y;
+}
+.sy-scribble {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 10' preserveAspectRatio='none'%3E%3Cpath d='M1 6.5C18 3 30 8.5 46 5.2S78 2.8 94 5.6 112 6.6 119 3.6' fill='none' stroke='%231f4fbf' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E")
+    no-repeat 0 100% / 100% 0.3em;
+  padding-bottom: 0.08em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.sy-ink {
+  fill: none;
+  stroke: var(--color-seyyah-ink);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+/* Strokes draw themselves and the footprints appear as the room scrolls in.
+   Without scroll timelines (or with reduced motion) everything is simply drawn. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .sy-draw {
+      view-timeline-name: --sy-draw;
+    }
+    .sy-draw [data-draw] {
+      stroke-dasharray: 1 1.1;
+      animation: sy-draw linear both;
+      animation-timeline: --sy-draw;
+      animation-range: entry 10% cover 35%;
+    }
+    .sy-draw .sy-write {
+      animation: sy-write linear both;
+      animation-timeline: --sy-draw;
+      animation-range: entry 0% cover 25%;
+    }
+  }
+}
+@keyframes sy-draw {
+  from {
+    stroke-dashoffset: 1.05;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes sy-write {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+/* Footprints walk: each print lands in turn, lingers, fades; then the walk starts again. */
+@media (prefers-reduced-motion: no-preference) {
+  .sy-trail .sy-step {
+    animation: sy-walk 5.2s calc(var(--i) * 0.42s) ease-out infinite both;
+  }
+  .sy-ping {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: sy-ping 1.6s ease-out infinite;
+  }
+  .sy-ping-fast {
+    animation-duration: 0.6s;
+  }
+  .sy-pop {
+    animation: sy-pop 0.4s ease-out both;
+  }
+}
+@keyframes sy-walk {
+  0% {
+    opacity: 0;
+  }
+  6%,
+  55% {
+    opacity: 1;
+  }
+  80%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes sy-ping {
+  from {
+    transform: scale(0.4);
+    opacity: 0.9;
+  }
+  to {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+@keyframes sy-pop {
+  from {
+    stroke-dashoffset: 40;
+    stroke-dasharray: 40;
+  }
+  to {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 40;
+  }
+}
+/* Route legs ink themselves in when walked; stamp and stickers appear as they're earned. */
+.sy-leg {
+  stroke-dasharray: 1 1.1;
+  stroke-dashoffset: 1.05;
+}
+.sy-leg-on {
+  stroke-dashoffset: 0;
+}
+.sy-stamp {
+  opacity: 0;
+  transform: scale(0.6);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+/* not yet earned: a grey outline of what's to come */
+.sy-sticker {
+  opacity: 0.3;
+  transform: scale(0.85);
+  filter: grayscale(1);
+}
+.sy-stamp-on,
+.sy-sticker-on {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .sy-leg {
+    transition: stroke-dashoffset 0.9s ease-in-out;
+  }
+  .sy-stamp,
+  .sy-sticker {
+    transition:
+      opacity 0.35s ease-out,
+      transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1),
+      filter 0.35s;
+  }
+}
+
+/* ---------- Vitrin · Candemkey room ---------- */
+.ck-grad {
+  background: linear-gradient(90deg, var(--color-ck-purple), var(--color-ck-blue) 55%, var(--color-ck-cyan));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---------- Vitrin · Kişisel QR room: scan → profile opens, on a loop ---------- */
+.qr-laser,
+.qr-ok,
+.qr-viewfinder {
+  opacity: 0;
+}
+.qr-viewfinder {
+  /* four yellow corner brackets, like a camera's scan frame */
+  background:
+    linear-gradient(#f8d008 0 0) top left / 28px 4px,
+    linear-gradient(#f8d008 0 0) top left / 4px 28px,
+    linear-gradient(#f8d008 0 0) top right / 28px 4px,
+    linear-gradient(#f8d008 0 0) top right / 4px 28px,
+    linear-gradient(#f8d008 0 0) bottom left / 28px 4px,
+    linear-gradient(#f8d008 0 0) bottom left / 4px 28px,
+    linear-gradient(#f8d008 0 0) bottom right / 28px 4px,
+    linear-gradient(#f8d008 0 0) bottom right / 4px 28px;
+  background-repeat: no-repeat;
+  border-radius: 1.75rem;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .qr-laser {
+    box-shadow: 0 0 18px 4px rgb(248 208 8 / 0.7);
+    animation: qr-laser 6.5s ease-in-out infinite;
+  }
+  .qr-viewfinder {
+    animation: qr-frame 6.5s ease-out infinite;
+  }
+  .qr-ok {
+    animation: qr-ok 6.5s ease-out infinite;
+  }
+  .qr-card {
+    animation: qr-card 6.5s ease-out infinite;
+  }
+  .qr-row {
+    animation: qr-row 6.5s ease-out calc(var(--i) * 0.14s) infinite both;
+  }
+  .qr-stage:has(.qr-pause input:checked) :is(.qr-laser, .qr-viewfinder, .qr-ok, .qr-card, .qr-row) {
+    animation-play-state: paused;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .qr-pause {
+    display: none;
+  }
+}
+@keyframes qr-laser {
+  0% {
+    top: 8%;
+    opacity: 0;
+  }
+  4% {
+    opacity: 1;
+  }
+  30% {
+    top: 90%;
+    opacity: 1;
+  }
+  34%,
+  100% {
+    top: 90%;
+    opacity: 0;
+  }
+}
+@keyframes qr-frame {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(1.06);
+  }
+  6%,
+  30% {
+    opacity: 1;
+    transform: none;
+  }
+  36% {
+    opacity: 1;
+    transform: scale(0.97);
+  }
+  44% {
+    opacity: 0;
+  }
+}
+@keyframes qr-ok {
+  0%,
+  32% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  38% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+  42%,
+  90% {
+    opacity: 1;
+    transform: none;
+  }
+  96%,
+  100% {
+    opacity: 0;
+  }
+}
+/* text never fades (contrast stays AA mid-animation): the card moves, rows wipe in */
+@keyframes qr-card {
+  0%,
+  32% {
+    transform: translateY(14px) scale(0.96);
+  }
+  40%,
+  92% {
+    transform: none;
+  }
+  100% {
+    transform: translateY(14px) scale(0.96);
+  }
+}
+@keyframes qr-row {
+  0%,
+  38% {
+    clip-path: inset(0 100% 0 0 round 0.75rem);
+  }
+  46%,
+  92% {
+    clip-path: inset(0 0 0 0 round 0.75rem);
+  }
+  100% {
+    clip-path: inset(0 100% 0 0 round 0.75rem);
+  }
+}
+
+/* ---------- Vitrin · about page: the project pipeline, driven by scroll ---------- */
+.about-flow-ok {
+  /* finished state by default (no scroll timelines / reduced motion) */
+  clip-path: circle(50%);
+}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .about-flow {
+      view-timeline-name: --about-flow;
+    }
+    .about-flow-fill {
+      animation: about-fill linear both;
+      animation-timeline: --about-flow;
+      animation-range: cover 15% cover 50%;
+    }
+    .about-flow-ok {
+      animation: about-ok linear both;
+      animation-timeline: --about-flow;
+      animation-range: cover calc(15% + var(--i) * 8%) cover calc(20% + var(--i) * 8%);
+    }
+  }
+}
+@keyframes about-fill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes about-ok {
+  from {
+    clip-path: circle(0%);
+  }
+  to {
+    clip-path: circle(50%);
+  }
+}
+
+/* ---------- Fallback for browsers without scroll-driven animations (iOS < 26, Firefox) ----------
+   ScrollFallback.tsx adds .sda-fallback to <html> there and .sda-in to each element as it scrolls
+   into view; the same motion then plays as a time-based transition. */
+.sda-fallback .v4-rise {
+  transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.sda-fallback .v4-rise:not(.sda-in) {
+  transform: translateY(32px) scale(0.985);
+}
+/* Seyyah notebook: the title writes itself, the underline draws */
+.sda-fallback .sy-draw [data-draw] {
+  stroke-dasharray: 1 1.1;
+  transition: stroke-dashoffset 1.2s ease-in-out 0.5s;
+}
+.sda-fallback .sy-draw:not(.sda-in) [data-draw] {
+  stroke-dashoffset: 1.05;
+}
+.sda-fallback .sy-draw .sy-write {
+  transition: clip-path 1.1s ease-out;
+}
+.sda-fallback .sy-draw:not(.sda-in) .sy-write {
+  clip-path: inset(0 100% 0 0);
+}
+/* About: the pipeline fills and checks off */
+.sda-fallback .about-flow-fill {
+  transition: transform 2.6s linear 0.2s;
+}
+.sda-fallback .about-flow:not(.sda-in) .about-flow-fill {
+  transform: scaleX(0);
+}
+.sda-fallback .about-flow-ok {
+  transition: clip-path 0.35s ease-out calc(0.4s + var(--i) * 0.55s);
+}
+.sda-fallback .about-flow:not(.sda-in) .about-flow-ok {
+  clip-path: circle(0%);
+}
+/* Gazete on phones: the printed photo develops into colour */
+@media (hover: none) {
+  .sda-fallback .halftone > .halftone-print {
+    transition: opacity 1.4s ease-out 0.3s;
+  }
+  .sda-fallback .halftone.sda-in > .halftone-print {
+    opacity: 0;
+  }
+}
+
+/* ---------- Vitrin · blog post body ---------- */
+.v2-prose {
+  counter-reset: h2;
+}
+/* section headings carry an orange number, matching the table of contents */
+.v2-prose h2 {
+  counter-increment: h2;
+  font-family: var(--font-archivo);
+  font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.25rem);
+  line-height: 1.1;
+}
+.v2-prose h2::before {
+  content: counter(h2, decimal-leading-zero);
+  display: block;
+  margin-bottom: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-ember);
+}
+.v2-prose > p:first-child {
+  font-size: 1.3rem;
+  line-height: 1.55;
+}
+.v2-prose pre {
+  border-radius: 1.25rem;
+  border: 0;
+  background: var(--color-ink-950);
+  box-shadow: 8px 8px 0 0 var(--color-signal);
+}
+.v2-prose blockquote {
+  border-left-width: 6px;
+  border-radius: 0 1rem 1rem 0;
+  background: var(--color-paper-100);
+  padding-block: 1rem;
 }

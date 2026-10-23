@@ -4,7 +4,8 @@ export const meta = {
   description: "Türkçe büyük İ ve I harf kuralları, toLocaleUpperCase kullanımı, Unicode kodları ve yazılımda harf dönüşümü hatalarının çözümlerini rehberimizde keşfedin.",
   date: "2026-10-05",
   author: "Candemsoft",
-  tags: ["türkçe karakter", "i18n", "frontend", "backend", "unicode"]
+  tags: ["türkçe karakter", "i18n", "frontend", "backend", "unicode"],
+  cover: "i İ ı I"
 };
 
 **Kısa cevap:** Türkçede küçük **i**, büyük **İ**, küçük **ı** ve büyük **I** olmak üzere dört bağımsız karakter vardır. İngilizce odaklı geliştirilen yazılım kütüphaneleri küçük 'i' harfini noktasız 'I' ile eşleştirdiği için Türkçe metinlerde harf dönüşümleri bozulur. Doğru sonuç için JavaScript'te `toLocaleUpperCase('tr')`, Go'da `unicode.TurkishCase`, Java'da `Locale.forLanguageTag("tr-TR")` ve CSS yerine doğrudan uygulama katmanında dil duyarlı fonksiyonlar kullanılmalıdır.

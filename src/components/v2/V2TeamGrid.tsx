@@ -19,7 +19,7 @@ export function V2TeamGrid({ lang }: { lang: Locale }) {
             )}
           </div>
           <p className="v2-heading mt-3 text-lg">{m.name}</p>
-          <p className="font-mono text-mono-sm text-stone-600">{m.role[lang]}</p>
+          {m.role[lang] && <p className="font-mono text-mono-sm text-stone-600">{m.role[lang]}</p>}
         </li>
       ))}
     </ul>
