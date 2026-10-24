@@ -10,7 +10,7 @@ import {
   getMissingSocialReport,
   getContrastRatio,
   NETWORKS,
-} from "./social";
+} from "./social.ts";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, "../../");
