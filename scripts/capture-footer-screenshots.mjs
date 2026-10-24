@@ -4,7 +4,7 @@ import path from "node:path";
 import { chromium } from "@playwright/test";
 
 const outDir = path.resolve("./out");
-const targetDir = "/Users/ademcaniyik/development/hub-jobs/T66";
+const targetDir = process.env.SCREENSHOT_DIR ?? process.argv[2] ?? path.resolve("./screenshots");
 
 const MIME_TYPES = {
   ".html": "text/html; charset=utf-8",
@@ -20,18 +20,24 @@ const MIME_TYPES = {
   ".woff2": "font/woff2",
 };
 
-// Create lightweight static file server for ./out
+// Create lightweight static file server for ./out with path traversal protection
 const server = http.createServer((req, res) => {
   let reqPath = decodeURIComponent(req.url.split("?")[0]);
   if (reqPath.endsWith("/")) reqPath += "index.html";
 
   let filePath = path.join(outDir, reqPath);
-  if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
-    filePath = path.join(filePath, "index.html");
+  const safePath = path.resolve(filePath);
+  if (!safePath.startsWith(outDir)) {
+    res.writeHead(403, { "Content-Type": "text/plain" });
+    res.end("Forbidden");
+    return;
+  }
+
+  if (fs.existsSync(safePath) && fs.statSync(safePath).isDirectory()) {
+    filePath = path.join(safePath, "index.html");
   }
 
   if (!fs.existsSync(filePath)) {
-    // Try adding .html
     if (fs.existsSync(filePath + ".html")) {
       filePath = filePath + ".html";
     } else {
@@ -54,10 +60,29 @@ console.log(`Static server running at ${baseUrl}`);
 
 fs.mkdirSync(targetDir, { recursive: true });
 
-const browser = await chromium.launch({
-  executablePath: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+function findChromePath() {
+  if (process.env.CHROME_PATH && fs.existsSync(process.env.CHROME_PATH)) {
+    return process.env.CHROME_PATH;
+  }
+  const candidates = [
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "/Applications/Chromium.app/Contents/MacOS/Chromium",
+    "/usr/bin/google-chrome",
+    "/usr/bin/chromium-browser",
+    "/usr/bin/chromium",
+  ];
+  return candidates.find((p) => fs.existsSync(p));
+}
+
+const chromePath = findChromePath();
+const launchOptions = {
   args: ["--no-sandbox", "--disable-setuid-sandbox"],
-});
+};
+if (chromePath) {
+  launchOptions.executablePath = chromePath;
+}
+
+const browser = await chromium.launch(launchOptions);
 
 try {
   // 1. Desktop Screenshot (1440x900)
