@@ -4,7 +4,7 @@ import { chromium } from "@playwright/test";
 
 const [base = "http://localhost:3000", ...rest] = process.argv.slice(2);
 const paths = rest.length ? rest : ["/"];
-const widths = [360, 390, 768, 1024, 1280, 1440, 1920];
+const widths = [360, 390, 768, 1024, 1100, 1200, 1280, 1440, 1920];
 const browser = await chromium.launch();
 let found = 0;
 for (const w of widths) {
@@ -43,6 +43,9 @@ for (const w of widths) {
         if (el.scrollWidth > el.clientWidth + 1 && el.clientWidth > 0)
           out.push(`"${el.textContent.trim().slice(0, 30)}" ⟶ text ${el.scrollWidth - el.clientWidth}px wider than its box <${el.tagName.toLowerCase()} class="${String(el.className).slice(0, 50)}">`);
       }
+      // Page-level horizontal scroll (e.g. a header that does not fit its row).
+      const sw = document.documentElement.scrollWidth - innerWidth;
+      if (sw > 1) out.push(`page scrolls horizontally by ${sw}px`);
       return [...new Set(out)].slice(0, 8);
     });
     for (const i of issues) console.log(`${w}px ${p}  ${i}`);

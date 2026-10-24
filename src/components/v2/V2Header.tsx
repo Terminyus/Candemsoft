@@ -73,7 +73,8 @@ export function V2Header({ lang, home, items, labels }: Props) {
         <Link href={home} onClick={close} aria-label="Candemsoft" className="shrink-0">
           <Logo surface="paper" priority />
         </Link>
-        <nav aria-label={labels.primary} className="hidden lg:block">
+        {/* Tam menü xl (1280 px) altında sığmıyor: ES etiketleriyle ~1190 px'e kadar taşardı. Altında hamburger menü. */}
+        <nav aria-label={labels.primary} className="hidden xl:block">
           <ul className="flex items-center gap-7 font-archivo text-[0.95rem] font-medium">
             {items.map((item) => (
               <li key={item.key}>
@@ -101,7 +102,7 @@ export function V2Header({ lang, home, items, labels }: Props) {
             aria-expanded={open}
             aria-controls="v2-menu"
             onClick={() => setOpen((o) => !o)}
-            className="-mr-2 min-h-11 px-2 font-mono text-mono-sm lg:hidden"
+            className="-mr-2 min-h-11 px-2 font-mono text-mono-sm xl:hidden"
           >
             {open ? labels.close : labels.menu}
           </button>
@@ -112,7 +113,7 @@ export function V2Header({ lang, home, items, labels }: Props) {
         id="v2-menu"
         data-open={open || undefined}
         inert={!open}
-        className="mobile-menu fixed inset-x-0 bottom-0 top-(--header-h) overflow-y-auto bg-white lg:hidden"
+        className="mobile-menu fixed inset-x-0 bottom-0 top-(--header-h) overflow-y-auto bg-white xl:hidden"
       >
         <nav aria-label={labels.primary} className="container-site flex min-h-full flex-col justify-between py-8">
           <ul>
