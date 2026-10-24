@@ -3,9 +3,9 @@
     "slug": "seyyah",
     "name": "Seyyah",
     "status": "live",
+    "androidSoon": true,
     "platforms": [
       "ios",
-      "android",
       "web"
     ],
     "icon": "/products/seyyah.png",
@@ -48,7 +48,7 @@
     },
     "links": {
       "appStore": "https://apps.apple.com/tr/app/seyyah-ke%C5%9Ffet-karar-ver-git/id6761266829?l=tr",
-      "googlePlay": "https://play.google.com/store/apps/details?id=com.candemsoft.seyyah",
+      "googlePlay": "",
       "web": "https://seyyah.info/"
     },
     "social": [
