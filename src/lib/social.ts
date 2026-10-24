@@ -75,9 +75,9 @@ const PRODUCT_CATEGORIES: Record<string, Record<Locale, string>> = {
 };
 
 export function getAllSocialGroups(site: SiteData, products: ProductData[]): SocialGroup[] {
-  const companyLinks: SocialLink[] = Object.entries(site?.social ?? {})
-    .filter(([_, url]) => typeof url === "string" && url.trim().length > 0)
-    .map(([_, url]) => parseSocialUrl(url));
+  const companyLinks: SocialLink[] = Object.values(site?.social ?? {})
+    .filter((url) => typeof url === "string" && url.trim().length > 0)
+    .map((url) => parseSocialUrl(url));
 
   const companyGroup: SocialGroup = {
     id: "candemsoft",

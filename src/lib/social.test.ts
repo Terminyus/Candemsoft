@@ -9,7 +9,6 @@ import {
   getActiveSocialGroups,
   getMissingSocialReport,
   getContrastRatio,
-  NETWORKS,
 } from "./social.ts";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
