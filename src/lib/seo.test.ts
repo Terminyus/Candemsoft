@@ -473,7 +473,7 @@ test("softwareJsonLd creates valid MobileApplication and SoftwareApplication sch
   assert.equal(seyyahLd.name, "Seyyah");
   assert.equal(seyyahLd.description, seyyah.description.tr);
   assert.equal(seyyahLd.applicationCategory, "TravelApplication");
-  assert.equal(seyyahLd.operatingSystem, "iOS, Android, Web Browser");
+  assert.equal(seyyahLd.operatingSystem, "iOS, Web Browser"); // Android sürümü Play'de yayınlanana kadar yok (androidSoon)
   assert.deepEqual(seyyahLd.offers, { "@type": "Offer", price: "0", priceCurrency: "TRY" });
   assert.equal(seyyahLd.url, "https://seyyah.info/");
   assert.equal(seyyahLd.image, `${siteUrl}/products/seyyah.png`);

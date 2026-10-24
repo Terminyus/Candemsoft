@@ -5,6 +5,8 @@ import { publicFileExists } from "@/lib/content";
 import type { Dictionary } from "@/lib/dictionary";
 import { asset } from "@/lib/static";
 import { cn } from "@/components/ui/cn";
+import { parseSocialUrl } from "@/lib/social";
+import { SocialIcon } from "@/components/v2/SocialIcon";
 
 /** Colours a room hands to the shared info block. */
 export type RoomTheme = {
@@ -78,6 +80,33 @@ export function StoreButtons({ product, dict, theme }: { product: Product; dict:
   );
 }
 
+/** Ürünün resmî sosyal hesapları: odanın kendi renklerinde, 44 px dokunma alanlı ikon satırı. */
+export function RoomSocial({ product, theme }: { product: Product; theme: RoomTheme }) {
+  const links = (product.social ?? []).map(parseSocialUrl);
+  if (!links.length) return null;
+  return (
+    <ul className="flex flex-wrap gap-2" aria-label={`${product.name} social`}>
+      {links.map((l) => (
+        <li key={l.url}>
+          <a
+            href={l.url}
+            target="_blank"
+            rel="noopener noreferrer me"
+            aria-label={`${product.name} ${l.networkName}`}
+            className={cn(
+              "inline-flex size-11 items-center justify-center rounded-full border opacity-80 transition-opacity hover:opacity-100",
+              theme.rule,
+              theme.muted,
+            )}
+          >
+            <SocialIcon network={l.network} className="size-5" />
+          </a>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 export function RoomInfo({
   product,
   lang,
@@ -143,6 +172,7 @@ export function RoomInfo({
         <p className={cn("font-mono text-mono-sm", theme.kicker)}>{dict.productsPage.androidSoon}</p>
       )}
       <StoreButtons product={product} dict={dict} theme={theme} />
+      <RoomSocial product={product} theme={theme} />
       {extra}
     </div>
   );

@@ -64,7 +64,9 @@
     "lead": "A project, a question, or just hello:",
     "sitemap": "Pages",
     "reach": "Reach us",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "social": "Social & Projects",
+    "socialLead": "Our official channels and product communities"
   },
   "home": {
     "heroLine1": "We ship it",
